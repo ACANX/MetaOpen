@@ -4,12 +4,12 @@
     <parent>
         <groupId>com.acanx.meta</groupId>
         <artifactId>meta-open</artifactId>
-        <version>0.1.0</version>
+        <version>0.1.1-SNAPSHOT</version>
     </parent>
 
     <groupId>com.acanx.meta</groupId>
     <artifactId>os-dependencies</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>OS-Dependencies</name>
     <description>OpenSource Dependencies BOM</description>
@@ -18,14 +18,51 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
+
         <maven.compiler.release>11</maven.compiler.release>
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
+
+        <autil.version>0.2.0.1</autil.version>
+        <acanx-utils.version>0.2.0.1</acanx-utils.version>
+
         <fastjson2.version>2.0.54</fastjson2.version>
-        <lombok.version>1.18.36</lombok.version>
+        <lombok.version>1.18.38</lombok.version>
+
         <junit-jupiter.version>5.12.2</junit-jupiter.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.acanx.util</groupId>
+            <artifactId>autil-core</artifactId>
+            <version>${autil.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.acanx.util</groupId>
+            <artifactId>json-fastjson</artifactId>
+            <version>${autil.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.acanx.util</groupId>
+            <artifactId>json-jackson</artifactId>
+            <version>${autil.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.acanx.util</groupId>
+            <artifactId>json-gson</artifactId>
+            <version>${autil.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.acanx</groupId>
+            <artifactId>acanx-utils</artifactId>
+            <version>${acanx-utils.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
         <dependency>
             <groupId>com.alibaba.fastjson2</groupId>
             <artifactId>fastjson2</artifactId>
