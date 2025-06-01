@@ -3,13 +3,13 @@
   <parent>
     <groupId>com.acanx.meta</groupId>
     <artifactId>os-dependencies</artifactId>
-    <version>0.1.2</version>
+    <version>0.1.3-SNAPSHOT</version>
     <relativePath>../os-dependencies/pom.xml</relativePath>
   </parent>
 
   <groupId>com.acanx.meta</groupId>
   <artifactId>meta-model</artifactId>
-  <version>0.1.2</version>
+  <version>0.1.3-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Meta-Model</name>
   <description>Meta Model POM</description>

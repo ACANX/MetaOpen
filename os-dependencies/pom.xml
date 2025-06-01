@@ -4,12 +4,12 @@
     <parent>
         <groupId>com.acanx.meta</groupId>
         <artifactId>meta-open</artifactId>
-        <version>0.1.2</version>
+        <version>0.1.3-SNAPSHOT</version>
     </parent>
 
     <groupId>com.acanx.meta</groupId>
     <artifactId>os-dependencies</artifactId>
-    <version>0.1.2</version>
+    <version>0.1.3-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>OS-Dependencies</name>
     <description>OpenSource Dependencies BOM</description>
