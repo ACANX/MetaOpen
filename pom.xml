@@ -5,7 +5,7 @@
 
     <groupId>com.acanx.meta</groupId>
     <artifactId>meta-open</artifactId>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.1.2</version>
     <packaging>pom</packaging>
     <name>Meta-Open</name>
     <description>Meta Open POM</description>
@@ -38,7 +38,7 @@
     </licenses>
 
     <properties>
-        <revision>0.1.1-SNAPSHOT</revision>
+        <revision>0.1.2</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
         <maven.compiler.release>11</maven.compiler.release>
@@ -50,14 +50,14 @@
         <maven-gpg-plugin.version>3.2.6</maven-gpg-plugin.version>
         <flatten-maven-plugin.version>1.6.0</flatten-maven-plugin.version>
         <central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
-        <fastjson2.version>2.0.54</fastjson2.version>
+        <fastjson2.version>2.0.57</fastjson2.version>
         <lombok.version>1.18.36</lombok.version>
         <junit-jupiter.version>5.12.2</junit-jupiter.version>
     </properties>
 
     <modules>
         <module>os-dependencies</module>
-        <module>meta-model</module>
+        <!-- <module>meta-model</module> -->
     </modules>
 
     <dependencies/>
@@ -77,7 +77,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.14.0</version>
+                <version>${maven-compiler-plugin.version}</version>
             </plugin>
         </plugins>
     </build>

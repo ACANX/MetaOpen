@@ -3,13 +3,13 @@
   <parent>
     <groupId>com.acanx.meta</groupId>
     <artifactId>os-dependencies</artifactId>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.1.2</version>
     <relativePath>../os-dependencies/pom.xml</relativePath>
   </parent>
 
   <groupId>com.acanx.meta</groupId>
   <artifactId>meta-model</artifactId>
-  <version>0.1.1-SNAPSHOT</version>
+  <version>0.1.2</version>
   <packaging>pom</packaging>
   <name>Meta-Model</name>
   <description>Meta Model POM</description>
@@ -20,8 +20,8 @@
   </properties>
 
   <modules>
-    <!-- <module>model-security</module> -->
-    <module>model-quote</module>
+     <module>model-security</module>
+     <module>model-quote</module>
   </modules>
 
   <build>
