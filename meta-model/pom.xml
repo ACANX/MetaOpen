@@ -2,27 +2,27 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.acanx.meta</groupId>
-    <artifactId>os-dependencies</artifactId>
-    <version>0.1.3-SNAPSHOT</version>
-    <relativePath>../os-dependencies/pom.xml</relativePath>
+    <artifactId>meta-open</artifactId>
+    <version>${revision}</version>
+    <relativePath>../pom.xml</relativePath>
   </parent>
-
   <groupId>com.acanx.meta</groupId>
   <artifactId>meta-model</artifactId>
-  <version>0.1.3-SNAPSHOT</version>
+  <version>${revision}</version>
   <packaging>pom</packaging>
   <name>Meta-Model</name>
   <description>Meta Model POM</description>
-  <url>https://www.acanx.com</url>
+  <url>https://acanx.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
   <modules>
-     <module>model-security</module>
-     <module>model-quote</module>
+    <!--    <module>model-security</module> -->
+    <!--    <module>model-quote</module>    -->
+    <module>model-sonatype</module>
   </modules>
+
 
   <build>
     <plugins>
@@ -33,5 +33,4 @@
       </plugin>
     </plugins>
   </build>
-
 </project>
