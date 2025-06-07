@@ -8,16 +8,17 @@
     </parent>
 
     <groupId>com.acanx.meta.model</groupId>
-    <artifactId>model-sonatype</artifactId>
-    <version>${revision}</version>
+    <artifactId>model-wechat-work</artifactId>
+    <version>0.1.0</version>
     <packaging>jar</packaging>
-    <name>Model-SonaType</name>
-    <url>https://acanx.com</url>
+    <name>Model-Wechat-Work</name>
+    <description>WeChat-Work Model Module</description>
+    <url>https://www.acanx.com</url>
 
     <properties>
-        <maven.deploy.skip>true</maven.deploy.skip>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
+        <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
     </properties>
 
     <dependencies>
@@ -35,6 +36,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
