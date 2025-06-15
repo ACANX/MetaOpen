@@ -13,25 +13,28 @@
   <name>Meta-Model</name>
   <description>Meta Model POM</description>
   <url>https://acanx.com</url>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
   <modules>
-    <module>model-security</module>
-    <module>model-quote</module>
-    <module>model-sonatype</module>
-    <module>model-wechat-work</module>
-    <module>model-dingtalk</module>
+<!--    <module>model-security</module>-->
+<!--    <module>model-quote</module>-->
+<!--    <module>model-sonatype</module>-->
+<!--    <module>model-wechat-work</module>-->
+<!--    <module>model-dingtalk</module>-->
+<!--    <module>model-deepseek</module>-->
+    <module>model-test</module>
   </modules>
-
   <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
       </plugin>
     </plugins>
   </build>
