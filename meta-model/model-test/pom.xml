@@ -9,23 +9,31 @@
 
     <groupId>com.acanx.meta.model</groupId>
     <artifactId>model-test</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Model-Test</name>
+    <description>Meta Test Model Module</description>
     <url>https://acanx.com</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
+        <autil.version>0.2.0.3</autil.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.acanx.util</groupId>
             <artifactId>autil-core</artifactId>
-            <version>0.2.0.3</version>
+            <version>${autil.version}</version>
         </dependency>
+<!--        &lt;!&ndash; 注解处理器支持 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.maven.plugins</groupId>-->
+<!--            <artifactId>maven-compiler-plugin</artifactId>-->
+<!--            <version>3.14.0</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -46,6 +54,14 @@
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                    <annotationProcessorPaths>
+                        <!-- 确保注解处理器路径包含你的处理器 -->
+                        <path>
+                            <groupId>com.acanx.util</groupId>
+                            <artifactId>incubator-annotation</artifactId>
+                            <version>${autil.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
         </plugins>

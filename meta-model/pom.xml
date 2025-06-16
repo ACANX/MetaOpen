@@ -22,8 +22,8 @@
 <!--    <module>model-sonatype</module>-->
 <!--    <module>model-wechat-work</module>-->
 <!--    <module>model-dingtalk</module>-->
-<!--    <module>model-deepseek</module>-->
-    <module>model-test</module>
+    <module>model-deepseek</module>
+<!--    <module>model-test</module>-->
   </modules>
   <build>
     <plugins>
