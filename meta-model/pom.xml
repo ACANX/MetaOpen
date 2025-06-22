@@ -11,19 +11,19 @@
   <version>${revision}</version>
   <packaging>pom</packaging>
   <name>Meta-Model</name>
-  <description>Meta Model POM</description>
+  <description>Meta-Model POM</description>
   <url>https://acanx.com</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <modules>
-<!--    <module>model-security</module>-->
-<!--    <module>model-quote</module>-->
-<!--    <module>model-sonatype</module>-->
-<!--    <module>model-wechat-work</module>-->
-<!--    <module>model-dingtalk</module>-->
+    <module>model-security</module>
+    <module>model-quote</module>
+    <module>model-sonatype</module>
+    <module>model-wechat-work</module>
+    <module>model-dingtalk</module>
     <module>model-deepseek</module>
-<!--    <module>model-test</module>-->
+    <module>model-test</module>
   </modules>
   <build>
     <plugins>

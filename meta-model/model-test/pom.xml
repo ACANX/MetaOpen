@@ -20,6 +20,7 @@
         <maven.compiler.release>11</maven.compiler.release>
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
         <autil.version>0.2.0.3</autil.version>
+        <incubator-annotation.version>0.2.0.3-SNAPSHOT</incubator-annotation.version>
     </properties>
 
     <dependencies>
@@ -28,12 +29,12 @@
             <artifactId>autil-core</artifactId>
             <version>${autil.version}</version>
         </dependency>
-<!--        &lt;!&ndash; 注解处理器支持 &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.maven.plugins</groupId>-->
-<!--            <artifactId>maven-compiler-plugin</artifactId>-->
-<!--            <version>3.14.0</version>-->
-<!--        </dependency>-->
+        <!-- 注解处理器支持 -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>${maven-compiler-plugin.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -59,7 +60,7 @@
                         <path>
                             <groupId>com.acanx.util</groupId>
                             <artifactId>incubator-annotation</artifactId>
-                            <version>${autil.version}</version>
+                            <version>${incubator-annotation.version}</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>

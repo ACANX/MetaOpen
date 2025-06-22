@@ -1,4 +1,4 @@
-package com.acanx.meta.model.test.annotation;
+package com.acanx.meta.model.test.json.model;
 
 import java.time.LocalDateTime;
 
@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 public class UserDTO {
     private Integer userId;
     private String loginId;
+    private String password;
     private String contactEmail;
     private LocalDateTime createTime;
 
@@ -47,6 +48,14 @@ public class UserDTO {
 
     public void setCreateTime(LocalDateTime createTime) {
         this.createTime = createTime;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

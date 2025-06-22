@@ -7,7 +7,7 @@
     <version>${revision}</version>
     <packaging>pom</packaging>
     <name>OS-Dependencies</name>
-    <description>OpenSource Dependencies BOM</description>
+    <description>Meta Open Source BOM</description>
     <url>https://acanx.com</url>
 
     <scm>
@@ -36,7 +36,7 @@
     </licenses>
 
     <properties>
-        <revision>0.1.9-SNAPSHOT</revision>
+        <revision>0.2.0-SNAPSHOT</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
         <maven.compiler.release>11</maven.compiler.release>
@@ -47,44 +47,56 @@
         <maven-javadoc-plugin.version>3.10.0</maven-javadoc-plugin.version>
         <maven-gpg-plugin.version>3.2.6</maven-gpg-plugin.version>
         <flatten-maven-plugin.version>1.6.0</flatten-maven-plugin.version>
-        <central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
+        <central-publishing-maven-plugin.version>0.8.0</central-publishing-maven-plugin.version>
 
+        <deamond.version>0.1.4.4</deamond.version>
         <meta-open.version>0.1.5</meta-open.version>
         <autil.version>0.2.0.3</autil.version>
         <acanx-utils.version>0.2.0.3</acanx-utils.version>
-
-        <fastjson2.version>2.0.57</fastjson2.version>
-        <commons-lang3.version>3.17.0</commons-lang3.version>
-        <common-io.version>2.19.0</common-io.version>
-        <commons-collections4.version>4.5.0</commons-collections4.version>
-        <guava.version>33.4.8-jre</guava.version>
-        <snakeyaml.version>2.4</snakeyaml.version>
 
         <oenjfx.version>24.0.1</oenjfx.version>
         <javassist.version>3.30.2-GA</javassist.version>
         <aspectjweaver.version>1.9.24</aspectjweaver.version>
         <bytebuddy.version>1.17.5</bytebuddy.version>
+
         <netty.version>4.2.2.Final</netty.version>
+        <reactor.verion>3.7.7</reactor.verion>
         <protobuf-java.version>4.31.1</protobuf-java.version>
-        <lombok.version>1.18.38</lombok.version>
-        <mapstruct.version>1.6.3</mapstruct.version>
-        <caffeine.version>3.2.0</caffeine.version>
-        <freemarker.version>2.3.34</freemarker.version>
-        <jsoup.version>1.20.1</jsoup.version>
-
-
-        <spring.version>6.2.7</spring.version>
-        <spring-boot.version>3.5.0</spring-boot.version>
-        <mybatis.version>3.5.19</mybatis.version>
-        <dubbo.version>3.3.4</dubbo.version>
-        <flink.version>1.17.2</flink.version>
-        <hadoop.version>3.3.4</hadoop.version>
 
         <mysql-connector-j.version>9.3.0</mysql-connector-j.version>
         <postgresql.version>42.7.7</postgresql.version>
+        <mybatis.version>3.5.19</mybatis.version>
+        <hibernate.version>7.0.2.Final</hibernate.version>
+
+        <commons-lang3.version>3.17.0</commons-lang3.version>
+        <common-io.version>2.19.0</common-io.version>
+        <commons-collections4.version>4.5.0</commons-collections4.version>
+        <guava.version>33.4.8-jre</guava.version>
+
+        <lombok.version>1.18.38</lombok.version>
+        <mapstruct.version>1.6.3</mapstruct.version>
+
+        <fastjson2.version>2.0.57</fastjson2.version>
+        <snakeyaml.version>2.4</snakeyaml.version>
+
+        <caffeine.version>3.2.1</caffeine.version>
+        <freemarker.version>2.3.34</freemarker.version>
+        <jsoup.version>1.20.1</jsoup.version>
+        <hibernate-validator.version>9.0.1.Final</hibernate-validator.version>
+        <redisson.version>3.50.0</redisson.version>
 
         <slf4j.version>2.0.17</slf4j.version>
         <jspecify.version>1.0.0</jspecify.version>
+
+        <spring.version>6.2.8</spring.version>
+        <spring-security.version>6.5.1</spring-security.version>
+        <spring-boot.version>3.5.3</spring-boot.version>
+
+        <dubbo.version>3.3.5</dubbo.version>
+
+        <flink.version>1.17.2</flink.version>
+        <hadoop.version>3.3.4</hadoop.version>
+
 
         <junit-jupiter.version>5.13.1</junit-jupiter.version>
     </properties>
@@ -385,7 +397,7 @@
             <dependency>
                 <groupId>org.springframework.security</groupId>
                 <artifactId>spring-security-core</artifactId>
-                <version>6.5.0</version>
+                <version>${spring-security.version}</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
@@ -448,7 +460,7 @@
             <dependency>
                 <groupId>org.hibernate.validator</groupId>
                 <artifactId>hibernate-validator</artifactId>
-                <version>9.0.0.Final</version>
+                <version>${hibernate-validator.version}</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
@@ -466,11 +478,15 @@
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
                 <version>1.18.0</version>
+                <scope>provided</scope>
+                <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>commons-net</groupId>
                 <artifactId>commons-net</artifactId>
                 <version>3.11.1</version>
+                <scope>provided</scope>
+                <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>org.apache.lucene</groupId>
@@ -496,7 +512,7 @@
             <dependency>
                 <groupId>io.projectreactor</groupId>
                 <artifactId>reactor-core</artifactId>
-                <version>3.7.6</version>
+                <version>${reactor.verion}</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
@@ -504,6 +520,8 @@
                 <groupId>com.jayway.jsonpath</groupId>
                 <artifactId>json-path</artifactId>
                 <version>2.9.0</version>
+                <scope>provided</scope>
+                <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>io.prometheus</groupId>
@@ -551,16 +569,11 @@
             <dependency>
                 <groupId>org.hibernate.orm</groupId>
                 <artifactId>hibernate-core</artifactId>
-                <version>7.0.1.Final</version>
+                <version>${hibernate.version}</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
-            <dependency>
-                <groupId>org.hsqldb</groupId>
-                <artifactId>hsqldb</artifactId>
-                <version>2.7.4</version>
-                <scope>test</scope>
-            </dependency>
+
             <dependency>
                 <groupId>org.quartz-scheduler</groupId>
                 <artifactId>quartz</artifactId>
@@ -591,7 +604,7 @@
             <dependency>
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson</artifactId>
-                <version>3.49.0</version>
+                <version>${redisson.version}</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
@@ -603,6 +616,13 @@
                 <optional>true</optional>
             </dependency>
 
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+                <scope>provided</scope>
+                <optional>true</optional>
+            </dependency>
 
 
             <dependency>
@@ -610,13 +630,13 @@
                 <artifactId>xmlunit-core</artifactId>
                 <version>2.10.2</version>
                 <scope>test</scope>
+                <optional>true</optional>
             </dependency>
             <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-                <scope>provided</scope>
-                <optional>true</optional>
+                <groupId>org.hsqldb</groupId>
+                <artifactId>hsqldb</artifactId>
+                <version>2.7.4</version>
+                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
@@ -766,6 +786,7 @@
                         <configuration>
                             <publishingServerId>sonatype-nexus-snapshots</publishingServerId>
                             <autoPublish>true</autoPublish>
+                            <deploymentName>OS-Dependencies-Deployment</deploymentName>
                         </configuration>
                     </plugin>
                 </plugins>

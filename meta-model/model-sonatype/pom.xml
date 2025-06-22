@@ -9,9 +9,9 @@
 
     <groupId>com.acanx.meta.model</groupId>
     <artifactId>model-sonatype</artifactId>
-    <version>${revision}</version>
+    <version>0.2.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Model-SonaType</name>
+    <name>SonaType Model Module</name>
     <url>https://acanx.com</url>
 
     <properties>

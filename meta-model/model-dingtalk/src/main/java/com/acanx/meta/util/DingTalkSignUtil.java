@@ -12,10 +12,10 @@ public class DingTalkSignUtil {
 
     /**
      *
-     * @param secret
-     * @param timestamp
-     * @return
-     * @throws Exception
+     * @param secret      私钥
+     * @param timestamp   时间戳
+     * @return            签名结果
+     * @throws Exception  异常
      */
     public static String generateSign(String secret, Long timestamp) throws Exception {
         String stringToSign = timestamp + "\n" + secret;
@@ -25,4 +25,5 @@ public class DingTalkSignUtil {
         String sign = URLEncoder.encode(Base64.getEncoder().encodeToString(signData), "UTF-8");
         return sign;
     }
+
 }
