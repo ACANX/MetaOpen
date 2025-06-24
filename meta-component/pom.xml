@@ -7,25 +7,21 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
   <groupId>com.acanx.meta</groupId>
-  <artifactId>meta-model</artifactId>
-  <version>${revision}</version>
+  <artifactId>meta-component</artifactId>
+  <version>0.1.0</version>
   <packaging>pom</packaging>
-  <name>Meta-Model</name>
-  <description>Meta-Model POM</description>
-  <url>https://acanx.com</url>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+  <name>Meta-Component</name>
+  <description>Meta-Component POM</description>
+  <properties/>
+
   <modules>
-<!--    <module>model-security</module>-->
-<!--    <module>model-quote</module>-->
-<!--    <module>model-sonatype</module>-->
-<!--    <module>model-wechat-work</module>-->
-<!--    <module>model-dingtalk</module>-->
-<!--    <module>model-deepseek</module>-->
-<!--    <module>model-test</module>-->
-    <module>model-maven</module>
+    <module>sdk-maven-artifact</module>
   </modules>
+
+  <dependencies/>
+  <dependencyManagement>
+    <dependencies/>
+  </dependencyManagement>
   <build>
     <plugins>
       <plugin>
@@ -33,10 +29,13 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>${maven-compiler-plugin.version}</version>
         <configuration>
+          <compilerVersion>${java.version}</compilerVersion>
           <source>${java.version}</source>
           <target>${java.version}</target>
+          <encoding>${project.build.sourceEncoding}</encoding>
         </configuration>
       </plugin>
     </plugins>
   </build>
+
 </project>

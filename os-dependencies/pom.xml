@@ -36,7 +36,7 @@
     </licenses>
 
     <properties>
-        <revision>0.2.0-SNAPSHOT</revision>
+        <revision>0.2.0</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
         <maven.compiler.release>11</maven.compiler.release>
@@ -57,7 +57,7 @@
         <oenjfx.version>24.0.1</oenjfx.version>
         <javassist.version>3.30.2-GA</javassist.version>
         <aspectjweaver.version>1.9.24</aspectjweaver.version>
-        <bytebuddy.version>1.17.5</bytebuddy.version>
+        <bytebuddy.version>1.17.6</bytebuddy.version>
 
         <netty.version>4.2.2.Final</netty.version>
         <reactor.verion>3.7.7</reactor.verion>
@@ -66,7 +66,7 @@
         <mysql-connector-j.version>9.3.0</mysql-connector-j.version>
         <postgresql.version>42.7.7</postgresql.version>
         <mybatis.version>3.5.19</mybatis.version>
-        <hibernate.version>7.0.2.Final</hibernate.version>
+        <hibernate.version>7.0.3.Final</hibernate.version>
 
         <commons-lang3.version>3.17.0</commons-lang3.version>
         <common-io.version>2.19.0</common-io.version>
@@ -93,6 +93,8 @@
         <spring-boot.version>3.5.3</spring-boot.version>
 
         <dubbo.version>3.3.5</dubbo.version>
+
+        <lucense.version>10.2.2</lucense.version>
 
         <flink.version>1.17.2</flink.version>
         <hadoop.version>3.3.4</hadoop.version>
@@ -491,7 +493,7 @@
             <dependency>
                 <groupId>org.apache.lucene</groupId>
                 <artifactId>lucene-core</artifactId>
-                <version>10.2.1</version>
+                <version>${lucense.version}</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>

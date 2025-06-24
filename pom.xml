@@ -38,7 +38,7 @@
     </licenses>
 
     <properties>
-        <revision>0.1.9-SNAPSHOT</revision>
+        <revision>0.2.0</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
         <maven.compiler.release>11</maven.compiler.release>
@@ -57,7 +57,7 @@
 
     <modules>
         <!-- <module>os-dependencies</module> -->
-        <module>meta-model</module>
+<!--        <module>meta-model</module>-->
         <module>meta-component</module>
     </modules>
 
@@ -212,6 +212,7 @@
                             <publishingServerId>sonatype-nexus-snapshots</publishingServerId>
                             <autoPublish>true</autoPublish>
                             <centralBaseUrl>https://central.sonatype.com</centralBaseUrl>
+                            <deploymentName>Meta-Open-Deployment</deploymentName>
                         </configuration>
                     </plugin>
                 </plugins>

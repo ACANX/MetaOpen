@@ -22,6 +22,7 @@ mvn archetype:generate -DarchetypeGroupId=com.acanx.java.tool  -DarchetypeArtifa
 mvn archetype:generate -DarchetypeGroupId=com.acanx.java.tool  -DarchetypeArtifactId=tool-archetype -DarchetypeVersion=0.2.0 -DgroupId=com.acanx.meta.model -DartifactId=model-test -Dversion=0.1.0
 
 
+mvn archetype:generate -DarchetypeGroupId=com.acanx.java.tool  -DarchetypeArtifactId=tool-archetype -DarchetypeVersion=0.2.0 -DgroupId=com.acanx.meta.model -DartifactId=model-maven -Dversion=0.1.0
 
 
 mvn archetype:generate -DarchetypeGroupId=com.acanx.java.tool  -DarchetypeArtifactId=tool-archetype -DarchetypeVersion=0.2.0 -DgroupId=com.acanx.meta.component -DartifactId=sdk-115-open -Dversion=0.1.0
@@ -31,6 +32,8 @@ mvn archetype:generate -DarchetypeGroupId=com.acanx.java.tool  -DarchetypeArtifa
 
 
 mvn archetype:generate -DarchetypeGroupId=com.acanx.java.tool  -DarchetypeArtifactId=tool-archetype -DarchetypeVersion=0.2.0 -DgroupId=com.acanx.meta.component -DartifactId=api-115-open -Dversion=0.1.0
+
+
 
 
 ```
