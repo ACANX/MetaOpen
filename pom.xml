@@ -9,11 +9,11 @@
     <packaging>pom</packaging>
     <name>Meta-Open</name>
     <description>Meta Open POM</description>
-    <url>https://acanx.com</url>
+    <url>https://github.com/ACANX/MetaOpen</url>
     <inceptionYear>2025</inceptionYear>
 
     <scm>
-        <tag>V0.1.x</tag>
+        <tag>V0.2.x</tag>
         <url>git@github.com:ACANX/MetaOpen.git</url>
         <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
         <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>
@@ -38,7 +38,7 @@
     </licenses>
 
     <properties>
-        <revision>0.2.0</revision>
+        <revision>0.2.5</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
         <maven.compiler.release>11</maven.compiler.release>
@@ -52,13 +52,13 @@
         <central-publishing-maven-plugin.version>0.8.0</central-publishing-maven-plugin.version>
         <fastjson2.version>2.0.57</fastjson2.version>
         <lombok.version>1.18.38</lombok.version>
-        <junit-jupiter.version>5.13.1</junit-jupiter.version>
+        <junit-jupiter.version>5.13.3</junit-jupiter.version>
     </properties>
 
     <modules>
-        <!-- <module>os-dependencies</module> -->
-<!--        <module>meta-model</module>-->
+        <module>meta-model</module>
         <module>meta-component</module>
+        <!-- <module>os-dependencies</module> -->
     </modules>
 
     <dependencies/>
@@ -91,6 +91,11 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0</version>
             </plugin>
         </plugins>
     </build>
@@ -214,6 +219,11 @@
                             <centralBaseUrl>https://central.sonatype.com</centralBaseUrl>
                             <deploymentName>Meta-Open-Deployment</deploymentName>
                         </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.0.0</version>
                     </plugin>
                 </plugins>
             </build>

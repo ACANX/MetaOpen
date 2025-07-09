@@ -8,14 +8,15 @@
   </parent>
   <groupId>com.acanx.meta</groupId>
   <artifactId>meta-component</artifactId>
-  <version>0.1.0</version>
+  <version>${revision}</version>
   <packaging>pom</packaging>
   <name>Meta-Component</name>
   <description>Meta-Component POM</description>
+  <url>https://github.com/ACANX/MetaOpen</url>
   <properties/>
 
   <modules>
-    <module>sdk-maven-artifact</module>
+<!--    <module>sdk-maven-artifact</module>-->
   </modules>
 
   <dependencies/>

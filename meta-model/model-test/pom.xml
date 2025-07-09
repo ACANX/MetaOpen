@@ -19,15 +19,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
-        <autil.version>0.2.0.3</autil.version>
-        <incubator-annotation.version>0.2.0.3-SNAPSHOT</incubator-annotation.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.acanx.util</groupId>
             <artifactId>autil-core</artifactId>
-            <version>${autil.version}</version>
         </dependency>
         <!-- 注解处理器支持 -->
         <dependency>
@@ -60,7 +57,7 @@
                         <path>
                             <groupId>com.acanx.util</groupId>
                             <artifactId>incubator-annotation</artifactId>
-                            <version>${incubator-annotation.version}</version>
+<!--                            <version>${incubator-annotation.version}</version>-->
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
