@@ -6,7 +6,7 @@ updates:
       interval: "daily"
       time: "10:00"         # 每天 UTC 时间 9:00 检查
       timezone: "Asia/Shanghai" # 时区设置
-    target-branch: "auto-develop"
+    target-branch: "dependabot"
     open-pull-requests-limit: 15  # 最大 PR 数量
     reviewers:                  # 自动添加审阅者
       - "team-lead"
@@ -28,7 +28,7 @@ updates:
       interval: "daily"
       time: "10:00"         # 每天 UTC 时间 9:00 检查
       timezone: "Asia/Shanghai" # 时区设置
-    target-branch: "auto-develop"
+    target-branch: "dependabot"
     open-pull-requests-limit: 15  # 最大 PR 数量
     reviewers:                  # 自动添加审阅者
       - "team-lead"
@@ -50,14 +50,14 @@ updates:
     pull-request-branch-name:
       separator: "-"              # 分支名使用短横线分隔
     allow:
-      dependency-type: "all"      # 允许所有依赖类型      
+      - dependency-type: "all"      # 允许所有依赖类型
   - package-ecosystem: "maven"
     directory: "/meta-model"
     schedule:
       interval: "daily"
       time: "10:00"         # 每天 UTC 时间 9:00 检查
       timezone: "Asia/Shanghai" # 时区设置
-    target-branch: "auto-develop"
+    target-branch: "dependabot"
     open-pull-requests-limit: 15  # 最大 PR 数量
     reviewers:                  # 自动添加审阅者
       - "team-lead"
@@ -80,7 +80,7 @@ updates:
       interval: "daily"
       time: "10:00"         # 每天 UTC 时间 9:00 检查
       timezone: "Asia/Shanghai" # 时区设置
-    target-branch: "auto-develop"
+    target-branch: "dependabot"
     open-pull-requests-limit: 15  # 最大 PR 数量
     reviewers:                  # 自动添加审阅者
       - "team-lead"
