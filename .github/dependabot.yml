@@ -17,7 +17,7 @@ updates:
         versions: [">= 3.0.0"] # 忽略 log4j 2.x 的更新
       - dependency-name: "org.junit.jupiter:junit-jupiter-api"
     commit-message:            # 自定义提交信息
-      prefix: "chore(deps)"
+      prefix: "chore"
       include: "scope"
     labels:                    # 自动添加标签
       - "dependencies"
@@ -41,8 +41,17 @@ updates:
         versions: [">= 6.0.0"] # 忽略 junit-jupiter 6.x 的更新      
       - dependency-name: "org.springframework:spring-core"
         versions: [">= 7.0.0"] # 忽略 spring-core 7.x 的更新           
+      - dependency-name: "org.apache.flink:flink-clients"
+      - dependency-name: "org.openjfx:javafx-base"
+      - dependency-name: "org.openjfx:javafx-controls"
+      - dependency-name: "org.openjfx:javafx-graphics"
+      - dependency-name: "org.openjfx:javafx-fxml"
+      - dependency-name: "org.openjfx:javafx-swing"
+      - dependency-name: "org.openjfx:javafx-web"                         
+      - dependency-name: "org.openjfx:javafx-media"             
+      - dependency-name: "org.apache.hadoop:hadoop-client"                    
     commit-message:            # 自定义提交信息
-      prefix: "chore(deps)"
+      prefix: "chore"
       include: "scope"
     labels:                    # 自动添加标签
       - "dependencies"
@@ -69,7 +78,7 @@ updates:
       - dependency-name: "org.junit.jupiter:junit-jupiter-api"
         versions: [">= 6.0.0"] # 忽略 junit-jupiter 6.x 的更新
     commit-message:            # 自定义提交信息
-      prefix: "chore(deps)"
+      prefix: "chore"
       include: "scope"
     labels:                    # 自动添加标签
       - "dependencies"
