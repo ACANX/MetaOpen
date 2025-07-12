@@ -69,6 +69,7 @@
         <postgresql.version>42.7.7</postgresql.version>
         <mybatis.version>3.5.19</mybatis.version>
         <hibernate-orm.version>7.0.5.Final</hibernate-orm.version>
+        <seata.version>2.4.0</seata.version>
 
         <commons-lang3.version>3.18.0</commons-lang3.version>
         <common-io.version>2.19.0</common-io.version>
@@ -556,6 +557,11 @@
                 <version>2.0.0</version>
                 <scope>provided</scope>
                 <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.seata</groupId>
+                <artifactId>seata-all</artifactId>
+                <version>${seata.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.csp</groupId>
