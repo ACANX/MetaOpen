@@ -59,8 +59,8 @@
         <aspectjweaver.version>1.9.24</aspectjweaver.version>
         <bytebuddy.version>1.17.6</bytebuddy.version>
 
-        <netty.version>4.2.2.Final</netty.version>
-        <reactor.verion>3.7.7</reactor.verion>
+        <netty.version>4.2.3.Final</netty.version>
+        <reactor.verion>3.7.8</reactor.verion>
         <protobuf-java.version>4.31.1</protobuf-java.version>
 
         <tomcat-embed.version>11.0.9</tomcat-embed.version>
@@ -201,12 +201,12 @@
             <dependency>
                 <groupId>org.apache.maven</groupId>
                 <artifactId>maven-model</artifactId>
-                <version>3.9.10</version>
+                <version>3.9.11</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven</groupId>
                 <artifactId>maven-core</artifactId>
-                <version>3.9.10</version>
+                <version>3.9.11</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -277,7 +277,7 @@
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.6.0</version>
+                <version>3.6.1</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -323,7 +323,7 @@
             <dependency>
                 <groupId>org.apache.maven</groupId>
                 <artifactId>maven-plugin-api</artifactId>
-                <version>3.9.10</version>
+                <version>3.9.11</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -340,7 +340,7 @@
             <dependency>
                 <groupId>org.apache.maven</groupId>
                 <artifactId>maven-compat</artifactId>
-                <version>3.9.10</version>
+                <version>3.9.11</version>
                 <scope>provided</scope>
             </dependency>
 
