@@ -32,7 +32,14 @@ public class ArtifactComponent {
 
    private String description;
 
+   /**
+    *  标签
+    */
+   private List<String> categories;
 
+   /**
+    *  代码贡献者
+    */
    private List<String> contributors;
 
    /**
@@ -157,6 +164,14 @@ public class ArtifactComponent {
       this.licenses = licenses;
    }
 
+   public List<String> getCategories() {
+      return categories;
+   }
+
+   public void setCategories(List<String> categories) {
+      this.categories = categories;
+   }
+
    @Override
    public boolean equals(Object object) {
       if (this == object) return true;
@@ -177,6 +192,7 @@ public class ArtifactComponent {
       result = 31 * result + Objects.hashCode(getType());
       result = 31 * result + Objects.hashCode(getChildCount());
       result = 31 * result + Objects.hashCode(getDescription());
+      result = 31 * result + Objects.hashCode(getCategories());
       result = 31 * result + Objects.hashCode(getContributors());
       result = 31 * result + Objects.hashCode(getVersion());
       result = 31 * result + Objects.hashCode(getPublishedEpochMillis());
@@ -196,6 +212,7 @@ public class ArtifactComponent {
               ", type='" + type + '\'' +
               ", childCount=" + childCount +
               ", description='" + description + '\'' +
+              ", categories=" + categories +
               ", contributors=" + contributors +
               ", version='" + version + '\'' +
               ", publishedEpochMillis=" + publishedEpochMillis +

@@ -18,8 +18,8 @@
   </properties>
   <modules>
 <!--    <module>model-security</module>-->
-    <module>model-quote</module>
-<!--    <module>model-sonatype</module>-->
+<!--    <module>model-quote</module>-->
+    <module>model-sonatype</module>
 <!--    <module>model-wechat-work</module>-->
 <!--    <module>model-dingtalk</module>-->
 <!--    <module>model-deepseek</module>-->
