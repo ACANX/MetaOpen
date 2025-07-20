@@ -1,0 +1,78 @@
+name: Dependabot Auto-Merge for Maven
+
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]'
+    
+    steps:
+      # 1. 获取 Dependabot 元数据
+      - name: Get dependency metadata
+        uses: dependabot/fetch-metadata@v1.1.1
+        id: metadata
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      
+      # 2. 条件验证：仅处理特定分支
+      - name: Check target branch
+        if: ${{ github.base_ref != 'dependabot' }}  # 替换为您的目标分支名
+        run: exit 1
+        
+      # 3. 条件验证：仅处理特定构件
+      - name: Check specific dependency
+        run: |
+          ALLOWED_DEP="com.acanx.meta:os-dependencies"  # 替换为您的构件ID
+          DEPS='${{ steps.metadata.outputs.dependency-names }}'
+          
+          if [[ ! "$DEPS" =~ "$ALLOWED_DEP" ]]; then
+            echo "::error::Dependency $ALLOWED_DEP not found in $DEPS"
+            exit 1
+          fi
+      
+      # 4. 条件验证：仅处理 patch 更新
+      - name: Verify semver patch
+        if: ${{ steps.metadata.outputs.update-type != 'version-update:semver-patch' }}
+        run: exit 1
+      
+      # 5. 延迟合并（24小时）
+      - name: Wait for 24 hours
+        uses: fountainhead/action-wait@v2.0.0
+        with:
+          time: 24h
+      
+      # 6. 检查是否被手动取消
+      - name: Check if PR was manually closed
+        id: check-closed
+        uses: actions/github-script@v4
+        with:
+          script: |
+            const { data: pr } = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number
+            });
+            
+            if (pr.state !== 'open') {
+              core.setFailed('PR was manually closed');
+            }
+      
+      # 7. 自动合并
+      - name: Auto-merge patch update
+        if: success() && steps.check-closed.outcome == 'success'
+        uses: actions/github-script@v4
+        with:
+          script: |
+            github.rest.pulls.merge({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+              merge_method: 'rebase'
+            })
