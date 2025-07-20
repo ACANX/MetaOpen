@@ -9,7 +9,7 @@
 
     <groupId>com.acanx.meta.component</groupId>
     <artifactId>sdk-maven-artifact</artifactId>
-    <version>0.1.1</version>
+    <version>0.2.0</version>
     <packaging>jar</packaging>
     <name>SDK-Maven-Artifact</name>
     <description>Maven-Artifact SDK Module</description>
@@ -30,7 +30,6 @@
         <dependency>
             <groupId>com.acanx.meta.model</groupId>
             <artifactId>model-sonatype</artifactId>
-            <version>0.1.5</version>
         </dependency>
         <dependency>
             <groupId>com.acanx.util</groupId>
@@ -43,7 +42,6 @@
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-xml</artifactId>
-            <version>2.19.1</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
