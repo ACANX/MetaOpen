@@ -16,7 +16,7 @@
   <properties/>
 
   <modules>
-<!--    <module>sdk-maven-artifact</module>-->
+    <module>sdk-maven-artifact</module>
   </modules>
 
   <dependencies/>

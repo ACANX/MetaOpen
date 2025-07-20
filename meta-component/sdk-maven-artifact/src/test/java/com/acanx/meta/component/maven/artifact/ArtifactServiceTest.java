@@ -2,7 +2,7 @@ package com.acanx.meta.component.maven.artifact;
 
 
 import com.acanx.meta.model.maven.MavenArtifact;
-import com.acanx.util.JSONUtil;
+import com.acanx.util.json.JSONUtil;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
