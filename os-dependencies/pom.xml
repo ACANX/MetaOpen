@@ -106,7 +106,7 @@
         <hadoop.version>3.3.4</hadoop.version>
 
         <junit-jupiter.version>5.13.3</junit-jupiter.version>
-        <junit-platform.version>1.13.3</junit-platform.version>
+        <junit-platform.version>1.13.4</junit-platform.version>
     </properties>
 
 
