@@ -1,8 +1,11 @@
-name: Dependabot Auto-Merge for Maven
+name: DependabotAutoMergeForMaven
 
 on:
-  pull_request_target:
-    types: [opened, reopened, synchronize]
+  schedule:
+    - cron: '50 9 * * *' # 每天上午9点50执行（Cron表达式）
+  workflow_dispatch: # 允许手动触发
+#  pull_request_target:
+#    types: [opened, reopened, synchronize]
 
 permissions:
   contents: write
@@ -42,11 +45,11 @@ jobs:
         if: ${{ steps.metadata.outputs.update-type != 'version-update:semver-patch' }}
         run: exit 1
       
-      # 5. 延迟合并（24小时）
-      - name: Wait for 24 hours
-        uses: fountainhead/action-wait@v2.0.0
-        with:
-          time: 24h
+#      # 5. 延迟合并（24小时）
+#      - name: Wait for 24 hours
+#        uses: fountainhead/action-wait@v2.0.0
+#        with:
+#          time: 24h
       
       # 6. 检查是否被手动取消
       - name: Check if PR was manually closed
