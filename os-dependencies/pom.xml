@@ -93,7 +93,7 @@
         <jspecify.version>1.0.0</jspecify.version>
 
         <spring.version>6.2.9</spring.version>
-        <spring-security.version>6.5.1</spring-security.version>
+        <spring-security.version>6.5.2</spring-security.version>
         <spring-boot.version>3.5.3</spring-boot.version>
 
         <dubbo.version>3.3.5</dubbo.version>
@@ -105,7 +105,7 @@
         <flink.version>1.17.2</flink.version>
         <hadoop.version>3.3.4</hadoop.version>
 
-        <junit-jupiter.version>5.13.3</junit-jupiter.version>
+        <junit-jupiter.version>5.13.4</junit-jupiter.version>
         <junit-platform.version>1.13.3</junit-platform.version>
     </properties>
 
@@ -547,7 +547,7 @@
             <dependency>
                 <groupId>org.xerial</groupId>
                 <artifactId>sqlite-jdbc</artifactId>
-                <version>3.50.2.0</version>
+                <version>3.50.3.0</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
