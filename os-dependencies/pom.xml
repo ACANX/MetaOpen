@@ -102,7 +102,7 @@
         <lucense.version>10.2.2</lucense.version>
         <elasticsearch.version>9.0.4</elasticsearch.version>
 
-        <flink.version>1.17.2</flink.version>
+        <flink.version>1.19.3</flink.version>
         <hadoop.version>3.3.4</hadoop.version>
 
         <junit-jupiter.version>5.13.4</junit-jupiter.version>
