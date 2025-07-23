@@ -11,7 +11,7 @@
     <url>https://github.com/ACANX/MetaOpen</url>
 
     <scm>
-        <tag>V0.2.x</tag>
+        <tag>V0.3.x</tag>
         <url>git@github.com:ACANX/MetaOpen.git</url>
         <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
         <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>
@@ -36,7 +36,7 @@
     </licenses>
 
     <properties>
-        <revision>0.3.1</revision>
+        <revision>0.3.2</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
         <maven.compiler.release>11</maven.compiler.release>
@@ -103,7 +103,7 @@
         <elasticsearch.version>9.0.4</elasticsearch.version>
 
         <flink.version>1.17.2</flink.version>
-        <hadoop.version>3.3.4</hadoop.version>
+        <hadoop.version>3.3.6</hadoop.version>
 
         <junit-jupiter.version>5.13.4</junit-jupiter.version>
         <junit-platform.version>1.13.4</junit-platform.version>
