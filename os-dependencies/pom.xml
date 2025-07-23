@@ -68,7 +68,7 @@
         <mysql-connector-j.version>9.3.0</mysql-connector-j.version>
         <postgresql.version>42.7.7</postgresql.version>
         <mybatis.version>3.5.19</mybatis.version>
-        <hibernate-orm.version>7.0.6.Final</hibernate-orm.version>
+        <hibernate-orm.version>7.0.7.Final</hibernate-orm.version>
         <seata.version>2.4.0</seata.version>
 
         <commons-lang3.version>3.18.0</commons-lang3.version>
@@ -735,7 +735,7 @@
             <dependency>
                 <groupId>com.zaxxer</groupId>
                 <artifactId>HikariCP</artifactId>
-                <version>6.3.1</version>
+                <version>6.3.2</version>
             </dependency>
             <dependency>
                 <groupId>commons-codec</groupId>
@@ -840,7 +840,7 @@
             <dependency>
                 <groupId>org.apache.groovy</groupId>
                 <artifactId>groovy</artifactId>
-                <version>4.0.27</version>
+                <version>4.0.28</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
