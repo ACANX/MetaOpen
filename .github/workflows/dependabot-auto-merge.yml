@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     # 检查PR作者和分支
     if: |
-      github.event.pull_request.user.login == 'dependabot[bot]' && github.event.pull_request.base.ref == 'dependabot'  # 目标分支名
+      github.event.pull_request.user.login == 'dependabot[bot]' && github.event.pull_request.base.ref == 'dependabot'
     
     steps:
       # 1. 获取元数据
