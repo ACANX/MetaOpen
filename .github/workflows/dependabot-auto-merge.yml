@@ -2,10 +2,9 @@ name: DependabotAutoMergeForMaven
 
 on:
   schedule:
-    - cron: '50 4 * * *' # 每天上午9点50执行（Cron表达式）
-  workflow_dispatch: # 允许手动触发
-  pull_request_target:
-    types: [opened, reopened, synchronize]
+    - cron: '50 4 * * *' # 每天上午4点50执行（Cron表达式）
+  pull_request_target:  # 关键修改：响应PR事件
+    types: [opened, reopened, synchronize, ready_for_review]
 
 permissions:
   contents: write
@@ -14,68 +13,62 @@ permissions:
 jobs:
   auto-merge:
     runs-on: ubuntu-latest
-    if: github.actor == 'dependabot[bot]'
+    # 检查PR作者和分支
+    if: |
+      github.event.pull_request.user.login == 'dependabot[bot]' &&
+      github.event.pull_request.base.ref == 'dependabot'  # 目标分支名
     
     steps:
-      # 1. 获取 Dependabot 元数据
+      # 1. 获取元数据
       - name: Get dependency metadata
         uses: dependabot/fetch-metadata@v1.1.1
         id: metadata
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       
-      # 2. 条件验证：仅处理特定分支
-      - name: Check target branch
-        if: ${{ github.base_ref != 'dependabot' }}  # 替换为您的目标分支名
-        run: exit 1
-        
-      # 3. 条件验证：仅处理特定构件
-      - name: Check specific dependency
+      # 2. 检查特定依赖
+      - name: Check allowed dependency
+        id: check-dep
         run: |
-          ALLOWED_DEP="com.acanx.meta:os-dependencies"  # 替换为您的构件ID
-          DEPS='${{ steps.metadata.outputs.dependency-names }}'
+          ALLOWED_DEP="com.acanx.meta:os-dependencies"
+          DEPS="${{ steps.metadata.outputs.dependency-names }}"
           
-          if [[ ! "$DEPS" =~ "$ALLOWED_DEP" ]]; then
+          if [[ "$DEPS" != *"$ALLOWED_DEP"* ]]; then
             echo "::error::Dependency $ALLOWED_DEP not found in $DEPS"
             exit 1
           fi
       
-      # 4. 条件验证：仅处理 patch 更新
-      - name: Verify semver patch
+      # 3. 检查更新类型
+      - name: Check update type
         if: ${{ steps.metadata.outputs.update-type != 'version-update:semver-patch' }}
-        run: exit 1
-      
-#      # 5. 延迟合并（24小时）
-#      - name: Wait for 24 hours
-#        uses: fountainhead/action-wait@v2.0.0
-#        with:
-#          time: 24h
-      
-      # 6. 检查是否被手动取消
-      - name: Check if PR was manually closed
-        id: check-closed
-        uses: actions/github-script@v4
-        with:
-          script: |
-            const { data: pr } = await github.rest.pulls.get({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: context.payload.pull_request.number
-            });
-            
-            if (pr.state !== 'open') {
-              core.setFailed('PR was manually closed');
-            }
-      
-      # 7. 自动合并
+        run: |
+          echo "Skipping non-patch update (${{ steps.metadata.outputs.update-type }})"
+          exit 78  # 特殊退出码标记跳过
+
+      # 5. 检查PR状态
+      - name: Verify PR status
+        id: check-status
+        run: |
+          if [ "${{ github.event.pull_request.state }}" != "open" ]; then
+            echo "::error::PR is not open"
+            exit 1
+          fi
+          
+          # 检查是否包含特定标签阻止合并
+          if [[ "${{ github.event.pull_request.labels.*.name }}" == *"do-not-merge"* ]]; then
+            echo "::warning::PR has do-not-merge label"
+            exit 78
+          fi
+
+      # 6. 自动合并
       - name: Auto-merge patch update
-        if: success() && steps.check-closed.outcome == 'success'
+        if: success() && steps.check-status.outcome == 'success'
         uses: actions/github-script@v4
         with:
           script: |
             github.rest.pulls.merge({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              pull_number: context.payload.pull_request.number,
+              pull_number: ${{ github.event.pull_request.number }},
               merge_method: 'rebase'
             })
