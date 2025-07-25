@@ -3,6 +3,7 @@ name: DependabotAutoMergeForMaven
 on:
   schedule:
     - cron: '50 4 * * *' # 每天上午4点50执行（Cron表达式）
+  workflow_dispatch:   
   pull_request_target:  # 关键修改：响应PR事件
     types: [opened, reopened, synchronize, ready_for_review]
 
