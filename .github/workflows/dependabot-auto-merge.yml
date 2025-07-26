@@ -31,6 +31,7 @@ jobs:
         id: check-dep
         run: |
           ALLOWED_DEP="com.acanx.meta:os-dependencies"
+          echo "DependencyGAV: ${{ steps.metadata.outputs.dependency-names }}"
           DEPS="${{ steps.metadata.outputs.dependency-names }}"
           
           if [[ "$DEPS" != *"$ALLOWED_DEP"* ]]; then
