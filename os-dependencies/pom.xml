@@ -41,7 +41,7 @@
         <java.version>11</java.version>
         <maven.compiler.release>11</maven.compiler.release>
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
-        <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
+        <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>p
         <maven-surefire-plugin.version>3.5.0</maven-surefire-plugin.version>
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
@@ -54,7 +54,7 @@
         <autil.version>0.2.1.0</autil.version>
         <acanx-utils.version>0.2.1.0</acanx-utils.version>
 
-        <oenjfx.version>24.0.2</oenjfx.version>
+        <openjfx.version>24.0.2</openjfx.version>
         <javassist.version>3.30.2-GA</javassist.version>
         <aspectjweaver.version>1.9.24</aspectjweaver.version>
         <bytebuddy.version>1.17.6</bytebuddy.version>
@@ -667,49 +667,49 @@
             <dependency>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-base</artifactId>
-                <version>${oenjfx.version}</version>
+                <version>${openjfx.version}</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-controls</artifactId>
-                <version>${oenjfx.version}</version>
+                <version>${openjfx.version}</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-graphics</artifactId>
-                <version>${oenjfx.version}</version>
+                <version>${openjfx.version}</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-fxml</artifactId>
-                <version>${oenjfx.version}</version>
+                <version>${openjfx.version}</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-swing</artifactId>
-                <version>${oenjfx.version}</version>
+                <version>${openjfx.version}</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-web</artifactId>
-                <version>${oenjfx.version}</version>
+                <version>${openjfx.version}</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-media</artifactId>
-                <version>${oenjfx.version}</version>
+                <version>${openjfx.version}</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
