@@ -43,7 +43,7 @@ updates:
         versions: [">= 7.0.0"] # 忽略 spring-core 7.x 的更新           
       - dependency-name: "org.apache.flink:flink-clients"
       - dependency-name: "org.openjfx:javafx-base"
-        versions: [">= 25.0"] # 忽略 25.x 的更新
+        versions: [">= 25-ea"] # 忽略 25.x 的更新
       - dependency-name: "org.openjfx:javafx-controls"
       - dependency-name: "org.openjfx:javafx-graphics"
       - dependency-name: "org.openjfx:javafx-fxml"
