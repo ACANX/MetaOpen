@@ -56,7 +56,8 @@ updates:
     labels:                    # 自动添加标签
       - "依赖:升级"
       - "自动化:提交"
-      - "Dependabot"            
+      - "Dependabot"        
+      - "RR"      
     pull-request-branch-name:
       separator: "-"              # 分支名使用短横线分隔
     allow:
