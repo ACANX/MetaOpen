@@ -72,7 +72,7 @@ jobs:
             github.pulls.merge({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              pull_number: context.issue.number,  // 直接使用脚本上下文变量
+              pull_number: context.issue.number, 
               merge_method: 'rebase'
             })
             console.log(`Merged PR #${context.issue.number}`);
