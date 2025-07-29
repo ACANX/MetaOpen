@@ -20,7 +20,7 @@ updates:
     labels:                    # 自动添加标签
       - "依赖:升级"
       - "自动化:提交"
-      - "dependabot"      
+      - "Dependabot"      
   - package-ecosystem: "maven"
     directory: "/os-dependencies"
     schedule:
@@ -56,7 +56,7 @@ updates:
     labels:                    # 自动添加标签
       - "依赖:升级"
       - "自动化:提交"
-      - "dependabot"            
+      - "Dependabot"            
     pull-request-branch-name:
       separator: "-"              # 分支名使用短横线分隔
     allow:
@@ -82,7 +82,7 @@ updates:
     labels:                    # 自动添加标签
       - "依赖:升级"
       - "自动化:提交"
-      - "dependabot"            
+      - "Dependabot"            
   - package-ecosystem: "maven"
     directory: "/meta-component"
     schedule:
@@ -103,4 +103,4 @@ updates:
     labels:                    # 自动添加标签
       - "依赖:升级"
       - "自动化:提交"
-      - "dependabot"            
+      - "Dependabot"            
