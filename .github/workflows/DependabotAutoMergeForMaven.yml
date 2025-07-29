@@ -66,12 +66,16 @@ jobs:
         if: success() && steps.check-status.outcome == 'success'
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}  
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            github.pulls.merge({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: context.issue.number, 
-              merge_method: 'rebase'
-            })
-            console.log(`Merged PR #${context.issue.number}`);
+            try {
+              await github.rest.pulls.merge({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.issue.number,
+                merge_method: 'rebase'
+              });
+              console.log(`Merged PR #${context.issue.number}`);
+            } catch (error) {
+              console.error('Merge failed:', error);
+            }
