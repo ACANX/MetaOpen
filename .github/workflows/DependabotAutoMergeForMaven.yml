@@ -62,27 +62,17 @@ jobs:
           fi
 
       # 6. 自动合并
-      # - name: Auto-merge patch update
-      #   if: success() && steps.check-status.outcome == 'success'
-      #   uses: actions/github-script@v4
-      #   with:
-      #     script: |
-      #       github.rest.pulls.merge({
-      #         owner: context.repo.owner,
-      #         repo: context.repo.repo,
-      #         pull_number: ${{ github.event.pull_request.number }},
-      #         merge_method: 'rebase'
-      #       })
       - name: Auto-merge patch update
         if: success() && steps.check-status.outcome == 'success'
         uses: actions/github-script@v6
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}  
           script: |
             // 使用正确的 API 路径 + 确保引用上下文变量
-            github.rest.pulls.merge({
+            github.pulls.merge({
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: context.issue.number,  // 直接使用脚本上下文变量
               merge_method: 'rebase'
             })
-          github-token: ${{ secrets.GITHUB_TOKEN }}  
+            console.log(`Merged PR #${context.issue.number}`);
