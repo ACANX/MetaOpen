@@ -9,9 +9,9 @@ updates:
     target-branch: "dependabot"
     open-pull-requests-limit: 15  # 最大 PR 数量
     reviewers:                  # 自动添加审阅者
-      - "maintainer"
+      - "dependabot"
     assignees:                  # 自动分配负责人
-      - "maintainer"
+      - "dependabot"
     ignore:                    # 忽略特定依赖
       - dependency-name: "log4j:*"
         versions: [">= 3.0.0"] # 忽略 log4j 2.x 的更新
