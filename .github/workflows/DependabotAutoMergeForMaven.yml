@@ -64,7 +64,7 @@ jobs:
       # 6. 自动合并
       - name: Auto-merge patch update
         if: success() && steps.check-status.outcome == 'success'
-        uses: actions/github-script@v6
+        uses: actions/github-script@e69ef5462fd455e02edcaf4dd7708eda96b9eda0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
