@@ -68,7 +68,6 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}  
           script: |
-            // 使用正确的 API 路径 + 确保引用上下文变量
             github.pulls.merge({
               owner: context.repo.owner,
               repo: context.repo.repo,
