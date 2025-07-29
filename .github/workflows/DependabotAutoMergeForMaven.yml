@@ -79,9 +79,10 @@ jobs:
         with:
           script: |
             // 使用正确的 API 路径 + 确保引用上下文变量
-            github.rest.pulls.merge({
+            github.pulls.merge({
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: context.issue.number,  // 直接使用脚本上下文变量
               merge_method: 'rebase'
             })
+          github-token: ${{ secrets.GITHUB_TOKEN }}  
