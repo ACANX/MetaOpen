@@ -35,7 +35,7 @@ jobs:
           DEPS="${{ steps.metadata.outputs.dependency-names }}"
           
           if [[ "$DEPS" != *"$ALLOWED_DEP"* ]]; then
-            echo "::error::Dependency【$DEPS】 not found in 【$ALLOWED_DEP】"
+            echo "::Warrning::Dependency【$DEPS】 not found in 【$ALLOWED_DEP】"
             exit 1
           fi
       
