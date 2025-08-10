@@ -1,0 +1,6 @@
+<!-- https://mvnrepository.com/artifact/org.graalvm.nativeimage/native-image-maven-plugin -->
+<dependency>
+    <groupId>org.graalvm.nativeimage</groupId>
+    <artifactId>native-image-maven-plugin</artifactId>
+    <version>21.2.0</version>
+</dependency>
