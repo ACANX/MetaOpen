@@ -27,6 +27,7 @@
       </dependency>
     </dependencies>
 
+  
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -36,7 +37,6 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-
 
       <!-- https://mvnrepository.com/artifact/org.graalvm.nativeimage/native-image-maven-plugin -->
       <dependency>
