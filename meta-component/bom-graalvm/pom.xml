@@ -10,7 +10,7 @@
   <artifactId>bom-graalvm</artifactId>
   <version>21.0.0.0</version>
   <packaging>pom</packaging>
-  <name>BOM-GraalVM-Component</name>
+  <name>BOM-GraalVM</name>
   <description>-GraalVM Component BOM</description>
   <url>https://github.com/ACANX/MetaOpen</url>
 
