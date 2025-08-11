@@ -6,7 +6,7 @@
     <version>${revision}</version>
   </parent>
 
-  <groupId>com.acanx.meta</groupId>
+  <groupId>com.acanx.meta.component</groupId>
   <artifactId>bom-graalvm</artifactId>
   <version>21.0.0.0</version>
   <packaging>pom</packaging>
