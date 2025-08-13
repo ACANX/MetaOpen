@@ -32,7 +32,7 @@
       <dependency>
           <groupId>org.graalvm.nativeimage</groupId>
           <artifactId>svm</artifactId>
-          <version>21.3.15</version>
+          <version>24.2.2</version>
           <scope>provided</scope>
       </dependency>
     </dependencies>
