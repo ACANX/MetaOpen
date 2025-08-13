@@ -4,7 +4,7 @@ updates:
     directory: "/os-dependencies"
     schedule:
       interval: "daily"
-      time: "05:00"         # 每天 UTC 时间 5:00 检查
+      time: "03:00"         # 每天 UTC 时间 3:00 检查
       timezone: "Asia/Shanghai" # 时区设置
     target-branch: "dependabot"
     open-pull-requests-limit: 15  # 最大 PR 数量
