@@ -36,10 +36,11 @@
     </licenses>
 
     <properties>
-        <revision>0.3.2</revision>
+        <revision>0.3.5</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
         <maven.compiler.release>11</maven.compiler.release>
+        <maven.version>3.9.11</maven.version>
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
         <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
         <maven-surefire-plugin.version>3.5.0</maven-surefire-plugin.version>
@@ -60,16 +61,16 @@
         <bytebuddy.version>1.17.6</bytebuddy.version>
 
         <netty.version>4.2.3.Final</netty.version>
-        <reactor.verion>3.7.8</reactor.verion>
+        <reactor.verion>3.7.9</reactor.verion>
         <protobuf-java.version>4.31.1</protobuf-java.version>
 
-        <tomcat-embed.version>11.0.9</tomcat-embed.version>
+        <tomcat-embed.version>11.0.10</tomcat-embed.version>
 
-        <mysql-connector-j.version>9.3.0</mysql-connector-j.version>
+        <mysql-connector-j.version>9.4.0</mysql-connector-j.version>
         <postgresql.version>42.7.7</postgresql.version>
         <mybatis.version>3.5.19</mybatis.version>
-        <hibernate-orm.version>7.0.8.Final</hibernate-orm.version>
-        <seata.version>2.4.0</seata.version>
+        <hibernate-orm.version>7.1.0.Final</hibernate-orm.version>
+        <seata.version>2.5.0</seata.version>
 
         <commons-lang3.version>3.18.0</commons-lang3.version>
         <common-io.version>2.20.0</common-io.version>
@@ -79,7 +80,7 @@
         <lombok.version>1.18.38</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
 
-        <fastjson2.version>2.0.57</fastjson2.version>
+        <fastjson2.version>2.0.58</fastjson2.version>
         <jackson.version>2.19.2</jackson.version>
         <snakeyaml.version>2.4</snakeyaml.version>
 
@@ -100,7 +101,7 @@
         <nacos.version>3.0.2</nacos.version>
 
         <lucense.version>10.2.2</lucense.version>
-        <elasticsearch.version>9.0.4</elasticsearch.version>
+        <elasticsearch.version>9.1.2</elasticsearch.version>
 
         <flink.version>1.17.2</flink.version>
         <hadoop.version>3.3.6</hadoop.version>
@@ -206,12 +207,24 @@
             <dependency>
                 <groupId>org.apache.maven</groupId>
                 <artifactId>maven-model</artifactId>
-                <version>3.9.11</version>
+                <version>${maven.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven</groupId>
                 <artifactId>maven-core</artifactId>
-                <version>3.9.11</version>
+                <version>${maven.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven</groupId>
+                <artifactId>maven-plugin-api</artifactId>
+                <version>${maven.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven</groupId>
+                <artifactId>maven-compat</artifactId>
+                <version>${maven.version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -325,12 +338,7 @@
                 <version>3.9.1</version>
                 <scope>provided</scope>
             </dependency>
-            <dependency>
-                <groupId>org.apache.maven</groupId>
-                <artifactId>maven-plugin-api</artifactId>
-                <version>3.9.11</version>
-                <scope>provided</scope>
-            </dependency>
+
             <dependency>
                 <groupId>org.sonatype.central</groupId>
                 <artifactId>central-publishing-maven-plugin</artifactId>
@@ -342,12 +350,7 @@
                 <version>3.15.1</version>
                 <scope>provided</scope>
             </dependency>
-            <dependency>
-                <groupId>org.apache.maven</groupId>
-                <artifactId>maven-compat</artifactId>
-                <version>3.9.11</version>
-                <scope>provided</scope>
-            </dependency>
+
 
             <dependency>
                 <groupId>net.java.dev.jna</groupId>
@@ -735,7 +738,7 @@
             <dependency>
                 <groupId>com.zaxxer</groupId>
                 <artifactId>HikariCP</artifactId>
-                <version>7.0.0</version>
+                <version>7.0.1</version>
             </dependency>
             <dependency>
                 <groupId>commons-codec</groupId>
@@ -747,7 +750,7 @@
             <dependency>
                 <groupId>commons-net</groupId>
                 <artifactId>commons-net</artifactId>
-                <version>3.11.1</version>
+                <version>3.12.0</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
@@ -800,7 +803,7 @@
             <dependency>
                 <groupId>io.micrometer</groupId>
                 <artifactId>micrometer-core</artifactId>
-                <version>1.15.2</version>
+                <version>1.15.3</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -813,7 +816,7 @@
             <dependency>
                 <groupId>io.micrometer</groupId>
                 <artifactId>micrometer-observation</artifactId>
-                <version>1.15.2</version>
+                <version>1.15.3</version>
             </dependency>
 
             <dependency>
@@ -869,7 +872,7 @@
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-api</artifactId>
-                <version>4.34.0</version>
+                <version>4.35.0</version>
             </dependency>
             <dependency>
                 <groupId>org.thymeleaf</groupId>
@@ -882,7 +885,7 @@
             <dependency>
                 <groupId>io.lettuce</groupId>
                 <artifactId>lettuce-core</artifactId>
-                <version>6.7.1.RELEASE</version>
+                <version>6.8.0.RELEASE</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>

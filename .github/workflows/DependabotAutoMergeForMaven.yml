@@ -34,8 +34,8 @@ jobs:
           echo "DependencyGAV: ${{ steps.metadata.outputs.dependency-names }}"
           DEPS="${{ steps.metadata.outputs.dependency-names }}"
           
-          if [[ "$DEPS" != *"$ALLOWED_DEP"* ]]; then
-            echo "::error::Dependency【$DEPS】 not found in 【$ALLOWED_DEP】"
+          if [[ "$ALLOWED_DEP" != *"$DEPS"* ]]; then
+            echo "::warning::Dependency【$DEPS】 not found in 【$ALLOWED_DEP】"
             exit 1
           fi
       
