@@ -11,6 +11,14 @@ jobs:
     if: |
       github.actor == 'dependabot[bot]' && github.event.pull_request.user.login == 'dependabot[bot]' && github.event.pull_request.base.ref == 'dependabot'
     steps:
+      # 1. 获取元数据
+      - name: Get dependency metadata
+        uses: dependabot/fetch-metadata@v1.1.1
+        id: metadata
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      # 2.修改标题    
       - name: Rename PR via GitHub Script
         uses: actions/github-script@v6
         with:
