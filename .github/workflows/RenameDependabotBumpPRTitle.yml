@@ -1,0 +1,29 @@
+name: “RenameDependabotBumpPRTitle”
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  tweak-dependabot-title:
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Rename PR via GitHub Script
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const prNum = context.payload.pull_request.number;
+            // 抽取包名和新版本
+            const matched = context.payload.pull_request.title.match(
+              /bump\s+(.+)\s+from\s+(.+)\s+to\s+(.+)/
+            );
+            if (!matched) return;
+            const [, pkg, oldVer, newVer] = matched;
+            // 自定义你的标题格式
+            const newTitle = `chore(deps): 依赖项升级[${pkg}][${oldVer} => ${newVer}]`;
+            await github.rest.pulls.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: prNum,
+              title: newTitle
+            });
