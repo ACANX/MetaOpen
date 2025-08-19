@@ -1,4 +1,9 @@
 name: RenameDependabotBumpPRTitle
+
+# 给 GITHUB_TOKEN 增加对 Pull Requests 的写权限
+permissions:
+  pull-requests: write
+  
 on:
   pull_request:
     types: [opened, reopened, synchronize]
