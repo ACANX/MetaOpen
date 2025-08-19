@@ -5,7 +5,7 @@ on:
 
 
 jobs:
-  TweakDependabotTitle:
+  TweakDependabotBumpPRTitle:
     runs-on: ubuntu-latest
     # 检查PR作者和分支
     if: |  #  github.actor == 'dependabot[bot]' && github.event.pull_request.user.login == 'dependabot[bot]' &&  
