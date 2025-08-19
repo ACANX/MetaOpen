@@ -26,10 +26,10 @@ jobs:
             const prNum = context.payload.pull_request.number;
             // 抽取包名和新版本
             const matched = context.payload.pull_request.title.match(
-              /bump\s+(.+)\s+from\s+(.+)\s+to\s+(.+)/
+              /bump\s+(.+)\s+from\s+(.+)\s+to\s+(.+)\s+in(.+)/
             );
             if (!matched) return;
-            const [, pkg, oldVer, newVer] = matched;
+            const [, pkg, oldVer, newVer, pomFile] = matched;
             // 自定义你的标题格式
             const newTitle = `chore(deps): 依赖项升级[${pkg}][${oldVer} => ${newVer}]`;
             await github.rest.pulls.update({
