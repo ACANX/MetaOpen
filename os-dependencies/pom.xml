@@ -88,7 +88,7 @@
         <freemarker.version>2.3.34</freemarker.version>
         <jsoup.version>1.21.1</jsoup.version>
         <hibernate-validator.version>9.0.1.Final</hibernate-validator.version>
-        <redisson.version>3.50.0</redisson.version>
+        <redisson.version>3.51.0</redisson.version>
 
         <slf4j.version>2.0.17</slf4j.version>
         <jspecify.version>1.0.0</jspecify.version>
