@@ -1,0 +1,45 @@
+name: RenameDependabotBumpPRTitle
+
+# 给 GITHUB_TOKEN 增加对 Pull Requests 的写权限
+permissions:
+  pull-requests: write
+  
+on:
+  pull_request:
+    types: [opened, synchronize]   # , reopened
+
+
+jobs:
+  TweakDependabotBumpPRTitle:
+    runs-on: ubuntu-latest
+    # 检查PR作者和分支
+    if: |  #  
+      github.actor == 'dependabot[bot]' && github.event.pull_request.user.login == 'dependabot[bot]' &&  github.event.pull_request.base.ref == 'dependabot'
+    steps:
+      # 1. 获取元数据
+      - name: Get dependency metadata
+        uses: dependabot/fetch-metadata@v1.1.1
+        id: metadata
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      # 2.修改标题    
+      - name: Rename PR via GitHub Script
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const prNum = context.payload.pull_request.number;
+            // 抽取包名和新版本
+            const matched = context.payload.pull_request.title.match(
+              /bump\s+(.+)\s+from\s+(.+)\s+to\s+(.+)\s+in(.+)/
+            );
+            if (!matched) return;
+            const [, pkg, oldVer, newVer, pomFile] = matched;
+            // 自定义你的标题格式
+            const newTitle = `chore(deps): 依赖项升级[${pkg}][${oldVer} => ${newVer}]`;
+            await github.rest.pulls.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: prNum,
+              title: newTitle
+            });
