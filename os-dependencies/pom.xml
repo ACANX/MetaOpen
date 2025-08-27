@@ -188,7 +188,7 @@
             <dependency>
                 <groupId>com.acanx.meta.model</groupId>
                 <artifactId>model-dingtalk</artifactId>
-                <version>0.1.0</version>
+                <version>0.3.9</version>
                 <scope>compile</scope>
             </dependency>
             <dependency>
