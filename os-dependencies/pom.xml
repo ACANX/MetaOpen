@@ -51,7 +51,7 @@
         <central-publishing-maven-plugin.version>0.8.0</central-publishing-maven-plugin.version>
 
         <deamond.version>0.1.4.4</deamond.version>
-        <meta-open.version>0.1.6</meta-open.version>
+        <meta-open.version>0.3.9</meta-open.version>
         <autil.version>0.2.1.0</autil.version>
         <acanx-utils.version>0.2.2.0</acanx-utils.version>
 
