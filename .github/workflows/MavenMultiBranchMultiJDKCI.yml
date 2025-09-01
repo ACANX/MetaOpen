@@ -76,6 +76,8 @@ jobs:
         id: gate
         shell: bash
         run: |
+          echo "GITHUB_REF_NAME=${GITHUB_REF_NAME}"
+          echo "matrix.branch=${{ matrix.branch }}"
           if [ "${GITHUB_REF_NAME}" = "${{ matrix.branch }}" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
