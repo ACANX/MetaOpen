@@ -11,7 +11,7 @@
     <url>https://github.com/ACANX/MetaOpen</url>
 
     <scm>
-        <tag>V0.3.x</tag>
+        <tag>V0.4.x</tag>
         <url>git@github.com:ACANX/MetaOpen.git</url>
         <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
         <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>
@@ -36,7 +36,7 @@
     </licenses>
 
     <properties>
-        <revision>0.3.6</revision>
+        <revision>0.4.0</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
         <maven.compiler.release>11</maven.compiler.release>
@@ -52,7 +52,7 @@
 
         <deamond.version>0.1.4.4</deamond.version>
         <meta-open.version>0.3.9</meta-open.version>
-        <autil.version>0.2.1.0</autil.version>
+        <autil.version>0.2.2.0</autil.version>
         <acanx-utils.version>0.2.2.0</acanx-utils.version>
 
         <openjfx.version>24.0.2</openjfx.version>
