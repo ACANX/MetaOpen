@@ -28,7 +28,7 @@ env:
 
 jobs:
   build:
-    name: BuildOn${{ matrix.os }}WithJDK${{ matrix.java }}(branch=${{ matrix.branch }})
+    name: BuildWithJDK${{ matrix.java }}-${{ matrix.os }}-(${{ matrix.branch }})
     runs-on: ${{ matrix.os }}
 
     strategy:
