@@ -1,4 +1,5 @@
 name: MavenMultiBranchMultiJDKCI
+name: MavenMultiBranchMultiJDKCI
 
 on:
   push:
@@ -7,11 +8,8 @@ on:
       - dev
       - main
       - feat-autoci
-    # paths:   # 只在特定路径变更时触发
-    #   - '**.java'
-    #   - 'pom.xml'
-    #   - '.github/workflows/**'      
-    paths-ignore: # 可选：忽略某些文件的变更以避免触发构建
+    # 二选一：此处用了 paths-ignore，就不要再配 paths
+    paths-ignore:
       - '**.md'
       - '.gitignore'
   pull_request:
@@ -20,10 +18,14 @@ on:
       - dev
       - main
       - feat-autoci
-  workflow_dispatch: # 允许在GitHub页面上手动触发工作流
-  
+  workflow_dispatch:
+
 permissions:
   contents: read
+
+env:
+  # 把这里改成你的 Maven 项目路径：根目录用 '.'；若项目在 'server' 目录，就写 'server'
+  PROJECT_DIR: .
 
 jobs:
   build:
@@ -34,7 +36,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          # 分支 → JDK 版本映射（固定每个分支的JDK版本），并在两种OS上跑
           - branch: dependabot
             java: '11'
             os: ubuntu-latest
@@ -64,8 +65,8 @@ jobs:
             os: windows-latest
 
     steps:
-      # 门控步骤：只对当前分支匹配的矩阵项放行
-      - name: GateControlerByBranch
+      # 门控：只放行当前分支对应的矩阵项
+      - name: Gate by branch
         id: gate
         shell: bash
         run: |
@@ -74,26 +75,42 @@ jobs:
           else
             echo "run=false" >> "$GITHUB_OUTPUT"
           fi
-    
+
       - name: Checkout
         if: ${{ steps.gate.outputs.run == 'true' }}
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive
 
-      - name: SetupTemurinJDK${{ matrix.java }}
+      - name: Verify pom exists
+        if: ${{ steps.gate.outputs.run == 'true' }}
+        shell: bash
+        run: |
+          echo "PROJECT_DIR=${PROJECT_DIR}"
+          test -f "${PROJECT_DIR}/pom.xml" || { echo "pom.xml not found at ${PROJECT_DIR}/pom.xml"; exit 1; }
+
+      - name: Set up Temurin JDK ${{ matrix.java }}
+        if: ${{ steps.gate.outputs.run == 'true' }}
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: ${{ matrix.java }}
           cache: maven
+          # 指定缓存依赖的 pom 路径（支持子目录项目）
+          cache-dependency-path: |
+            ${{ env.PROJECT_DIR }}/pom.xml
+            ${{ env.PROJECT_DIR }}/**/pom.xml
 
-      # 可选：显示Java/Maven版本以便排错
-      - name: ShowJavaAndMavenVersions
+      - name: Show Java and Maven versions
+        if: ${{ steps.gate.outputs.run == 'true' }}
         run: |
           java -version
           mvn -v
 
-      # 可选：如项目有私有仓库或镜像，这里可写入settings.xml（示例保留结构）
-      # - name: ConfigureMavenSettings
+      # 如果你有私有仓库或镜像，这里写 settings.xml（按需打开）
+      # - name: Configure Maven settings
+      #   if: ${{ steps.gate.outputs.run == 'true' }}
       #   run: |
       #     mkdir -p ~/.m2
       #     cat > ~/.m2/settings.xml <<'EOF'
@@ -104,18 +121,18 @@ jobs:
       #     </settings>
       #     EOF
 
-      # 构建（不跳过测试）
-      - name: BuildWithTests
+      - name: Build with tests
+        if: ${{ steps.gate.outputs.run == 'true' }}
+        working-directory: ${{ env.PROJECT_DIR }}
         run: mvn -B -ntp -Dstyle.color=always clean verify
 
-      # 可选：上传构建产物（例如所有模块的jar）
-      - name: UploadBuildArtifacts
-        if: success()
+      - name: Upload build artifacts
+        if: ${{ steps.gate.outputs.run == 'true' && success() }}
         uses: actions/upload-artifact@v4
         with:
           name: app-${{ matrix.branch }}-jdk${{ matrix.java }}-${{ matrix.os }}
           path: |
-            **/target/*.jar
-            **/target/*.war
-            **/target/*.zip
+            ${{ env.PROJECT_DIR }}/**/target/*.jar
+            ${{ env.PROJECT_DIR }}/**/target/*.war
+            ${{ env.PROJECT_DIR }}/**/target/*.zip
           if-no-files-found: ignore
