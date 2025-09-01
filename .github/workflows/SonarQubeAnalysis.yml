@@ -32,6 +32,8 @@ on:
   pull_request:
     branches: [ "dev", "main", "dependabot" ]
   workflow_dispatch:
+  schedule:
+    - cron: '16 2 * * *' # 每周五凌晨1:16运行  
 
 permissions:
   pull-requests: read # allows SonarQube to decorate PRs with analysis results
