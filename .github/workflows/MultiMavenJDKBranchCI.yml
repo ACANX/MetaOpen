@@ -1,4 +1,4 @@
-name: MavenMultiBranchMultiJDKCI
+name: MultiMavenJDKBranchCI
 
 on:
   push:
