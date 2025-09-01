@@ -36,30 +36,37 @@ jobs:
       matrix:
         include:
           - branch: dependabot
+            java: '21'
+            os: ubuntu-latest
+          - branch: dependabot
+            java: '21'
+            os: windows-latest
+
+          - branch: dev
+            java: '11'
+            os: ubuntu-latest
+          - branch: dev
+            java: '11'
+            os: windows-latest
+
+          - branch: main
+            java: '11'
+            os: ubuntu-latest
+          - branch: main
+            java: '11'
+            os: windows-latest
+            
+          - branch: main
+            java: '21'
+            os: ubuntu-latest
+          - branch: main
+            java: '21'
+            os: windows-latest
+            
+          - branch: dependabot
             java: '11'
             os: ubuntu-latest
           - branch: dependabot
-            java: '11'
-            os: windows-latest
-
-          - branch: dev
-            java: '11'
-            os: ubuntu-latest
-          - branch: dev
-            java: '11'
-            os: windows-latest
-
-          - branch: main
-            java: '11'
-            os: ubuntu-latest
-          - branch: main
-            java: '11'
-            os: windows-latest
-
-          - branch: feat-autoci
-            java: '11'
-            os: ubuntu-latest
-          - branch: feat-autoci
             java: '11'
             os: windows-latest
 
