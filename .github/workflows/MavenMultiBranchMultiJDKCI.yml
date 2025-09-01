@@ -28,7 +28,7 @@ env:
 
 jobs:
   build:
-    name: Build on ${{ matrix.os }} with JDK ${{ matrix.java }} (branch=${{ matrix.branch }})
+    name: BuildOn${{ matrix.os }}WithJDK${{ matrix.java }}(branch=${{ matrix.branch }})
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -65,7 +65,7 @@ jobs:
 
     steps:
       # 门控：只放行当前分支对应的矩阵项
-      - name: Gate by branch
+      - name: GateByBranch
         id: gate
         shell: bash
         run: |
@@ -82,14 +82,14 @@ jobs:
           fetch-depth: 0
           submodules: recursive
 
-      - name: Verify pom exists
+      - name: VerifyPomExists
         if: ${{ steps.gate.outputs.run == 'true' }}
         shell: bash
         run: |
           echo "PROJECT_DIR=${PROJECT_DIR}"
           test -f "${PROJECT_DIR}/pom.xml" || { echo "pom.xml not found at ${PROJECT_DIR}/pom.xml"; exit 1; }
 
-      - name: Set up Temurin JDK ${{ matrix.java }}
+      - name: SetupTemurinJDK${{ matrix.java }}
         if: ${{ steps.gate.outputs.run == 'true' }}
         uses: actions/setup-java@v4
         with:
@@ -101,14 +101,14 @@ jobs:
             ${{ env.PROJECT_DIR }}/pom.xml
             ${{ env.PROJECT_DIR }}/**/pom.xml
 
-      - name: Show Java and Maven versions
+      - name: ShowJavaAndMavenVersions
         if: ${{ steps.gate.outputs.run == 'true' }}
         run: |
           java -version
           mvn -v
 
       # 如果你有私有仓库或镜像，这里写 settings.xml（按需打开）
-      # - name: Configure Maven settings
+      # - name: ConfigureMavenSettings
       #   if: ${{ steps.gate.outputs.run == 'true' }}
       #   run: |
       #     mkdir -p ~/.m2
@@ -122,7 +122,7 @@ jobs:
 
 
       # 3. 构建和测试项目 (在Windows和Linux上命令一致)
-      - name: Build and Test with Maven
+      - name: BuildAndTestWithMaven
         if: ${{ steps.gate.outputs.run == 'true' }}
         working-directory: ${{ env.PROJECT_DIR }}
         # run: mvn -B -ntp -Dstyle.color=always clean verify
@@ -131,7 +131,7 @@ jobs:
         # --update-snapshots: 强制检查SNAPSHOT依赖的更新
         # clean compile test package: 执行Maven生命周期阶段
         
-      - name: Upload build artifacts
+      - name: UploadBuildArtifacts
         if: ${{ steps.gate.outputs.run == 'true' && success() }}
         uses: actions/upload-artifact@v4
         with:
