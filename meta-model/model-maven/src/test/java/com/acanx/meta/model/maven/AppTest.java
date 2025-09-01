@@ -1,4 +1,4 @@
-package com.acanx.meta.model;
+package com.acanx.meta.model.maven;
 
 
 import org.junit.jupiter.api.Assertions;

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.acanx.meta</groupId>
+    <artifactId>meta-open</artifactId>
+    <version>${revision}</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+  <groupId>com.acanx.meta</groupId>
+  <artifactId>meta-bom</artifactId>
+  <version>${revision}</version>
+  <packaging>pom</packaging>
+  <name>Meta-BOM</name>
+  <description>Meta-BOM POM</description>
+  <url>https://github.com/ACANX/MetaOpen</url>
+  <properties/>
+
+  <modules>
+    <module>bom-graalvm</module>    
+  </modules>
+
+  <dependencies/>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.acanx.meta</groupId>
+        <artifactId>os-dependencies</artifactId>
+        <version>${revision}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+          <compilerVersion>${java.version}</compilerVersion>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+          <encoding>${project.build.sourceEncoding}</encoding>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
