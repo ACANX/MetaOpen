@@ -1,0 +1,143 @@
+name: MavenMultiBranchMultiJDKCI
+
+on:
+  push:
+    branches:
+      - dependabot
+      - dev
+      - main
+      - feat-autoci
+    # 二选一：此处用了 paths-ignore，就不要再配 paths
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
+  pull_request:
+    branches:
+      - dependabot
+      - dev
+      - main
+      - feat-autoci
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  # 把这里改成你的 Maven 项目路径：根目录用 '.'；若项目在 'server' 目录，就写 'server'
+  PROJECT_DIR: .
+
+jobs:
+  build:
+    name: BuildOn${{ matrix.os }}WithJDK${{ matrix.java }}(branch=${{ matrix.branch }})
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - branch: dependabot
+            java: '11'
+            os: ubuntu-latest
+          - branch: dependabot
+            java: '11'
+            os: windows-latest
+
+          - branch: dev
+            java: '11'
+            os: ubuntu-latest
+          - branch: dev
+            java: '11'
+            os: windows-latest
+
+          - branch: main
+            java: '11'
+            os: ubuntu-latest
+          - branch: main
+            java: '11'
+            os: windows-latest
+
+          - branch: feat-autoci
+            java: '11'
+            os: ubuntu-latest
+          - branch: feat-autoci
+            java: '11'
+            os: windows-latest
+
+    steps:
+      # 门控：只放行当前分支对应的矩阵项
+      - name: GateByBranch
+        id: gate
+        shell: bash
+        run: |
+          if [ "${GITHUB_REF_NAME}" = "${{ matrix.branch }}" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout
+        if: ${{ steps.gate.outputs.run == 'true' }}
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: VerifyPomExists
+        if: ${{ steps.gate.outputs.run == 'true' }}
+        shell: bash
+        run: |
+          echo "PROJECT_DIR=${PROJECT_DIR}"
+          test -f "${PROJECT_DIR}/pom.xml" || { echo "pom.xml not found at ${PROJECT_DIR}/pom.xml"; exit 1; }
+
+      - name: SetupTemurinJDK${{ matrix.java }}
+        if: ${{ steps.gate.outputs.run == 'true' }}
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+          cache: maven
+          # 指定缓存依赖的 pom 路径（支持子目录项目）
+          cache-dependency-path: |
+            ${{ env.PROJECT_DIR }}/pom.xml
+            ${{ env.PROJECT_DIR }}/**/pom.xml
+
+      - name: ShowJavaAndMavenVersions
+        if: ${{ steps.gate.outputs.run == 'true' }}
+        run: |
+          java -version
+          mvn -v
+
+      # 如果你有私有仓库或镜像，这里写 settings.xml（按需打开）
+      # - name: ConfigureMavenSettings
+      #   if: ${{ steps.gate.outputs.run == 'true' }}
+      #   run: |
+      #     mkdir -p ~/.m2
+      #     cat > ~/.m2/settings.xml <<'EOF'
+      #     <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+      #               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      #               xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+      #       <!-- mirrors, servers, profiles -->
+      #     </settings>
+      #     EOF
+
+
+      # 3. 构建和测试项目 (在Windows和Linux上命令一致)
+      - name: BuildAndTestWithMaven
+        if: ${{ steps.gate.outputs.run == 'true' }}
+        working-directory: ${{ env.PROJECT_DIR }}
+        # run: mvn -B -ntp -Dstyle.color=always clean verify
+        run: mvn --batch-mode --update-snapshots clean compile test package
+        # --batch-mode: 使Maven输出更简洁
+        # --update-snapshots: 强制检查SNAPSHOT依赖的更新
+        # clean compile test package: 执行Maven生命周期阶段
+        
+      - name: UploadBuildArtifacts
+        if: ${{ steps.gate.outputs.run == 'true' && success() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-${{ matrix.branch }}-jdk${{ matrix.java }}-${{ matrix.os }}
+          path: |
+            ${{ env.PROJECT_DIR }}/**/target/*.jar
+            ${{ env.PROJECT_DIR }}/**/target/*.war
+            ${{ env.PROJECT_DIR }}/**/target/*.zip
+          if-no-files-found: ignore
