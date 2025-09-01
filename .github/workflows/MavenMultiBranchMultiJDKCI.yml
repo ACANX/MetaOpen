@@ -1,76 +1,112 @@
 name: MavenMultiBranchMultiJDKCI
+
 on:
   push:
-    branches: ['dependabot', 'dev', 'main', 'feat-autoci']  # 监听a到e分支的推送事件
+    branches:
+      - dependabot
+      - dev
+      - main
+      - feat-autoci
+    paths:  # 只在特定路径变更时触发
+      - '**.java'
+      - 'pom.xml'
+      # - '.github/workflows/**'      
+    paths-ignore: # 可选：忽略某些文件的变更以避免触发构建
+      - '**.md'
+      - '.gitignore'
   pull_request:
-    branches: ['dependabot', 'dev', 'main', 'feat-autoci']  # 监听发往这些分支的PR
+    branches:
+      - dependabot
+      - dev
+      - main
+      - feat-autoci
+  workflow_dispatch: # 允许在GitHub页面上手动触发工作流
+  
+permissions:
+  contents: read
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}  # 使用矩阵中定义的操作系统
-    # 核心矩阵策略配置，定义不同组合
+    name: Build on ${{ matrix.os }} with JDK ${{ matrix.java }} (branch=${{ matrix.branch }})
+    runs-on: ${{ matrix.os }}
+
     strategy:
+      fail-fast: false
       matrix:
-        # 操作系统矩阵
-        os: [ubuntu-latest, windows-latest]
-        # JDK版本矩阵，与分支对应
         include:
-          - branch: feat-autoci
-            java-version: 11
-          - branch: main
-            java-version: 11
-          - branch: dev
-            java-version: 11            
+          # 分支 → JDK 版本映射（固定每个分支的JDK版本），并在两种OS上跑
           - branch: dependabot
-            java-version: 11            
-          # - branch: c
-          #   java-version: 17
-          # - branch: d
-          #   java-version: 21
-          # - branch: e
-          #   java-version: 25
-        
-        # # 排除不存在的组合（可选，增强逻辑严谨性）
-        # exclude:
-        #   - os: windows-latest
-        #     java-version: 25  # 假设JDK25暂不支持Windows
-    
-    # 仅当矩阵中的JDK版本与实际推送分支匹配时运行
-    if: contains(fromJSON('["8", "11", "17", "21", "25"]'), matrix.java-version) && (github.ref == 'refs/heads/${{ matrix.branch }}' || github.event_name == 'pull_request')
+            java: '11'
+            os: ubuntu-latest
+          - branch: dependabot
+            java: '11'
+            os: windows-latest
+
+          - branch: dev
+            java: '11'
+            os: ubuntu-latest
+          - branch: dev
+            java: '11'
+            os: windows-latest
+
+          - branch: main
+            java: '11'
+            os: ubuntu-latest
+          - branch: main
+            java: '11'
+            os: windows-latest
+
+          - branch: feat-autoci
+            java: '11'
+            os: ubuntu-latest
+          - branch: feat-autoci
+            java: '11'
+            os: windows-latest
+
+    # 只在当前触发分支对应的矩阵项上执行（避免其他矩阵项空跑）
+    if: github.ref_name == matrix.branch
+
     steps:
-      # 第一步：检出代码
-      - name: Checkout code
-        uses: actions/checkout@v4      
-      # 第二步：设置JDK（核心步骤）
-      - name: Set up JDK ${{ matrix.java-version }}
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Temurin JDK ${{ matrix.java }}
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'  # 使用Eclipse Temurin发行版
-          java-version: ${{ matrix.java-version }}
-          cache: 'maven'  # 启用Maven依赖缓存
-          cache-dependency-path: '**/pom.xml'  # 根据pom.xml变化更新缓存
-      # 第三步：打印环境信息（用于调试和日志）
-      - name: Display environment info
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+          cache: maven
+
+      # 可选：显示Java/Maven版本以便排错
+      - name: Show Java and Maven versions
         run: |
-          echo "Running on branch: ${{ github.ref }}"
-          echo "Using JDK version: ${{ matrix.java-version }}"
-          echo "Operating system: ${{ matrix.os }}"
           java -version
-          mvn --version
-      # 第四步：编译和测试（Maven核心生命周期）
-      - name: Build and test with Maven
-        run: mvn -B clean compile test --file pom.xml
-        env:
-          # 可选：跳过测试（根据需要调整）
-          # MAVEN_OPTS: -DskipTests
-      
-      # 第五步：打包应用（生成可部署制品）
-      - name: Package application
-        run: mvn -B package --file pom.xml
-      
-      # 第六步：上传制品（保留构建结果）
+          mvn -v
+
+      # 可选：如项目有私有仓库或镜像，这里可写入settings.xml（示例保留结构）
+      # - name: Configure Maven settings
+      #   run: |
+      #     mkdir -p ~/.m2
+      #     cat > ~/.m2/settings.xml <<'EOF'
+      #     <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+      #               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      #               xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+      #       <!-- mirrors, servers, profiles -->
+      #     </settings>
+      #     EOF
+
+      # 构建（不跳过测试）
+      - name: Build with tests
+        run: mvn -B -ntp -Dstyle.color=always clean verify
+
+      # 可选：上传构建产物（例如所有模块的jar）
       - name: Upload build artifacts
+        if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: build-${{ matrix.branch }}-${{ matrix.os }}-jdk${{ matrix.java-version }}
-          path: target/*.jar
+          name: app-${{ matrix.branch }}-jdk${{ matrix.java }}-${{ matrix.os }}
+          path: |
+            **/target/*.jar
+            **/target/*.war
+            **/target/*.zip
+          if-no-files-found: ignore
