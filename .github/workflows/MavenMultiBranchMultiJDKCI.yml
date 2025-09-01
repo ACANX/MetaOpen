@@ -36,10 +36,10 @@ jobs:
       matrix:
         include:
           - branch: dependabot
-            java: '11'
+            java: '21'
             os: ubuntu-latest
           - branch: dependabot
-            java: '11'
+            java: '21'
             os: windows-latest
 
           - branch: dev
@@ -56,12 +56,12 @@ jobs:
             java: '11'
             os: windows-latest
 
-          - branch: feat-autoci
-            java: '11'
-            os: ubuntu-latest
-          - branch: feat-autoci
-            java: '11'
-            os: windows-latest
+          # - branch: feat-autoci
+          #   java: '11'
+          #   os: ubuntu-latest
+          # - branch: feat-autoci
+          #   java: '11'
+          #   os: windows-latest
 
     steps:
       # 门控：只放行当前分支对应的矩阵项
