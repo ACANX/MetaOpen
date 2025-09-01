@@ -13,6 +13,32 @@
   <name>Meta-Component</name>
   <description>Meta-Component POM</description>
   <url>https://github.com/ACANX/MetaOpen</url>
+  <inceptionYear>2025</inceptionYear>
+  <scm>
+    <tag>V0.4.x</tag>
+    <url>git@github.com:ACANX/MetaOpen.git</url>
+    <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
+    <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>
+  </scm>
+  <organization>
+    <name>ACANX</name>
+    <url>https://acanx.com</url>
+  </organization>
+  <developers>
+    <developer>
+      <name>ACANX</name>
+      <email>acanx@qq.com</email>
+      <organization>ACANX</organization>
+    </developer>
+  </developers>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
   <properties/>
 
   <modules>
@@ -48,5 +74,147 @@
       </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <!-- 发布到 Maven中央仓库 -->
+    <profile>
+      <id>sonatype-oss-release</id>
+      <!-- 设为默认profile 开始 -->
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>${maven-compiler-plugin.version}</version>
+            <configuration>
+              <source>${java.version}</source>
+              <target>${java.version}</target>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>flatten-maven-plugin</artifactId>
+            <version>${flatten-maven-plugin.version}</version>
+            <configuration>
+              <!--  是否更新pom文件，此处还有更高级的用法-->
+              <updatePomFile>true</updatePomFile>
+              <flattenMode>resolveCiFriendliesOnly</flattenMode>
+            </configuration>
+            <executions>
+              <execution>
+                <id>flatten</id>
+                <phase>process-resources</phase>
+                <goals>
+                  <goal>flatten</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>flatten.clean</id>
+                <phase>clean</phase>
+                <goals>
+                  <goal>clean</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <!-- 生成Source jar文件 -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <version>${maven-source-plugin.version}</version>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <!-- 生成Javadoc，关闭doclint,避免注解检查不通过 -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>${maven-javadoc-plugin.version}</version>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+                <configuration>
+                  <!-- <additionalparam>-Xdoclint:none</additionalparam> -->
+                  <!-- <aggregate>true</aggregate> -->
+                  <charset>${project.build.sourceEncoding}</charset>
+                  <!-- utf-8读取文件 -->
+                  <encoding>${project.build.sourceEncoding}</encoding>
+                  <!-- utf-8进行编码代码 -->
+                  <docencoding>${project.build.sourceEncoding}</docencoding>
+                  <!-- utf-8进行编码文档 -->
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <!-- Maven GPG插件用于使用以下配置对组件进行签名 -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>${maven-gpg-plugin.version}</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <!-- 改成你自己的路径 -->
+              <executable>D:\ProgramExt\GnuPG\bin\gpg.exe</executable>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <version>${maven-deploy-plugin.version}</version>
+          </plugin>
+          <!-- 正式版/SNAPSHOT发布使用central-publishing-maven-plugin插件-->
+          <plugin>
+            <groupId>org.sonatype.central</groupId>
+            <artifactId>central-publishing-maven-plugin</artifactId>
+            <version>${central-publishing-maven-plugin.version}</version>
+            <extensions>true</extensions>
+            <configuration>
+              <publishingServerId>sonatype-nexus-snapshots</publishingServerId>
+              <autoPublish>true</autoPublish>
+              <centralBaseUrl>https://central.sonatype.com</centralBaseUrl>
+              <deploymentName>Meta-Component-${revision}-Deployment</deploymentName>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.5.3</version>
+          </plugin>
+        </plugins>
+      </build>
+      <!-- repository、snapshotRepository中的id一定要与Maven的setting.xml文件中的server节点下的id 保持一一对应！ -->
+      <distributionManagement>
+        <repository>
+          <id>sonatype-nexus-staging</id>
+          <name>Nexus Release Repository</name>
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+        <snapshotRepository>
+          <id>sonatype-nexus-snapshots</id>
+          <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+      </distributionManagement>
+    </profile>
+  </profiles>
 
 </project>

@@ -7,25 +7,31 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
   <groupId>com.acanx.meta</groupId>
-  <artifactId>meta-model</artifactId>
+  <artifactId>meta-bom</artifactId>
   <version>${revision}</version>
   <packaging>pom</packaging>
-  <name>Meta-Model</name>
-  <description>Meta-Model POM</description>
+  <name>Meta-BOM</name>
+  <description>Meta-BOM POM</description>
   <url>https://github.com/ACANX/MetaOpen</url>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+  <properties/>
+
   <modules>
-    <module>model-security</module>
-    <module>model-quote</module>
-    <module>model-sonatype</module>
-    <module>model-wechat-work</module>
-    <module>model-dingtalk</module>
-    <module>model-deepseek</module>
-    <module>model-test</module>
-    <module>model-maven</module>
+    <module>bom-graalvm</module>    
   </modules>
+
+  <dependencies/>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.acanx.meta</groupId>
+        <artifactId>os-dependencies</artifactId>
+        <version>${revision}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <build>
     <plugins>
       <plugin>
@@ -33,10 +39,13 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>${maven-compiler-plugin.version}</version>
         <configuration>
+          <compilerVersion>${java.version}</compilerVersion>
           <source>${java.version}</source>
           <target>${java.version}</target>
+          <encoding>${project.build.sourceEncoding}</encoding>
         </configuration>
       </plugin>
     </plugins>
   </build>
+
 </project>

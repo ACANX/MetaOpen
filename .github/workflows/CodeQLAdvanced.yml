@@ -1,0 +1,76 @@
+# For most projects, this workflow file will not need changing; you simply need
+# to commit it to your repository.
+#
+# You may wish to alter this file to override the set of languages analyzed,
+# or to provide custom queries or build logic.
+#
+# ******** NOTE ********
+# We have attempted to detect the languages in your repository. Please check
+# the `language` matrix defined below to confirm you have the correct set of
+# supported CodeQL languages.
+#
+name: "CodeQLAdvanced"
+
+on:
+  push:
+    branches: [ "dev", "main", "dependabot" ]
+  pull_request:
+    branches: [ "dev", "main", "dependabot" ]
+  workflow_dispatch:     
+  schedule:
+    - cron: '16 1 * * *' # 每周五凌晨1:16运行
+
+jobs:
+  analyze:
+    name: Analyze (${{ matrix.language }})
+    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
+    permissions:
+      security-events: write
+      packages: read
+      actions: read
+      contents: read
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: actions
+            build-mode: none
+          - language: java-kotlin
+            build-mode: autobuild # 改为 autobuild 以更好地处理 Kotlin 和 Java 编译:cite[1]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3 # 更新到最新v3版本
+      with:
+        languages: ${{ matrix.language }}
+        build-mode: ${{ matrix.build-mode }}
+        # 考虑添加自定义查询包或查询套件（如有需要）
+        # queries: security-and-quality, security-extended
+        # 或使用配置文件
+        # config-file: ./.github/codeql/codeql-config.yml
+
+    # 仅为需要编译的语言添加构建步骤
+    - name: Setup Java (for Java/Kotlin analysis)
+      if: matrix.language == 'java-kotlin'
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '11'
+
+    - name: Build with Maven (for Java/Kotlin analysis)
+      if: matrix.language == 'java-kotlin' && matrix.build-mode == 'manual'
+      run: mvn clean compile -q
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
+      with:
+        # category 可用于区分不同分析任务的结果
+        category: "/language:${{matrix.language}}"
+        # 显示设置输出文件格式和名称（可选，但更清晰）
+        output: codeql-results-${{ matrix.language }}.sarif
+        # 如果希望发现安全问题时依然上传结果而非失败，可设置以下选项（可选）
+        # continue-on-error: true
