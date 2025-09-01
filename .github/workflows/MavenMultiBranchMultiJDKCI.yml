@@ -1,9 +1,9 @@
 name: MavenMultiBranchMultiJDKCI
 on:
   push:
-    branches: [feat-autoci, main, dependabot]  # 监听a到e分支的推送事件
+    branches: ['dependabot', 'dev', 'main', 'feat-autoci']  # 监听a到e分支的推送事件
   pull_request:
-    branches: [feat-autoci, main, dependabot]  # 监听发往这些分支的PR
+    branches: ['dependabot', 'dev', 'main', 'feat-autoci']  # 监听发往这些分支的PR
 
 jobs:
   build:
@@ -19,6 +19,8 @@ jobs:
             java-version: 11
           - branch: main
             java-version: 11
+          - branch: dev
+            java-version: 11            
           - branch: dependabot
             java-version: 11            
           # - branch: c
