@@ -7,10 +7,10 @@ on:
       - dev
       - main
       - feat-autoci
-    paths:  # 只在特定路径变更时触发
-      - '**.java'
-      - 'pom.xml'
-      # - '.github/workflows/**'      
+    # paths:  # 只在特定路径变更时触发
+    #   - '**.java'
+    #   - 'pom.xml'
+    #   - '.github/workflows/**'      
     paths-ignore: # 可选：忽略某些文件的变更以避免触发构建
       - '**.md'
       - '.gitignore'
