@@ -64,7 +64,8 @@ jobs:
             os: windows-latest
 
     # 只在当前触发分支对应的矩阵项上执行（避免其他矩阵项空跑）
-    if: github.ref_name == matrix.branch
+    # 关键修正：使用表达式语法包裹，才能识别 matrix 上下文
+    if: ${{ github.ref_name == matrix.branch }}
 
     steps:
       - name: Checkout
