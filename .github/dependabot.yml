@@ -41,28 +41,28 @@ updates:
       separator: "-"              # 分支名使用短横线分隔
     allow:
       - dependency-type: "all"      # 允许所有依赖类型
-  - package-ecosystem: "maven"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "sunday"         # 明确指定周日（关键！）
-      time: "22:30"         # 每周 UTC 时间 22:30 检查
-      timezone: "Asia/Shanghai" # 时区设置
-    target-branch: "dependabot"
-    open-pull-requests-limit: 15  # 最大 PR 数量
-    assignees:                  # 自动分配负责人
-      - "dependabot[bot]"
-    ignore:                    # 忽略特定依赖
-      - dependency-name: "log4j:*"
-        versions: [">= 2.0.0"] # 忽略 log4j 2.x 的更新
-      - dependency-name: "org.junit.jupiter:junit-jupiter-api"
-    commit-message:            # 自定义提交信息
-      prefix: "chore"
-      include: "scope"
-    labels:                    # 自动添加标签
-      - "依赖:升级"
-      - "自动化:提交"
-      - "Dependabot"            
+  # - package-ecosystem: "maven"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #     day: "sunday"         # 明确指定周日（关键！）
+  #     time: "22:30"         # 每周 UTC 时间 22:30 检查
+  #     timezone: "Asia/Shanghai" # 时区设置
+  #   target-branch: "dependabot"
+  #   open-pull-requests-limit: 15  # 最大 PR 数量
+  #   assignees:                  # 自动分配负责人
+  #     - "dependabot[bot]"
+  #   ignore:                    # 忽略特定依赖
+  #     - dependency-name: "log4j:*"
+  #       versions: [">= 2.0.0"] # 忽略 log4j 2.x 的更新
+  #     - dependency-name: "org.junit.jupiter:junit-jupiter-api"
+  #   commit-message:            # 自定义提交信息
+  #     prefix: "chore"
+  #     include: "scope"
+  #   labels:                    # 自动添加标签
+  #     - "依赖:升级"
+  #     - "自动化:提交"
+  #     - "Dependabot"            
   - package-ecosystem: "maven"
     directory: "/meta-model"
     schedule:
