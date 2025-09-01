@@ -1,5 +1,4 @@
-name: Maven Multi-Branch Multi-JDK CI
-
+name: MavenMultiBranchMultiJDKCI
 on:
   push:
     branches: [feat-autoci, main, dependabot]  # 监听a到e分支的推送事件
