@@ -1,0 +1,75 @@
+name: Maven Multi-Branch Multi-JDK CI
+
+on:
+  push:
+    branches: [feat-autoci, main, dependabot]  # 监听a到e分支的推送事件
+  pull_request:
+    branches: [feat-autoci, main, dependabot]  # 监听发往这些分支的PR
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}  # 使用矩阵中定义的操作系统
+    # 核心矩阵策略配置，定义不同组合
+    strategy:
+      matrix:
+        # 操作系统矩阵
+        os: [ubuntu-latest, windows-latest]
+        # JDK版本矩阵，与分支对应
+        include:
+          - branch: feat-autoci
+            java-version: 11
+          - branch: main
+            java-version: 11
+          - branch: dependabot
+            java-version: 11            
+          # - branch: c
+          #   java-version: 17
+          # - branch: d
+          #   java-version: 21
+          # - branch: e
+          #   java-version: 25
+        
+        # # 排除不存在的组合（可选，增强逻辑严谨性）
+        # exclude:
+        #   - os: windows-latest
+        #     java-version: 25  # 假设JDK25暂不支持Windows
+    
+    # 仅当矩阵中的JDK版本与实际推送分支匹配时运行
+    if: contains(fromJSON('["8", "11", "17", "21", "25"]'), matrix.java-version) && (github.ref == 'refs/heads/${{ matrix.branch }}' || github.event_name == 'pull_request')
+    steps:
+      # 第一步：检出代码
+      - name: Checkout code
+        uses: actions/checkout@v4      
+      # 第二步：设置JDK（核心步骤）
+      - name: Set up JDK ${{ matrix.java-version }}
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'  # 使用Eclipse Temurin发行版
+          java-version: ${{ matrix.java-version }}
+          cache: 'maven'  # 启用Maven依赖缓存
+          cache-dependency-path: '**/pom.xml'  # 根据pom.xml变化更新缓存
+      # 第三步：打印环境信息（用于调试和日志）
+      - name: Display environment info
+        run: |
+          echo "Running on branch: ${{ github.ref }}"
+          echo "Using JDK version: ${{ matrix.java-version }}"
+          echo "Operating system: ${{ matrix.os }}"
+          java -version
+          mvn --version
+      # 第四步：编译和测试（Maven核心生命周期）
+      - name: Build and test with Maven
+        run: mvn -B clean compile test --file pom.xml
+        env:
+          # 可选：跳过测试（根据需要调整）
+          # MAVEN_OPTS: -DskipTests
+      
+      # 第五步：打包应用（生成可部署制品）
+      - name: Package application
+        run: mvn -B package --file pom.xml
+      
+      # 第六步：上传制品（保留构建结果）
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ matrix.branch }}-${{ matrix.os }}-jdk${{ matrix.java-version }}
+          path: target/*.jar
