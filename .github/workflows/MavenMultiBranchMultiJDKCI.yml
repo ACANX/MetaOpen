@@ -50,17 +50,17 @@ jobs:
             os: windows-latest
 
           - branch: main
-            java: '11'
+            java: '21'
             os: ubuntu-latest
           - branch: main
-            java: '11'
+            java: '21'
             os: windows-latest
             
           - branch: main
-            java: '21'
+            java: '11'
             os: ubuntu-latest
           - branch: main
-            java: '21'
+            java: '11'
             os: windows-latest
             
           - branch: dependabot
