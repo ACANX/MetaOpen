@@ -28,9 +28,9 @@ name: SonarQubeAnalysis
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "dev", "main", "dependabot" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "dev", "main", "dependabot" ]
   workflow_dispatch:
 
 permissions:
