@@ -17,14 +17,14 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <modules>
-<!--    <module>model-security</module>-->
-<!--    <module>model-quote</module>-->
-<!--    <module>model-sonatype</module>-->
-<!--    <module>model-wechat-work</module>-->
-<!--    <module>model-dingtalk</module>-->
-<!--    <module>model-deepseek</module>-->
-<!--    <module>model-test</module>-->
-<!--    <module>model-maven</module>-->
+    <module>model-security</module>
+    <module>model-quote</module>
+    <module>model-sonatype</module>
+    <module>model-wechat-work</module>
+    <module>model-dingtalk</module>
+    <module>model-deepseek</module>
+    <module>model-test</module>
+    <module>model-maven</module>
   </modules>
   <build>
     <plugins>
