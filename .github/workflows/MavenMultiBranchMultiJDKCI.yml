@@ -63,15 +63,23 @@ jobs:
             java: '11'
             os: windows-latest
 
-    # 只在当前触发分支对应的矩阵项上执行（避免其他矩阵项空跑）
-    # 关键修正：使用表达式语法包裹，才能识别 matrix 上下文
-    if: ${{ github.ref_name == matrix.branch }}
-
     steps:
+      # 门控步骤：只对当前分支匹配的矩阵项放行
+      - name: GateControlerByBranch
+        id: gate
+        shell: bash
+        run: |
+          if [ "${GITHUB_REF_NAME}" = "${{ matrix.branch }}" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+    
       - name: Checkout
+        if: ${{ steps.gate.outputs.run == 'true' }}
         uses: actions/checkout@v4
 
-      - name: Set up Temurin JDK ${{ matrix.java }}
+      - name: SetupTemurinJDK${{ matrix.java }}
         uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -79,13 +87,13 @@ jobs:
           cache: maven
 
       # 可选：显示Java/Maven版本以便排错
-      - name: Show Java and Maven versions
+      - name: ShowJavaAndMavenVersions
         run: |
           java -version
           mvn -v
 
       # 可选：如项目有私有仓库或镜像，这里可写入settings.xml（示例保留结构）
-      # - name: Configure Maven settings
+      # - name: ConfigureMavenSettings
       #   run: |
       #     mkdir -p ~/.m2
       #     cat > ~/.m2/settings.xml <<'EOF'
@@ -97,11 +105,11 @@ jobs:
       #     EOF
 
       # 构建（不跳过测试）
-      - name: Build with tests
+      - name: BuildWithTests
         run: mvn -B -ntp -Dstyle.color=always clean verify
 
       # 可选：上传构建产物（例如所有模块的jar）
-      - name: Upload build artifacts
+      - name: UploadBuildArtifacts
         if: success()
         uses: actions/upload-artifact@v4
         with:
