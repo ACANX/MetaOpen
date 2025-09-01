@@ -18,7 +18,7 @@ on:
     branches: [ "dev", "main", "dependabot" ]
   workflow_dispatch:     
   schedule:
-    - cron: '16 1 * * 5' # 每周五凌晨1:16运行
+    - cron: '16 1 * * *' # 每周五凌晨1:16运行
 
 jobs:
   analyze:
