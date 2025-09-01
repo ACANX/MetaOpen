@@ -28,7 +28,7 @@ env:
 
 jobs:
   build:
-    name: BuildOn${{ matrix.os }}WithJDK${{ matrix.java }}(branch=${{ matrix.branch }})
+    name: BuildWithJDK${{ matrix.java }}-${{ matrix.os }}-(${{ matrix.branch }})
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -42,33 +42,33 @@ jobs:
             java: '21'
             os: windows-latest
 
-          - branch: dev
-            java: '11'
-            os: ubuntu-latest
-          - branch: dev
-            java: '11'
-            os: windows-latest
+          # - branch: dev
+          #   java: '11'
+          #   os: ubuntu-latest
+          # - branch: dev
+          #   java: '11'
+          #   os: windows-latest
 
           - branch: main
-            java: '11'
-            os: ubuntu-latest
-          - branch: main
-            java: '11'
-            os: windows-latest
-            
-          - branch: main
             java: '21'
             os: ubuntu-latest
           - branch: main
             java: '21'
             os: windows-latest
             
-          - branch: dependabot
-            java: '11'
-            os: ubuntu-latest
-          - branch: dependabot
-            java: '11'
-            os: windows-latest
+          # - branch: main
+          #   java: '11'
+          #   os: ubuntu-latest
+          # - branch: main
+          #   java: '11'
+          #   os: windows-latest
+            
+          # - branch: dependabot
+          #   java: '11'
+          #   os: ubuntu-latest
+          # - branch: dependabot
+          #   java: '11'
+          #   os: windows-latest
 
     steps:
       # 门控：只放行当前分支对应的矩阵项
@@ -76,6 +76,8 @@ jobs:
         id: gate
         shell: bash
         run: |
+          echo "GITHUB_REF_NAME=${GITHUB_REF_NAME}"
+          echo "matrix.branch=${{ matrix.branch }}"
           if [ "${GITHUB_REF_NAME}" = "${{ matrix.branch }}" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
