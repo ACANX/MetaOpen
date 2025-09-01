@@ -7,7 +7,7 @@ on:
       - dev
       - main
       - feat-autoci
-    # paths:  # 只在特定路径变更时触发
+    # paths:   # 只在特定路径变更时触发
     #   - '**.java'
     #   - 'pom.xml'
     #   - '.github/workflows/**'      
