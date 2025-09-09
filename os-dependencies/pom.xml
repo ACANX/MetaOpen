@@ -61,7 +61,7 @@
         <bytebuddy.version>1.17.7</bytebuddy.version>
 
         <netty.version>4.2.6.Final</netty.version>
-        <reactor.verion>3.7.9</reactor.verion>
+        <reactor.verion>3.7.11</reactor.verion>
         <protobuf-java.version>4.32.0</protobuf-java.version>
 
         <tomcat-embed.version>11.0.11</tomcat-embed.version>
