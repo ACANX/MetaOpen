@@ -60,7 +60,7 @@
         <aspectjweaver.version>1.9.24</aspectjweaver.version>
         <bytebuddy.version>1.17.7</bytebuddy.version>
 
-        <netty.version>4.2.4.Final</netty.version>
+        <netty.version>4.2.6.Final</netty.version>
         <reactor.verion>3.7.9</reactor.verion>
         <protobuf-java.version>4.32.0</protobuf-java.version>
 
