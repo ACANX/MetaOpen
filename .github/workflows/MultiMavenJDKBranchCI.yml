@@ -42,12 +42,12 @@ jobs:
             java: '21'
             os: windows-latest
 
-          # - branch: dev
-          #   java: '11'
-          #   os: ubuntu-latest
-          # - branch: dev
-          #   java: '11'
-          #   os: windows-latest
+          - branch: dev
+            java: '21'
+            os: ubuntu-latest
+          - branch: dev
+            java: '21'
+            os: windows-latest
 
           - branch: main
             java: '21'
