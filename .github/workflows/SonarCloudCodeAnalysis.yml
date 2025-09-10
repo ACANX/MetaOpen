@@ -38,4 +38,4 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} # 在GitHub仓库Secrets中设置的SonarCloud Token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub自动提供的Token，用于上传PR检查结果
         run: |
-          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=ACANX_MetaOpen -Dsonar.organization=acanx -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dsonar.branch.name=${{ github.ref_name }} -Dsonar.qualitygate.wait=true -Dgpg.skip=true -e -X
+          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=ACANX_MetaOpen -Dsonar.organization=acanx -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dsonar.branch.name=${{ github.ref_name }} -Dsonar.host.url=https://sonarcloud.io -Dsonar.qualitygate.wait=true -Dgpg.skip=true -e -X
