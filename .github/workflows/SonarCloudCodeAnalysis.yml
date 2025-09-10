@@ -4,6 +4,10 @@ on:
     branches: [ dev, main, dependabot, aa ] # 在推送到主干分支时触发
   pull_request:
     branches: [ dev, main, dependabot, aa ] # 在任何针对主干分支的PR创建时触发
+
+permissions:
+  contents: read
+  
 jobs:
   build-and-scan:
     runs-on: ubuntu-latest
