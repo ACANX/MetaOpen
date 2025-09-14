@@ -100,7 +100,7 @@
         <dubbo.version>3.3.5</dubbo.version>
         <nacos.version>3.0.3</nacos.version>
 
-        <lucense.version>10.2.2</lucense.version>
+        <lucense.version>10.3.0</lucense.version>
         <elasticsearch.version>9.1.3</elasticsearch.version>
 
         <flink.version>1.17.2</flink.version>
