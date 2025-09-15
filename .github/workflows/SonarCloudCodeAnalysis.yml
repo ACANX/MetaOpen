@@ -20,7 +20,7 @@ jobs:
           fetch-depth: 0 # SonarScanner可能需要完整的提交历史
 
       - name: SetupJDK
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: '21' # 或你的项目使用的JDK版本
           distribution: 'temurin'
