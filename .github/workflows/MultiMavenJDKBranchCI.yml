@@ -149,7 +149,7 @@ jobs:
         if: ${{ steps.gate.outputs.run == 'true' }}
         working-directory: ${{ env.PROJECT_DIR }}
         # run: mvn -B -ntp -Dstyle.color=always clean verify
-        run: mvn --batch-mode --update-snapshots clean compile test package
+        run: mvn --batch-mode --update-snapshots clean compile test package -e -X -U
         # --batch-mode: 使Maven输出更简洁
         # --update-snapshots: 强制检查SNAPSHOT依赖的更新
         # clean compile test package: 执行Maven生命周期阶段
