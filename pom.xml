@@ -50,6 +50,7 @@
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
         <flatten-maven-plugin.version>1.7.2</flatten-maven-plugin.version>
         <central-publishing-maven-plugin.version>0.8.0</central-publishing-maven-plugin.version>
+        <sonar.organization>acanx</sonar.organization>     
         <fastjson2.version>2.0.58</fastjson2.version>
         <lombok.version>1.18.38</lombok.version>
         <junit-jupiter.version>5.13.4</junit-jupiter.version>
@@ -95,7 +96,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.3</version>
+                <version>3.5.4</version>
             </plugin>
         </plugins>
     </build>
@@ -223,7 +224,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <version>3.5.3</version>
+                        <version>3.5.4</version>
                     </plugin>
                 </plugins>
             </build>
