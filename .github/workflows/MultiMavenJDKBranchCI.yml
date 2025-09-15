@@ -42,6 +42,20 @@ jobs:
             java: '21'
             os: windows-latest
 
+          - branch: dependabot
+            java: '17'
+            os: windows-latest           
+          - branch: dependabot
+            java: '17'
+            os: ubuntu-latest 
+            
+          - branch: dependabot
+            java: '25-ea'
+            os: windows-latest
+          - branch: dependabot
+            java: '25-ea'
+            os: ubuntu-latest      
+            
           - branch: dev
             java: '21'
             os: ubuntu-latest
