@@ -1,0 +1,65 @@
+name: PublishToMavenCentralDependencies
+
+on:
+  release:
+    types: [created] # 当在GitHub上创建新的Release时触发
+  # 你也可以手动触发
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: CheckoutCode
+        uses: actions/checkout@v4
+
+      - name: SetupJava
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21' # 或你项目使用的JDK版本
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: SetupGPG
+        run: |
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
+          # 可选：信任密钥
+          echo -e "5\ny\n" | gpg --command-fd 0 --edit-key "$YOUR_KEY_ID" trust
+        env:
+          YOUR_KEY_ID: your-key-id # 替换为你的GPG Key ID
+
+      - name: ConfigureMavenSettings
+        # 此步骤会动态生成一个只用于此次工作流的settings.xml文件
+        run: |
+          mkdir -p ~/.m2
+          cat > ~/.m2/settings.xml <<EOF
+          <settings>
+            <servers>
+              <server>
+                <id>ossrh</id>
+                <username>${{ secrets.OSSRH_USERNAME }}</username>
+                <password>${{ secrets.OSSRH_PASSWORD }}</password>
+              </server>
+            </servers>
+            <profiles>
+              <profile>
+                <id>ossrh</id>
+                <properties>
+                  <gpg.executable>gpg</gpg.executable>
+                  <gpg.passphrase>${{ secrets.GPG_PASSPHRASE }}</gpg.passphrase>
+                </properties>
+              </profile>
+            </profiles>
+          </settings>
+          EOF
+
+      - name: BuildAndDeploy
+        run: mvn -B clean deploy
+        # 使用 -B 批处理模式，并且跳过测试（如果测试需要特殊环境）。确保之前已通过测试。
+        env:
+          # 将GPG passphrase传递给Maven GPG插件
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+
+      # 可选：如果使用Sonatype旧平台，可能需要关闭并发布staging仓库
+      # 新平台（central.sonatype.com）通常配置为自动发布（autoReleaseAfterClose: true）
