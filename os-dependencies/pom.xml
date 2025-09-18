@@ -1120,7 +1120,7 @@
                         <version>${central-publishing-maven-plugin.version}</version>
                         <extensions>true</extensions>
                         <configuration>
-                            <publishingServerId>sonatype-nexus-snapshots</publishingServerId>
+                            <publishingServerId>sonatype-nexus-staging</publishingServerId>
                             <autoPublish>true</autoPublish>
                             <deploymentName>OS-Dependencies-${revision}-Deployment</deploymentName>
                         </configuration>
