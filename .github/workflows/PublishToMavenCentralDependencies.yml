@@ -45,6 +45,27 @@ jobs:
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
 
+      - name: ConfigureMavenSettingsForSonatype
+        run: |
+          mkdir -p ~/.m2
+          cat > ~/.m2/settings.xml <<EOF
+          <settings>
+            <servers>
+              <server>
+                <id>sonatype-nexus-staging</id>
+                <username>${{ secrets.OSSRH_USERNAME }}</username>
+                <password>${{ secrets.OSSRH_TOKEN }}</password>
+              </server>
+              <server>
+                <id>sonatype-nexus-snapshots</id>
+                <username>${{ secrets.OSSRH_USERNAME }}</username>
+                <password>${{ secrets.OSSRH_TOKEN }}</password>
+              </server>
+            </servers>
+          </settings>
+          EOF
+        shell: bash
+
       - name: PublishToMavenCentral
         working-directory: os-dependencies # 设置工作目录为 os-dependencies
         run: mvn -B clean deploy
