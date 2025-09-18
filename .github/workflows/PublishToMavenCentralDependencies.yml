@@ -24,18 +24,18 @@ jobs:
           cache: 'maven'
           # 通常会在 pom.xml 或 settings.xml 中配置 gpg 相关信息
 
-      - name: Debug GPG Private Key (Temporary)
-        run: |
-          echo "Key length: ${#GPG_KEY}"
-          echo "Key content (first 100 chars): ${GPG_KEY:0:100}"
-          # 检查是否包含起始和结束标记
-          if [[ "$GPG_KEY" == *"BEGIN PGP PRIVATE KEY BLOCK"* && "$GPG_KEY" == *"END PGP PRIVATE KEY BLOCK"* ]]; then
-            echo "✅ Key appears to contain valid PGP block markers."
-          else
-            echo "❌ Key is missing PGP block markers. This is likely the issue."
-          fi
-        env:
-          GPG_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+      # - name: DebugGPGPrivateKey (Temporary)
+      #   run: |
+      #     echo "Key length: ${#GPG_KEY}"
+      #     echo "Key content (first 100 chars): ${GPG_KEY:0:100}"
+      #     # 检查是否包含起始和结束标记
+      #     if [[ "$GPG_KEY" == *"BEGIN PGP PRIVATE KEY BLOCK"* && "$GPG_KEY" == *"END PGP PRIVATE KEY BLOCK"* ]]; then
+      #       echo "✅ Key appears to contain valid PGP block markers."
+      #     else
+      #       echo "❌ Key is missing PGP block markers. This is likely the issue."
+      #     fi
+      #   env:
+      #     GPG_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
 
           # 通常会在 pom.xml 或 settings.xml 中配置 gpg 相关信息
 
