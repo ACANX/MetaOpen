@@ -27,7 +27,7 @@ jobs:
         run: |
           echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
           # 可选：信任密钥
-          echo -e "5\ny\n" | gpg --command-fd 0 --edit-key "$YOUR_KEY_ID" trust
+          # echo -e "5\ny\n" | gpg --command-fd 0 --edit-key "$YOUR_KEY_ID" trust
         env:
           YOUR_KEY_ID: your-key-id # 替换为你的GPG Key ID
 
