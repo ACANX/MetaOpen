@@ -48,7 +48,7 @@
       <dependency>
           <groupId>org.graalvm.sdk</groupId>
           <artifactId>graal-sdk</artifactId>
-          <version>21.3.15</version>
+          <version>25.0.0</version>
           <scope>provided</scope><!-- 添加 provided 作用域 -->
       </dependency>
       <!-- https://mvnrepository.com/artifact/org.graalvm.nativeimage/svm -->
