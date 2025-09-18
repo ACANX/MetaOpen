@@ -1,4 +1,6 @@
 name: PublishToMavenCentralDependencies
+permissions:
+  contents: read
 
 on:
   release:
