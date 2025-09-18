@@ -77,7 +77,7 @@
         <commons-collections4.version>4.5.0</commons-collections4.version>
         <guava.version>33.5.0-jre</guava.version>
 
-        <lombok.version>1.18.40</lombok.version>
+        <lombok.version>1.18.42</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
 
         <fastjson2.version>2.0.58</fastjson2.version>
