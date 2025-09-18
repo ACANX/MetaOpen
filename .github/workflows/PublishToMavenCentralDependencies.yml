@@ -39,14 +39,14 @@ jobs:
           <settings>
             <servers>
               <server>
-                <id>ossrh</id>
+                <id>sonatype-oss-release</id>
                 <username>${{ secrets.OSSRH_USERNAME }}</username>
                 <password>${{ secrets.OSSRH_PASSWORD }}</password>
               </server>
             </servers>
             <profiles>
               <profile>
-                <id>ossrh</id>
+                <id>sonatype-oss-release</id>
                 <properties>
                   <gpg.executable>gpg</gpg.executable>
                   <gpg.passphrase>${{ secrets.GPG_PASSPHRASE }}</gpg.passphrase>
