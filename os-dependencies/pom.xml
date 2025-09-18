@@ -75,7 +75,7 @@
         <commons-lang3.version>3.18.0</commons-lang3.version>
         <common-io.version>2.20.0</common-io.version>
         <commons-collections4.version>4.5.0</commons-collections4.version>
-        <guava.version>33.4.8-jre</guava.version>
+        <guava.version>33.5.0-jre</guava.version>
 
         <lombok.version>1.18.40</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
