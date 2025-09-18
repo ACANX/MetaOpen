@@ -22,46 +22,56 @@ jobs:
           java-version: '21' # 或你项目使用的JDK版本
           distribution: 'temurin'
           cache: 'maven'
+          # 通常会在 pom.xml 或 settings.xml 中配置 gpg 相关信息
 
-      - name: SetupGPG
-        run: |
-          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
-          # 可选：信任密钥
-          echo -e "5\ny\n" | gpg --command-fd 0 --edit-key "$YOUR_KEY_ID" trust
-        env:
-          YOUR_KEY_ID: your-key-id # 替换为你的GPG Key ID
+      # - name: DebugGPGPrivateKey (Temporary)
+      #   run: |
+      #     echo "Key length: ${#GPG_KEY}"
+      #     echo "Key content (first 100 chars): ${GPG_KEY:0:100}"
+      #     # 检查是否包含起始和结束标记
+      #     if [[ "$GPG_KEY" == *"BEGIN PGP PRIVATE KEY BLOCK"* && "$GPG_KEY" == *"END PGP PRIVATE KEY BLOCK"* ]]; then
+      #       echo "✅ Key appears to contain valid PGP block markers."
+      #     else
+      #       echo "❌ Key is missing PGP block markers. This is likely the issue."
+      #     fi
+      #   env:
+      #     GPG_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
 
-      - name: ConfigureMavenSettings
-        # 此步骤会动态生成一个只用于此次工作流的settings.xml文件
+          # 通常会在 pom.xml 或 settings.xml 中配置 gpg 相关信息
+
+      - name: ImportGPGKey
+        uses: crazy-max/ghaction-import-gpg@v3
+        with:
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+
+      - name: ConfigureMavenSettingsForSonatype
         run: |
           mkdir -p ~/.m2
           cat > ~/.m2/settings.xml <<EOF
           <settings>
             <servers>
               <server>
-                <id>ossrh</id>
+                <id>sonatype-nexus-staging</id>
                 <username>${{ secrets.OSSRH_USERNAME }}</username>
-                <password>${{ secrets.OSSRH_PASSWORD }}</password>
+                <password>${{ secrets.OSSRH_TOKEN }}</password>
+              </server>
+              <server>
+                <id>sonatype-nexus-snapshots</id>
+                <username>${{ secrets.OSSRH_USERNAME }}</username>
+                <password>${{ secrets.OSSRH_TOKEN }}</password>
               </server>
             </servers>
-            <profiles>
-              <profile>
-                <id>ossrh</id>
-                <properties>
-                  <gpg.executable>gpg</gpg.executable>
-                  <gpg.passphrase>${{ secrets.GPG_PASSPHRASE }}</gpg.passphrase>
-                </properties>
-              </profile>
-            </profiles>
           </settings>
           EOF
+        shell: bash
 
-      - name: BuildAndDeploy
+      - name: PublishToMavenCentral
+        working-directory: os-dependencies # 设置工作目录为 os-dependencies
         run: mvn -B clean deploy
-        # 使用 -B 批处理模式，并且跳过测试（如果测试需要特殊环境）。确保之前已通过测试。
         env:
-          # 将GPG passphrase传递给Maven GPG插件
-          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-
-      # 可选：如果使用Sonatype旧平台，可能需要关闭并发布staging仓库
-      # 新平台（central.sonatype.com）通常配置为自动发布（autoReleaseAfterClose: true）
+          # 假设你的 Maven GPG 插件配置或 settings.xml 使用这些变量
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+          # 如果 Maven 配置需要明确 Key ID：
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
