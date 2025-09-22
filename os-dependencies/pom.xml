@@ -36,7 +36,7 @@
     </licenses>
 
     <properties>
-        <revision>0.4.5</revision>
+        <revision>0.4.6</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>21</java.version>
         <maven.compiler.release>21</maven.compiler.release>
@@ -45,9 +45,9 @@
         <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
         <maven-surefire-plugin.version>3.5.0</maven-surefire-plugin.version>
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
-        <maven-javadoc-plugin.version>3.11.3</maven-javadoc-plugin.version>
+        <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
-        <flatten-maven-plugin.version>1.7.2</flatten-maven-plugin.version>
+        <flatten-maven-plugin.version>1.7.3</flatten-maven-plugin.version>
         <central-publishing-maven-plugin.version>0.8.0</central-publishing-maven-plugin.version>
 
         <deamond.version>0.1.4.4</deamond.version>
@@ -67,7 +67,7 @@
         <tomcat-embed.version>11.0.11</tomcat-embed.version>
 
         <mysql-connector-j.version>9.4.0</mysql-connector-j.version>
-        <postgresql.version>42.7.7</postgresql.version>
+        <postgresql.version>42.7.8</postgresql.version>
         <mybatis.version>3.5.19</mybatis.version>
         <hibernate-orm.version>7.1.1.Final</hibernate-orm.version>
         <seata.version>2.5.0</seata.version>
@@ -75,9 +75,9 @@
         <commons-lang3.version>3.18.0</commons-lang3.version>
         <common-io.version>2.20.0</common-io.version>
         <commons-collections4.version>4.5.0</commons-collections4.version>
-        <guava.version>33.4.8-jre</guava.version>
+        <guava.version>33.5.0-jre</guava.version>
 
-        <lombok.version>1.18.40</lombok.version>
+        <lombok.version>1.18.42</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
 
         <fastjson2.version>2.0.58</fastjson2.version>
@@ -94,14 +94,14 @@
         <jspecify.version>1.0.0</jspecify.version>
 
         <spring.version>6.2.11</spring.version>
-        <spring-security.version>6.5.4</spring-security.version>
-        <spring-boot.version>3.5.5</spring-boot.version>
+        <spring-security.version>6.5.5</spring-security.version>
+        <spring-boot.version>3.5.6</spring-boot.version>
 
         <dubbo.version>3.3.5</dubbo.version>
         <nacos.version>3.0.3</nacos.version>
 
         <lucense.version>10.3.0</lucense.version>
-        <elasticsearch.version>9.1.3</elasticsearch.version>
+        <elasticsearch.version>9.1.4</elasticsearch.version>
 
         <flink.version>1.17.2</flink.version>
         <hadoop.version>3.3.6</hadoop.version>
@@ -240,7 +240,7 @@
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.11.3</version>
+                <version>3.12.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -502,7 +502,7 @@
             <dependency>
                 <groupId>org.bouncycastle</groupId>
                 <artifactId>bcprov-jdk18on</artifactId>
-                <version>1.81</version>
+                <version>1.82</version>
             </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>
