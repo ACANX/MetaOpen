@@ -80,7 +80,7 @@
         <lombok.version>1.18.42</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
 
-        <fastjson2.version>2.0.58</fastjson2.version>
+        <fastjson2.version>2.0.59</fastjson2.version>
         <jackson.version>2.20.0</jackson.version>
         <snakeyaml.version>2.5</snakeyaml.version>
 
