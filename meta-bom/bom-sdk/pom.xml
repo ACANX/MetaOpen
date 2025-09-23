@@ -16,12 +16,58 @@
   
   <properties/>
 
-  <modules>
-    <module>bom-sdk</module>    
-  </modules>
 
   <dependencyManagement>
     <dependencies>
+        <!-- aws-lambda -->
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-lambda-java-core</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-lambda-java-events</artifactId>
+            <version>3.11.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-lambda-java-log4j2</artifactId>
+            <version>1.5.1</version>
+        </dependency>
+
+        <!-- aliyun -->
+        <dependency>
+            <groupId>com.aliyun.fc.runtime</groupId>
+            <artifactId>fc-java-core</artifactId>
+            <version>1.4.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.aliyun.fc.runtime/fc-java-event -->
+        <dependency>
+            <groupId>com.aliyun.fc.runtime</groupId>
+            <artifactId>fc-java-event</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+
+      <!-- tencentcloud -->
+        <dependency>
+          <groupId>com.tencentcloudapi</groupId>
+          <artifactId>tencentcloud-sdk-java-scf</artifactId>
+          <version>3.1.979</version>
+        </dependency>
+        <dependency>
+          <groupId>com.tencentcloudapi</groupId>
+          <artifactId>scf-java-events</artifactId>
+          <version>0.0.4</version>
+          <exclusions>
+            <exclusion>
+              <groupId>*</groupId>
+              <artifactId>*</artifactId>
+            </exclusion>
+          </exclusions>
+        </dependency>
+
+      <!-- huaweicloud -->
           <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-functiongraph</artifactId>
