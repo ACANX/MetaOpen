@@ -60,6 +60,7 @@
         <module>meta-model</module>
         <module>meta-component</module>
         <module>os-dependencies</module>
+        <module>meta-bom</module>
     </modules>
 
     <dependencies/>
