@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.acanx.meta</groupId>
-    <artifactId>meta-open</artifactId>
+    <artifactId>meta-bom</artifactId>
     <version>${revision}</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
