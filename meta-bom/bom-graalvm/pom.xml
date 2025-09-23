@@ -2,13 +2,13 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.acanx.meta</groupId>
-    <artifactId>meta-component</artifactId>
+    <artifactId>meta-bom</artifactId>
     <version>${revision}</version>
   </parent>
 
   <groupId>com.acanx.meta.component</groupId>
   <artifactId>bom-graalvm</artifactId>
-  <version>21.0.0.2</version>
+  <version>21.0.0.3</version>
   <packaging>pom</packaging>
   <name>BOM-GraalVM</name>
   <description>GraalVM Component BOM</description>

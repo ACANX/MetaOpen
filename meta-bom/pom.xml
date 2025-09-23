@@ -17,6 +17,7 @@
 
   <modules>
     <module>bom-graalvm</module>    
+    <module>bom-sdk</module>    
   </modules>
 
   <dependencies/>
