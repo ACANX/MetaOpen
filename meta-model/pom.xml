@@ -25,6 +25,7 @@
     <module>model-deepseek</module>
     <module>model-test</module>
     <module>model-maven</module>
+    <module>model-rss</module>
   </modules>
   <build>
     <plugins>
