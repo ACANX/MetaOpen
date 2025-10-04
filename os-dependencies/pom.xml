@@ -106,7 +106,7 @@
         <flink.version>1.17.2</flink.version>
         <hadoop.version>3.3.6</hadoop.version>
 
-        <junit-jupiter.version>5.13.4</junit-jupiter.version>
+        <junit-jupiter.version>6.0.0</junit-jupiter.version>
         <junit-platform.version>1.13.4</junit-platform.version>
     </properties>
 
