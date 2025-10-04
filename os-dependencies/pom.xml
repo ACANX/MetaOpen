@@ -36,7 +36,7 @@
     </licenses>
 
     <properties>
-        <revision>0.4.7</revision>
+        <revision>0.4.8</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>21</java.version>
         <maven.compiler.release>21</maven.compiler.release>
@@ -106,8 +106,8 @@
         <flink.version>1.17.2</flink.version>
         <hadoop.version>3.3.6</hadoop.version>
 
-        <junit-jupiter.version>5.13.4</junit-jupiter.version>
-        <junit-platform.version>1.13.4</junit-platform.version>
+        <junit-jupiter.version>6.0.0</junit-jupiter.version>
+        <junit-platform.version>6.0.0</junit-platform.version>
     </properties>
 
 
@@ -250,7 +250,7 @@
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.9.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -295,7 +295,7 @@
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.6.1</version>
+                <version>3.6.2</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -355,12 +355,12 @@
             <dependency>
                 <groupId>net.java.dev.jna</groupId>
                 <artifactId>jna</artifactId>
-                <version>5.18.0</version>
+                <version>5.18.1</version>
             </dependency>
             <dependency>
                 <groupId>net.java.dev.jna</groupId>
                 <artifactId>jna-platform</artifactId>
-                <version>5.18.0</version>
+                <version>5.18.1</version>
             </dependency>
             <dependency>
                 <groupId>org.jspecify</groupId>
@@ -884,7 +884,7 @@
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-api</artifactId>
-                <version>4.35.0</version>
+                <version>4.36.0</version>
             </dependency>
             <dependency>
                 <groupId>org.thymeleaf</groupId>
