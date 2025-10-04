@@ -53,7 +53,7 @@
         <sonar.organization>acanx</sonar.organization>     
         <fastjson2.version>2.0.58</fastjson2.version>
         <lombok.version>1.18.38</lombok.version>
-        <junit-jupiter.version>5.13.4</junit-jupiter.version>
+        <junit-jupiter.version>5.14.0</junit-jupiter.version>
     </properties>
 
     <modules>
