@@ -23,13 +23,13 @@
   <dependencies/>
   <dependencyManagement>
     <dependencies>
-      <dependency>
+      <!-- <dependency>
         <groupId>com.acanx.meta</groupId>
         <artifactId>os-dependencies</artifactId>
         <version>${revision}</version>
         <type>pom</type>
-        <scope>import</scope>
-      </dependency>
+        <scope>import</scope> 
+      </dependency> -->
     </dependencies>
   </dependencyManagement>
 
