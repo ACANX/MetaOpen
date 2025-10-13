@@ -11,7 +11,7 @@
     <url>https://github.com/ACANX/MetaOpen</url>
 
     <scm>
-        <tag>V0.4.x</tag>
+        <tag>V0.5.x</tag>
         <url>git@github.com:ACANX/MetaOpen.git</url>
         <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
         <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>
@@ -36,7 +36,7 @@
     </licenses>
 
     <properties>
-        <revision>0.4.9</revision>
+        <revision>0.5.0</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>21</java.version>
         <maven.compiler.release>21</maven.compiler.release>
