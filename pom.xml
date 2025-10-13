@@ -205,10 +205,10 @@
                                 </goals>
                             </execution>
                         </executions>
-<!--                         <configuration> -->
-<!--                             改成你自己的路径 -->
-<!--                             <executable>D:\ProgramExt\GnuPG\bin\gpg.exe</executable> -->
-<!--                         </configuration> -->
+                        <configuration>
+                            <executable>gpg</executable>
+                            <!--  <executable>D:\ProgramExt\GnuPG\bin\gpg.exe</executable> -->
+                        </configuration>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
