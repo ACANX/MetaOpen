@@ -88,14 +88,14 @@
         <dependency>
             <groupId>org.graalvm.buildtools</groupId>
             <artifactId>utils</artifactId>
-            <version>0.11.0</version>
+            <version>0.11.1</version>
             <scope>runtime</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.graalvm.buildtools/graalvm-reachability-metadata -->
         <dependency>
             <groupId>org.graalvm.buildtools</groupId>
             <artifactId>graalvm-reachability-metadata</artifactId>
-            <version>0.11.0</version>
+            <version>0.11.1</version>
             <scope>runtime</scope>
         </dependency>
     </dependencies>
