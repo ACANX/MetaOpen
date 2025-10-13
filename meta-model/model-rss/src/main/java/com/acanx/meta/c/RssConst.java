@@ -14,24 +14,34 @@ public class RssConst {
      * 用于构建完整的RSS订阅源URL
      */
     public static final String RSS_URL_V1_1 = "https://www.rss.com/api/v1/rss/feed/";
+    /**
+     * Atom命名空间URI
+     * 用于RSS feed中的Atom相关元素命名空间声明
+     */
+    public static final String XMLNS_ATOM = "xmlns:atom";
+    /**
+     * Content模块命名空间URI
+     * 用于RSS feed中内容相关元素的命名空间声明
+     */
+    public static final String XMLNS_CONTENT = "xmlns:content";
 
     /**
      * Atom命名空间URI
      * 用于RSS feed中的Atom相关元素命名空间声明
      */
-    public static final String XMLNS_ATOM = "http://www.w3.org/2005/Atom";
+    public static final String URL_XMLNS_ATOM = "http://www.w3.org/2005/Atom";
 
     /**
      * Content模块命名空间URI
      * 用于RSS feed中内容相关元素的命名空间声明
      */
-    public static final String XMLNS_CONTENT = "http://purl.org/rss/1.0/modules/content/";
+    public static final String URL_XMLNS_CONTENT = "http://purl.org/rss/1.0/modules/content/";
 
     /**
      * Atom命名空间URI副本
      * 与XMLNS_ATOM相同，可能是为了代码中的不同使用场景而定义
      */
-    public static final String XMLNS_ATOM_ = "https://www.rss.com/api/v1/rss/feed/";
+    public static final String URL_XMLNS_ATOM_ = "https://www.rss.com/api/v1/rss/feed/";
 
 
 
