@@ -1,0 +1,19 @@
+{
+	"directory_name":"HK-HKEX-800700",
+	"instrument_type":"6",
+	"market":"HKEX",
+	"market_code":"1",
+	"market_type":"1",
+	"quote_level_type":"2",
+	"region":"HK",
+	"security_category":"StockIndex",
+	"stock_code":"800700",
+	"stock_id":"800700",
+	"stock_name":"恒生科技指数",
+	"stock_type":null,
+	"sub_instrument_type":"0",
+	"symbol":null,
+	"type":"2",
+	"url_minute_quote":"https://www.futunn.com/quote-api/quote-v2/get-quote-minute?stockId=800700&marketType=1&type=2&marketCode=1&instrumentType=6&subInstrumentType=0&_=",
+	"url_stock_code":"800700-HK"
+}

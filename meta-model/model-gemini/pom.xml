@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>com.acanx.meta</groupId>
         <artifactId>meta-model</artifactId>
@@ -8,24 +9,23 @@
     </parent>
 
     <groupId>com.acanx.meta.model</groupId>
-    <artifactId>model-rss</artifactId>
+    <artifactId>model-gemini</artifactId>
     <version>${revision}</version> 
     <packaging>jar</packaging>
-    <name>RSS Model Module</name>
-    <url>https://github.com/ACANX/MetaOpen</url>
+    <name>model-gemini</name>
+    <url>https://acanx.com</url>
 
     <properties>
-        <maven.deploy.skip>true</maven.deploy.skip>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>11</maven.compiler.release>
-        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
+        <maven.compiler.release>21</maven.compiler.release>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -42,8 +42,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <target>${java.version}</target>
                     <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
         </plugins>
