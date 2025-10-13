@@ -64,7 +64,7 @@
         <reactor.verion>3.7.11</reactor.verion>
         <protobuf-java.version>4.32.1</protobuf-java.version>
 
-        <tomcat-embed.version>11.0.12</tomcat-embed.version>
+        <tomcat-embed.version>11.0.13</tomcat-embed.version>
 
         <mysql-connector-j.version>9.4.0</mysql-connector-j.version>
         <postgresql.version>42.7.8</postgresql.version>
