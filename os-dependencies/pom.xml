@@ -197,7 +197,20 @@
                 <version>0.4.1</version>
                 <scope>compile</scope>
             </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.model</groupId>
+                <artifactId>model-rss</artifactId>
+                <version>0.1.0</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.model</groupId>
+                <artifactId>model-gemini</artifactId>
+                <version>0.1.0</version>
+                <scope>compile</scope>
+            </dependency>
 
+            
             <dependency>
                 <groupId>com.acanx.meta.component</groupId>
                 <artifactId>sdk-maven-artifact</artifactId>
