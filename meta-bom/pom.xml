@@ -16,20 +16,13 @@
   <properties/>
 
   <modules>
-    <module>bom-graalvm</module>    
+    <module>bom-graalvm</module>
     <module>bom-sdk</module>    
   </modules>
 
   <dependencies/>
   <dependencyManagement>
     <dependencies>
-      <!-- <dependency>
-        <groupId>com.acanx.meta</groupId>
-        <artifactId>os-dependencies</artifactId>
-        <version>${revision}</version>
-        <type>pom</type>
-        <scope>import</scope> 
-      </dependency> -->
     </dependencies>
   </dependencyManagement>
 

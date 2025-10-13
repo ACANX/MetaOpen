@@ -9,7 +9,7 @@
 
     <groupId>com.acanx.meta.model</groupId>
     <artifactId>model-rss</artifactId>
-    <version>${revision}</version>
+    <version>0.1.0</version>
     <packaging>jar</packaging>
     <name>RSS Model Module</name>
     <url>https://github.com/ACANX/MetaOpen</url>
@@ -18,7 +18,6 @@
         <maven.deploy.skip>true</maven.deploy.skip>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
-        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
     </properties>
 
     <dependencies>
