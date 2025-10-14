@@ -68,7 +68,7 @@ jobs:
 
       - name: PublishMetaModelToMavenCentral
         working-directory: meta-model 
-        run: mvn clean deploy -pl meta-model -am
+        run: mvn clean deploy
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
