@@ -12,6 +12,7 @@
     <version>${revision}</version>
     <packaging>jar</packaging>
     <name>model-maven</name>
+    <description>Meta Test Model Module</description>
     <url>https://acanx.com</url>
 
       <scm>
