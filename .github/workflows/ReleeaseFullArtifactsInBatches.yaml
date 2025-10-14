@@ -76,7 +76,7 @@ jobs:
           
       - name: PublishMetaComponentToMavenCentral
         working-directory: meta-component 
-        run: mvn clean deploy
+        run: mvn clean deploy -am
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
