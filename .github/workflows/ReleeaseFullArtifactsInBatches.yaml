@@ -59,23 +59,23 @@ jobs:
       #     GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           
       - name: PublishMetaOpenAndModelToMavenCentral
-        run: mvn -B clean deploy
+        run: mvn clean deploy -pl meta-parent -am
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
 
       - name: PublishMetaModelToMavenCentral
-        working-directory: meta-model 
-        run: mvn -B clean deploy
+        # working-directory: meta-model 
+        run: mvn clean deploy -pl meta-model -am
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           
       - name: PublishMetaComponentToMavenCentral
-        working-directory: meta-component 
-        run: mvn -B clean deploy
+        # working-directory: meta-component 
+        run: mvn clean deploy -pl meta-component -am
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
