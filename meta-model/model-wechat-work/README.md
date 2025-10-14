@@ -1,2 +1,2 @@
-# XXX
+# model-wechat-work
 
