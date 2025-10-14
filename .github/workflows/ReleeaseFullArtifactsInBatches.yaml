@@ -58,7 +58,8 @@ jobs:
       #     # 如果 Maven 配置需要明确 Key ID：
       #     GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           
-      - name: PublishMetaOpenMavenCentral
+      - name: PublishMetaOpenToMavenCentral
+        working-directory: / 
         run: mvn clean deploy -pl meta-open -am
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
@@ -66,7 +67,7 @@ jobs:
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
 
       - name: PublishMetaModelToMavenCentral
-        # working-directory: meta-model 
+        working-directory: meta-model 
         run: mvn clean deploy -pl meta-model -am
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
@@ -74,7 +75,7 @@ jobs:
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           
       - name: PublishMetaComponentToMavenCentral
-        # working-directory: meta-component 
+        working-directory: meta-component 
         run: mvn clean deploy -pl meta-component -am
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
