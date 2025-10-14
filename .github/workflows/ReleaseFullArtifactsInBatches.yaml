@@ -75,7 +75,7 @@ jobs:
       #     GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           
       - name: PublishMetaComponentToMavenCentral
-        run: mvn -B clean deploy -pl meta-component -am
+        run: mvn -B clean deploy -pl sdk-maven-artifact -am
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
