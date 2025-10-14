@@ -50,6 +50,7 @@
         <dependency>
             <groupId>com.acanx.util</groupId>
             <artifactId>autil-core</artifactId>
+            <version>${autil.version}</version>
         </dependency>
         <!-- 注解处理器支持 -->
         <dependency>
