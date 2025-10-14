@@ -170,7 +170,7 @@
             <dependency>
                 <groupId>com.acanx.meta.model</groupId>
                 <artifactId>model-sonatype</artifactId>
-                <version>0.4.1</version>
+                <version>0.5.0</version>
                 <scope>compile</scope>
             </dependency>
             <dependency>
