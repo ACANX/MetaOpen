@@ -1,4 +1,4 @@
-name: ReleeaseFullArtifactsInBatches
+name: ReleaseFullArtifactsInBatches
 permissions:
   contents: read
 
@@ -48,38 +48,38 @@ jobs:
           EOF
         shell: bash
 
-      # - name: PublishOS-DependenciesToMavenCentral
-      #   working-directory: os-dependencies # 设置工作目录为 os-dependencies
-      #   run: mvn -B clean deploy
-      #   env:
-      #     # 假设你的 Maven GPG 插件配置或 settings.xml 使用这些变量
-      #     OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-      #     OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
-      #     # 如果 Maven 配置需要明确 Key ID：
-      #     GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+      - name: PublishOS-DependenciesToMavenCentral
+        working-directory: os-dependencies # 设置工作目录为 os-dependencies
+        run: mvn -B clean deploy
+        env:
+          # 假设你的 Maven GPG 插件配置或 settings.xml 使用这些变量
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+          # 如果 Maven 配置需要明确 Key ID：
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           
-      # - name: PublishMetaOpenToMavenCentral
-      #   working-directory: / 
-      #   run: mvn clean deploy -pl meta-open -am
-      #   env:
-      #     OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-      #     OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
-      #     GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+      - name: PublishMetaOpenToMavenCentral
+        working-directory: / 
+        run: mvn clean deploy -pl meta-open -am
+        env:
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
 
-      # - name: PublishMetaModelToMavenCentral
-      #   working-directory: meta-model 
-      #   run: mvn clean deploy
-      #   env:
-      #     OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-      #     OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
-      #     GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+      - name: PublishMetaModelToMavenCentral
+        working-directory: meta-model 
+        run: mvn clean deploy
+        env:
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           
-      # - name: PublishMetaComponentToMavenCentral
-      #   run: mvn clean deploy -pl meta-component -am
-      #   env:
-      #     OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-      #     OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
-      #     GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+      - name: PublishMetaComponentToMavenCentral
+        run: mvn clean deploy -pl meta-component -am
+        env:
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
 
       - name: PublishMetaBOMToMavenCentral
         working-directory: meta-bom 
