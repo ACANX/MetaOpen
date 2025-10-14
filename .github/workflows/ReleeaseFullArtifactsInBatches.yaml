@@ -80,5 +80,12 @@ jobs:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
-          
+
+      - name: PublishMetaBOMToMavenCentral
+        working-directory: meta-bom 
+        run: mvn -B clean deploy
+        env:
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           
