@@ -12,6 +12,7 @@
     <version>${revision}</version>
     <packaging>jar</packaging>
     <name>Quote Model Module</name>
+    <description>Meta Test Model Module</description>
     <url>https://github.com/ACANX/MetaOpen</url>
 
       <scm>
