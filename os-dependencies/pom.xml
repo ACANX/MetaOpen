@@ -1131,7 +1131,6 @@
                         </executions>
                         <configuration>
                             <executable>gpg</executable>
-                            <!--  <executable>D:\ProgramExt\GnuPG\bin\gpg.exe</executable> -->
                         </configuration>
                     </plugin>
                     <plugin>
