@@ -1,4 +1,4 @@
-name: ReleeaseFullArtifactsInBatches
+name: ReleaseFullArtifactsInBatches
 permissions:
   contents: read
 
@@ -58,8 +58,9 @@ jobs:
           # 如果 Maven 配置需要明确 Key ID：
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           
-      - name: PublishMetaOpenAndModelToMavenCentral
-        run: mvn -B clean deploy
+      - name: PublishMetaOpenToMavenCentral
+        working-directory: / 
+        run: mvn clean deploy -pl meta-open -am
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
@@ -67,18 +68,24 @@ jobs:
 
       - name: PublishMetaModelToMavenCentral
         working-directory: meta-model 
-        run: mvn -B clean deploy
+        run: mvn clean deploy
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           
       - name: PublishMetaComponentToMavenCentral
-        working-directory: meta-component 
+        run: mvn clean deploy -pl meta-component -am
+        env:
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+
+      - name: PublishMetaBOMToMavenCentral
+        working-directory: meta-bom 
         run: mvn -B clean deploy
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
-          
           
