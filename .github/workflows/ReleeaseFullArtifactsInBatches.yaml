@@ -1,0 +1,84 @@
+name: ReleeaseFullArtifactsInBatches
+permissions:
+  contents: read
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: CheckoutCode
+        uses: actions/checkout@v4
+
+      - name: SetupJava
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21' # 或你项目使用的JDK版本
+          distribution: 'temurin'
+          cache: 'maven'
+          # 通常会在 pom.xml 或 settings.xml 中配置 gpg 相关信息
+
+      - name: ImportGPGKey
+        uses: crazy-max/ghaction-import-gpg@v3
+        with:
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+
+      - name: ConfigureMavenSettingsForSonatype
+        run: |
+          mkdir -p ~/.m2
+          cat > ~/.m2/settings.xml <<EOF
+          <settings>
+            <servers>
+              <server>
+                <id>sonatype-nexus-staging</id>
+                <username>${{ secrets.OSSRH_USERNAME }}</username>
+                <password>${{ secrets.OSSRH_TOKEN }}</password>
+              </server>
+              <server>
+                <id>sonatype-nexus-snapshots</id>
+                <username>${{ secrets.OSSRH_USERNAME }}</username>
+                <password>${{ secrets.OSSRH_TOKEN }}</password>
+              </server>
+            </servers>
+          </settings>
+          EOF
+        shell: bash
+
+      - name: PublishOS-DependenciesToMavenCentral
+        working-directory: os-dependencies # 设置工作目录为 os-dependencies
+        run: mvn -B clean deploy
+        env:
+          # 假设你的 Maven GPG 插件配置或 settings.xml 使用这些变量
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+          # 如果 Maven 配置需要明确 Key ID：
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+          
+      - name: PublishMetaOpenAndModelToMavenCentral
+        run: mvn -B clean deploy
+        env:
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+
+      - name: PublishMetaModelToMavenCentral
+        working-directory: meta-model 
+        run: mvn -B clean deploy
+        env:
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+          
+      - name: PublishMetaComponentToMavenCentral
+        working-directory: meta-component 
+        run: mvn -B clean deploy
+        env:
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+          
+          
