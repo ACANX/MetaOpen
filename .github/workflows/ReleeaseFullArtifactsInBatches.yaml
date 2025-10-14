@@ -74,12 +74,12 @@ jobs:
       #     OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
       #     GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           
-      - name: PublishMetaComponentToMavenCentral
-        run: mvn clean deploy -pl meta-component -am
-        env:
-          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
-          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+      # - name: PublishMetaComponentToMavenCentral
+      #   run: mvn clean deploy -pl meta-component -am
+      #   env:
+      #     OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+      #     OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+      #     GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
 
       - name: PublishMetaBOMToMavenCentral
         working-directory: meta-bom 
