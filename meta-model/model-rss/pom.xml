@@ -12,6 +12,7 @@
     <version>${revision}</version> 
     <packaging>jar</packaging>
     <name>RSS Model Module</name>
+    <description>Meta Test Model Module</description>
     <url>https://github.com/ACANX/MetaOpen</url>
 
       <scm>
@@ -49,6 +50,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>1.18.42</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
