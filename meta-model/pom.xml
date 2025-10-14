@@ -13,6 +13,33 @@
   <name>Meta-Model</name>
   <description>Meta-Model POM</description>
   <url>https://github.com/ACANX/MetaOpen</url>
+  <inceptionYear>2025</inceptionYear>
+  
+  <scm>
+      <tag>V0.5.x</tag>
+      <url>git@github.com:ACANX/MetaOpen.git</url>
+      <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
+      <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>
+  </scm>
+  <organization>
+      <name>ACANX</name>
+      <url>https://acanx.com</url>
+  </organization>
+  <developers>
+      <developer>
+          <name>ACANX</name>
+          <email>acanx@qq.com</email>
+          <organization>ACANX</organization>
+      </developer>
+  </developers>
+  <licenses>
+      <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+      </license>
+  </licenses>
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
