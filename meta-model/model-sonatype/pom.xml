@@ -12,7 +12,9 @@
     <version>${revision}</version>
     <packaging>jar</packaging>
     <name>SonaType Model Module</name>
+    <description>Meta-Model POM</description>
     <url>https://acanx.com</url>
+    
 
       <scm>
           <tag>V0.5.x</tag>
