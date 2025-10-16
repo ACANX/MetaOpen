@@ -61,7 +61,7 @@
 
         <netty.version>4.2.7.Final</netty.version>
         <reactor.verion>3.7.12</reactor.verion>
-        <protobuf-java.version>4.32.1</protobuf-java.version>
+        <protobuf-java.version>4.33.0</protobuf-java.version>
 
         <tomcat-embed.version>11.0.13</tomcat-embed.version>
 
