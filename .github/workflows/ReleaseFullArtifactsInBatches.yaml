@@ -47,6 +47,7 @@ jobs:
           </settings>
           EOF
         shell: bash
+        
       - name: ListMavenProjects
         run: mvn -B projects:list
   
