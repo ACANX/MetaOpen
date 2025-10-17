@@ -48,8 +48,8 @@ jobs:
           EOF
         shell: bash
         
-      - name: ListMavenProjects
-        run: mvn -B projects:list
+      # - name: ListMavenProjects
+      #   run: mvn -B projects:list
   
       # - name: PublishOS-DependenciesToMavenCentral
       #   working-directory: os-dependencies # 设置工作目录为 os-dependencies
