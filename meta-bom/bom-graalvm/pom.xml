@@ -8,13 +8,13 @@
 
   <groupId>com.acanx.meta.component</groupId>
   <artifactId>bom-graalvm</artifactId>
-  <version>21.0.0.4</version>
+  <version>25.${revision}</version>
   <packaging>pom</packaging>
   <name>BOM-GraalVM</name>
   <description>GraalVM Component BOM</description>
   <url>https://github.com/ACANX/MetaOpen</url>
     <scm>
-        <tag>V0.4.x</tag>
+        <tag>V0.5.x</tag>
         <url>git@github.com:ACANX/MetaOpen.git</url>
         <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
         <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>

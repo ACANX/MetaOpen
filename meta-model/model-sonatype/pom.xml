@@ -11,8 +11,8 @@
     <artifactId>model-sonatype</artifactId>
     <version>${revision}</version>
     <packaging>jar</packaging>
-    <name>SonaType Model Module</name>
-    <description>Meta-Model POM</description>
+    <name>Model-Sonatype</name>
+    <description>Model-Sonatype Module</description>
     <url>https://acanx.com</url>
     
 
