@@ -12,7 +12,7 @@
     <artifactId>model-gemini</artifactId>
     <version>${revision}</version> 
     <packaging>jar</packaging>
-    <name>model-gemini</name>
+    <name>Model-Gemini</name>
     <description>Meta Test Model Module</description>
     <url>https://acanx.com</url>
 
