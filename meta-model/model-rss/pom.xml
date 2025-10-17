@@ -11,8 +11,8 @@
     <artifactId>model-rss</artifactId>
     <version>${revision}</version> 
     <packaging>jar</packaging>
-    <name>RSS Model Module</name>
-    <description>Meta Test Model Module</description>
+    <name>Model-RSS</name>
+    <description>Model-RSS Module</description>
     <url>https://github.com/ACANX/MetaOpen</url>
 
       <scm>

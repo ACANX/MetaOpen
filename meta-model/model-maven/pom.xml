@@ -11,7 +11,7 @@
     <artifactId>model-maven</artifactId>
     <version>${revision}</version>
     <packaging>jar</packaging>
-    <name>model-maven</name>
+    <name>Model-Maven</name>
     <description>Meta Test Model Module</description>
     <url>https://acanx.com</url>
 

@@ -15,7 +15,7 @@
     <description>Maven-Artifact SDK Module</description>
     <url>https://github.com/ACANX/MetaOpen</url>
     <scm>
-        <tag>V0.4.x</tag>
+        <tag>V0.5.x</tag>
         <url>git@github.com:ACANX/MetaOpen.git</url>
         <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
         <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>
@@ -40,7 +40,7 @@
     </licenses>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-<!--        <java.version>11</java.version>-->
+        <java.version>11</java.version>
         <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
     </properties>
 
@@ -53,18 +53,22 @@
         <dependency>
             <groupId>com.acanx.meta.model</groupId>
             <artifactId>model-sonatype</artifactId>
+            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>com.acanx.util</groupId>
             <artifactId>autil-core</artifactId>
+            <version>${autil.version}</version>
         </dependency>
         <dependency>
             <groupId>com.acanx.util</groupId>
             <artifactId>json-jackson</artifactId>
+            <version>${autil.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-xml</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -72,7 +76,6 @@
             <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
 
@@ -106,7 +109,7 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>
-            </plugin>
+            </plugin>            
         </plugins>
     </build>
 </project>
