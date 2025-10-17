@@ -49,22 +49,27 @@
             <groupId>com.acanx.meta.model</groupId>
             <artifactId>model-maven</artifactId>
             <version>${revision}</version>
+            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>com.acanx.meta.model</groupId>
             <artifactId>model-sonatype</artifactId>
+            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>com.acanx.util</groupId>
             <artifactId>autil-core</artifactId>
+            <version>${autil.version}</version>
         </dependency>
         <dependency>
             <groupId>com.acanx.util</groupId>
             <artifactId>json-jackson</artifactId>
+            <version>${autil.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-xml</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -72,7 +77,6 @@
             <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
 
@@ -106,37 +110,7 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>
-            </plugin>
-
-
-                                <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>flatten-maven-plugin</artifactId>
-                        <version>${flatten-maven-plugin.version}</version>
-                        <configuration>
-                            <!--  是否更新pom文件，此处还有更高级的用法-->
-                            <updatePomFile>true</updatePomFile>
-                            <flattenMode>resolveCiFriendliesOnly</flattenMode>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <id>flatten</id>
-                                <phase>process-resources</phase>
-                                <goals>
-                                    <goal>flatten</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>flatten.clean</id>
-                                <phase>clean</phase>
-                                <goals>
-                                    <goal>clean</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-            
+            </plugin>            
         </plugins>
     </build>
 </project>
