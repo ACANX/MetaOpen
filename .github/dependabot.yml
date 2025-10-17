@@ -12,16 +12,12 @@ updates:
       - "ACANX"
     assignees:                  # 自动分配负责人
       - "ACANX"
-    ignore:                    # 忽略特定依赖
-      - dependency-name: "log4j:*"
-        versions: [">= 2.0.0"] # 忽略 log4j 2.x 的更新
-      - dependency-name: "org.junit.jupiter:junit-jupiter-api"
-        versions: [">= 6.0.0"] # 忽略 junit-jupiter 6.x 的更新      
+    ignore:                    # 忽略特定依赖  
       - dependency-name: "org.springframework:spring-core"
         versions: [">= 7.0.0-"] # 忽略 spring-core 7.x 的更新           
       - dependency-name: "org.apache.flink:flink-clients"
       - dependency-name: "org.openjfx:javafx-base"
-        versions: [">= 25-ea"] # 忽略 25.x 的更新
+        versions: [">= 26-ea"] # 忽略 26.x 的更新
       - dependency-name: "org.openjfx:javafx-controls"
       - dependency-name: "org.openjfx:javafx-graphics"
       - dependency-name: "org.openjfx:javafx-fxml"
@@ -45,7 +41,7 @@ updates:
     directory: "/meta-model"
     schedule:
       interval: "daily"
-      time: "05:00"         # 每天 UTC 时间 5:00 检查
+      time: "21:00"         # 每天 UTC 时间 5:00 检查
       timezone: "Asia/Shanghai" # 时区设置
     target-branch: "dependabot"
     open-pull-requests-limit: 15  # 最大 PR 数量
@@ -54,8 +50,6 @@ updates:
     ignore:                    # 忽略特定依赖
       - dependency-name: "log4j:*"
         versions: [">= 3.0.0"] # 忽略 log4j 3.x 的更新
-      - dependency-name: "org.junit.jupiter:junit-jupiter-api"
-        versions: [">= 6.0.0"] # 忽略 junit-jupiter 6.x 的更新
     commit-message:            # 自定义提交信息
       prefix: "chore"
       include: "scope"
@@ -67,7 +61,7 @@ updates:
     directory: "/meta-component"
     schedule:
       interval: "daily"
-      time: "05:00"         # 每天 UTC 时间 5:00 检查
+      time: "21:10"         # 每天 UTC 时间 5:00 检查
       timezone: "Asia/Shanghai" # 时区设置
     target-branch: "dependabot"
     open-pull-requests-limit: 15  # 最大 PR 数量
@@ -98,7 +92,6 @@ updates:
     ignore:                    # 忽略特定依赖
       - dependency-name: "log4j:*"
         versions: [">= 2.0.0"] # 忽略 log4j 2.x 的更新
-      - dependency-name: "org.junit.jupiter:junit-jupiter-api"
     commit-message:            # 自定义提交信息
       prefix: "chore"
       include: "scope"
@@ -120,7 +113,6 @@ updates:
     ignore:                    # 忽略特定依赖
       - dependency-name: "log4j:*"
         versions: [">= 2.0.0"] # 忽略 log4j 2.x 的更新
-      - dependency-name: "org.junit.jupiter:junit-jupiter-api"
     commit-message:            # 自定义提交信息
       prefix: "chore"
       include: "scope"
