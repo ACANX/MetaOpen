@@ -63,7 +63,7 @@ jobs:
           
       - name: PublishMetaOpenToMavenCentral
         # working-directory: / 
-        run: mvn -B clean deploy -pl meta-open -am
+        run: mvn -B clean deploy -pl :meta-open -am
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
