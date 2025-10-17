@@ -57,16 +57,16 @@ jobs:
          echo "Second command"
          pwd
          mvn clean install
-         cd os-dependencies       # 设置工作目录为 os-dependencies
-         pwd
-         mvn -B clean deploy
-         cd ../
-         pwd
-         mvn -B clean deploy -pl :meta-open -am
-         cd meta-model           # 设置工作目录为 meta-model
-         pwd
-         mvn -B clean deploy
-         cd ../
+         # cd os-dependencies       # 设置工作目录为 os-dependencies
+         # pwd
+         # mvn -B clean deploy
+         # cd ../
+         # pwd
+         # mvn -B clean deploy -pl :meta-open -am
+         # cd meta-model           # 设置工作目录为 meta-model
+         # pwd
+         # mvn -B clean deploy
+         # cd ../
          cd meta-component      # 设置工作目录为 meta-component
          pwd
          mvn -B clean deploy
