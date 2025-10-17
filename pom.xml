@@ -38,9 +38,10 @@
     </licenses>
 
     <properties>
-        <revision>0.5.4</revision>
+        <revision>0.5.5</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>21</java.version>
+        
         <maven.compiler.release>21</maven.compiler.release>
         <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
         <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
@@ -50,6 +51,7 @@
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
         <flatten-maven-plugin.version>1.7.3</flatten-maven-plugin.version>
         <central-publishing-maven-plugin.version>0.9.0</central-publishing-maven-plugin.version>
+             
         <sonar.organization>acanx</sonar.organization>     
         <autil.version>0.4.2</autil.version>
         <jackson.version>2.20.0</jackson.version>
@@ -61,8 +63,9 @@
     <modules>
         <module>meta-model</module>
         <module>meta-component</module>
+        <module>meta-bom</module> 
+        <!-- <module>meta-sdk</module>  -->
         <module>os-dependencies</module>
-        <module>meta-bom</module>
     </modules>
 
     <dependencies/>
