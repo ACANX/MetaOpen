@@ -59,7 +59,7 @@ jobs:
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           
       - name: PublishMetaOpenToMavenCentral
-        working-directory: / 
+        # working-directory: / 
         run: mvn -B clean deploy -pl meta-open -am
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
