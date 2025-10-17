@@ -472,7 +472,7 @@
                 <groupId>com.fasterxml.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-xml</artifactId>
                 <version>${jackson.version}</version>
-                <scope>provided</scope>
+                <!-- <scope>provided</scope> -->
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.dataformat</groupId>
