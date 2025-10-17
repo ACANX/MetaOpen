@@ -15,7 +15,7 @@
     <description>Maven-Artifact SDK Module</description>
     <url>https://github.com/ACANX/MetaOpen</url>
     <scm>
-        <tag>V0.4.x</tag>
+        <tag>V0.5.x</tag>
         <url>git@github.com:ACANX/MetaOpen.git</url>
         <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
         <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>
@@ -40,7 +40,7 @@
     </licenses>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-<!--        <java.version>11</java.version>-->
+        <java.version>11</java.version>
         <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
     </properties>
 
