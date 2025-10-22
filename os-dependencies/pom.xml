@@ -94,7 +94,7 @@
         <jspecify.version>1.0.0</jspecify.version>
 
         <spring.version>6.2.12</spring.version>
-        <spring-security.version>6.5.5</spring-security.version>
+        <spring-security.version>6.5.6</spring-security.version>
         <spring-boot.version>3.5.6</spring-boot.version>
 
         <dubbo.version>3.3.5</dubbo.version>
@@ -137,6 +137,40 @@
                 <version>${autil.version}</version>
                 <scope>compile</scope>
             </dependency>
+
+            
+            <!-- https://mvnrepository.com/artifact/tools.jackson.core/jackson-core -->
+            <dependency>
+                <groupId>tools.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind -->
+            <dependency>
+                <groupId>tools.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/tools.jackson.dataformat/jackson-dataformat-xml -->
+            <dependency>
+                <groupId>tools.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-xml</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/tools.jackson.dataformat/jackson-dataformat-yaml -->
+            <dependency>
+                <groupId>tools.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-yaml</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/tools.jackson.dataformat/jackson-dataformat-csv -->
+            <dependency>
+                <groupId>tools.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-csv</artifactId>
+                <version>3.0.0</version>
+            </dependency>            
+
+            
             <dependency>
                 <groupId>com.acanx.util</groupId>
                 <artifactId>json-gson</artifactId>
@@ -854,7 +888,7 @@
             <dependency>
                 <groupId>io.r2dbc</groupId>
                 <artifactId>r2dbc-h2</artifactId>
-                <version>1.0.0.RELEASE</version>
+                <version>1.1.0.RELEASE</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
@@ -875,7 +909,7 @@
             <dependency>
                 <groupId>org.apache.groovy</groupId>
                 <artifactId>groovy</artifactId>
-                <version>5.0.1</version>
+                <version>5.0.2</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
@@ -904,7 +938,7 @@
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-api</artifactId>
-                <version>4.36.0</version>
+                <version>4.37.0</version>
             </dependency>
             <dependency>
                 <groupId>org.thymeleaf</groupId>
