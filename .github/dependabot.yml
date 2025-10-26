@@ -98,7 +98,7 @@ updates:
       - "依赖:升级"
       - "自动化:提交"
       - "Dependabot"     
-    - package-ecosystem: "maven"
+  - package-ecosystem: "maven"
     directory: "/meta-bom/bom-sdk"
     schedule:
       interval: "daily"
