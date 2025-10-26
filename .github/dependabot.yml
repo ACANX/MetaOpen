@@ -82,7 +82,6 @@ updates:
     directory: "/meta-bom/bom-graalvm"
     schedule:
       interval: "daily"
-      # day: "sunday"         # 明确指定周日（关键！）
       time: "22:35"         # 每周 UTC 时间 22:30 检查
       timezone: "Asia/Shanghai" # 时区设置
     target-branch: "dependabot"
