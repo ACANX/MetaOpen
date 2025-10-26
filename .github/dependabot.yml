@@ -79,7 +79,7 @@ updates:
       - "自动化:提交"
       - "Dependabot"            
   - package-ecosystem: "maven"
-    directory: "meta-bom/bom-graalvm"
+    directory: "/meta-bom/bom-graalvm"
     schedule:
       interval: "daily"
       # day: "sunday"         # 明确指定周日（关键！）
