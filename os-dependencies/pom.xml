@@ -55,7 +55,7 @@
         <autil.version>0.4.2</autil.version>
         <acanx-utils.version>0.4.2</acanx-utils.version>
 
-        <openjfx.version>25</openjfx.version>
+        <openjfx.version>25.0.1</openjfx.version>
         <javassist.version>3.30.2-GA</javassist.version>
         <aspectjweaver.version>1.9.24</aspectjweaver.version>
         <bytebuddy.version>1.17.8</bytebuddy.version>
@@ -80,7 +80,7 @@
         <lombok.version>1.18.42</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
 
-        <fastjson2.version>2.0.59</fastjson2.version>
+        <fastjson2.version>2.0.60</fastjson2.version>
         <jackson.version>2.20.0</jackson.version>
         <snakeyaml.version>2.5</snakeyaml.version>
 
@@ -95,13 +95,13 @@
 
         <spring.version>6.2.12</spring.version>
         <spring-security.version>6.5.6</spring-security.version>
-        <spring-boot.version>3.5.6</spring-boot.version>
+        <spring-boot.version>3.5.7</spring-boot.version>
 
         <dubbo.version>3.3.5</dubbo.version>
         <nacos.version>3.1.0</nacos.version>
 
         <lucense.version>10.3.1</lucense.version>
-        <elasticsearch.version>9.1.5</elasticsearch.version>
+        <elasticsearch.version>9.2.0</elasticsearch.version>
 
         <flink.version>1.17.2</flink.version>
         <hadoop.version>3.3.6</hadoop.version>
@@ -143,31 +143,31 @@
             <dependency>
                 <groupId>tools.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
-                <version>3.0.0</version>
+                <version>3.0.1</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind -->
             <dependency>
                 <groupId>tools.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
-                <version>3.0.0</version>
+                <version>3.0.1</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/tools.jackson.dataformat/jackson-dataformat-xml -->
             <dependency>
                 <groupId>tools.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-xml</artifactId>
-                <version>3.0.0</version>
+                <version>3.0.1</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/tools.jackson.dataformat/jackson-dataformat-yaml -->
             <dependency>
                 <groupId>tools.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-yaml</artifactId>
-                <version>3.0.0</version>
+                <version>3.0.1</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/tools.jackson.dataformat/jackson-dataformat-csv -->
             <dependency>
                 <groupId>tools.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-csv</artifactId>
-                <version>3.0.0</version>
+                <version>3.0.1</version>
             </dependency>            
 
             
@@ -317,7 +317,7 @@
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-plugin-plugin</artifactId>
-                <version>3.15.1</version>
+                <version>3.15.2</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -394,7 +394,7 @@
             <dependency>
                 <groupId>org.apache.maven.plugin-tools</groupId>
                 <artifactId>maven-plugin-annotations</artifactId>
-                <version>3.15.1</version>
+                <version>3.15.2</version>
                 <scope>provided</scope>
             </dependency>
 
@@ -931,14 +931,14 @@
             <dependency>
                 <groupId>org.quartz-scheduler</groupId>
                 <artifactId>quartz</artifactId>
-                <version>2.5.0</version>
+                <version>2.5.1</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-api</artifactId>
-                <version>4.37.0</version>
+                <version>4.38.0</version>
             </dependency>
             <dependency>
                 <groupId>org.thymeleaf</groupId>
@@ -951,7 +951,7 @@
             <dependency>
                 <groupId>io.lettuce</groupId>
                 <artifactId>lettuce-core</artifactId>
-                <version>6.8.1.RELEASE</version>
+                <version>7.0.0.RELEASE</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
@@ -1006,7 +1006,7 @@
             <dependency>
                 <groupId>org.xmlunit</groupId>
                 <artifactId>xmlunit-core</artifactId>
-                <version>2.10.4</version>
+                <version>2.11.0</version>
                 <scope>test</scope>
                 <optional>true</optional>
             </dependency>
