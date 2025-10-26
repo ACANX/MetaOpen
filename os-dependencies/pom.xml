@@ -55,7 +55,7 @@
         <autil.version>0.4.2</autil.version>
         <acanx-utils.version>0.4.2</acanx-utils.version>
 
-        <openjfx.version>25</openjfx.version>
+        <openjfx.version>25.0.1</openjfx.version>
         <javassist.version>3.30.2-GA</javassist.version>
         <aspectjweaver.version>1.9.24</aspectjweaver.version>
         <bytebuddy.version>1.17.8</bytebuddy.version>
