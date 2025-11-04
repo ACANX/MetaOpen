@@ -57,7 +57,7 @@
 
         <openjfx.version>25.0.1</openjfx.version>
         <javassist.version>3.30.2-GA</javassist.version>
-        <aspectjweaver.version>1.9.24</aspectjweaver.version>
+        <aspectjweaver.version>1.9.25</aspectjweaver.version>
         <bytebuddy.version>1.17.8</bytebuddy.version>
 
         <netty.version>4.2.7.Final</netty.version>
