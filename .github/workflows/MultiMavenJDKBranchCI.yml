@@ -50,10 +50,10 @@ jobs:
             os: ubuntu-latest 
             
           - branch: dependabot
-            java: '25-ea'
+            java: '25'
             os: windows-latest
           - branch: dependabot
-            java: '25-ea'
+            java: '25'
             os: ubuntu-latest      
             
           - branch: dev
