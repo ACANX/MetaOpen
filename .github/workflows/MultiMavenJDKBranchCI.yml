@@ -35,19 +35,19 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - branch: dependabot
-            java: '21'
-            os: ubuntu-latest
-          - branch: dependabot
-            java: '21'
+          - branch: main
+            java: '25'
             os: windows-latest
-
-          - branch: dependabot
-            java: '17'
-            os: windows-latest           
-          - branch: dependabot
-            java: '17'
-            os: ubuntu-latest 
+          - branch: main
+            java: '25'
+            os: ubuntu-latest     
+          
+          - branch: dev
+            java: '25'
+            os: windows-latest
+          - branch: dev
+            java: '25'
+            os: ubuntu-latest      
             
           - branch: dependabot
             java: '25'
@@ -56,19 +56,33 @@ jobs:
             java: '25'
             os: ubuntu-latest      
             
-          - branch: dev
+          - branch: dependabot
             java: '21'
             os: ubuntu-latest
-          - branch: dev
+          - branch: dependabot
             java: '21'
             os: windows-latest
 
+          - branch: dev
+            java: '21'
+            os: ubuntu-latest
+          - branch: dev
+            java: '21'
+            os: windows-latest
+        
           - branch: main
             java: '21'
             os: ubuntu-latest
           - branch: main
             java: '21'
             os: windows-latest
+            
+          - branch: main
+            java: '17'
+            os: windows-latest           
+          - branch: main
+            java: '17'
+            os: ubuntu-latest 
             
           # - branch: main
           #   java: '11'
