@@ -7,7 +7,7 @@ updates:
       time: "03:00"         # 每天 UTC 时间 3:00 检查
       timezone: "Asia/Shanghai" # 时区设置
     target-branch: "dependabot"
-    open-pull-requests-limit: 15  # 最大 PR 数量
+    open-pull-requests-limit: 50  # 最大 PR 数量
     reviewers:                  # 自动添加审阅者
       - "ACANX"
     assignees:                  # 自动分配负责人
@@ -44,7 +44,7 @@ updates:
       time: "21:00"         # 每天 UTC 时间 5:00 检查
       timezone: "Asia/Shanghai" # 时区设置
     target-branch: "dependabot"
-    open-pull-requests-limit: 15  # 最大 PR 数量
+    open-pull-requests-limit: 50  # 最大 PR 数量
     assignees:                  # 自动分配负责人
       - "maintainer"
     ignore:                    # 忽略特定依赖
@@ -64,7 +64,7 @@ updates:
       time: "21:10"         # 每天 UTC 时间 5:00 检查
       timezone: "Asia/Shanghai" # 时区设置
     target-branch: "dependabot"
-    open-pull-requests-limit: 15  # 最大 PR 数量
+    open-pull-requests-limit: 50  # 最大 PR 数量
     assignees:                  # 自动分配负责人
       - "dependabot"
     ignore:                    # 忽略特定依赖
@@ -85,7 +85,7 @@ updates:
       time: "22:35"         # 每周 UTC 时间 22:30 检查
       timezone: "Asia/Shanghai" # 时区设置
     target-branch: "dependabot"
-    open-pull-requests-limit: 15  # 最大 PR 数量
+    open-pull-requests-limit: 50  # 最大 PR 数量
     assignees:                  # 自动分配负责人
       - "dependabot[bot]"
     ignore:                    # 忽略特定依赖
@@ -105,7 +105,7 @@ updates:
       time: "22:40"         # 每周 UTC 时间 22:30 检查
       timezone: "Asia/Shanghai" # 时区设置
     target-branch: "dependabot"
-    open-pull-requests-limit: 15  # 最大 PR 数量
+    open-pull-requests-limit: 50  # 最大 PR 数量
     assignees:                  # 自动分配负责人
       - "dependabot[bot]"
     ignore:                    # 忽略特定依赖

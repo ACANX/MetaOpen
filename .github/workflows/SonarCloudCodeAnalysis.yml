@@ -23,7 +23,7 @@ jobs:
       - name: SetupJDK
         uses: actions/setup-java@v5
         with:
-          java-version: '21' # 或你的项目使用的JDK版本
+          java-version: '25' # 或你的项目使用的JDK版本
           distribution: 'temurin'
 
       - name: CacheMavenDependencies
