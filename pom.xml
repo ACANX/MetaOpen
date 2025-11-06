@@ -38,7 +38,7 @@
     </licenses>
 
     <properties>
-        <revision>0.5.5</revision>
+        <revision>0.5.6</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>21</java.version>
         
@@ -54,10 +54,10 @@
              
         <sonar.organization>acanx</sonar.organization>     
         <autil.version>0.4.2</autil.version>
-        <jackson.version>2.20.0</jackson.version>
+        <jackson.version>2.20.1</jackson.version>
         <fastjson2.version>2.0.59</fastjson2.version>
         <lombok.version>1.18.42</lombok.version>
-        <junit-jupiter.version>6.0.0</junit-jupiter.version>
+        <junit-jupiter.version>6.0.1</junit-jupiter.version>
     </properties>
 
     <modules>
