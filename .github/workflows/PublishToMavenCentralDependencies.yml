@@ -19,7 +19,7 @@ jobs:
       - name: SetupJava
         uses: actions/setup-java@v5
         with:
-          java-version: '21' # 或你项目使用的JDK版本
+          java-version: '25' # 或你项目使用的JDK版本
           distribution: 'temurin'
           cache: 'maven'
           # 通常会在 pom.xml 或 settings.xml 中配置 gpg 相关信息
