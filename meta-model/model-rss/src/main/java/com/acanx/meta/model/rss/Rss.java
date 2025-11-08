@@ -7,4 +7,5 @@ package com.acanx.meta.model.rss;
  * @since 20251005
  */
 public class Rss {
+
 }

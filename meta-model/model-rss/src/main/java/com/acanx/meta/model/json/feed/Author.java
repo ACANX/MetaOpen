@@ -1,14 +1,11 @@
 package com.acanx.meta.model.json.feed;
 
-import lombok.Data;
-
 /**
  * Author
  *
  * @author ACANX
  * @since 20250926
  */
-@Data
 public class Author {
 
     private String name;
@@ -17,4 +14,29 @@ public class Author {
 
 
     private String avatar;
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
 }
