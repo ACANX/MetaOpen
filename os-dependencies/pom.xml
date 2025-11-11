@@ -61,10 +61,10 @@
         <bytebuddy.version>1.17.8</bytebuddy.version>
 
         <netty.version>4.2.7.Final</netty.version>
-        <reactor.verion>3.7.12</reactor.verion>
+        <reactor.verion>3.8.0</reactor.verion>
         <protobuf-java.version>4.33.0</protobuf-java.version>
 
-        <tomcat-embed.version>11.0.13</tomcat-embed.version>
+        <tomcat-embed.version>11.0.14</tomcat-embed.version>
 
         <mysql-connector-j.version>9.5.0</mysql-connector-j.version>
         <postgresql.version>42.7.8</postgresql.version>
@@ -73,7 +73,7 @@
         <seata.version>2.5.0</seata.version>
 
         <commons-lang3.version>3.19.0</commons-lang3.version>
-        <common-io.version>2.20.0</common-io.version>
+        <common-io.version>2.21.0</common-io.version>
         <commons-collections4.version>4.5.0</commons-collections4.version>
         <guava.version>33.5.0-jre</guava.version>
 
@@ -87,7 +87,7 @@
         <caffeine.version>3.2.3</caffeine.version>
         <freemarker.version>2.3.34</freemarker.version>
         <jsoup.version>1.21.2</jsoup.version>
-        <hibernate-validator.version>9.0.1.Final</hibernate-validator.version>
+        <hibernate-validator.version>9.1.0.Final</hibernate-validator.version>
         <redisson.version>3.52.0</redisson.version>
 
         <slf4j.version>2.0.17</slf4j.version>
@@ -143,31 +143,31 @@
             <dependency>
                 <groupId>tools.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
-                <version>3.0.1</version>
+                <version>3.0.2</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind -->
             <dependency>
                 <groupId>tools.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
-                <version>3.0.1</version>
+                <version>3.0.2</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/tools.jackson.dataformat/jackson-dataformat-xml -->
             <dependency>
                 <groupId>tools.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-xml</artifactId>
-                <version>3.0.1</version>
+                <version>3.0.2</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/tools.jackson.dataformat/jackson-dataformat-yaml -->
             <dependency>
                 <groupId>tools.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-yaml</artifactId>
-                <version>3.0.1</version>
+                <version>3.0.2</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/tools.jackson.dataformat/jackson-dataformat-csv -->
             <dependency>
                 <groupId>tools.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-csv</artifactId>
-                <version>3.0.1</version>
+                <version>3.0.2</version>
             </dependency>            
 
             
@@ -332,7 +332,7 @@
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>3.2.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
