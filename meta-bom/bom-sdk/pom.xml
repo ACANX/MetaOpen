@@ -4,7 +4,6 @@
     <groupId>com.acanx.meta</groupId>
     <artifactId>meta-bom</artifactId>
     <version>${revision}</version>
-    <relativePath>../pom.xml</relativePath>
   </parent>
   <groupId>com.acanx.meta.bom</groupId>
   <artifactId>bom-sdk</artifactId>
@@ -41,7 +40,7 @@
   
   <properties>
     <awssdk.version>2.38.1</awssdk.version>
-  <properties/>
+  </properties>
 
   <dependencyManagement>
     <dependencies>
