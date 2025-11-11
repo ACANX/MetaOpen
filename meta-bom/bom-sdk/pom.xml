@@ -4,7 +4,6 @@
     <groupId>com.acanx.meta</groupId>
     <artifactId>meta-bom</artifactId>
     <version>${revision}</version>
-    <relativePath>../pom.xml</relativePath>
   </parent>
   <groupId>com.acanx.meta.bom</groupId>
   <artifactId>bom-sdk</artifactId>
@@ -39,8 +38,9 @@
         </license>
     </licenses>
   
-  <properties/>
-
+  <properties>
+    <awssdk.version>2.38.1</awssdk.version>
+  </properties>
 
   <dependencyManagement>
     <dependencies>
@@ -48,7 +48,7 @@
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
             <artifactId>s3</artifactId>
-            <version>2.38.2</version>
+            <version>${awssdk.version}</version>
             <scope>compile</scope>
         </dependency>
       
@@ -57,7 +57,7 @@
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
             <artifactId>lambda</artifactId>
-            <version>2.38.2</version>
+            <version>${awssdk.version}</version>
         </dependency>
         <dependency>
             <groupId>com.amazonaws</groupId>
@@ -79,20 +79,20 @@
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
             <artifactId>ses</artifactId>
-            <version>2.38.2</version>
+            <version>${awssdk.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/cloudwatch -->
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
             <artifactId>cloudwatch</artifactId>
-            <version>2.38.2</version>
+            <version>${awssdk.version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/costexplorer -->
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
             <artifactId>costexplorer</artifactId>
-            <version>2.38.2</version>
+            <version>${awssdk.version}</version>
         </dependency>
 
         <!-- aliyun -->
