@@ -83,11 +83,15 @@
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                    <annotationProcessors>
+                        <annotationProcessor>com.acanx.util.incubator.annotation.CopierProcessor</annotationProcessor>
+                    </annotationProcessors>
                     <annotationProcessorPaths>
                         <!-- 确保注解处理器路径包含你的处理器 -->
                         <path>
                             <groupId>com.acanx.util</groupId>
                             <artifactId>incubator-annotation</artifactId>
+                            <version>0.4.3</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
