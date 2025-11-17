@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
  * @author ACANX
  * @since 202506
  */
-public class ObjectCopierProcessor {
+public class CopierProcessor {
 
     /**
      *  单纯的注解
@@ -26,14 +26,14 @@ public class ObjectCopierProcessor {
      * @param target   目标
      */
     @Copier
-    void convertMessageFlexToMessageStable(MessageFlex source, MessageStable target) {}
+    public void convertMessageFlexToMessageStable(MessageFlex source, MessageStable target) {}
 
 
     /**
      *   用户对象转换
      */
     @Copier
-    void convertUserToUserDTO(User source, UserDTO target) {
+    public void convertUserToUserDTO(User source, UserDTO target) {
         // 编译期生成的代码将放在辅助类中
         // UserCopierHelper.copy(source, target);
     }
