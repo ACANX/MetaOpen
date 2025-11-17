@@ -95,7 +95,7 @@
         <jspecify.version>1.0.0</jspecify.version>
 
         <spring.version>6.2.13</spring.version>
-        <spring-security.version>6.5.6</spring-security.version>
+        <spring-security.version>7.0.0</spring-security.version>
         <spring-boot.version>3.5.7</spring-boot.version>
 
         <dubbo.version>3.3.5</dubbo.version>
