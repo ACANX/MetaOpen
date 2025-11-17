@@ -1,4 +1,6 @@
-package com.acanx.meta.model.json.feed;
+package com.acanx.meta.model.unirss;
+
+
 
 /**
  * Author

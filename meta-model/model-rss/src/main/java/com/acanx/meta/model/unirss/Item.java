@@ -1,10 +1,12 @@
-package com.acanx.meta.model.rss;
+package com.acanx.meta.model.unirss;
+
+import java.util.List;
 
 /**
  * Item
  *
  * @author ACANX
- * @since 20251004
+ * @since 20251016
  */
 public class Item {
 
@@ -12,11 +14,15 @@ public class Item {
 
     private String link;
 
-    private String description;
+    private String content;
+
+    private String summary;
 
     private String pubDate;
 
     private String pubDateTime;
+
+    private Long publishTs;
 
     private String guid;
 
@@ -36,6 +42,9 @@ public class Item {
 
     private String urlImage;
 
+    private String externalUrl;
+
+    private List<Author> authors;
 
     public String getTitle() {
         return title;
@@ -53,12 +62,12 @@ public class Item {
         this.link = link;
     }
 
-    public String getDescription() {
-        return description;
+    public String getContent() {
+        return content;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getPubDate() {
@@ -147,5 +156,37 @@ public class Item {
 
     public void setUrlImage(String urlImage) {
         this.urlImage = urlImage;
+    }
+
+    public String getExternalUrl() {
+        return externalUrl;
+    }
+
+    public void setExternalUrl(String externalUrl) {
+        this.externalUrl = externalUrl;
+    }
+
+    public List<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(List<Author> authors) {
+        this.authors = authors;
+    }
+
+    public Long getPublishTs() {
+        return publishTs;
+    }
+
+    public void setPublishTs(Long publishTs) {
+        this.publishTs = publishTs;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 }
