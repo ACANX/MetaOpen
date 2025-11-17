@@ -36,7 +36,7 @@
     </licenses>
 
     <properties>
-        <revision>0.5.7-SNAPSHOT</revision>
+        <revision>0.5.7</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>21</java.version>
         <maven.compiler.release>21</maven.compiler.release>
@@ -51,8 +51,8 @@
         <central-publishing-maven-plugin.version>0.9.0</central-publishing-maven-plugin.version>
 
         <deamond.version>0.1.4.5</deamond.version>
-        <meta-open.version>0.5.6</meta-open.version>
-        <autil.version>0.4.3-SNAPSHOT</autil.version>
+        <meta-open.version>0.5.7</meta-open.version>
+        <autil.version>0.4.3</autil.version>
         <acanx-utils.version>0.4.2</acanx-utils.version>
 
         <openjfx.version>25.0.1</openjfx.version>
@@ -69,10 +69,10 @@
         <mysql-connector-j.version>9.5.0</mysql-connector-j.version>
         <postgresql.version>42.7.8</postgresql.version>
         <mybatis.version>3.5.19</mybatis.version>
-        <hibernate-orm.version>7.1.7.Final</hibernate-orm.version>
+        <hibernate-orm.version>7.1.8.Final</hibernate-orm.version>
         <seata.version>2.5.0</seata.version>
 
-        <commons-lang3.version>3.19.0</commons-lang3.version>
+        <commons-lang3.version>3.20.0</commons-lang3.version>
         <common-io.version>2.21.0</common-io.version>
         <commons-collections4.version>4.5.0</commons-collections4.version>
         <guava.version>33.5.0-jre</guava.version>
@@ -82,6 +82,7 @@
 
         <fastjson2.version>2.0.60</fastjson2.version>
         <jackson.version>2.20.1</jackson.version>
+        <jackson3.version>3.0.2</jackson3.version>
         <snakeyaml.version>2.5</snakeyaml.version>
 
         <caffeine.version>3.2.3</caffeine.version>
@@ -143,31 +144,31 @@
             <dependency>
                 <groupId>tools.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
-                <version>3.0.2</version>
+                <version>${jackson3.version}</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind -->
             <dependency>
                 <groupId>tools.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
-                <version>3.0.2</version>
+                <version>${jackson3.version}</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/tools.jackson.dataformat/jackson-dataformat-xml -->
             <dependency>
                 <groupId>tools.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-xml</artifactId>
-                <version>3.0.2</version>
+                <version>${jackson3.version}</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/tools.jackson.dataformat/jackson-dataformat-yaml -->
             <dependency>
                 <groupId>tools.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-yaml</artifactId>
-                <version>3.0.2</version>
+                <version>${jackson3.version}</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/tools.jackson.dataformat/jackson-dataformat-csv -->
             <dependency>
                 <groupId>tools.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-csv</artifactId>
-                <version>3.0.2</version>
+                <version>${jackson3.version}</version>
             </dependency>            
 
             
@@ -180,7 +181,7 @@
             <dependency>
                 <groupId>com.acanx.util</groupId>
                 <artifactId>incubator-annotation</artifactId>
-                <version>0.1.0.0</version>
+                <version>0.4.3</version>
             </dependency>
             <dependency>
                 <groupId>com.acanx</groupId>
@@ -337,7 +338,7 @@
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.4.2</version>
+                <version>3.5.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -441,12 +442,6 @@
                 <artifactId>jakarta.mail</artifactId>
                 <version>2.0.2</version>
             </dependency>
-            <!-- <dependency>
-                <groupId>com.sun.mail</groupId>
-                <artifactId>javax.mail</artifactId>
-                <version>1.6.2</version>
-                <scope>compile</scope>
-            </dependency> -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
@@ -525,7 +520,7 @@
             <dependency>
                 <groupId>com.squareup.okhttp3</groupId>
                 <artifactId>okhttp-jvm</artifactId>
-                <version>5.3.0</version>
+                <version>5.3.1</version>
             </dependency>
 
 
