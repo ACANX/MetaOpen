@@ -82,6 +82,7 @@
 
         <fastjson2.version>2.0.60</fastjson2.version>
         <jackson.version>2.20.1</jackson.version>
+        <jackson3.version>3.0.2</jackson3.version>
         <snakeyaml.version>2.5</snakeyaml.version>
 
         <caffeine.version>3.2.3</caffeine.version>
@@ -143,31 +144,31 @@
             <dependency>
                 <groupId>tools.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
-                <version>3.0.2</version>
+                <version>${jackson3.version}</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind -->
             <dependency>
                 <groupId>tools.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
-                <version>3.0.2</version>
+                <version>${jackson3.version}</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/tools.jackson.dataformat/jackson-dataformat-xml -->
             <dependency>
                 <groupId>tools.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-xml</artifactId>
-                <version>3.0.2</version>
+                <version>${jackson3.version}</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/tools.jackson.dataformat/jackson-dataformat-yaml -->
             <dependency>
                 <groupId>tools.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-yaml</artifactId>
-                <version>3.0.2</version>
+                <version>${jackson3.version}</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/tools.jackson.dataformat/jackson-dataformat-csv -->
             <dependency>
                 <groupId>tools.jackson.dataformat</groupId>
                 <artifactId>jackson-dataformat-csv</artifactId>
-                <version>3.0.2</version>
+                <version>${jackson3.version}</version>
             </dependency>            
 
             
