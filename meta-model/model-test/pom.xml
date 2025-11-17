@@ -14,13 +14,13 @@
     <name>Model-Test</name>
     <description>Meta Test Model Module</description>
     <url>https://acanx.com</url>
-    
-  <scm>
-          <tag>V0.5.x</tag>
-          <url>git@github.com:ACANX/MetaOpen.git</url>
-          <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
-          <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>
-      </scm>
+
+    <scm>
+        <tag>V0.5.x</tag>
+        <url>git@github.com:ACANX/MetaOpen.git</url>
+        <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
+        <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>
+    </scm>
       <organization>
           <name>ACANX</name>
           <url>https://acanx.com</url>
@@ -50,6 +50,11 @@
         <dependency>
             <groupId>com.acanx.util</groupId>
             <artifactId>autil-core</artifactId>
+            <version>${autil.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.acanx.util</groupId>
+            <artifactId>incubator-annotation</artifactId>
             <version>${autil.version}</version>
         </dependency>
         <!-- 注解处理器支持 -->
@@ -83,7 +88,6 @@
                         <path>
                             <groupId>com.acanx.util</groupId>
                             <artifactId>incubator-annotation</artifactId>
-<!--                            <version>${incubator-annotation.version}</version>-->
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
