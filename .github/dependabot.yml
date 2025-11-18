@@ -14,7 +14,7 @@ updates:
       - "ACANX"
     ignore:                    # 忽略特定依赖  
       - dependency-name: "org.springframework:spring-core"
-        versions: [">= 7.0.0-"] # 忽略 spring-core 7.x 的更新           
+        versions: [">= 8.0.0-"] # 忽略 spring-core 8.x 的更新           
       - dependency-name: "org.apache.flink:flink-clients"
       - dependency-name: "org.openjfx:javafx-base"
         versions: [">= 26-ea"] # 忽略 26.x 的更新
