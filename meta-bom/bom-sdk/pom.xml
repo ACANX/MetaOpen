@@ -39,7 +39,7 @@
     </licenses>
   
   <properties>
-    <awssdk.version>2.38.7</awssdk.version>
+    <awssdk.version>2.39.4</awssdk.version>
   </properties>
 
   <dependencyManagement>
@@ -118,7 +118,7 @@
         <dependency>
           <groupId>com.tencentcloudapi</groupId>
           <artifactId>tencentcloud-sdk-java-scf</artifactId>
-          <version>3.1.1303</version>
+          <version>3.1.1369</version>
         </dependency>
         <dependency>
           <groupId>com.tencentcloudapi</groupId>
@@ -136,7 +136,7 @@
           <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-functiongraph</artifactId>
-            <version>3.1.174</version>
+            <version>3.1.175</version>
           </dependency>
     </dependencies>
   </dependencyManagement>
