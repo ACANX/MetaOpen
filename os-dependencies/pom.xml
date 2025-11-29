@@ -44,7 +44,7 @@
         <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
         <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
         <maven-surefire-plugin.version>3.5.0</maven-surefire-plugin.version>
-        <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
+        <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
         <flatten-maven-plugin.version>1.7.3</flatten-maven-plugin.version>
@@ -283,7 +283,7 @@
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>3.3.1</version>
+                <version>3.4.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
