@@ -17,11 +17,7 @@ updates:
         versions: [">= 8.0.0-"] # 忽略 spring-core 8.x 的更新           
       - dependency-name: "org.apache.flink:flink-clients"
       - dependency-name: "org.openjfx:*"
-        versions: ["*-SNAPSHOT"]
-      - dependency-name: "org.openjfx:*"
-        versions: ["*-ea"]
-      - dependency-name: "org.openjfx:*"
-        versions: ["*-RC"]
+        update-types: ["version-update:semver-prerelease"]
       # - dependency-name: "org.openjfx:javafx-base"
       #   versions: [">= 26-ea"] # 忽略 26.x 的更新
       # - dependency-name: "org.openjfx:javafx-controls"
