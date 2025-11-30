@@ -17,16 +17,16 @@ updates:
         versions: [">= 8.0.0-"] # 忽略 spring-core 8.x 的更新           
       - dependency-name: "org.apache.flink:flink-clients"
       - dependency-name: "org.openjfx:*"
-        versions: ["*-SNAPSHOT", "*-ea", "*-RC"]
-      - dependency-name: "org.openjfx:javafx-base"
-        versions: [">= 26-ea"] # 忽略 26.x 的更新
-      - dependency-name: "org.openjfx:javafx-controls"
-      - dependency-name: "org.openjfx:javafx-graphics"
-      - dependency-name: "org.openjfx:javafx-fxml"
-      - dependency-name: "org.openjfx:javafx-swing"
-      - dependency-name: "org.openjfx:javafx-web"                         
-      - dependency-name: "org.openjfx:javafx-media"             
-      - dependency-name: "org.apache.hadoop:hadoop-client"                    
+      #   update-types: ["version-update:semver-prerelease"]
+      # - dependency-name: "org.openjfx:javafx-base"
+      #   versions: [">= 26-ea"] # 忽略 26.x 的更新
+      # - dependency-name: "org.openjfx:javafx-controls"
+      # - dependency-name: "org.openjfx:javafx-graphics"
+      # - dependency-name: "org.openjfx:javafx-fxml"
+      # - dependency-name: "org.openjfx:javafx-swing"
+      # - dependency-name: "org.openjfx:javafx-web"                         
+      # - dependency-name: "org.openjfx:javafx-media"             
+      # - dependency-name: "org.apache.hadoop:hadoop-client"                    
     commit-message:            # 自定义提交信息
       prefix: "chore"
       include: "scope"
