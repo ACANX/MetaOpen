@@ -40,7 +40,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>21</java.version>
         <maven.compiler.release>21</maven.compiler.release>
-        <maven.version>3.9.11</maven.version>
+        <maven.version>3.9.12</maven.version>
         <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
         <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
         <maven-surefire-plugin.version>3.5.0</maven-surefire-plugin.version>
@@ -57,11 +57,11 @@
 
         <openjfx.version>25.0.1</openjfx.version>
         <javassist.version>3.30.2-GA</javassist.version>
-        <aspectjweaver.version>1.9.25</aspectjweaver.version>
+        <aspectjweaver.version>1.9.25.1</aspectjweaver.version>
         <bytebuddy.version>1.18.2</bytebuddy.version>
 
-        <netty.version>4.2.7.Final</netty.version>
-        <reactor.verion>3.8.0</reactor.verion>
+        <netty.version>4.2.9.Final</netty.version>
+        <reactor.verion>3.8.1</reactor.verion>
         <protobuf-java.version>4.33.2</protobuf-java.version>
 
         <tomcat-embed.version>11.0.15</tomcat-embed.version>
@@ -69,7 +69,7 @@
         <mysql-connector-j.version>9.5.0</mysql-connector-j.version>
         <postgresql.version>42.7.8</postgresql.version>
         <mybatis.version>3.5.19</mybatis.version>
-        <hibernate-orm.version>7.1.11.Final</hibernate-orm.version>
+        <hibernate-orm.version>7.2.0.Final</hibernate-orm.version>
         <seata.version>2.5.0</seata.version>
 
         <commons-lang3.version>3.20.0</commons-lang3.version>
@@ -89,13 +89,13 @@
         <freemarker.version>2.3.34</freemarker.version>
         <jsoup.version>1.21.2</jsoup.version>
         <hibernate-validator.version>9.1.0.Final</hibernate-validator.version>
-        <redisson.version>3.52.0</redisson.version>
+        <redisson.version>4.0.0</redisson.version>
 
         <slf4j.version>2.0.17</slf4j.version>
         <jspecify.version>1.0.0</jspecify.version>
 
-        <spring.version>7.0.1</spring.version>
-        <spring-security.version>7.0.0</spring-security.version>
+        <spring.version>7.0.2</spring.version>
+        <spring-security.version>7.0.2</spring-security.version>
         <spring-boot.version>4.0.0</spring-boot.version>
 
         <dubbo.version>3.3.6</dubbo.version>
@@ -333,7 +333,7 @@
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>3.3.1</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -864,7 +864,7 @@
             <dependency>
                 <groupId>io.micrometer</groupId>
                 <artifactId>micrometer-core</artifactId>
-                <version>1.16.0</version>
+                <version>1.16.1</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -877,7 +877,7 @@
             <dependency>
                 <groupId>io.micrometer</groupId>
                 <artifactId>micrometer-observation</artifactId>
-                <version>1.16.0</version>
+                <version>1.16.1</version>
             </dependency>
 
             <dependency>
@@ -946,7 +946,7 @@
             <dependency>
                 <groupId>io.lettuce</groupId>
                 <artifactId>lettuce-core</artifactId>
-                <version>7.2.0.RELEASE</version>
+                <version>7.2.1.RELEASE</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
