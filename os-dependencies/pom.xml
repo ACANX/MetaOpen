@@ -96,7 +96,7 @@
 
         <spring.version>7.0.2</spring.version>
         <spring-security.version>7.0.2</spring-security.version>
-        <spring-boot.version>4.0.0</spring-boot.version>
+        <spring-boot.version>4.0.1</spring-boot.version>
 
         <dubbo.version>3.3.6</dubbo.version>
         <nacos.version>3.1.1</nacos.version>
