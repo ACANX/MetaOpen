@@ -39,7 +39,7 @@
     </licenses>
   
   <properties>
-    <awssdk.version>2.40.10</awssdk.version>
+    <awssdk.version>2.40.17</awssdk.version>
   </properties>
 
   <dependencyManagement>
@@ -100,7 +100,7 @@
         <dependency>
             <groupId>com.aliyun.oss</groupId>
             <artifactId>aliyun-sdk-oss</artifactId>
-            <version>3.18.3</version>
+            <version>3.18.4</version>
         </dependency>
         <dependency>
             <groupId>com.aliyun.fc.runtime</groupId>
@@ -136,7 +136,7 @@
           <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-functiongraph</artifactId>
-            <version>3.1.178</version>
+            <version>3.1.180</version>
           </dependency>
     </dependencies>
   </dependencyManagement>

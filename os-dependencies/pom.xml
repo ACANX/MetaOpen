@@ -58,7 +58,7 @@
         <openjfx.version>25.0.1</openjfx.version>
         <javassist.version>3.30.2-GA</javassist.version>
         <aspectjweaver.version>1.9.25.1</aspectjweaver.version>
-        <bytebuddy.version>1.18.2</bytebuddy.version>
+        <bytebuddy.version>1.18.3</bytebuddy.version>
 
         <netty.version>4.2.9.Final</netty.version>
         <reactor.verion>3.8.1</reactor.verion>
@@ -89,20 +89,20 @@
         <freemarker.version>2.3.34</freemarker.version>
         <jsoup.version>1.21.2</jsoup.version>
         <hibernate-validator.version>9.1.0.Final</hibernate-validator.version>
-        <redisson.version>4.0.0</redisson.version>
+        <redisson.version>4.1.0</redisson.version>
 
         <slf4j.version>2.0.17</slf4j.version>
         <jspecify.version>1.0.0</jspecify.version>
 
         <spring.version>7.0.2</spring.version>
         <spring-security.version>7.0.2</spring-security.version>
-        <spring-boot.version>4.0.0</spring-boot.version>
+        <spring-boot.version>4.0.1</spring-boot.version>
 
         <dubbo.version>3.3.6</dubbo.version>
         <nacos.version>3.1.1</nacos.version>
 
         <lucense.version>10.3.2</lucense.version>
-        <elasticsearch.version>9.2.2</elasticsearch.version>
+        <elasticsearch.version>9.2.3</elasticsearch.version>
 
         <flink.version>1.17.2</flink.version>
         <hadoop.version>3.3.6</hadoop.version>
@@ -692,7 +692,7 @@
             <dependency>
                 <groupId>org.apache.rocketmq</groupId>
                 <artifactId>rocketmq-client</artifactId>
-                <version>5.3.4</version>
+                <version>5.4.0</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
