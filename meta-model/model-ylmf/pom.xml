@@ -12,6 +12,7 @@
     <version>${revision}</version>
     <packaging>jar</packaging>
     <name>model-ylmf</name>
+    <description>Meta Model Module</description>
     <url>https://acanx.com</url>
 
   <scm>
