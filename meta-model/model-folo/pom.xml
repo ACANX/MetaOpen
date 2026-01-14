@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+    <artifactId>meta-model</artifactId>
+    <groupId>com.acanx.meta</groupId>
+    <version>${revision}</version>
+  </parent>
+
+    <groupId>com.acanx.meta.model</groupId>
+    <artifactId>model-folo</artifactId>
+    <version>${revision}</version>
+    <packaging>jar</packaging>
+    <name>model-folo</name>
+    <description>Meta Model Module</description>
+    <url>https://acanx.com</url>
+    
+  <scm>
+      <tag>V0.5.x</tag>
+      <url>git@github.com:ACANX/MetaOpen.git</url>
+      <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
+      <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>
+  </scm>
+  <organization>
+      <name>ACANX</name>
+      <url>https://acanx.com</url>
+  </organization>
+  <developers>
+      <developer>
+          <name>ACANX</name>
+          <email>acanx@qq.com</email>
+          <organization>ACANX</organization>
+      </developer>
+  </developers>
+  <licenses>
+      <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+      </license>
+  </licenses>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>21</maven.compiler.release>
+        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
+        <junit-jupiter.version>6.0.2</junit-jupiter.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+
+    <dependencyManagement>
+    </dependencyManagement>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

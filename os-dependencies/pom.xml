@@ -36,7 +36,7 @@
     </licenses>
 
     <properties>
-        <revision>0.6.1</revision>
+        <revision>0.6.2.2</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>21</java.version>
         <maven.compiler.release>21</maven.compiler.release>
@@ -48,10 +48,10 @@
         <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
         <flatten-maven-plugin.version>1.7.3</flatten-maven-plugin.version>
-        <central-publishing-maven-plugin.version>0.9.0</central-publishing-maven-plugin.version>
+        <central-publishing-maven-plugin.version>0.10.0</central-publishing-maven-plugin.version>
 
         <deamond.version>0.1.4.5</deamond.version>
-        <meta-open.version>0.6.1</meta-open.version>
+        <meta-open.version>0.6.2.2</meta-open.version>
         <autil.version>0.4.3</autil.version>
         <acanx-utils.version>0.4.2</acanx-utils.version>
 
@@ -61,8 +61,8 @@
         <bytebuddy.version>1.18.3</bytebuddy.version>
 
         <netty.version>4.2.9.Final</netty.version>
-        <reactor.verion>3.8.1</reactor.verion>
-        <protobuf-java.version>4.33.2</protobuf-java.version>
+        <reactor.verion>3.8.2</reactor.verion>
+        <protobuf-java.version>4.33.4</protobuf-java.version>
 
         <tomcat-embed.version>11.0.15</tomcat-embed.version>
 
@@ -87,7 +87,7 @@
 
         <caffeine.version>3.2.3</caffeine.version>
         <freemarker.version>2.3.34</freemarker.version>
-        <jsoup.version>1.21.2</jsoup.version>
+        <jsoup.version>1.22.1</jsoup.version>
         <hibernate-validator.version>9.1.0.Final</hibernate-validator.version>
         <redisson.version>4.1.0</redisson.version>
 
@@ -102,13 +102,13 @@
         <nacos.version>3.1.1</nacos.version>
 
         <lucense.version>10.3.2</lucense.version>
-        <elasticsearch.version>9.2.3</elasticsearch.version>
+        <elasticsearch.version>9.2.4</elasticsearch.version>
 
         <flink.version>1.17.2</flink.version>
         <hadoop.version>3.3.6</hadoop.version>
 
-        <junit-jupiter.version>6.0.1</junit-jupiter.version>
-        <junit-platform.version>6.0.1</junit-platform.version>
+        <junit-jupiter.version>6.0.2</junit-jupiter.version>
+        <junit-platform.version>6.0.2</junit-platform.version>
     </properties>
 
 
@@ -436,6 +436,12 @@
             </dependency>
 
 
+            <dependency>
+                <groupId>jakarta.mail</groupId>
+                <artifactId>jakarta.mail-api</artifactId>
+                <version>2.1.5</version>
+                <scope>provided</scope>
+            </dependency>
             <!-- https://mvnrepository.com/artifact/com.sun.mail/jakarta.mail -->
             <dependency>
                 <groupId>com.sun.mail</groupId>
@@ -864,7 +870,7 @@
             <dependency>
                 <groupId>io.micrometer</groupId>
                 <artifactId>micrometer-core</artifactId>
-                <version>1.16.1</version>
+                <version>1.16.2</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -877,7 +883,7 @@
             <dependency>
                 <groupId>io.micrometer</groupId>
                 <artifactId>micrometer-observation</artifactId>
-                <version>1.16.1</version>
+                <version>1.16.2</version>
             </dependency>
 
             <dependency>
