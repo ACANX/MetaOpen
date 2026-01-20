@@ -58,7 +58,7 @@
         <openjfx.version>25.0.1</openjfx.version>
         <javassist.version>3.30.2-GA</javassist.version>
         <aspectjweaver.version>1.9.25.1</aspectjweaver.version>
-        <bytebuddy.version>1.18.3</bytebuddy.version>
+        <bytebuddy.version>1.18.4</bytebuddy.version>
 
         <netty.version>4.2.9.Final</netty.version>
         <reactor.verion>3.8.2</reactor.verion>
@@ -67,9 +67,9 @@
         <tomcat-embed.version>11.0.15</tomcat-embed.version>
 
         <mysql-connector-j.version>9.5.0</mysql-connector-j.version>
-        <postgresql.version>42.7.8</postgresql.version>
+        <postgresql.version>42.7.9</postgresql.version>
         <mybatis.version>3.5.19</mybatis.version>
-        <hibernate-orm.version>7.2.0.Final</hibernate-orm.version>
+        <hibernate-orm.version>7.2.1.Final</hibernate-orm.version>
         <seata.version>2.5.0</seata.version>
 
         <commons-lang3.version>3.20.0</commons-lang3.version>
@@ -81,7 +81,7 @@
         <mapstruct.version>1.6.3</mapstruct.version>
 
         <fastjson2.version>2.0.60</fastjson2.version>
-        <jackson.version>2.20.1</jackson.version>
+        <jackson.version>2.21.0</jackson.version>
         <jackson3.version>3.0.3</jackson3.version>
         <snakeyaml.version>2.5</snakeyaml.version>
 
@@ -94,7 +94,7 @@
         <slf4j.version>2.0.17</slf4j.version>
         <jspecify.version>1.0.0</jspecify.version>
 
-        <spring.version>7.0.2</spring.version>
+        <spring.version>7.0.3</spring.version>
         <spring-security.version>7.0.2</spring-security.version>
         <spring-boot.version>4.0.1</spring-boot.version>
 
@@ -903,7 +903,7 @@
             <dependency>
                 <groupId>io.undertow</groupId>
                 <artifactId>undertow-core</artifactId>
-                <version>2.3.20.Final</version>
+                <version>2.3.22.Final</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
@@ -939,7 +939,7 @@
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-api</artifactId>
-                <version>4.39.0</version>
+                <version>4.40.0</version>
             </dependency>
             <dependency>
                 <groupId>org.thymeleaf</groupId>
