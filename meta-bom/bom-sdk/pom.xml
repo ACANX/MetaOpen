@@ -39,7 +39,7 @@
     </licenses>
   
   <properties>
-    <awssdk.version>2.41.10</awssdk.version>
+    <awssdk.version>2.41.13</awssdk.version>
   </properties>
 
   <dependencyManagement>
@@ -136,7 +136,7 @@
           <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-functiongraph</artifactId>
-            <version>3.1.182</version>
+            <version>3.1.183</version>
           </dependency>
     </dependencies>
   </dependencyManagement>
