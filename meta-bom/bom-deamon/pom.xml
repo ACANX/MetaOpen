@@ -258,7 +258,7 @@
 
         <!--  测试依赖  -->
         <junit-jupiter.version>6.0.1</junit-jupiter.version>
-        <junit-vintage-engine.version>6.0.1</junit-vintage-engine.version>
+        <junit-vintage-engine.version>6.0.2</junit-vintage-engine.version>
         <junit-platform.version>6.0.1</junit-platform.version>
         <junit.version>4.13.2</junit.version>
         <selenium.version>4.29.0</selenium.version>
