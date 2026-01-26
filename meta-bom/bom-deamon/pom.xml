@@ -115,7 +115,7 @@
         <druid.version>1.2.22</druid.version>
         <mybatis.version>3.5.19</mybatis.version>
         <mybatis-spring.version>3.0.4</mybatis-spring.version>
-        <mybatis-spring-boot.version>3.0.4</mybatis-spring-boot.version>
+        <mybatis-spring-boot.version>4.0.1</mybatis-spring-boot.version>
         <mybatis-generator-core.version>1.4.2</mybatis-generator-core.version>
         <mybatis-generator-maven-plugin.version>1.4.2</mybatis-generator-maven-plugin.version>
         <mybatis-plus.version>3.5.6</mybatis-plus.version>
