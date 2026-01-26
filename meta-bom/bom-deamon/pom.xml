@@ -121,7 +121,7 @@
         <mybatis-plus.version>3.5.6</mybatis-plus.version>
         <pagehelper.version>6.1.0</pagehelper.version>
         <pagehelper-spring-boot.version>2.1.0</pagehelper-spring-boot.version>
-        <jsqlparser>4.9</jsqlparser>
+        <jsqlparser>5.3</jsqlparser>
 
         <r2dbc-h2.version>1.0.0.RELEASE</r2dbc-h2.version>
         <r2dbc-mariadb.version>1.2.2</r2dbc-mariadb.version>
