@@ -228,7 +228,7 @@
         <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
 
         <lombok.version>1.18.42</lombok.version>
-        <netty.version>4.1.122.Final</netty.version>
+        <netty.version>4.2.9.Final</netty.version>
         <rome.version>2.1.0</rome.version>
         <swagger2markup.version>1.3.4</swagger2markup.version>
         <UserAgentUtils.version>1.21</UserAgentUtils.version>
