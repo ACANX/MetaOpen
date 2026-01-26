@@ -120,7 +120,7 @@
         <mybatis-generator-maven-plugin.version>1.4.2</mybatis-generator-maven-plugin.version>
         <mybatis-plus.version>3.5.6</mybatis-plus.version>
         <pagehelper.version>6.1.0</pagehelper.version>
-        <pagehelper-spring-boot.version>2.1.0</pagehelper-spring-boot.version>
+        <pagehelper-spring-boot.version>2.1.1</pagehelper-spring-boot.version>
         <jsqlparser>4.9</jsqlparser>
 
         <r2dbc-h2.version>1.0.0.RELEASE</r2dbc-h2.version>
