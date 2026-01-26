@@ -83,7 +83,7 @@
         <spring-cloud-openfeign.version>4.2.0</spring-cloud-openfeign.version>
         <spring-cloud-netflix.version>4.2.0</spring-cloud-netflix.version>
 
-        <spring-security.version>6.4.1</spring-security.version>
+        <spring-security.version>6.4.10</spring-security.version>
         <spring-security-oauth2.version>2.5.2.RELEASE</spring-security-oauth2.version>
         <spring-security-jwt.version>1.1.1.RELEASE</spring-security-jwt.version>
         <spring-data-rest-webmvc.version>4.3.0</spring-data-rest-webmvc.version>
@@ -199,7 +199,7 @@
         <slf4j-api.version>2.0.178</slf4j-api.version>
         <jul-to-slf4j>2.0.18</jul-to-slf4j>
         <log4j-over-slf4j>2.0.18</log4j-over-slf4j>
-        <log4j.version>2.25.2</log4j.version>
+        <log4j.version>2.25.3</log4j.version>
         <log4j-to-slf4j>2.25.2</log4j-to-slf4j>
         <logback.version>1.5.21</logback.version>
         <!--  日志依赖  -->
