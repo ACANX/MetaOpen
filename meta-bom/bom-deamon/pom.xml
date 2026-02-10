@@ -206,7 +206,7 @@
 
         <!-- 依赖库版本信息-->
         <autil.version>0.4.4-SNAPSHOT</autil.version>
-        <meta-open.version>0.6.3</meta-open.version>
+        <meta-open.version>0.6.4</meta-open.version>
         <module.version>0.4.0</module.version>
         <!--        <acanx-utils.version>0.2.0.3</acanx-utils.version>-->
         <!--        <acanx-java-tool.version>0.2.2</acanx-java-tool.version>-->
