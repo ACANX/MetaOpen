@@ -17,7 +17,7 @@
     <description>Deamon-BOM</description>
     <url>https://github.com/ACANX/MetaOpen</url>
     <scm>
-        <tag>V0.5.x</tag>
+        <tag>V0.6.x</tag>
         <url>git@github.com:ACANX/MetaOpen.git</url>
         <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
         <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>
@@ -206,7 +206,7 @@
 
         <!-- 依赖库版本信息-->
         <autil.version>0.4.4-SNAPSHOT</autil.version>
-        <meta-open.version>0.6.3</meta-open.version>
+        <meta-open.version>0.6.5-SNAPSHOT</meta-open.version>
         <module.version>0.4.0</module.version>
         <!--        <acanx-utils.version>0.2.0.3</acanx-utils.version>-->
         <!--        <acanx-java-tool.version>0.2.2</acanx-java-tool.version>-->
