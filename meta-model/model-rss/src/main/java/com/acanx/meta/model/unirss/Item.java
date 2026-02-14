@@ -18,12 +18,16 @@ public class Item {
 
     private String summary;
 
+    // 
     private String pubDate;
 
+    // 字符串格式的发布时间
     private String pubDateTime;
 
+    // 毫秒级别的UTC时间
     private Long publishTs;
 
+    // 全局不重复的ID
     private String guid;
 
     private String author;
