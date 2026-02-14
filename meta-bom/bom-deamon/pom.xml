@@ -83,7 +83,7 @@
         <spring-cloud-openfeign.version>4.2.0</spring-cloud-openfeign.version>
         <spring-cloud-netflix.version>4.2.0</spring-cloud-netflix.version>
 
-        <spring-security.version>7.0.2</spring-security.version>
+        <spring-security.version>7.0.3</spring-security.version>
         <spring-security-oauth2.version>2.5.2.RELEASE</spring-security-oauth2.version>
         <spring-security-jwt.version>1.1.1.RELEASE</spring-security-jwt.version>
         <spring-data-rest-webmvc.version>4.3.0</spring-data-rest-webmvc.version>
