@@ -179,7 +179,7 @@
         <!--  JSON -->
 
         <httpclient5.version>5.6</httpclient5.version>
-        <httpcore5.version>5.4</httpcore5.version>
+        <httpcore5.version>5.4.1</httpcore5.version>
 
         <httpcore.version>4.4.16</httpcore.version>
         <httpclient.version>4.5.14</httpclient.version>
