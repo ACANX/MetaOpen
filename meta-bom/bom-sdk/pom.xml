@@ -39,7 +39,7 @@
     </licenses>
   
   <properties>
-    <awssdk.version>2.41.31</awssdk.version>
+    <awssdk.version>2.41.33</awssdk.version>
   </properties>
 
   <dependencyManagement>
