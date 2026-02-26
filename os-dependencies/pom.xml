@@ -36,7 +36,7 @@
     </licenses>
 
     <properties>
-        <revision>0.6.5</revision>
+        <revision>0.6.6</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>21</java.version>
         <maven.compiler.release>21</maven.compiler.release>
@@ -51,14 +51,14 @@
         <central-publishing-maven-plugin.version>0.10.0</central-publishing-maven-plugin.version>
 
         <deamond.version>0.1.4.5</deamond.version>
-        <meta-open.version>0.6.5</meta-open.version>
+        <meta-open.version>0.6.6</meta-open.version>
         <autil.version>0.4.3</autil.version>
         <acanx-utils.version>0.4.2</acanx-utils.version>
 
         <openjfx.version>25.0.1</openjfx.version>
         <javassist.version>3.30.2-GA</javassist.version>
         <aspectjweaver.version>1.9.25.1</aspectjweaver.version>
-        <bytebuddy.version>1.18.4</bytebuddy.version>
+        <bytebuddy.version>1.18.5</bytebuddy.version>
 
         <netty.version>4.2.10.Final</netty.version>
         <reactor.verion>3.8.3</reactor.verion>
@@ -67,7 +67,7 @@
         <tomcat-embed.version>11.0.18</tomcat-embed.version>
 
         <mysql-connector-j.version>9.6.0</mysql-connector-j.version>
-        <postgresql.version>42.7.9</postgresql.version>
+        <postgresql.version>42.7.10</postgresql.version>
         <mybatis.version>3.5.19</mybatis.version>
         <hibernate-orm.version>7.2.4.Final</hibernate-orm.version>
         <seata.version>2.6.0</seata.version>
@@ -94,9 +94,9 @@
         <slf4j.version>2.0.17</slf4j.version>
         <jspecify.version>1.0.0</jspecify.version>
 
-        <spring.version>7.0.3</spring.version>
-        <spring-security.version>7.0.2</spring-security.version>
-        <spring-boot.version>4.0.2</spring-boot.version>
+        <spring.version>7.0.5</spring.version>
+        <spring-security.version>7.0.3</spring-security.version>
+        <spring-boot.version>4.0.3</spring-boot.version>
 
         <dubbo.version>3.3.6</dubbo.version>
         <nacos.version>3.1.1</nacos.version>
@@ -107,8 +107,8 @@
         <flink.version>1.17.2</flink.version>
         <hadoop.version>3.3.6</hadoop.version>
 
-        <junit-jupiter.version>6.0.2</junit-jupiter.version>
-        <junit-platform.version>6.0.2</junit-platform.version>
+        <junit-jupiter.version>6.0.3</junit-jupiter.version>
+        <junit-platform.version>6.0.3</junit-platform.version>
     </properties>
 
 
@@ -684,14 +684,14 @@
             <dependency>
                 <groupId>org.apache.kafka</groupId>
                 <artifactId>kafka_2.13</artifactId>
-                <version>4.1.1</version>
+                <version>4.2.0</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>org.apache.kafka</groupId>
                 <artifactId>kafka-clients</artifactId>
-                <version>4.1.1</version>
+                <version>4.2.0</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
