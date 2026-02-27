@@ -105,7 +105,7 @@
         <elasticsearch.version>9.3.0</elasticsearch.version>
 
         <flink.version>1.17.2</flink.version>
-        <hadoop.version>3.3.6</hadoop.version>
+        <hadoop.version>3.4.3</hadoop.version>
 
         <junit-jupiter.version>6.0.3</junit-jupiter.version>
         <junit-platform.version>6.0.3</junit-platform.version>
