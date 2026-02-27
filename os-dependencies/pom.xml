@@ -939,7 +939,7 @@
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-api</artifactId>
-                <version>4.40.0</version>
+                <version>4.41.0</version>
             </dependency>
             <dependency>
                 <groupId>org.thymeleaf</groupId>
