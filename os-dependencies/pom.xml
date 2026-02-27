@@ -62,14 +62,14 @@
 
         <netty.version>4.2.10.Final</netty.version>
         <reactor.verion>3.8.3</reactor.verion>
-        <protobuf-java.version>4.33.5</protobuf-java.version>
+        <protobuf-java.version>4.34.0</protobuf-java.version>
 
         <tomcat-embed.version>11.0.18</tomcat-embed.version>
 
         <mysql-connector-j.version>9.6.0</mysql-connector-j.version>
         <postgresql.version>42.7.10</postgresql.version>
         <mybatis.version>3.5.19</mybatis.version>
-        <hibernate-orm.version>7.2.4.Final</hibernate-orm.version>
+        <hibernate-orm.version>7.2.5.Final</hibernate-orm.version>
         <seata.version>2.6.0</seata.version>
 
         <commons-lang3.version>3.20.0</commons-lang3.version>
@@ -81,9 +81,9 @@
         <mapstruct.version>1.6.3</mapstruct.version>
 
         <fastjson2.version>2.0.60</fastjson2.version>
-        <jackson.version>2.21.0</jackson.version>
-        <jackson3.version>3.0.4</jackson3.version>
-        <snakeyaml.version>2.5</snakeyaml.version>
+        <jackson.version>2.21.1</jackson.version>
+        <jackson3.version>3.1.0</jackson3.version>
+        <snakeyaml.version>2.6</snakeyaml.version>
 
         <caffeine.version>3.2.3</caffeine.version>
         <freemarker.version>2.3.34</freemarker.version>
@@ -101,8 +101,8 @@
         <dubbo.version>3.3.6</dubbo.version>
         <nacos.version>3.1.1</nacos.version>
 
-        <lucense.version>10.3.2</lucense.version>
-        <elasticsearch.version>9.3.0</elasticsearch.version>
+        <lucense.version>10.4.0</lucense.version>
+        <elasticsearch.version>9.3.1</elasticsearch.version>
 
         <flink.version>1.17.2</flink.version>
         <hadoop.version>3.3.6</hadoop.version>
@@ -308,7 +308,7 @@
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.4</version>
+                <version>3.5.5</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -368,7 +368,7 @@
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>3.5.4</version>
+                <version>3.5.5</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -863,7 +863,7 @@
             <dependency>
                 <groupId>com.jayway.jsonpath</groupId>
                 <artifactId>json-path</artifactId>
-                <version>2.10.0</version>
+                <version>3.0.0</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
@@ -939,7 +939,7 @@
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-api</artifactId>
-                <version>4.40.0</version>
+                <version>4.41.0</version>
             </dependency>
             <dependency>
                 <groupId>org.thymeleaf</groupId>

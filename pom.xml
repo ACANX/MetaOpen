@@ -45,7 +45,7 @@
         <maven.compiler.release>21</maven.compiler.release>
         <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
         <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
-        <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>3.5.5</maven-surefire-plugin.version>
         <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
@@ -54,7 +54,7 @@
              
         <sonar.organization>acanx</sonar.organization>     
         <autil.version>0.4.3</autil.version>
-        <jackson.version>2.21.0</jackson.version>
+        <jackson.version>2.21.1</jackson.version>
         <fastjson2.version>2.0.60</fastjson2.version>
         <lombok.version>1.18.42</lombok.version>
         <junit-jupiter.version>6.0.3</junit-jupiter.version>
