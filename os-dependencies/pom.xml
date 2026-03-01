@@ -69,7 +69,7 @@
         <mysql-connector-j.version>9.6.0</mysql-connector-j.version>
         <postgresql.version>42.7.10</postgresql.version>
         <mybatis.version>3.5.19</mybatis.version>
-        <hibernate-orm.version>7.2.5.Final</hibernate-orm.version>
+        <hibernate-orm.version>7.2.6.Final</hibernate-orm.version>
         <seata.version>2.6.0</seata.version>
 
         <commons-lang3.version>3.20.0</commons-lang3.version>
