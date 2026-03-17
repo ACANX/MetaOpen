@@ -39,7 +39,7 @@
     </licenses>
   
   <properties>
-    <awssdk.version>2.40.17</awssdk.version>
+    <awssdk.version>2.42.13</awssdk.version>
   </properties>
 
   <dependencyManagement>
@@ -72,7 +72,7 @@
         <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-lambda-java-log4j2</artifactId>
-            <version>1.6.0</version>
+            <version>1.6.2</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/ses -->
@@ -100,7 +100,7 @@
         <dependency>
             <groupId>com.aliyun.oss</groupId>
             <artifactId>aliyun-sdk-oss</artifactId>
-            <version>3.18.4</version>
+            <version>3.18.5</version>
         </dependency>
         <dependency>
             <groupId>com.aliyun.fc.runtime</groupId>
@@ -118,7 +118,7 @@
         <dependency>
           <groupId>com.tencentcloudapi</groupId>
           <artifactId>tencentcloud-sdk-java-scf</artifactId>
-          <version>3.1.1370</version>
+          <version>3.1.1394</version>
         </dependency>
         <dependency>
           <groupId>com.tencentcloudapi</groupId>
@@ -136,7 +136,7 @@
           <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-functiongraph</artifactId>
-            <version>3.1.180</version>
+            <version>3.1.188</version>
           </dependency>
     </dependencies>
   </dependencyManagement>
