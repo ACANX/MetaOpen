@@ -53,7 +53,7 @@
         <deamond.version>0.1.4.5</deamond.version>
         <meta-open.version>0.7.0-SNAPSHOT</meta-open.version>
         <autil.version>0.5.1</autil.version>
-        <acanx-utils.version>0.4.2</acanx-utils.version>
+        <acanx-utils.version>0.5.1</acanx-utils.version>
 
         <openjfx.version>25.0.1</openjfx.version>
         <javassist.version>3.30.2-GA</javassist.version>
