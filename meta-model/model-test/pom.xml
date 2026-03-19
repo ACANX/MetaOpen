@@ -89,6 +89,11 @@
                         <annotationProcessor>com.acanx.util.annotation.processor.ast.CopierAstProcessor</annotationProcessor>
                     </annotationProcessors>
                     <annotationProcessorPaths>
+                        <path>
+                                <groupId>com.acanx.util</groupId>
+                                <artifactId>annotation-api</artifactId>
+                                <version>0.4.5.1</version>
+                        </path>
                         <!-- 确保注解处理器路径包含你的处理器 -->
                         <path>
                             <groupId>com.acanx.util</groupId>
