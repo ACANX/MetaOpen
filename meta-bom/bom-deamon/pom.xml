@@ -205,7 +205,7 @@
         <!--  日志依赖  -->
 
         <!-- 依赖库版本信息-->
-        <autil.version>0.4.4-SNAPSHOT</autil.version>
+        <autil.version>0.5.1</autil.version>
         <meta-open.version>0.6.5-SNAPSHOT</meta-open.version>
         <module.version>0.4.0</module.version>
         <!--        <acanx-utils.version>0.2.0.3</acanx-utils.version>-->
