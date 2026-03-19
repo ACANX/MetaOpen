@@ -53,6 +53,10 @@ jobs:
 
       - name: PublishOS-DependenciesToMavenCentral
         env:
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}   # 假设你的 Maven GPG 插件配置或 settings.xml 使用这些变量
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
+          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}      # 如果 Maven 配置需要明确 Key ID：
+          JAVA_TOOL_OPTIONS: "-Dfile.encoding=UTF-8 "
           MAVEN_OPTS: "-Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 --add-opens=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED"
         run: |
          echo "======================================= 版本发布开始 ==================================================================="
@@ -82,10 +86,7 @@ jobs:
          pwd
          mvn -B clean deploy -U
          echo "======================================= 版本发布完成 ==================================================================="
-        env:
-          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}   # 假设你的 Maven GPG 插件配置或 settings.xml 使用这些变量
-          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
-          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}      # 如果 Maven 配置需要明确 Key ID：
+
           
       # - name: PublishMetaOpenToMavenCentral
       #   # working-directory: / 
