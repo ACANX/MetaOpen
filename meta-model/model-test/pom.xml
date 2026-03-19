@@ -16,7 +16,7 @@
     <url>https://acanx.com</url>
 
     <scm>
-        <tag>V0.5.x</tag>
+        <tag>V0.7.x</tag>
         <url>git@github.com:ACANX/MetaOpen.git</url>
         <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
         <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>
