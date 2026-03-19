@@ -78,7 +78,7 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                     <encoding>UTF-8</encoding>
-                    <fork>true</fork>
+                    <fork>false</fork>
                     <annotationProcessors>
                         <annotationProcessor>com.acanx.util.annotation.processor.ast.CopierAstProcessor</annotationProcessor>
                     </annotationProcessors>
