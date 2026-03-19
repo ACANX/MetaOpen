@@ -52,6 +52,8 @@ jobs:
       #   run: mvn -B projects:list
 
       - name: PublishOS-DependenciesToMavenCentral
+        env:
+          MAVEN_OPTS: "-Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 --add-opens=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED"
         run: |
          echo "======================================= 版本发布开始 ==================================================================="
          echo "======================================= 1.本地预先编译一次整个项目 ======================================================"
