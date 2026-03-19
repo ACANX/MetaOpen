@@ -54,7 +54,7 @@
         </dependency>
         <dependency>
             <groupId>com.acanx.util</groupId>
-            <artifactId>incubator-annotation</artifactId>
+            <artifactId>annotation-processor-ast</artifactId>
             <version>${autil.version}</version>
         </dependency>
         <!-- 注解处理器支持 -->
@@ -84,14 +84,14 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                     <annotationProcessors>
-                        <annotationProcessor>com.acanx.util.incubator.annotation.CopierProcessor</annotationProcessor>
+                        <annotationProcessor>com.acanx.util.annotation.processor.ast.CopierAstProcessor</annotationProcessor>
                     </annotationProcessors>
                     <annotationProcessorPaths>
                         <!-- 确保注解处理器路径包含你的处理器 -->
                         <path>
                             <groupId>com.acanx.util</groupId>
-                            <artifactId>incubator-annotation</artifactId>
-                            <version>0.4.4</version>
+                            <artifactId>annotation-processor-ast</artifactId>
+                            <version>0.4.5.1</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
