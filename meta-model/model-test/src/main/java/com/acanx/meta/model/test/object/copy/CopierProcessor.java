@@ -6,7 +6,7 @@ import com.acanx.meta.model.test.object.copier.MessageCopier;
 import com.acanx.meta.model.test.object.copier.UserCopier;
 import com.acanx.meta.model.test.json.model.UserDTO;
 import com.acanx.meta.model.test.json.model.User;
-import com.acanx.util.incubator.annotation.Copier;
+import com.acanx.util.annotation.Copier;
 
 import java.time.LocalDateTime;
 

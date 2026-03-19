@@ -6,15 +6,15 @@
     <version>${revision}</version>
   </parent>
   <groupId>com.acanx.meta.bom</groupId>
-  <artifactId>bom-sdk</artifactId>
+  <artifactId>bom-cf</artifactId>
   <version>${revision}</version>
   <packaging>pom</packaging>
-  <name>BOM-SDK</name>
-  <description>BOM-SDK POM</description>
+  <name>BOM-CF</name>
+  <description>BOM-CF POM</description>
   <url>https://github.com/ACANX/MetaOpen</url>
 
     <scm>
-        <tag>V0.4.x</tag>
+        <tag>V0.7.x</tag>
         <url>git@github.com:ACANX/MetaOpen.git</url>
         <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
         <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>
@@ -81,7 +81,6 @@
             <artifactId>ses</artifactId>
             <version>${awssdk.version}</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/cloudwatch -->
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
@@ -158,9 +157,3 @@
   </build>
 
 </project>
-
-
-
-
-
-

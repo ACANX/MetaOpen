@@ -83,7 +83,7 @@
         <spring-cloud-openfeign.version>4.2.0</spring-cloud-openfeign.version>
         <spring-cloud-netflix.version>4.2.0</spring-cloud-netflix.version>
 
-        <spring-security.version>7.0.3</spring-security.version>
+        <spring-security.version>7.0.4</spring-security.version>
         <spring-security-oauth2.version>2.5.2.RELEASE</spring-security-oauth2.version>
         <spring-security-jwt.version>1.1.1.RELEASE</spring-security-jwt.version>
         <spring-data-rest-webmvc.version>4.3.0</spring-data-rest-webmvc.version>
@@ -172,7 +172,7 @@
 
         <!--  JSON -->
         <fastjson.version>1.2.83</fastjson.version>
-        <fastjson2.version>2.0.60</fastjson2.version>
+        <fastjson2.version>2.0.61</fastjson2.version>
         <gson.version>2.13.2</gson.version>
         <jackson.version>2.20.1</jackson.version>
         <snakeyaml.version>2.5</snakeyaml.version>
@@ -205,7 +205,7 @@
         <!--  日志依赖  -->
 
         <!-- 依赖库版本信息-->
-        <autil.version>0.4.4-SNAPSHOT</autil.version>
+        <autil.version>0.4.5.1</autil.version>
         <meta-open.version>0.6.5-SNAPSHOT</meta-open.version>
         <module.version>0.4.0</module.version>
         <!--        <acanx-utils.version>0.2.0.3</acanx-utils.version>-->
@@ -221,7 +221,7 @@
         <!-- Markdown 相关 -->
         <commonmark.version>0.27.1</commonmark.version>
         <cos_api.version>5.6.263</cos_api.version>
-        <grpc.version>1.79.0</grpc.version>
+        <grpc.version>1.80.0</grpc.version>
         <protobuf-java.version>4.33.0</protobuf-java.version>
         <protoc.version>4.33.0</protoc.version>
         <guava.version>33.5.0-jre</guava.version>

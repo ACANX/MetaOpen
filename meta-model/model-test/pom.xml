@@ -16,7 +16,7 @@
     <url>https://acanx.com</url>
 
     <scm>
-        <tag>V0.5.x</tag>
+        <tag>V0.7.x</tag>
         <url>git@github.com:ACANX/MetaOpen.git</url>
         <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
         <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>
@@ -42,7 +42,7 @@
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>11</maven.compiler.release>
+        <!-- <maven.compiler.release>11</maven.compiler.release> -->
         <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
     </properties>
 
@@ -54,14 +54,8 @@
         </dependency>
         <dependency>
             <groupId>com.acanx.util</groupId>
-            <artifactId>incubator-annotation</artifactId>
+            <artifactId>annotation-processor-ast</artifactId>
             <version>${autil.version}</version>
-        </dependency>
-        <!-- 注解处理器支持 -->
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>${maven-compiler-plugin.version}</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -83,17 +77,45 @@
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                    <encoding>UTF-8</encoding>
+                    <fork>false</fork>
                     <annotationProcessors>
-                        <annotationProcessor>com.acanx.util.incubator.annotation.CopierProcessor</annotationProcessor>
+                        <annotationProcessor>com.acanx.util.annotation.processor.ast.CopierAstProcessor</annotationProcessor>
                     </annotationProcessors>
                     <annotationProcessorPaths>
+                        <path>
+                                <groupId>com.acanx.util</groupId>
+                                <artifactId>annotation-api</artifactId>
+                                <version>0.4.5.1</version>
+                        </path>
                         <!-- 确保注解处理器路径包含你的处理器 -->
                         <path>
                             <groupId>com.acanx.util</groupId>
-                            <artifactId>incubator-annotation</artifactId>
-                            <version>0.4.4</version>
+                            <artifactId>annotation-processor-ast</artifactId>
+                            <version>0.4.5.1</version>
                         </path>
                     </annotationProcessorPaths>
+                    <compilerArgs combine.children="append">
+                        <arg>-parameters</arg>
+                        <arg>--add-exports</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
+                        <arg>--add-exports</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                        <arg>--add-exports</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+                        <arg>--add-exports</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
+                        <arg>--add-exports</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>
+                        <arg>--add-exports</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
+                        <arg>--add-opens</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
+                        <arg>--add-opens</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                        <arg>--add-opens</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
         </plugins>
