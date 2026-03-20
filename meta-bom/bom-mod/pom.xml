@@ -45,7 +45,7 @@
         <httpclient5.version>5.4.1</httpclient5.version>
         <okhttp.version>5.2.1</okhttp.version>
 
-        <awssdk.version>2.41.0</awssdk.version>
+        <awssdk.version>2.42.17</awssdk.version>
 
         <junit-jupiter.version>6.0.3</junit-jupiter.version>
         <junit-platform.version>6.0.3</junit-platform.version>
