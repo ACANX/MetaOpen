@@ -92,7 +92,7 @@
                         <path>
                             <groupId>com.acanx.util</groupId>
                             <artifactId>annotation-processor-ast</artifactId>
-                            <version>0.4.5.1</version>
+                            <version>0.4.5.2</version>
                         </path>
                     </annotationProcessorPaths>
                     <compilerArgs combine.children="append">
