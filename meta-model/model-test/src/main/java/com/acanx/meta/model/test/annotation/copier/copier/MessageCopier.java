@@ -1,8 +1,8 @@
-package com.acanx.meta.model.test.object.copier;
+package com.acanx.meta.model.test.annotation.copier.copier;
 
 import com.acanx.meta.model.test.annotation.model.MessageFlex;
 import com.acanx.meta.model.test.annotation.model.MessageStable;
-import com.acanx.meta.model.test.object.copy.ObjectCopierProcessorCopier;
+import com.acanx.meta.model.test.annotation.copier.ObjectCopierProcessorCopier;
 
 /**
  * MessageStableCopier

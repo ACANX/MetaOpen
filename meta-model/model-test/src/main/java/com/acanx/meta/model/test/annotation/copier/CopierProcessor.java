@@ -1,11 +1,11 @@
-package com.acanx.meta.model.test.object.copy;
+package com.acanx.meta.model.test.annotation.copier;
 
 import com.acanx.meta.model.test.annotation.model.MessageFlex;
 import com.acanx.meta.model.test.annotation.model.MessageStable;
-import com.acanx.meta.model.test.object.copier.MessageCopier;
-import com.acanx.meta.model.test.object.copier.UserCopier;
 import com.acanx.meta.model.test.json.model.UserDTO;
 import com.acanx.meta.model.test.json.model.User;
+import com.acanx.meta.model.test.annotation.copier.copier.MessageCopier;
+import com.acanx.meta.model.test.annotation.copier.copier.UserCopier;
 import com.acanx.util.annotation.Copier;
 
 import java.time.LocalDateTime;
@@ -38,24 +38,26 @@ public class CopierProcessor {
         // UserCopierHelper.copy(source, target);
     }
 
-//    /**
-//     *  带自定义规则的对象拷贝
-//     *
-//     * @param source 源
-//     * @param target 目标
-//     */
-//    @ObjectCopy(
-//            copyNulls = false,
-//            ignoreFields = {"password"},
+    /**
+     *  带自定义规则的对象拷贝
+     *
+     * @param source 源
+     * @param target 目标
+     */
+    @Copier(
+            ignoreNull = false
+//            ,
+//            ignoreFields = {"password"}
+//            ,
 //            fieldMappings = {
 //                    @ObjectCopy.FieldMapping(s = "userName", t = "loginId"),
 //                    @ObjectCopy.FieldMapping(s = "email", t = "contactEmail")
 //            }
-//    )
-//    void convertUserToUserDTOWithIgnorePassword(User source, UserDTO target) {
-//        // 编译期生成的代码将放在辅助类中
-//        // UserCopierHelper.copy(source, target);
-//    }
+    )
+    void convertUserToUserDTOWithIgnorePassword(User source, UserDTO target) {
+        // 编译期生成的代码将放在辅助类中
+        // UserCopierHelper.copy(source, target);
+    }
 
 
 

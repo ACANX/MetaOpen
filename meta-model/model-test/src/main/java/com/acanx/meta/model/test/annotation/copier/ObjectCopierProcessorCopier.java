@@ -1,4 +1,4 @@
-package com.acanx.meta.model.test.object.copy;
+package com.acanx.meta.model.test.annotation.copier;
 
 import com.acanx.meta.model.test.annotation.model.MessageFlex;
 import com.acanx.meta.model.test.annotation.model.MessageStable;
