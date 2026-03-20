@@ -1,6 +1,7 @@
 package com.acanx.meta.model.test.annotation.model;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * MessageStable
@@ -45,5 +46,27 @@ public class MessageStable {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof MessageStable that)) return false;
+        return getPriority() == that.getPriority() && Objects.equals(getId(), that.getId()) && Objects.equals(getContent(), that.getContent()) && Objects.equals(getOptions(), that.getOptions()) && Objects.equals(getRemark(), that.getRemark());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getContent(), getPriority(), getOptions(), getRemark());
+    }
+
+    @Override
+    public String toString() {
+        return "MessageStable{" +
+                "id=" + id +
+                ", content='" + content + '\'' +
+                ", priority=" + priority +
+                ", options=" + options +
+                ", remark='" + remark + '\'' +
+                '}';
     }
 }
