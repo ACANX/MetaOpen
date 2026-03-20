@@ -54,8 +54,9 @@
         <flatten-maven-plugin.version>1.7.3</flatten-maven-plugin.version>
         <central-publishing-maven-plugin.version>0.10.0</central-publishing-maven-plugin.version>
 
-        <deamond.version>0.1.4.5</deamond.version>
-        <autil.version>0.4.5.1</autil.version>
+        <deamond.version>0.1.4.9</deamond.version>
+        <meta-open.version>0.7.0</meta-open.version>
+        <autil.version>1.3.0</autil.version>
         <acanx-utils.version>0.4.2</acanx-utils.version>
 
         <openjfx.version>26</openjfx.version>
@@ -99,13 +100,13 @@
 
         <spring.version>7.0.6</spring.version>
         <spring-security.version>7.0.4</spring-security.version>
-        <spring-boot.version>4.0.3</spring-boot.version>
+        <spring-boot.version>4.0.4</spring-boot.version>
 
         <dubbo.version>3.3.6</dubbo.version>
         <nacos.version>3.1.1</nacos.version>
 
         <lucense.version>10.4.0</lucense.version>
-        <elasticsearch.version>9.3.1</elasticsearch.version>
+        <elasticsearch.version>9.3.2</elasticsearch.version>
 
         <flink.version>1.17.2</flink.version>
         <hadoop.version>3.4.3</hadoop.version>
