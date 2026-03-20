@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.acanx.module</groupId>
-    <artifactId>module</artifactId>
+    <groupId>com.acanx.meta.bom</groupId>
+    <artifactId>bom-mod</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
-    <name>Module</name>
-    <description>ACANX-Module BOM</description>
+    <name>BOM-Mod</name>
+    <description>BOM-Mod BOM</description>
     
     <properties>
         <revision>0.4.2</revision>
@@ -108,7 +108,7 @@
                 <version>${meta-open.version}</version>
             </dependency>
 
-            <dependency>
+            <!-- <dependency>
                 <groupId>com.acanx.module.llm</groupId>
                 <artifactId>llm-deepseek</artifactId>
                 <version>${revision}</version>
@@ -133,7 +133,7 @@
                 <groupId>com.acanx.module.finv</groupId>
                 <artifactId>finv-quote-common</artifactId>
                 <version>${revision}</version>
-            </dependency>
+            </dependency> -->
             <dependency>
                 <groupId>com.acanx.util</groupId>
                 <artifactId>json-core</artifactId>
@@ -154,7 +154,7 @@
                 <artifactId>json-gson</artifactId>
                 <version>${autil.version}</version>
             </dependency>
-            <dependency>
+            <!-- <dependency>
                 <groupId>com.acanx.module.finv</groupId>
                 <artifactId>finv-quote-bdgst</artifactId>
                 <version>${revision}</version>
@@ -163,7 +163,7 @@
                 <groupId>com.acanx.module.finv</groupId>
                 <artifactId>finv-quote-futu</artifactId>
                 <version>${revision}</version>
-            </dependency>
+            </dependency> -->
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
@@ -390,7 +390,7 @@
     </repositories>
 
     <build>
-        <finalName>Module</finalName>
+        <finalName>BOM-Mod</finalName>
 
         <plugins>
             <!-- 原文链接：https://blog.csdn.net/luo15242208310/article/details/122874645-->
