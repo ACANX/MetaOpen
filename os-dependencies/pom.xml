@@ -36,10 +36,14 @@
     </licenses>
 
     <properties>
-        <revision>0.7.0</revision>
+        <revision>0.7.1</revision>
+        <meta-open.version>0.7.1</meta-open.version>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>21</java.version>
-        <maven.compiler.release>21</maven.compiler.release>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <!-- <maven.compiler.release>21</maven.compiler.release> -->
         <maven.version>3.9.14</maven.version>
         <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
         <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
@@ -51,7 +55,6 @@
         <central-publishing-maven-plugin.version>0.10.0</central-publishing-maven-plugin.version>
 
         <deamond.version>0.1.4.5</deamond.version>
-        <meta-open.version>0.7.0</meta-open.version>
         <autil.version>0.4.5.1</autil.version>
         <acanx-utils.version>0.4.2</acanx-utils.version>
 

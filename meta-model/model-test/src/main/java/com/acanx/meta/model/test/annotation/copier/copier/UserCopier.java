@@ -1,8 +1,8 @@
-package com.acanx.meta.model.test.object.copier;
+package com.acanx.meta.model.test.annotation.copier.copier;
 
 import com.acanx.meta.model.test.json.model.User;
 import com.acanx.meta.model.test.json.model.UserDTO;
-import com.acanx.meta.model.test.object.copy.ObjectCopierProcessorCopier;
+import com.acanx.meta.model.test.annotation.copier.ObjectCopierProcessorCopier;
 
 /**
  * UserCopier
