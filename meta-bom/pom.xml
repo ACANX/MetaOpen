@@ -46,6 +46,7 @@
     <module>bom-sdk</module>    
     <module>bom-deamon</module>   
     <module>bom-cf</module>   
+    <module>bom-mod</module>   
   </modules>
 
   <dependencies/>
