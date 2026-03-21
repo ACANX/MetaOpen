@@ -185,7 +185,7 @@
             <dependency>
                 <groupId>com.acanx.util</groupId>
                 <artifactId>incubator-annotation</artifactId>
-                <version>0.4.4</version>
+                <version>${autil.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.acanx</groupId>
