@@ -36,8 +36,8 @@
     </licenses>
 
     <properties>
-        <revision>0.7.1</revision>
-        <meta-open.version>0.7.1</meta-open.version>
+        <revision>0.7.2-SNAPSHOT</revision>
+        <meta-open.version>0.7.2-SNAPSHOT</meta-open.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>21</java.version>
