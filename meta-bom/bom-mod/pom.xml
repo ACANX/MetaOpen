@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
    <parent>
     <groupId>com.acanx.meta</groupId>
-    <artifactId>meta-open</artifactId>
+    <artifactId>meta-bom</artifactId>
     <version>${revision}</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
@@ -15,7 +15,6 @@
     <description>BOM-Mod BOM</description>
     
     <properties>
-        <version>${revision}</version>
         <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
