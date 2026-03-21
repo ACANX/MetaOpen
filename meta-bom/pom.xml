@@ -39,8 +39,10 @@
         </license>
     </licenses>
   
-  <properties/>
+  <properties>
 
+  </properties>
+  
   <modules>
     <module>bom-graalvm</module>
     <module>bom-sdk</module>    
