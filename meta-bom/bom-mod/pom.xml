@@ -18,7 +18,7 @@
         <maven-model.version>3.9.6</maven-model.version>
         <maven-jar-plugin.version>3.4.1</maven-jar-plugin.version>
         <maven-shade-plugin.version>3.5.3</maven-shade-plugin.version>
-        <flatten-maven-plugin.version>1.2.1</flatten-maven-plugin.version>
+        <flatten-maven-plugin.version>1.7.3</flatten-maven-plugin.version>
 
         <autil.version>1.3.0</autil.version>
         <meta-open.version>0.7.0</meta-open.version>
