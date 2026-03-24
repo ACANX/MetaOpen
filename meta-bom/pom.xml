@@ -40,7 +40,7 @@
     </licenses>
   
   <properties>
-    <awssdk.version>2.42.18</awssdk.version>
+    <awssdk.version>2.42.19</awssdk.version>
   </properties>
   
   <modules>
