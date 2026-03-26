@@ -177,8 +177,9 @@ updates:
   - package-ecosystem: "maven"
     directory: "/"
     schedule:
-      interval: "daily"
-      time: "23:15"         # 每周 UTC 时间 23:15 检查
+      interval: "weekly"
+      day: "sunday"
+      time: "23:15"         # 每周日 UTC 时间 23:15 检查
       timezone: "Asia/Shanghai" # 时区设置
     target-branch: "dependa"
     open-pull-requests-limit: 50  # 最大 PR 数量
