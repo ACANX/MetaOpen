@@ -71,6 +71,12 @@
     <druid.version>1.2.22</druid.version>
     <mybatis.version>3.5.19</mybatis.version>
 
+    <groovy.version>4.0.24</groovy.version>
+    <javassist.version>3.30.2-GA</javassist.version>
+    <aspectj.version>1.9.22.1</aspectj.version>
+    <byte-buddy.version>1.17.5</byte-buddy.version>
+    <classmate.version>1.7.0</classmate.version>
+    
     <dubbo.version>3.3.6</dubbo.version>
     <dubbo-spring-boot-starter.version>3.3.6</dubbo-spring-boot-starter.version>
     <dubbo-extensions-parent>3.3.3</dubbo-extensions-parent>
@@ -79,7 +85,7 @@
     <apache-seata.version>2.4.0</apache-seata.version>
     
     
-    <!-- SpringCloud官方依赖 -->
+    <!-- SpringCloud官方依赖  -->
     <spring.version>7.0.6</spring.version>
     <spring-boot.version>4.0.5</spring-boot.version>
     <spring-cloud.version>2025.0.0</spring-cloud.version>
@@ -102,14 +108,14 @@
     <pagehelper-spring-boot.version>2.1.1</pagehelper-spring-boot.version>
     <jsqlparser>5.3</jsqlparser>
 
-     <!-- Spring Cloud Alibaba-->
+     <!-- Spring Cloud Alibaba -->
     <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba -->
     <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-starter-alibaba -->
     <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba-dependencies -->
     <spring-cloud-alibaba.version>2025.0.0</spring-cloud-alibaba.version>
-    <!-- Spring Cloud Alibaba-->
+    <!-- Spring Cloud Alibaba -->
 
-    <!-- JakartaEE 11 -->
+    <!-- JakartaEE 11  -->
     <jakarta-activation.version>2.1.3</jakarta-activation.version>
     <jakarta-annotation.version>3.0.0</jakarta-annotation.version>
     <jakarta-inject.version>2.0.1</jakarta-inject.version>
@@ -129,17 +135,13 @@
     <jakarta-xml-soap.version>3.0.2</jakarta-xml-soap.version>
     <jakarta-xml-ws.version>4.0.2</jakarta-xml-ws.version>
     <!-- JakartaEE 11 -->
-    <!--  Servlet-->
+    <!--  Servlet -->
     <tomcat.version>10.1.42</tomcat.version>
     <undertow.version>2.3.18.Final</undertow.version>
     <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
-    <!--  Servlet-->
+    <!--  Servlet -->
 
-    <groovy.version>4.0.24</groovy.version>
-    <javassist.version>3.30.2-GA</javassist.version>
-    <aspectj.version>1.9.22.1</aspectj.version>
-    <byte-buddy.version>1.17.5</byte-buddy.version>
-    <classmate.version>1.7.0</classmate.version>
+    
     
     <awssdk.version>2.42.22</awssdk.version>
     
