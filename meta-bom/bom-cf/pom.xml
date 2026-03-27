@@ -39,7 +39,7 @@
     </licenses>
   
   <properties>
-    <awssdk.version>2.42.16</awssdk.version>
+
   </properties>
 
   <dependencyManagement>
@@ -85,6 +85,18 @@
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
             <artifactId>cloudwatch</artifactId>
+            <version>${awssdk.version}</version>
+        </dependency>
+        <!-- SDK的依赖包，通常会自动引入，但显式声明可确保版本一致 -->
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>sdk-core</artifactId>
+            <version>${awssdk.version}</version>
+        </dependency>
+        <!-- 核心依赖：EventBridge Scheduler SDK -->
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>scheduler</artifactId>
             <version>${awssdk.version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/costexplorer -->
@@ -135,7 +147,7 @@
           <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-functiongraph</artifactId>
-            <version>3.1.188</version>
+            <version>3.1.190</version>
           </dependency>
     </dependencies>
   </dependencyManagement>

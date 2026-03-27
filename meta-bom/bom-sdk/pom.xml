@@ -14,7 +14,7 @@
   <url>https://github.com/ACANX/MetaOpen</url>
 
     <scm>
-        <tag>V0.4.x</tag>
+        <tag>V0.7.x</tag>
         <url>git@github.com:ACANX/MetaOpen.git</url>
         <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
         <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>
@@ -39,7 +39,7 @@
     </licenses>
   
   <properties>
-    <awssdk.version>2.42.16</awssdk.version>
+    <!-- <awssdk.version>2.42.21</awssdk.version> -->
   </properties>
 
   <dependencyManagement>
@@ -59,22 +59,6 @@
             <artifactId>lambda</artifactId>
             <version>${awssdk.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.amazonaws</groupId>
-            <artifactId>aws-lambda-java-core</artifactId>
-            <version>1.4.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.amazonaws</groupId>
-            <artifactId>aws-lambda-java-events</artifactId>
-            <version>3.16.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.amazonaws</groupId>
-            <artifactId>aws-lambda-java-log4j2</artifactId>
-            <version>1.6.2</version>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/ses -->
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
@@ -94,6 +78,28 @@
             <artifactId>costexplorer</artifactId>
             <version>${awssdk.version}</version>
         </dependency>
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>s3</artifactId>
+            <version>${awssdk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>regions</artifactId>
+            <version>${awssdk.version}</version>
+        </dependency>
+        <!-- AWS SDK Core -->
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>aws-core</artifactId>
+            <version>${awssdk.version}</version>
+        </dependency>
+        <!-- AWS SDK for SQS -->
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>sqs</artifactId>
+            <version>${awssdk.version}</version>
+        </dependency>
 
         <!-- aliyun -->
         <!-- https://mvnrepository.com/artifact/com.aliyun.oss/aliyun-sdk-oss -->
@@ -102,41 +108,15 @@
             <artifactId>aliyun-sdk-oss</artifactId>
             <version>3.18.5</version>
         </dependency>
-        <dependency>
-            <groupId>com.aliyun.fc.runtime</groupId>
-            <artifactId>fc-java-core</artifactId>
-            <version>1.4.1</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.aliyun.fc.runtime/fc-java-event -->
-        <dependency>
-            <groupId>com.aliyun.fc.runtime</groupId>
-            <artifactId>fc-java-event</artifactId>
-            <version>1.2.0</version>
-        </dependency>
 
         <!-- tencentcloud -->
-        <dependency>
-          <groupId>com.tencentcloudapi</groupId>
-          <artifactId>tencentcloud-sdk-java-scf</artifactId>
-          <version>3.1.1394</version>
-        </dependency>
-        <dependency>
-          <groupId>com.tencentcloudapi</groupId>
-          <artifactId>scf-java-events</artifactId>
-          <version>0.0.4</version>
-          <exclusions>
-            <exclusion>
-              <groupId>*</groupId>
-              <artifactId>*</artifactId>
-            </exclusion>
-          </exclusions>
-        </dependency>
+
 
       <!-- huaweicloud -->
           <dependency>
             <groupId>com.huaweicloud.sdk</groupId>
             <artifactId>huaweicloud-sdk-functiongraph</artifactId>
-            <version>3.1.188</version>
+            <version>3.1.190</version>
           </dependency>
     </dependencies>
   </dependencyManagement>

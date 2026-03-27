@@ -1,0 +1,66 @@
+name: UpdateProjectVersion
+
+on:
+  push:
+    paths:
+      - 'version'           # 仅当 version 变更时触发
+  workflow_dispatch:            # 手动触发，可输入版本号
+    inputs:
+      version:
+        description: 'New Version'
+        required: false
+
+jobs:
+  update-version:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: CheckoutCode
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0        # 确保能获取所有分支历史
+
+      - name: SetupJava
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+      - name: ReadNewVersion
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            NEW_VERSION="${{ github.event.inputs.version }}"
+          else
+            NEW_VERSION=$(cat version | tr -d '\n')
+          fi
+          echo "new_version=${NEW_VERSION}" >> $GITHUB_OUTPUT
+
+      - name: UpdateMavenProperties
+        env:
+          NEW_VERSION: ${{ steps.version.outputs.new_version }}
+        run: |
+          # 要更新的属性列表（可根据需要扩展）
+          PROPERTIES=("revision" "meta-open.version" "meta.version")
+          for prop in "${PROPERTIES[@]}"; do
+            echo "Updating $prop to $NEW_VERSION"
+            mvn versions:set-property \
+              -Dproperty="$prop" \
+              -DnewVersion="$NEW_VERSION" \
+              -DgenerateBackupPoms=false \
+              -DprocessAllModules=true \
+              -q
+          done
+
+      - name: CreatePullRequest
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: update version to ${{ steps.version.outputs.new_version }}"
+          branch: "update-version-${{ steps.version.outputs.new_version }}"
+          title: "chore(version): Update project version to ${{ steps.version.outputs.new_version }}"
+          body: |
+            This PR updates the Maven properties to version `${{ steps.version.outputs.new_version }}`.
+            Properties updated: `revision`, `meta-open.version`, `meta.version`.
+          base: dev   # 根据你的默认分支修改

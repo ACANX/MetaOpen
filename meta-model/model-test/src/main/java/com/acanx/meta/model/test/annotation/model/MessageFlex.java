@@ -1,6 +1,7 @@
 package com.acanx.meta.model.test.annotation.model;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * MessageFlex
@@ -43,4 +44,29 @@ public class MessageFlex {
     public void setRemark(String remark) {
         this.remark = remark;
     }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof MessageFlex that)) return false;
+        return getPriorityLevel() == that.getPriorityLevel() && Objects.equals(getId(), that.getId()) && Objects.equals(getMessageContent(), that.getMessageContent()) && Objects.equals(getTags(), that.getTags()) && Objects.equals(getRemark(), that.getRemark());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getMessageContent(), getPriorityLevel(), getTags(), getRemark());
+    }
+
+    @Override
+    public String toString() {
+        return "MessageFlex{" +
+                "id=" + id +
+                ", messageContent='" + messageContent + '\'' +
+                ", priorityLevel=" + priorityLevel +
+                ", tags=" + tags +
+                ", remark='" + remark + '\'' +
+                '}';
+    }
+
+
 }
