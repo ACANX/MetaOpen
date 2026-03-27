@@ -27,6 +27,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
+
       - name: ReadNewVersion
         id: version
         run: |
@@ -53,12 +54,16 @@ jobs:
               -q
           done
 
+      - name: WriteVersionFile
+        run: |
+          echo "${{ steps.version.outputs.new_version }}" > version
+
       - name: CreatePullRequest
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: update version to ${{ steps.version.outputs.new_version }}"
-          branch: "update-version-${{ steps.version.outputs.new_version }}"
+          commit-message: "chore: update project version to ${{ steps.version.outputs.new_version }}"
+          branch: "update-project-version-${{ steps.version.outputs.new_version }}"
           title: "chore(version): Update project version to ${{ steps.version.outputs.new_version }}"
           body: |
             This PR updates the Maven properties to version `${{ steps.version.outputs.new_version }}`.
