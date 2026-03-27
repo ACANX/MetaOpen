@@ -36,8 +36,8 @@
     </licenses>
 
     <properties>
-        <revision>0.7.3-SNAPSHOT</revision>
-        <meta-open.version>0.7.3-SNAPSHOT</meta-open.version>
+        <revision>0.7.2.2-SNAPSHOT</revision>
+        <meta-open.version>0.7.2.2-SNAPSHOT</meta-open.version>
         <autil.version>1.3.0</autil.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
