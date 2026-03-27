@@ -51,7 +51,7 @@
         <flatten-maven-plugin.version>1.7.3</flatten-maven-plugin.version>
 
         <autil.version>1.3.0</autil.version>
-        <meta-open.version>0.7.5-SNAPSHOT</meta-open.version>
+        <meta-open.version>0.7.5</meta-open.version>
       
         <jna.version>5.16.0</jna.version>
         <sqlite-jdbc>3.50.3.0</sqlite-jdbc>
