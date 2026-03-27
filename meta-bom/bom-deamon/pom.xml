@@ -45,7 +45,8 @@
         <meta-open.version>0.7.2.2-SNAPSHOT</meta-open.version>
         <autil.version>1.3.0</autil.version>
         <module.version>0.4.2</module.version>
-             
+        <flattened-pom-path>${project.basedir}/.flattened-pom.xml</flattened-pom-path>
+
         <java.version>21</java.version>
         <maven-compiler-source.version>21</maven-compiler-source.version>
         <maven-compiler-target.version>21</maven-compiler-target.version>
@@ -99,9 +100,10 @@
         <apache.httpclient.version>4.5.14</apache.httpclient.version>
         <httpasyncclient.version>4.1.5</httpasyncclient.version>
 
-
-
-
+        <!-- Jakarta EE 版本 -->
+        <jakarta.annotation.version>3.0.0</jakarta.annotation.version>
+        <jakarta.validation.version>3.1.1</jakarta.validation.version>
+        <!-- Jakarta EE 版本 -->
 
 
         <curator.version>5.6.0</curator.version>
@@ -689,35 +691,35 @@
     <build>
         <pluginManagement>
             <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${maven-compiler-plugin.version}</version>
-                    <configuration>
-                        <compilerVersion>${java.version}</compilerVersion>
-                        <source>${maven-compiler-source.version}</source>
-                        <target>${maven-compiler-target.version}</target>
-                        <encoding>${project-encoding}</encoding>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-enforcer-plugin</artifactId>
-                    <version>3.6.2</version>
-                    <executions>
-                        <execution>
-                            <id>enforce-versions</id>
-                            <goals>
-                                <goal>enforce</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                    <configuration>
-                        <fail>false</fail>
-                        <rules>
-                            <dependencyConvergence/>
-                        </rules>
-                    </configuration>
-                </plugin>
+<!--                <plugin>-->
+<!--                    <groupId>org.apache.maven.plugins</groupId>-->
+<!--                    <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                    <version>${maven-compiler-plugin.version}</version>-->
+<!--                    <configuration>-->
+<!--                        <compilerVersion>${java.version}</compilerVersion>-->
+<!--                        <source>${maven-compiler-source.version}</source>-->
+<!--                        <target>${maven-compiler-target.version}</target>-->
+<!--                        <encoding>${project-encoding}</encoding>-->
+<!--                    </configuration>-->
+<!--                </plugin>-->
+<!--                <plugin>-->
+<!--                    <artifactId>maven-enforcer-plugin</artifactId>-->
+<!--                    <version>3.6.2</version>-->
+<!--                    <executions>-->
+<!--                        <execution>-->
+<!--                            <id>enforce-versions</id>-->
+<!--                            <goals>-->
+<!--                                <goal>enforce</goal>-->
+<!--                            </goals>-->
+<!--                        </execution>-->
+<!--                    </executions>-->
+<!--                    <configuration>-->
+<!--                        <fail>false</fail>-->
+<!--                        <rules>-->
+<!--                            <dependencyConvergence/>-->
+<!--                        </rules>-->
+<!--                    </configuration>-->
+<!--                </plugin>-->
             </plugins>
         </pluginManagement>
 
@@ -738,7 +740,107 @@
                     <encoding>${project-encoding}</encoding>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>1.7.1</version>
+                <configuration>
+                    <updatePomFile>true</updatePomFile>
+                    <flattenMode>bom</flattenMode>
+                    <pomElements>
+                        <dependencyManagement>keep</dependencyManagement>
+                        <developers>keep</developers>
+                        <scm>keep</scm>
+                        <url>keep</url>
+                        <organization>keep</organization>
+                        <name>keep</name>
+                        <description>keep</description>
+                    </pomElements>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>flatten.clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>${maven-antrun-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>resolve-properties-in-flattened-pom</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <echo>Resolving properties in .flattened-pom.xml...</echo>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{revision\}" replace="${revision}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{spring\.version\}" replace="${spring.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{spring-boot\.version\}" replace="${spring-boot.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{spring-boot-admin\.version\}" replace="${spring-boot-admin.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{spring-security\.version\}" replace="${spring-security.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{spring-security-oauth2\.version\}" replace="${spring-security-oauth2.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{springfox-swagger2\.version\}" replace="${springfox-swagger2.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{dubbo\.version\}" replace="${dubbo.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{dubbo-extensions-parent\}" replace="${dubbo-extensions-parent}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{dubbo-extensions-serialization-protobuf\}" replace="${dubbo-extensions-serialization-protobuf}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{mybatis-spring-boot\.version\}" replace="${mybatis-spring-boot.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{pagehelper-spring-boot\.version\}" replace="${pagehelper-spring-boot.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{jsqlparser\}" replace="${jsqlparser}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{javax-servlet-api\.version\}" replace="${javax-servlet-api.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{jakarta\.annotation\.version\}" replace="${jakarta.annotation.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{jakarta\.validation\.version\}" replace="${jakarta.validation.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{javax-activation-api\.version\}" replace="${javax-activation-api.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{javax-activation\.version\}" replace="${javax-activation.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{javax-annotation-api\.version\}" replace="${javax-annotation-api.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{jaxb-api\.version\}" replace="${jaxb-api.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{jaxb-impl\.version\}" replace="${jaxb-impl.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{UserAgentUtils\.version\}" replace="${UserAgentUtils.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{swagger2markup\.version\}" replace="${swagger2markup.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{junit-vintage-engine\.version\}" replace="${junit-vintage-engine.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{junit-platform\.version\}" replace="${junit-platform.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{junit-jupiter\.version\}" replace="${junit-jupiter.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{sqlite-jdbc\.version\}" replace="${sqlite-jdbc.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{httpclient5\.version\}" replace="${httpclient5.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{commonmark\.version\}" replace="${commonmark.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{httpclient\.version\}" replace="${httpclient.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{httpcore5\.version\}" replace="${httpcore5.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{javassist\.version\}" replace="${javassist.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{fastjson2\.version\}" replace="${fastjson2.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{fastjson\.version\}" replace="${fastjson.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{httpcore\.version\}" replace="${httpcore.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{cos_api\.version\}" replace="${cos_api.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{logback\.version\}" replace="${logback.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{lombok\.version\}" replace="${lombok.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{log4j-to-slf4j\}" replace="${log4j-to-slf4j}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{log4j\.version\}" replace="${log4j.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{autil\.version\}" replace="${autil.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{netty\.version\}" replace="${netty.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{guava\.version\}" replace="${guava.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{gson\.version\}" replace="${gson.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{grpc\.version\}" replace="${grpc.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{rome\.version\}" replace="${rome.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{commons-configuration\.version\}" replace="${commons-configuration.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{apache-commons-lang3\.version\}" replace="${apache-commons-lang3.version}" byline="false" flags="g"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
-
 </project>
