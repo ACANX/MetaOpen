@@ -54,10 +54,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    
-
-        
-
         <spring-security.version>7.0.4</spring-security.version>
         <spring-security-oauth2.version>2.5.2.RELEASE</spring-security-oauth2.version>
         <spring-security-jwt.version>1.1.1.RELEASE</spring-security-jwt.version>
@@ -295,48 +291,16 @@
                 <version>${javax-activation.version}</version>
             </dependency>
             <!-- JDK9以后中移除的模块  结束 -->
+            <!--  Servlet-->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${javax-servlet-api.version}</version>
+                <optional>true</optional>
+            </dependency>
 
-            <!-- Spring/SpringBoot/SpringCloud官方依赖-->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-framework-bom</artifactId>
-                <version>${spring.version}</version>
-                <optional>true</optional>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <optional>true</optional>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>de.codecentric</groupId>
-                <artifactId>spring-boot-admin-dependencies</artifactId>
-                <version>${spring-boot-admin.version}</version>
-                <optional>true</optional>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.security</groupId>
-                <artifactId>spring-security-core</artifactId>
-                <version>${spring-security.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-                <optional>true</optional>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.security.oauth</groupId>
-                <artifactId>spring-security-oauth2</artifactId>
-                <version>${spring-security-oauth2.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-                <optional>true</optional>
-            </dependency>
+
+
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger2</artifactId>
@@ -352,30 +316,6 @@
             <!-- SpringCloud官方依赖-->
 
 
-            <!-- Spring Cloud Alibaba-->
-            <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba-dependencies -->
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-bom</artifactId>
-                <version>${dubbo.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>log4j</groupId>
-                        <artifactId>log4j</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.springframework</groupId>
-                        <artifactId>spring-framework-bom</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.springframework</groupId>
-                        <artifactId>spring-core</artifactId>
-                    </exclusion>
-                </exclusions>
-                <type>pom</type>
-                <scope>import</scope>
-                <optional>true</optional>
-            </dependency>
             <dependency>
                 <groupId>org.apache.dubbo.extensions</groupId>
                 <artifactId>extensions-parent</artifactId>
@@ -389,14 +329,6 @@
 
 
             <!--  关系数据库-->
-            <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot</artifactId>
-                <version>${mybatis-spring-boot.version}</version>
-                <optional>true</optional>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot</artifactId>
@@ -421,13 +353,6 @@
             <!-- NoSQL-->
             <!-- NoSQL-->
 
-            <!--  Servlet-->
-            <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>${javax-servlet-api.version}</version>
-                <optional>true</optional>
-            </dependency>
 
 
             <!--  JSON-->
@@ -525,6 +450,121 @@
                 <optional>true</optional>
             </dependency>
             <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <optional>true</optional>
+                <scope>compile</scope>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
+            <dependency>
+                <groupId>org.javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>${javassist.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
+                <optional>true</optional>
+            </dependency>
+
+            <dependency>
+                <groupId>com.rometools</groupId>
+                <artifactId>rome</artifactId>
+                <version>${rome.version}</version>
+                <optional>true</optional>
+            </dependency>
+            <!--  生成文档工具-->
+            <dependency>
+                <groupId>io.github.swagger2markup</groupId>
+                <artifactId>swagger2markup</artifactId>
+                <version>${swagger2markup.version}</version>
+                <scope>test</scope>
+                <!--   本身这个工具主要就临时用一下，所以这里我们把scope设置为test，这样这个依赖就不会打包到正常运行环境中去。-->
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/eu.bitwalker/UserAgentUtils -->
+            <dependency>
+                <groupId>eu.bitwalker</groupId>
+                <artifactId>UserAgentUtils</artifactId>
+                <version>${UserAgentUtils.version}</version>
+                <optional>true</optional>
+            </dependency>
+
+
+
+
+
+            <!-- https://mvnrepository.com/artifact/io.netty/netty-bom -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-bom</artifactId>
+                <version>${netty.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+                <optional>true</optional>
+            </dependency>
+            <!-- Spring/SpringBoot/SpringCloud官方依赖-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>${spring.version}</version>
+                <optional>true</optional>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <optional>true</optional>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-dependencies</artifactId>
+                <version>${spring-boot-admin.version}</version>
+                <optional>true</optional>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-core</artifactId>
+                <version>${spring-security.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security.oauth</groupId>
+                <artifactId>spring-security-oauth2</artifactId>
+                <version>${spring-security-oauth2.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+                <optional>true</optional>
+            </dependency>
+            <!-- Spring Cloud Alibaba-->
+            <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba-dependencies -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-bom</artifactId>
+                <version>${dubbo.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot</artifactId>
+                <version>${mybatis-spring-boot.version}</version>
+                <optional>true</optional>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
                 <groupId>io.grpc</groupId>
                 <artifactId>grpc-bom</artifactId>
                 <version>${grpc.version}</version>
@@ -571,57 +611,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-                <optional>true</optional>
-                <scope>compile</scope>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
-            <dependency>
-                <groupId>org.javassist</groupId>
-                <artifactId>javassist</artifactId>
-                <version>${javassist.version}</version>
-            </dependency>
 
-            <!-- https://mvnrepository.com/artifact/io.netty/netty-bom -->
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-bom</artifactId>
-                <version>${netty.version}</version>
-                <type>pom</type>
-                <optional>true</optional>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-all</artifactId>
-                <version>${netty.version}</version>
-                <optional>true</optional>
-            </dependency>
-
-            <dependency>
-                <groupId>com.rometools</groupId>
-                <artifactId>rome</artifactId>
-                <version>${rome.version}</version>
-                <optional>true</optional>
-            </dependency>
-            <!--  生成文档工具-->
-            <dependency>
-                <groupId>io.github.swagger2markup</groupId>
-                <artifactId>swagger2markup</artifactId>
-                <version>${swagger2markup.version}</version>
-                <scope>test</scope>
-                <!--   本身这个工具主要就临时用一下，所以这里我们把scope设置为test，这样这个依赖就不会打包到正常运行环境中去。-->
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/eu.bitwalker/UserAgentUtils -->
-            <dependency>
-                <groupId>eu.bitwalker</groupId>
-                <artifactId>UserAgentUtils</artifactId>
-                <version>${UserAgentUtils.version}</version>
-                <optional>true</optional>
-            </dependency>
 
 
             <!-- 测试库相关依赖-->
@@ -670,12 +660,6 @@
                 <groupId>org.junit.platform</groupId>
                 <artifactId>junit-platform-launcher</artifactId>
                 <version>${junit-platform.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.junit.platform</groupId>
-                        <artifactId>junit-platform-engine</artifactId>
-                    </exclusion>
-                </exclusions>
                 <scope>test</scope>
             </dependency>
 
