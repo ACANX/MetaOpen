@@ -41,6 +41,9 @@
   
   <properties>
     <awssdk.version>2.42.21</awssdk.version>
+    <junit-jupiter.version>6.0.3</junit-jupiter.version>
+    <junit-platform.version>6.0.3</junit-platform.version>
+    <junit.version>4.13.2</junit.version>
   </properties>
   
   <modules>
