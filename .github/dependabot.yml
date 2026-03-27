@@ -1,6 +1,29 @@
 version: 2
 updates:
   - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+      time: "23:15"         # 每周日 UTC 时间 23:15 检查
+      timezone: "Asia/Shanghai" # 时区设置
+    target-branch: "dependa"
+    open-pull-requests-limit: 50  # 最大 PR 数量
+    assignees:                  # 自动分配负责人
+      - "dependabot[bot]"
+    ignore:                    # 忽略特定依赖
+      - dependency-name: "com.acanx.util:autil-core"
+        versions: [">= 1.4.0"] # 忽略 autil 0.5.x及以上版本的更新  
+      - dependency-name: "log4j:*"
+        versions: [">= 3.0.0"] # 忽略 log4j 2.x 的更新
+    commit-message:            # 自定义提交信息
+      prefix: "chore"
+      include: "scope"
+    labels:                    # 自动添加标签
+      - "依赖:升级"
+      - "自动化:提交"
+      - "Dependa"  
+  - package-ecosystem: "maven"
     directory: "/os-dependencies"
     schedule:
       interval: "daily"
@@ -174,28 +197,6 @@ updates:
       - "依赖:升级"
       - "自动化:提交"
       - "Dependa"   
-  - package-ecosystem: "maven"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "23:15"         # 每周 UTC 时间 23:15 检查
-      timezone: "Asia/Shanghai" # 时区设置
-    target-branch: "dependa"
-    open-pull-requests-limit: 50  # 最大 PR 数量
-    assignees:                  # 自动分配负责人
-      - "dependabot[bot]"
-    ignore:                    # 忽略特定依赖
-      - dependency-name: "com.acanx.util:autil-core"
-        versions: [">= 1.4.0"] # 忽略 autil 0.5.x及以上版本的更新  
-      - dependency-name: "log4j:*"
-        versions: [">= 3.0.0"] # 忽略 log4j 2.x 的更新
-    commit-message:            # 自定义提交信息
-      prefix: "chore"
-      include: "scope"
-    labels:                    # 自动添加标签
-      - "依赖:升级"
-      - "自动化:提交"
-      - "Dependa"  
   - package-ecosystem: "maven"
     directory: "/meta-bom/bom-mod"
     schedule:

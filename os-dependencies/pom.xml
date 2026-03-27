@@ -64,9 +64,9 @@
         <aspectjweaver.version>1.9.25.1</aspectjweaver.version>
         <bytebuddy.version>1.18.7</bytebuddy.version>
 
-        <netty.version>4.2.10.Final</netty.version>
+        <netty.version>4.2.12.Final</netty.version>
         <reactor.verion>3.8.4</reactor.verion>
-        <protobuf-java.version>4.34.0</protobuf-java.version>
+        <protobuf-java.version>4.34.1</protobuf-java.version>
 
         <tomcat-embed.version>11.0.20</tomcat-embed.version>
 
@@ -85,7 +85,7 @@
         <mapstruct.version>1.6.3</mapstruct.version>
 
         <fastjson2.version>2.0.61</fastjson2.version>
-        <jackson.version>2.21.1</jackson.version>
+        <jackson.version>2.21.2</jackson.version>
         <jackson3.version>3.1.0</jackson3.version>
         <snakeyaml.version>2.6</snakeyaml.version>
 
@@ -100,10 +100,10 @@
 
         <spring.version>7.0.6</spring.version>
         <spring-security.version>7.0.4</spring-security.version>
-        <spring-boot.version>4.0.4</spring-boot.version>
+        <spring-boot.version>4.0.5</spring-boot.version>
 
         <dubbo.version>3.3.6</dubbo.version>
-        <nacos.version>3.1.1</nacos.version>
+        <nacos.version>3.1.2</nacos.version>
 
         <lucense.version>10.4.0</lucense.version>
         <elasticsearch.version>9.3.2</elasticsearch.version>
@@ -907,7 +907,7 @@
             <dependency>
                 <groupId>io.undertow</groupId>
                 <artifactId>undertow-core</artifactId>
-                <version>2.3.23.Final</version>
+                <version>2.3.24.Final</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
