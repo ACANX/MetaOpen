@@ -1,9 +1,9 @@
 name: UpdateProjectVersion
 
 on:
-  push:
-    paths:
-      - 'version'           # 仅当 version 变更时触发
+  # push:
+  #   paths:
+  #     - 'version'           # 仅当 version 变更时触发
   workflow_dispatch:            # 手动触发，可输入版本号
     inputs:
       version:
