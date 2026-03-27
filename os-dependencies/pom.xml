@@ -103,7 +103,7 @@
         <spring-boot.version>4.0.5</spring-boot.version>
 
         <dubbo.version>3.3.6</dubbo.version>
-        <nacos.version>3.1.1</nacos.version>
+        <nacos.version>3.1.2</nacos.version>
 
         <lucense.version>10.4.0</lucense.version>
         <elasticsearch.version>9.3.2</elasticsearch.version>
