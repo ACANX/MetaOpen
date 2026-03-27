@@ -1,4 +1,4 @@
-name: Update Maven Properties from version.txt
+name: UpdateMavenPropertiesFromVersionFile
 
 on:
   push:
