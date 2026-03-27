@@ -40,6 +40,20 @@
     </licenses>
   
   <properties>
+
+    <!-- SpringCloud官方依赖 -->
+    <spring.version>7.0.6</spring.version>
+    <spring-boot.version>4.0.5</spring-boot.version>
+    <spring-boot-admin.version>4.0.2</spring-boot-admin.version>
+    <spring-cloud.version>2025.0.0</spring-cloud.version>
+    <spring-cloud-commons.version>4.2.0</spring-cloud-commons.version>
+    <spring-cloud-consul.verson>4.2.0</spring-cloud-consul.verson>
+    <spring-cloud-gateway.version>4.2.0</spring-cloud-gateway.version>
+    <spring-cloud-stream.version>4.2.0</spring-cloud-stream.version>
+    <spring-cloud-stream-reactive.version>2.2.1.RELEASE</spring-cloud-stream-reactive.version>
+    <spring-cloud-openfeign.version>4.2.0</spring-cloud-openfeign.version>
+    <spring-cloud-netflix.version>4.2.0</spring-cloud-netflix.version>
+    
     <awssdk.version>2.42.21</awssdk.version>
     <junit-jupiter.version>6.0.3</junit-jupiter.version>
     <junit-platform.version>6.0.3</junit-platform.version>
