@@ -50,7 +50,7 @@ jobs:
         
       # - name: ListMavenProjects
       #   run: mvn -B projects:list
-      - name: PublishOS-DependenciesToMavenCentral
+      - name: PublishArtifactsToMavenCentralByBatch
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}   # 假设你的 Maven GPG 插件配置或 settings.xml 使用这些变量
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
