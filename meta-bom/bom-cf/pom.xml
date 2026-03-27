@@ -87,6 +87,12 @@
             <artifactId>cloudwatch</artifactId>
             <version>${awssdk.version}</version>
         </dependency>
+        <!-- 核心依赖：EventBridge Scheduler SDK -->
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>scheduler</artifactId>
+            <version>${awssdk.version}</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/costexplorer -->
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
