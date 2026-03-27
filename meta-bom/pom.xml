@@ -40,6 +40,17 @@
     </licenses>
   
   <properties>
+    <meta-open.version>0.7.5-SNAPSHOT</meta-open.version>
+    <autil.version>1.3.0</autil.version>
+    <module.version>0.4.2</module.version>
+
+    <java.version>21</java.version>
+    <maven-compiler-source.version>21</maven-compiler-source.version>
+    <maven-compiler-target.version>21</maven-compiler-target.version>
+    <project-encoding>UTF-8</project-encoding>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
     <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
     <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
     <maven-clean-plugin.version>3.4.0</maven-clean-plugin.version>
@@ -60,6 +71,12 @@
     <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
     <versions-maven-plugin.version>2.17.1</versions-maven-plugin.version>
     <xml-maven-plugin.version>1.1.0</xml-maven-plugin.version>
+    <git-commit-id-maven-plugin.version>9.0.1</git-commit-id-maven-plugin.version>
+
+    <commons-codec.version>1.17.1</commons-codec.version>
+    <apache-commons-lang3.version>3.20.0</apache-commons-lang3.version>
+    <commons-configuration.version>1.10</commons-configuration.version>
+    <commons-configuration2.version>2.12</commons-configuration2.version>
 
     <!--  关系数据库-->
     <sqlite-jdbc.version>3.51.3.0</sqlite-jdbc.version>
@@ -87,6 +104,7 @@
     
     <!-- SpringCloud官方依赖  -->
     <spring.version>7.0.6</spring.version>
+    <spring-security.version>7.0.4</spring-security.version>
     <spring-boot.version>4.0.5</spring-boot.version>
     <spring-cloud.version>2025.0.0</spring-cloud.version>
     <spring-cloud-commons.version>4.2.0</spring-cloud-commons.version>
@@ -134,19 +152,104 @@
     <jakarta-xml-bind.version>4.0.4</jakarta-xml-bind.version>
     <jakarta-xml-soap.version>3.0.2</jakarta-xml-soap.version>
     <jakarta-xml-ws.version>4.0.2</jakarta-xml-ws.version>
-    <!-- JakartaEE 11 -->
+    <!-- Jakarta EE 版本 -->
+
+    <jaxb-api.version>2.3.1</jaxb-api.version>
+    <jaxb-impl.version>4.0.7</jaxb-impl.version>
+    <javax-annotation-api.version>1.3.2</javax-annotation-api.version>
+    <javax-activation-api.version>1.2.0</javax-activation-api.version>
+    <javax-activation.version>1.1.1</javax-activation.version>
+
+
+    <curator.version>5.6.0</curator.version>
+    <zookeeper.version>3.8.4</zookeeper.version>
+
+
     <!--  Servlet -->
     <tomcat.version>10.1.42</tomcat.version>
     <undertow.version>2.3.18.Final</undertow.version>
     <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
     <!--  Servlet -->
 
-    
-    
+    <openjfx.version>25.0.1</openjfx.version>
+
+    <!-- Markdown 相关 -->
+    <commonmark.version>0.27.1</commonmark.version>
+    <cos_api.version>5.6.263</cos_api.version>
+    <grpc.version>1.80.0</grpc.version>
+    <protobuf-java.version>4.33.0</protobuf-java.version>
+    <protoc.version>4.33.0</protoc.version>
+    <guava.version>33.5.0-jre</guava.version>
+    <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
+
+    <lombok.version>1.18.44</lombok.version>
+    <netty.version>4.2.12.Final</netty.version>
+    <!--  JSON -->
+    <fastjson.version>1.2.83</fastjson.version>
+    <fastjson2.version>2.0.61</fastjson2.version>
+    <gson.version>2.13.2</gson.version>
+    <jackson.version>2.20.1</jackson.version>
+    <snakeyaml.version>2.5</snakeyaml.version>
+    <!--  JSON -->
+    <httpclient5.version>5.6</httpclient5.version>
+    <httpcore5.version>5.4.2</httpcore5.version>
+    <httpcore.version>4.4.16</httpcore.version>
+    <httpclient.version>4.5.14</httpclient.version>
+    <apache.httpclient.version>4.5.14</apache.httpclient.version>
+    <httpasyncclient.version>4.1.5</httpasyncclient.version>
+
+
+    <spring-security-oauth2.version>2.5.2.RELEASE</spring-security-oauth2.version>
+    <spring-security-jwt.version>1.1.1.RELEASE</spring-security-jwt.version>
+    <spring-data-rest-webmvc.version>4.3.0</spring-data-rest-webmvc.version>
+    <spring-data-elasticsearch.version>5.3.0</spring-data-elasticsearch.version>
+    <springfox-swagger2.version>3.0.0</springfox-swagger2.version>
+    <freemarker.version>2.3.33</freemarker.version>
+    <thymeleaf.version>3.1.2.RELEASE</thymeleaf.version>
+    <thymeleaf-extras-springsecurity.version>3.1.2.RELEASE</thymeleaf-extras-springsecurity.version>
+    <thymeleaf-extras-springsecurity5.version>3.1.2.RELEASE</thymeleaf-extras-springsecurity5.version>
+    <thymeleaf-extras-springsecurity6.version>3.1.2.RELEASE</thymeleaf-extras-springsecurity6.version>
+    <thymeleaf-extras-data-attribute.version>2.0.1</thymeleaf-extras-data-attribute.version>
+    <thymeleaf-layout-dialect.version>3.3.0</thymeleaf-layout-dialect.version>
+
+    <!-- 依赖库版本信息-->
+
+    <rome.version>2.1.0</rome.version>
+    <swagger2markup.version>1.3.4</swagger2markup.version>
+    <UserAgentUtils.version>1.21</UserAgentUtils.version>
+
+
+    <r2dbc-h2.version>1.0.0.RELEASE</r2dbc-h2.version>
+    <r2dbc-mariadb.version>1.2.2</r2dbc-mariadb.version>
+    <r2dbc-mssql.version>1.0.2.RELEASE</r2dbc-mssql.version>
+    <r2dbc-mysql.version>1.3.0</r2dbc-mysql.version>
+    <r2dbc-pool.version>1.0.2.RELEASE</r2dbc-pool.version>
+    <r2dbc-postgresql.version>1.0.7.RELEASE</r2dbc-postgresql.version>
+    <r2dbc-proxy.version>1.1.5.RELEASE</r2dbc-proxy.version>
+    <r2dbc-spi.version>1.0.0.RELEASE</r2dbc-spi.version>
+    <!--  关系数据库-->
+    <!-- NoSQL-->
+    <mongodb.version>3.12.14</mongodb.version>
+    <!-- NoSQL-->
+
+    <selenium.version>4.29.0</selenium.version>
+    <selenium-htmlunit.version>4.29.0</selenium-htmlunit.version>
+
     <awssdk.version>2.42.22</awssdk.version>
+
+    <!-- 日志依赖  -->
+    <slf4j.version>2.0.18</slf4j.version>
+    <slf4j-api.version>2.0.178</slf4j-api.version>
+    <jul-to-slf4j>2.0.18</jul-to-slf4j>
+    <log4j-over-slf4j>2.0.18</log4j-over-slf4j>
+    <log4j.version>2.25.3</log4j.version>
+    <log4j-to-slf4j>2.25.3</log4j-to-slf4j>
+    <logback.version>1.5.32</logback.version>
+    <!--  日志依赖  -->
     
     <junit-jupiter.version>6.0.3</junit-jupiter.version>
     <junit-platform.version>6.0.3</junit-platform.version>
+    <junit-vintage-engine.version>6.0.3</junit-vintage-engine.version>
     <junit.version>4.13.2</junit.version>
   </properties>
   
