@@ -82,8 +82,8 @@
         <!-- NoSQL-->
 
         <!-- JakartaEE 11 -->
-        <jakarta-activation.version>2.1.3</jakarta-activation.version>
-        <jakarta-annotation.version>2.1.1</jakarta-annotation.version>
+        <jakarta-activation.version>3.1.1</jakarta-activation.version>
+        <jakarta-annotation.version>3.0.0</jakarta-annotation.version>
         <jakarta-inject.version>2.0.1</jakarta-inject.version>
         <jakarta-jms.version>3.1.0</jakarta-jms.version>
         <jakarta-json.version>2.1.3</jakarta-json.version>
@@ -276,7 +276,19 @@
             </dependency>
 
 
-
+              <!--Jakarta 模块  开始 -->
+             <dependency>
+                <groupId>jakarta.validation</groupId>
+                <artifactId>jakarta.validation-api</artifactId>
+                <version>${jakarta.validation.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.annotation</groupId>
+                <artifactId>jakarta.annotation-api</artifactId>
+                <version>${jakarta.annotation.version}</version>
+            </dependency>
+                 
             <!-- JDK9以后中移除的模块  开始 -->
             <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
             <dependency>
@@ -498,16 +510,6 @@
                 <artifactId>autil-core</artifactId>
                 <version>${autil.version}</version>
             </dependency>
-            <!-- <dependency>
-                <groupId>com.acanx.module.mdb</groupId>
-                <artifactId>folo-model</artifactId>
-                <version>${module.version}</version>
-            </dependency> -->
-            <!-- <dependency>
-                <groupId>com.acanx.module.mvn</groupId>
-                <artifactId>mvn-artifact-sdk</artifactId>
-                <version>${module.version}</version>
-            </dependency> -->
 
             <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
             <dependency>
