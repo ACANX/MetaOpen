@@ -212,6 +212,13 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- 其他依赖库版本信息-->
+            <dependency>
+                <groupId>com.acanx.util</groupId>
+                <artifactId>autil-core</artifactId>
+                <version>${autil.version}</version>
+            </dependency>
+                 
             <!-- https://mvnrepository.com/artifact/org.jspecify/jspecify -->
             <dependency>
                 <groupId>org.jspecify</groupId>
@@ -492,23 +499,8 @@
             </dependency>
             <!-- 日志依赖  结束-->
 
-            <!-- 其他依赖库版本信息-->
-            <dependency>
-                <groupId>com.acanx.util</groupId>
-                <artifactId>autil-core</artifactId>
-                <version>${autil.version}</version>
-            </dependency>
-            <!-- <dependency>
-                <groupId>com.acanx.module.mdb</groupId>
-                <artifactId>folo-model</artifactId>
-                <version>${module.version}</version>
-            </dependency> -->
-            <!-- <dependency>
-                <groupId>com.acanx.module.mvn</groupId>
-                <artifactId>mvn-artifact-sdk</artifactId>
-                <version>${module.version}</version>
-            </dependency> -->
 
+                 
             <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
