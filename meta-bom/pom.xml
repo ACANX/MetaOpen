@@ -40,11 +40,48 @@
     </licenses>
   
   <properties>
+    <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
+    <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
+    <maven-clean-plugin.version>3.4.0</maven-clean-plugin.version>
+    <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
+    <maven-dependency-plugin.version>3.8.1</maven-dependency-plugin.version>
+    <maven-deploy-plugin.version>3.1.3</maven-deploy-plugin.version>
+    <maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
+    <maven-failsafe-plugin.version>3.5.2</maven-failsafe-plugin.version>
+    <maven-help-plugin.version>3.5.1</maven-help-plugin.version>
+    <maven-install-plugin.version>3.1.3</maven-install-plugin.version>
+    <maven-invoker-plugin.version>3.8.1</maven-invoker-plugin.version>
+    <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
+    <maven-javadoc-plugin.version>3.10.1</maven-javadoc-plugin.version>
+    <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+    <maven-shade-plugin.version>3.6.0</maven-shade-plugin.version>
+    <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
+    <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
+    <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
+    <versions-maven-plugin.version>2.17.1</versions-maven-plugin.version>
+    <xml-maven-plugin.version>1.1.0</xml-maven-plugin.version>
 
+    <!--  关系数据库-->
+    <sqlite-jdbc.version>3.51.3.0</sqlite-jdbc.version>
+    <mysql-connector-j.version>9.5.0</mysql-connector-j.version>
+    <mysql-connector-java.version>9.1.0</mysql-connector-java.version>
+    <mysql.version>9.5.0</mysql.version>
+    <postgresql.version>42.7.4</postgresql.version>
+    <hikaricp.version>5.1.0</hikaricp.version>
+    <druid.version>1.2.22</druid.version>
+    <mybatis.version>3.5.19</mybatis.version>
+
+    <dubbo.version>3.3.6</dubbo.version>
+    <dubbo-spring-boot-starter.version>3.3.6</dubbo-spring-boot-starter.version>
+    <dubbo-extensions-parent>3.3.3</dubbo-extensions-parent>
+    <dubbo-extensions-serialization-protobuf>3.3.1</dubbo-extensions-serialization-protobuf>
+    <alibaba-nacos.verison>2.4.3</alibaba-nacos.verison>
+    <apache-seata.version>2.4.0</apache-seata.version>
+    
+    
     <!-- SpringCloud官方依赖 -->
     <spring.version>7.0.6</spring.version>
     <spring-boot.version>4.0.5</spring-boot.version>
-    <spring-boot-admin.version>4.0.2</spring-boot-admin.version>
     <spring-cloud.version>2025.0.0</spring-cloud.version>
     <spring-cloud-commons.version>4.2.0</spring-cloud-commons.version>
     <spring-cloud-consul.verson>4.2.0</spring-cloud-consul.verson>
@@ -53,6 +90,25 @@
     <spring-cloud-stream-reactive.version>2.2.1.RELEASE</spring-cloud-stream-reactive.version>
     <spring-cloud-openfeign.version>4.2.0</spring-cloud-openfeign.version>
     <spring-cloud-netflix.version>4.2.0</spring-cloud-netflix.version>
+    <spring-boot-admin.version>4.0.2</spring-boot-admin.version>
+
+
+    <mybatis-spring.version>3.0.4</mybatis-spring.version>
+    <mybatis-spring-boot.version>4.0.1</mybatis-spring-boot.version>
+    <mybatis-generator-core.version>1.4.2</mybatis-generator-core.version>
+    <mybatis-generator-maven-plugin.version>1.4.2</mybatis-generator-maven-plugin.version>
+    <mybatis-plus.version>3.5.6</mybatis-plus.version>
+    <pagehelper.version>6.1.0</pagehelper.version>
+    <pagehelper-spring-boot.version>2.1.1</pagehelper-spring-boot.version>
+    <jsqlparser>5.3</jsqlparser>
+
+     <!-- Spring Cloud Alibaba-->
+    <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba -->
+    <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-starter-alibaba -->
+    <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba-dependencies -->
+    <spring-cloud-alibaba.version>2025.0.0</spring-cloud-alibaba.version>
+    <!-- Spring Cloud Alibaba-->
+
     
     <awssdk.version>2.42.21</awssdk.version>
     <junit-jupiter.version>6.0.3</junit-jupiter.version>
