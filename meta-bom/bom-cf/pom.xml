@@ -87,6 +87,12 @@
             <artifactId>cloudwatch</artifactId>
             <version>${awssdk.version}</version>
         </dependency>
+        <!-- SDK的依赖包，通常会自动引入，但显式声明可确保版本一致 -->
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>sdk-core</artifactId>
+            <version>${awssdk.version}</version>
+        </dependency>
         <!-- 核心依赖：EventBridge Scheduler SDK -->
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
