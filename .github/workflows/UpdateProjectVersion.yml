@@ -59,7 +59,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore: update version to ${{ steps.version.outputs.new_version }}"
           branch: "update-version-${{ steps.version.outputs.new_version }}"
-          title: "chore(version): Update version to ${{ steps.version.outputs.new_version }}"
+          title: "chore(version): Update project version to ${{ steps.version.outputs.new_version }}"
           body: |
             This PR updates the Maven properties to version `${{ steps.version.outputs.new_version }}`.
             Properties updated: `revision`, `meta-open.version`, `meta.version`.
