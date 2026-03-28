@@ -235,7 +235,7 @@
     <selenium.version>4.29.0</selenium.version>
     <selenium-htmlunit.version>4.29.0</selenium-htmlunit.version>
 
-    <awssdk.version>2.42.22</awssdk.version>
+    <awssdk.version>2.42.23</awssdk.version>
 
     <!-- 日志依赖  -->
     <slf4j.version>2.0.18</slf4j.version>
