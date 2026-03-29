@@ -43,7 +43,7 @@
         <flattened-pom-path>${project.basedir}/.flattened-pom.xml</flattened-pom-path>
 
         <jakarta.annotation.version>3.0.0</jakarta.annotation.version>
-        <jakarta.validation.version>3.1.1</jakarta.annotation.version>
+        <jakarta.validation.version>3.1.1</jakarta.validation.version>
              
         <junit.version>4.13.2</junit.version>
     </properties>
