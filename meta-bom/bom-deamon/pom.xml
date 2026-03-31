@@ -1493,6 +1493,24 @@
                 <artifactId>dubbo-remoting-quic</artifactId>
                 <version>3.3.1</version>
             </dependency>
+            <!-- 强制指定 Netty4 版本 -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+            <!-- HTTP/3 支持 -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-codec-http3</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-codec-native-quic</artifactId>
+                <version>${netty.version}</version>
+                <scope>runtime</scope>
+            </dependency>
             <!-- BoringsSL 依赖（QUIC 需要） -->
             <dependency>
                 <groupId>io.netty</groupId>
