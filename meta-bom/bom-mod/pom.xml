@@ -61,6 +61,7 @@
         <slf4j-api.version>2.0.17</slf4j-api.version>
 
         <commons-io.version>2.21.0</commons-io.version>
+        <apache-commons-lang3.version>2.20.0</apache-commons-lang3.version>
         <commons-lang3.version>2.20.0</commons-lang3.version>
         <commons-codec.version>1.21.0</commons-codec.version>
         <jsoup.version>1.22.1</jsoup.version>
@@ -195,10 +196,11 @@
                 <artifactId>commons-io</artifactId>
                 <version>${commons-io.version}</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
             <dependency>
-                <groupId>commons-io</groupId>
+                <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>${commons-lang3.version}</version>
+                <version>${apache-commons-lang3.version}</version>
             </dependency>
             <dependency>
                 <groupId>commons-codec</groupId>
