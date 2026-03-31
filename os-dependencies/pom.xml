@@ -115,6 +115,7 @@
         <junit-platform.version>6.0.3</junit-platform.version>
         <!-- 修复 plexus-utils 目录遍历漏洞 -->
         <plexus-utils.version>4.0.3</plexus-utils.version>
+        <plexus-xml.version>4.0.0</plexus-xml.version>
     </properties>
 
 
@@ -268,6 +269,11 @@
                 <groupId>org.codehaus.plexus</groupId>
                 <artifactId>plexus-utils</artifactId>
                 <version>${plexus-utils.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.plexus</groupId>
+                <artifactId>plexus-xml</artifactId>
+                <version>${plexus-xml.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven</groupId>
