@@ -1490,11 +1490,6 @@
             </dependency>
             <dependency>
                 <groupId>org.apache.dubbo.extensions</groupId>
-                <artifactId>dubbo-serialization-protobuf</artifactId>
-                <version>3.3.1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.dubbo.extensions</groupId>
                 <artifactId>dubbo-remoting-quic</artifactId>
                 <version>3.3.1</version>
             </dependency>
@@ -1515,22 +1510,6 @@
                 <artifactId>netty-codec-native-quic</artifactId>
                 <version>${netty.version}</version>
                 <scope>runtime</scope>
-            </dependency>        <!-- 强制指定 Netty4 版本 -->
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-all</artifactId>
-                <version>${netty.version}</version>
-            </dependency>
-            <!-- HTTP/3 支持 -->
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-codec-http3</artifactId>
-                <version>${netty.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-codec-native-quic</artifactId>
-                <version>${netty.version}</version>
             </dependency>
             <!-- BoringsSL 依赖（QUIC 需要） -->
             <dependency>
@@ -1609,12 +1588,6 @@
             </dependency>
 
             <!-- Validation API -->
-            <!-- Source: https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api -->
-            <dependency>
-                <groupId>jakarta.validation</groupId>
-                <artifactId>jakarta.validation-api</artifactId>
-                <version>3.1.1</version>
-            </dependency>
             <dependency>
                 <groupId>javax.validation</groupId>
                 <artifactId>validation-api</artifactId>
