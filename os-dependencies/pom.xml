@@ -62,7 +62,7 @@
         <openjfx.version>25.0.2</openjfx.version>
         <javassist.version>3.30.2-GA</javassist.version>
         <aspectjweaver.version>1.9.25.1</aspectjweaver.version>
-        <bytebuddy.version>1.18.7</bytebuddy.version>
+        <bytebuddy.version>1.18.8</bytebuddy.version>
 
         <netty.version>4.2.12.Final</netty.version>
         <reactor.verion>3.8.4</reactor.verion>
@@ -115,7 +115,7 @@
         <junit-platform.version>6.0.3</junit-platform.version>
         <!-- 修复 plexus-utils 目录遍历漏洞 -->
         <plexus-utils.version>4.0.3</plexus-utils.version>
-        <plexus-xml.version>4.0.0</plexus-xml.version>
+        <plexus-xml.version>4.1.1</plexus-xml.version>
     </properties>
 
 
