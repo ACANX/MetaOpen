@@ -74,9 +74,9 @@ jobs:
          cd meta-model           # 设置工作目录为 meta-model
          pwd
          echo "############################################### mvn help:effective-pom #####################################################"
-         mvn help:effective-pom -pl :model-test
+         mvn help:effective-pom -pl :model-test 
          echo "############################################### mvn help:effective-pom #####################################################"
-         mvn -B clean deploy -U
+         mvn -B clean deploy -e -X -U
          echo "======================================= 5.编译 meta-component ========================================================="
          cd ../
          cd meta-component      # 设置工作目录为 meta-component
