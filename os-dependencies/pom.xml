@@ -286,6 +286,13 @@
                 <artifactId>sdk-maven-artifact</artifactId>
                 <version>${meta-open.version}</version>
             </dependency>
+            <!-- Source: https://mvnrepository.com/artifact/org.codehaus.plexus/plexus-xml -->
+            <dependency>
+                <groupId>org.codehaus.plexus</groupId>
+                <artifactId>plexus-xml</artifactId>
+                <version>4.1.1</version>
+                <scope>compile</scope>
+            </dependency>
 
             
             <dependency>
