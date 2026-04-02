@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.acanx.meta</groupId>
     <artifactId>meta-open</artifactId>
     <version>${revision}</version>
@@ -100,15 +99,26 @@
 
          <repositories>
              <repository>
+                 <id>central</id>
+                 <name>Maven Central Repository</name>
+                 <url>https://repo.maven.apache.org/maven2/</url>
+                 <releases>
+                     <enabled>true</enabled>
+                 </releases>
+                 <snapshots>
+                     <enabled>false</enabled>
+                 </snapshots>
+             </repository>
+             <repository>
                  <id>sonatype-snapshots</id>
                  <name>Sonatype Snapshot Repository</name>
                  <url>https://central.sonatype.com/repository/maven-snapshots/</url>
                  <releases>
-                     <enabled>false</enabled> <!-- 如果不需RELEASE版本，可禁用 -->
+                     <enabled>false</enabled>
                  </releases>
                  <snapshots>
-                     <enabled>true</enabled> <!-- 启用SNAPSHOT版本下载 -->
-                     <updatePolicy>always</updatePolicy> <!-- 可选：每次构建都检查更新 -->
+                     <enabled>true</enabled>
+                     <updatePolicy>always</updatePolicy>
                  </snapshots>
              </repository>
          </repositories>
@@ -322,3 +332,5 @@
     </profiles>
 
 </project>
+
+
