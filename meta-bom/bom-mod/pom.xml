@@ -609,13 +609,6 @@
                 <scope>test</scope>
             </dependency>
             <dependency>
-                <groupId>org.junit</groupId>
-                <artifactId>junit-bom</artifactId>
-                <version>${junit-jupiter.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
@@ -761,14 +754,6 @@
                 <groupId>com.google.cloud.functions.invoker</groupId>
                 <artifactId>java-function-invoker</artifactId>
                 <version>${java-function-invoker.version}</version>
-            </dependency>
-            <!-- Spring Boot -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
             </dependency>
             <!-- OkHttp3 (legacy artifact for okhttp3.* packages) -->
             <dependency>
