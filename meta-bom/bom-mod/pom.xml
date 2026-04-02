@@ -51,7 +51,7 @@
         <flatten-maven-plugin.version>1.7.3</flatten-maven-plugin.version>
 
         <autil.version>1.3.0</autil.version>
-        <meta-open.version>0.7.6.3-SNAPSHOT</meta-open.version>
+        <meta-open.version>0.7.6.4-SNAPSHOT</meta-open.version>
       
         <jna.version>5.16.0</jna.version>
         <sqlite-jdbc>3.50.3.0</sqlite-jdbc>
@@ -609,13 +609,6 @@
                 <scope>test</scope>
             </dependency>
             <dependency>
-                <groupId>org.junit</groupId>
-                <artifactId>junit-bom</artifactId>
-                <version>${junit-jupiter.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
@@ -762,14 +755,6 @@
                 <artifactId>java-function-invoker</artifactId>
                 <version>${java-function-invoker.version}</version>
             </dependency>
-            <!-- Spring Boot -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
             <!-- OkHttp3 (legacy artifact for okhttp3.* packages) -->
             <dependency>
                 <groupId>com.squareup.okhttp3</groupId>
@@ -822,12 +807,25 @@
     <repositories>
         <repository>
             <id>central</id>
-            <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+            <name>Maven Central Repository</name>
+            <url>https://repo1.maven.apache.org/maven2/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
             <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>sonatype-snapshots</id>
+            <name>Sonatype Snapshot Repository</name>
+            <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
                 <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
             </snapshots>
         </repository>
     </repositories>
