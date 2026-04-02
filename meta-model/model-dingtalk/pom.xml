@@ -43,11 +43,11 @@
         <!-- <maven.compiler.release>11</maven.compiler.release> -->
     </properties>
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>org.junit.jupiter</groupId>-->
-<!--            <artifactId>junit-jupiter-api</artifactId>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
+       <dependency>
+           <groupId>org.junit.jupiter</groupId>
+           <artifactId>junit-jupiter-api</artifactId>
+           <scope>test</scope>
+       </dependency>
     </dependencies>
     <dependencyManagement>
     </dependencyManagement>
