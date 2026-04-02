@@ -822,12 +822,25 @@
     <repositories>
         <repository>
             <id>central</id>
-            <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+            <name>Maven Central Repository</name>
+            <url>https://repo1.maven.apache.org/maven2/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
             <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>sonatype-snapshots</id>
+            <name>Sonatype Snapshot Repository</name>
+            <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
                 <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
             </snapshots>
         </repository>
     </repositories>
