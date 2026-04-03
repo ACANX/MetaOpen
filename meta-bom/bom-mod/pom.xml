@@ -66,7 +66,7 @@
         <commons-lang3.version>2.20.0</commons-lang3.version>
         <commons-codec.version>1.21.0</commons-codec.version>
         <jsoup.version>1.22.1</jsoup.version>
-        <poi.version>5.4.1</poi.version>
+        <poi.version>5.5.1</poi.version>
         <easy-excel.version>4.0.3</easy-excel.version>
         <fastjson.version>1.2.83</fastjson.version>
         <fastjson2.version>2.0.61</fastjson2.version>
@@ -92,7 +92,7 @@
         <jaxb-runtime.version>3.0.0</jaxb-runtime.version>
 
         <!-- Excel/Office 版本 -->
-        <poi.version>5.4.1</poi.version>
+        <poi.version>5.5.1</poi.version>
         <easy-excel.version>4.0.3</easy-excel.version>
         <!-- 数据库版本 -->
         <sqlite-jdbc>3.50.3.0</sqlite-jdbc>
