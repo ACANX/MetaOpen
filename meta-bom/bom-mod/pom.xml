@@ -152,7 +152,7 @@
         <!-- Maven 插件版本 -->
         <maven-shade-plugin.version>3.8.1</maven-shade-plugin.version>
         <!-- Selenium 版本 -->
-        <selenium.version>4.30.0</selenium.version>
+        <selenium.version>4.41.0</selenium.version>
         <selenium-futu.version>4.39.0</selenium-futu.version>
         <selenium-devtools.version>4.39.0</selenium-devtools.version>
         <!-- Rome RSS 版本 -->
