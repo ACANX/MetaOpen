@@ -814,7 +814,7 @@
                       <groupId>com.sun</groupId>
                       <artifactId>tools</artifactId>
                       <version>1.5.0</version>
-                      <scope>system</scope>
+                      <!-- <scope>system</scope> -->
                   </dependency>
                   <!-- Source: https://mvnrepository.com/artifact/no.api.freemarker/freemarker-java8 -->
                   <dependency>
