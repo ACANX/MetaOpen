@@ -139,7 +139,7 @@
         <junit.version>4.13.2</junit.version>
         <jspecify.version>1.0.0</jspecify.version>
         <guava.version>33.3.1-jre</guava.version>
-        <protobuf-java.version>4.32.0</protobuf-java.version>
+        <protobuf-java.version>4.34.1</protobuf-java.version>
         <jakarta-servlet.version>6.1.0</jakarta-servlet.version>
         <!-- Spring Boot 版本 -->
         <spring-boot.version>4.0.4</spring-boot.version>
