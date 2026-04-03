@@ -96,7 +96,7 @@
         <easy-excel.version>4.0.3</easy-excel.version>
         <!-- 数据库版本 -->
         <sqlite-jdbc>3.50.3.0</sqlite-jdbc>
-        <mongo-java-driver.version>3.12.10</mongo-java-driver.version>
+        <mongo-java-driver.version>3.12.14</mongo-java-driver.version>
         <!-- NLP 版本 -->
         <hanlp.version>portable-1.8.3</hanlp.version>
         <!-- PDF 版本 -->
