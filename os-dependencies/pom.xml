@@ -983,7 +983,7 @@
             <dependency>
                 <groupId>io.lettuce</groupId>
                 <artifactId>lettuce-core</artifactId>
-                <version>7.5.0.RELEASE</version>
+                <version>7.5.1.RELEASE</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
@@ -1029,7 +1029,7 @@
             <dependency>
                 <groupId>org.apache.httpcomponents.client5</groupId>
                 <artifactId>httpclient5</artifactId>
-                <version>5.5.1</version>
+                <version>5.6</version>
             </dependency>
 
             <dependency>
