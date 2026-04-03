@@ -105,7 +105,7 @@
         <jaudiotagger.version>2.0.1</jaudiotagger.version>
         <jaudiotagger-net.version>3.0.1</jaudiotagger-net.version>
         <!-- SDK 版本 -->
-        <baidu-aip-sdk.version>4.16.19</baidu-aip-sdk.version>
+        <baidu-aip-sdk.version>4.16.24</baidu-aip-sdk.version>
         <acrcloud-sdk.version>1.0.5</acrcloud-sdk.version>
         <json.version>20251224</json.version>
         <!-- 邮件 SDK 版本 -->
@@ -138,7 +138,7 @@
         <junit-platform.version>6.0.3</junit-platform.version>
         <junit.version>4.13.2</junit.version>
         <jspecify.version>1.0.0</jspecify.version>
-        <guava.version>33.3.1-jre</guava.version>
+        <guava.version>33.5.0-jre</guava.version>
         <protobuf-java.version>4.34.1</protobuf-java.version>
         <jakarta-servlet.version>6.1.0</jakarta-servlet.version>
         <!-- Spring Boot 版本 -->
@@ -165,7 +165,7 @@
         <java-function-invoker.version>1.4.1</java-function-invoker.version>
         <oapi-sdk.version>2.5.3</oapi-sdk.version>
         <brevo.version>1.1.2</brevo.version>
-        <ipinfo-api.version>3.1.0</ipinfo-api.version>
+        <ipinfo-api.version>3.4.0</ipinfo-api.version>
         <longport-openapi-sdk.version>2.1.12</longport-openapi-sdk.version>
         <bcprov-jdk18on.version>1.83</bcprov-jdk18on.version>
         <!-- BGMProvider 版本 -->
