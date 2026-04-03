@@ -105,7 +105,7 @@
         <jaudiotagger.version>2.0.1</jaudiotagger.version>
         <jaudiotagger-net.version>3.0.1</jaudiotagger-net.version>
         <!-- SDK 版本 -->
-        <baidu-aip-sdk.version>4.16.19</baidu-aip-sdk.version>
+        <baidu-aip-sdk.version>4.16.24</baidu-aip-sdk.version>
         <acrcloud-sdk.version>1.0.4</acrcloud-sdk.version>
         <json.version>20231013</json.version>
         <!-- 邮件 SDK 版本 -->
