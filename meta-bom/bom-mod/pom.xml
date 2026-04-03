@@ -129,7 +129,7 @@
         <aws-lambda-java-log4j2.version>1.6.0</aws-lambda-java-log4j2.version>
         <qiniu-java-sdk.version>7.19.0</qiniu-java-sdk.version>
         <!-- ByteCode 版本 -->
-        <bytebuddy.version>1.14.12</bytebuddy.version>
+        <bytebuddy.version>1.18.8</bytebuddy.version>
         <!-- 其他版本 -->
         <jna.version>5.16.0</jna.version>
         <graal-sdk.version>25.0.2</graal-sdk.version>
