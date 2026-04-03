@@ -98,7 +98,7 @@
         <sqlite-jdbc>3.50.3.0</sqlite-jdbc>
         <mongo-java-driver.version>3.12.10</mongo-java-driver.version>
         <!-- NLP 版本 -->
-        <hanlp.version>portable-1.8.3</hanlp.version>
+        <hanlp.version>portable-1.8.6</hanlp.version>
         <!-- PDF 版本 -->
         <pdfbox.version>3.0.3</pdfbox.version>
         <!-- 音频处理版本 -->
