@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.acanx.meta</groupId>
     <artifactId>os-dependencies</artifactId>
     <version>${revision}</version>
@@ -9,7 +8,6 @@
     <name>OS-Dependencies</name>
     <description>Meta Open Source BOM</description>
     <url>https://github.com/ACANX/MetaOpen</url>
-
     <scm>
         <tag>V0.7.x</tag>
         <url>git@github.com:ACANX/MetaOpen.git</url>
@@ -36,8 +34,8 @@
     </licenses>
 
     <properties>
-        <revision>0.7.6.8</revision>
-        <meta-open.version>0.7.6.8</meta-open.version>
+        <revision>0.7.6.9-SNAPSHOT</revision>
+        <meta-open.version>0.7.6.9-SNAPSHOT</meta-open.version>
         <autil.version>1.3.0</autil.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -286,15 +284,6 @@
                 <artifactId>sdk-maven-artifact</artifactId>
                 <version>${meta-open.version}</version>
             </dependency>
-            <!-- Source: https://mvnrepository.com/artifact/org.codehaus.plexus/plexus-xml -->
-            <dependency>
-                <groupId>org.codehaus.plexus</groupId>
-                <artifactId>plexus-xml</artifactId>
-                <version>4.1.1</version>
-                <scope>compile</scope>
-            </dependency>
-
-            
             <dependency>
                 <groupId>org.apache.maven</groupId>
                 <artifactId>maven-model</artifactId>
@@ -556,18 +545,6 @@
                 <artifactId>fastjson2</artifactId>
                 <version>${fastjson2.version}</version>
                 <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.dataformat</groupId>
-                <artifactId>jackson-dataformat-xml</artifactId>
-                <version>${jackson.version}</version>
-                <!-- <scope>provided</scope> -->
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.dataformat</groupId>
-                <artifactId>jackson-dataformat-yaml</artifactId>
-                <version>${jackson.version}</version>
-                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.jsoup</groupId>
@@ -1154,9 +1131,18 @@
                         <artifactId>flatten-maven-plugin</artifactId>
                         <version>${flatten-maven-plugin.version}</version>
                         <configuration>
-                            <!--  是否更新pom文件，此处还有更高级的用法-->
                             <updatePomFile>true</updatePomFile>
-                            <flattenMode>resolveCiFriendliesOnly</flattenMode>
+                            <flattenMode>bom</flattenMode>
+                            <pomElements>
+                                <dependencyManagement>expand</dependencyManagement>
+                                <properties>remove</properties>
+                                <developers>keep</developers>
+                                <scm>keep</scm>
+                                <url>keep</url>
+                                <organization>keep</organization>
+                                <name>keep</name>
+                                <description>keep</description>
+                            </pomElements>
                         </configuration>
                         <executions>
                             <execution>

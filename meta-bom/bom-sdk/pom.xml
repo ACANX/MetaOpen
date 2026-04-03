@@ -1,17 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.acanx.meta</groupId>
-    <artifactId>meta-bom</artifactId>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.acanx.meta</groupId>
+        <artifactId>meta-bom</artifactId>
+        <version>${revision}</version>
+    </parent>
+    <groupId>com.acanx.meta.bom</groupId>
+    <artifactId>bom-sdk</artifactId>
     <version>${revision}</version>
-  </parent>
-  <groupId>com.acanx.meta.bom</groupId>
-  <artifactId>bom-sdk</artifactId>
-  <version>${revision}</version>
-  <packaging>pom</packaging>
-  <name>BOM-SDK</name>
-  <description>BOM-SDK POM</description>
-  <url>https://github.com/ACANX/MetaOpen</url>
+    <packaging>pom</packaging>
+    <name>BOM-SDK</name>
+    <description>BOM-SDK POM</description>
+    <url>https://github.com/ACANX/MetaOpen</url>
 
     <scm>
         <tag>V0.7.x</tag>
@@ -37,74 +39,74 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-  
-  <properties>
-    <!-- <awssdk.version>2.42.21</awssdk.version> -->
-  </properties>
 
-  <dependencyManagement>
-    <dependencies>
-        <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/s3 -->
-        <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>s3</artifactId>
-            <version>${awssdk.version}</version>
-            <scope>compile</scope>
-        </dependency>
-      
-        <!-- aws-lambda -->
-        <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/lambda -->
-        <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>lambda</artifactId>
-            <version>${awssdk.version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/ses -->
-        <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>ses</artifactId>
-            <version>${awssdk.version}</version>
-        </dependency>
+    <properties>
+        <!-- <awssdk.version>2.42.21</awssdk.version> -->
+    </properties>
 
-        <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/cloudwatch -->
-        <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>cloudwatch</artifactId>
-            <version>${awssdk.version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/costexplorer -->
-        <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>costexplorer</artifactId>
-            <version>${awssdk.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>regions</artifactId>
-            <version>${awssdk.version}</version>
-        </dependency>
-        <!-- AWS SDK Core -->
-        <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>aws-core</artifactId>
-            <version>${awssdk.version}</version>
-        </dependency>
-        <!-- AWS SDK for SQS -->
-        <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>sqs</artifactId>
-            <version>${awssdk.version}</version>
-        </dependency>
+    <dependencyManagement>
+        <dependencies>
+            <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/s3 -->
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>s3</artifactId>
+                <version>${awssdk.version}</version>
+                <scope>compile</scope>
+            </dependency>
 
-        <!-- aliyun -->
-        <!-- https://mvnrepository.com/artifact/com.aliyun.oss/aliyun-sdk-oss -->
-        <dependency>
-            <groupId>com.aliyun.oss</groupId>
-            <artifactId>aliyun-sdk-oss</artifactId>
-            <version>3.18.5</version>
-        </dependency>
+            <!-- aws-lambda -->
+            <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/lambda -->
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>lambda</artifactId>
+                <version>${awssdk.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/ses -->
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>ses</artifactId>
+                <version>${awssdk.version}</version>
+            </dependency>
 
-        <!-- tencentcloud -->
+            <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/cloudwatch -->
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>cloudwatch</artifactId>
+                <version>${awssdk.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/costexplorer -->
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>costexplorer</artifactId>
+                <version>${awssdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>regions</artifactId>
+                <version>${awssdk.version}</version>
+            </dependency>
+            <!-- AWS SDK Core -->
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>aws-core</artifactId>
+                <version>${awssdk.version}</version>
+            </dependency>
+            <!-- AWS SDK for SQS -->
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>sqs</artifactId>
+                <version>${awssdk.version}</version>
+            </dependency>
+
+            <!-- aliyun -->
+            <!-- https://mvnrepository.com/artifact/com.aliyun.oss/aliyun-sdk-oss -->
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>3.18.5</version>
+            </dependency>
+
+            <!-- tencentcloud -->
             <dependency>
                 <groupId>com.tencentcloudapi</groupId>
                 <artifactId>tencentcloud-sdk-java-ses</artifactId>
@@ -127,32 +129,68 @@
                 <artifactId>bcprov-jdk18on</artifactId>
                 <version>1.83</version>
             </dependency>
-      
 
-      <!-- huaweicloud -->
-          <dependency>
-            <groupId>com.huaweicloud.sdk</groupId>
-            <artifactId>huaweicloud-sdk-functiongraph</artifactId>
-            <version>3.1.191</version>
-          </dependency>
-    </dependencies>
-  </dependencyManagement>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>${maven-compiler-plugin.version}</version>
-        <configuration>
-          <compilerVersion>${java.version}</compilerVersion>
-          <source>${java.version}</source>
-          <target>${java.version}</target>
-          <encoding>${project.build.sourceEncoding}</encoding>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+            <!-- huaweicloud -->
+            <dependency>
+                <groupId>com.huaweicloud.sdk</groupId>
+                <artifactId>huaweicloud-sdk-functiongraph</artifactId>
+                <version>3.1.190</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <compilerVersion>${java.version}</compilerVersion>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>1.7.3</version>
+                <configuration>
+                    <updatePomFile>true</updatePomFile>
+                    <flattenMode>bom</flattenMode>
+                    <pomElements>
+                        <dependencyManagement>expand</dependencyManagement>
+                        <properties>remove</properties>
+                        <developers>keep</developers>
+                        <scm>keep</scm>
+                        <url>keep</url>
+                        <organization>keep</organization>
+                        <name>keep</name>
+                        <description>keep</description>
+                        <repositories>remove</repositories>
+                    </pomElements>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>flatten.clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
 
