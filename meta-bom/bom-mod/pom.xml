@@ -162,7 +162,7 @@
         <!-- AWS Lambda Java Serialization -->
         <aws-lambda-java-serialization.version>1.1.0</aws-lambda-java-serialization.version>
         <!-- 第三方 SDK 版本 -->
-        <java-function-invoker.version>1.4.1</java-function-invoker.version>
+        <java-function-invoker.version>2.0.0</java-function-invoker.version>
         <oapi-sdk.version>2.5.3</oapi-sdk.version>
         <brevo.version>1.1.2</brevo.version>
         <ipinfo-api.version>3.4.0</ipinfo-api.version>
