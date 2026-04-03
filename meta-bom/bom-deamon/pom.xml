@@ -1685,6 +1685,14 @@
             <!--            </dependency>-->
 
 
+                 <!-- Source: https://mvnrepository.com/artifact/org.springframework.ai/spring-ai-commons -->
+                  <dependency>
+                      <groupId>org.springframework.ai</groupId>
+                      <artifactId>spring-ai-commons</artifactId>
+                      <version>2.0.0-M4</version>
+                      <scope>compile</scope>
+                  </dependency>
+
             <!-- 测试库相关依赖-->
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
