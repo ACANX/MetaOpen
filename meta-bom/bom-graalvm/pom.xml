@@ -1,18 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.acanx.meta</groupId>
-    <artifactId>meta-bom</artifactId>
-    <version>${revision}</version>
-  </parent>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.acanx.meta</groupId>
+        <artifactId>meta-bom</artifactId>
+        <version>${revision}</version>
+    </parent>
 
-  <groupId>com.acanx.meta.component</groupId>
-  <artifactId>bom-graalvm</artifactId>
-  <version>25.${revision}</version>
-  <packaging>pom</packaging>
-  <name>BOM-GraalVM</name>
-  <description>GraalVM Component BOM</description>
-  <url>https://github.com/ACANX/MetaOpen</url>
+    <groupId>com.acanx.meta.component</groupId>
+    <artifactId>bom-graalvm</artifactId>
+    <version>25.${revision}</version>
+    <packaging>pom</packaging>
+    <name>BOM-GraalVM</name>
+    <description>GraalVM Component BOM</description>
+    <url>https://github.com/ACANX/MetaOpen</url>
     <scm>
         <tag>V0.5.x</tag>
         <url>git@github.com:ACANX/MetaOpen.git</url>
@@ -37,77 +39,112 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-  <properties>
-    
-  </properties>
+    <properties>
+
+    </properties>
 
 
     <dependencies>
-      <!-- 添加GraalVM兼容库 -->
-      <!-- https://mvnrepository.com/artifact/org.graalvm.sdk/graal-sdk -->
-      <dependency>
-          <groupId>org.graalvm.sdk</groupId>
-          <artifactId>graal-sdk</artifactId>
-          <version>25.0.2</version>
-          <scope>provided</scope><!-- 添加 provided 作用域 -->
-      </dependency>
-      <!-- https://mvnrepository.com/artifact/org.graalvm.nativeimage/svm -->
-      <dependency>
-          <groupId>org.graalvm.nativeimage</groupId>
-          <artifactId>svm</artifactId>
-          <version>25.0.2</version>
-          <scope>provided</scope>
-      </dependency>
-    </dependencies>
-
-  
-  <dependencyManagement>
-    <dependencies>
-
-      <!-- https://mvnrepository.com/artifact/org.graalvm.nativeimage/native-image-maven-plugin -->
-      <dependency>
-        <groupId>org.graalvm.nativeimage</groupId>
-        <artifactId>native-image-maven-plugin</artifactId>
-        <version>21.2.0</version>
-      </dependency>
-      
-        <!-- https://mvnrepository.com/artifact/org.graalvm.buildtools/native-maven-plugin -->
+        <!-- 添加GraalVM兼容库 -->
+        <!-- https://mvnrepository.com/artifact/org.graalvm.sdk/graal-sdk -->
         <dependency>
-            <groupId>org.graalvm.buildtools</groupId>
-            <artifactId>native-maven-plugin</artifactId>
-            <version>1.0.0</version>
-        </dependency> 
-        <!-- https://mvnrepository.com/artifact/org.graalvm.buildtools/utils -->
-        <dependency>
-            <groupId>org.graalvm.buildtools</groupId>
-            <artifactId>utils</artifactId>
-            <version>1.0.0</version>
-            <scope>runtime</scope>
+            <groupId>org.graalvm.sdk</groupId>
+            <artifactId>graal-sdk</artifactId>
+            <version>25.0.2</version>
+            <scope>provided</scope><!-- 添加 provided 作用域 -->
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.graalvm.buildtools/graalvm-reachability-metadata -->
+        <!-- https://mvnrepository.com/artifact/org.graalvm.nativeimage/svm -->
         <dependency>
-            <groupId>org.graalvm.buildtools</groupId>
-            <artifactId>graalvm-reachability-metadata</artifactId>
-            <version>1.0.0</version>
-            <scope>runtime</scope>
+            <groupId>org.graalvm.nativeimage</groupId>
+            <artifactId>svm</artifactId>
+            <version>25.0.2</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
-  </dependencyManagement>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>${maven-compiler-plugin.version}</version>
-        <configuration>
-          <compilerVersion>${java.version}</compilerVersion>
-          <source>${java.version}</source>
-          <target>${java.version}</target>
-          <encoding>${project.build.sourceEncoding}</encoding>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- https://mvnrepository.com/artifact/org.graalvm.nativeimage/native-image-maven-plugin -->
+            <dependency>
+                <groupId>org.graalvm.nativeimage</groupId>
+                <artifactId>native-image-maven-plugin</artifactId>
+                <version>21.2.0</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.graalvm.buildtools/native-maven-plugin -->
+            <dependency>
+                <groupId>org.graalvm.buildtools</groupId>
+                <artifactId>native-maven-plugin</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.graalvm.buildtools/utils -->
+            <dependency>
+                <groupId>org.graalvm.buildtools</groupId>
+                <artifactId>utils</artifactId>
+                <version>1.0.0</version>
+                <scope>runtime</scope>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.graalvm.buildtools/graalvm-reachability-metadata -->
+            <dependency>
+                <groupId>org.graalvm.buildtools</groupId>
+                <artifactId>graalvm-reachability-metadata</artifactId>
+                <version>1.0.0</version>
+                <scope>runtime</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <compilerVersion>${java.version}</compilerVersion>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>1.7.3</version>
+                <configuration>
+                    <updatePomFile>true</updatePomFile>
+                    <flattenMode>bom</flattenMode>
+                    <pomElements>
+                        <dependencyManagement>expand</dependencyManagement>
+                        <properties>remove</properties>
+                        <developers>keep</developers>
+                        <scm>keep</scm>
+                        <url>keep</url>
+                        <organization>keep</organization>
+                        <name>keep</name>
+                        <description>keep</description>
+                    </pomElements>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>flatten.clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
