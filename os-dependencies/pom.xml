@@ -35,7 +35,7 @@
 
     <properties>
         <revision>0.7.6.9-SNAPSHOT</revision>
-        <meta-open.version>0.7.6.9-SNAPSHOT</meta-open.version>
+        <meta-open.version>0.7.7</meta-open.version>
         <autil.version>1.3.0</autil.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -66,7 +66,7 @@
         <reactor.verion>3.8.4</reactor.verion>
         <protobuf-java.version>4.34.1</protobuf-java.version>
 
-        <tomcat-embed.version>11.0.20</tomcat-embed.version>
+        <tomcat-embed.version>11.0.21</tomcat-embed.version>
 
         <mysql-connector-j.version>9.6.0</mysql-connector-j.version>
         <postgresql.version>42.7.10</postgresql.version>
@@ -91,7 +91,7 @@
         <freemarker.version>2.3.34</freemarker.version>
         <jsoup.version>1.22.1</jsoup.version>
         <hibernate-validator.version>9.1.0.Final</hibernate-validator.version>
-        <redisson.version>4.3.0</redisson.version>
+        <redisson.version>4.3.1</redisson.version>
 
         <slf4j.version>2.0.17</slf4j.version>
         <jspecify.version>1.0.0</jspecify.version>
@@ -530,7 +530,7 @@
             <dependency>
                 <groupId>org.ehcache</groupId>
                 <artifactId>ehcache</artifactId>
-                <version>3.11.1</version>
+                <version>3.12.0</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
