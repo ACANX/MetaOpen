@@ -22,7 +22,8 @@ updates:
     labels:                    # 自动添加标签
       - "依赖:升级"
       - "自动化:提交"
-      - "Dependa"  
+      - "Dependabot"  
+      - "From:Root"  
   - package-ecosystem: "maven"
     directory: "/os-dependencies"
     schedule:
@@ -60,6 +61,7 @@ updates:
       - "自动化:提交"
       - "Dependabot"        
       - "RR"      
+      - "From:OS-Dependencies"  
     pull-request-branch-name:
       separator: "-"              # 分支名使用短横线分隔
     allow:
@@ -86,6 +88,7 @@ updates:
       - "依赖:升级"
       - "自动化:提交"
       - "Dependabot"            
+      - "From:Meta-Model"  
   - package-ecosystem: "maven"
     directory: "/meta-component"
     schedule:
@@ -109,6 +112,7 @@ updates:
       - "依赖:升级"
       - "自动化:提交"
       - "Dependabot"            
+      - "From:Meta-Component"  
   - package-ecosystem: "maven"
     directory: "/meta-bom/bom-graalvm"
     schedule:
@@ -131,6 +135,7 @@ updates:
       - "依赖:升级"
       - "自动化:提交"
       - "Dependabot"     
+      - "From:BOM-GraalVM"  
   - package-ecosystem: "maven"
     directory: "/meta-bom/bom-sdk"
     schedule:
@@ -153,6 +158,7 @@ updates:
       - "依赖:升级"
       - "自动化:提交"
       - "Dependabot"     
+      - "From:BOM-SDK"  
   - package-ecosystem: "maven"
     directory: "/meta-bom/bom-deamon"
     schedule:
@@ -175,6 +181,7 @@ updates:
       - "依赖:升级"
       - "自动化:提交"
       - "Dependabot"   
+      - "From:BOM-Deamon"  
   - package-ecosystem: "maven"
     directory: "/meta-bom/bom-cf"
     schedule:
@@ -197,6 +204,7 @@ updates:
       - "依赖:升级"
       - "自动化:提交"
       - "Dependabot"   
+      - "From:BOM-CF"  
   - package-ecosystem: "maven"
     directory: "/meta-bom/bom-mod"
     schedule:
@@ -219,3 +227,4 @@ updates:
       - "依赖:升级"
       - "自动化:提交"
       - "Dependabot"   
+      - "From:BOM-Mod"  
