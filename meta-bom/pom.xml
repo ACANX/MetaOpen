@@ -234,7 +234,10 @@
         <mongodb.version>3.12.14</mongodb.version>
         <!-- NoSQL-->
 
-        <selenium.version>4.29.0</selenium.version>
+         <!-- Selenium 版本 -->
+        <selenium.version>4.43.0</selenium.version>
+        <selenium-futu.version>4.39.0</selenium-futu.version>
+        <selenium-devtools.version>4.41.0</selenium-devtools.version>
         <selenium-htmlunit.version>4.29.0</selenium-htmlunit.version>
 
         <awssdk.version>2.42.33</awssdk.version>
