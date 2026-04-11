@@ -144,7 +144,7 @@
         <!-- Spring Boot 版本 -->
         <spring-boot.version>4.0.4</spring-boot.version>
         <!-- 华为云 SDK 版本 -->
-        <huaweicloud-sdk-core.version>3.1.191</huaweicloud-sdk-core.version>
+        <huaweicloud-sdk-core.version>3.1.192</huaweicloud-sdk-core.version>
         <huaweicloud-sdk-apig.version>3.1.191</huaweicloud-sdk-apig.version>
         <huaweicloud-sdk.functiongraph.version>3.1.181</huaweicloud-sdk.functiongraph.version>
         <!-- OkHttp 版本 -->
