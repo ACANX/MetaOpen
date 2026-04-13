@@ -110,6 +110,7 @@
         <hadoop.version>3.5.0</hadoop.version>
 
         <selenium.version>4.43.0</selenium.version>
+        <thymeleaf.version>3.1.4.RELEASE</thymeleaf.version>
 
         <junit-jupiter.version>6.0.3</junit-jupiter.version>
         <junit-platform.version>6.0.3</junit-platform.version>
@@ -977,7 +978,7 @@
             <dependency>
                 <groupId>org.thymeleaf</groupId>
                 <artifactId>thymeleaf</artifactId>
-                <version>3.1.4.RELEASE</version>
+                <version>${thymeleaf.version}</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
