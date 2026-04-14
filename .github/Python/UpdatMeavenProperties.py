@@ -1,54 +1,47 @@
 #!/usr/bin/env python3
 """
-Update specified Maven properties in a pom.xml file.
-Usage: python UpdatMeavenProperties.py --pom-file pom.xml --new-version 1.2.3 --properties revision meta.version
+Update specified Maven properties in a pom.xml file using targeted regex replacement.
+Preserves all comments, formatting, and whitespace.
 """
 
 import argparse
+import re
 import sys
-import xml.etree.ElementTree as ET
-
-NAMESPACE = "http://maven.apache.org/POM/4.0.0"
 
 def update_properties(pom_path, new_version, properties):
-    """Update given properties in pom.xml to new_version."""
-    # Register namespace to avoid ns0: prefix in output
-    ET.register_namespace('', NAMESPACE)
-    ns = {'p': NAMESPACE}
+    """Replace property values inside the <properties> block only."""
+    with open(pom_path, 'r', encoding='utf-8') as f:
+        content = f.read()
 
-    try:
-        tree = ET.parse(pom_path)
-        root = tree.getroot()
-    except Exception as e:
-        print(f"Error parsing {pom_path}: {e}", file=sys.stderr)
-        sys.exit(1)
+    # 定位 <properties> 块的起止位置
+    start = content.find('<properties>')
+    end = content.find('</properties>', start)
+    if start == -1 or end == -1:
+        print(f"⚠️  No <properties> section found in {pom_path}")
+        return
 
-    # Find or create <properties> element
-    props_elem = root.find('./p:properties', ns)
-    if props_elem is None:
-        # Create properties element if missing
-        props_elem = ET.SubElement(root, f'{{{NAMESPACE}}}properties')
-        # Add proper indentation (optional but nice)
-        props_elem.text = "\n    "
-        props_elem.tail = "\n"
+    # 将文件内容拆分为三部分：之前、properties 块、之后
+    before = content[:start]
+    prop_block = content[start:end + len('</properties>')]
+    after = content[end + len('</properties>'):]
 
     updated = False
-    for prop_name in properties:
-        elem = props_elem.find(f'./p:{prop_name}', ns)
-        if elem is not None:
-            elem.text = new_version
-            print(f"  ✅ Updated {prop_name} = {new_version}")
+    for prop in properties:
+        # 匹配 <prop>旧值</prop>，其中旧值不含 '<' 字符（避免嵌套标签干扰）
+        pattern = re.compile(rf'(<{re.escape(prop)}>)[^<]*(</{re.escape(prop)}>)')
+        new_block, count = pattern.subn(rf'\g<1>{new_version}\g<2>', prop_block)
+        if count > 0:
+            prop_block = new_block
+            print(f"  ✅ Updated {prop} = {new_version}")
             updated = True
         else:
-            print(f"  ⚠️  Property '{prop_name}' not found in {pom_path}, skipping.")
+            print(f"  ⚠️  Property '{prop}' not found in properties section, skipping.")
 
     if updated:
-        try:
-            tree.write(pom_path, encoding='utf-8', xml_declaration=True)
-            print(f"📄 Updated {pom_path}")
-        except Exception as e:
-            print(f"Error writing {pom_path}: {e}", file=sys.stderr)
-            sys.exit(1)
+        new_content = before + prop_block + after
+        with open(pom_path, 'w', encoding='utf-8') as f:
+            f.write(new_content)
+        print(f"📄 Updated {pom_path}")
     else:
         print(f"ℹ️  No properties updated in {pom_path}")
 
