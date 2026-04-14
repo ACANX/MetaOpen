@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.acanx.meta</groupId>
+        <artifactId>meta-component</artifactId>
+        <version>0.8.1.4</version>
+    </parent>
+
+    <groupId>com.acanx.meta.component</groupId>
+    <artifactId>sdk-maven-artifact</artifactId>
+    <version>0.8.1.4</version>
+    <packaging>jar</packaging>
+    <name>SDK-Maven-Artifact</name>
+    <description>Maven-Artifact SDK Module</description>
+    <url>https://github.com/ACANX/MetaOpen</url>
+    <scm>
+        <tag>V0.5.x</tag>
+        <url>git@github.com:ACANX/MetaOpen.git</url>
+        <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
+        <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>
+    </scm>
+    <organization>
+        <name>ACANX</name>
+        <url>https://acanx.com</url>
+    </organization>
+    <developers>
+        <developer>
+            <name>ACANX</name>
+            <email>acanx@qq.com</email>
+            <organization>ACANX</organization>
+        </developer>
+    </developers>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>11</java.version>
+        <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.acanx.meta.model</groupId>
+            <artifactId>model-maven</artifactId>
+            <version>0.8.1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.acanx.meta.model</groupId>
+            <artifactId>model-sonatype</artifactId>
+            <version>0.8.1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.acanx.util</groupId>
+            <artifactId>autil-core</artifactId>
+            <version>${autil.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.acanx.util</groupId>
+            <artifactId>json-jackson</artifactId>
+            <version>${autil.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-xml</artifactId>
+            <version>4.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.acanx.meta</groupId>
+                <artifactId>os-dependencies</artifactId>
+                <version>0.8.1.4</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>            
+        </plugins>
+    </build>
+</project>

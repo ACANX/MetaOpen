@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.acanx.meta</groupId>
+    <artifactId>meta-open</artifactId>
+    <version>0.8.1.4</version>
+    <packaging>pom</packaging>
+    <name>Meta-Open</name>
+    <description>Meta Open POM</description>
+    <url>https://github.com/ACANX/MetaOpen</url>
+    <inceptionYear>2025</inceptionYear>
+
+    <scm>
+        <tag>V0.7.x</tag>
+        <url>git@github.com:ACANX/MetaOpen.git</url>
+        <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
+        <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>
+    </scm>
+    <organization>
+        <name>ACANX</name>
+        <url>https://acanx.com</url>
+    </organization>
+    <developers>
+        <developer>
+            <name>ACANX</name>
+            <email>acanx@qq.com</email>
+            <organization>ACANX</organization>
+        </developer>
+    </developers>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <properties>
+        <revision>0.8.1.4</revision>
+        <meta-open.version>0.8.1.4</meta-open.version>
+        <autil.version>1.3.0</autil.version>
+        
+        <java.version>21</java.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <!-- <maven.compiler.release>21</maven.compiler.release> -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
+        <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
+        <maven-surefire-plugin.version>3.5.5</maven-surefire-plugin.version>
+        <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
+        <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
+        <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
+        <flatten-maven-plugin.version>1.7.3</flatten-maven-plugin.version>
+        <central-publishing-maven-plugin.version>0.10.0</central-publishing-maven-plugin.version>
+             
+        <sonar.organization>acanx</sonar.organization>     
+        <jackson.version>2.21.2</jackson.version>
+        <fastjson2.version>2.0.61</fastjson2.version>
+        <lombok.version>1.18.44</lombok.version>
+        <junit-jupiter.version>6.0.3</junit-jupiter.version>
+    </properties>
+
+    <modules>
+        <module>meta-model</module>
+        <module>meta-component</module>
+        <!-- <module>meta-bom</module>  -->
+        <module>meta-sdk</module>
+        <module>os-dependencies</module>
+    </modules>
+
+    <dependencies/>
+         
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.acanx.meta</groupId>
+                <artifactId>os-dependencies</artifactId>
+                <version>0.8.1.4</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+               <groupId>org.junit.platform</groupId>
+               <artifactId>junit-platform-commons</artifactId>
+               <version>${junit-jupiter.version}</version>
+               <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+         <!-- <repositories>
+             <repository>
+                 <id>central</id>
+                 <name>Maven Central Repository</name>
+                 <url>https://repo1.maven.org/maven2/</url>
+                 <releases>
+                     <enabled>true</enabled>
+                 </releases>
+                 <snapshots>
+                     <enabled>false</enabled>
+                 </snapshots>
+             </repository>
+             <repository>
+                 <id>sonatype-snapshots</id>
+                 <name>Sonatype Snapshot Repository</name>
+                 <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+                 <releases>
+                     <enabled>false</enabled>
+                 </releases>
+                 <snapshots>
+                     <enabled>true</enabled>
+                     <updatePolicy>always</updatePolicy>
+                 </snapshots>
+             </repository>
+         </repositories> -->
+         
+    <build>
+         <pluginManagement>
+                 <plugins>
+                     <plugin>
+                         <groupId>org.apache.maven.plugins</groupId>
+                         <artifactId>maven-compiler-plugin</artifactId>
+                         <version>${maven-compiler-plugin.version}</version>
+                         <configuration>
+                             <source>${java.version}</source>
+                             <target>${java.version}</target>
+                             <encoding>UTF-8</encoding>
+                             <fork>true</fork>
+                             <compilerArgs combine.children="append">
+                                 <arg>-parameters</arg>
+                                 <arg>--add-exports</arg>
+                                 <arg>jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
+                                 <arg>--add-exports</arg>
+                                 <arg>jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                                 <arg>--add-exports</arg>
+                                 <arg>jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+                                 <arg>--add-exports</arg>
+                                 <arg>jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
+                                 <arg>--add-exports</arg>
+                                 <arg>jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>
+                                 <arg>--add-exports</arg>
+                                 <arg>jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
+                                 <arg>--add-opens</arg>
+                                 <arg>jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
+                                 <arg>--add-opens</arg>
+                                 <arg>jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                                 <arg>--add-opens</arg>
+                                 <arg>jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+                             </compilerArgs>
+                         </configuration>
+                     </plugin>
+                     <plugin>
+                         <groupId>org.apache.maven.plugins</groupId>
+                         <artifactId>maven-surefire-plugin</artifactId>
+                         <version>${maven-surefire-plugin.version}</version>
+                     </plugin>
+                 </plugins>
+        </pluginManagement>
+    </build>
+
+    <profiles>
+        <!-- 发布到 Maven中央仓库 -->
+        <profile>
+            <id>sonatype-oss-release</id>
+            <!-- 设为默认profile 开始 -->
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>${maven-compiler-plugin.version}</version>
+                        <configuration>
+                            <source>${java.version}</source>
+                            <target>${java.version}</target>
+                            <encoding>UTF-8</encoding>
+                            <fork>true</fork>
+                            <compilerArgs combine.children="append">
+                                 <arg>-parameters</arg>
+                                 <arg>--add-exports</arg>
+                                 <arg>jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
+                                 <arg>--add-exports</arg>
+                                 <arg>jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                                 <arg>--add-exports</arg>
+                                 <arg>jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+                                 <arg>--add-exports</arg>
+                                 <arg>jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
+                                 <arg>--add-exports</arg>
+                                 <arg>jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>
+                                 <arg>--add-exports</arg>
+                                 <arg>jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
+                                 <arg>--add-opens</arg>
+                                 <arg>jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
+                                 <arg>--add-opens</arg>
+                                 <arg>jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                                 <arg>--add-opens</arg>
+                                 <arg>jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+                             </compilerArgs>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>flatten-maven-plugin</artifactId>
+                        <version>${flatten-maven-plugin.version}</version>
+                        <configuration>
+                            <!--  是否更新pom文件，此处还有更高级的用法-->
+                            <updatePomFile>true</updatePomFile>
+                            <flattenMode>resolveCiFriendliesOnly</flattenMode>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>flatten</id>
+                                <phase>process-resources</phase>
+                                <goals>
+                                    <goal>flatten</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>flatten.clean</id>
+                                <phase>clean</phase>
+                                <goals>
+                                    <goal>clean</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!-- 生成Source jar文件 -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>${maven-source-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!-- 生成Javadoc，关闭doclint,避免注解检查不通过 -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${maven-javadoc-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                                <configuration>
+                                    <!-- <additionalparam>-Xdoclint:none</additionalparam> -->
+                                    <!-- <aggregate>true</aggregate> -->
+                                    <charset>${project.build.sourceEncoding}</charset>
+                                    <!-- utf-8读取文件 -->
+                                    <encoding>${project.build.sourceEncoding}</encoding>
+                                    <!-- utf-8进行编码代码 -->
+                                    <docencoding>${project.build.sourceEncoding}</docencoding>
+                                    <!-- utf-8进行编码文档 -->
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!-- Maven GPG插件用于使用以下配置对组件进行签名 -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>${maven-gpg-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <executable>gpg</executable>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <version>${maven-deploy-plugin.version}</version>
+                    </plugin>
+                    <!-- 正式版/SNAPSHOT发布使用central-publishing-maven-plugin插件-->
+                    <plugin>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>${central-publishing-maven-plugin.version}</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <publishingServerId>sonatype-nexus-snapshots</publishingServerId>
+                            <autoPublish>true</autoPublish>
+                            <centralBaseUrl>https://central.sonatype.com</centralBaseUrl>
+                            <deploymentName>Meta-Open-0.8.1.4-Deployment</deploymentName>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>${maven-surefire-plugin.version}</version>
+                    </plugin>
+                </plugins>
+            </build>
+            <!-- repository、snapshotRepository中的id一定要与Maven的setting.xml文件中的server节点下的id 保持一一对应！ -->
+            <distributionManagement>
+                <repository>
+                    <id>sonatype-nexus-staging</id>
+                    <name>Nexus Release Repository</name>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>sonatype-nexus-snapshots</id>
+                    <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+    </profiles>
+
+</project>
+
+

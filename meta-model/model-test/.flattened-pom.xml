@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>meta-model</artifactId>
+        <groupId>com.acanx.meta</groupId>
+        <version>0.8.1.4</version>
+    </parent>
+
+    <groupId>com.acanx.meta.model</groupId>
+    <artifactId>model-test</artifactId>
+    <version>0.8.1.4</version>
+    <packaging>jar</packaging>
+    <name>Model-Test</name>
+    <description>Meta Test Model Module</description>
+    <url>https://acanx.com</url>
+
+    <scm>
+        <tag>V0.7.x</tag>
+        <url>git@github.com:ACANX/MetaOpen.git</url>
+        <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
+        <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>
+    </scm>
+      <organization>
+          <name>ACANX</name>
+          <url>https://acanx.com</url>
+      </organization>
+      <developers>
+          <developer>
+              <name>ACANX</name>
+              <email>acanx@qq.com</email>
+              <organization>ACANX</organization>
+          </developer>
+      </developers>
+      <licenses>
+          <license>
+              <name>The Apache Software License, Version 2.0</name>
+              <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+              <distribution>repo</distribution>
+          </license>
+      </licenses>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- <maven.compiler.release>11</maven.compiler.release> -->
+        <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.acanx.util</groupId>
+            <artifactId>autil-core</artifactId>
+            <version>${autil.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.acanx.util</groupId>
+            <artifactId>annotation-processor-ast</artifactId>
+            <version>${autil.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+           <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>UTF-8</encoding>
+                    <fork>false</fork>
+                    <annotationProcessors>
+                        <annotationProcessor>com.acanx.util.annotation.processor.ast.CopierAstProcessor</annotationProcessor>
+                    </annotationProcessors>
+                    <annotationProcessorPaths>
+                        <!-- 确保注解处理器路径包含你的处理器 -->
+                        <path>
+                                <groupId>com.acanx.util</groupId>
+                                <artifactId>annotation-api</artifactId>
+                                <version>1.3.0</version>
+                        </path>
+                        <path>
+                            <groupId>com.acanx.util</groupId>
+                            <artifactId>annotation-processor-ast</artifactId>
+                            <version>1.3.0</version>
+                        </path>
+                    </annotationProcessorPaths>
+                    <compilerArgs combine.children="append">
+                        <arg>-parameters</arg>
+                        <arg>--add-exports</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
+                        <arg>--add-exports</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                        <arg>--add-exports</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+                        <arg>--add-exports</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
+                        <arg>--add-exports</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>
+                        <arg>--add-exports</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
+                        <arg>--add-opens</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
+                        <arg>--add-opens</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                        <arg>--add-opens</arg>
+                        <arg>jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
