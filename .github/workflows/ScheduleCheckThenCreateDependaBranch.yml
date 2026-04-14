@@ -1,0 +1,44 @@
+name: ScheduleCheckThenCreateDependaBranch
+
+on:
+  schedule:
+    # 每天 UTC 时间 10:00 运行一次（北京时间下午 18:00）
+    - cron: '0 10 * * *'
+  workflow_dispatch:  # 允许手动触发调试
+
+permissions:
+  contents: write      # 允许推送分支
+
+jobs:
+  ensure-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: CheckoutRepository
+        uses: actions/checkout@v5
+        with:
+          ref: dev
+          fetch-depth: 0
+
+      - name: SetBranchNameVariable
+        id: vars
+        run: echo "BRANCH_NAME=dependa" >> $GITHUB_OUTPUT
+
+      - name: CheckIfBranchExists
+        id: check_branch
+        run: |
+          BRANCH="${{ steps.vars.outputs.BRANCH_NAME }}"
+          if git ls-remote --heads origin "$BRANCH" | grep -q "$BRANCH"; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "分支 '$BRANCH' 已存在，本次将不进行任何操作."
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "分支 '$BRANCH' 未找到，即将按计划创建."
+          fi
+
+      - name: CreateBranchFromDev
+        if: steps.check_branch.outputs.exists == 'false'
+        run: |
+          BRANCH="${{ steps.vars.outputs.BRANCH_NAME }}"
+          git checkout -b "$BRANCH"
+          git push origin "$BRANCH"
+          echo "✅ '$BRANCH' 分支已基于 dev分支创建成功."
