@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.acanx.meta</groupId>
     <artifactId>meta-open</artifactId>
     <version>${revision}</version>
@@ -38,8 +37,8 @@
     </licenses>
 
     <properties>
-        <revision>0.7.6</revision>
-        <meta-open.version>0.7.6</meta-open.version>
+        <revision>0.8.1.6</revision>
+        <meta-open.version>0.8.1.6</meta-open.version>
         <autil.version>1.3.0</autil.version>
         
         <java.version>21</java.version>
@@ -66,7 +65,7 @@
     <modules>
         <module>meta-model</module>
         <module>meta-component</module>
-        <module>meta-bom</module> 
+        <!-- <module>meta-bom</module>  -->
         <module>meta-sdk</module>
         <module>os-dependencies</module>
     </modules>
@@ -98,20 +97,31 @@
     </dependencyManagement>
 
 
-         <repositories>
+         <!-- <repositories>
+             <repository>
+                 <id>central</id>
+                 <name>Maven Central Repository</name>
+                 <url>https://repo1.maven.org/maven2/</url>
+                 <releases>
+                     <enabled>true</enabled>
+                 </releases>
+                 <snapshots>
+                     <enabled>false</enabled>
+                 </snapshots>
+             </repository>
              <repository>
                  <id>sonatype-snapshots</id>
                  <name>Sonatype Snapshot Repository</name>
                  <url>https://central.sonatype.com/repository/maven-snapshots/</url>
                  <releases>
-                     <enabled>false</enabled> <!-- 如果不需RELEASE版本，可禁用 -->
+                     <enabled>false</enabled>
                  </releases>
                  <snapshots>
-                     <enabled>true</enabled> <!-- 启用SNAPSHOT版本下载 -->
-                     <updatePolicy>always</updatePolicy> <!-- 可选：每次构建都检查更新 -->
+                     <enabled>true</enabled>
+                     <updatePolicy>always</updatePolicy>
                  </snapshots>
              </repository>
-         </repositories>
+         </repositories> -->
          
     <build>
          <pluginManagement>
@@ -322,3 +332,5 @@
     </profiles>
 
 </project>
+
+

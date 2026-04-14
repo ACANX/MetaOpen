@@ -36,7 +36,7 @@ jobs:
             if (!matched) return;
             const [, pkg, oldVer, newVer, pomFile] = matched;
             // 自定义你的标题格式
-            const newTitle = `chore(deps): 依赖项升级[${pkg}][${oldVer} => ${newVer}]`;
+            const newTitle = `chore(deps): 依赖构件版本升级[${pkg}][${oldVer} => ${newVer}]`;
             await github.rest.pulls.update({
               owner: context.repo.owner,
               repo: context.repo.repo,

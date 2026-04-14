@@ -2,21 +2,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
+    <!-- <parent>
         <groupId>com.acanx.meta</groupId>
         <artifactId>meta-bom</artifactId>
         <version>${revision}</version>
-    </parent>
+    </parent> -->
     <groupId>com.acanx.meta.bom</groupId>
-    <artifactId>bom-sdk</artifactId>
+    <artifactId>bom-aio-origin</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
-    <name>BOM-SDK</name>
-    <description>BOM-SDK POM</description>
+    <name>BOM-AIO-Origin</name>
+    <description>BOM-AIO-Origin POM</description>
     <url>https://github.com/ACANX/MetaOpen</url>
 
     <scm>
-        <tag>V0.7.x</tag>
+        <tag>V0.8.x</tag>
         <url>git@github.com:ACANX/MetaOpen.git</url>
         <connection>scm:git:git@github.com:ACANX/MetaOpen.git</connection>
         <developerConnection>scm:git:git@github.com:ACANX/MetaOpen.git</developerConnection>
@@ -41,101 +41,55 @@
     </licenses>
 
     <properties>
-        <!-- <awssdk.version>2.42.21</awssdk.version> -->
+          <revision>0.8.1.6</revision>
+          <!-- 将此属性设置为 true，即可跳过该模块的 deploy 阶段 -->
+          <maven.deploy.skip>true</maven.deploy.skip>
+          <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/s3 -->
             <dependency>
-                <groupId>software.amazon.awssdk</groupId>
-                <artifactId>s3</artifactId>
-                <version>${awssdk.version}</version>
-                <scope>compile</scope>
-            </dependency>
-
-            <!-- aws-lambda -->
-            <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/lambda -->
-            <dependency>
-                <groupId>software.amazon.awssdk</groupId>
-                <artifactId>lambda</artifactId>
-                <version>${awssdk.version}</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/ses -->
-            <dependency>
-                <groupId>software.amazon.awssdk</groupId>
-                <artifactId>ses</artifactId>
-                <version>${awssdk.version}</version>
-            </dependency>
-
-            <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/cloudwatch -->
-            <dependency>
-                <groupId>software.amazon.awssdk</groupId>
-                <artifactId>cloudwatch</artifactId>
-                <version>${awssdk.version}</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/software.amazon.awssdk/costexplorer -->
-            <dependency>
-                <groupId>software.amazon.awssdk</groupId>
-                <artifactId>costexplorer</artifactId>
-                <version>${awssdk.version}</version>
+                <groupId>com.acanx.meta</groupId>
+                <artifactId>os-dependencies</artifactId>
+                <version>${revision}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>software.amazon.awssdk</groupId>
-                <artifactId>regions</artifactId>
-                <version>${awssdk.version}</version>
-            </dependency>
-            <!-- AWS SDK Core -->
-            <dependency>
-                <groupId>software.amazon.awssdk</groupId>
-                <artifactId>aws-core</artifactId>
-                <version>${awssdk.version}</version>
-            </dependency>
-            <!-- AWS SDK for SQS -->
-            <dependency>
-                <groupId>software.amazon.awssdk</groupId>
-                <artifactId>sqs</artifactId>
-                <version>${awssdk.version}</version>
-            </dependency>
-
-            <!-- aliyun -->
-            <!-- https://mvnrepository.com/artifact/com.aliyun.oss/aliyun-sdk-oss -->
-            <dependency>
-                <groupId>com.aliyun.oss</groupId>
-                <artifactId>aliyun-sdk-oss</artifactId>
-                <version>3.18.5</version>
-            </dependency>
-
-            <!-- tencentcloud -->
-            <dependency>
-                <groupId>com.tencentcloudapi</groupId>
-                <artifactId>tencentcloud-sdk-java-ses</artifactId>
-                <version>3.1.1430</version>
+                <groupId>com.acanx.meta.bom</groupId>
+                <artifactId>bom-deamon</artifactId>
+                <version>${revision}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>com.qcloud</groupId>
-                <artifactId>cos_api</artifactId>
-                <version>5.6.265</version>
-                <scope>compile</scope>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.bouncycastle</groupId>
-                        <artifactId>bcprov-jdk15on</artifactId>
-                    </exclusion>
-                </exclusions>
+                <groupId>com.acanx.meta.bom</groupId>
+                <artifactId>bom-mod</artifactId>
+                <version>${revision}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>org.bouncycastle</groupId>
-                <artifactId>bcprov-jdk18on</artifactId>
-                <version>1.83</version>
+                <groupId>com.acanx.meta.bom</groupId>
+                <artifactId>bom-sdk</artifactId>
+                <version>${revision}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
-
-
-            <!-- huaweicloud -->
             <dependency>
-                <groupId>com.huaweicloud.sdk</groupId>
-                <artifactId>huaweicloud-sdk-functiongraph</artifactId>
-                <version>${huaweicloud-sdk.version}</version>
+                <groupId>com.acanx.meta.bom</groupId>
+                <artifactId>bom-cf</artifactId>
+                <version>${revision}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.component</groupId>
+                <artifactId>bom-graalvm</artifactId>
+                <version>25.0.8.1</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -161,7 +115,7 @@
                     <updatePomFile>true</updatePomFile>
                     <flattenMode>bom</flattenMode>
                     <pomElements>
-                             <parent>remove</parent>
+                        <parent>remove</parent>
                         <dependencyManagement>expand</dependencyManagement>
                         <properties>remove</properties>
                         <developers>keep</developers>
@@ -194,9 +148,3 @@
     </build>
 
 </project>
-
-
-
-
-
-

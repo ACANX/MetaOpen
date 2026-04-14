@@ -38,13 +38,16 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-         
+
     <properties>
         <flattened-pom-path>${project.basedir}/.flattened-pom.xml</flattened-pom-path>
 
         <jakarta.annotation.version>3.0.0</jakarta.annotation.version>
         <jakarta.validation.version>3.1.1</jakarta.validation.version>
-             
+        <spring-data.version>4.0.4</spring-data.version>
+        <dubbo.version>3.3.6</dubbo.version>
+        <dubbo-extensions-parent>3.3.3</dubbo-extensions-parent>
+        <dubbo-extensions-serialization-protobuf>3.3.1</dubbo-extensions-serialization-protobuf>
         <junit.version>4.13.2</junit.version>
     </properties>
 
@@ -135,8 +138,8 @@
             </dependency>
 
 
-              <!--Jakarta 模块  开始 -->
-             <dependency>
+            <!--Jakarta 模块  开始 -->
+            <dependency>
                 <groupId>jakarta.validation</groupId>
                 <artifactId>jakarta.validation-api</artifactId>
                 <version>${jakarta.validation.version}</version>
@@ -147,7 +150,7 @@
                 <artifactId>jakarta.annotation-api</artifactId>
                 <version>${jakarta.annotation.version}</version>
             </dependency>
-                 
+
             <!-- JDK9以后中移除的模块  开始 -->
             <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
             <dependency>
@@ -183,7 +186,6 @@
                 <version>${javax-servlet-api.version}</version>
                 <optional>true</optional>
             </dependency>
-
 
 
             <dependency>
@@ -259,10 +261,10 @@
             <!-- 日志依赖  开始-->
             <!-- Source: https://mvnrepository.com/artifact/ch.qos.logback.access/logback-access-common -->
             <dependency>
-                 <groupId>ch.qos.logback.access</groupId>
-                 <artifactId>logback-access-common</artifactId>
-                 <version>2.0.12</version>
-                 <scope>compile</scope>
+                <groupId>ch.qos.logback.access</groupId>
+                <artifactId>logback-access-common</artifactId>
+                <version>2.0.12</version>
+                <scope>compile</scope>
             </dependency>
             <dependency>
                 <groupId>ch.qos.logback</groupId>
@@ -855,7 +857,7 @@
             <dependency>
                 <groupId>io.micrometer</groupId>
                 <artifactId>micrometer-observation</artifactId>
-                <version>1.16.4</version>
+                <version>${micrometer.version}</version>
                 <scope>compile</scope>
             </dependency>
             <dependency>
@@ -1473,78 +1475,245 @@
             </dependency>
 
 
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>9.1.0.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-remoting-http3</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo.extensions</groupId>
+                <artifactId>dubbo-remoting-quic</artifactId>
+                <version>3.3.1</version>
+            </dependency>
+            <!-- BoringsSL 依赖（QUIC 需要） -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-tcnative-boringssl-static</artifactId>
+                <version>2.0.75.Final</version>
+            </dependency>
+
+
+            <!-- Spring Boot 相关 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-validation</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-security</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-test</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <!-- Spring Data -->
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-commons</artifactId>
+                <version>${spring-data.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-elasticsearch</artifactId>
+                <version>6.0.4</version>
+            </dependency>
+
+            <!-- Jackson -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>2.21</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-parameter-names</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <!-- Thymeleaf 扩展 -->
+            <dependency>
+                <groupId>org.thymeleaf.extras</groupId>
+                <artifactId>thymeleaf-extras-springsecurity6</artifactId>
+                <version>${thymeleaf-extras-springsecurity6.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>nz.net.ultraq.thymeleaf</groupId>
+                <artifactId>thymeleaf-layout-dialect</artifactId>
+                <version>4.0.1</version>
+            </dependency>
+
+            <!-- Validation API -->
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>2.0.1.Final</version>
+            </dependency>
+            <!-- Dubbo 相关 -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-serialization-api</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-registry-zookeeper</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-registry-multicast</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-serialization-hessian2</artifactId>
+                <version>3.3.6</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-configcenter-zookeeper</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-metadata-report-zookeeper</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-rpc-dubbo</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-remoting-netty4</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+
+
             <!-- https://mvnrepository.com/artifact/io.netty/netty-bom -->
-<!--            <dependency>-->
-<!--                <groupId>io.netty</groupId>-->
-<!--                <artifactId>netty-bom</artifactId>-->
-<!--                <version>${netty.version}</version>-->
-<!--                <type>pom</type>-->
-<!--                <scope>import</scope>-->
-<!--                <optional>true</optional>-->
-<!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>io.netty</groupId>-->
+            <!--                <artifactId>netty-bom</artifactId>-->
+            <!--                <version>${netty.version}</version>-->
+            <!--                <type>pom</type>-->
+            <!--                <scope>import</scope>-->
+            <!--                <optional>true</optional>-->
+            <!--            </dependency>-->
             <!-- Spring/SpringBoot/SpringCloud官方依赖-->
-<!--            <dependency>-->
-<!--                <groupId>org.springframework</groupId>-->
-<!--                <artifactId>spring-framework-bom</artifactId>-->
-<!--                <version>${spring.version}</version>-->
-<!--                <optional>true</optional>-->
-<!--                <type>pom</type>-->
-<!--                <scope>import</scope>-->
-<!--            </dependency>-->
-<!--            <dependency>-->
-<!--                <groupId>org.springframework.boot</groupId>-->
-<!--                <artifactId>spring-boot-dependencies</artifactId>-->
-<!--                <version>${spring-boot.version}</version>-->
-<!--                <optional>true</optional>-->
-<!--                <type>pom</type>-->
-<!--                <scope>import</scope>-->
-<!--            </dependency>-->
-<!--            <dependency>-->
-<!--                <groupId>de.codecentric</groupId>-->
-<!--                <artifactId>spring-boot-admin-dependencies</artifactId>-->
-<!--                <version>${spring-boot-admin.version}</version>-->
-<!--                <optional>true</optional>-->
-<!--                <type>pom</type>-->
-<!--                <scope>import</scope>-->
-<!--            </dependency>-->
-<!--            <dependency>-->
-<!--                <groupId>org.springframework.security</groupId>-->
-<!--                <artifactId>spring-security-core</artifactId>-->
-<!--                <version>${spring-security.version}</version>-->
-<!--                <type>pom</type>-->
-<!--                <scope>import</scope>-->
-<!--                <optional>true</optional>-->
-<!--            </dependency>-->
-<!--            <dependency>-->
-<!--                <groupId>org.springframework.security.oauth</groupId>-->
-<!--                <artifactId>spring-security-oauth2</artifactId>-->
-<!--                <version>${spring-security-oauth2.version}</version>-->
-<!--                <type>pom</type>-->
-<!--                <scope>import</scope>-->
-<!--                <optional>true</optional>-->
-<!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>org.springframework</groupId>-->
+            <!--                <artifactId>spring-framework-bom</artifactId>-->
+            <!--                <version>${spring.version}</version>-->
+            <!--                <optional>true</optional>-->
+            <!--                <type>pom</type>-->
+            <!--                <scope>import</scope>-->
+            <!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>org.springframework.boot</groupId>-->
+            <!--                <artifactId>spring-boot-dependencies</artifactId>-->
+            <!--                <version>${spring-boot.version}</version>-->
+            <!--                <optional>true</optional>-->
+            <!--                <type>pom</type>-->
+            <!--                <scope>import</scope>-->
+            <!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>de.codecentric</groupId>-->
+            <!--                <artifactId>spring-boot-admin-dependencies</artifactId>-->
+            <!--                <version>${spring-boot-admin.version}</version>-->
+            <!--                <optional>true</optional>-->
+            <!--                <type>pom</type>-->
+            <!--                <scope>import</scope>-->
+            <!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>org.springframework.security</groupId>-->
+            <!--                <artifactId>spring-security-core</artifactId>-->
+            <!--                <version>${spring-security.version}</version>-->
+            <!--                <type>pom</type>-->
+            <!--                <scope>import</scope>-->
+            <!--                <optional>true</optional>-->
+            <!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>org.springframework.security.oauth</groupId>-->
+            <!--                <artifactId>spring-security-oauth2</artifactId>-->
+            <!--                <version>${spring-security-oauth2.version}</version>-->
+            <!--                <type>pom</type>-->
+            <!--                <scope>import</scope>-->
+            <!--                <optional>true</optional>-->
+            <!--            </dependency>-->
             <!-- Spring Cloud Alibaba-->
             <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba-dependencies -->
-<!--            <dependency>-->
-<!--                <groupId>org.apache.dubbo</groupId>-->
-<!--                <artifactId>dubbo-bom</artifactId>-->
-<!--                <version>${dubbo.version}</version>-->
-<!--                <type>pom</type>-->
-<!--                <scope>import</scope>-->
-<!--                <optional>true</optional>-->
-<!--            </dependency>-->
-<!--            <dependency>-->
-<!--                <groupId>org.mybatis.spring.boot</groupId>-->
-<!--                <artifactId>mybatis-spring-boot</artifactId>-->
-<!--                <version>${mybatis-spring-boot.version}</version>-->
-<!--                <optional>true</optional>-->
-<!--                <scope>import</scope>-->
-<!--                <type>pom</type>-->
-<!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>org.apache.dubbo</groupId>-->
+            <!--                <artifactId>dubbo-bom</artifactId>-->
+            <!--                <version>${dubbo.version}</version>-->
+            <!--                <type>pom</type>-->
+            <!--                <scope>import</scope>-->
+            <!--                <optional>true</optional>-->
+            <!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>org.mybatis.spring.boot</groupId>-->
+            <!--                <artifactId>mybatis-spring-boot</artifactId>-->
+            <!--                <version>${mybatis-spring-boot.version}</version>-->
+            <!--                <optional>true</optional>-->
+            <!--                <scope>import</scope>-->
+            <!--                <type>pom</type>-->
+            <!--            </dependency>-->
 
 
+                 <!-- Source: https://mvnrepository.com/artifact/org.springframework.ai/spring-ai-commons -->
+                  <dependency>
+                      <groupId>org.springframework.ai</groupId>
+                      <artifactId>spring-ai-commons</artifactId>
+                      <version>2.0.0-M4</version>
+                      <scope>compile</scope>
+                  </dependency>
+                 <!-- Source: https://mvnrepository.com/artifact/org.springframework.ai/spring-ai-model -->
+                  <dependency>
+                      <groupId>org.springframework.ai</groupId>
+                      <artifactId>spring-ai-model</artifactId>
+                      <version>2.0.0-M4</version>
+                      <scope>compile</scope>
+                  </dependency>
+                 <!-- Source: https://mvnrepository.com/artifact/com.alibaba.cloud.ai/spring-ai-alibaba-core -->
+                  <dependency>
+                      <groupId>com.alibaba.cloud.ai</groupId>
+                      <artifactId>spring-ai-alibaba-core</artifactId>
+                      <version>1.0.0.4</version>
+                      <scope>compile</scope>
+                  </dependency>
 
-
+                 <!-- Source: https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-annotations-api -->
+                  <dependency>
+                      <groupId>org.apache.tomcat</groupId>
+                      <artifactId>tomcat-annotations-api</artifactId>
+                      <version>11.0.21</version>
+                      <scope>compile</scope>
+                  </dependency>
 
             <!-- 测试库相关依赖-->
             <dependency>
@@ -1600,10 +1769,6 @@
     </dependencyManagement>
 
 
-
-
-
-
     <build>
         <pluginManagement>
             <plugins>
@@ -1631,13 +1796,16 @@
                     <updatePomFile>true</updatePomFile>
                     <flattenMode>bom</flattenMode>
                     <pomElements>
-                        <dependencyManagement>keep</dependencyManagement>
+                             <parent>remove</parent>
+                        <dependencyManagement>expand</dependencyManagement>
+                        <properties>remove</properties>
                         <developers>keep</developers>
                         <scm>keep</scm>
                         <url>keep</url>
                         <organization>keep</organization>
                         <name>keep</name>
                         <description>keep</description>
+                        <repositories>remove</repositories>
                     </pomElements>
                 </configuration>
                 <executions>
@@ -1671,54 +1839,104 @@
                         <configuration>
                             <target>
                                 <echo>Resolving properties in .flattened-pom.xml...</echo>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{revision\}" replace="${revision}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{spring\.version\}" replace="${spring.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{spring-boot\.version\}" replace="${spring-boot.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{spring-boot-admin\.version\}" replace="${spring-boot-admin.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{spring-security\.version\}" replace="${spring-security.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{spring-security-oauth2\.version\}" replace="${spring-security-oauth2.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{springfox-swagger2\.version\}" replace="${springfox-swagger2.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{dubbo\.version\}" replace="${dubbo.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{dubbo-extensions-parent\}" replace="${dubbo-extensions-parent}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{dubbo-extensions-serialization-protobuf\}" replace="${dubbo-extensions-serialization-protobuf}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{mybatis-spring-boot\.version\}" replace="${mybatis-spring-boot.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{pagehelper-spring-boot\.version\}" replace="${pagehelper-spring-boot.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{jsqlparser\}" replace="${jsqlparser}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{javax-servlet-api\.version\}" replace="${javax-servlet-api.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{jakarta\.annotation\.version\}" replace="${jakarta.annotation.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{jakarta\.validation\.version\}" replace="${jakarta.validation.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{javax-activation-api\.version\}" replace="${javax-activation-api.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{javax-activation\.version\}" replace="${javax-activation.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{javax-annotation-api\.version\}" replace="${javax-annotation-api.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{jaxb-api\.version\}" replace="${jaxb-api.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{jaxb-impl\.version\}" replace="${jaxb-impl.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{UserAgentUtils\.version\}" replace="${UserAgentUtils.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{swagger2markup\.version\}" replace="${swagger2markup.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{junit-vintage-engine\.version\}" replace="${junit-vintage-engine.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{junit-platform\.version\}" replace="${junit-platform.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{junit-jupiter\.version\}" replace="${junit-jupiter.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{sqlite-jdbc\.version\}" replace="${sqlite-jdbc.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{httpclient5\.version\}" replace="${httpclient5.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{commonmark\.version\}" replace="${commonmark.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{httpclient\.version\}" replace="${httpclient.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{httpcore5\.version\}" replace="${httpcore5.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{javassist\.version\}" replace="${javassist.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{fastjson2\.version\}" replace="${fastjson2.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{fastjson\.version\}" replace="${fastjson.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{httpcore\.version\}" replace="${httpcore.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{cos_api\.version\}" replace="${cos_api.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{logback\.version\}" replace="${logback.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{lombok\.version\}" replace="${lombok.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{log4j-to-slf4j\}" replace="${log4j-to-slf4j}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{log4j\.version\}" replace="${log4j.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{autil\.version\}" replace="${autil.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{netty\.version\}" replace="${netty.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{guava\.version\}" replace="${guava.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{gson\.version\}" replace="${gson.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{grpc\.version\}" replace="${grpc.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{rome\.version\}" replace="${rome.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{commons-configuration\.version\}" replace="${commons-configuration.version}" byline="false" flags="g"/>
-                                <replaceregexp file=".flattened-pom.xml" match="\$\{apache-commons-lang3\.version\}" replace="${apache-commons-lang3.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{revision\}" replace="${revision}"
+                                               byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{spring\.version\}"
+                                               replace="${spring.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{spring-boot\.version\}"
+                                               replace="${spring-boot.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{spring-boot-admin\.version\}"
+                                               replace="${spring-boot-admin.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{spring-security\.version\}"
+                                               replace="${spring-security.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{spring-security-oauth2\.version\}"
+                                               replace="${spring-security-oauth2.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{springfox-swagger2\.version\}"
+                                               replace="${springfox-swagger2.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{dubbo\.version\}"
+                                               replace="${dubbo.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{dubbo-extensions-parent\}"
+                                               replace="${dubbo-extensions-parent}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml"
+                                               match="\$\{dubbo-extensions-serialization-protobuf\}"
+                                               replace="${dubbo-extensions-serialization-protobuf}" byline="false"
+                                               flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{mybatis-spring-boot\.version\}"
+                                               replace="${mybatis-spring-boot.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{pagehelper-spring-boot\.version\}"
+                                               replace="${pagehelper-spring-boot.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{jsqlparser\}"
+                                               replace="${jsqlparser}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{javax-servlet-api\.version\}"
+                                               replace="${javax-servlet-api.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{jakarta\.annotation\.version\}"
+                                               replace="${jakarta.annotation.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{jakarta\.validation\.version\}"
+                                               replace="${jakarta.validation.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{javax-activation-api\.version\}"
+                                               replace="${javax-activation-api.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{javax-activation\.version\}"
+                                               replace="${javax-activation.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{javax-annotation-api\.version\}"
+                                               replace="${javax-annotation-api.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{jaxb-api\.version\}"
+                                               replace="${jaxb-api.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{jaxb-impl\.version\}"
+                                               replace="${jaxb-impl.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{UserAgentUtils\.version\}"
+                                               replace="${UserAgentUtils.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{swagger2markup\.version\}"
+                                               replace="${swagger2markup.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{junit-vintage-engine\.version\}"
+                                               replace="${junit-vintage-engine.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{junit-platform\.version\}"
+                                               replace="${junit-platform.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{junit-jupiter\.version\}"
+                                               replace="${junit-jupiter.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{sqlite-jdbc\.version\}"
+                                               replace="${sqlite-jdbc.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{httpclient5\.version\}"
+                                               replace="${httpclient5.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{commonmark\.version\}"
+                                               replace="${commonmark.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{httpclient\.version\}"
+                                               replace="${httpclient.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{httpcore5\.version\}"
+                                               replace="${httpcore5.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{javassist\.version\}"
+                                               replace="${javassist.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{fastjson2\.version\}"
+                                               replace="${fastjson2.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{fastjson\.version\}"
+                                               replace="${fastjson.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{httpcore\.version\}"
+                                               replace="${httpcore.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{cos_api\.version\}"
+                                               replace="${cos_api.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{logback\.version\}"
+                                               replace="${logback.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{lombok\.version\}"
+                                               replace="${lombok.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{log4j-to-slf4j\}"
+                                               replace="${log4j-to-slf4j}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{log4j\.version\}"
+                                               replace="${log4j.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{autil\.version\}"
+                                               replace="${autil.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{netty\.version\}"
+                                               replace="${netty.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{guava\.version\}"
+                                               replace="${guava.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{gson\.version\}"
+                                               replace="${gson.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{grpc\.version\}"
+                                               replace="${grpc.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{rome\.version\}"
+                                               replace="${rome.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{commons-configuration\.version\}"
+                                               replace="${commons-configuration.version}" byline="false" flags="g"/>
+                                <replaceregexp file=".flattened-pom.xml" match="\$\{apache-commons-lang3\.version\}"
+                                               replace="${apache-commons-lang3.version}" byline="false" flags="g"/>
                             </target>
                         </configuration>
                     </execution>
