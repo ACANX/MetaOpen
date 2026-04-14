@@ -161,6 +161,7 @@
                     <updatePomFile>true</updatePomFile>
                     <flattenMode>bom</flattenMode>
                     <pomElements>
+                             <parent>remove</parent>
                         <dependencyManagement>expand</dependencyManagement>
                         <properties>remove</properties>
                         <developers>keep</developers>
