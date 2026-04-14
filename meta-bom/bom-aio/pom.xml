@@ -11,8 +11,8 @@
     <artifactId>bom-aio</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
-    <name>BOM-CF</name>
-    <description>BOM-CF POM</description>
+    <name>BOM-AIO</name>
+    <description>BOM-AIO POM</description>
     <url>https://github.com/ACANX/MetaOpen</url>
 
     <scm>
