@@ -44,14 +44,20 @@ jobs:
         run: |
           # 要更新的属性列表（可根据需要扩展）
           PROPERTIES=("revision" "meta-open.version" "meta.version")
-          for prop in "${PROPERTIES[@]}"; do
-            echo "Updating $prop to $NEW_VERSION"
-            mvn versions:set-property \
-              -Dproperty="$prop" \
-              -DnewVersion="$NEW_VERSION" \
-              -DgenerateBackupPoms=false \
-              -DprocessAllModules=true \
-              -q
+          DIRS=("." "./meta-bom" "./meta-bom/bom-aio-origin")
+          for dir in "${DIRS[@]}"; do
+            echo "Processing directory: $dir"
+            pushd "$dir" > /dev/null
+            for prop in "${PROPERTIES[@]}"; do
+              echo "Updating $prop to $NEW_VERSION in $dir"
+              mvn versions:set-property \
+                -Dproperty="$prop" \
+                -DnewVersion="$NEW_VERSION" \
+                -DgenerateBackupPoms=false \
+                -DprocessAllModules=true \
+                -q
+            done
+            popd > /dev/null
           done
 
       - name: WriteVersionFile
