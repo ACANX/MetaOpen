@@ -1558,7 +1558,7 @@
             <dependency>
                 <groupId>org.thymeleaf.extras</groupId>
                 <artifactId>thymeleaf-extras-springsecurity6</artifactId>
-                <version>3.1.4.RELEASE</version>
+                <version>${thymeleaf-extras-springsecurity6.version}</version>
             </dependency>
             <dependency>
                 <groupId>nz.net.ultraq.thymeleaf</groupId>
