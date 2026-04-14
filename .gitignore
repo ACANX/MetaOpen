@@ -7,6 +7,9 @@
 /tomcat/
 !.mvn/wrapper/maven-wrapper.jar
 
+### Maven
+**/.flattened-pom.xml
+
 ### STS ###
 .apt_generated
 .classpath
