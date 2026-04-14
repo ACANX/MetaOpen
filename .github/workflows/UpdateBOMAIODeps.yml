@@ -68,6 +68,9 @@ jobs:
          cd bom-aio-origin
          mvn help:effective-pom -Doutput=effective-pom.xml
          echo "Effective POM 文件已生成，文件位置 meta-bom/bom-aio-origin/effective-pom.xml"
+         cd ../
+         cd ../
+         pwd
          echo "====================== Python脚本执行开始 ================================"
          python .github/Python/UpdateBomDeps.py \
             --effective-pom meta-bom/bom-aio-origin/effective-pom.xml \
