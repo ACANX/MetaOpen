@@ -1,13 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version='1.0' encoding='utf-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <!-- <parent>
-        <groupId>com.acanx.meta</groupId>
-        <artifactId>meta-open</artifactId>
-        <version>${revision}</version>
-        <relativePath>../pom.xml</relativePath>
-    </parent> -->
+    
     <groupId>com.acanx.meta</groupId>
     <artifactId>meta-bom</artifactId>
     <version>${revision}</version>
@@ -42,8 +36,8 @@
     </licenses>
   
      <properties>
-        <revision>0.8.1.4</revision>
-        <meta-open.version>0.8.1.4</meta-open.version>
+        <revision>0.8.1.6</revision>
+        <meta-open.version>0.8.1.6</meta-open.version>
         <autil.version>1.3.0</autil.version>
         <module.version>0.4.2</module.version>
 
@@ -93,7 +87,7 @@
         <commons-configuration.version>1.10</commons-configuration.version>
         <commons-configuration2.version>2.12</commons-configuration2.version>
 
-        <!--  关系数据库-->
+        
         <sqlite-jdbc.version>3.51.3.0</sqlite-jdbc.version>
         <mysql-connector-j.version>9.5.0</mysql-connector-j.version>
         <mysql-connector-java.version>9.1.0</mysql-connector-java.version>
@@ -117,7 +111,7 @@
         <apache-seata.version>2.4.0</apache-seata.version>
 
 
-        <!-- SpringCloud官方依赖  -->
+        
         <spring.version>7.0.6</spring.version>
         <spring-security.version>7.0.4</spring-security.version>
         <spring-boot.version>4.0.5</spring-boot.version>
@@ -141,14 +135,14 @@
         <pagehelper-spring-boot.version>2.1.1</pagehelper-spring-boot.version>
         <jsqlparser>5.3</jsqlparser>
 
-        <!-- Spring Cloud Alibaba -->
-        <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba -->
-        <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-starter-alibaba -->
-        <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba-dependencies -->
+        
+        
+        
+        
         <spring-cloud-alibaba.version>2025.0.0</spring-cloud-alibaba.version>
-        <!-- Spring Cloud Alibaba -->
+        
 
-        <!-- JakartaEE 11  -->
+        
         <jakarta-activation.version>2.1.3</jakarta-activation.version>
         <jakarta-annotation.version>3.0.0</jakarta-annotation.version>
         <jakarta-inject.version>2.0.1</jakarta-inject.version>
@@ -167,7 +161,7 @@
         <jakarta-xml-bind.version>4.0.4</jakarta-xml-bind.version>
         <jakarta-xml-soap.version>3.0.2</jakarta-xml-soap.version>
         <jakarta-xml-ws.version>4.0.2</jakarta-xml-ws.version>
-        <!-- Jakarta EE 版本 -->
+        
 
         <jaxb-api.version>2.3.1</jaxb-api.version>
         <jaxb-impl.version>4.0.7</jaxb-impl.version>
@@ -180,15 +174,15 @@
         <zookeeper.version>3.8.4</zookeeper.version>
 
 
-        <!--  Servlet -->
+        
         <tomcat.version>10.1.42</tomcat.version>
         <undertow.version>2.3.18.Final</undertow.version>
         <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
-        <!--  Servlet -->
+        
 
         <openjfx.version>25.0.1</openjfx.version>
 
-        <!-- Markdown 相关 -->
+        
         <commonmark.version>0.28.0</commonmark.version>
         <cos_api.version>5.6.265</cos_api.version>
         <grpc.version>1.80.0</grpc.version>
@@ -199,13 +193,13 @@
 
         <lombok.version>1.18.44</lombok.version>
         <netty.version>4.2.12.Final</netty.version>
-        <!--  JSON -->
+        
         <fastjson.version>1.2.83</fastjson.version>
         <fastjson2.version>2.0.61</fastjson2.version>
         <gson.version>2.13.2</gson.version>
         <jackson.version>2.21.2</jackson.version>
         <snakeyaml.version>2.5</snakeyaml.version>
-        <!--  JSON -->
+        
         <httpclient5.version>5.6</httpclient5.version>
         <httpcore5.version>5.4.2</httpcore5.version>
         <httpcore.version>4.4.16</httpcore.version>
@@ -227,7 +221,7 @@
         <thymeleaf-extras-data-attribute.version>2.0.1</thymeleaf-extras-data-attribute.version>
         <thymeleaf-layout-dialect.version>3.3.0</thymeleaf-layout-dialect.version>
 
-        <!-- 依赖库版本信息-->
+        
 
         <rome.version>2.1.0</rome.version>
         <swagger2markup.version>1.3.4</swagger2markup.version>
@@ -242,14 +236,14 @@
         <r2dbc-postgresql.version>1.0.7.RELEASE</r2dbc-postgresql.version>
         <r2dbc-proxy.version>1.1.5.RELEASE</r2dbc-proxy.version>
         <r2dbc-spi.version>1.0.0.RELEASE</r2dbc-spi.version>
-        <!--  关系数据库-->
-        <!-- NoSQL-->
+        
+        
         <mongodb.version>3.12.14</mongodb.version>
-        <!-- NoSQL-->
+        
 
          <micrometer.version>1.16.5</micrometer.version>
 
-         <!-- Selenium 版本 -->
+         
         <selenium.version>4.43.0</selenium.version>
         <selenium-futu.version>4.39.0</selenium-futu.version>
         <selenium-devtools.version>4.41.0</selenium-devtools.version>
@@ -258,7 +252,7 @@
         <awssdk.version>2.42.33</awssdk.version>
         <huaweicloud-sdk.version>3.1.192</huaweicloud-sdk.version>
 
-        <!-- 日志依赖  -->
+        
         <slf4j.version>2.0.18</slf4j.version>
         <slf4j-api.version>2.0.178</slf4j-api.version>
         <jul-to-slf4j>2.0.18</jul-to-slf4j>
@@ -266,7 +260,7 @@
         <log4j.version>2.25.4</log4j.version>
         <log4j-to-slf4j>2.25.4</log4j-to-slf4j>
         <logback.version>1.5.32</logback.version>
-        <!--  日志依赖  -->
+        
 
         <junit-jupiter.version>6.0.3</junit-jupiter.version>
         <junit-platform.version>6.0.3</junit-platform.version>
@@ -283,7 +277,7 @@
         <module>bom-aio</module>
     </modules>
 
-    <dependencies/>
+    <dependencies />
     <dependencyManagement>
         <dependencies>
         </dependencies>
@@ -302,39 +296,39 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
-            <!--      <plugin>-->
-            <!--          <groupId>org.codehaus.mojo</groupId>-->
-            <!--          <artifactId>flatten-maven-plugin</artifactId>-->
-            <!--          <version>1.7.1</version>-->
-            <!--          <configuration>-->
-            <!--              <updatePomFile>true</updatePomFile>-->
-            <!--              <flattenMode>bom</flattenMode>-->
-            <!--          </configuration>-->
-            <!--          <executions>-->
-            <!--              <execution>-->
-            <!--                  <id>flatten</id>-->
-            <!--                  <phase>process-resources</phase>-->
-            <!--                  <goals>-->
-            <!--                      <goal>flatten</goal>-->
-            <!--                  </goals>-->
-            <!--              </execution>-->
-            <!--              <execution>-->
-            <!--                  <id>flatten.clean</id>-->
-            <!--                  <phase>clean</phase>-->
-            <!--                  <goals>-->
-            <!--                      <goal>clean</goal>-->
-            <!--                  </goals>-->
-            <!--              </execution>-->
-            <!--          </executions>-->
-            <!--      </plugin>-->
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         </plugins>
     </build>
 
              <profiles>
-        <!-- 发布到 Maven中央仓库 -->
+        
         <profile>
             <id>sonatype-oss-release</id>
-            <!-- 设为默认profile 开始 -->
+            
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
@@ -377,7 +371,7 @@
                         <artifactId>flatten-maven-plugin</artifactId>
                         <version>${flatten-maven-plugin.version}</version>
                         <configuration>
-                            <!--  是否更新pom文件，此处还有更高级的用法-->
+                            
                             <updatePomFile>true</updatePomFile>
                             <flattenMode>resolveCiFriendliesOnly</flattenMode>
                         </configuration>
@@ -398,7 +392,7 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <!-- 生成Source jar文件 -->
+                    
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
@@ -412,7 +406,7 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <!-- 生成Javadoc，关闭doclint,避免注解检查不通过 -->
+                    
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
@@ -424,19 +418,19 @@
                                     <goal>jar</goal>
                                 </goals>
                                 <configuration>
-                                    <!-- <additionalparam>-Xdoclint:none</additionalparam> -->
-                                    <!-- <aggregate>true</aggregate> -->
+                                    
+                                    
                                     <charset>${project.build.sourceEncoding}</charset>
-                                    <!-- utf-8读取文件 -->
+                                    
                                     <encoding>${project.build.sourceEncoding}</encoding>
-                                    <!-- utf-8进行编码代码 -->
+                                    
                                     <docencoding>${project.build.sourceEncoding}</docencoding>
-                                    <!-- utf-8进行编码文档 -->
+                                    
                                 </configuration>
                             </execution>
                         </executions>
                     </plugin>
-                    <!-- Maven GPG插件用于使用以下配置对组件进行签名 -->
+                    
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
@@ -459,7 +453,7 @@
                         <artifactId>maven-deploy-plugin</artifactId>
                         <version>${maven-deploy-plugin.version}</version>
                     </plugin>
-                    <!-- 正式版/SNAPSHOT发布使用central-publishing-maven-plugin插件-->
+                    
                     <plugin>
                         <groupId>org.sonatype.central</groupId>
                         <artifactId>central-publishing-maven-plugin</artifactId>
@@ -479,7 +473,7 @@
                     </plugin>
                 </plugins>
             </build>
-            <!-- repository、snapshotRepository中的id一定要与Maven的setting.xml文件中的server节点下的id 保持一一对应！ -->
+            
             <distributionManagement>
                 <repository>
                     <id>sonatype-nexus-staging</id>

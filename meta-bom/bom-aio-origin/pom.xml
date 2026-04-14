@@ -1,12 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version='1.0' encoding='utf-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <!-- <parent>
-        <groupId>com.acanx.meta</groupId>
-        <artifactId>meta-bom</artifactId>
-        <version>${revision}</version>
-    </parent> -->
+    
     <groupId>com.acanx.meta.bom</groupId>
     <artifactId>bom-aio-origin</artifactId>
     <version>${revision}</version>
@@ -41,8 +36,8 @@
     </licenses>
 
     <properties>
-          <revision>0.8.1.4</revision>
-          <!-- 将此属性设置为 true，即可跳过该模块的 deploy 阶段 -->
+          <revision>0.8.1.6</revision>
+          
           <maven.deploy.skip>true</maven.deploy.skip>
           <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
     </properties>
