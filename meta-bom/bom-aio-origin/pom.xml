@@ -41,7 +41,7 @@
     </licenses>
 
     <properties>
-          <revision>0.8.1</revision>
+          <revision>0.8.1.4</revision>
           <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
     </properties>
 
