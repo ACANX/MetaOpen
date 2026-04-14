@@ -45,19 +45,19 @@ jobs:
          echo "======================================= 版本发布开始 ==================================================================="
          echo "======================================= 1.本地预先编译一次整个项目 ======================================================"
          pwd                 
-         mvn clean install -B -U -Pdev
+         mvn clean install -B -U -e -X
          echo "======================================= 2.编译 os-dependencies ========================================================"
          cd os-dependencies       # 设置工作目录为 os-dependencies
          pwd
-         mvn clean install -B -U -Pdev
+         mvn clean install -B -U -e -X
          echo "======================================= 3.编译 meta-model =============================================================="
          cd ../
          cd meta-model
-         mvn clean install -B -U -Pdev
+         mvn clean install -B -U -e -X
          echo "======================================= 3.编译 meta-bom =============================================================="
          cd ../
          cd meta-bom
-         mvn clean install -B -U -Pdev
+         mvn clean install -B -U -e -X
          echo "======================================= 4.编译 meta-bom/bom-aio-origi =============================================================="
          cd bom-aio-origin
          mvn help:effective-pom -Doutput=effective-pom.xml
