@@ -52,8 +52,8 @@ jobs:
               echo "⚠️  $POM_FILE not found, skipping."
               continue
             fi
-            echo "📁 Processing $POM_FILE"
-            python3 .github/Python/update_maven_properties.py \
+            echo "📁 Processing $POM_FILE"  
+            python3 .github/Python/UpdatMeavenProperties.py \
               --pom-file "$POM_FILE" \
               --new-version "$NEW_VERSION" \
               --properties "${PROPERTIES[@]}"
