@@ -83,7 +83,7 @@ jobs:
          # pwd
          # mvn -B clean deploy
          echo "======================================= 6.编译 meta-bom ==============================================================="
-         cd ../
+         # cd ../
          cd meta-bom           # 设置工作目录为 meta-bom
          pwd
          mvn -B clean deploy -U -e -X
