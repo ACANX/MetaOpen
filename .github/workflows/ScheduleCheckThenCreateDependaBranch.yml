@@ -21,7 +21,7 @@ jobs:
 
       - name: SetBranchNameVariable
         id: vars
-        run: echo "BRANCH_NAME=dependa1/auto" >> $GITHUB_OUTPUT
+        run: echo "BRANCH_NAME=dependa" >> $GITHUB_OUTPUT
 
       - name: CheckIfBranchExists
         id: check_branch
