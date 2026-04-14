@@ -8,14 +8,14 @@
 <!-- ====================================================================== -->
 <!--                                                                        -->
 <!-- Effective POM for project                                              -->
-<!-- 'com.acanx.meta.bom:bom-aio-origin:pom:0.8.1'                          -->
+<!-- 'com.acanx.meta.bom:bom-aio-origin:pom:0.8.1.4'                        -->
 <!--                                                                        -->
 <!-- ====================================================================== -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.acanx.meta.bom</groupId>
   <artifactId>bom-aio-origin</artifactId>
-  <version>0.8.1</version>
+  <version>0.8.1.4</version>
   <packaging>pom</packaging>
   <name>BOM-AIO-Origin</name>
   <description>BOM-AIO-Origin POM</description>
@@ -46,7 +46,8 @@
   </scm>
   <properties>
     <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
-    <revision>0.8.1</revision>
+    <maven.deploy.skip>true</maven.deploy.skip>
+    <revision>0.8.1.4</revision>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -145,61 +146,61 @@
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-quote</artifactId>
-        <version>0.8.1</version>
+        <version>0.8.1.4</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-security</artifactId>
-        <version>0.8.1</version>
+        <version>0.8.1.4</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-sonatype</artifactId>
-        <version>0.8.1</version>
+        <version>0.8.1.4</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-deepseek</artifactId>
-        <version>0.8.1</version>
+        <version>0.8.1.4</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-test</artifactId>
-        <version>0.8.1</version>
+        <version>0.8.1.4</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-dingtalk</artifactId>
-        <version>0.8.1</version>
+        <version>0.8.1.4</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-wechat-work</artifactId>
-        <version>0.8.1</version>
+        <version>0.8.1.4</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-rss</artifactId>
-        <version>0.8.1</version>
+        <version>0.8.1.4</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-gemini</artifactId>
-        <version>0.8.1</version>
+        <version>0.8.1.4</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.component</groupId>
         <artifactId>sdk-maven-artifact</artifactId>
-        <version>0.8.1</version>
+        <version>0.8.1.4</version>
       </dependency>
       <dependency>
         <groupId>org.apache.maven</groupId>
@@ -2773,7 +2774,7 @@
       </testResource>
     </testResources>
     <directory>/home/runner/work/MetaOpen/MetaOpen/meta-bom/bom-aio-origin/target</directory>
-    <finalName>bom-aio-origin-0.8.1</finalName>
+    <finalName>bom-aio-origin-0.8.1.4</finalName>
     <pluginManagement>
       <plugins>
         <plugin>
