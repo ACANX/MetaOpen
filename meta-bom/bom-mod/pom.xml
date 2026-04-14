@@ -837,7 +837,7 @@
         </dependencies>
     </dependencyManagement>
 
-    <repositories>
+    <!-- <repositories>
         <repository>
             <id>central</id>
             <name>Maven Central Repository</name>
@@ -861,7 +861,7 @@
                 <updatePolicy>always</updatePolicy>
             </snapshots>
         </repository>
-    </repositories>
+    </repositories> -->
 
     <build>
         <finalName>BOM-Mod</finalName>
