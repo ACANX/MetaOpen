@@ -109,6 +109,8 @@
         <flink.version>1.17.2</flink.version>
         <hadoop.version>3.5.0</hadoop.version>
 
+        <micrometer.version>1.6.5</micrometer.version>
+
         <selenium.version>4.43.0</selenium.version>
         <thymeleaf.version>3.1.4.RELEASE</thymeleaf.version>
 
@@ -904,7 +906,7 @@
             <dependency>
                 <groupId>io.micrometer</groupId>
                 <artifactId>micrometer-core</artifactId>
-                <version>1.16.5</version>
+                <version>${micrometer.version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -917,7 +919,7 @@
             <dependency>
                 <groupId>io.micrometer</groupId>
                 <artifactId>micrometer-observation</artifactId>
-                <version>1.16.5</version>
+                <version>${micrometer.version}</version>
             </dependency>
 
             <dependency>
