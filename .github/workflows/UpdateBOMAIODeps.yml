@@ -50,6 +50,10 @@ jobs:
          cd os-dependencies       # 设置工作目录为 os-dependencies
          pwd
          mvn clean install -B -U
+         echo "======================================= 3.编译 meta-model =============================================================="
+         cd ../
+         cd meta-model
+         mvn clean install -B -U
          echo "======================================= 3.编译 meta-bom =============================================================="
          cd ../
          cd meta-bom
