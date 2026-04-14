@@ -41,7 +41,7 @@
     </licenses>
 
     <properties>
-          <revision>0.7.8</revision>
+          <revision>0.7.9</revision>
     </properties>
 
     <dependencyManagement>
