@@ -45,7 +45,7 @@ jobs:
           # 要更新的属性列表
           PROPERTIES=("revision" "meta-open.version" "meta.version")
           # 需要处理的目录（包含 pom.xml）
-          DIRS=("." "./meta-bom" "./meta-bom/bom-aio-origin")
+          DIRS=("." "./os-dependencies" "./meta-bom" "./meta-bom/bom-aio-origin")
           for dir in "${DIRS[@]}"; do
             POM_FILE="$dir/pom.xml"
             if [ ! -f "$POM_FILE" ]; then
