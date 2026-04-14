@@ -1,4 +1,4 @@
-name: UpdateBOMAIODependencies
+name: UpdateBOMAIODeps
 
 on:
   workflow_dispatch:          # 手动触发
@@ -40,7 +40,7 @@ jobs:
           mvn help:effective-pom -Doutput=effective-pom.xml
           echo "Effective POM 文件已生成，文件位置 meta-bom/bom-aio-origin/effective-pom.xml"
 
-      - name: UpdateTargetBOMDependencies
+      - name: UpdateTargetBOMDeps
         run: |
           echo "====================== Python脚本执行开始 ================================"
           python .github/Python/UpdateBomDependencies.py \
