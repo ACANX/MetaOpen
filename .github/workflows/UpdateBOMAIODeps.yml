@@ -87,8 +87,8 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore(bom-aio): Sync dependencies from bom-aio-origin BOM "
-          title: "Auto-update bom-aio dependencies"
+          commit-message: "chore(bom-aio): Sync deps from bom-aio-origin BOM"
+          title: "chore(bom-aio): Sync dependencies from bom-aio-origin BOM"
           body: |
             This PR updates the `dependencyManagement` section in `bom-aio/pom.xml`
             based on the effective dependencies resolved from `bom-aio-origin/pom.xml`.
