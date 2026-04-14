@@ -83,7 +83,7 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>com.acanx.meta.bom</groupId>
+                <groupId>com.acanx.meta.component</groupId>
                 <artifactId>bom-graalvm</artifactId>
                 <version>25.0.8.1</version>
                 <type>pom</type>
