@@ -31,7 +31,7 @@ jobs:
         with:
           python-version: '3.14'
 
-      - name: InstallPython314Dependencies
+      - name: InstallPython314Deps
         run: pip install lxml
 
       - name: GenerateEffectivePOMFromOrigin
@@ -43,7 +43,7 @@ jobs:
       - name: UpdateTargetBOMDeps
         run: |
           echo "====================== Python脚本执行开始 ================================"
-          python .github/Python/UpdateBomDependencies.py \
+          python .github/Python/UpdateBomDeps.py \
             --effective-pom meta-bom/bom-aio-origin/effective-pom.xml \
             --target-pom meta-bom/bom-aio/pom.xml
           echo "====================== Python脚本执行完成 ================================"
