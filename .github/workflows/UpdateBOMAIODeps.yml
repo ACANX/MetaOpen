@@ -97,6 +97,9 @@ jobs:
           branch: dependa-bom-aio
           base: dependa     # 目标分支
           delete-branch: true
+          add-paths: |
+            meta-bom/bom-aio/pom.xml
+            meta-bom/bom-aio-origin/effective-pom.xml
           labels: |
-            automated
+            auto:commit
             dependencies
