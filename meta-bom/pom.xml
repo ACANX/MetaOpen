@@ -94,7 +94,7 @@
         <commons-configuration2.version>2.12</commons-configuration2.version>
 
         <!--  关系数据库-->
-        <sqlite-jdbc.version>3.51.3.0</sqlite-jdbc.version>
+        <sqlite-jdbc.version>3.53.0.0</sqlite-jdbc.version>
         <mysql-connector-j.version>9.5.0</mysql-connector-j.version>
         <mysql-connector-java.version>9.1.0</mysql-connector-java.version>
         <mysql.version>9.5.0</mysql.version>
