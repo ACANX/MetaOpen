@@ -8,14 +8,14 @@
 <!-- ====================================================================== -->
 <!--                                                                        -->
 <!-- Effective POM for project                                              -->
-<!-- 'com.acanx.meta.bom:bom-aio-origin:pom:0.8.1.4'                        -->
+<!-- 'com.acanx.meta.bom:bom-aio-origin:pom:0.8.1.8-SNAPSHOT'               -->
 <!--                                                                        -->
 <!-- ====================================================================== -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.acanx.meta.bom</groupId>
   <artifactId>bom-aio-origin</artifactId>
-  <version>0.8.1.4</version>
+  <version>0.8.1.8-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>BOM-AIO-Origin</name>
   <description>BOM-AIO-Origin POM</description>
@@ -47,7 +47,7 @@
   <properties>
     <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
     <maven.deploy.skip>true</maven.deploy.skip>
-    <revision>0.8.1.4</revision>
+    <revision>0.8.1.8-SNAPSHOT</revision>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -146,61 +146,61 @@
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-quote</artifactId>
-        <version>0.8.1.4</version>
+        <version>0.8.1.8-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-security</artifactId>
-        <version>0.8.1.4</version>
+        <version>0.8.1.8-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-sonatype</artifactId>
-        <version>0.8.1.4</version>
+        <version>0.8.1.8-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-deepseek</artifactId>
-        <version>0.8.1.4</version>
+        <version>0.8.1.8-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-test</artifactId>
-        <version>0.8.1.4</version>
+        <version>0.8.1.8-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-dingtalk</artifactId>
-        <version>0.8.1.4</version>
+        <version>0.8.1.8-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-wechat-work</artifactId>
-        <version>0.8.1.4</version>
+        <version>0.8.1.8-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-rss</artifactId>
-        <version>0.8.1.4</version>
+        <version>0.8.1.8-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-gemini</artifactId>
-        <version>0.8.1.4</version>
+        <version>0.8.1.8-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.component</groupId>
         <artifactId>sdk-maven-artifact</artifactId>
-        <version>0.8.1.4</version>
+        <version>0.8.1.8-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.apache.maven</groupId>
@@ -2370,11 +2370,6 @@
         <version>1.3.0</version>
       </dependency>
       <dependency>
-        <groupId>commons-io</groupId>
-        <artifactId>commons-lang3</artifactId>
-        <version>3.20.0</version>
-      </dependency>
-      <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-text</artifactId>
         <version>1.15.0</version>
@@ -2393,24 +2388,19 @@
       <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>ses</artifactId>
-        <version>2.42.33</version>
+        <version>2.42.34</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>auth</artifactId>
-        <version>2.42.33</version>
+        <version>2.42.34</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-simple</artifactId>
         <version>2.0.17</version>
-      </dependency>
-      <dependency>
-        <groupId>commons-lang</groupId>
-        <artifactId>commons-lang</artifactId>
-        <version>2.6</version>
       </dependency>
       <dependency>
         <groupId>com.google.protobuf</groupId>
@@ -2665,48 +2655,48 @@
       <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>s3</artifactId>
-        <version>2.42.33</version>
+        <version>2.42.34</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>lambda</artifactId>
-        <version>2.42.33</version>
+        <version>2.42.34</version>
       </dependency>
       <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>cloudwatch</artifactId>
-        <version>2.42.33</version>
+        <version>2.42.34</version>
       </dependency>
       <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>costexplorer</artifactId>
-        <version>2.42.33</version>
+        <version>2.42.34</version>
       </dependency>
       <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>regions</artifactId>
-        <version>2.42.33</version>
+        <version>2.42.34</version>
       </dependency>
       <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>aws-core</artifactId>
-        <version>2.42.33</version>
+        <version>2.42.34</version>
       </dependency>
       <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sqs</artifactId>
-        <version>2.42.33</version>
+        <version>2.42.34</version>
       </dependency>
       <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sdk-core</artifactId>
-        <version>2.42.33</version>
+        <version>2.42.34</version>
       </dependency>
       <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>scheduler</artifactId>
-        <version>2.42.33</version>
+        <version>2.42.34</version>
       </dependency>
       <dependency>
         <groupId>com.aliyun</groupId>
@@ -2774,7 +2764,7 @@
       </testResource>
     </testResources>
     <directory>/home/runner/work/MetaOpen/MetaOpen/meta-bom/bom-aio-origin/target</directory>
-    <finalName>bom-aio-origin-0.8.1.4</finalName>
+    <finalName>bom-aio-origin-0.8.1.8-SNAPSHOT</finalName>
     <pluginManagement>
       <plugins>
         <plugin>
