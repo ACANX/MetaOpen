@@ -1534,7 +1534,7 @@
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-elasticsearch</artifactId>
-                <version>6.0.4</version>
+                <version>6.0.5</version>
             </dependency>
 
             <!-- Jackson -->
