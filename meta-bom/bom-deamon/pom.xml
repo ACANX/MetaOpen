@@ -44,7 +44,7 @@
 
         <jakarta.annotation.version>3.0.0</jakarta.annotation.version>
         <jakarta.validation.version>3.1.1</jakarta.validation.version>
-        <spring-data.version>4.0.4</spring-data.version>
+        <spring-data.version>4.0.5</spring-data.version>
         <dubbo.version>3.3.6</dubbo.version>
         <dubbo-extensions-parent>3.3.3</dubbo-extensions-parent>
         <dubbo-extensions-serialization-protobuf>3.3.1</dubbo-extensions-serialization-protobuf>
@@ -417,7 +417,7 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>33.5.0-jre</version>
+                <version>33.6.0-jre</version>
                 <scope>compile</scope>
             </dependency>
             <dependency>
@@ -1534,7 +1534,7 @@
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-elasticsearch</artifactId>
-                <version>6.0.4</version>
+                <version>6.0.5</version>
             </dependency>
 
             <!-- Jackson -->
