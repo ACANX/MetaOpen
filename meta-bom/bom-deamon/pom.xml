@@ -315,8 +315,8 @@
             <!-- propertites文件读取与修改-->
             <dependency>
                 <groupId>commons-configuration</groupId>
-                <artifactId>commons-configuration</artifactId>
-                <version>${commons-configuration.version}</version>
+                <artifactId>commons-configuration2</artifactId>
+                <version>${commons-configuration2.version}</version>
                 <optional>true</optional>
                 <scope>compile</scope>
             </dependency>

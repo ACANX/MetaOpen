@@ -8,14 +8,14 @@
 <!-- ====================================================================== -->
 <!--                                                                        -->
 <!-- Effective POM for project                                              -->
-<!-- 'com.acanx.meta.bom:bom-aio-origin:pom:0.8.1.8-SNAPSHOT'               -->
+<!-- 'com.acanx.meta.bom:bom-aio-origin:pom:0.8.2-SNAPSHOT'                 -->
 <!--                                                                        -->
 <!-- ====================================================================== -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.acanx.meta.bom</groupId>
   <artifactId>bom-aio-origin</artifactId>
-  <version>0.8.1.8-SNAPSHOT</version>
+  <version>0.8.2-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>BOM-AIO-Origin</name>
   <description>BOM-AIO-Origin POM</description>
@@ -47,7 +47,7 @@
   <properties>
     <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
     <maven.deploy.skip>true</maven.deploy.skip>
-    <revision>0.8.1.8-SNAPSHOT</revision>
+    <revision>0.8.2-SNAPSHOT</revision>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -146,61 +146,61 @@
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-quote</artifactId>
-        <version>0.8.1.8-SNAPSHOT</version>
+        <version>0.8.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-security</artifactId>
-        <version>0.8.1.8-SNAPSHOT</version>
+        <version>0.8.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-sonatype</artifactId>
-        <version>0.8.1.8-SNAPSHOT</version>
+        <version>0.8.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-deepseek</artifactId>
-        <version>0.8.1.8-SNAPSHOT</version>
+        <version>0.8.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-test</artifactId>
-        <version>0.8.1.8-SNAPSHOT</version>
+        <version>0.8.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-dingtalk</artifactId>
-        <version>0.8.1.8-SNAPSHOT</version>
+        <version>0.8.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-wechat-work</artifactId>
-        <version>0.8.1.8-SNAPSHOT</version>
+        <version>0.8.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-rss</artifactId>
-        <version>0.8.1.8-SNAPSHOT</version>
+        <version>0.8.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-gemini</artifactId>
-        <version>0.8.1.8-SNAPSHOT</version>
+        <version>0.8.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.acanx.meta.component</groupId>
         <artifactId>sdk-maven-artifact</artifactId>
-        <version>0.8.1.8-SNAPSHOT</version>
+        <version>0.8.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.apache.maven</groupId>
@@ -419,6 +419,30 @@
         <artifactId>commons-collections4</artifactId>
         <version>4.5.0</version>
         <scope>compile</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-configuration2</artifactId>
+        <version>2.12.0</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>1.21.0</version>
+        <scope>provided</scope>
+        <optional>true</optional>
+      </dependency>
+      <dependency>
+        <groupId>commons-net</groupId>
+        <artifactId>commons-net</artifactId>
+        <version>3.13.0</version>
+        <scope>provided</scope>
+        <optional>true</optional>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-math3</artifactId>
+        <version>3.6.1</version>
       </dependency>
       <dependency>
         <groupId>com.google.guava</groupId>
@@ -730,25 +754,6 @@
         <groupId>com.zaxxer</groupId>
         <artifactId>HikariCP</artifactId>
         <version>7.0.2</version>
-      </dependency>
-      <dependency>
-        <groupId>commons-codec</groupId>
-        <artifactId>commons-codec</artifactId>
-        <version>1.21.0</version>
-        <scope>provided</scope>
-        <optional>true</optional>
-      </dependency>
-      <dependency>
-        <groupId>commons-net</groupId>
-        <artifactId>commons-net</artifactId>
-        <version>3.13.0</version>
-        <scope>provided</scope>
-        <optional>true</optional>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.commons</groupId>
-        <artifactId>commons-math3</artifactId>
-        <version>3.6.1</version>
       </dependency>
       <dependency>
         <groupId>org.apache.lucene</groupId>
@@ -1138,8 +1143,8 @@
       </dependency>
       <dependency>
         <groupId>commons-configuration</groupId>
-        <artifactId>commons-configuration</artifactId>
-        <version>1.10</version>
+        <artifactId>commons-configuration2</artifactId>
+        <version>2.12</version>
         <scope>compile</scope>
         <optional>true</optional>
       </dependency>
@@ -2764,7 +2769,7 @@
       </testResource>
     </testResources>
     <directory>/home/runner/work/MetaOpen/MetaOpen/meta-bom/bom-aio-origin/target</directory>
-    <finalName>bom-aio-origin-0.8.1.8-SNAPSHOT</finalName>
+    <finalName>bom-aio-origin-0.8.2-SNAPSHOT</finalName>
     <pluginManagement>
       <plugins>
         <plugin>
