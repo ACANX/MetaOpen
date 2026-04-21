@@ -129,7 +129,7 @@
         <spring-cloud-stream-reactive.version>2.2.1.RELEASE</spring-cloud-stream-reactive.version>
         <spring-cloud-openfeign.version>4.2.0</spring-cloud-openfeign.version>
         <spring-cloud-netflix.version>4.2.0</spring-cloud-netflix.version>
-        <spring-boot-admin.version>4.0.3</spring-boot-admin.version>
+        <spring-boot-admin.version>4.0.4</spring-boot-admin.version>
 
 
         <mybatis-spring.version>3.0.4</mybatis-spring.version>
