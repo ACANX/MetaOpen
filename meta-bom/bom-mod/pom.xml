@@ -132,7 +132,7 @@
         <bytebuddy.version>1.18.8</bytebuddy.version>
         <!-- 其他版本 -->
         <jna.version>5.18.1</jna.version>
-        <graal-sdk.version>25.0.2</graal-sdk.version>
+        <graal-sdk.version>25.0.3</graal-sdk.version>
         <functions-framework.version>2.0.1</functions-framework.version>
         <junit-jupiter.version>6.0.3</junit-jupiter.version>
         <junit-platform.version>6.0.3</junit-platform.version>
