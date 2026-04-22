@@ -223,7 +223,7 @@
         <thymeleaf.version>3.1.4.RELEASE</thymeleaf.version>
         <thymeleaf-extras-springsecurity.version>3.1.2.RELEASE</thymeleaf-extras-springsecurity.version>
         <thymeleaf-extras-springsecurity5.version>3.1.2.RELEASE</thymeleaf-extras-springsecurity5.version>
-        <thymeleaf-extras-springsecurity6.version>3.1.4.RELEASE</thymeleaf-extras-springsecurity6.version>
+        <thymeleaf-extras-springsecurity6.version>3.1.5.RELEASE</thymeleaf-extras-springsecurity6.version>
         <thymeleaf-extras-data-attribute.version>2.0.1</thymeleaf-extras-data-attribute.version>
         <thymeleaf-layout-dialect.version>3.3.0</thymeleaf-layout-dialect.version>
 
