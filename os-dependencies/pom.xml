@@ -71,13 +71,13 @@
         <mysql-connector-j.version>9.6.0</mysql-connector-j.version>
         <postgresql.version>42.7.10</postgresql.version>
         <mybatis.version>3.5.19</mybatis.version>
-        <hibernate-orm.version>7.3.1.Final</hibernate-orm.version>
+        <hibernate-orm.version>7.3.2.Final</hibernate-orm.version>
         <seata.version>2.6.0</seata.version>
 
         <commons-lang3.version>3.20.0</commons-lang3.version>
         <common-io.version>2.21.0</common-io.version>
         <commons-collections4.version>4.5.0</commons-collections4.version>
-        <commons-configuration2.version>2.12.0</commons-configuration2.version>
+        <commons-configuration2.version>2.14.0</commons-configuration2.version>
         
         <guava.version>33.6.0-jre</guava.version>
 
@@ -91,7 +91,7 @@
 
         <caffeine.version>3.2.3</caffeine.version>
         <freemarker.version>2.3.34</freemarker.version>
-        <jsoup.version>1.22.1</jsoup.version>
+        <jsoup.version>1.22.2</jsoup.version>
         <hibernate-validator.version>9.1.0.Final</hibernate-validator.version>
         <redisson.version>4.3.1</redisson.version>
 
@@ -99,7 +99,7 @@
         <jspecify.version>1.0.0</jspecify.version>
 
         <spring.version>7.0.7</spring.version>
-        <spring-security.version>7.0.4</spring-security.version>
+        <spring-security.version>7.0.5</spring-security.version>
         <spring-boot.version>4.0.5</spring-boot.version>
 
         <dubbo.version>3.3.6</dubbo.version>

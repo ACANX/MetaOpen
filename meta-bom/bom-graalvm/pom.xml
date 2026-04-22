@@ -50,14 +50,14 @@
         <dependency>
             <groupId>org.graalvm.sdk</groupId>
             <artifactId>graal-sdk</artifactId>
-            <version>25.0.2</version>
+            <version>25.0.3</version>
             <scope>provided</scope><!-- 添加 provided 作用域 -->
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.graalvm.nativeimage/svm -->
         <dependency>
             <groupId>org.graalvm.nativeimage</groupId>
             <artifactId>svm</artifactId>
-            <version>25.0.2</version>
+            <version>25.0.3</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

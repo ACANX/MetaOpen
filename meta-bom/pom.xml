@@ -104,7 +104,7 @@
         <mybatis.version>3.5.19</mybatis.version>
 
         <groovy.version>4.0.24</groovy.version>
-        <javassist.version>3.30.2-GA</javassist.version>
+        <javassist.version>3.31.0-GA</javassist.version>
         <aspectj.version>1.9.22.1</aspectj.version>
         <byte-buddy.version>1.17.5</byte-buddy.version>
         <classmate.version>1.7.0</classmate.version>
@@ -119,7 +119,7 @@
 
         <!-- SpringCloud官方依赖  -->
         <spring.version>7.0.7</spring.version>
-        <spring-security.version>7.0.4</spring-security.version>
+        <spring-security.version>7.0.5</spring-security.version>
         <spring-boot.version>4.0.5</spring-boot.version>
         <spring-cloud.version>2025.0.0</spring-cloud.version>
         <spring-cloud-commons.version>4.2.0</spring-cloud-commons.version>
@@ -129,7 +129,7 @@
         <spring-cloud-stream-reactive.version>2.2.1.RELEASE</spring-cloud-stream-reactive.version>
         <spring-cloud-openfeign.version>4.2.0</spring-cloud-openfeign.version>
         <spring-cloud-netflix.version>4.2.0</spring-cloud-netflix.version>
-        <spring-boot-admin.version>4.0.3</spring-boot-admin.version>
+        <spring-boot-admin.version>4.0.4</spring-boot-admin.version>
 
 
         <mybatis-spring.version>3.0.4</mybatis-spring.version>
@@ -206,7 +206,7 @@
         <jackson.version>2.21.2</jackson.version>
         <snakeyaml.version>2.5</snakeyaml.version>
         <!--  JSON -->
-        <httpclient5.version>5.6</httpclient5.version>
+        <httpclient5.version>5.6.1</httpclient5.version>
         <httpcore5.version>5.4.2</httpcore5.version>
         <httpcore.version>4.4.16</httpcore.version>
         <httpclient.version>4.5.14</httpclient.version>
@@ -255,7 +255,7 @@
         <selenium-devtools.version>4.41.0</selenium-devtools.version>
         <selenium-htmlunit.version>4.29.0</selenium-htmlunit.version>
 
-        <awssdk.version>2.42.35</awssdk.version>
+        <awssdk.version>2.42.37</awssdk.version>
         <huaweicloud-sdk.version>3.1.192</huaweicloud-sdk.version>
 
         <!-- 日志依赖  -->
