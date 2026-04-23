@@ -160,7 +160,7 @@
         <aws-lambda-java-serialization.version>1.3.1</aws-lambda-java-serialization.version>
         <!-- 第三方 SDK 版本 -->
         <java-function-invoker.version>2.0.1</java-function-invoker.version>
-        <oapi-sdk.version>2.5.3</oapi-sdk.version>
+        <oapi-sdk.version>2.5.4</oapi-sdk.version>
         <brevo.version>1.1.5</brevo.version>
         <ipinfo-api.version>3.4.0</ipinfo-api.version>
         <longport-openapi-sdk.version>3.0.23</longport-openapi-sdk.version>
