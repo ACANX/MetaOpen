@@ -405,7 +405,7 @@
         <dependency>
         <groupId>commons-io</groupId>
         <artifactId>commons-io</artifactId>
-        <version>2.21.0</version>
+        <version>2.22.0</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
@@ -529,7 +529,7 @@
         <dependency>
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
-        <version>1.18.44</version>
+        <version>1.18.46</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -549,7 +549,7 @@
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -577,7 +577,7 @@
         <dependency>
         <groupId>com.mysql</groupId>
         <artifactId>mysql-connector-j</artifactId>
-        <version>9.6.0</version>
+        <version>9.7.0</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -870,7 +870,7 @@
         <dependency>
         <groupId>org.thymeleaf</groupId>
         <artifactId>thymeleaf</artifactId>
-        <version>3.1.4.RELEASE</version>
+        <version>3.1.5.RELEASE</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -1080,13 +1080,13 @@
         <dependency>
         <groupId>com.github.pagehelper</groupId>
         <artifactId>pagehelper-spring-boot</artifactId>
-        <version>2.1.1</version>
+        <version>4.0.0</version>
         <optional>true</optional>
       </dependency>
         <dependency>
         <groupId>com.github.pagehelper</groupId>
         <artifactId>pagehelper-spring-boot-starter</artifactId>
-        <version>2.1.1</version>
+        <version>4.0.0</version>
         <optional>true</optional>
       </dependency>
         <dependency>
@@ -1103,7 +1103,7 @@
         <dependency>
         <groupId>com.google.code.gson</groupId>
         <artifactId>gson</artifactId>
-        <version>2.13.2</version>
+        <version>2.14.0</version>
       </dependency>
         <dependency>
         <groupId>ch.qos.logback.access</groupId>
@@ -1619,582 +1619,582 @@
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-activemq</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-actuator</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-actuator-autoconfigure</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-amqp</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-artemis</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-autoconfigure</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-autoconfigure-classic</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-autoconfigure-classic-modules</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-autoconfigure-processor</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-batch</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-batch-jdbc</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-buildpack-platform</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-cache</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-cache-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-cassandra</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-cloudfoundry</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-configuration-metadata</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-configuration-processor</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-couchbase</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-cassandra</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-cassandra-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-commons</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-couchbase</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-couchbase-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-elasticsearch</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-elasticsearch-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-jdbc</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-jdbc-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-jpa</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-jpa-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-ldap</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-ldap-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-mongodb</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-mongodb-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-neo4j</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-neo4j-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-r2dbc</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-r2dbc-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-redis</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-redis-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-data-rest</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-devtools</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-docker-compose</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-elasticsearch</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-flyway</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-freemarker</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-graphql</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-graphql-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-groovy-templates</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-gson</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-h2console</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-hateoas</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-hazelcast</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-health</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-hibernate</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-http-client</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-http-codec</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-http-converter</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-integration</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-jackson</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-jackson2</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-jarmode-tools</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-jdbc</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-jdbc-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-jersey</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-jetty</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-jms</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-jooq</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-jooq-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-jpa</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-jpa-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-jsonb</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-kafka</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-kotlinx-serialization-json</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-ldap</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-liquibase</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-loader</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-mail</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-micrometer-metrics</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-micrometer-metrics-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-micrometer-observation</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-micrometer-tracing</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-micrometer-tracing-brave</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-micrometer-tracing-opentelemetry</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-micrometer-tracing-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-mongodb</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-mustache</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-neo4j</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-netty</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-opentelemetry</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-persistence</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-properties-migrator</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-pulsar</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-quartz</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-r2dbc</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-reactor</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-reactor-netty</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-restclient</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-restclient-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-restdocs</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-resttestclient</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-rsocket</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-rsocket-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-security</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-security-oauth2-authorization-server</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-security-oauth2-client</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-security-oauth2-resource-server</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-security-saml2</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-security-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-sendgrid</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-servlet</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-session</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-session-data-redis</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-session-jdbc</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-sql</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.apache.dubbo</groupId>
@@ -2209,32 +2209,32 @@
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-tcnative-boringssl-static</artifactId>
-        <version>2.0.76.Final</version>
+        <version>2.0.77.Final</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-validation</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-security</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-actuator</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-test</artifactId>
-        <version>4.0.5</version>
+        <version>4.0.6</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.data</groupId>
@@ -2259,7 +2259,7 @@
         <dependency>
         <groupId>org.thymeleaf.extras</groupId>
         <artifactId>thymeleaf-extras-springsecurity6</artifactId>
-        <version>3.1.4.RELEASE</version>
+        <version>3.1.5.RELEASE</version>
       </dependency>
         <dependency>
         <groupId>nz.net.ultraq.thymeleaf</groupId>
@@ -2393,13 +2393,13 @@
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>ses</artifactId>
-        <version>2.42.37</version>
+        <version>2.42.40</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>auth</artifactId>
-        <version>2.42.37</version>
+        <version>2.42.40</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
@@ -2482,7 +2482,7 @@
         <dependency>
         <groupId>com.baidu.aip</groupId>
         <artifactId>java-sdk</artifactId>
-        <version>4.16.24</version>
+        <version>4.16.25</version>
         <exclusions>
           <exclusion>
             <groupId>org.json</groupId>
@@ -2514,7 +2514,7 @@
         <dependency>
         <groupId>com.tencentcloudapi</groupId>
         <artifactId>tencentcloud-sdk-java-ses</artifactId>
-        <version>3.1.1430</version>
+        <version>3.1.1451</version>
       </dependency>
         <dependency>
         <groupId>org.graalvm.sdk</groupId>
@@ -2565,7 +2565,7 @@
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-functiongraph</artifactId>
-        <version>3.1.192</version>
+        <version>3.1.193</version>
       </dependency>
         <dependency>
         <groupId>com.google.cloud.functions</groupId>
@@ -2586,12 +2586,12 @@
         <dependency>
         <groupId>com.larksuite.oapi</groupId>
         <artifactId>oapi-sdk</artifactId>
-        <version>2.5.3</version>
+        <version>2.6.1</version>
       </dependency>
         <dependency>
         <groupId>com.brevo</groupId>
         <artifactId>brevo</artifactId>
-        <version>1.1.4</version>
+        <version>1.1.5</version>
       </dependency>
         <dependency>
         <groupId>com.google.cloud.functions.invoker</groupId>
@@ -2621,12 +2621,12 @@
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-core</artifactId>
-        <version>3.1.192</version>
+        <version>3.1.193</version>
       </dependency>
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-apig</artifactId>
-        <version>3.1.192</version>
+        <version>3.1.193</version>
       </dependency>
         <dependency>
         <groupId>com.aliyun</groupId>
@@ -2660,48 +2660,48 @@
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>s3</artifactId>
-        <version>2.42.37</version>
+        <version>2.42.40</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>lambda</artifactId>
-        <version>2.42.37</version>
+        <version>2.42.40</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>cloudwatch</artifactId>
-        <version>2.42.37</version>
+        <version>2.42.40</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>costexplorer</artifactId>
-        <version>2.42.37</version>
+        <version>2.42.40</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>regions</artifactId>
-        <version>2.42.37</version>
+        <version>2.42.40</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>aws-core</artifactId>
-        <version>2.42.37</version>
+        <version>2.42.40</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sqs</artifactId>
-        <version>2.42.37</version>
+        <version>2.42.40</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sdk-core</artifactId>
-        <version>2.42.37</version>
+        <version>2.42.40</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>scheduler</artifactId>
-        <version>2.42.37</version>
+        <version>2.42.40</version>
       </dependency>
         <dependency>
         <groupId>com.aliyun</groupId>
