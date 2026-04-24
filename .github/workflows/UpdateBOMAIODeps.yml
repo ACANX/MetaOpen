@@ -40,7 +40,7 @@ jobs:
       - name: InstallPython314Deps
         run: pip install lxml
 
-      - name: PublishArtifactsToMavenCentralByBatch
+      - name: LocalBuildArtifactsByBatch
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}   # 假设你的 Maven GPG 插件配置或 settings.xml 使用这些变量
           OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
