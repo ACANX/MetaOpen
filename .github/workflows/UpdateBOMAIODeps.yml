@@ -99,7 +99,6 @@ jobs:
           delete-branch: true
           add-paths: |
             meta-bom/bom-aio/pom.xml
-            # meta-bom/bom-aio-origin/effective-pom.xml
           labels: |
             auto:commit
             dependencies
