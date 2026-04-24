@@ -64,18 +64,15 @@
         <log4j2.version>2.25.4</log4j2.version>
         <slf4j-api.version>2.0.17</slf4j-api.version>
 
-        <commons-io.version>2.21.0</commons-io.version>
-        <commons-lang3.version>3.20.0</commons-lang3.version>
-        <commons-codec.version>1.21.0</commons-codec.version>
-        <jsoup.version>1.22.2</jsoup.version>
+        
         <poi.version>5.5.1</poi.version>
         <easy-excel.version>4.0.3</easy-excel.version>
         <fastjson.version>1.2.83</fastjson.version>
         <fastjson2.version>2.0.61</fastjson2.version>
         <jackson.version>2.21.2</jackson.version>
-        <gson.version>2.13.2</gson.version>
+        <!-- <gson.version>2.14.0</gson.version> -->
         <snakeyaml.version>2.6</snakeyaml.version>
-        <lombok.version>1.18.44</lombok.version>
+        <!-- <lombok.version>1.18.46</lombok.version> -->
         <httpclient5.version>5.6.1</httpclient5.version>
         <okhttp.version>5.3.2</okhttp.version>
 
@@ -105,7 +102,7 @@
         <jaudiotagger.version>2.0.1</jaudiotagger.version>
         <jaudiotagger-net.version>3.0.1</jaudiotagger-net.version>
         <!-- SDK 版本 -->
-        <baidu-aip-sdk.version>4.16.24</baidu-aip-sdk.version>
+        <baidu-aip-sdk.version>4.16.25</baidu-aip-sdk.version>
         <acrcloud-sdk.version>1.0.5</acrcloud-sdk.version>
         <json.version>20251224</json.version>
         <!-- 邮件 SDK 版本 -->
@@ -119,7 +116,7 @@
         <cos_api.version>5.6.263</cos_api.version>
         <!-- Cloud SDK 版本 -->
         <tencentcloud-sdk-java-scf.version>3.1.1394</tencentcloud-sdk-java-scf.version>
-        <tencentcloud-sdk-java-ses.version>3.1.1430</tencentcloud-sdk-java-ses.version>
+        <tencentcloud-sdk-java-ses.version>3.1.1451</tencentcloud-sdk-java-ses.version>
         <!-- <huaweicloud-sdk-functiongraph.version>3.1.192</huaweicloud-sdk-functiongraph.version> -->
         <fc-java-core.version>1.4.1</fc-java-core.version>
         <fc-java-event.version>1.2.0</fc-java-event.version>
@@ -160,8 +157,8 @@
         <aws-lambda-java-serialization.version>1.3.1</aws-lambda-java-serialization.version>
         <!-- 第三方 SDK 版本 -->
         <java-function-invoker.version>2.0.1</java-function-invoker.version>
-        <oapi-sdk.version>2.5.3</oapi-sdk.version>
-        <brevo.version>1.1.4</brevo.version>
+        <oapi-sdk.version>2.6.1</oapi-sdk.version>
+        <brevo.version>1.1.5</brevo.version>
         <ipinfo-api.version>3.4.0</ipinfo-api.version>
         <longport-openapi-sdk.version>3.0.23</longport-openapi-sdk.version>
         <bcprov-jdk18on.version>1.84</bcprov-jdk18on.version>

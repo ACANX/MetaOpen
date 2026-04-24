@@ -88,10 +88,15 @@
         <xml-maven-plugin.version>1.1.0</xml-maven-plugin.version>
         <git-commit-id-maven-plugin.version>9.0.1</git-commit-id-maven-plugin.version>
 
+
+        <commons-io.version>2.22.0</commons-io.version>
+        <commons-lang3.version>3.20.0</commons-lang3.version>
+        <commons-codec.version>1.21.0</commons-codec.version>
         <commons-codec.version>1.17.1</commons-codec.version>
         <apache-commons-lang3.version>3.20.0</apache-commons-lang3.version>
         <commons-configuration.version>1.10</commons-configuration.version>
         <commons-configuration2.version>2.12</commons-configuration2.version>
+        
 
         <!--  关系数据库-->
         <sqlite-jdbc.version>3.53.0.0</sqlite-jdbc.version>
@@ -120,7 +125,7 @@
         <!-- SpringCloud官方依赖  -->
         <spring.version>7.0.7</spring.version>
         <spring-security.version>7.0.5</spring-security.version>
-        <spring-boot.version>4.0.5</spring-boot.version>
+        <spring-boot.version>4.0.6</spring-boot.version>
         <spring-cloud.version>2025.0.0</spring-cloud.version>
         <spring-cloud-commons.version>4.2.0</spring-cloud-commons.version>
         <spring-cloud-consul.verson>4.2.0</spring-cloud-consul.verson>
@@ -138,7 +143,7 @@
         <mybatis-generator-maven-plugin.version>1.4.2</mybatis-generator-maven-plugin.version>
         <mybatis-plus.version>3.5.6</mybatis-plus.version>
         <pagehelper.version>6.1.0</pagehelper.version>
-        <pagehelper-spring-boot.version>2.1.1</pagehelper-spring-boot.version>
+        <pagehelper-spring-boot.version>4.0.0</pagehelper-spring-boot.version>
         <jsqlparser>5.3</jsqlparser>
 
         <!-- Spring Cloud Alibaba -->
@@ -197,33 +202,38 @@
         <guava.version>33.5.0-jre</guava.version>
         <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
 
-        <lombok.version>1.18.44</lombok.version>
+        <lombok.version>1.18.46</lombok.version>
         <netty.version>4.2.12.Final</netty.version>
-        <!--  JSON -->
+        
+        
+         <!--  JSON -->
         <fastjson.version>1.2.83</fastjson.version>
         <fastjson2.version>2.0.61</fastjson2.version>
-        <gson.version>2.13.2</gson.version>
+        <gson.version>2.14.0</gson.version>
         <jackson.version>2.21.2</jackson.version>
-        <snakeyaml.version>2.5</snakeyaml.version>
         <!--  JSON -->
+              
         <httpclient5.version>5.6.1</httpclient5.version>
         <httpcore5.version>5.4.2</httpcore5.version>
         <httpcore.version>4.4.16</httpcore.version>
         <httpclient.version>4.5.14</httpclient.version>
         <apache.httpclient.version>4.5.14</apache.httpclient.version>
         <httpasyncclient.version>4.1.5</httpasyncclient.version>
+        <jsoup.version>1.22.2</jsoup.version>
 
+        <snakeyaml.version>2.6</snakeyaml.version>
+        <freemarker.version>2.3.33</freemarker.version>
 
         <spring-security-oauth2.version>2.5.2.RELEASE</spring-security-oauth2.version>
         <spring-security-jwt.version>1.1.1.RELEASE</spring-security-jwt.version>
         <spring-data-rest-webmvc.version>4.3.0</spring-data-rest-webmvc.version>
         <spring-data-elasticsearch.version>5.3.0</spring-data-elasticsearch.version>
         <springfox-swagger2.version>3.0.0</springfox-swagger2.version>
-        <freemarker.version>2.3.33</freemarker.version>
+        
         <thymeleaf.version>3.1.4.RELEASE</thymeleaf.version>
         <thymeleaf-extras-springsecurity.version>3.1.2.RELEASE</thymeleaf-extras-springsecurity.version>
         <thymeleaf-extras-springsecurity5.version>3.1.2.RELEASE</thymeleaf-extras-springsecurity5.version>
-        <thymeleaf-extras-springsecurity6.version>3.1.4.RELEASE</thymeleaf-extras-springsecurity6.version>
+        <thymeleaf-extras-springsecurity6.version>3.1.5.RELEASE</thymeleaf-extras-springsecurity6.version>
         <thymeleaf-extras-data-attribute.version>2.0.1</thymeleaf-extras-data-attribute.version>
         <thymeleaf-layout-dialect.version>3.3.0</thymeleaf-layout-dialect.version>
 
@@ -255,8 +265,8 @@
         <selenium-devtools.version>4.41.0</selenium-devtools.version>
         <selenium-htmlunit.version>4.29.0</selenium-htmlunit.version>
 
-        <awssdk.version>2.42.37</awssdk.version>
-        <huaweicloud-sdk.version>3.1.192</huaweicloud-sdk.version>
+        <awssdk.version>2.42.40</awssdk.version>
+        <huaweicloud-sdk.version>3.1.193</huaweicloud-sdk.version>
 
         <!-- 日志依赖  -->
         <slf4j.version>2.0.18</slf4j.version>
