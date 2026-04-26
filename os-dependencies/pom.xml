@@ -57,7 +57,7 @@
         
         
         <acanx-utils.version>0.4.2</acanx-utils.version>
-        <openjfx.version>25.0.2</openjfx.version>
+        <openjfx.version>26.0.1</openjfx.version>
         <javassist.version>3.31.0-GA</javassist.version>
         <aspectjweaver.version>1.9.25.1</aspectjweaver.version>
         <bytebuddy.version>1.18.8</bytebuddy.version>
@@ -433,7 +433,7 @@
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-invoker-plugin</artifactId>
-                <version>3.9.1</version>
+                <version>3.10.0</version>
                 <scope>provided</scope>
             </dependency>
 
@@ -525,7 +525,7 @@
             <dependency>
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
-                <version>1.21.0</version>
+                <version>1.22.0</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
