@@ -337,7 +337,7 @@
         <dependency>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-invoker-plugin</artifactId>
-        <version>3.9.1</version>
+        <version>3.10.0</version>
         <scope>provided</scope>
       </dependency>
         <dependency>
@@ -422,7 +422,7 @@
         <dependency>
         <groupId>commons-codec</groupId>
         <artifactId>commons-codec</artifactId>
-        <version>1.21.0</version>
+        <version>1.22.0</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -685,49 +685,49 @@
         <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-base</artifactId>
-        <version>25.0.2</version>
+        <version>26.0.1</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
         <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-controls</artifactId>
-        <version>25.0.2</version>
+        <version>26.0.1</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
         <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-graphics</artifactId>
-        <version>25.0.2</version>
+        <version>26.0.1</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
         <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-fxml</artifactId>
-        <version>25.0.2</version>
+        <version>26.0.1</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
         <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-swing</artifactId>
-        <version>25.0.2</version>
+        <version>26.0.1</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
         <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-web</artifactId>
-        <version>25.0.2</version>
+        <version>26.0.1</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
         <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-media</artifactId>
-        <version>25.0.2</version>
+        <version>26.0.1</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
