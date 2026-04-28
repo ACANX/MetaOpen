@@ -309,7 +309,7 @@
             <dependency>
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
-                <version>1.21.0</version>
+                <version>1.22.0</version>
                 <scope>compile</scope>
             </dependency>
             <!-- propertites文件读取与修改-->
