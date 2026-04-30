@@ -1,4 +1,4 @@
-package com.acanx.meta.base;
+package com.acanx.meta.base.page;
 
 import java.util.List;
 

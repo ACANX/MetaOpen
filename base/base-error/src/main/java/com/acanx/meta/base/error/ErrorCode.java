@@ -1,4 +1,4 @@
-package com.acanx.meta.base;
+package com.acanx.meta.base.error;
 
 /**
  * ErrorCode

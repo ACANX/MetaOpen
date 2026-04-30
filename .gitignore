@@ -32,4 +32,14 @@ dist/
 nbdist/
 .nb-gradle/
 
+### IDE Config ###
+.run/
+.xcodemap/
+
+### AI Tools ###
+.qwen/
+
+### Misc ###
+Action/
+**/pom-xml-flattened
 
