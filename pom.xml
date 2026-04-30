@@ -68,6 +68,7 @@
         <!-- <module>meta-bom</module>  -->
         <module>meta-sdk</module>
         <module>os-dependencies</module>
+        <module>base</module>
     </modules>
 
     <dependencies/>
