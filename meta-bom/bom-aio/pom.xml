@@ -140,61 +140,61 @@
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-quote</artifactId>
-        <version>0.8.2.1</version>
+        <version>0.8.3-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-security</artifactId>
-        <version>0.8.2.1</version>
+        <version>0.8.3-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-sonatype</artifactId>
-        <version>0.8.2.1</version>
+        <version>0.8.3-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-deepseek</artifactId>
-        <version>0.8.2.1</version>
+        <version>0.8.3-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-test</artifactId>
-        <version>0.8.2.1</version>
+        <version>0.8.3-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-dingtalk</artifactId>
-        <version>0.8.2.1</version>
+        <version>0.8.3-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-wechat-work</artifactId>
-        <version>0.8.2.1</version>
+        <version>0.8.3-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-rss</artifactId>
-        <version>0.8.2.1</version>
+        <version>0.8.3-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-gemini</artifactId>
-        <version>0.8.2.1</version>
+        <version>0.8.3-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.component</groupId>
         <artifactId>sdk-maven-artifact</artifactId>
-        <version>0.8.2.1</version>
+        <version>0.8.3-SNAPSHOT</version>
       </dependency>
         <dependency>
         <groupId>org.apache.maven</groupId>
