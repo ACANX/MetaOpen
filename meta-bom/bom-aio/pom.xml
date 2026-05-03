@@ -2721,7 +2721,7 @@
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>utils</artifactId>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
         <scope>runtime</scope>
       </dependency>
         <dependency>
