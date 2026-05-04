@@ -1,0 +1,66 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'D:/Code/JavaCode/MetaOpen/meta-model/model-llm/target/model-llm-0.8.3-SNAPSHOT.jar;D:/Code/JavaCode/MetaOpen/base/base-http/target/base-http-0.8.3-SNAPSHOT.jar;D:/Dev/Maven/Repository/tools/jackson/core/jackson-core/3.1.3/jackson-core-3.1.3.jar;D:/Dev/Maven/Repository/tools/jackson/core/jackson-databind/3.1.3/jackson-databind-3.1.3.jar;D:/Dev/Maven/Repository/com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.jar;D:/Dev/Maven/Repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar;D:/Dev/Maven/Repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar;D:/Dev/Maven/Repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'21'
+-sourcepath
+'D:/Code/JavaCode/MetaOpen/meta-sdk/sdk-llm/src/main/java;D:/Code/JavaCode/MetaOpen/meta-sdk/sdk-llm/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2026 <a href="https://acanx.com">ACANX</a>. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'D:/Code/JavaCode/MetaOpen/meta-sdk/sdk-llm/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'SDK-LLM 0.8.3-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'SDK-LLM 0.8.3-SNAPSHOT API'
+com.acanx.meta.sdk.llm
+com.acanx.meta.sdk.llm.enums
+com.acanx.meta.sdk.llm.exception
+com.acanx.meta.sdk.llm.internal
+com.acanx.meta.sdk.llm.internal.request
+com.acanx.meta.sdk.llm.internal.response
+com.acanx.meta.sdk.llm.model
+D:\Code\JavaCode\MetaOpen\meta-model\model-llm\target\model-llm-0.8.3-SNAPSHOT.jar = 1777890596549
+D:\Code\JavaCode\MetaOpen\base\base-http\target\base-http-0.8.3-SNAPSHOT.jar = 1777890665509
+D:\Dev\Maven\Repository\tools\jackson\core\jackson-core\3.1.3\jackson-core-3.1.3.jar = 1777883733315
+D:\Dev\Maven\Repository\tools\jackson\core\jackson-databind\3.1.3\jackson-databind-3.1.3.jar = 1777884054018
+D:\Dev\Maven\Repository\com\fasterxml\jackson\core\jackson-annotations\2.21\jackson-annotations-2.21.jar = 1769795814433
+D:\Dev\Maven\Repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar = 1710267001732
+D:\Dev\Maven\Repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar = 1702499273238
+D:\Dev\Maven\Repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar = 1741965565659
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\src\main\java = 1777881794949
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\generated-sources\annotations = 1777890671270
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\allclasses-index.html = 1777890676825
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\allpackages-index.html = 1777890676829
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\copy.svg = 1777890676875
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\element-list = 1777890676595
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\help-doc.html = 1777890676871
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\index-all.html = 1777890676861
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\index.html = 1777890676788
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\link.svg = 1777890676876
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\member-search-index.js = 1777890676832
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\module-search-index.js = 1777890676829
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\overview-summary.html = 1777890676866
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\overview-tree.html = 1777890676783
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\package-search-index.js = 1777890676830
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\script.js = 1777890676874
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\search-page.js = 1777890676878
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\search.html = 1777890676863
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\search.js = 1777890676877
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\serialized-form.html = 1777890676662
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\stylesheet.css = 1777890676873
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\tag-search-index.js = 1777890676833
+D:\Code\JavaCode\MetaOpen\meta-sdk\sdk-llm\target\reports\apidocs\type-search-index.js = 1777890676831
