@@ -86,7 +86,7 @@
         <!-- JSON/序列化版本 -->
         <jackson-annotations.version>2.21</jackson-annotations.version>
         <jackson-core-asl.version>1.9.13</jackson-core-asl.version>
-        <jaxb-runtime.version>4.0.7</jaxb-runtime.version>
+        <jaxb-runtime.version>4.0.8</jaxb-runtime.version>
 
         <!-- Excel/Office 版本 -->
         <poi.version>5.5.1</poi.version>
