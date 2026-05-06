@@ -41,7 +41,7 @@
     </licenses>
 
     <properties>
-          <revision>0.8.3-SNAPSHOT</revision>
+          <revision>0.8.2.4</revision>
           <!-- 将此属性设置为 true，即可跳过该模块的 deploy 阶段 -->
           <maven.deploy.skip>true</maven.deploy.skip>
           <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
