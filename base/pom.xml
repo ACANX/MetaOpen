@@ -47,6 +47,7 @@
     <modules>
         <module>base-error</module>
         <module>base-exception</module>
+        <module>base-http</module>
         <module>base-page</module>
     </modules>
 

@@ -15,6 +15,9 @@
 
     <properties/>
 
+    <modules>
+        <module>sdk-llm</module>
+    </modules>
 
     <dependencies/>
 

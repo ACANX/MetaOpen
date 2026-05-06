@@ -43,6 +43,7 @@
 
   <modules>
     <module>sdk-maven-artifact</module>
+    <module>component-schedule</module>
   </modules>
 
   <dependencies/>
