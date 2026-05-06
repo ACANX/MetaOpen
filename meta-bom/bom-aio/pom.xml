@@ -64,6 +64,12 @@
         <scope>compile</scope>
       </dependency>
         <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>2.21</version>
+        <scope>compile</scope>
+      </dependency>
+        <dependency>
         <groupId>com.fasterxml.jackson.datatype</groupId>
         <artifactId>jackson-datatype-jsr310</artifactId>
         <version>2.21.3</version>
@@ -478,7 +484,7 @@
         <dependency>
         <groupId>com.alibaba.fastjson2</groupId>
         <artifactId>fastjson2</artifactId>
-        <version>2.0.61</version>
+        <version>2.0.62</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
@@ -495,24 +501,24 @@
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-all</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-http</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-http2</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-http3</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>com.google.protobuf</groupId>
@@ -657,7 +663,7 @@
         <dependency>
         <groupId>org.apache.tomcat.embed</groupId>
         <artifactId>tomcat-embed-core</artifactId>
-        <version>11.0.21</version>
+        <version>11.0.22</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -844,7 +850,7 @@
         <dependency>
         <groupId>org.elasticsearch</groupId>
         <artifactId>elasticsearch</artifactId>
-        <version>9.3.4</version>
+        <version>9.4.0</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -861,6 +867,11 @@
         <version>2.5.2</version>
         <scope>provided</scope>
         <optional>true</optional>
+      </dependency>
+        <dependency>
+        <groupId>com.cronutils</groupId>
+        <artifactId>cron-utils</artifactId>
+        <version>9.2.1</version>
       </dependency>
         <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
@@ -1032,7 +1043,7 @@
         <dependency>
         <groupId>com.sun.xml.bind</groupId>
         <artifactId>jaxb-impl</artifactId>
-        <version>4.0.7</version>
+        <version>4.0.8</version>
       </dependency>
         <dependency>
         <groupId>javax.annotation</groupId>
@@ -1098,7 +1109,7 @@
         <dependency>
         <groupId>com.alibaba</groupId>
         <artifactId>fastjson</artifactId>
-        <version>1.2.83</version>
+        <version>2.0.62</version>
       </dependency>
         <dependency>
         <groupId>com.google.code.gson</groupId>
@@ -1319,144 +1330,144 @@
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-buffer</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-base</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-dns</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-haproxy</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-compression</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-memcache</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-mqtt</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-redis</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-smtp</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-socks</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-stomp</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-xml</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-protobuf</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-marshalling</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-common</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-dev-tools</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-handler</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-handler-proxy</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-handler-ssl-ocsp</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-resolver</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-resolver-dns</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-transport</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-transport-udt</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-transport-native-epoll</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
         <scope>runtime</scope>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-transport-native-io_uring</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
         <scope>runtime</scope>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-classes-quic</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-native-quic</artifactId>
-        <version>4.2.12.Final</version>
+        <version>4.2.13.Final</version>
         <scope>runtime</scope>
       </dependency>
         <dependency>
@@ -2252,11 +2263,6 @@
         <version>2.21.3</version>
       </dependency>
         <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-annotations</artifactId>
-        <version>2.21</version>
-      </dependency>
-        <dependency>
         <groupId>org.thymeleaf.extras</groupId>
         <artifactId>thymeleaf-extras-springsecurity6</artifactId>
         <version>3.1.5.RELEASE</version>
@@ -2332,7 +2338,7 @@
         <dependency>
         <groupId>org.apache.tomcat</groupId>
         <artifactId>tomcat-annotations-api</artifactId>
-        <version>11.0.21</version>
+        <version>11.0.22</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
@@ -2393,13 +2399,13 @@
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>ses</artifactId>
-        <version>2.44.0</version>
+        <version>2.44.1</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>auth</artifactId>
-        <version>2.44.0</version>
+        <version>2.44.1</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
@@ -2421,7 +2427,7 @@
         <dependency>
         <groupId>org.glassfish.jaxb</groupId>
         <artifactId>jaxb-runtime</artifactId>
-        <version>4.0.7</version>
+        <version>4.0.8</version>
       </dependency>
         <dependency>
         <groupId>org.codehaus.jackson</groupId>
@@ -2591,7 +2597,7 @@
         <dependency>
         <groupId>com.brevo</groupId>
         <artifactId>brevo</artifactId>
-        <version>1.1.6</version>
+        <version>1.1.7</version>
       </dependency>
         <dependency>
         <groupId>com.google.cloud.functions.invoker</groupId>
@@ -2660,48 +2666,48 @@
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>s3</artifactId>
-        <version>2.44.0</version>
+        <version>2.44.1</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>lambda</artifactId>
-        <version>2.44.0</version>
+        <version>2.44.1</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>cloudwatch</artifactId>
-        <version>2.44.0</version>
+        <version>2.44.1</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>costexplorer</artifactId>
-        <version>2.44.0</version>
+        <version>2.44.1</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>regions</artifactId>
-        <version>2.44.0</version>
+        <version>2.44.1</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>aws-core</artifactId>
-        <version>2.44.0</version>
+        <version>2.44.1</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sqs</artifactId>
-        <version>2.44.0</version>
+        <version>2.44.1</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sdk-core</artifactId>
-        <version>2.44.0</version>
+        <version>2.44.1</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>scheduler</artifactId>
-        <version>2.44.0</version>
+        <version>2.44.1</version>
       </dependency>
         <dependency>
         <groupId>com.aliyun</groupId>
@@ -2716,18 +2722,18 @@
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>native-maven-plugin</artifactId>
-        <version>1.1.0</version>
+        <version>1.0.0</version>
       </dependency>
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>utils</artifactId>
-        <version>1.1.0</version>
+        <version>1.0.0</version>
         <scope>runtime</scope>
       </dependency>
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>graalvm-reachability-metadata</artifactId>
-        <version>1.1.0</version>
+        <version>1.0.0</version>
         <scope>runtime</scope>
       </dependency>
     </dependencies>
