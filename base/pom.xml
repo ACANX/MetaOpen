@@ -49,6 +49,7 @@
         <module>base-exception</module>
         <module>base-http</module>
         <module>base-page</module>
+        <module>base-rest</module>
     </modules>
 
     <dependencies/>
