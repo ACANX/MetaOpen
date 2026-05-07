@@ -44,6 +44,9 @@ public class RestResult<T> implements Serializable {
     private T data;
 
 
+    public RestResult() {
+    }
+    
     /**
      * 构造函数
      *
