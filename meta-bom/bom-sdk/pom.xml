@@ -107,6 +107,13 @@
               <artifactId>dynamodb</artifactId>
               <version>${awssdk.version}</version>
            </dependency>
+           <!-- Source: https://mvnrepository.com/artifact/software.amazon.awssdk/scheduler -->
+                  <dependency>
+                      <groupId>software.amazon.awssdk</groupId>
+                      <artifactId>scheduler</artifactId>
+                      <version>${awssdk.version}</version>
+                      <scope>compile</scope>
+                  </dependency>
 
             <!-- aliyun -->
             <!-- https://mvnrepository.com/artifact/com.aliyun.oss/aliyun-sdk-oss -->
