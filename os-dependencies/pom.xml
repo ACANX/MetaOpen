@@ -440,7 +440,7 @@
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-invoker-plugin</artifactId>
-                <version>3.10.0</version>
+                <version>3.10.1</version>
                 <scope>provided</scope>
             </dependency>
 
@@ -695,7 +695,7 @@
             <dependency>
                 <groupId>org.xerial</groupId>
                 <artifactId>sqlite-jdbc</artifactId>
-                <version>3.53.0.0</version>
+                <version>3.53.1.0</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
@@ -962,14 +962,14 @@
             <dependency>
                 <groupId>io.undertow</groupId>
                 <artifactId>undertow-core</artifactId>
-                <version>2.3.24.Final</version>
+                <version>2.4.0.Final</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>org.apache.groovy</groupId>
                 <artifactId>groovy</artifactId>
-                <version>5.0.5</version>
+                <version>5.0.6</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
