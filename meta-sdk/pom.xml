@@ -17,6 +17,7 @@
 
     <modules>
         <module>sdk-llm</module>
+        <module>sdk-maven-artifact</module>
     </modules>
 
     <dependencies/>
