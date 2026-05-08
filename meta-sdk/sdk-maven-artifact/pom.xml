@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.acanx.meta</groupId>
-        <artifactId>meta-component</artifactId>
+        <artifactId>meta-sdk</artifactId>
         <version>${revision}</version>
     </parent>
 
-    <groupId>com.acanx.meta.component</groupId>
+    <groupId>com.acanx.meta.sdk</groupId>
     <artifactId>sdk-maven-artifact</artifactId>
     <version>${revision}</version>
     <packaging>jar</packaging>
