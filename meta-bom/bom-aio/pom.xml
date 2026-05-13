@@ -850,7 +850,7 @@
         <dependency>
         <groupId>org.elasticsearch</groupId>
         <artifactId>elasticsearch</artifactId>
-        <version>9.4.0</version>
+        <version>9.4.1</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -876,7 +876,7 @@
         <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-api</artifactId>
-        <version>4.43.0</version>
+        <version>4.44.0</version>
       </dependency>
         <dependency>
         <groupId>org.thymeleaf</groupId>
@@ -895,7 +895,7 @@
         <dependency>
         <groupId>org.redisson</groupId>
         <artifactId>redisson</artifactId>
-        <version>4.3.1</version>
+        <version>4.4.0</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -920,7 +920,7 @@
         <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
-        <version>2.0.17</version>
+        <version>2.0.18</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -2411,7 +2411,7 @@
         <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-simple</artifactId>
-        <version>2.0.17</version>
+        <version>2.0.18</version>
       </dependency>
         <dependency>
         <groupId>com.google.protobuf</groupId>
@@ -2711,12 +2711,13 @@
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
-        <artifactId>sdk-core</artifactId>
+        <artifactId>scheduler</artifactId>
         <version>2.44.4</version>
+        <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
-        <artifactId>scheduler</artifactId>
+        <artifactId>sdk-core</artifactId>
         <version>2.44.4</version>
       </dependency>
         <dependency>
@@ -2732,18 +2733,18 @@
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>native-maven-plugin</artifactId>
-        <version>1.1.0</version>
+        <version>1.0.0</version>
       </dependency>
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>utils</artifactId>
-        <version>1.1.0</version>
+        <version>1.0.0</version>
         <scope>runtime</scope>
       </dependency>
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>graalvm-reachability-metadata</artifactId>
-        <version>1.1.0</version>
+        <version>1.0.0</version>
         <scope>runtime</scope>
       </dependency>
     </dependencies>
