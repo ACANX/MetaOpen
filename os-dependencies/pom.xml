@@ -96,7 +96,7 @@
         <hibernate-validator.version>9.1.0.Final</hibernate-validator.version>
         <redisson.version>4.3.1</redisson.version>
 
-        <slf4j.version>2.0.17</slf4j.version>
+        <slf4j.version>2.0.18</slf4j.version>
         <jspecify.version>1.0.0</jspecify.version>
 
         <spring.version>7.0.7</spring.version>
