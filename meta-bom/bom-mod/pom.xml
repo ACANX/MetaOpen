@@ -154,7 +154,7 @@
         <!-- Log4j2 CacheFile Transformer 版本 -->
         <log4j2-cachefile-transformer.version>2.13.0</log4j2-cachefile-transformer.version>
         <!-- AWS Lambda Java Serialization -->
-        <aws-lambda-java-serialization.version>1.3.1</aws-lambda-java-serialization.version>
+        <aws-lambda-java-serialization.version>1.4.0</aws-lambda-java-serialization.version>
         <!-- 第三方 SDK 版本 -->
         <java-function-invoker.version>2.0.1</java-function-invoker.version>
         <oapi-sdk.version>2.6.1</oapi-sdk.version>
