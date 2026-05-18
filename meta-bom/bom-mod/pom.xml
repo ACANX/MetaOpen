@@ -115,7 +115,7 @@
         <esdk-obs-java.version>3.23.9</esdk-obs-java.version>
         <cos_api.version>5.6.263</cos_api.version>
         <!-- Cloud SDK 版本 -->
-        <tencentcloud-sdk-java-scf.version>3.1.1394</tencentcloud-sdk-java-scf.version>
+        <tencentcloud-sdk-java-scf.version>3.1.1468</tencentcloud-sdk-java-scf.version>
         <tencentcloud-sdk-java-ses.version>3.1.1451</tencentcloud-sdk-java-ses.version>
         <!-- <huaweicloud-sdk-functiongraph.version>3.1.192</huaweicloud-sdk-functiongraph.version> -->
         <fc-java-core.version>1.4.1</fc-java-core.version>
