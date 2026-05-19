@@ -91,7 +91,6 @@
 
         <commons-io.version>2.22.0</commons-io.version>
         <commons-lang3.version>3.20.0</commons-lang3.version>
-        <commons-codec.version>1.21.0</commons-codec.version>
         <commons-codec.version>1.22.0</commons-codec.version>
         <apache-commons-lang3.version>3.20.0</apache-commons-lang3.version>
         <commons-configuration.version>1.10</commons-configuration.version>
@@ -221,7 +220,7 @@
         <httpasyncclient.version>4.1.5</httpasyncclient.version>
         <jsoup.version>1.22.2</jsoup.version>
 
-        <snakeyaml.version>2.6</snakeyaml.version>
+        <snakeyaml.version>2.7</snakeyaml.version>
         <freemarker.version>2.3.33</freemarker.version>
 
         <spring-security-oauth2.version>2.5.2.RELEASE</spring-security-oauth2.version>
@@ -230,7 +229,7 @@
         <spring-data-elasticsearch.version>5.3.0</spring-data-elasticsearch.version>
         <springfox-swagger2.version>3.0.0</springfox-swagger2.version>
         
-        <thymeleaf.version>3.1.4.RELEASE</thymeleaf.version>
+        <thymeleaf.version>3.1.5.RELEASE</thymeleaf.version>
         <thymeleaf-extras-springsecurity.version>3.1.2.RELEASE</thymeleaf-extras-springsecurity.version>
         <thymeleaf-extras-springsecurity5.version>3.1.2.RELEASE</thymeleaf-extras-springsecurity5.version>
         <thymeleaf-extras-springsecurity6.version>3.1.5.RELEASE</thymeleaf-extras-springsecurity6.version>
@@ -265,12 +264,12 @@
         <selenium-devtools.version>4.41.0</selenium-devtools.version>
         <selenium-htmlunit.version>4.29.0</selenium-htmlunit.version>
 
-        <awssdk.version>2.44.7</awssdk.version>
+        <awssdk.version>2.44.8</awssdk.version>
         <huaweicloud-sdk.version>3.1.196</huaweicloud-sdk.version>
 
         <!-- 日志依赖  -->
         <slf4j.version>2.0.18</slf4j.version>
-        <slf4j-api.version>2.0.178</slf4j-api.version>
+        <slf4j-api.version>2.0.18</slf4j-api.version>
         <jul-to-slf4j>2.0.18</jul-to-slf4j>
         <log4j-over-slf4j>2.0.18</log4j-over-slf4j>
         <log4j.version>2.26.0</log4j.version>
