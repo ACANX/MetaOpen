@@ -281,6 +281,308 @@
         <junit-platform.version>6.0.3</junit-platform.version>
         <junit-vintage-engine.version>6.0.3</junit-vintage-engine.version>
         <junit.version>4.13.2</junit.version>
+
+        <!-- Spring Data 版本 -->
+        <spring-data.version>4.0.5</spring-data.version>
+
+        <!-- Dubbo 扩展版本 -->
+        <dubbo-extensions-parent.version>3.3.3</dubbo-extensions-parent.version>
+        <dubbo-extensions-serialization-protobuf.version>3.3.1</dubbo-extensions-serialization-protobuf.version>
+
+        <!-- JNA 版本 -->
+        <jna.version>5.18.1</jna.version>
+
+        <!-- JSpecify 版本 -->
+        <jspecify.version>1.0.0</jspecify.version>
+
+        <!-- GraalVM SDK 版本 -->
+        <graal-sdk.version>25.0.3</graal-sdk.version>
+
+        <!-- Functions Framework 版本 -->
+        <functions-framework.version>2.0.1</functions-framework.version>
+
+        <!-- AWS Lambda 版本 -->
+        <aws-lambda-java-core.version>1.4.0</aws-lambda-java-core.version>
+        <aws-lambda-java-events.version>3.16.1</aws-lambda-java-events.version>
+        <aws-lambda-java-log4j2.version>1.6.3</aws-lambda-java-log4j2.version>
+        <aws-lambda-java-serialization.version>1.4.0</aws-lambda-java-serialization.version>
+
+        <!-- Aliyun FC 版本 -->
+        <fc-java-core.version>1.4.1</fc-java-core.version>
+        <fc-java-event.version>1.2.0</fc-java-event.version>
+
+        <!-- Tencent SCF 版本 -->
+        <scf-java-events.version>0.0.4</scf-java-events.version>
+        <tencentcloud-sdk-java-scf.version>3.1.1468</tencentcloud-sdk-java-scf.version>
+        <tencentcloud-sdk-java-ses.version>3.1.1451</tencentcloud-sdk-java-ses.version>
+
+        <!-- OSS SDK 版本 -->
+        <aliyun-sdk-oss.version>3.18.5</aliyun-sdk-oss.version>
+        <alibabacloud-oss.version>0.4.0</alibabacloud-oss.version>
+        <esdk-obs-java.version>3.25.10</esdk-obs-java.version>
+
+        <!-- 七牛云 SDK 版本 -->
+        <qiniu-java-sdk.version>7.19.0</qiniu-java-sdk.version>
+
+        <!-- ByteBuddy 版本 -->
+        <byte-buddy.version>1.18.8</byte-buddy.version>
+
+        <!-- OkHttp 版本 -->
+        <okhttp.version>5.3.2</okhttp.version>
+
+        <!-- POI/Excel 版本 -->
+        <poi.version>5.5.1</poi.version>
+        <easy-excel.version>4.0.3</easy-excel.version>
+
+        <!-- PDF 版本 -->
+        <pdfbox.version>3.0.7</pdfbox.version>
+
+        <!-- NLP 版本 -->
+        <hanlp.version>portable-1.8.6</hanlp.version>
+
+        <!-- 音频处理版本 -->
+        <jaudiotagger.version>2.0.1</jaudiotagger.version>
+        <jaudiotagger-net.version>3.0.1</jaudiotagger-net.version>
+
+        <!-- SDK 版本 -->
+        <baidu-aip-sdk.version>4.16.25</baidu-aip-sdk.version>
+        <acrcloud-sdk.version>1.0.5</acrcloud-sdk.version>
+
+        <!-- 第三方 SDK 版本 -->
+        <java-function-invoker.version>2.0.1</java-function-invoker.version>
+        <oapi-sdk.version>2.6.1</oapi-sdk.version>
+        <brevo.version>1.1.7</brevo.version>
+        <ipinfo-api.version>3.4.0</ipinfo-api.version>
+        <longport-openapi-sdk.version>3.0.23</longport-openapi-sdk.version>
+        <bcprov-jdk18on.version>1.84</bcprov-jdk18on.version>
+        <bgmprovider.version>2.0.3</bgmprovider.version>
+
+        <!-- JSON 版本 (org.json) -->
+        <json.version>20251224</json.version>
+
+        <!-- 通用工具库版本 -->
+        <commons-lang.version>2.6</commons-lang.version>
+        <commons-text.version>1.15.0</commons-text.version>
+        <commons-collections4.version>4.5.0</commons-collections4.version>
+        <commons-compress.version>1.28.0</commons-compress.version>
+        <commons-math3.version>3.6.1</commons-math3.version>
+        <commons-net.version>3.13.0</commons-net.version>
+
+        <!-- JSON/序列化版本 -->
+        <jackson-annotations.version>2.21</jackson-annotations.version>
+        <jackson-core-asl.version>1.9.13</jackson-core-asl.version>
+        <jaxb-runtime.version>4.0.8</jaxb-runtime.version>
+
+        <!-- 数据库版本 -->
+        <mongo-java-driver.version>3.12.14</mongo-java-driver.version>
+
+        <!-- Freemarker Java8 版本 -->
+        <freemarker-java8.version>3.0.3</freemarker-java8.version>
+
+        <!-- Jakarta Servlet 版本 -->
+        <jakarta-servlet.version>6.1.0</jakarta-servlet.version>
+
+        <!-- OkHttp3 (legacy) 版本 -->
+        <okhttp3.version>3.11.1</okhttp3.version>
+
+        <!-- Log4j2 CacheFile Transformer 版本 -->
+        <log4j2-cachefile-transformer.version>2.13.0</log4j2-cachefile-transformer.version>
+
+        <!-- Maven 插件版本 (补充) -->
+        <maven-model.version>3.9.16</maven-model.version>
+        <maven-core.version>3.9.16</maven-core.version>
+        <maven-plugin-api.version>3.9.16</maven-plugin-api.version>
+        <maven-compat.version>3.9.16</maven-compat.version>
+        <maven-plugin-plugin.version>3.15.2</maven-plugin-plugin.version>
+        <maven-archetype-plugin.version>3.4.1</maven-archetype-plugin.version>
+        <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
+        <maven-failsafe-plugin.version>3.5.5</maven-failsafe-plugin.version>
+        <maven-project-info-reports-plugin.version>3.9.0</maven-project-info-reports-plugin.version>
+        <maven-site-plugin.version>3.21.0</maven-site-plugin.version>
+        <maven-invoker-plugin.version>3.10.1</maven-invoker-plugin.version>
+        <maven-plugin-annotations.version>3.15.2</maven-plugin-annotations.version>
+        <maven-release-plugin.version>3.3.1</maven-release-plugin.version>
+        <maven-enforcer-plugin.version>3.6.2</maven-enforcer-plugin.version>
+        <maven-install-plugin.version>3.1.4</maven-install-plugin.version>
+        <maven-jar-plugin.version>3.5.0</maven-jar-plugin.version>
+        <maven-resources-plugin.version>3.5.0</maven-resources-plugin.version>
+        <maven-shade-plugin.version>3.6.2</maven-shade-plugin.version>
+        <maven-assembly-plugin.version>3.8.0</maven-assembly-plugin.version>
+        <maven-dependency-plugin.version>3.10.0</maven-dependency-plugin.version>
+
+        <!-- Plexus 版本 -->
+        <plexus-utils.version>4.0.3</plexus-utils.version>
+        <plexus-xml.version>4.1.1</plexus-xml.version>
+
+        <!-- Caffeine 版本 -->
+        <caffeine.version>3.2.4</caffeine.version>
+
+        <!-- Ehcache 版本 -->
+        <ehcache.version>3.12.0</ehcache.version>
+
+        <!-- MapStruct 版本 -->
+        <mapstruct.version>1.6.3</mapstruct.version>
+
+        <!-- Javapoet 版本 -->
+        <javapoet.version>1.13.0</javapoet.version>
+
+        <!-- HdrHistogram 版本 -->
+        <hdrhistogram.version>2.2.2</hdrhistogram.version>
+
+        <!-- Cron-utils 版本 -->
+        <cron-utils.version>9.2.1</cron-utils.version>
+
+        <!-- Reactive Streams 版本 -->
+        <reactive-streams.version>1.0.4</reactive-streams.version>
+        <reactor-core.version>3.8.5</reactor-core.version>
+
+        <!-- RSocket 版本 -->
+        <rsocket-core.version>1.1.5</rsocket-core.version>
+
+        <!-- Lettuce 版本 -->
+        <lettuce-core.version>7.5.2.RELEASE</lettuce-core.version>
+
+        <!-- Redisson 版本 -->
+        <redisson.version>4.4.0</redisson.version>
+
+        <!-- InfluxDB 版本 -->
+        <influxdb-java.version>2.25</influxdb-java.version>
+
+        <!-- Kryo/FST 序列化版本 -->
+        <kryo-serializers.version>0.45</kryo-serializers.version>
+        <fst.version>3.0.4-jdk17</fst.version>
+
+        <!-- Lucene 版本 -->
+        <lucene-core.version>10.4.0</lucene-core.version>
+
+        <!-- Elasticsearch 版本 -->
+        <elasticsearch.version>9.4.1</elasticsearch.version>
+
+        <!-- Hibernate ORM 版本 -->
+        <hibernate-core.version>7.3.5.Final</hibernate-core.version>
+
+        <!-- Quartz 版本 -->
+        <quartz.version>2.5.2</quartz.version>
+
+        <!-- H2/HSQDB 版本 -->
+        <h2.version>2.4.240</h2.version>
+        <hsqldb.version>2.7.4</hsqldb.version>
+
+        <!-- XMLUnit 版本 -->
+        <xmlunit-core.version>2.11.0</xmlunit-core.version>
+
+        <!-- OpenTest4J 版本 -->
+        <opentest4j.version>1.3.0</opentest4j.version>
+
+        <!-- API Guardian 版本 -->
+        <apiguardian-api.version>1.1.2</apiguardian-api.version>
+
+        <!-- Mockito 版本 -->
+        <mockito-core.version>5.23.0</mockito-core.version>
+
+        <!-- JMH 版本 -->
+        <jmh-core.version>1.37</jmh-core.version>
+
+        <!-- AspectJ 版本 -->
+        <aspectjweaver.version>1.9.25.1</aspectjweaver.version>
+
+        <!-- CGLIB 版本 -->
+        <cglib.version>3.3.0</cglib.version>
+
+        <!-- HikariCP 版本 -->
+        <hikaricp.version>7.0.2</hikaricp.version>
+
+        <!-- Seata 版本 -->
+        <seata-all.version>2.6.0</seata-all.version>
+
+        <!-- Sentinel 版本 -->
+        <sentinel-core.version>1.8.9</sentinel-core.version>
+
+        <!-- Kafka 版本 -->
+        <kafka.version>4.2.0</kafka.version>
+
+        <!-- RocketMQ 版本 -->
+        <rocketmq-client.version>5.5.0</rocketmq-client.version>
+
+        <!-- Tomcat 版本 -->
+        <tomcat-embed-core.version>11.0.22</tomcat-embed-core.version>
+
+        <!-- ShardingSphere 版本 -->
+        <shardingsphere-jdbc-core.version>5.4.1</shardingsphere-jdbc-core.version>
+
+        <!-- Zookeeper 版本 -->
+        <zookeeper-client.version>3.9.5</zookeeper-client.version>
+
+        <!-- OpenJFX 版本 -->
+        <openjfx.version>26.0.1</openjfx.version>
+
+        <!-- Hibernate Validator 版本 -->
+        <hibernate-validator.version>9.1.0.Final</hibernate-validator.version>
+
+        <!-- Jackson 3.x 版本 -->
+        <jackson3.version>3.1.3</jackson3.version>
+
+        <!-- Flink 版本 -->
+        <flink.version>1.17.2</flink.version>
+
+        <!-- Hadoop 版本 -->
+        <hadoop-client.version>3.5.0</hadoop-client.version>
+
+        <!-- Nacos Client 版本 -->
+        <nacos-client.version>3.2.0</nacos-client.version>
+
+        <!-- Undertow 版本 -->
+        <undertow-core.version>2.4.0.Final</undertow-core.version>
+
+        <!-- Groovy 版本 -->
+        <groovy.version>5.0.6</groovy.version>
+
+        <!-- JSON Path 版本 -->
+        <json-path.version>3.0.0</json-path.version>
+
+        <!-- Prometheus 版本 -->
+        <prometheus-simpleclient.version>0.16.0</prometheus-simpleclient.version>
+
+        <!-- R2DBC 版本 -->
+        <r2dbc-h2.version>1.1.0.RELEASE</r2dbc-h2.version>
+
+        <!-- Thymeleaf 版本 -->
+        <thymeleaf.version>3.1.5.RELEASE</thymeleaf.version>
+
+        <!-- Mybatis Spring 版本 -->
+        <mybatis-spring.version>4.0.0</mybatis-spring.version>
+
+        <!-- MySQL Connector 版本 -->
+        <mysql-connector-j.version>9.7.0</mysql-connector-j.version>
+
+        <!-- PostgreSQL 版本 -->
+        <postgresql.version>42.7.11</postgresql.version>
+
+        <!-- Aliyun FC SDK 版本 -->
+        <fc20230330.version>4.7.5</fc20230330.version>
+
+        <!-- Logback Access Common 版本 -->
+        <logback-access-common.version>2.0.12</logback-access-common.version>
+
+        <!-- MongoDB Driver Sync 版本 -->
+        <mongodb-driver-sync.version>5.7.0</mongodb-driver-sync.version>
+
+        <!-- Alibaba Cloud OSS V2 版本 -->
+        <alibabacloud-oss-v2.version>0.4.0</alibabacloud-oss-v2.version>
+
+        <!-- Jakarta Mail 版本 -->
+        <jakarta-mail-api.version>2.1.5</jakarta-mail-api.version>
+        <jakarta-mail.version>2.0.2</jakarta-mail.version>
+
+        <!-- Servlet API 版本 -->
+        <javax-servlet-api.version>4.0.1</javax-servlet-api.version>
+
+        <!-- JSP API 版本 -->
+        <jakarta-servlet-jsp-jstl.version>3.0.2</jakarta-servlet-jsp-jstl.version>
+
+        <!-- Activation 版本 -->
+        <javax-activation-api.version>1.2.0</javax-activation-api.version>
+        <javax-activation.version>1.1.1</javax-activation.version>
     </properties>
 
     <modules>
