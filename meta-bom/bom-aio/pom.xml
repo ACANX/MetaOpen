@@ -2344,30 +2344,30 @@
         <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter</artifactId>
-        <version>6.0.3</version>
+        <version>6.1.0</version>
         <scope>test</scope>
       </dependency>
         <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-params</artifactId>
-        <version>6.0.3</version>
+        <version>6.1.0</version>
       </dependency>
         <dependency>
         <groupId>org.junit.vintage</groupId>
         <artifactId>junit-vintage-engine</artifactId>
-        <version>6.0.3</version>
+        <version>6.1.0</version>
         <scope>test</scope>
         <optional>true</optional>
       </dependency>
         <dependency>
         <groupId>org.junit.platform</groupId>
         <artifactId>junit-platform-engine</artifactId>
-        <version>6.0.3</version>
+        <version>6.1.0</version>
       </dependency>
         <dependency>
         <groupId>org.junit.platform</groupId>
         <artifactId>junit-platform-launcher</artifactId>
-        <version>6.0.3</version>
+        <version>6.1.0</version>
         <scope>test</scope>
       </dependency>
         <dependency>
@@ -2399,13 +2399,13 @@
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>ses</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>auth</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
@@ -2416,7 +2416,7 @@
         <dependency>
         <groupId>com.google.protobuf</groupId>
         <artifactId>protobuf-java-util</artifactId>
-        <version>4.33.0</version>
+        <version>4.35.0</version>
       </dependency>
         <dependency>
         <groupId>jakarta.servlet</groupId>
@@ -2515,7 +2515,7 @@
         <dependency>
         <groupId>com.tencentcloudapi</groupId>
         <artifactId>tencentcloud-sdk-java-scf</artifactId>
-        <version>3.1.1468</version>
+        <version>3.1.1469</version>
       </dependency>
         <dependency>
         <groupId>com.tencentcloudapi</groupId>
@@ -2551,7 +2551,7 @@
         <dependency>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-lambda-java-log4j2</artifactId>
-        <version>1.6.3</version>
+        <version>1.6.4</version>
       </dependency>
         <dependency>
         <groupId>com.amazonaws</groupId>
@@ -2666,59 +2666,59 @@
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>s3</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>lambda</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>cloudwatch</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>costexplorer</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>regions</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>aws-core</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sqs</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sns</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>dynamodb</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>scheduler</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sdk-core</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
       </dependency>
         <dependency>
         <groupId>com.aliyun</groupId>
