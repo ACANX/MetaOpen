@@ -277,7 +277,7 @@
         <logback.version>1.5.32</logback.version>
         <!--  日志依赖  -->
 
-        <junit-jupiter.version>6.0.3</junit-jupiter.version>
+        <junit-jupiter.version>6.1.0</junit-jupiter.version>
         <junit-platform.version>6.0.3</junit-platform.version>
         <junit-vintage-engine.version>6.1.0</junit-vintage-engine.version>
         <junit.version>4.13.2</junit.version>
