@@ -313,7 +313,7 @@
 
         <!-- Tencent SCF 版本 -->
         <scf-java-events.version>0.0.4</scf-java-events.version>
-        <tencentcloud-sdk-java-scf.version>3.1.1468</tencentcloud-sdk-java-scf.version>
+        <tencentcloud-sdk-java-scf.version>3.1.1469</tencentcloud-sdk-java-scf.version>
         <tencentcloud-sdk-java-ses.version>3.1.1451</tencentcloud-sdk-java-ses.version>
 
         <!-- OSS SDK 版本 -->
