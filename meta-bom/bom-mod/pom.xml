@@ -86,7 +86,7 @@
         <esdk-obs-java.version>3.23.9</esdk-obs-java.version>
 
         <!-- Cloud SDK 版本 -->
-        <tencentcloud-sdk-java-scf.version>3.1.1468</tencentcloud-sdk-java-scf.version>
+        <tencentcloud-sdk-java-scf.version>3.1.1469</tencentcloud-sdk-java-scf.version>
         <tencentcloud-sdk-java-ses.version>3.1.1451</tencentcloud-sdk-java-ses.version>
         <fc-java-core.version>1.4.1</fc-java-core.version>
         <fc-java-event.version>1.2.0</fc-java-event.version>
