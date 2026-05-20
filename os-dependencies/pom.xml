@@ -117,7 +117,7 @@
         <selenium.version>4.44.0</selenium.version>
         <thymeleaf.version>3.1.5.RELEASE</thymeleaf.version>
 
-        <junit-jupiter.version>6.0.3</junit-jupiter.version>
+        <junit-jupiter.version>6.1.0</junit-jupiter.version>
         <junit-platform.version>6.1.0</junit-platform.version>
         <!-- 修复 plexus-utils 目录遍历漏洞 -->
         <plexus-utils.version>4.0.3</plexus-utils.version>
