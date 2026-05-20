@@ -93,7 +93,7 @@
         <scf-java-events.version>0.0.4</scf-java-events.version>
         <aws-lambda-java-core.version>1.4.0</aws-lambda-java-core.version>
         <aws-lambda-java-events.version>3.16.1</aws-lambda-java-events.version>
-        <aws-lambda-java-log4j2.version>1.6.3</aws-lambda-java-log4j2.version>
+        <aws-lambda-java-log4j2.version>1.6.4</aws-lambda-java-log4j2.version>
         <qiniu-java-sdk.version>7.19.0</qiniu-java-sdk.version>
 
         <!-- ByteCode 版本 -->
