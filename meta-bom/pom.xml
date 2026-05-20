@@ -196,9 +196,9 @@
         <commonmark.version>0.28.0</commonmark.version>
         <cos_api.version>5.6.269</cos_api.version>
         <grpc.version>1.81.0</grpc.version>
-        <protobuf-java.version>4.33.0</protobuf-java.version>
+        <protobuf-java.version>4.35.0</protobuf-java.version>
         <protoc.version>4.33.0</protoc.version>
-        <guava.version>33.5.0-jre</guava.version>
+        <guava.version>33.6.0-jre</guava.version>
         <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
 
         <lombok.version>1.18.46</lombok.version>
@@ -264,7 +264,7 @@
         <selenium-devtools.version>4.41.0</selenium-devtools.version>
         <selenium-htmlunit.version>4.29.0</selenium-htmlunit.version>
 
-        <awssdk.version>2.44.8</awssdk.version>
+        <awssdk.version>2.44.9</awssdk.version>
         <huaweicloud-sdk.version>3.1.196</huaweicloud-sdk.version>
 
         <!-- 日志依赖  -->
@@ -277,9 +277,9 @@
         <logback.version>1.5.32</logback.version>
         <!--  日志依赖  -->
 
-        <junit-jupiter.version>6.0.3</junit-jupiter.version>
-        <junit-platform.version>6.0.3</junit-platform.version>
-        <junit-vintage-engine.version>6.0.3</junit-vintage-engine.version>
+        <junit-jupiter.version>6.1.0</junit-jupiter.version>
+        <junit-platform.version>6.1.0</junit-platform.version>
+        <junit-vintage-engine.version>6.1.0</junit-vintage-engine.version>
         <junit.version>4.13.2</junit.version>
 
         <!-- Spring Data 版本 -->
@@ -304,7 +304,7 @@
         <!-- AWS Lambda 版本 -->
         <aws-lambda-java-core.version>1.4.0</aws-lambda-java-core.version>
         <aws-lambda-java-events.version>3.16.1</aws-lambda-java-events.version>
-        <aws-lambda-java-log4j2.version>1.6.3</aws-lambda-java-log4j2.version>
+        <aws-lambda-java-log4j2.version>1.6.4</aws-lambda-java-log4j2.version>
         <aws-lambda-java-serialization.version>1.4.0</aws-lambda-java-serialization.version>
 
         <!-- Aliyun FC 版本 -->
@@ -313,7 +313,7 @@
 
         <!-- Tencent SCF 版本 -->
         <scf-java-events.version>0.0.4</scf-java-events.version>
-        <tencentcloud-sdk-java-scf.version>3.1.1468</tencentcloud-sdk-java-scf.version>
+        <tencentcloud-sdk-java-scf.version>3.1.1469</tencentcloud-sdk-java-scf.version>
         <tencentcloud-sdk-java-ses.version>3.1.1451</tencentcloud-sdk-java-ses.version>
 
         <!-- OSS SDK 版本 -->

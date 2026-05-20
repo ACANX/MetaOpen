@@ -303,7 +303,7 @@
         <dependency>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.6.2</version>
+        <version>3.6.3</version>
       </dependency>
         <dependency>
         <groupId>org.apache.maven.plugins</groupId>
@@ -836,7 +836,7 @@
         <dependency>
         <groupId>io.undertow</groupId>
         <artifactId>undertow-core</artifactId>
-        <version>2.4.0.Final</version>
+        <version>2.4.1.Final</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -1033,7 +1033,7 @@
         <dependency>
         <groupId>jakarta.annotation</groupId>
         <artifactId>jakarta.annotation-api</artifactId>
-        <version>3.0.0</version>
+        <version>${jakarta.annotation.version}</version>
       </dependency>
         <dependency>
         <groupId>javax.xml.bind</groupId>
@@ -2399,13 +2399,13 @@
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>ses</artifactId>
-        <version>2.44.7</version>
+        <version>2.44.8</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>auth</artifactId>
-        <version>2.44.7</version>
+        <version>2.44.8</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
@@ -2416,7 +2416,7 @@
         <dependency>
         <groupId>com.google.protobuf</groupId>
         <artifactId>protobuf-java-util</artifactId>
-        <version>4.34.1</version>
+        <version>4.33.0</version>
       </dependency>
         <dependency>
         <groupId>jakarta.servlet</groupId>
@@ -2515,7 +2515,7 @@
         <dependency>
         <groupId>com.tencentcloudapi</groupId>
         <artifactId>tencentcloud-sdk-java-scf</artifactId>
-        <version>3.1.1394</version>
+        <version>3.1.1468</version>
       </dependency>
         <dependency>
         <groupId>com.tencentcloudapi</groupId>
@@ -2666,59 +2666,59 @@
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>s3</artifactId>
-        <version>2.44.7</version>
+        <version>2.44.8</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>lambda</artifactId>
-        <version>2.44.7</version>
+        <version>2.44.8</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>cloudwatch</artifactId>
-        <version>2.44.7</version>
+        <version>2.44.8</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>costexplorer</artifactId>
-        <version>2.44.7</version>
+        <version>2.44.8</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>regions</artifactId>
-        <version>2.44.7</version>
+        <version>2.44.8</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>aws-core</artifactId>
-        <version>2.44.7</version>
+        <version>2.44.8</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sqs</artifactId>
-        <version>2.44.7</version>
+        <version>2.44.8</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sns</artifactId>
-        <version>2.44.7</version>
+        <version>2.44.8</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>dynamodb</artifactId>
-        <version>2.44.7</version>
+        <version>2.44.8</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>scheduler</artifactId>
-        <version>2.44.7</version>
+        <version>2.44.8</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sdk-core</artifactId>
-        <version>2.44.7</version>
+        <version>2.44.8</version>
       </dependency>
         <dependency>
         <groupId>com.aliyun</groupId>
