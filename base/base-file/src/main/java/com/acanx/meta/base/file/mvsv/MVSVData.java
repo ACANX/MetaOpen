@@ -33,7 +33,7 @@ public class MVSVData {
      * 默认构造函数
      */
     public MVSVData() {
-        this.headers = new ArrayList<>();
+        this.headers = null;  // 无元数据时 headers 为 null
         this.fieldNames = new ArrayList<>();
         this.fieldTypes = new ArrayList<>();
         this.rows = new ArrayList<>();
