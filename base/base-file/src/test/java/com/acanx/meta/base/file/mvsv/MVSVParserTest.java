@@ -151,7 +151,7 @@ Timestamp|Open|High|Low|Close|Volume
         assertNull(data.getHeaders());
 
         // 所有行都是数据
-        assertEquals(2, data.getRows().size());
+        assertEquals(3, data.getRows().size());
     }
 
     @Test
