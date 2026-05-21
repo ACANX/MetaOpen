@@ -15,7 +15,7 @@ import java.util.Map;
 /**
  * MVSV 文件解析器
  *
- * MVSV（MVSVMetadata Vertical bar Separated Values）格式文件的解析器，
+ * MVSV（Metadata Vertical bar Separated Values）格式文件的解析器，
  * 用于将 MVSV 文件解析为结构化的 MVSVData 对象。
  *
  * @author ACANX
@@ -30,7 +30,7 @@ public class MVSVParser {
      * @return 解析后的数据对象
      * @throws IOException 文件读取异常
      */
-    public MVSVMVSVData parse(String filePath) throws IOException {
+    public MVSVData parse(String filePath) throws IOException {
         List<String> lines = readFile(filePath);
 
         // 解析元数据区
@@ -130,7 +130,7 @@ public class MVSVParser {
             }
         }
 
-        MVSVMetadata metadata = new Metadata();
+        MVSVMetadata metadata = new MVSVMetadata();
         metadata.setTitle(metadataMap.get("标题"));
         metadata.setTitleEn(metadataMap.get("Title"));
         metadata.setDataProvider(metadataMap.get("数据供应商"));

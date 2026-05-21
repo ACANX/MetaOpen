@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * MVSV 文件序列化器
  *
- * MVSV（MVSVMetadata Vertical bar Separated Values）格式文件的序列化器，
+ * MVSV（Metadata Vertical bar Separated Values）格式文件的序列化器，
  * 用于将 MVSVData 对象序列化为 MVSV 格式文件。
  *
  * @author ACANX
