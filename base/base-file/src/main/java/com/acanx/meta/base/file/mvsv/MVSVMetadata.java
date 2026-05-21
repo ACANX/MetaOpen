@@ -63,7 +63,7 @@ public class MVSVMetadata {
     /**
      * 默认构造函数
      */
-    public Metadata() {
+    public MVSVMetadata() {
     }
 
     /**

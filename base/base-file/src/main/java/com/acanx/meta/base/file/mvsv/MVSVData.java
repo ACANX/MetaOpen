@@ -32,7 +32,7 @@ public class MVSVData {
     /**
      * 默认构造函数
      */
-    public Data() {
+    public MVSVData() {
         this.headers = new ArrayList<>();
         this.fieldNames = new ArrayList<>();
         this.fieldTypes = new ArrayList<>();
