@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author ACANX
  * @since 2026-05-21
  */
-class ParserTest {
+class MVSVParserTest {
 
     // 测试数据
     private static final String TEST_MVSV_CONTENT = """
@@ -70,8 +70,8 @@ Timestamp|Open|High|Low|Close|Volume
         Files.writeString(testFile, TEST_MVSV_CONTENT);
 
         // 解析文件
-        Parser parser = new Parser();
-        Data data = parser.parse(testFile.toString());
+        MVSVParser parser = new MVSVParser();
+        MVSVData data = parser.parse(testFile.toString());
 
         // 验证元数据
         assertEquals("黄金分钟级行情 - 2026-05-21", data.getMetadata().getTitle());
@@ -127,8 +127,8 @@ Timestamp|Open|High|Low|Close|Volume
 
     @Test
     void testParseString() {
-        Parser parser = new Parser();
-        Data data = parser.parseString(TEST_MVSV_CONTENT);
+        MVSVParser parser = new MVSVParser();
+        MVSVData data = parser.parseString(TEST_MVSV_CONTENT);
 
         // 验证基本解析
         assertEquals("黄金分钟级行情 - 2026-05-21", data.getMetadata().getTitle());
@@ -136,13 +136,13 @@ Timestamp|Open|High|Low|Close|Volume
     }
 
     @Test
-    void testParsePureData(@TempDir Path tempDir) throws IOException {
+    void testParsePureMVSVData(@TempDir Path tempDir) throws IOException {
         // 测试纯数据（无元数据）
         Path testFile = tempDir.resolve("pure.mvsv");
         Files.writeString(testFile, TEST_PURE_DATA_CONTENT);
 
-        Parser parser = new Parser();
-        Data data = parser.parse(testFile.toString());
+        MVSVParser parser = new MVSVParser();
+        MVSVData data = parser.parse(testFile.toString());
 
         // 验证无元数据时解析正常
         assertNull(data.getMetadata().getTitle());
@@ -160,8 +160,8 @@ Timestamp|Open|High|Low|Close|Volume
         Path testFile = tempDir.resolve("null.mvsv");
         Files.writeString(testFile, TEST_NULL_VALUE_CONTENT);
 
-        Parser parser = new Parser();
-        Data data = parser.parse(testFile.toString());
+        MVSVParser parser = new MVSVParser();
+        MVSVData data = parser.parse(testFile.toString());
 
         // 验证空值处理
         assertEquals(2, data.getRows().size());
@@ -175,7 +175,7 @@ Timestamp|Open|High|Low|Close|Volume
 
     @Test
     void testMetadataGetMethods() {
-        Metadata metadata = new Metadata();
+        MVSVMetadata metadata = new Metadata();
         metadata.setField("A|B|C|D");
         metadata.setFieldName("名称A|名称B|名称C|名称D");
         metadata.setFieldType("string|number|integer|boolean");
@@ -193,7 +193,7 @@ Timestamp|Open|High|Low|Close|Volume
         assertEquals(4, fieldTypeList.size());
 
         // 测试空值情况
-        Metadata emptyMetadata = new Metadata();
+        MVSVMetadata emptyMVSVMetadata = new Metadata();
         assertTrue(emptyMetadata.getFieldList().isEmpty());
         assertTrue(emptyMetadata.getFieldNameList().isEmpty());
         assertTrue(emptyMetadata.getFieldTypeList().isEmpty());
@@ -213,8 +213,8 @@ Timestamp|Open|High|Low|Close|Volume
 1|2|3
 """;
 
-        Parser parser = new Parser();
-        Data data = parser.parseString(content);
+        MVSVParser parser = new MVSVParser();
+        MVSVData data = parser.parseString(content);
 
         // 验证中英双语字段都正确解析
         assertEquals("中文标题", data.getMetadata().getTitle());
@@ -235,8 +235,8 @@ A|B|C
 1|2|3
 """;
 
-        Parser parser = new Parser();
-        Data data = parser.parseString(content);
+        MVSVParser parser = new MVSVParser();
+        MVSVData data = parser.parseString(content);
 
         assertEquals("带引号的标题", data.getMetadata().getTitle());
         assertEquals("带空格的备注信息", data.getMetadata().getRemark());
@@ -256,8 +256,8 @@ A|B
 1|2
 """;
 
-        Parser parser = new Parser();
-        Data data = parser.parseString(content);
+        MVSVParser parser = new MVSVParser();
+        MVSVData data = parser.parseString(content);
 
         // 验证扩展字段存储在 Extra 中
         assertEquals("自定义值", data.getMetadata().getExtra().get("自定义字段"));

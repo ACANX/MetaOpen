@@ -16,7 +16,7 @@ import java.util.Map;
  * @author ACANX
  * @since 2026-05-21
  */
-public class Metadata {
+public class MVSVMetadata {
 
     /** 标题 */
     private String title;

@@ -10,13 +10,13 @@ import java.util.List;
 /**
  * MVSV 文件序列化器
  *
- * MVSV（Metadata Vertical bar Separated Values）格式文件的序列化器，
- * 用于将 Data 对象序列化为 MVSV 格式文件。
+ * MVSV（MVSVMetadata Vertical bar Separated Values）格式文件的序列化器，
+ * 用于将 MVSVData 对象序列化为 MVSV 格式文件。
  *
  * @author ACANX
  * @since 2026-05-21
  */
-public class Serializer {
+public class MVSVSerializer {
 
     /**
      * 序列化为 MVSV 文件
@@ -25,7 +25,7 @@ public class Serializer {
      * @param filePath 输出文件路径
      * @throws IOException 文件写入异常
      */
-    public void serialize(Data data, String filePath) throws IOException {
+    public void serialize(MVSVData data, String filePath) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(
                 new OutputStreamWriter(new FileOutputStream(filePath), StandardCharsets.UTF_8))) {
 
@@ -36,7 +36,7 @@ public class Serializer {
             writer.newLine();
 
             // 写入数据区
-            writeData(writer, data.getRows());
+            writeMVSVData(writer, data.getRows());
         }
     }
 
@@ -46,7 +46,7 @@ public class Serializer {
      * @param data 数据对象
      * @return MVSV 格式字符串
      */
-    public String serializeToString(Data data) {
+    public String serializeToString(MVSVData data) {
         StringBuilder builder = new StringBuilder();
 
         // 写入元数据区
@@ -68,7 +68,7 @@ public class Serializer {
      * @param metadata 元数据
      * @throws IOException 写入异常
      */
-    private void writeMetadata(BufferedWriter writer, Metadata metadata) throws IOException {
+    private void writeMetadata(BufferedWriter writer, MVSVMetadata metadata) throws IOException {
         // 中文元数据
         if (metadata.getTitle() != null && !metadata.getTitle().isEmpty()) {
             writer.write(String.format("# 标题 : \"%s\"", metadata.getTitle()));
@@ -132,7 +132,7 @@ public class Serializer {
      * @param builder 字符串构建器
      * @param metadata 元数据
      */
-    private void writeMetadataToBuilder(StringBuilder builder, Metadata metadata) {
+    private void writeMetadataToBuilder(StringBuilder builder, MVSVMetadata metadata) {
         // 中文元数据
         if (metadata.getTitle() != null && !metadata.getTitle().isEmpty()) {
             builder.append(String.format("# 标题 : \"%s\"\n", metadata.getTitle()));
@@ -183,7 +183,7 @@ public class Serializer {
      * @param rows 数据行
      * @throws IOException 写入异常
      */
-    private void writeData(BufferedWriter writer, List<List<String>> rows) throws IOException {
+    private void writeMVSVData(BufferedWriter writer, List<List<String>> rows) throws IOException {
         for (List<String> row : rows) {
             writer.write(String.join("|", row));
             writer.newLine();

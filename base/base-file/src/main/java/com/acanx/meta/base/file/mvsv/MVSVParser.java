@@ -15,13 +15,13 @@ import java.util.Map;
 /**
  * MVSV 文件解析器
  *
- * MVSV（Metadata Vertical bar Separated Values）格式文件的解析器，
- * 用于将 MVSV 文件解析为结构化的 Data 对象。
+ * MVSV（MVSVMetadata Vertical bar Separated Values）格式文件的解析器，
+ * 用于将 MVSV 文件解析为结构化的 MVSVData 对象。
  *
  * @author ACANX
  * @since 2026-05-21
  */
-public class Parser {
+public class MVSVParser {
 
     /**
      * 解析 MVSV 文件
@@ -30,17 +30,17 @@ public class Parser {
      * @return 解析后的数据对象
      * @throws IOException 文件读取异常
      */
-    public Data parse(String filePath) throws IOException {
+    public MVSVMVSVData parse(String filePath) throws IOException {
         List<String> lines = readFile(filePath);
 
         // 解析元数据区
-        Metadata metadata = parseMetadata(lines);
+        MVSVMetadata metadata = parseMetadata(lines);
 
         // 解析数据区
-        List<List<String>> rows = parseData(lines);
+        List<List<String>> rows = parseMVSVData(lines);
 
         // 构建结果
-        Data data = new Data();
+        MVSVData data = new MVSVData();
         data.setMetadata(metadata);
         // 从元数据获取 headers，无元数据时 headers 为 null
         if (metadata.getField() != null && !metadata.getField().isEmpty()) {
@@ -59,18 +59,18 @@ public class Parser {
      * @param content MVSV 内容字符串
      * @return 解析后的数据对象
      */
-    public Data parseString(String content) {
+    public MVSVData parseString(String content) {
         String[] lineArray = content.split("\n");
         List<String> lines = Arrays.asList(lineArray);
 
         // 解析元数据区
-        Metadata metadata = parseMetadata(lines);
+        MVSVMetadata metadata = parseMetadata(lines);
 
         // 解析数据区
-        List<List<String>> rows = parseData(lines);
+        List<List<String>> rows = parseMVSVData(lines);
 
         // 构建结果
-        Data data = new Data();
+        MVSVData data = new MVSVData();
         data.setMetadata(metadata);
         // 从元数据获取 headers，无元数据时 headers 为 null
         if (metadata.getField() != null && !metadata.getField().isEmpty()) {
@@ -108,7 +108,7 @@ public class Parser {
      * @param lines 文件行列表
      * @return 元数据对象
      */
-    private Metadata parseMetadata(List<String> lines) {
+    private MVSVMetadata parseMetadata(List<String> lines) {
         Map<String, String> metadataMap = new HashMap<>();
 
         for (String line : lines) {
@@ -130,7 +130,7 @@ public class Parser {
             }
         }
 
-        Metadata metadata = new Metadata();
+        MVSVMetadata metadata = new Metadata();
         metadata.setTitle(metadataMap.get("标题"));
         metadata.setTitleEn(metadataMap.get("Title"));
         metadata.setDataProvider(metadataMap.get("数据供应商"));
@@ -177,7 +177,7 @@ public class Parser {
      * @param lines 文件行列表
      * @return 数据行列表
      */
-    private List<List<String>> parseData(List<String> lines) {
+    private List<List<String>> parseMVSVData(List<String> lines) {
         List<List<String>> rows = new ArrayList<>();
 
         for (String line : lines) {

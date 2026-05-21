@@ -12,10 +12,10 @@ import java.util.List;
  * @author ACANX
  * @since 2026-05-21
  */
-public class Data {
+public class MVSVData {
 
     /** 元数据 */
-    private Metadata metadata;
+    private MVSVMetadata metadata;
 
     /** 字段名列表 */
     private List<String> headers;
@@ -44,7 +44,7 @@ public class Data {
      *
      * @return 元数据
      */
-    public Metadata getMetadata() {
+    public MVSVMetadata getMetadata() {
         return metadata;
     }
 
@@ -53,7 +53,7 @@ public class Data {
      *
      * @param metadata 元数据
      */
-    public void setMetadata(Metadata metadata) {
+    public void setMetadata(MVSVMetadata metadata) {
         this.metadata = metadata;
     }
 
