@@ -175,7 +175,7 @@ Timestamp|Open|High|Low|Close|Volume
 
     @Test
     void testMetadataGetMethods() {
-        MVSVMetadata metadata = new Metadata();
+        MVSVMetadata metadata = new MVSVMetadata();
         metadata.setField("A|B|C|D");
         metadata.setFieldName("名称A|名称B|名称C|名称D");
         metadata.setFieldType("string|number|integer|boolean");
@@ -193,10 +193,10 @@ Timestamp|Open|High|Low|Close|Volume
         assertEquals(4, fieldTypeList.size());
 
         // 测试空值情况
-        MVSVMetadata emptyMVSVMetadata = new Metadata();
-        assertTrue(emptyMetadata.getFieldList().isEmpty());
-        assertTrue(emptyMetadata.getFieldNameList().isEmpty());
-        assertTrue(emptyMetadata.getFieldTypeList().isEmpty());
+        MVSVMetadata emptyMVSVMetadata = new MVSVMetadata();
+        assertTrue(emptyMVSVMetadata.getFieldList().isEmpty());
+        assertTrue(emptyMVSVMetadata.getFieldNameList().isEmpty());
+        assertTrue(emptyMVSVMetadata.getFieldTypeList().isEmpty());
     }
 
     @Test
