@@ -2556,7 +2556,7 @@
         <dependency>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-lambda-java-serialization</artifactId>
-        <version>1.4.0</version>
+        <version>1.4.1</version>
       </dependency>
         <dependency>
         <groupId>com.aliyun.fc.runtime</groupId>
