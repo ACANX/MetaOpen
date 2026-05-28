@@ -87,9 +87,7 @@ public class ArtifactService {
             String packagingType = "jar";
             try {
                 project = parseMavenProjectPomXmlContent(xmlResponse);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            } catch (XmlPullParserException e) {
+            } catch (IOException | XmlPullParserException e) {
                 throw new RuntimeException(e);
             }
             // System.out.println("Packaging type: " + project.getPackaging());
@@ -120,7 +118,7 @@ public class ArtifactService {
     }
 
 
-    private static Project parseMavenProjectPomXmlContent(String pomContent) {
+    private static Project parseMavenProjectPomXmlContent(String pomContent) throws IOException {
         XmlMapper xmlMapper = new XmlMapper();
         // 忽略未知属性
         xmlMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
