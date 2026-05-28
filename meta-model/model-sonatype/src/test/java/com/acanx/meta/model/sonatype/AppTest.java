@@ -1,3 +1,5 @@
+package com.acanx.meta.model.sonatype.AppTest;
+
 //package com.acanx.meta.model;
 //
 //
@@ -13,7 +15,7 @@
 //     * Rigorous Test :-)
 //     */
 //    @Test
-//    public void shouldAnswerWithTrue() {
+//    void shouldAnswerWithTrue() {
 //        Assertions.assertTrue(true);
 //    }
 //
