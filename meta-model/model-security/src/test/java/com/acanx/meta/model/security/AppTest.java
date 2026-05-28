@@ -1,4 +1,4 @@
-package com.acanx.meta.model.rss;
+package com.acanx.meta.model.security;
 
 
 import org.junit.jupiter.api.Assertions;
