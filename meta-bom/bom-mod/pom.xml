@@ -116,7 +116,7 @@
 
         <!-- 第三方 SDK 版本 -->
         <java-function-invoker.version>2.0.1</java-function-invoker.version>
-        <oapi-sdk.version>2.7.1</oapi-sdk.version>
+        <oapi-sdk.version>2.7.2</oapi-sdk.version>
         <brevo.version>1.1.7</brevo.version>
         <ipinfo-api.version>3.4.0</ipinfo-api.version>
         <longport-openapi-sdk.version>3.0.23</longport-openapi-sdk.version>
