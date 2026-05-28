@@ -9,7 +9,7 @@ package com.acanx.meta.c;
 public class GeminiConst {
 
     private GeminiConst() {
-        // constant class
+        // 工具类，禁止实例化
     }
 
     // 默认模型

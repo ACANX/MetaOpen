@@ -9,7 +9,7 @@ package com.acanx.meta.model.json.feed;
 public class JSONFeedConst {
 
     private JSONFeedConst() {
-        // constant class
+        // 工具类，禁止实例化
     }
 
     public static final String VERSION = "version";

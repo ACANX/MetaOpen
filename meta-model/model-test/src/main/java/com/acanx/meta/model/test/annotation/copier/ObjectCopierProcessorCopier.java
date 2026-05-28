@@ -21,9 +21,9 @@ import com.acanx.meta.model.test.json.model.UserDTO;
  */
 public final class ObjectCopierProcessorCopier {
 
-  private ObjectCopierProcessorCopier() {
-    // utility class
-  }
+    private ObjectCopierProcessorCopier() {
+        // 工具类，禁止实例化
+    }
 
   /**
    * Incubator-Annotation生成的拷贝方法
