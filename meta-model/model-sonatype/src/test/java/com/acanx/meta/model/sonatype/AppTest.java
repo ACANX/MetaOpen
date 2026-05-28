@@ -1,4 +1,4 @@
-package com.acanx.meta.model.sonatype.AppTest.java;
+package com.acanx.meta.model.sonatype.AppTest;
 
 //package com.acanx.meta.model;
 //

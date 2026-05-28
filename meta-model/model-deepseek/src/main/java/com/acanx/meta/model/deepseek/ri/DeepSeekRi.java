@@ -26,7 +26,7 @@ public class DeepSeekRi {
         this.model = model;
         this.stream = stream;
         this.temperature = temperature;
-        this.maxTokens = max_tokens;
+        this.maxTokens = maxTokens;
         this.messages = messages;
     }
 
