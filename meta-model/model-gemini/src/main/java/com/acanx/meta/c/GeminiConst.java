@@ -8,6 +8,10 @@ package com.acanx.meta.c;
  */
 public class GeminiConst {
 
+    private GeminiConst() {
+        // 工具类，禁止实例化
+    }
+
     // 默认模型
     public static String MODEL = "gemini-3-pro-high";
     // Gemini 2.5 Pro 模型名称

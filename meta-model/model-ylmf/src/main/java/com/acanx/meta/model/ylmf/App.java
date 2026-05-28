@@ -1,17 +1,17 @@
 package com.acanx.meta.model.ylmf;
 
-import java.util.logging.Logger;
-
 /**
  *
  * App
  *
  */
-public class App {
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-    private static final Logger LOGGER = Logger.getLogger(App.class.getName());
+public class App {
+    private static final Logger logger = LoggerFactory.getLogger(App.class);
 
     public static void main(String[] args) {
-        LOGGER.info("Hello World!");
+        logger.info("Hello World!");
     }
 }
