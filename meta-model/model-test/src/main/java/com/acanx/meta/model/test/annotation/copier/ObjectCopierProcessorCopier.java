@@ -20,6 +20,11 @@ import com.acanx.meta.model.test.json.model.UserDTO;
  * - convertUserToUserDTOWithIgnorePassword()
  */
 public final class ObjectCopierProcessorCopier {
+
+  private ObjectCopierProcessorCopier() {
+    // utility class
+  }
+
   /**
    * Incubator-Annotation生成的拷贝方法
    * 用于替换 {@link CopierProcessor#convertMessageFlexToMessageStable(MessageFlex, MessageStable)}

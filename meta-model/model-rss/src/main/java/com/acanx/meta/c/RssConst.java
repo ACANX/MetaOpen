@@ -8,6 +8,9 @@ package com.acanx.meta.c;
  */
 public class RssConst {
 
+    private RssConst() {
+        // constant class
+    }
 
     /**
      * RSS API v1.1 版本的基础URL地址
