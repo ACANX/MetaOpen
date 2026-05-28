@@ -30,23 +30,6 @@ jobs:
       actions: read
       contents: read
 
-    env:
-      # 为 CodeQL autobuild 中的 forked javac 进程添加 JDK 模块访问权限
-      # 解决 CopierAstProcessor 注解处理器访问 jdk.compiler 内部 API 时的 IllegalAccessError
-      JAVA_TOOL_OPTIONS: >-
-        --add-opens jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED
-        --add-opens jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED
-        --add-opens jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED
-        --add-opens jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
-        --add-opens jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED
-        --add-opens jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED
-        --add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED
-        --add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED
-        --add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED
-        --add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
-        --add-exports jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED
-        --add-exports jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED
-
     strategy:
       fail-fast: false
       matrix:
@@ -84,6 +67,23 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
+      env:
+        # 仅为 autobuild 构建阶段设置 JAVA_TOOL_OPTIONS
+        # 不能在 job 级别设置，否则 CodeQL CLI（也是 Java 应用）会因无法识别 --add-opens 而崩溃
+        # 这些参数确保 CopierAstProcessor 注解处理器能访问 jdk.compiler 内部 API
+        JAVA_TOOL_OPTIONS: >-
+          --add-opens jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED
+          --add-opens jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED
+          --add-opens jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED
+          --add-opens jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
+          --add-opens jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED
+          --add-opens jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED
+          --add-exports jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED
+          --add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED
+          --add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED
+          --add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED
+          --add-exports jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED
+          --add-exports jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED
       with:
         # category 可用于区分不同分析任务的结果
         category: "/language:${{matrix.language}}"
