@@ -87,7 +87,7 @@ public class ArtifactService {
             String packagingType = "jar";
             try {
                 project = parseMavenProjectPomXmlContent(xmlResponse);
-            } catch (IOException | XmlPullParserException e) {
+            } catch (IOException e) {
                 throw new RuntimeException(e);
             }
             // System.out.println("Packaging type: " + project.getPackaging());
