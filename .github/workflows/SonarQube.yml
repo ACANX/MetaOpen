@@ -39,4 +39,4 @@ jobs:
       - name: BuildAndAnalyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=ACANX_MetaOpen -Dgpg.skip=true 
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=ACANX_MetaOpen -Dsonar.organization=acanx -Dsonar.host.url=https://sonarcloud.io -Dgpg.skip=true 
