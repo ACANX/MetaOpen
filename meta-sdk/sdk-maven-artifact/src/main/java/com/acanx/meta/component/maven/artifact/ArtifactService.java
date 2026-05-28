@@ -120,7 +120,7 @@ public class ArtifactService {
     }
 
 
-    private static Project parseMavenProjectPomXmlContent(String pomContent) throws IOException, XmlPullParserException {
+    private static Project parseMavenProjectPomXmlContent(String pomContent) {
         XmlMapper xmlMapper = new XmlMapper();
         // 忽略未知属性
         xmlMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);

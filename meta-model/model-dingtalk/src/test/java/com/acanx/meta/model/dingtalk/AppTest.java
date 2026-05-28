@@ -13,7 +13,7 @@
 //     * Rigorous Test :-)
 //     */
 //    @Test
-//    public void shouldAnswerWithTrue() {
+//    void shouldAnswerWithTrue() {
 //        Assertions.assertTrue(true);
 //    }
 //
