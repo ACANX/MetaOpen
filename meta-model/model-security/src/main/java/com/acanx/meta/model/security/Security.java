@@ -31,7 +31,11 @@ public class Security {
     private String securityCategory;
 
 
+    /**
+     * 默认构造函数，用于 JSON 反序列化和框架反射创建实例。
+     */
     public Security() {
+        // 用于 JSON 反序列化和框架反射创建实例
     }
 
 

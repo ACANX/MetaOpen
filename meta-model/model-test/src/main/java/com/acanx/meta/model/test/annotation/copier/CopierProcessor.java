@@ -26,7 +26,10 @@ public class CopierProcessor {
      * @param target   目标
      */
     @Copier
-    public void convertMessageFlexToMessageStable(MessageFlex source, MessageStable target) {}
+    public void convertMessageFlexToMessageStable(MessageFlex source, MessageStable target) {
+        // 编译期生成的代码将放在辅助类中
+        // MessageFlexCopierHelper.copy(source, target);
+    }
 
 
     /**

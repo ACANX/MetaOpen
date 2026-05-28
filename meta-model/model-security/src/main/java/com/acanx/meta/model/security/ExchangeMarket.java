@@ -29,7 +29,11 @@ public class ExchangeMarket {
     private String currencyType;
 
 
+    /**
+     * 默认构造函数，用于 JSON 反序列化和框架反射创建实例。
+     */
     public ExchangeMarket() {
+        // 用于 JSON 反序列化和框架反射创建实例
     }
 
     public String getRegion() {
