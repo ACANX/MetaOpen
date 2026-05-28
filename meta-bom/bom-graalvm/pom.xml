@@ -77,20 +77,20 @@
             <dependency>
                 <groupId>org.graalvm.buildtools</groupId>
                 <artifactId>native-maven-plugin</artifactId>
-                <version>1.1.0</version>
+                <version>1.1.1</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.graalvm.buildtools/utils -->
             <dependency>
                 <groupId>org.graalvm.buildtools</groupId>
                 <artifactId>utils</artifactId>
-                <version>1.1.0</version>
+                <version>1.1.1</version>
                 <scope>runtime</scope>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.graalvm.buildtools/graalvm-reachability-metadata -->
             <dependency>
                 <groupId>org.graalvm.buildtools</groupId>
                 <artifactId>graalvm-reachability-metadata</artifactId>
-                <version>1.1.0</version>
+                <version>1.1.1</version>
                 <scope>runtime</scope>
             </dependency>
         </dependencies>

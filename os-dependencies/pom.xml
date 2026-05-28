@@ -62,22 +62,22 @@
         <aspectjweaver.version>1.9.25.1</aspectjweaver.version>
         <bytebuddy.version>1.18.8</bytebuddy.version>
 
-        <netty.version>4.2.13.Final</netty.version>
+        <netty.version>4.2.14.Final</netty.version>
         <reactor.verion>3.8.5</reactor.verion>
-        <protobuf-java.version>4.34.1</protobuf-java.version>
+        <protobuf-java.version>4.35.0</protobuf-java.version>
 
         <tomcat-embed.version>11.0.22</tomcat-embed.version>
 
         <mysql-connector-j.version>9.7.0</mysql-connector-j.version>
         <postgresql.version>42.7.11</postgresql.version>
         <mybatis.version>3.5.19</mybatis.version>
-        <hibernate-orm.version>7.3.5.Final</hibernate-orm.version>
+        <hibernate-orm.version>7.4.0.Final</hibernate-orm.version>
         <seata.version>2.6.0</seata.version>
 
         <commons-lang3.version>3.20.0</commons-lang3.version>
         <common-io.version>2.22.0</common-io.version>
         <commons-collections4.version>4.5.0</commons-collections4.version>
-        <commons-configuration2.version>2.15.0</commons-configuration2.version>
+        <commons-configuration2.version>2.15.1</commons-configuration2.version>
         
         <guava.version>33.6.0-jre</guava.version>
 
@@ -117,8 +117,8 @@
         <selenium.version>4.44.0</selenium.version>
         <thymeleaf.version>3.1.5.RELEASE</thymeleaf.version>
 
-        <junit-jupiter.version>6.0.3</junit-jupiter.version>
-        <junit-platform.version>6.0.3</junit-platform.version>
+        <junit-jupiter.version>6.1.0</junit-jupiter.version>
+        <junit-platform.version>6.1.0</junit-platform.version>
         <!-- 修复 plexus-utils 目录遍历漏洞 -->
         <plexus-utils.version>4.0.3</plexus-utils.version>
         <plexus-xml.version>4.1.1</plexus-xml.version>
@@ -365,7 +365,7 @@
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.5.5</version>
+                <version>3.5.6</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -425,7 +425,7 @@
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>3.5.5</version>
+                <version>3.5.6</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -435,7 +435,7 @@
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>3.21.0</version>
+                <version>3.22.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -757,19 +757,19 @@
             <dependency>
                 <groupId>com.alibaba.csp</groupId>
                 <artifactId>sentinel-core</artifactId>
-                <version>1.8.9</version>
+                <version>1.8.10</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.kafka</groupId>
                 <artifactId>kafka_2.13</artifactId>
-                <version>4.2.0</version>
+                <version>4.3.0</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>org.apache.kafka</groupId>
                 <artifactId>kafka-clients</artifactId>
-                <version>4.2.0</version>
+                <version>4.3.0</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>

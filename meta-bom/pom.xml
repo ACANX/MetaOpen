@@ -202,7 +202,7 @@
         <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
 
         <lombok.version>1.18.46</lombok.version>
-        <netty.version>4.2.13.Final</netty.version>
+        <netty.version>4.2.14.Final</netty.version>
         
         
          <!--  JSON -->
@@ -264,8 +264,8 @@
         <selenium-devtools.version>4.41.0</selenium-devtools.version>
         <selenium-htmlunit.version>4.29.0</selenium-htmlunit.version>
 
-        <awssdk.version>2.44.9</awssdk.version>
-        <huaweicloud-sdk.version>3.1.196</huaweicloud-sdk.version>
+        <awssdk.version>2.44.13</awssdk.version>
+        <huaweicloud-sdk.version>3.1.197</huaweicloud-sdk.version>
 
         <!-- 日志依赖  -->
         <slf4j.version>2.0.18</slf4j.version>

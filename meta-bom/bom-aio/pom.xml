@@ -338,7 +338,7 @@
         <dependency>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
-        <version>3.21.0</version>
+        <version>3.22.0</version>
       </dependency>
         <dependency>
         <groupId>org.apache.maven.plugins</groupId>
@@ -501,29 +501,29 @@
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-all</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-http</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-http2</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-http3</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>com.google.protobuf</groupId>
         <artifactId>protobuf-java</artifactId>
-        <version>4.34.1</version>
+        <version>4.35.0</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -637,19 +637,19 @@
         <dependency>
         <groupId>com.alibaba.csp</groupId>
         <artifactId>sentinel-core</artifactId>
-        <version>1.8.9</version>
+        <version>1.8.10</version>
       </dependency>
         <dependency>
         <groupId>org.apache.kafka</groupId>
         <artifactId>kafka_2.13</artifactId>
-        <version>4.2.0</version>
+        <version>4.3.0</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
         <dependency>
         <groupId>org.apache.kafka</groupId>
         <artifactId>kafka-clients</artifactId>
-        <version>4.2.0</version>
+        <version>4.3.0</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -857,7 +857,7 @@
         <dependency>
         <groupId>org.hibernate.orm</groupId>
         <artifactId>hibernate-core</artifactId>
-        <version>7.3.5.Final</version>
+        <version>7.3.6.Final</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -975,13 +975,13 @@
         <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-engine</artifactId>
-        <version>6.0.3</version>
+        <version>6.1.0</version>
         <scope>test</scope>
       </dependency>
         <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-api</artifactId>
-        <version>6.0.3</version>
+        <version>6.1.0</version>
         <scope>test</scope>
       </dependency>
         <dependency>
@@ -1330,144 +1330,144 @@
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-buffer</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-base</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-dns</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-haproxy</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-compression</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-memcache</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-mqtt</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-redis</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-smtp</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-socks</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-stomp</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-xml</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-protobuf</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-marshalling</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-common</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-dev-tools</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-handler</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-handler-proxy</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-handler-ssl-ocsp</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-resolver</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-resolver-dns</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-transport</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-transport-udt</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-transport-native-epoll</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
         <scope>runtime</scope>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-transport-native-io_uring</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
         <scope>runtime</scope>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-classes-quic</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-native-quic</artifactId>
-        <version>4.2.13.Final</version>
+        <version>4.2.14.Final</version>
         <scope>runtime</scope>
       </dependency>
         <dependency>
@@ -2344,30 +2344,30 @@
         <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter</artifactId>
-        <version>6.0.3</version>
+        <version>6.1.0</version>
         <scope>test</scope>
       </dependency>
         <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-params</artifactId>
-        <version>6.0.3</version>
+        <version>6.1.0</version>
       </dependency>
         <dependency>
         <groupId>org.junit.vintage</groupId>
         <artifactId>junit-vintage-engine</artifactId>
-        <version>6.0.3</version>
+        <version>6.1.0</version>
         <scope>test</scope>
         <optional>true</optional>
       </dependency>
         <dependency>
         <groupId>org.junit.platform</groupId>
         <artifactId>junit-platform-engine</artifactId>
-        <version>6.0.3</version>
+        <version>6.1.0</version>
       </dependency>
         <dependency>
         <groupId>org.junit.platform</groupId>
         <artifactId>junit-platform-launcher</artifactId>
-        <version>6.0.3</version>
+        <version>6.1.0</version>
         <scope>test</scope>
       </dependency>
         <dependency>
@@ -2399,13 +2399,13 @@
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>ses</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>auth</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
@@ -2416,7 +2416,7 @@
         <dependency>
         <groupId>com.google.protobuf</groupId>
         <artifactId>protobuf-java-util</artifactId>
-        <version>4.33.0</version>
+        <version>4.35.0</version>
       </dependency>
         <dependency>
         <groupId>jakarta.servlet</groupId>
@@ -2437,7 +2437,7 @@
         <dependency>
         <groupId>org.json</groupId>
         <artifactId>json</artifactId>
-        <version>20251224</version>
+        <version>20260522</version>
       </dependency>
         <dependency>
         <groupId>org.apache.poi</groupId>
@@ -2515,7 +2515,7 @@
         <dependency>
         <groupId>com.tencentcloudapi</groupId>
         <artifactId>tencentcloud-sdk-java-scf</artifactId>
-        <version>3.1.1468</version>
+        <version>3.1.1469</version>
       </dependency>
         <dependency>
         <groupId>com.tencentcloudapi</groupId>
@@ -2551,12 +2551,12 @@
         <dependency>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-lambda-java-log4j2</artifactId>
-        <version>1.6.3</version>
+        <version>1.6.4</version>
       </dependency>
         <dependency>
         <groupId>com.amazonaws</groupId>
         <artifactId>aws-lambda-java-serialization</artifactId>
-        <version>1.4.0</version>
+        <version>1.4.1</version>
       </dependency>
         <dependency>
         <groupId>com.aliyun.fc.runtime</groupId>
@@ -2571,7 +2571,7 @@
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-functiongraph</artifactId>
-        <version>3.1.196</version>
+        <version>3.1.197</version>
       </dependency>
         <dependency>
         <groupId>com.google.cloud.functions</groupId>
@@ -2592,7 +2592,7 @@
         <dependency>
         <groupId>com.larksuite.oapi</groupId>
         <artifactId>oapi-sdk</artifactId>
-        <version>2.6.1</version>
+        <version>2.7.1</version>
       </dependency>
         <dependency>
         <groupId>com.brevo</groupId>
@@ -2627,12 +2627,12 @@
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-core</artifactId>
-        <version>3.1.196</version>
+        <version>3.1.197</version>
       </dependency>
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-apig</artifactId>
-        <version>3.1.196</version>
+        <version>3.1.197</version>
       </dependency>
         <dependency>
         <groupId>com.aliyun</groupId>
@@ -2666,59 +2666,59 @@
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>s3</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>lambda</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>cloudwatch</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>costexplorer</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>regions</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>aws-core</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sqs</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sns</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>dynamodb</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>scheduler</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sdk-core</artifactId>
-        <version>2.44.8</version>
+        <version>2.44.9</version>
       </dependency>
         <dependency>
         <groupId>com.aliyun</groupId>
@@ -2733,18 +2733,18 @@
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>native-maven-plugin</artifactId>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
       </dependency>
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>utils</artifactId>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
         <scope>runtime</scope>
       </dependency>
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>graalvm-reachability-metadata</artifactId>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
         <scope>runtime</scope>
       </dependency>
     </dependencies>
