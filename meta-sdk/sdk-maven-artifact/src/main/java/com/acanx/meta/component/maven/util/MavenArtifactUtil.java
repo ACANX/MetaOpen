@@ -19,8 +19,7 @@ public class MavenArtifactUtil {
      */
     public static String getArtifactMetadataXmlFileUrl(String groupId, String artifactId) {
         String groupPath = groupId.replace(".", "/");
-        String reqUrl = MVNC.URL_MAVEN_CENTRAL_REPO + groupPath + "/" + artifactId.replace(".", "/") + "/maven-metadata.xml";
-        return reqUrl;
+        return MVNC.URL_MAVEN_CENTRAL_REPO + groupPath + "/" + artifactId.replace(".", "/") + "/maven-metadata.xml";
     }
 
     /**
@@ -31,8 +30,7 @@ public class MavenArtifactUtil {
      * @return
      */
     public static String getArtifactLatestVersionPomFileUrl(String groupId, String artifactId, String latestVersion) {
-        String pomFileUrl = String.format("%s%s/%s/%s/%s-%s.pom", MVNC.URL_MAVEN_CENTRAL_REPO, groupId.replace(".", "/"), artifactId, latestVersion, artifactId, latestVersion);
-        return pomFileUrl;
+        return String.format("%s%s/%s/%s/%s-%s.pom", MVNC.URL_MAVEN_CENTRAL_REPO, groupId.replace(".", "/"), artifactId, latestVersion, artifactId, latestVersion);
     }
 
     /**
