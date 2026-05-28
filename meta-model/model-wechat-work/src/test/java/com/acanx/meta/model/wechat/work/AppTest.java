@@ -1,4 +1,4 @@
-package com.acanx.meta.model.wechat.work.AppTest.java;
+package com.acanx.meta.model.wechat.work.AppTest;
 
 //package com.acanx.meta.model;
 //
