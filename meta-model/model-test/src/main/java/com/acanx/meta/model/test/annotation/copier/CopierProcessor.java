@@ -82,7 +82,6 @@ public class CopierProcessor {
      * @param args  命令行参数
      */
     public static void main(String[] args) {
-        MessageCopier processor = new MessageCopier();
         UserCopier copier = new UserCopier();
 
         User user = new User(1011,"ACE", LocalDateTime.now());
