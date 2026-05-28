@@ -1,4 +1,4 @@
-package com.acanx.meta.model.rss.AppTest.java;
+package com.acanx.meta.model.rss.AppTest;
 
 //package com.acanx.meta.model;
 //
