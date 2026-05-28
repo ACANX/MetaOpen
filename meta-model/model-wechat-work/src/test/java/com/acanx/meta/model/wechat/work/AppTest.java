@@ -1,5 +1,3 @@
-package com.acanx.meta.model.wechat.work.AppTest;
-
 //package com.acanx.meta.model;
 //
 //
@@ -15,7 +13,7 @@ package com.acanx.meta.model.wechat.work.AppTest;
 //     * Rigorous Test :-)
 //     */
 //    @Test
-//    void shouldAnswerWithTrue() {
+//    public void shouldAnswerWithTrue() {
 //        Assertions.assertTrue(true);
 //    }
 //
