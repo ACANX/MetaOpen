@@ -57,7 +57,7 @@
         <!-- JSON/序列化版本 -->
         <jackson-annotations.version>2.21</jackson-annotations.version>
         <jackson-core-asl.version>1.9.13</jackson-core-asl.version>
-        <jaxb-runtime.version>4.0.8</jaxb-runtime.version>
+        <jaxb-runtime.version>4.0.9</jaxb-runtime.version>
 
         <!-- 数据库版本 -->
         <mongo-java-driver.version>3.12.14</mongo-java-driver.version>
