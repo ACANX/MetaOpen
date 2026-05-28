@@ -16,10 +16,11 @@ jobs:
     if: |
       github.event.pull_request.user.login == 'dependabot[bot]' &&  github.event.pull_request.base.ref == 'dependa'
     steps:
-      # 1. 获取元数据
+      # 1. 获取元数据 (optional - not needed for rename)
       - name: Get dependency metadata
         uses: dependabot/fetch-metadata@v1.1.1
         id: metadata
+        continue-on-error: true
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
