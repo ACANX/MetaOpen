@@ -27,6 +27,8 @@ import java.io.IOException;
  */
 public class ArtifactService {
 
+    private static final String UNKNOWN = "UNKNOWN";
+
 
     /**
      *
@@ -57,8 +59,8 @@ public class ArtifactService {
             ma.setOriginDataProvider("metadata.xml");
         } else {
             // ma.setIgnoreFlag(Boolean.TRUE);
-            ma.setType("UNKNOWN");
-            ma.setPackaging("UNKNOWN");
+            ma.setType(UNKNOWN);
+            ma.setPackaging(UNKNOWN);
         }
         return ma;
     }
@@ -105,8 +107,8 @@ public class ArtifactService {
             ma.setPackaging(packagingType);
             ma.setOriginDataProvider("pom.xml");
         } else {
-            ma.setType("UNKNOWN");
-            ma.setPackaging("UNKNOWN");
+            ma.setType(UNKNOWN);
+            ma.setPackaging(UNKNOWN);
         }
         return ma;
     }
