@@ -13,7 +13,7 @@ import com.acanx.util.http.HResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
+
 
 import java.io.IOException;
 
@@ -87,7 +87,7 @@ public class ArtifactService {
             String packagingType = "jar";
             try {
                 project = parseMavenProjectPomXmlContent(xmlResponse);
-            } catch (IOException | XmlPullParserException e) {
+            } catch (IOException e) {
                 throw new RuntimeException(e);
             }
             // System.out.println("Packaging type: " + project.getPackaging());
