@@ -14,13 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     # 检查PR作者和分支
     if: |
-      github.event.pull_request.user.login == 'dependabot[bot]' &&  github.event.pull_request.base.ref == 'dependa'
+      github.event.pull_request.user.login == 'dependabot[bot]' && github.event.pull_request.base.ref == 'dependa'
     steps:
-      # 1. 获取元数据 (optional - not needed for rename)
+      # 1. 获取元数据
       - name: Get dependency metadata
         uses: dependabot/fetch-metadata@v1.1.1
         id: metadata
-        continue-on-error: true
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -32,7 +31,7 @@ jobs:
             const prNum = context.payload.pull_request.number;
             // 抽取包名和新版本
             const matched = context.payload.pull_request.title.match(
-              /bump\s+(.+?)\s+from\s+(.+?)\s+to\s+(.+?)(?:\s+in(.+))?$/
+              /bump\s+(.+)\s+from\s+(.+)\s+to\s+(.+)\s+in(.+)/
             );
             if (!matched) return;
             const [, pkg, oldVer, newVer, pomFile] = matched;
