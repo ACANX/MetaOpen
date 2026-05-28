@@ -26,8 +26,11 @@ public class SecurityMetaData {
 
     private Double currPrice;
 
+    /**
+     * 默认构造函数，用于 JSON 反序列化和框架反射创建实例。
+     */
     public SecurityMetaData() {
-        // intentionally empty - required for serialization framework
+        // 用于 JSON 反序列化和框架反射创建实例
     }
 
 

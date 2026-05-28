@@ -17,8 +17,11 @@ public class LatestVersionInfo {
 
     private String version;
 
+    /**
+     * 默认构造函数，用于 JSON 反序列化和框架反射创建实例。
+     */
     public LatestVersionInfo() {
-        // intentionally empty - required for serialization framework
+        // 用于 JSON 反序列化和框架反射创建实例
     }
 
     public List<String> getLicenses() {
