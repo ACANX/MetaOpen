@@ -26,7 +26,9 @@ public class CopierProcessor {
      * @param target   目标
      */
     @Copier
-    public void convertMessageFlexToMessageStable(MessageFlex source, MessageStable target) {}
+    public void convertMessageFlexToMessageStable(MessageFlex source, MessageStable target) {
+        // intentionally empty - see MessageCopier.convertMessageFlexToMessageStable
+    }
 
 
     /**

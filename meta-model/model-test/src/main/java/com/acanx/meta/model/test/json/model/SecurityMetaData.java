@@ -27,6 +27,7 @@ public class SecurityMetaData {
     private Double currPrice;
 
     public SecurityMetaData() {
+        // intentionally empty - required for serialization framework
     }
 
 

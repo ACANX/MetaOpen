@@ -58,6 +58,7 @@ public class ArtifactComponent {
 
 
    public ArtifactComponent() {
+        // intentionally empty - required for serialization framework
    }
 
    public String getId() {

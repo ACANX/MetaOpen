@@ -17,6 +17,7 @@ public class Versioning {
     private List<String> versions;
 
     public Versioning() {
+        // intentionally empty - required for serialization framework
     }
 
     public String getLatest() {

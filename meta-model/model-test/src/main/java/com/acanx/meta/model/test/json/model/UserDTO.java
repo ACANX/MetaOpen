@@ -16,6 +16,7 @@ public class UserDTO {
     private LocalDateTime createTime;
 
     public UserDTO() {
+        // intentionally empty - required for serialization framework
     }
 
     public Integer getUserId() {

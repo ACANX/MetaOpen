@@ -30,6 +30,7 @@ public class ExchangeMarket {
 
 
     public ExchangeMarket() {
+        // intentionally empty - required for serialization framework
     }
 
     public String getRegion() {

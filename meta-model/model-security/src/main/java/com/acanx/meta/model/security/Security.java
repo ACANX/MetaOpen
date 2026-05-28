@@ -32,6 +32,7 @@ public class Security {
 
 
     public Security() {
+        // intentionally empty - required for serialization framework
     }
 
 
