@@ -28,6 +28,7 @@ public class Usage {
     private Integer promptCacheMissTokens;
 
     public Usage() {
+        // intentionally empty - required for serialization framework
     }
 
 

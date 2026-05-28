@@ -39,6 +39,7 @@ public class SecurityMinute {
 
 
     public SecurityMinute() {
+        // intentionally empty - required for serialization framework
     }
 
 

@@ -18,6 +18,7 @@ public class LatestVersionInfo {
     private String version;
 
     public LatestVersionInfo() {
+        // intentionally empty - required for serialization framework
     }
 
     public List<String> getLicenses() {
