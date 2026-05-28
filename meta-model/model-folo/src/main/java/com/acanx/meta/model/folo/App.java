@@ -1,17 +1,18 @@
 package com.acanx.meta.model.folo;
 
+import java.util.logging.Logger;
+
 /**
  *
  * App
  *
  */
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class App {
-    private static final Logger logger = LoggerFactory.getLogger(App.class);
+
+    private static final Logger LOGGER = Logger.getLogger(App.class.getName());
 
     public static void main(String[] args) {
-        logger.info("Hello World!");
+        LOGGER.info("Hello World!");
     }
 }

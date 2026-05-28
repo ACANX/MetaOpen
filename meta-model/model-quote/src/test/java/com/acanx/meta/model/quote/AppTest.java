@@ -1,4 +1,4 @@
-package com.acanx.meta.model.quote.AppTest.java;
+package com.acanx.meta.model.quote;
 
 //package com.acanx.meta.model;
 //

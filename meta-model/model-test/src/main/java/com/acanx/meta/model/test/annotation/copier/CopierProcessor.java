@@ -27,7 +27,8 @@ public class CopierProcessor {
      */
     @Copier
     public void convertMessageFlexToMessageStable(MessageFlex source, MessageStable target) {
-        // intentionally empty - see MessageCopier.convertMessageFlexToMessageStable
+        // 编译期生成的代码将放在辅助类中
+        // MessageFlexCopierHelper.copy(source, target);
     }
 
 

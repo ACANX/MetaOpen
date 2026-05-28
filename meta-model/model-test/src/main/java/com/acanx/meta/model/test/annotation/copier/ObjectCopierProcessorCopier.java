@@ -24,6 +24,7 @@ public final class ObjectCopierProcessorCopier {
     private ObjectCopierProcessorCopier() {
         // 工具类，禁止实例化
     }
+
   /**
    * Incubator-Annotation生成的拷贝方法
    * 用于替换 {@link CopierProcessor#convertMessageFlexToMessageStable(MessageFlex, MessageStable)}
