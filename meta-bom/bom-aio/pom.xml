@@ -1125,7 +1125,7 @@
         <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-access</artifactId>
-        <version>1.5.32</version>
+        <version>1.5.33</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
@@ -2389,12 +2389,12 @@
         <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-core</artifactId>
-        <version>1.5.32</version>
+        <version>1.5.33</version>
       </dependency>
         <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-classic</artifactId>
-        <version>1.5.32</version>
+        <version>1.5.33</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
