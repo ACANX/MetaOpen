@@ -10,6 +10,8 @@ import java.util.Base64;
  */
 public class DingTalkSignUtil {
 
+    private static final String UTF8 = "UTF-8";
+
     /**
      *
      * @param secret      私钥
@@ -20,9 +22,9 @@ public class DingTalkSignUtil {
     public static String generateSign(String secret, Long timestamp) throws Exception {
         String stringToSign = timestamp + "\n" + secret;
         Mac mac = Mac.getInstance("HmacSHA256");
-        mac.init(new SecretKeySpec(secret.getBytes("UTF-8"), "HmacSHA256"));
-        byte[] signData = mac.doFinal(stringToSign.getBytes("UTF-8"));
-        String sign = URLEncoder.encode(Base64.getEncoder().encodeToString(signData), "UTF-8");
+        mac.init(new SecretKeySpec(secret.getBytes(UTF8), "HmacSHA256"));
+        byte[] signData = mac.doFinal(stringToSign.getBytes(UTF8));
+        String sign = URLEncoder.encode(Base64.getEncoder().encodeToString(signData), UTF8);
         return sign;
     }
 
