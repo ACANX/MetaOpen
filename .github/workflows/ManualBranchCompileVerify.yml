@@ -12,6 +12,10 @@ on:
         required: false
         default: '25'
         type: string
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches:
+      - dependa
 
 permissions:
   contents: read
@@ -21,14 +25,26 @@ env:
 
 jobs:
   build:
-    name: BuildJDK${{ inputs.java_version }}_${{ inputs.branch }}
+    name: BuildJDK${{ inputs.java_version || '25' }}_${{ inputs.branch || github.head_ref }}
     runs-on: ubuntu-latest
 
     steps:
+      - name: ResolveBranch
+        id: resolve
+        shell: bash
+        run: |
+          if [ -n "${{ inputs.branch }}" ]; then
+            echo "branch=${{ inputs.branch }}" >> "$GITHUB_OUTPUT"
+            echo "java=${{ inputs.java_version }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "branch=${{ github.head_ref }}" >> "$GITHUB_OUTPUT"
+            echo "java=25" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.branch }}
+          ref: ${{ steps.resolve.outputs.branch }}
           fetch-depth: 0
           submodules: recursive
 
@@ -36,14 +52,14 @@ jobs:
         shell: bash
         run: |
           echo "PROJECT_DIR=${PROJECT_DIR}"
-          echo "Branch: ${{ inputs.branch }}"
+          echo "Branch: ${{ steps.resolve.outputs.branch }}"
           test -f "${PROJECT_DIR}/pom.xml" || { echo "pom.xml not found at ${PROJECT_DIR}/pom.xml"; exit 1; }
 
-      - name: SetupTemurinJDK${{ inputs.java_version }}
+      - name: SetupTemurinJDK${{ steps.resolve.outputs.java }}
         uses: actions/setup-java@v5
         with:
           distribution: temurin
-          java-version: ${{ inputs.java_version }}
+          java-version: ${{ steps.resolve.outputs.java }}
           cache: maven
           cache-dependency-path: |
             ${{ env.PROJECT_DIR }}/pom.xml
@@ -62,7 +78,7 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: app-${{ inputs.branch }}-jdk${{ inputs.java_version }}
+          name: app-${{ steps.resolve.outputs.branch }}-jdk${{ steps.resolve.outputs.java }}
           path: |
             ${{ env.PROJECT_DIR }}/**/target/*.jar
             ${{ env.PROJECT_DIR }}/**/target/*.war
