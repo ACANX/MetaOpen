@@ -1,0 +1,70 @@
+name: ManualBranchCompileVerify
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: '要编译的分支名'
+        required: true
+        type: string
+      java_version:
+        description: 'JDK 版本（默认 25）'
+        required: false
+        default: '25'
+        type: string
+
+permissions:
+  contents: read
+
+env:
+  PROJECT_DIR: .
+
+jobs:
+  build:
+    name: BuildJDK${{ inputs.java_version }}_${{ inputs.branch }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch }}
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: VerifyPomExists
+        shell: bash
+        run: |
+          echo "PROJECT_DIR=${PROJECT_DIR}"
+          echo "Branch: ${{ inputs.branch }}"
+          test -f "${PROJECT_DIR}/pom.xml" || { echo "pom.xml not found at ${PROJECT_DIR}/pom.xml"; exit 1; }
+
+      - name: SetupTemurinJDK${{ inputs.java_version }}
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: ${{ inputs.java_version }}
+          cache: maven
+          cache-dependency-path: |
+            ${{ env.PROJECT_DIR }}/pom.xml
+            ${{ env.PROJECT_DIR }}/**/pom.xml
+
+      - name: ShowJavaAndMavenVersions
+        run: |
+          java -version
+          mvn -v
+
+      - name: BuildAndTestWithMaven
+        working-directory: ${{ env.PROJECT_DIR }}
+        run: mvn --batch-mode --update-snapshots clean compile test package
+
+      - name: UploadBuildArtifacts
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-${{ inputs.branch }}-jdk${{ inputs.java_version }}
+          path: |
+            ${{ env.PROJECT_DIR }}/**/target/*.jar
+            ${{ env.PROJECT_DIR }}/**/target/*.war
+            ${{ env.PROJECT_DIR }}/**/target/*.zip
+          if-no-files-found: ignore
