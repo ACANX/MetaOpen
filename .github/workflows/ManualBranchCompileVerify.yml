@@ -74,11 +74,20 @@ jobs:
         working-directory: ${{ env.PROJECT_DIR }}
         run: mvn --batch-mode --update-snapshots clean compile test package
 
+      - name: SanitizeArtifactName
+        if: success()
+        id: sanitize
+        shell: bash
+        run: |
+          # Replace invalid characters (/ \ : " < > | * ?) with dash
+          safe=$(echo "${{ steps.resolve.outputs.branch }}" | tr '/\\:"<>|*?' '-' )
+          echo "artifact_name=app-${safe}-jdk${{ steps.resolve.outputs.java }}" >> "$GITHUB_OUTPUT"
+
       - name: UploadBuildArtifacts
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: app-${{ steps.resolve.outputs.branch }}-jdk${{ steps.resolve.outputs.java }}
+          name: ${{ steps.sanitize.outputs.artifact_name }}
           path: |
             ${{ env.PROJECT_DIR }}/**/target/*.jar
             ${{ env.PROJECT_DIR }}/**/target/*.war
