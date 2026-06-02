@@ -290,7 +290,7 @@
         <dubbo-extensions-serialization-protobuf.version>3.3.1</dubbo-extensions-serialization-protobuf.version>
 
         <!-- JNA 版本 -->
-        <jna.version>5.18.1</jna.version>
+        <jna.version>5.19.0</jna.version>
 
         <!-- JSpecify 版本 -->
         <jspecify.version>1.0.0</jspecify.version>
