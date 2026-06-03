@@ -49,15 +49,17 @@
         <!-- Excel/Office 版本 -->
         <poi.version>5.5.1</poi.version>
         <easy-excel.version>4.0.3</easy-excel.version>
+        <fastjson.version>2.0.62</fastjson.version>
+        <fastjson2.version>2.0.62</fastjson2.version>
 
         <!-- 通用工具库版本 -->
         <commons-lang.version>2.6</commons-lang.version>
         <commons-text.version>1.15.0</commons-text.version>
 
         <!-- JSON/序列化版本 -->
-        <jackson-annotations.version>2.21</jackson-annotations.version>
+        <jackson-annotations.version>2.22</jackson-annotations.version>
         <jackson-core-asl.version>1.9.13</jackson-core-asl.version>
-        <jaxb-runtime.version>4.0.8</jaxb-runtime.version>
+        <jaxb-runtime.version>4.0.9</jaxb-runtime.version>
 
         <!-- 数据库版本 -->
         <mongo-java-driver.version>3.12.14</mongo-java-driver.version>
@@ -87,7 +89,7 @@
 
         <!-- Cloud SDK 版本 -->
         <tencentcloud-sdk-java-scf.version>3.1.1469</tencentcloud-sdk-java-scf.version>
-        <tencentcloud-sdk-java-ses.version>3.1.1451</tencentcloud-sdk-java-ses.version>
+        <tencentcloud-sdk-java-ses.version>3.1.1475</tencentcloud-sdk-java-ses.version>
         <fc-java-core.version>1.4.1</fc-java-core.version>
         <fc-java-event.version>1.2.0</fc-java-event.version>
         <scf-java-events.version>0.0.4</scf-java-events.version>
@@ -97,7 +99,7 @@
         <qiniu-java-sdk.version>7.19.0</qiniu-java-sdk.version>
 
         <!-- ByteCode 版本 -->
-        <bytebuddy.version>1.18.8</bytebuddy.version>
+        <bytebuddy.version>1.18.9</bytebuddy.version>
 
         <!-- 其他版本 -->
         <graal-sdk.version>25.0.3</graal-sdk.version>
@@ -116,7 +118,7 @@
 
         <!-- 第三方 SDK 版本 -->
         <java-function-invoker.version>2.0.1</java-function-invoker.version>
-        <oapi-sdk.version>2.7.1</oapi-sdk.version>
+        <oapi-sdk.version>2.7.3</oapi-sdk.version>
         <brevo.version>1.1.7</brevo.version>
         <ipinfo-api.version>3.4.0</ipinfo-api.version>
         <longport-openapi-sdk.version>3.0.23</longport-openapi-sdk.version>
@@ -478,7 +480,7 @@
                   <dependency>
                       <groupId>org.mongodb</groupId>
                       <artifactId>mongodb-driver-sync</artifactId>
-                      <version>5.7.1</version>
+                      <version>5.8.0</version>
                       <scope>compile</scope>
                   </dependency>
             <dependency>
