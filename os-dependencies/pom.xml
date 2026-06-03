@@ -60,7 +60,7 @@
         <openjfx.version>26.0.1</openjfx.version>
         <javassist.version>3.31.0-GA</javassist.version>
         <aspectjweaver.version>1.9.25.1</aspectjweaver.version>
-        <bytebuddy.version>1.18.8</bytebuddy.version>
+        <bytebuddy.version>1.18.9</bytebuddy.version>
 
         <netty.version>4.2.14.Final</netty.version>
         <reactor.verion>3.8.5</reactor.verion>
