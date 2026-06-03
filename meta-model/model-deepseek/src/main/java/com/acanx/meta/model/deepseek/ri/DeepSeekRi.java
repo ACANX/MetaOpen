@@ -9,11 +9,11 @@ public class DeepSeekRi {
 
     private String model;
     private Boolean stream;
-    public double temperature;
+    private double temperature;
     /**
      *  max_tokens  模型单次回答的最大长度（含思维连输出）
      */
-    public int maxTokens;
+    private int maxTokens;
     private List<Message> messages = new ArrayList<>();
 
     public DeepSeekRi(String model, Boolean stream, List<Message> messages) {
@@ -22,11 +22,11 @@ public class DeepSeekRi {
         this.messages = messages;
     }
 
-    public DeepSeekRi(String model, Boolean stream, double temperature, int max_tokens, List<Message> messages) {
+    public DeepSeekRi(String model, Boolean stream, double temperature, int maxTokens, List<Message> messages) {
         this.model = model;
         this.stream = stream;
         this.temperature = temperature;
-        this.maxTokens = max_tokens;
+        this.maxTokens = maxTokens;
         this.messages = messages;
     }
 
