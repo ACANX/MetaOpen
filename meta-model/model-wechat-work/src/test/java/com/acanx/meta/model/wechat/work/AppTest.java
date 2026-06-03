@@ -1,20 +1,11 @@
-//package com.acanx.meta.model;
-//
-//
-//import org.junit.jupiter.api.Assertions;
-//import org.junit.jupiter.api.Test;
-//
-///**
-// * Unit test for simple App.
-// */
-//public class AppTest {
-//
-//    /**
-//     * Rigorous Test :-)
-//     */
-//    @Test
-//    public void shouldAnswerWithTrue() {
-//        Assertions.assertTrue(true);
-//    }
-//
-//}
+package com.acanx.meta.model.wechat.work;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+class AppTest {
+    @Test
+    void shouldAnswerWithTrue() {
+        Assertions.assertTrue(true);
+    }
+}

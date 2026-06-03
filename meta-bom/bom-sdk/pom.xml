@@ -41,7 +41,6 @@
     </licenses>
 
     <properties>
-        <!-- <awssdk.version>2.42.21</awssdk.version> -->
     </properties>
 
     <dependencyManagement>
@@ -107,6 +106,13 @@
               <artifactId>dynamodb</artifactId>
               <version>${awssdk.version}</version>
            </dependency>
+           <!-- Source: https://mvnrepository.com/artifact/software.amazon.awssdk/scheduler -->
+                  <dependency>
+                      <groupId>software.amazon.awssdk</groupId>
+                      <artifactId>scheduler</artifactId>
+                      <version>${awssdk.version}</version>
+                      <scope>compile</scope>
+                  </dependency>
 
             <!-- aliyun -->
             <!-- https://mvnrepository.com/artifact/com.aliyun.oss/aliyun-sdk-oss -->
@@ -120,7 +126,7 @@
             <dependency>
                 <groupId>com.tencentcloudapi</groupId>
                 <artifactId>tencentcloud-sdk-java-ses</artifactId>
-                <version>3.1.1451</version>
+                <version>3.1.1475</version>
             </dependency>
             <dependency>
                 <groupId>com.qcloud</groupId>

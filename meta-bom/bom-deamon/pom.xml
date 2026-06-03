@@ -41,14 +41,6 @@
 
     <properties>
         <flattened-pom-path>${project.basedir}/.flattened-pom.xml</flattened-pom-path>
-
-        <jakarta.annotation.version>3.0.0</jakarta.annotation.version>
-        <jakarta.validation.version>3.1.1</jakarta.validation.version>
-        <spring-data.version>4.0.5</spring-data.version>
-        <dubbo.version>3.3.6</dubbo.version>
-        <dubbo-extensions-parent>3.3.3</dubbo-extensions-parent>
-        <dubbo-extensions-serialization-protobuf>3.3.1</dubbo-extensions-serialization-protobuf>
-        <junit.version>4.13.2</junit.version>
     </properties>
 
     <dependencyManagement>
@@ -380,7 +372,7 @@
             <dependency>
                 <groupId>com.alibaba.nacos</groupId>
                 <artifactId>nacos-client</artifactId>
-                <version>3.2.0</version>
+                <version>3.2.2</version>
                 <scope>compile</scope>
             </dependency>
 
@@ -1546,7 +1538,7 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
-                <version>2.21</version>
+                <version>2.22</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.module</groupId>
@@ -1689,14 +1681,14 @@
                   <dependency>
                       <groupId>org.springframework.ai</groupId>
                       <artifactId>spring-ai-commons</artifactId>
-                      <version>2.0.0-M4</version>
+                      <version>2.0.0-M8</version>
                       <scope>compile</scope>
                   </dependency>
                  <!-- Source: https://mvnrepository.com/artifact/org.springframework.ai/spring-ai-model -->
                   <dependency>
                       <groupId>org.springframework.ai</groupId>
                       <artifactId>spring-ai-model</artifactId>
-                      <version>2.0.0-M4</version>
+                      <version>2.0.0-M8</version>
                       <scope>compile</scope>
                   </dependency>
                  <!-- Source: https://mvnrepository.com/artifact/com.alibaba.cloud.ai/spring-ai-alibaba-core -->

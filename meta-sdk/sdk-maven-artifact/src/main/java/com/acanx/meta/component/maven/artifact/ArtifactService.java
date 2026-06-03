@@ -13,7 +13,7 @@ import com.acanx.util.http.HResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
+
 
 import java.io.IOException;
 
@@ -26,6 +26,8 @@ import java.io.IOException;
  * @since 20250622
  */
 public class ArtifactService {
+
+    private static final String UNKNOWN = "UNKNOWN";
 
 
     /**
@@ -57,8 +59,8 @@ public class ArtifactService {
             ma.setOriginDataProvider("metadata.xml");
         } else {
             // ma.setIgnoreFlag(Boolean.TRUE);
-            ma.setType("UNKNOWN");
-            ma.setPackaging("UNKNOWN");
+            ma.setType(UNKNOWN);
+            ma.setPackaging(UNKNOWN);
         }
         return ma;
     }
@@ -87,8 +89,6 @@ public class ArtifactService {
                 project = parseMavenProjectPomXmlContent(xmlResponse);
             } catch (IOException e) {
                 throw new RuntimeException(e);
-            } catch (XmlPullParserException e) {
-                throw new RuntimeException(e);
             }
             // System.out.println("Packaging type: " + project.getPackaging());
             if (null != project.getPackaging() && !project.getPackaging().isEmpty()) {
@@ -105,8 +105,8 @@ public class ArtifactService {
             ma.setPackaging(packagingType);
             ma.setOriginDataProvider("pom.xml");
         } else {
-            ma.setType("UNKNOWN");
-            ma.setPackaging("UNKNOWN");
+            ma.setType(UNKNOWN);
+            ma.setPackaging(UNKNOWN);
         }
         return ma;
     }
@@ -118,7 +118,7 @@ public class ArtifactService {
     }
 
 
-    private static Project parseMavenProjectPomXmlContent(String pomContent) throws IOException, XmlPullParserException {
+    private static Project parseMavenProjectPomXmlContent(String pomContent) throws IOException {
         XmlMapper xmlMapper = new XmlMapper();
         // 忽略未知属性
         xmlMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);

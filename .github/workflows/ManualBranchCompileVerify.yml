@@ -1,0 +1,95 @@
+name: ManualBranchCompileVerify
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: '要编译的分支名'
+        required: true
+        type: string
+      java_version:
+        description: 'JDK 版本（默认 25）'
+        required: false
+        default: '25'
+        type: string
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches:
+      - dependa
+
+permissions:
+  contents: read
+
+env:
+  PROJECT_DIR: .
+
+jobs:
+  build:
+    name: BuildJDK${{ inputs.java_version || '25' }}_${{ inputs.branch || github.head_ref }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ResolveBranch
+        id: resolve
+        shell: bash
+        run: |
+          if [ -n "${{ inputs.branch }}" ]; then
+            echo "branch=${{ inputs.branch }}" >> "$GITHUB_OUTPUT"
+            echo "java=${{ inputs.java_version }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "branch=${{ github.head_ref }}" >> "$GITHUB_OUTPUT"
+            echo "java=25" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.resolve.outputs.branch }}
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: VerifyPomExists
+        shell: bash
+        run: |
+          echo "PROJECT_DIR=${PROJECT_DIR}"
+          echo "Branch: ${{ steps.resolve.outputs.branch }}"
+          test -f "${PROJECT_DIR}/pom.xml" || { echo "pom.xml not found at ${PROJECT_DIR}/pom.xml"; exit 1; }
+
+      - name: SetupTemurinJDK${{ steps.resolve.outputs.java }}
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: ${{ steps.resolve.outputs.java }}
+          cache: maven
+          cache-dependency-path: |
+            ${{ env.PROJECT_DIR }}/pom.xml
+            ${{ env.PROJECT_DIR }}/**/pom.xml
+
+      - name: ShowJavaAndMavenVersions
+        run: |
+          java -version
+          mvn -v
+
+      - name: BuildAndTestWithMaven
+        working-directory: ${{ env.PROJECT_DIR }}
+        run: mvn --batch-mode --update-snapshots clean compile test package
+
+      - name: SanitizeArtifactName
+        if: success()
+        id: sanitize
+        shell: bash
+        run: |
+          # Replace invalid characters (/ \ : " < > | * ?) with dash
+          safe=$(echo "${{ steps.resolve.outputs.branch }}" | tr '/\\:"<>|*?' '-' )
+          echo "artifact_name=app-${safe}-jdk${{ steps.resolve.outputs.java }}" >> "$GITHUB_OUTPUT"
+
+      - name: UploadBuildArtifacts
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.sanitize.outputs.artifact_name }}
+          path: |
+            ${{ env.PROJECT_DIR }}/**/target/*.jar
+            ${{ env.PROJECT_DIR }}/**/target/*.war
+            ${{ env.PROJECT_DIR }}/**/target/*.zip
+          if-no-files-found: ignore

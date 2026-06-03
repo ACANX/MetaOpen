@@ -3,7 +3,7 @@ name: MultiMavenJDKBranchCI
 on:
   push:
     branches:
-      - dependabot
+      - dependa
       - dev
       - main
       - feat-autoci
@@ -13,7 +13,7 @@ on:
       - '.gitignore'
   pull_request:
     branches:
-      - dependabot
+      - dependa
       - dev
       - main
       - feat-autoci
@@ -49,17 +49,17 @@ jobs:
             java: '25'
             os: ubuntu-latest      
             
-          - branch: dependabot
+          - branch: dependa
             java: '25'
             os: windows-latest
-          - branch: dependabot
+          - branch: dependa
             java: '25'
             os: ubuntu-latest      
             
-          - branch: dependabot
+          - branch: dependa
             java: '21'
             os: ubuntu-latest
-          - branch: dependabot
+          - branch: dependa
             java: '21'
             os: windows-latest
 
@@ -91,10 +91,10 @@ jobs:
           #   java: '11'
           #   os: windows-latest
             
-          # - branch: dependabot
+          # - branch: dependa
           #   java: '11'
           #   os: ubuntu-latest
-          # - branch: dependabot
+          # - branch: dependa
           #   java: '11'
           #   os: windows-latest
 
