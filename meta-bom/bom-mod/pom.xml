@@ -125,7 +125,7 @@
         <bcprov-jdk18on.version>1.84</bcprov-jdk18on.version>
 
         <!-- BGMProvider 版本 -->
-        <bgmprovider.version>2.0.3</bgmprovider.version>
+        <bgmprovider.version>2.0.4</bgmprovider.version>
     </properties>
 
     <modules>
