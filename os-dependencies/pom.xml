@@ -112,7 +112,7 @@
         <flink.version>1.17.2</flink.version>
         <hadoop.version>3.5.0</hadoop.version>
 
-        <micrometer.version>1.16.5</micrometer.version>
+        <micrometer.version>1.17.0</micrometer.version>
 
         <selenium.version>4.44.0</selenium.version>
         <thymeleaf.version>3.1.5.RELEASE</thymeleaf.version>
