@@ -283,7 +283,7 @@
         <junit.version>4.13.2</junit.version>
 
         <!-- Spring Data 版本 -->
-        <spring-data.version>4.0.5</spring-data.version>
+        <spring-data.version>4.1.0</spring-data.version>
 
         <!-- Dubbo 扩展版本 -->
         <dubbo-extensions-parent.version>3.3.3</dubbo-extensions-parent.version>
