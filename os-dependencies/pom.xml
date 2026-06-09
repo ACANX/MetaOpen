@@ -100,7 +100,7 @@
         <jspecify.version>1.0.0</jspecify.version>
 
         <spring.version>7.0.8</spring.version>
-        <spring-security.version>7.0.5</spring-security.version>
+        <spring-security.version>7.1.0</spring-security.version>
         <spring-boot.version>4.0.6</spring-boot.version>
 
         <dubbo.version>3.3.6</dubbo.version>
