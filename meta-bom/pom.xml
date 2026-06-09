@@ -328,7 +328,7 @@
         <byte-buddy.version>1.18.8</byte-buddy.version>
 
         <!-- OkHttp 版本 -->
-        <okhttp.version>5.3.2</okhttp.version>
+        <okhttp.version>5.4.0</okhttp.version>
 
         <!-- POI/Excel 版本 -->
         <poi.version>5.5.1</poi.version>
