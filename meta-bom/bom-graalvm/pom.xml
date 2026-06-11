@@ -77,7 +77,7 @@
             <dependency>
                 <groupId>org.graalvm.buildtools</groupId>
                 <artifactId>native-maven-plugin</artifactId>
-                <version>1.1.1</version>
+                <version>1.1.2</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.graalvm.buildtools/utils -->
             <dependency>
