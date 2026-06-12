@@ -124,7 +124,7 @@
         <!-- SpringCloud官方依赖  -->
         <spring.version>7.0.8</spring.version>
         <spring-security.version>7.1.0</spring-security.version>
-        <spring-boot.version>4.0.6</spring-boot.version>
+        <spring-boot.version>4.1.0</spring-boot.version>
         <spring-cloud.version>2025.0.0</spring-cloud.version>
         <spring-cloud-commons.version>4.2.0</spring-cloud-commons.version>
         <spring-cloud-consul.verson>4.2.0</spring-cloud-consul.verson>
@@ -195,7 +195,7 @@
         <!-- Markdown 相关 -->
         <commonmark.version>0.28.0</commonmark.version>
         <cos_api.version>5.6.269</cos_api.version>
-        <grpc.version>1.81.0</grpc.version>
+        <grpc.version>1.82.0</grpc.version>
         <protobuf-java.version>4.35.0</protobuf-java.version>
         <protoc.version>4.33.0</protoc.version>
         <guava.version>33.6.0-jre</guava.version>
@@ -265,7 +265,7 @@
         <selenium-htmlunit.version>4.29.0</selenium-htmlunit.version>
 
         <awssdk.version>2.46.8</awssdk.version>
-        <huaweicloud-sdk.version>3.1.199</huaweicloud-sdk.version>
+        <huaweicloud-sdk.version>3.1.200</huaweicloud-sdk.version>
 
         <!-- 日志依赖  -->
         <slf4j.version>2.0.18</slf4j.version>
