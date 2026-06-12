@@ -124,7 +124,7 @@
         <!-- SpringCloud官方依赖  -->
         <spring.version>7.0.8</spring.version>
         <spring-security.version>7.1.0</spring-security.version>
-        <spring-boot.version>4.0.6</spring-boot.version>
+        <spring-boot.version>4.1.0</spring-boot.version>
         <spring-cloud.version>2025.0.0</spring-cloud.version>
         <spring-cloud-commons.version>4.2.0</spring-cloud-commons.version>
         <spring-cloud-consul.verson>4.2.0</spring-cloud-consul.verson>
