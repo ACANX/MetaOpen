@@ -76,7 +76,7 @@
 
         <!-- SDK 版本 -->
         <baidu-aip-sdk.version>4.16.25</baidu-aip-sdk.version>
-        <acrcloud-sdk.version>1.0.5</acrcloud-sdk.version>
+        <acrcloud-sdk.version>1.0.6</acrcloud-sdk.version>
         <json.version>20260522</json.version>
 
         <!-- 邮件 SDK 版本 -->
@@ -89,7 +89,7 @@
 
         <!-- Cloud SDK 版本 -->
         <tencentcloud-sdk-java-scf.version>3.1.1469</tencentcloud-sdk-java-scf.version>
-        <tencentcloud-sdk-java-ses.version>3.1.1475</tencentcloud-sdk-java-ses.version>
+        <tencentcloud-sdk-java-ses.version>3.1.1482</tencentcloud-sdk-java-ses.version>
         <fc-java-core.version>1.4.1</fc-java-core.version>
         <fc-java-event.version>1.2.0</fc-java-event.version>
         <scf-java-events.version>0.0.4</scf-java-events.version>
@@ -99,7 +99,7 @@
         <qiniu-java-sdk.version>7.19.0</qiniu-java-sdk.version>
 
         <!-- ByteCode 版本 -->
-        <bytebuddy.version>1.18.9</bytebuddy.version>
+        <bytebuddy.version>1.18.10</bytebuddy.version>
 
         <!-- 其他版本 -->
         <graal-sdk.version>25.0.3</graal-sdk.version>
@@ -125,7 +125,7 @@
         <bcprov-jdk18on.version>1.84</bcprov-jdk18on.version>
 
         <!-- BGMProvider 版本 -->
-        <bgmprovider.version>2.0.3</bgmprovider.version>
+        <bgmprovider.version>2.0.4</bgmprovider.version>
     </properties>
 
     <modules>
@@ -753,7 +753,7 @@
                   <dependency>
                       <groupId>com.aliyun</groupId>
                       <artifactId>alibabacloud-oss-v2</artifactId>
-                      <version>0.4.0</version>
+                      <version>0.4.1</version>
                       <scope>compile</scope>
                   </dependency>
                   <!-- Source: https://mvnrepository.com/artifact/com.huaweicloud/esdk-obs-java -->
