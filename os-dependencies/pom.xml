@@ -34,8 +34,8 @@
     </licenses>
 
     <properties>
-        <revision>0.8.6</revision>
-        <meta-open.version>0.8.6</meta-open.version>
+        <revision>0.8.7-SNAPSHOT</revision>
+        <meta-open.version>0.8.7-SNAPSHOT</meta-open.version>
         <autil.version>1.3.0</autil.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -94,7 +94,7 @@
         <freemarker.version>2.3.34</freemarker.version>
         <jsoup.version>1.22.2</jsoup.version>
         <hibernate-validator.version>9.1.0.Final</hibernate-validator.version>
-        <redisson.version>4.5.0</redisson.version>
+        <redisson.version>4.6.0</redisson.version>
 
         <slf4j.version>2.0.18</slf4j.version>
         <jspecify.version>1.0.0</jspecify.version>
@@ -109,7 +109,7 @@
         <lucense.version>10.4.0</lucense.version>
         <elasticsearch.version>9.4.2</elasticsearch.version>
 
-        <flink.version>1.17.2</flink.version>
+        <flink.version>1.20.5</flink.version>
         <hadoop.version>3.5.0</hadoop.version>
 
         <micrometer.version>1.17.0</micrometer.version>
@@ -883,7 +883,7 @@
             <dependency>
                 <groupId>com.zaxxer</groupId>
                 <artifactId>HikariCP</artifactId>
-                <version>7.0.2</version>
+                <version>7.1.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.lucene</groupId>
