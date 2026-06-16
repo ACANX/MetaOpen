@@ -28,73 +28,55 @@ public class SystemException extends BaseException {
     /**
      * 是否需要告警（默认true）
      */
-    private boolean alert = true;
+    private final boolean alert;
 
     /**
      * 是否可恢复（默认false）
      */
-    private boolean recoverable = false;
+    private final boolean recoverable;
 
     public SystemException() {
         super();
+        this.alert = true;
+        this.recoverable = false;
     }
 
     public SystemException(String message) {
         super(message);
+        this.alert = true;
+        this.recoverable = false;
     }
 
     public SystemException(String code, String message) {
         super(code, message);
+        this.alert = true;
+        this.recoverable = false;
     }
 
     public SystemException(String code, String message, Throwable cause) {
         super(code, message, cause);
+        this.alert = true;
+        this.recoverable = false;
     }
 
     public SystemException(String code, String message, Object... args) {
         super(code, message, args);
+        this.alert = true;
+        this.recoverable = false;
     }
 
     public SystemException(String code, String message, Throwable cause, Object... args) {
-        super(code, message, cause, args);
+        super(code, message, cause);
+        this.alert = true;
+        this.recoverable = false;
     }
 
     public boolean isAlert() {
         return alert;
     }
 
-    public void setAlert(boolean alert) {
-        this.alert = alert;
-    }
-
     public boolean isRecoverable() {
         return recoverable;
-    }
-
-    public void setRecoverable(boolean recoverable) {
-        this.recoverable = recoverable;
-    }
-
-    /**
-     * 设置是否需要告警（链式调用）
-     *
-     * @param alert 是否需要告警
-     * @return 当前异常对象
-     */
-    public SystemException alert(boolean alert) {
-        this.alert = alert;
-        return this;
-    }
-
-    /**
-     * 设置是否可恢复（链式调用）
-     *
-     * @param recoverable 是否可恢复
-     * @return 当前异常对象
-     */
-    public SystemException recoverable(boolean recoverable) {
-        this.recoverable = recoverable;
-        return this;
     }
 
     @Override
