@@ -66,7 +66,7 @@ public class SystemException extends BaseException {
     }
 
     public SystemException(String code, String message, Throwable cause, Object... args) {
-        super(code, message, cause);
+        super(code, message, cause, args);
         this.alert = true;
         this.recoverable = false;
     }
