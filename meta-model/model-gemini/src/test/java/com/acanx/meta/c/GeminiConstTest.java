@@ -64,8 +64,8 @@ class GeminiConstTest {
     }
 
     @Test
-    void privateConstructorShouldNotBeInstantiable() {
-        assertThrows(NoSuchMethodException.class, () -> {
+    void privateConstructorShouldNotBeAccessible() {
+        assertThrows(IllegalAccessException.class, () -> {
             GeminiConst.class.getDeclaredConstructor().newInstance();
         });
     }
