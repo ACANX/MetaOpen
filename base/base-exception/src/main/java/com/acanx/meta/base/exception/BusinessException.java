@@ -71,13 +71,6 @@ public class BusinessException extends BaseException {
         this.details = null;
     }
 
-    private BusinessException(Builder builder) {
-        super(builder.code, builder.message, builder.args);
-        this.module = builder.module;
-        this.operation = builder.operation;
-        this.details = builder.details;
-    }
-
     public String getModule() {
         return module;
     }
@@ -88,97 +81,6 @@ public class BusinessException extends BaseException {
 
     public Map<String, Object> getDetails() {
         return details;
-    }
-
-    /**
-     * 创建 BusinessException 构建器
-     *
-     * @return 构建器
-     */
-    public static Builder builder() {
-        return new Builder();
-    }
-
-    /**
-     * BusinessException 构建器
-     */
-    public static class Builder {
-        private String code;
-        private String message;
-        private Object[] args;
-        private String module;
-        private String operation;
-        private Map<String, Object> details;
-
-        Builder() {
-        }
-
-        public Builder code(String code) {
-            this.code = code;
-            return this;
-        }
-
-        public Builder message(String message) {
-            this.message = message;
-            return this;
-        }
-
-        public Builder args(Object... args) {
-            this.args = args;
-            return this;
-        }
-
-        /**
-         * 设置业务模块
-         *
-         * @param module 业务模块
-         * @return 构建器
-         */
-        public Builder module(String module) {
-            this.module = module;
-            return this;
-        }
-
-        /**
-         * 设置业务操作
-         *
-         * @param operation 业务操作
-         * @return 构建器
-         */
-        public Builder operation(String operation) {
-            this.operation = operation;
-            return this;
-        }
-
-        /**
-         * 添加错误详情
-         *
-         * @param key   键
-         * @param value 值
-         * @return 构建器
-         */
-        public Builder addDetail(String key, Object value) {
-            if (this.details == null) {
-                this.details = new HashMap<>();
-            }
-            this.details.put(key, value);
-            return this;
-        }
-
-        /**
-         * 批量设置错误详情
-         *
-         * @param details 错误详情Map
-         * @return 构建器
-         */
-        public Builder withDetails(Map<String, Object> details) {
-            this.details = details;
-            return this;
-        }
-
-        public BusinessException build() {
-            return new BusinessException(this);
-        }
     }
 
     @Override

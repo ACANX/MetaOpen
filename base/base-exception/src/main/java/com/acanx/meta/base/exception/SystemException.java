@@ -71,82 +71,12 @@ public class SystemException extends BaseException {
         this.recoverable = false;
     }
 
-    private SystemException(Builder builder) {
-        super(builder.code, builder.message, builder.args);
-        this.alert = builder.alert;
-        this.recoverable = builder.recoverable;
-    }
-
     public boolean isAlert() {
         return alert;
     }
 
     public boolean isRecoverable() {
         return recoverable;
-    }
-
-    /**
-     * 创建 SystemException 构建器
-     *
-     * @return 构建器
-     */
-    public static Builder builder() {
-        return new Builder();
-    }
-
-    /**
-     * SystemException 构建器
-     */
-    public static class Builder {
-        private String code;
-        private String message;
-        private Object[] args;
-        private boolean alert = true;
-        private boolean recoverable = false;
-
-        Builder() {
-        }
-
-        public Builder code(String code) {
-            this.code = code;
-            return this;
-        }
-
-        public Builder message(String message) {
-            this.message = message;
-            return this;
-        }
-
-        public Builder args(Object... args) {
-            this.args = args;
-            return this;
-        }
-
-        /**
-         * 设置是否需要告警
-         *
-         * @param alert 是否需要告警
-         * @return 构建器
-         */
-        public Builder alert(boolean alert) {
-            this.alert = alert;
-            return this;
-        }
-
-        /**
-         * 设置是否可恢复
-         *
-         * @param recoverable 是否可恢复
-         * @return 构建器
-         */
-        public Builder recoverable(boolean recoverable) {
-            this.recoverable = recoverable;
-            return this;
-        }
-
-        public SystemException build() {
-            return new SystemException(this);
-        }
     }
 
     @Override
