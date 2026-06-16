@@ -1,6 +1,5 @@
 package com.acanx.meta.model.email;
 
-import lombok.Builder;
 import lombok.Data;
 
 import java.util.List;

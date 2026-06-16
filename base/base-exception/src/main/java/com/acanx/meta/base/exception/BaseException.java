@@ -13,38 +13,45 @@ public class BaseException extends RuntimeException {
     /**
      * 错误码
      */
-    private String code;
+    private final String code;
 
     /**
      * 错误消息
      */
-    private String message;
+    private final String message;
 
     /**
      * 国际化参数（高度通用，用于消息模板替换）
      * 例：消息模板"用户名【{0}】已存在" → args=["张三"]
      */
-    private Object[] args;
+    private final Object[] args;
 
     public BaseException() {
         super();
+        this.code = null;
+        this.message = null;
+        this.args = null;
     }
 
     public BaseException(String message) {
         super(message);
+        this.code = null;
         this.message = message;
+        this.args = null;
     }
 
     public BaseException(String code, String message) {
         super(message);
         this.code = code;
         this.message = message;
+        this.args = null;
     }
 
     public BaseException(String code, String message, Throwable cause) {
         super(message, cause);
         this.code = code;
         this.message = message;
+        this.args = null;
     }
 
     public BaseException(String code, String message, Object... args) {
@@ -65,25 +72,13 @@ public class BaseException extends RuntimeException {
         return code;
     }
 
-    public void setCode(String code) {
-        this.code = code;
-    }
-
     @Override
     public String getMessage() {
         return message;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
     public Object[] getArgs() {
         return args;
-    }
-
-    public void setArgs(Object[] args) {
-        this.args = args;
     }
 
     @Override

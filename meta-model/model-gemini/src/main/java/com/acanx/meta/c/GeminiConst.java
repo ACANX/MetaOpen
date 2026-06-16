@@ -13,7 +13,7 @@ public class GeminiConst {
     }
 
     // 默认模型
-    public static String MODEL = "gemini-3-pro-high";
+    public static final String DEFAULT_MODEL = "gemini-3-pro-high";
     // Gemini 2.5 Pro 模型名称
     public static final String MODEL_GEMINI_2_5_FRESH = "gemini-2.5-flash";
     public static final String MODEL_GEMINI_2_5_PRO = "gemini-2.5-pro";
