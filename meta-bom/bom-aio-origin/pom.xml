@@ -45,7 +45,7 @@
           <!-- 将此属性设置为 true，即可跳过该模块的 deploy 阶段 -->
           <maven.deploy.skip>true</maven.deploy.skip>
           <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
-          <bom-graalvm.version>25.0.8.6</bom-graalvm.version>
+          <bom-graalvm.version>25.0.8.7</bom-graalvm.version>
     </properties>
 
     <dependencyManagement>
