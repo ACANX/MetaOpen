@@ -1,0 +1,152 @@
+name: UpdateBomGraalvmVersion
+
+on:
+  workflow_dispatch:          # 手动触发
+  schedule:
+    # 每天 UTC 时间 18:00（北京时间凌晨2:00）自动检查
+    - cron: '0 18 * * *'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  check-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: CheckoutRepository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: SetupPython
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+
+      - name: CheckAndUpdateBomGraalvmVersion
+        id: check-update
+        run: |
+          python3 << 'PYEOF'
+          import urllib.request
+          import xml.etree.ElementTree as ET
+          import re
+
+          # 1. 查询 Maven Central 上 bom-graalvm 的最新 release 版本
+          metadata_url = "https://repo1.maven.org/maven2/com/acanx/meta/component/bom-graalvm/maven-metadata.xml"
+          print(f"查询 Maven Central: {metadata_url}")
+          
+          req = urllib.request.Request(metadata_url)
+          with urllib.request.urlopen(req) as resp:
+              metadata_xml = resp.read().decode("utf-8")
+          
+          root = ET.fromstring(metadata_xml)
+          release_elem = root.find("release")
+          latest_elem = root.find("latest")
+          
+          latest_version = latest_elem.text if latest_elem is not None else None
+          release_version = release_elem.text if release_elem is not None else None
+          
+          # 优先用 release，没有则用 latest
+          new_version = release_version or latest_version
+          if not new_version:
+              print("❌ 无法获取 bom-graalvm 最新版本")
+              exit(1)
+          
+          print(f"最新 release 版本: {release_version}")
+          print(f"最新版本 (latest): {latest_version}")
+          print(f"将使用的版本: {new_version}")
+
+          # 2. 读取当前 bom-aio-origin/pom.xml 中的配置版本
+          pom_path = "meta-bom/bom-aio-origin/pom.xml"
+          with open(pom_path, "r", encoding="utf-8") as f:
+              pom_content = f.read()
+          
+          # 查找 <bom-graalvm.version>xxx</bom-graalvm.version>
+          match = re.search(r'<bom-graalvm\.version>([^<]+)</bom-graalvm\.version>', pom_content)
+          if not match:
+              print("❌ 未在 pom.xml 中找到 <bom-graalvm.version> 属性")
+              exit(1)
+          
+          current_version = match.group(1)
+          print(f"当前配置版本: {current_version}")
+          
+          if current_version == new_version:
+              print(f"✅ 版本已是最新: {current_version}")
+              # 设置输出变量，表示无需更新
+              with open(os.environ.get('GITHUB_OUTPUT', '/dev/null'), 'a') as f:
+                  f.write("updated=false\n")
+              exit(0)
+          
+          # 3. 版本比较（按数字段比较）
+          def parse_version(v):
+              parts = v.split(".")
+              result = []
+              for p in parts:
+                  try:
+                      result.append(int(p))
+                  except ValueError:
+                      result.append(0)
+              return result
+          
+          current_parts = parse_version(current_version)
+          new_parts = parse_version(new_version)
+          
+          if new_parts <= current_parts:
+              print(f"ℹ️ 当前版本 {current_version} 不低于新版本 {new_version}，无需更新")
+              with open(os.environ.get('GITHUB_OUTPUT', '/dev/null'), 'a') as f:
+                  f.write("updated=false\n")
+              exit(0)
+          
+          # 4. 更新 pom.xml
+          new_content = re.sub(
+              r'<bom-graalvm\.version>[^<]+</bom-graalvm\.version>',
+              f'<bom-graalvm.version>{new_version}</bom-graalvm.version>',
+              pom_content
+          )
+          
+          with open(pom_path, "w", encoding="utf-8") as f:
+              f.write(new_content)
+          
+          print(f"✅ 版本已更新: {current_version} → {new_version}")
+          
+          # 设置输出变量
+          import os
+          with open(os.environ.get('GITHUB_OUTPUT', '/dev/null'), 'a') as f:
+              f.write(f"updated=true\n")
+              f.write(f"old_version={current_version}\n")
+              f.write(f"new_version={new_version}\n")
+          
+          PYEOF
+
+      - name: CheckForChanges
+        id: git-check
+        run: |
+          git diff --quiet meta-bom/bom-aio-origin/pom.xml || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: CreatePullRequest
+        if: steps.git-check.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(deps): update bom-graalvm.version to ${{ steps.check-update.outputs.new_version }}"
+          title: "chore(deps): update bom-graalvm.version from ${{ steps.check-update.outputs.old_version }} to ${{ steps.check-update.outputs.new_version }}"
+          body: |
+            Auto-detected a new release of `bom-graalvm` on Maven Central.
+
+            | 项目 | 旧版本 | 新版本 |
+            |------|:-----:|:-----:|
+            | bom-graalvm | ${{ steps.check-update.outputs.old_version }} | ${{ steps.check-update.outputs.new_version }} |
+
+            This PR updates the `<bom-graalvm.version>` property in `bom-aio-origin/pom.xml`.
+
+            Generated by GitHub Actions UpdateBomGraalvmVersion workflow.
+          branch: dependa-bom-graalvm-version # 发起PR的分支
+          base: dependa     # 目标分支
+          delete-branch: true
+          add-paths: |
+            meta-bom/bom-aio-origin/pom.xml
+          labels: |
+            auto:commit
+            dependencies
+            bom-graalvm
