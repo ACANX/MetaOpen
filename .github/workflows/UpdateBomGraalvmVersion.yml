@@ -28,6 +28,7 @@ jobs:
         id: check-update
         run: |
           python3 << 'PYEOF'
+          import os
           import urllib.request
           import xml.etree.ElementTree as ET
           import re
