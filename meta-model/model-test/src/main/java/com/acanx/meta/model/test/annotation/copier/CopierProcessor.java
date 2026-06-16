@@ -9,6 +9,7 @@ import com.acanx.meta.model.test.annotation.copier.copier.UserCopier;
 import com.acanx.util.annotation.Copier;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 /**
  * MessageProcessor
@@ -84,7 +85,7 @@ public class CopierProcessor {
     public static void main(String[] args) {
         UserCopier copier = new UserCopier();
 
-        User user = new User(1011,"ACE", LocalDateTime.now());
+        User user = new User(1011,"ACE", LocalDateTime.now(ZoneId.systemDefault()));
         user.setEmail("abc@gmail.com");
         user.setPassword("123456");
         System.out.println(user.toString());
