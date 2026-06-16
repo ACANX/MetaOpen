@@ -41,10 +41,11 @@
     </licenses>
 
     <properties>
-          <revision>0.8.6</revision>
+          <revision>0.8.7</revision>
           <!-- 将此属性设置为 true，即可跳过该模块的 deploy 阶段 -->
           <maven.deploy.skip>true</maven.deploy.skip>
           <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
+          <bom-graalvm.version>25.0.8.6</bom-graalvm.version>
     </properties>
 
     <dependencyManagement>
@@ -87,7 +88,7 @@
             <dependency>
                 <groupId>com.acanx.meta.component</groupId>
                 <artifactId>bom-graalvm</artifactId>
-                <version>25.0.8.1</version>
+                <version>${bom-graalvm.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

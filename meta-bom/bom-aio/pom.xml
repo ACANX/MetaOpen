@@ -146,61 +146,61 @@
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-quote</artifactId>
-        <version>0.8.6</version>
+        <version>0.8.7</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-security</artifactId>
-        <version>0.8.6</version>
+        <version>0.8.7</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-sonatype</artifactId>
-        <version>0.8.6</version>
+        <version>0.8.7</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-deepseek</artifactId>
-        <version>0.8.6</version>
+        <version>0.8.7</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-test</artifactId>
-        <version>0.8.6</version>
+        <version>0.8.7</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-dingtalk</artifactId>
-        <version>0.8.6</version>
+        <version>0.8.7</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-wechat-work</artifactId>
-        <version>0.8.6</version>
+        <version>0.8.7</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-rss</artifactId>
-        <version>0.8.6</version>
+        <version>0.8.7</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-gemini</artifactId>
-        <version>0.8.6</version>
+        <version>0.8.7</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.component</groupId>
         <artifactId>sdk-maven-artifact</artifactId>
-        <version>0.8.6</version>
+        <version>0.8.7</version>
       </dependency>
         <dependency>
         <groupId>org.apache.maven</groupId>
@@ -597,18 +597,18 @@
         <dependency>
         <groupId>org.apache.flink</groupId>
         <artifactId>flink-core</artifactId>
-        <version>1.17.2</version>
+        <version>1.20.5</version>
         <scope>provided</scope>
       </dependency>
         <dependency>
         <groupId>org.apache.flink</groupId>
         <artifactId>flink-clients</artifactId>
-        <version>1.17.2</version>
+        <version>1.20.5</version>
       </dependency>
         <dependency>
         <groupId>org.apache.flink</groupId>
         <artifactId>flink-java</artifactId>
-        <version>1.17.2</version>
+        <version>1.20.5</version>
       </dependency>
         <dependency>
         <groupId>org.apache.hadoop</groupId>
@@ -759,7 +759,7 @@
         <dependency>
         <groupId>com.zaxxer</groupId>
         <artifactId>HikariCP</artifactId>
-        <version>7.0.2</version>
+        <version>7.1.0</version>
       </dependency>
         <dependency>
         <groupId>org.apache.lucene</groupId>
@@ -895,7 +895,7 @@
         <dependency>
         <groupId>org.redisson</groupId>
         <artifactId>redisson</artifactId>
-        <version>4.5.0</version>
+        <version>4.6.0</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -2399,13 +2399,13 @@
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>ses</artifactId>
-        <version>2.46.10</version>
+        <version>2.46.11</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>auth</artifactId>
-        <version>2.46.10</version>
+        <version>2.46.11</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
@@ -2592,7 +2592,7 @@
         <dependency>
         <groupId>com.larksuite.oapi</groupId>
         <artifactId>oapi-sdk</artifactId>
-        <version>2.7.3</version>
+        <version>2.8.1</version>
       </dependency>
         <dependency>
         <groupId>com.brevo</groupId>
@@ -2607,12 +2607,12 @@
         <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
-        <version>4.44.0</version>
+        <version>4.45.0</version>
       </dependency>
         <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-remote-driver</artifactId>
-        <version>4.44.0</version>
+        <version>4.45.0</version>
       </dependency>
         <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
@@ -2666,59 +2666,59 @@
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>s3</artifactId>
-        <version>2.46.10</version>
+        <version>2.46.11</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>lambda</artifactId>
-        <version>2.46.10</version>
+        <version>2.46.11</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>cloudwatch</artifactId>
-        <version>2.46.10</version>
+        <version>2.46.11</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>costexplorer</artifactId>
-        <version>2.46.10</version>
+        <version>2.46.11</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>regions</artifactId>
-        <version>2.46.10</version>
+        <version>2.46.11</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>aws-core</artifactId>
-        <version>2.46.10</version>
+        <version>2.46.11</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sqs</artifactId>
-        <version>2.46.10</version>
+        <version>2.46.11</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sns</artifactId>
-        <version>2.46.10</version>
+        <version>2.46.11</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>dynamodb</artifactId>
-        <version>2.46.10</version>
+        <version>2.46.11</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>scheduler</artifactId>
-        <version>2.46.10</version>
+        <version>2.46.11</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sdk-core</artifactId>
-        <version>2.46.10</version>
+        <version>2.46.11</version>
       </dependency>
         <dependency>
         <groupId>com.aliyun</groupId>

@@ -1,10 +1,10 @@
 package com.acanx.meta.dingtalk;
 
-public class DingTalkAuth {
-
-
-
-
-
-
+/**
+ * DingTalkAuth
+ *
+ * @author ACANX
+ * @since 202605
+ */
+public interface DingTalkAuth {
 }
