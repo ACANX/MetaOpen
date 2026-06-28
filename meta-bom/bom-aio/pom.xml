@@ -1008,7 +1008,7 @@
         <dependency>
         <groupId>org.apache.httpcomponents.core5</groupId>
         <artifactId>httpcore5</artifactId>
-        <version>5.4.2</version>
+        <version>5.4.3</version>
       </dependency>
         <dependency>
         <groupId>org.apache.httpcomponents.client5</groupId>
@@ -1023,12 +1023,12 @@
         <dependency>
         <groupId>org.apache.httpcomponents.core5</groupId>
         <artifactId>httpcore5-h2</artifactId>
-        <version>5.4.2</version>
+        <version>5.4.3</version>
       </dependency>
         <dependency>
         <groupId>org.apache.httpcomponents.core5</groupId>
         <artifactId>httpcore5-reactive</artifactId>
-        <version>5.4.2</version>
+        <version>5.4.3</version>
       </dependency>
         <dependency>
         <groupId>jakarta.annotation</groupId>
