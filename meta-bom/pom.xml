@@ -263,6 +263,7 @@
         <selenium-devtools.version>4.41.0</selenium-devtools.version>
         <selenium-htmlunit.version>4.29.0</selenium-htmlunit.version>
 
+
         <!-- 日志依赖  -->
         <slf4j.version>2.0.18</slf4j.version>
         <slf4j-api.version>2.0.18</slf4j-api.version>
