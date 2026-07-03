@@ -69,9 +69,9 @@
         <tomcat-embed.version>11.0.23</tomcat-embed.version>
 
         <mysql-connector-j.version>9.7.0</mysql-connector-j.version>
-        <postgresql.version>42.7.11</postgresql.version>
+        <postgresql.version>42.7.12</postgresql.version>
         <mybatis.version>3.5.19</mybatis.version>
-        <hibernate-orm.version>7.4.2.Final</hibernate-orm.version>
+        <hibernate-orm.version>7.4.3.Final</hibernate-orm.version>
         <seata.version>2.6.0</seata.version>
 
         <commons-lang3.version>3.20.0</commons-lang3.version>
@@ -106,7 +106,7 @@
         <dubbo.version>3.3.6</dubbo.version>
         <nacos.version>3.2.2</nacos.version>
 
-        <lucense.version>10.4.0</lucense.version>
+        <lucense.version>10.5.0</lucense.version>
         <elasticsearch.version>9.4.2</elasticsearch.version>
 
         <flink.version>1.20.5</flink.version>
@@ -117,8 +117,6 @@
         <selenium.version>4.45.0</selenium.version>
         <thymeleaf.version>3.1.5.RELEASE</thymeleaf.version>
 
-        <junit-jupiter.version>6.1.0</junit-jupiter.version>
-        <junit-platform.version>6.1.1</junit-platform.version>
         <!-- 修复 plexus-utils 目录遍历漏洞 -->
         <plexus-utils.version>4.0.3</plexus-utils.version>
         <plexus-xml.version>4.1.1</plexus-xml.version>
@@ -762,14 +760,14 @@
             <dependency>
                 <groupId>org.apache.kafka</groupId>
                 <artifactId>kafka_2.13</artifactId>
-                <version>4.3.0</version>
+                <version>4.3.1</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>org.apache.kafka</groupId>
                 <artifactId>kafka-clients</artifactId>
-                <version>4.3.0</version>
+                <version>4.3.1</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
@@ -962,7 +960,7 @@
             <dependency>
                 <groupId>io.undertow</groupId>
                 <artifactId>undertow-core</artifactId>
-                <version>2.4.1.Final</version>
+                <version>2.4.2.Final</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
@@ -1064,7 +1062,7 @@
             <dependency>
                 <groupId>org.apache.httpcomponents.client5</groupId>
                 <artifactId>httpclient5</artifactId>
-                <version>5.6.1</version>
+                <version>5.6.2</version>
             </dependency>
 
             <dependency>
