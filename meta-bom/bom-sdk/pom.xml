@@ -126,7 +126,7 @@
             <dependency>
                 <groupId>com.tencentcloudapi</groupId>
                 <artifactId>tencentcloud-sdk-java-ses</artifactId>
-                <version>3.1.1482</version>
+                <version>3.1.1494</version>
             </dependency>
             <dependency>
                 <groupId>com.qcloud</groupId>
