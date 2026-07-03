@@ -262,7 +262,6 @@
         <selenium-futu.version>4.39.0</selenium-futu.version>
         <selenium-devtools.version>4.41.0</selenium-devtools.version>
         <selenium-htmlunit.version>4.29.0</selenium-htmlunit.version>
->>>>>>> origin/dependa
 
         <!-- 日志依赖  -->
         <slf4j.version>2.0.18</slf4j.version>
@@ -270,12 +269,11 @@
         <jul-to-slf4j>2.0.18</jul-to-slf4j>
         <log4j-over-slf4j>2.0.18</log4j-over-slf4j>
         <log4j.version>2.26.1</log4j.version>
-        <log4j-to-slf4j>2.26.0</log4j-to-slf4j>
+        <log4j-to-slf4j>2.26.1</log4j-to-slf4j>
         <logback.version>1.5.37</logback.version>
         <!--  日志依赖  -->
 
         <junit-vintage-engine.version>6.1.1</junit-vintage-engine.version>
->>>>>>> origin/dependa
         <junit.version>4.13.2</junit.version>
 
         <!-- Spring Data 版本 -->
