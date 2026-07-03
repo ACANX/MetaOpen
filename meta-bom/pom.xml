@@ -196,7 +196,7 @@
         <!-- Markdown 相关 -->
         <commonmark.version>0.29.0</commonmark.version>
         <cos_api.version>5.6.269</cos_api.version>
-        <grpc.version>1.82.0</grpc.version>
+        <grpc.version>1.82.1</grpc.version>
         <protobuf-java.version>4.35.1</protobuf-java.version>
         <protoc.version>4.33.0</protoc.version>
         <guava.version>33.6.0-jre</guava.version>
@@ -213,8 +213,6 @@
         <jackson.version>2.22.0</jackson.version>
         <!--  JSON -->
               
-        <httpclient5.version>5.6.2</httpclient5.version>
-        <httpcore5.version>5.4.2</httpcore5.version>
         <httpcore.version>4.4.16</httpcore.version>
         <httpclient.version>4.5.14</httpclient.version>
         <apache.httpclient.version>4.5.14</apache.httpclient.version>
@@ -266,21 +264,20 @@
         <selenium-htmlunit.version>4.29.0</selenium-htmlunit.version>
 
         <awssdk.version>2.46.17</awssdk.version>
-        <huaweicloud-sdk.version>3.1.201</huaweicloud-sdk.version>
+        <huaweicloud-sdk.version>3.1.202</huaweicloud-sdk.version>
 
         <!-- 日志依赖  -->
         <slf4j.version>2.0.18</slf4j.version>
         <slf4j-api.version>2.0.18</slf4j-api.version>
         <jul-to-slf4j>2.0.18</jul-to-slf4j>
         <log4j-over-slf4j>2.0.18</log4j-over-slf4j>
-        <log4j.version>2.26.0</log4j.version>
+        <log4j.version>2.26.1</log4j.version>
         <log4j-to-slf4j>2.26.0</log4j-to-slf4j>
-        <logback.version>1.5.35</logback.version>
+        <logback.version>1.5.37</logback.version>
         <!--  日志依赖  -->
 
-        <junit-jupiter.version>6.1.0</junit-jupiter.version>
-        <junit-platform.version>6.1.0</junit-platform.version>
-        <junit-vintage-engine.version>6.1.0</junit-vintage-engine.version>
+        <junit-vintage-engine.version>6.1.1</junit-vintage-engine.version>
+>>>>>>> origin/dependa
         <junit.version>4.13.2</junit.version>
 
         <!-- Spring Data 版本 -->
