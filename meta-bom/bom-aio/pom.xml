@@ -2399,13 +2399,13 @@
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>ses</artifactId>
-        <version>2.46.17</version>
+        <version>2.46.21</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>auth</artifactId>
-        <version>2.46.17</version>
+        <version>2.46.21</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
@@ -2571,7 +2571,7 @@
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-functiongraph</artifactId>
-        <version>3.1.202</version>
+        <version>3.1.201</version>
       </dependency>
         <dependency>
         <groupId>com.google.cloud.functions</groupId>
@@ -2627,12 +2627,12 @@
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-core</artifactId>
-        <version>3.1.202</version>
+        <version>3.1.201</version>
       </dependency>
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-apig</artifactId>
-        <version>3.1.202</version>
+        <version>3.1.201</version>
       </dependency>
         <dependency>
         <groupId>com.aliyun</groupId>
@@ -2666,59 +2666,59 @@
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>s3</artifactId>
-        <version>2.46.17</version>
+        <version>2.46.21</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>lambda</artifactId>
-        <version>2.46.17</version>
+        <version>2.46.21</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>cloudwatch</artifactId>
-        <version>2.46.17</version>
+        <version>2.46.21</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>costexplorer</artifactId>
-        <version>2.46.17</version>
+        <version>2.46.21</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>regions</artifactId>
-        <version>2.46.17</version>
+        <version>2.46.21</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>aws-core</artifactId>
-        <version>2.46.17</version>
+        <version>2.46.21</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sqs</artifactId>
-        <version>2.46.17</version>
+        <version>2.46.21</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sns</artifactId>
-        <version>2.46.17</version>
+        <version>2.46.21</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>dynamodb</artifactId>
-        <version>2.46.17</version>
+        <version>2.46.21</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>scheduler</artifactId>
-        <version>2.46.17</version>
+        <version>2.46.21</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sdk-core</artifactId>
-        <version>2.46.17</version>
+        <version>2.46.21</version>
       </dependency>
         <dependency>
         <groupId>com.aliyun</groupId>
