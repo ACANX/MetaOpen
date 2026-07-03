@@ -213,8 +213,6 @@
         <jackson.version>2.22.0</jackson.version>
         <!--  JSON -->
               
-        <httpclient5.version>5.6.1</httpclient5.version>
-        <httpcore5.version>5.4.3</httpcore5.version>
         <httpcore.version>4.4.16</httpcore.version>
         <httpclient.version>4.5.14</httpclient.version>
         <apache.httpclient.version>4.5.14</apache.httpclient.version>
