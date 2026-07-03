@@ -127,8 +127,9 @@
                 <version>${fc-java-event.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>fc20230330</artifactId>
                 <version>4.7.7</version>
->>>>>>> origin/dependa
             </dependency>
 
             <!-- tencentcloud -->
