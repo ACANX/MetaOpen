@@ -129,7 +129,7 @@
             <dependency>
                 <groupId>com.aliyun</groupId>
                 <artifactId>fc20230330</artifactId>
-                <version>4.7.6</version>
+                <version>4.7.7</version>
             </dependency>
 
             <!-- tencentcloud -->
