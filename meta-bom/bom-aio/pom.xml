@@ -590,7 +590,7 @@
         <dependency>
         <groupId>org.postgresql</groupId>
         <artifactId>postgresql</artifactId>
-        <version>42.7.11</version>
+        <version>42.7.12</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -850,7 +850,7 @@
         <dependency>
         <groupId>org.elasticsearch</groupId>
         <artifactId>elasticsearch</artifactId>
-        <version>9.4.2</version>
+        <version>9.4.3</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -927,7 +927,7 @@
         <dependency>
         <groupId>org.apache.httpcomponents.client5</groupId>
         <artifactId>httpclient5</artifactId>
-        <version>5.6.1</version>
+        <version>5.6.2</version>
       </dependency>
         <dependency>
         <groupId>org.openjdk.jmh</groupId>
@@ -969,7 +969,7 @@
         <dependency>
         <groupId>org.junit.platform</groupId>
         <artifactId>junit-platform-commons</artifactId>
-        <version>6.1.0</version>
+        <version>6.1.1</version>
         <scope>test</scope>
       </dependency>
         <dependency>
@@ -1013,12 +1013,12 @@
         <dependency>
         <groupId>org.apache.httpcomponents.client5</groupId>
         <artifactId>httpclient5-cache</artifactId>
-        <version>5.6.1</version>
+        <version>5.6.2</version>
       </dependency>
         <dependency>
         <groupId>org.apache.httpcomponents.client5</groupId>
         <artifactId>httpclient5-fluent</artifactId>
-        <version>5.6.1</version>
+        <version>5.6.2</version>
       </dependency>
         <dependency>
         <groupId>org.apache.httpcomponents.core5</groupId>
@@ -1131,25 +1131,25 @@
         <dependency>
         <groupId>org.apache.logging.log4j</groupId>
         <artifactId>log4j-api</artifactId>
-        <version>2.26.0</version>
+        <version>2.26.1</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>org.apache.logging.log4j</groupId>
         <artifactId>log4j-core</artifactId>
-        <version>2.26.0</version>
+        <version>2.26.1</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>org.apache.logging.log4j</groupId>
         <artifactId>log4j-slf4j2-impl</artifactId>
-        <version>2.26.0</version>
+        <version>2.26.1</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>org.apache.logging.log4j</groupId>
         <artifactId>log4j-to-slf4j</artifactId>
-        <version>2.26.0</version>
+        <version>2.26.1</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
@@ -1174,7 +1174,7 @@
         <dependency>
         <groupId>com.qcloud</groupId>
         <artifactId>cos_api</artifactId>
-        <version>5.6.269</version>
+        <version>5.6.271</version>
         <optional>true</optional>
       </dependency>
         <dependency>
@@ -2220,7 +2220,7 @@
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-tcnative-boringssl-static</artifactId>
-        <version>2.0.79.Final</version>
+        <version>2.0.80.Final</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -2344,13 +2344,13 @@
         <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter</artifactId>
-        <version>6.1.0</version>
+        <version>6.1.1</version>
         <scope>test</scope>
       </dependency>
         <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-params</artifactId>
-        <version>6.1.0</version>
+        <version>6.1.1</version>
       </dependency>
         <dependency>
         <groupId>org.junit.vintage</groupId>
@@ -2362,12 +2362,12 @@
         <dependency>
         <groupId>org.junit.platform</groupId>
         <artifactId>junit-platform-engine</artifactId>
-        <version>6.1.0</version>
+        <version>6.1.1</version>
       </dependency>
         <dependency>
         <groupId>org.junit.platform</groupId>
         <artifactId>junit-platform-launcher</artifactId>
-        <version>6.1.0</version>
+        <version>6.1.1</version>
         <scope>test</scope>
       </dependency>
         <dependency>
@@ -2520,12 +2520,12 @@
         <dependency>
         <groupId>com.tencentcloudapi</groupId>
         <artifactId>tencentcloud-sdk-java-ses</artifactId>
-        <version>3.1.1482</version>
+        <version>3.1.1494</version>
       </dependency>
         <dependency>
         <groupId>org.graalvm.sdk</groupId>
         <artifactId>graal-sdk</artifactId>
-        <version>25.0.3</version>
+        <version>25.1.3</version>
         <scope>provided</scope>
       </dependency>
         <dependency>
@@ -2587,7 +2587,7 @@
         <dependency>
         <groupId>io.github.longportapp</groupId>
         <artifactId>openapi-sdk</artifactId>
-        <version>3.0.23</version>
+        <version>4.3.3</version>
       </dependency>
         <dependency>
         <groupId>com.larksuite.oapi</groupId>
@@ -2733,18 +2733,18 @@
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>native-maven-plugin</artifactId>
-        <version>1.1.2</version>
+        <version>1.1.3</version>
       </dependency>
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>utils</artifactId>
-        <version>1.1.2</version>
+        <version>1.1.3</version>
         <scope>runtime</scope>
       </dependency>
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>graalvm-reachability-metadata</artifactId>
-        <version>1.1.2</version>
+        <version>1.1.3</version>
         <scope>runtime</scope>
       </dependency>
     </dependencies>
