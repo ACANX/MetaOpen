@@ -93,7 +93,7 @@
         <caffeine.version>3.2.4</caffeine.version>
         <freemarker.version>2.3.34</freemarker.version>
         <jsoup.version>1.22.2</jsoup.version>
-        <hibernate-validator.version>9.1.1.Final</hibernate-validator.version>
+        <hibernate-validator.version>9.1.2.Final</hibernate-validator.version>
         <redisson.version>4.6.1</redisson.version>
 
         <slf4j.version>2.0.18</slf4j.version>
