@@ -969,7 +969,7 @@
         <dependency>
         <groupId>org.junit.platform</groupId>
         <artifactId>junit-platform-commons</artifactId>
-        <version>6.1.1</version>
+        <version>6.1.2</version>
         <scope>test</scope>
       </dependency>
         <dependency>
@@ -981,7 +981,7 @@
         <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-api</artifactId>
-        <version>6.1.1</version>
+        <version>6.1.2</version>
         <scope>test</scope>
       </dependency>
         <dependency>
@@ -2344,7 +2344,7 @@
         <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter</artifactId>
-        <version>6.1.1</version>
+        <version>6.1.2</version>
         <scope>test</scope>
       </dependency>
         <dependency>
