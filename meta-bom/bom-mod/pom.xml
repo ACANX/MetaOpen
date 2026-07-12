@@ -68,7 +68,7 @@
         <hanlp.version>portable-1.8.6</hanlp.version>
 
         <!-- PDF 版本 -->
-        <pdfbox.version>3.0.7</pdfbox.version>
+        <pdfbox.version>3.0.8</pdfbox.version>
 
         <!-- 音频处理版本 -->
         <jaudiotagger.version>2.0.1</jaudiotagger.version>
