@@ -122,7 +122,7 @@
         <brevo.version>1.1.7</brevo.version>
         <ipinfo-api.version>3.4.0</ipinfo-api.version>
         <longport-openapi-sdk.version>4.3.3</longport-openapi-sdk.version>
-        <bcprov-jdk18on.version>1.84</bcprov-jdk18on.version>
+        <bcprov-jdk18on.version>1.85</bcprov-jdk18on.version>
 
         <!-- BGMProvider 版本 -->
         <bgmprovider.version>2.0.4</bgmprovider.version>
