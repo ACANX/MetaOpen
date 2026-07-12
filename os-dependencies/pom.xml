@@ -114,7 +114,7 @@
 
         <micrometer.version>1.17.0</micrometer.version>
 
-        <selenium.version>4.45.0</selenium.version>
+        <selenium.version>4.46.0</selenium.version>
         <thymeleaf.version>3.1.5.RELEASE</thymeleaf.version>
 
         <!-- 修复 plexus-utils 目录遍历漏洞 -->
