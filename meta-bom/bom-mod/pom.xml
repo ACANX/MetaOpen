@@ -760,7 +760,7 @@
                   <dependency>
                       <groupId>com.huaweicloud</groupId>
                       <artifactId>esdk-obs-java</artifactId>
-                      <version>3.25.10</version>
+                      <version>3.26.6</version>
                       <scope>compile</scope>
                   </dependency>
                   <!-- Source: https://mvnrepository.com/artifact/com.sun/tools -->
