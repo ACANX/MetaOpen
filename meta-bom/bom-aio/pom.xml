@@ -2571,7 +2571,7 @@
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-functiongraph</artifactId>
-        <version>3.1.203</version>
+        <version>3.1.205</version>
       </dependency>
         <dependency>
         <groupId>com.google.cloud.functions</groupId>
@@ -2627,12 +2627,12 @@
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-core</artifactId>
-        <version>3.1.203</version>
+        <version>3.1.205</version>
       </dependency>
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-apig</artifactId>
-        <version>3.1.203</version>
+        <version>3.1.205</version>
       </dependency>
         <dependency>
         <groupId>com.aliyun</groupId>
