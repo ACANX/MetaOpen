@@ -280,7 +280,7 @@
 
         <junit-vintage-engine.version>6.1.2</junit-vintage-engine.version>
         <junit-jupiter.version>6.1.2</junit-jupiter.version>
-        <junit-platform.version>6.1.1</junit-platform.version>
+        <junit-platform.version>6.1.2</junit-platform.version>
         <junit.version>4.13.2</junit.version>
 
         <!-- Spring Data 版本 -->
