@@ -1198,29 +1198,29 @@
         <dependency>
         <groupId>io.grpc</groupId>
         <artifactId>grpc-all</artifactId>
-        <version>1.82.1</version>
+        <version>1.82.2</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>io.grpc</groupId>
         <artifactId>grpc-api</artifactId>
-        <version>1.82.1</version>
+        <version>1.82.2</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>io.grpc</groupId>
         <artifactId>grpc-core</artifactId>
-        <version>1.82.1</version>
+        <version>1.82.2</version>
       </dependency>
         <dependency>
         <groupId>io.grpc</groupId>
         <artifactId>grpc-protobuf</artifactId>
-        <version>1.82.1</version>
+        <version>1.82.2</version>
       </dependency>
         <dependency>
         <groupId>io.grpc</groupId>
         <artifactId>grpc-stub</artifactId>
-        <version>1.82.1</version>
+        <version>1.82.2</version>
       </dependency>
         <dependency>
         <groupId>org.apache.dubbo</groupId>
