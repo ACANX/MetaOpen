@@ -121,7 +121,7 @@
         <plexus-utils.version>4.0.3</plexus-utils.version>
         <plexus-xml.version>4.1.1</plexus-xml.version>
         <junit-jupiter.version>6.1.2</junit-jupiter.version>
-        <junit-platform.version>6.1.1</junit-platform.version>
+        <junit-platform.version>6.1.2</junit-platform.version>
     </properties>
 
 
