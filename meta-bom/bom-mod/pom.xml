@@ -103,7 +103,7 @@
 
         <!-- 其他版本 -->
         <graal-sdk.version>25.1.3</graal-sdk.version>
-        <functions-framework.version>2.0.1</functions-framework.version>
+        <functions-framework.version>2.0.2</functions-framework.version>
         <jspecify.version>1.0.0</jspecify.version>
         <jakarta-servlet.version>6.1.0</jakarta-servlet.version>
 
