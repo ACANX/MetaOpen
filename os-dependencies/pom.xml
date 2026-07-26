@@ -107,7 +107,7 @@
         <nacos.version>3.2.3</nacos.version>
 
         <lucense.version>10.5.0</lucense.version>
-        <elasticsearch.version>9.4.3</elasticsearch.version>
+        <elasticsearch.version>9.4.4</elasticsearch.version>
 
         <flink.version>1.20.5</flink.version>
         <hadoop.version>3.5.0</hadoop.version>
