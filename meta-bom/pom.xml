@@ -266,7 +266,7 @@
         <selenium-htmlunit.version>4.29.0</selenium-htmlunit.version>
 
         <awssdk.version>2.47.6</awssdk.version>
-        <huaweicloud-sdk.version>3.1.206</huaweicloud-sdk.version>
+        <huaweicloud-sdk.version>3.1.208</huaweicloud-sdk.version>
 
         <!-- 日志依赖  -->
         <slf4j.version>2.0.18</slf4j.version>
