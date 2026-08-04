@@ -62,7 +62,7 @@
         <aspectjweaver.version>1.9.25.1</aspectjweaver.version>
         <bytebuddy.version>1.18.10</bytebuddy.version>
 
-        <netty.version>4.2.15.Final</netty.version>
+        <netty.version>4.2.16.Final</netty.version>
         <reactor.verion>3.8.6</reactor.verion>
         <protobuf-java.version>4.35.1</protobuf-java.version>
 
@@ -85,9 +85,9 @@
         <mapstruct.version>1.6.3</mapstruct.version>
 
         <fastjson2.version>2.0.62</fastjson2.version>
-        <jackson.version>2.22.0</jackson.version>
+        <jackson.version>2.22.1</jackson.version>
         <jackson-annotations.version>2.22</jackson-annotations.version>
-        <jackson3.version>3.2.0</jackson3.version>
+        <jackson3.version>3.2.1</jackson3.version>
         <snakeyaml.version>2.6</snakeyaml.version>
 
         <caffeine.version>3.2.4</caffeine.version>
