@@ -60,7 +60,7 @@
         <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-databind</artifactId>
-        <version>2.22.0</version>
+        <version>2.22.1</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
@@ -109,7 +109,7 @@
         <dependency>
         <groupId>tools.jackson.core</groupId>
         <artifactId>jackson-databind</artifactId>
-        <version>3.2.0</version>
+        <version>3.2.1</version>
       </dependency>
         <dependency>
         <groupId>tools.jackson.dataformat</groupId>
@@ -508,7 +508,7 @@
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-http</artifactId>
-        <version>4.2.15.Final</version>
+        <version>4.2.16.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
@@ -518,7 +518,7 @@
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-http3</artifactId>
-        <version>4.2.15.Final</version>
+        <version>4.2.16.Final</version>
       </dependency>
         <dependency>
         <groupId>com.google.protobuf</groupId>
@@ -1350,12 +1350,12 @@
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-haproxy</artifactId>
-        <version>4.2.15.Final</version>
+        <version>4.2.16.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-compression</artifactId>
-        <version>4.2.15.Final</version>
+        <version>4.2.16.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
@@ -1385,7 +1385,7 @@
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-stomp</artifactId>
-        <version>4.2.15.Final</version>
+        <version>4.2.16.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
@@ -1425,7 +1425,7 @@
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-handler-ssl-ocsp</artifactId>
-        <version>4.2.15.Final</version>
+        <version>4.2.16.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
