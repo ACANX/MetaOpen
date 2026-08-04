@@ -97,7 +97,7 @@
         <redisson.version>4.6.1</redisson.version>
 
         <slf4j.version>2.0.18</slf4j.version>
-        <jspecify.version>1.0.0</jspecify.version>
+        <jspecify.version>1.0.1</jspecify.version>
 
         <spring.version>7.0.8</spring.version>
         <spring-security.version>7.1.0</spring-security.version>
