@@ -129,7 +129,7 @@
             <dependency>
                 <groupId>com.aliyun</groupId>
                 <artifactId>fc20230330</artifactId>
-                <version>4.7.8</version>
+                <version>4.7.9</version>
             </dependency>
 
             <!-- tencentcloud -->
@@ -174,7 +174,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>flatten-maven-plugin</artifactId>
-                <version>1.7.3</version>
+                <version>1.8.0</version>
                 <configuration>
                     <updatePomFile>true</updatePomFile>
                     <flattenMode>bom</flattenMode>
