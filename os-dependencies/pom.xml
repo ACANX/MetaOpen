@@ -68,7 +68,7 @@
 
         <tomcat-embed.version>11.0.24</tomcat-embed.version>
 
-        <mysql-connector-j.version>9.7.0</mysql-connector-j.version>
+        <mysql-connector-j.version>26.7.0</mysql-connector-j.version>
         <postgresql.version>42.7.13</postgresql.version>
         <mybatis.version>3.5.19</mybatis.version>
         <hibernate-orm.version>7.4.5.Final</hibernate-orm.version>
