@@ -1350,12 +1350,12 @@
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-haproxy</artifactId>
-        <version>4.2.16.Final</version>
+        <version>4.2.15.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-compression</artifactId>
-        <version>4.2.16.Final</version>
+        <version>4.2.15.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
@@ -1385,7 +1385,7 @@
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-stomp</artifactId>
-        <version>4.2.16.Final</version>
+        <version>4.2.15.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
@@ -1425,7 +1425,7 @@
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-handler-ssl-ocsp</artifactId>
-        <version>4.2.16.Final</version>
+        <version>4.2.15.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
@@ -2733,18 +2733,18 @@
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>native-maven-plugin</artifactId>
-        <version>1.1.6</version>
+        <version>1.1.2</version>
       </dependency>
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>utils</artifactId>
-        <version>1.1.6</version>
+        <version>1.1.2</version>
         <scope>runtime</scope>
       </dependency>
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>graalvm-reachability-metadata</artifactId>
-        <version>1.1.6</version>
+        <version>1.1.2</version>
         <scope>runtime</scope>
       </dependency>
     </dependencies>
