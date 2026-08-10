@@ -1390,7 +1390,42 @@
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-xml</artifactId>
-        <version>4.2.16.Final</version>
+        <version>4.2.15.Final</version>
+      </dependency>
+        <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-codec-protobuf</artifactId>
+        <version>4.2.15.Final</version>
+      </dependency>
+        <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-codec-marshalling</artifactId>
+        <version>4.2.15.Final</version>
+      </dependency>
+        <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-common</artifactId>
+        <version>4.2.15.Final</version>
+      </dependency>
+        <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-dev-tools</artifactId>
+        <version>4.2.15.Final</version>
+      </dependency>
+        <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-handler</artifactId>
+        <version>4.2.15.Final</version>
+      </dependency>
+        <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-handler-proxy</artifactId>
+        <version>4.2.15.Final</version>
+      </dependency>
+        <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-handler-ssl-ocsp</artifactId>
+        <version>4.2.15.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
