@@ -1,7 +1,17 @@
+---
+name: sonarcloud-quality-scan
+description: SonarCloud 代码质量扫描循环：采集 issue→按类建 GitHub 追踪 issue→逐条确认（改/不改/改方案）→修复/打回→发版复测
+license: MIT
+compatibility: opencode, claude-code, gemini-cli, openhands
+metadata:
+  audience: agents-developers
+  workflow: quality-scan
+---
+
 # SonarCloud 代码质量扫描循环（SonarCloudQualityScan）
 
-> 可复用的项目级工作技能：**采集 → 分类 → 建追踪 → 确认 → 修复/打回 → 发版复测**。
-> 面向所有 Agent / 开发者，用于 SonarCloud 代码质量巡检，可周期性重复执行。
+> 可复用的质量巡检工作流：**采集 → 分类 → 建追踪 → 确认 → 修复/打回 → 发版复测**。
+> 适用于 SonarCloud 项目的周期性质量扫描，供各类 Agent / 开发者直接复用。
 
 ---
 
@@ -16,7 +26,7 @@
 - `gh` CLI 已登录且对目标仓库有写权限（创建 issue / PR）
 - 网络可达 `sonarcloud.io`（公开 API 匿名可读，无需 token 即可采集 issue）
 - 本地有仓库克隆（用于代码摘录；无克隆时摘录标注"以 SonarCloud 为准"）
-- 参数：SonarCloud organization、project key（本仓库：`acanx` / `ACANX_MetaOpen`）、目标分支（`dev`）
+- 参数：SonarCloud organization、project key（MetaOpen：`acanx` / `ACANX_MetaOpen`）、目标分支（`dev`）
 
 ## 3. 工作流总览
 
@@ -83,7 +93,7 @@ gh issue edit <num> --repo <owner>/<repo> --body-file <key>.md                  
 | ❌ 不修 | SonarCloud API 标记：`POST /api/issues/do_transition?issue=<key>&transition=wontfix`（或 `falsepositive`），需项目管理员权限；原因记录进追踪 issue |
 | 💡 改方案 | 按用户方案调整 → 回用户确认 → 再落实 |
 
-- **Git 红线**：代码变更一律走 fork → PR（见 [GitCommitPRSpec](../DevSpec/GitCommitPRSpec.md)），禁止直推受保护分支
+- **Git 红线**：代码变更一律走 fork → PR（见 `Docs/DevSpec/GitCommitPRSpec.md`），禁止直推受保护分支
 - 代码级豁免：行尾 `// NOSONAR[ruleKey]` 或 Java `@SuppressWarnings("java:Sxxxx")`，需走 PR
 
 ### ⑦ 发版复测
@@ -120,7 +130,7 @@ gh issue edit <num> --repo <owner>/<repo> --body-file <key>.md                  
 - **行号偏移**：issue 行号基于最近一次分析，本地代码可能已变，代码摘录仅供参考
 - **分析挂分支**：pull_request_target 场景若未显式传 `sonar.pullRequest.*`，PR 分析可能落错分支，复测时以目标分支 push 扫描为准
 - **权限**：Won't Fix / False Positive 标记需要 SonarCloud 项目管理员权限
-- **规范关联**：修复方案与红线以 [CodeQualitySpec.md](../DevSpec/CodeQualitySpec.md) 为准
+- **规范关联**：修复方案与红线以 `Docs/DevSpec/CodeQualitySpec.md` 为准
 
 ## 7. 检查清单
 
