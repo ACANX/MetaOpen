@@ -126,23 +126,11 @@ on:
 
 **权限要求**：`permissions: contents: write`（用于推送 tag 和创建 Release）。
 
-### 3.3 首次合并触发问题（重要）
+### 3.3 首次合并触发问题
 
-**问题**：ReleaseWorkflow 文件首次进入 main 分支（即第一次 dev→main 合并）时，workflow 尚未存在于默认分支，`push` 事件能否触发？
+首次 dev→main 合并（ReleaseWorkflow 文件随该次 push 首次进入 main）时，`push` 事件**可以正常触发** workflow，无需等待下一个版本。
 
-**答案：能触发，无需等待下一个版本。**
-
-**原理**：GitHub Actions 的 `push: branches: [main]` 事件在分支被推送时，读取的是 **push 完成后的分支状态**。如果该次 push 恰好包含新增的 workflow 文件，该 push 本身就会触发新 workflow（GitHub 会在 push 后扫描 `.github/workflows/` 目录）。
-
-**实测验证**（2026-08-19，fork 环境）：
-
-| 事件 | 触发方式 | 结果 |
-|------|---------|------|
-| 第一次 push ReleaseWorkflow.yml 到 fork main | `push` 自动触发 | ✅ 自动执行，创建了 tag + Release |
-| 第二次 push（版本改为 0.8.9） | `push` 自动触发 | ✅ 自动执行，创建了 V0.8.9 tag + Release |
-| dry-run 验证 | `workflow_dispatch` | ✅ 幂等保护正确跳过已存在 tag |
-
-**注意**：`workflow_dispatch` 手动触发需要 workflow 已存在于默认分支（GitHub 平台限制），因此**首次合并前无法在 UI 手动触发**——但 `push` 自动触发不受此限制，这正是 release 流程依赖 `push` 事件的原因。
+详细探究（原理、实测验证、边界情况）见独立文档：**[WorkflowTrigger-Analysis.md](./WorkflowTrigger-Analysis.md)**。
 
 ---
 
@@ -173,9 +161,19 @@ gh release create V0.8.9 --generate-notes --repo ACANX/MetaOpen
 
 ---
 
-## 6. 验证记录
+## 6. 发布检查清单与配套文档
 
-### 6.1 ReleaseWorkflow 实验验证（fork: abcnx/MetaOpen）
+| 文档 | 用途 |
+|------|------|
+| **[PreRelease-Checklist.md](./PreRelease-Checklist.md)** | 正式发版前检查工作清单（版本号/分支/CI/安全/流程） |
+| **[PostRelease-Checklist.md](./PostRelease-Checklist.md)** | 发版后收尾/后置工作事项清单（结果确认/Central 发布/警报/文档） |
+| **[WorkflowTrigger-Analysis.md](./WorkflowTrigger-Analysis.md)** | 首次合并触发 ReleaseWorkflow 问题深入探究 |
+
+---
+
+## 7. 验证记录
+
+### 7.1 ReleaseWorkflow 实验验证（fork: abcnx/MetaOpen）
 
 | 验证项 | 结果 |
 |--------|------|
@@ -186,7 +184,7 @@ gh release create V0.8.9 --generate-notes --repo ACANX/MetaOpen
 | push 首次触发 | ✅ workflow 文件随 push 进入 main 时自动触发 |
 | 实验清理 | ✅ 测试 tag/Release 已删除，fork 恢复原状 |
 
-### 6.2 版本对齐验证（UpdateProjectVersion + bom-graalvm）
+### 7.2 版本对齐验证（UpdateProjectVersion + bom-graalvm）
 
 | 验证项 | 结果 |
 |--------|------|
