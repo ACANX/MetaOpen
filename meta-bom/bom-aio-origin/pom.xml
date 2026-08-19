@@ -45,8 +45,8 @@
           <!-- 将此属性设置为 true，即可跳过该模块的 deploy 阶段 -->
           <maven.deploy.skip>true</maven.deploy.skip>
           <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
-          <!-- bom-graalvm 版本：与 bom-graalvm 模块版本定义 25.${revision} 保持一致，发版时随 revision 自动对齐 -->
-          <bom-graalvm.version>25.${revision}</bom-graalvm.version>
+          <!-- bom-graalvm 版本：派生自 revision（=25.<revision>），由 UpdateProjectVersion 发版时自动替换 -->
+          <bom-graalvm.version>25.0.8.9</bom-graalvm.version>
     </properties>
 
     <dependencyManagement>
