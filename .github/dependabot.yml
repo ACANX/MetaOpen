@@ -1,5 +1,22 @@
 version: 2
 updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+      time: "23:20"
+      timezone: "Asia/Shanghai"
+    target-branch: "dependa"
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    labels:
+      - "依赖:升级"
+      - "自动化:提交"
+      - "Dependabot"
+      - "From:GitHub-Actions"
   - package-ecosystem: "maven"
     directory: "/"
     schedule:
