@@ -22,6 +22,7 @@
 | [GitHubActionWorkflowSpec.md](./GitHubActionWorkflowSpec.md) | GitHub Action 工作流编写规范（文件/name/step 命名、参考示例） | 新建或修改 `.github/workflows/` 下的工作流 |
 | [DocumentNamingSpec.md](./DocumentNamingSpec.md) | Markdown 文档文件命名规范（大驼峰、无连字符） | 创建/重命名 `Docs/` 及仓库内文档 |
 | [CodeStyleSpec.md](./CodeStyleSpec.md) | Java 编码风格与命名约定（缩进、包名、标识符风格） | 编写/审查 Java 代码 |
+| [CodeQualitySpec.md](./CodeQualitySpec.md) | Java 代码质量红线（SonarCloud 强制规范：S1186 空构造器、S1948 序列化、S1192 重复字面量等） | 编写/审查 Java 代码、GitHub Actions 工作流 |
 | [ModuleNamingSpec.md](./ModuleNamingSpec.md) | Maven 模块命名约定（model-*/sdk-*/api-*/base-*） | 新建模块、调整模块结构 |
 | [GitCommitPRSpec.md](./GitCommitPRSpec.md) | Git 提交信息与 Pull Request 规范（Conventional Commit、PR 红线） | 提交代码、发起 PR |
 | [TestSpec.md](./TestSpec.md) | 测试规范（JUnit Jupiter、*Test 命名、运行方式） | 编写/运行单元测试 |

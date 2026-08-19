@@ -3,21 +3,21 @@ package com.acanx.meta.base.rest;
 import com.acanx.meta.base.error.ErrorCode;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import java.io.Serializable;
-
 /**
  * RestResult
  *
  * 统一REST API响应对象
+ *
+ * <p>仅通过 Jackson 进行 JSON 序列化（HTTP 响应），不参与 Java 原生序列化，
+ * 故不实现 {@link java.io.Serializable}，避免泛型字段 {@code data} 触发
+ * SonarCloud java:S1948 告警。</p>
  *
  * @param <T> 数据类型
  * @author ACANX
  * @since 0.1.5
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class RestResult<T> implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class RestResult<T> {
 
     /**
      * 成功状态码

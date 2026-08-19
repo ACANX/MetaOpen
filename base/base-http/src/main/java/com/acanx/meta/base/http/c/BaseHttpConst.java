@@ -52,9 +52,13 @@ public final class BaseHttpConst {
     public static final String MEDIA_TYPE_TEXT_HTML = "text/html";
     public static final String MEDIA_TYPE_TEXT_CSS = "text/css";
     public static final String MEDIA_TYPE_TEXT_EVENT_STREAM = "text/event-stream";
-    public static final String MEDIA_TYPE_APPLICATION_JSON_UTF8 = MEDIA_TYPE_APPLICATION_JSON + "; charset=UTF-8";
-    public static final String MEDIA_TYPE_TEXT_PLAIN_UTF8 = MEDIA_TYPE_TEXT_PLAIN + "; charset=UTF-8";
-    public static final String MEDIA_TYPE_TEXT_HTML_UTF8 = MEDIA_TYPE_TEXT_HTML + "; charset=UTF-8";
+
+    /** UTF-8 字符集媒体类型后缀 */
+    public static final String CHARSET_UTF8_SUFFIX = "; charset=UTF-8";
+
+    public static final String MEDIA_TYPE_APPLICATION_JSON_UTF8 = MEDIA_TYPE_APPLICATION_JSON + CHARSET_UTF8_SUFFIX;
+    public static final String MEDIA_TYPE_TEXT_PLAIN_UTF8 = MEDIA_TYPE_TEXT_PLAIN + CHARSET_UTF8_SUFFIX;
+    public static final String MEDIA_TYPE_TEXT_HTML_UTF8 = MEDIA_TYPE_TEXT_HTML + CHARSET_UTF8_SUFFIX;
 
     public static final String SCHEME_HTTP = "http";
     public static final String SCHEME_HTTPS = "https";
