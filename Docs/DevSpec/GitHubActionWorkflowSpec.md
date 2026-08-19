@@ -163,7 +163,7 @@ jobs:
 
 ## 8. 存量文件处理
 
-仓库现有部分 workflow（如 `CodeQLAdvanced.yml`、`SonarQube.yml`）的 step name 仍使用带空格写法。**存量文件不强制立即整改**，但满足以下条件之一时应同步改造为符合本规范：
+仓库现有部分 workflow（如 `CodeQLAdvanced.yml`）的 step name 仍使用带空格写法。**存量文件不强制立即整改**，但满足以下条件之一时应同步改造为符合本规范：
 - 对存量 workflow 进行功能性修改时
 - 新增 step / job 时
 - 涉及发布、版本管理的核心 workflow（`ReleaseWorkflow.yml`、`UpdateProjectVersion.yml` 等）

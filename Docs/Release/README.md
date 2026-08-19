@@ -87,7 +87,7 @@ MetaOpen 的版本号遵循语义化版本（SemVer）风格，格式为 `0.x.y`
 │    - PR → 合并到 dev                                              │
 ├─────────────────────────────────────────────────────────────────┤
 │ 2. dev 分支验证                                                   │
-│    - MultiMavenJDKBranchCI / SonarQube / CodeQL 等 CI            │
+│    - MultiMavenJDKBranchCI / SonarCloudCodeAnalysis / CodeQL 等 CI │
 │    - UpdateBOMAIODeps（bom-aio 依赖同步校验）                     │
 ├─────────────────────────────────────────────────────────────────┤
 │ 3. dev → main 合并（PR）                                          │
