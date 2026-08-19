@@ -34,6 +34,10 @@ SonarCloud 静态扫描是强制环节（push / PR 自动分析），新代码�
 
 详细决策树、示例与已知问题修复记录见 [CodeQualitySpec.md](./Docs/DevSpec/CodeQualitySpec.md)。
 
+### 可复用技能（Agent Skills）
+
+SonarCloud 质量扫描循环技能位于 `.agents/skills/sonarcloud-quality-scan/SKILL.md`（Agent Skills 开放标准目录，opencode / Claude Code / Gemini CLI / OpenHands 等可直接发现）：采集 issue → 按类建 GitHub 追踪 → 逐条确认（✅/❌/💡）→ 修复/打回 → 发版复测。配套生成脚本 `scripts/sonarcloud_track.py`。
+
 ### 模块命名约定
 
 - 领域模型模块：`model-*`，groupId `com.acanx.meta.model`（如 `model-quote`、`model-deepseek`）
