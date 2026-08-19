@@ -5,8 +5,8 @@ permissions:
 on:
   push:
     branches: [ 'dev', 'main', 'dependa', 'aa' ] # 在推送到主干分支时触发
-  pull_request:
-    branches: [ 'dev', 'main', 'dependa', 'aa' ] # 在任何针对主干分支的PR创建时触发
+  pull_request_target:
+    branches: [ 'dev', 'main', 'dependa', 'aa' ] # 在任何针对主干分支的PR创建时触发（含 fork PR，需显式检出 merge ref）
     types: [opened, synchronize, reopened]
   workflow_dispatch:     
 
@@ -19,6 +19,8 @@ jobs:
         uses: actions/checkout@v5
         with:
           fetch-depth: 0 # SonarScanner可能需要完整的提交历史
+          # pull_request_target 下默认检出 base 分支，需显式检出 PR 合并提交；push/workflow_dispatch 走事件默认 ref
+          ref: ${{ github.event.pull_request && format('refs/pull/{0}/merge', github.event.pull_request.number) || '' }}
 
       - name: SetupJDK
         uses: actions/setup-java@v5
@@ -39,4 +41,4 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} # 在GitHub仓库Secrets中设置的SonarCloud Token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub自动提供的Token，用于上传PR检查结果
         run: |
-          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=ACANX_MetaOpen -Dsonar.organization=acanx -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=$SONAR_TOKEN -Dsonar.branch.name=${{ github.ref_name }} -Dsonar.qualitygate.wait=false -Dgpg.skip=true -e -X -U 
+          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=ACANX_MetaOpen -Dsonar.organization=acanx -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=$SONAR_TOKEN -Dsonar.qualitygate.wait=false -Dgpg.skip=true -e -X -U # 不传 sonar.branch.name，由扫描器自动识别 push 分支 / PR 上下文 
