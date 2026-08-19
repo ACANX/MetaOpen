@@ -135,44 +135,44 @@ public class MVSVSerializer {
     private void writeMetadataToBuilder(StringBuilder builder, MVSVMetadata metadata) {
         // 中文元数据
         if (metadata.getTitle() != null && !metadata.getTitle().isEmpty()) {
-            builder.append(String.format("# 标题 : \"%s\"\n", metadata.getTitle()));
+            builder.append(String.format("# 标题 : \"%s\"%n", metadata.getTitle()));
         }
         if (metadata.getDataProvider() != null && !metadata.getDataProvider().isEmpty()) {
-            builder.append(String.format("# 数据供应商 : %s\n", metadata.getDataProvider()));
+            builder.append(String.format("# 数据供应商 : %s%n", metadata.getDataProvider()));
         }
         if (metadata.getField() != null && !metadata.getField().isEmpty()) {
-            builder.append(String.format("# 字段 : %s\n", metadata.getField()));
+            builder.append(String.format("# 字段 : %s%n", metadata.getField()));
         }
         if (metadata.getFieldName() != null && !metadata.getFieldName().isEmpty()) {
-            builder.append(String.format("# 字段名称 : %s\n", metadata.getFieldName()));
+            builder.append(String.format("# 字段名称 : %s%n", metadata.getFieldName()));
         }
         if (metadata.getFieldType() != null && !metadata.getFieldType().isEmpty()) {
-            builder.append(String.format("# 字段类型 : %s\n", metadata.getFieldType()));
+            builder.append(String.format("# 字段类型 : %s%n", metadata.getFieldType()));
         }
-        builder.append(String.format("# 计数 : %d\n", metadata.getCount()));
+        builder.append(String.format("# 计数 : %d%n", metadata.getCount()));
         if (metadata.getRemark() != null && !metadata.getRemark().isEmpty()) {
-            builder.append(String.format("# 备注 : \"%s\"\n", metadata.getRemark()));
+            builder.append(String.format("# 备注 : \"%s\"%n", metadata.getRemark()));
         }
 
         // 英文元数据
         if (metadata.getTitleEn() != null && !metadata.getTitleEn().isEmpty()) {
-            builder.append(String.format("# Title : \"%s\"\n", metadata.getTitleEn()));
+            builder.append(String.format("# Title : \"%s\"%n", metadata.getTitleEn()));
         }
         if (metadata.getDataProviderEn() != null && !metadata.getDataProviderEn().isEmpty()) {
-            builder.append(String.format("# DataProvider : %s\n", metadata.getDataProviderEn()));
+            builder.append(String.format("# DataProvider : %s%n", metadata.getDataProviderEn()));
         }
         if (metadata.getFieldEn() != null && !metadata.getFieldEn().isEmpty()) {
-            builder.append(String.format("# Field : %s\n", metadata.getFieldEn()));
+            builder.append(String.format("# Field : %s%n", metadata.getFieldEn()));
         }
         if (metadata.getFieldNameEn() != null && !metadata.getFieldNameEn().isEmpty()) {
-            builder.append(String.format("# FieldName : %s\n", metadata.getFieldNameEn()));
+            builder.append(String.format("# FieldName : %s%n", metadata.getFieldNameEn()));
         }
         if (metadata.getFieldTypeEn() != null && !metadata.getFieldTypeEn().isEmpty()) {
-            builder.append(String.format("# FieldType : %s\n", metadata.getFieldTypeEn()));
+            builder.append(String.format("# FieldType : %s%n", metadata.getFieldTypeEn()));
         }
-        builder.append(String.format("# Count : %d\n", metadata.getCount()));
+        builder.append(String.format("# Count : %d%n", metadata.getCount()));
         if (metadata.getRemarkEn() != null && !metadata.getRemarkEn().isEmpty()) {
-            builder.append(String.format("# Remark : \"%s\"\n", metadata.getRemarkEn()));
+            builder.append(String.format("# Remark : \"%s\"%n", metadata.getRemarkEn()));
         }
     }
 
