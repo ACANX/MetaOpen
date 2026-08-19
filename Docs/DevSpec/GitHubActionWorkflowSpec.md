@@ -8,6 +8,10 @@
 ## 1. 文件命名规范
 
 - **工作流文件名使用大驼峰（PascalCase）命名**，不使用连字符（`-`）、下划线（`_`）或空格。
+- **文件名必须与工作流文件顶部的 `name` 属性值保持一致**（同名），便于文件与工作流的双向定位。
+  - 正确示例：文件 `ReleaseWorkflow.yml` ↔ `name: ReleaseWorkflow`
+  - 正确示例：文件 `UpdateBOMAIODeps.yml` ↔ `name: UpdateBOMAIODeps`
+  - 错误示例：文件 `Foo.yml` 内部 `name: Bar` ❌（文件名与 name 不一致）
 - 正确示例：
   - `ReleaseWorkflow.yml`
   - `UpdateBOMAIODeps.yml`
@@ -18,6 +22,7 @@
   - `update_bom_deps.yml` ❌
   - `my workflow.yml` ❌
 - 扩展名统一使用 `.yml`（当前仓库存在 `.yaml` 历史文件，新文件一律使用 `.yml`）。
+- 重命名工作流时，文件名与 `name` 属性需同步修改。
 
 ## 2. 工作流顶层 `name` 规范
 
@@ -149,6 +154,7 @@ jobs:
 ## 7. 检查清单
 
 - [ ] 文件名大驼峰、`.yml` 扩展名
+- [ ] **文件名与顶层 `name` 值一致**（同名）
 - [ ] 顶层 `name` 大驼峰无空格
 - [ ] 所有 job / step 的 `name` 大驼峰无空格
 - [ ] step `id` 小驼峰且唯一
