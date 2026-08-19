@@ -79,7 +79,7 @@
         <commons-collections4.version>4.6.0</commons-collections4.version>
         <commons-configuration2.version>2.15.1</commons-configuration2.version>
         
-        <guava.version>33.6.0-jre</guava.version>
+        <guava.version>33.7.1-jre</guava.version>
 
         <lombok.version>1.18.46</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>

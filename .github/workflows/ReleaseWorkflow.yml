@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: CheckoutCode
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0        # 拉取完整历史，确保 git rev-parse 能查到已有 tag
 
