@@ -69,7 +69,7 @@
 ### 缓解措施
 
 1. **仅限可信协作者**：本仓库 PR 只来自 `abcnx`（自有账户），风险可控；若将来开放外部贡献者 PR，需重新评估
-2. **权限最小化**：secrets 只给任务必需的最小权限（如 `SONAR_TOKEN` 仅 Execute Analysis）；`permissions:` 显式声明最小权限（本工作流 `contents: read`）
+2. **权限最小化**：secrets 只给任务必需的最小权限（如 `SONAR_TOKEN` 仅 Execute Analysis）；`permissions:` 显式声明最小权限（本工作流为 `contents: read`、`pull-requests: read`、`issues: write`，前者供 SonarCloud 读取 PR，后者用于回写报告）
 3. **高权限 secrets 禁止进入 PR 流程**：`OSSRH_TOKEN`、`GPG_PRIVATE_KEY` 等发布凭据绝不能出现在 `pull_request_target` 工作流中（只能用于 push 触发的发布流程）
 4. **固定工作流逻辑**：工作流文件取 base 分支版本，步骤保持固定；不执行 PR 中引入的不可信脚本（如不 `npm install` PR 修改的依赖、不 `curl | sh` PR 提供的脚本）
 5. **审查 PR 变更**：即使来自可信协作者，也审查 workflow 相关与构建脚本变更
@@ -111,8 +111,6 @@ jobs:
 
 要点：`pull_request` 事件下扫描器从 GitHub Actions 环境（`GITHUB_EVENT_NAME` / `GITHUB_REF`）自动识别 PR 上下文，**无需手动传参**。
 
-> ⚠️ **重要限制（2026-08-19 实测）**：扫描器（engine 13.7）**仅对 `pull_request` 事件自动识别 PR 上下文**（依赖 `GITHUB_REF=refs/pull/N/merge`）。对 `pull_request_target` 事件（`GITHUB_REF` = base 分支 ref）**无法自动识别**，分析会被挂到 main 分支。必须**显式传入** `-Dsonar.pullRequest.key / -Dsonar.pullRequest.branch / -Dsonar.pullRequest.base`。详见第 7 节陷阱 #3。
-
 ## 6. MetaOpen 落地记录（SonarCloudCodeAnalysis.yml）
 
 背景：issue #2507 —— SonarCloudCodeAnalysis 在 fork PR 上持续 401（`SONAR_TOKEN` 为空）。
@@ -124,8 +122,15 @@ jobs:
 | checkout 增加 `allow-unsafe-pr-checkout: true` | checkout v5 安全护栏：`pull_request_target` 默认拒绝检出 fork PR 代码，需显式放行（本仓库 PR 仅来自可信协作者 abcnx） |
 | 移除 `-Dsonar.branch.name` | 该参数强制"分支模式"并跳过扫描器自动识别，导致 PR 分析被误当作名为 `<N>/merge` 的分支分析；移除后 push 事件由扫描器自动识别分支 |
 | PR 事件显式传 `sonar.pullRequest.*` | 实测扫描器不识别 `pull_request_target` 事件的 PR 上下文（分析落 main 分支），需显式传入 key/branch/base；push 事件保持自动分支识别 |
+| 新增 `PublishSonarCloudPrReport` | 等待 SonarCloud 后台任务完成，读取 Quality Gate 和 PR issues，再用固定标记更新同一条 GitHub PR 评论 |
 
 参考 PR：#2514（qualitygate.wait 修复）、#2515（pull_request_target 切换）、#2517（JaCoCo 覆盖率 + allow-unsafe-pr-checkout）、#2519（显式 PR 上下文参数）。
+
+### 6.1 PR summary 与 issues 回写
+
+SonarQube Cloud 的 GitHub App 负责原生 check summary；工作流另外执行 `.github/scripts/PublishSonarCloudPrReport.sh`，通过 SonarCloud Web API 获取本次分析的 Quality Gate 和 `pullRequest=<N>` issues，再调用 GitHub Issues Comments API 写入 PR。由于 `pull_request_target` 工作区包含 PR 合并代码，工作流会先按 base SHA checkout 该脚本的可信版本，再执行报告。
+
+该评论使用 `<!-- sonarcloud-pr-report -->` 作为固定标记，因此每次 `opened`、`synchronize` 或 `reopened` 都是更新原评论，不会为同一个 PR 产生重复报告。若 SonarCloud 分析任务失败，报告步骤不会伪造 issues，原生 SonarCloud check 仍负责展示失败原因。
 
 ## 7. 常见陷阱
 
@@ -133,7 +138,7 @@ jobs:
 |---|------|------|------|
 | 1 | `pull_request_target` 忘记 checkout merge ref | 扫描/构建的是 **base 分支**代码，PR 分析无效 | 显式 `ref: refs/pull/<N>/merge` |
 | 2 | 同时声明 `pull_request` + `pull_request_target` | 每个 PR 触发**双份 run**（浪费 CI 分钟；同名 check 一红一绿干扰 required checks） | 只保留一种；`pull_request_target` 通吃两种 PR |
-| 3 | 假设 `pull_request_target` 下扫描器能自动识别 PR | **实测不识别**：`pull_request_target` 的 `GITHUB_REF` 是 base 分支，扫描器（engine 13.7）只对 `pull_request` 事件自动识别 PR，分析被挂到 main 分支（PR 无装饰/检查） | `pull_request_target` 事件显式传 `-Dsonar.pullRequest.key/branch/base` |
+| 3 | 假设 `pull_request_target` 下扫描器能自动识别 PR | **实测不识别**：`pull_request_target` 的 `GITHUB_REF` 是 base 分支，扫描器（engine 13.7）只对 `pull_request` 事件自动识别 PR，分析被挂到 main 分支（PR 无装饰/检查） | `pull_request_target` 事件显式传 `-Dsonar.pullRequest.key/branch/base`，并用 API 报告步骤按 PR 号读取 issues |
 | 4 | 触发方式切换的"鸡生蛋" | 切换 PR 自身不会用新触发方式运行（head 声明新事件、base 还是旧事件 → 都不匹配），须等合并后生效 | 合并后验证；无需特殊处理 |
 | 5 | 混淆 `refs/pull/<N>/head` 与 `/merge` | head 不含 base 最新改动，结果偏离合并后状态 | 分析场景用 `/merge` |
 | 6 | `pull_request_target` 里误用高权限 secrets | PR 代码可窃取发布凭据 | 发布凭据只进 push 流程 |
@@ -155,6 +160,8 @@ jobs:
 - [ ] 明确该工作流是否需要 secrets、是否需覆盖 fork PR
 - [ ] `pull_request_target` 场景已显式 checkout `refs/pull/<N>/merge`
 - [ ] 未同时声明 `pull_request` 与 `pull_request_target`
-- [ ] `permissions:` 已最小化（如 `contents: read`）
+- [ ] PR 报告脚本使用固定 marker 更新评论，而不是每次创建新评论
+- [ ] SonarCloud PR 报告评论已包含 Quality Gate 与 issues 表
+- [ ] `permissions:` 已最小化（`contents: read`、`pull-requests: read`、`issues: write`）
 - [ ] 无高权限 secrets（发布凭据）出现在 PR 流程
-- [ ] 扫描类任务未手动传 `sonar.branch.name` / `sonar.pullRequest.key`（交给自动识别）
+- [ ] `pull_request_target` 已显式传 `sonar.pullRequest.key/branch/base`，push 事件未传 `sonar.branch.name`

@@ -1,6 +1,8 @@
 name: SonarCloudCodeAnalysis
 permissions:
   contents: read
+  issues: write
+  pull-requests: read
   
 on:
   push:
@@ -15,7 +17,7 @@ jobs:
   BuildScanAnalyze:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: CheckoutCode
         uses: actions/checkout@v7
         with:
           fetch-depth: 0 # SonarScanner可能需要完整的提交历史
@@ -43,17 +45,54 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} # 在GitHub仓库Secrets中设置的SonarCloud Token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub自动提供的Token，用于上传PR检查结果
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
           # PR 上下文经 env 传递，避免将不可信输入（PR 分支名等）直接内插进 shell 脚本（防代码注入，CodeQL actions/code-injection）
           PR_NUMBER: ${{ github.event.pull_request.number }}
           PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
           PR_BASE_REF: ${{ github.event.pull_request.base.ref }}
         run: |
-          # 收集各模块 JaCoCo 报告路径（target/site/jacoco/jacoco.xml），逗号拼接后传给 SonarCloud
-          JACOCO_PATHS=$(find . -path '*/target/site/jacoco/jacoco.xml' | paste -sd, -)
+          # JaCoCo 报告由同一次 mvn verify 生成，使用通配符让 Sonar 阶段在生成后解析。
+          JACOCO_PATHS="**/target/site/jacoco/jacoco.xml"
           # 扫描器仅识别 pull_request 事件的 PR 上下文（GITHUB_REF=refs/pull/N/merge）；
           # pull_request_target 事件（GITHUB_REF=base 分支）无法自动识别 PR，需显式传入 PR 参数。push 事件走自动分支识别。
-          SONAR_CONTEXT=""
-          if [ "${{ github.event_name }}" = "pull_request_target" ]; then
-            SONAR_CONTEXT="-Dsonar.pullRequest.key=${PR_NUMBER} -Dsonar.pullRequest.branch=${PR_HEAD_REF} -Dsonar.pullRequest.base=${PR_BASE_REF}"
+          SONAR_ARGS=(
+            "-Dsonar.projectKey=ACANX_MetaOpen"
+            "-Dsonar.organization=acanx"
+            "-Dsonar.host.url=https://sonarcloud.io"
+            "-Dsonar.token=${SONAR_TOKEN}"
+            "-Dsonar.qualitygate.wait=false"
+            "-Dsonar.coverage.jacoco.xmlReportPaths=${JACOCO_PATHS}"
+            "-Dgpg.skip=true"
+            "-e"
+            "-X"
+            "-U"
+          )
+          if [ "${GITHUB_EVENT_NAME}" = "pull_request_target" ]; then
+            SONAR_ARGS+=(
+              "-Dsonar.pullrequest.key=${PR_NUMBER}"
+              "-Dsonar.pullrequest.branch=${PR_HEAD_REF}"
+              "-Dsonar.pullrequest.base=${PR_BASE_REF}"
+            )
           fi
-          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=ACANX_MetaOpen -Dsonar.organization=acanx -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=$SONAR_TOKEN -Dsonar.qualitygate.wait=false -Dsonar.coverage.jacoco.xmlReportPaths="$JACOCO_PATHS" ${SONAR_CONTEXT} -Dgpg.skip=true -e -X -U 
+          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar "${SONAR_ARGS[@]}"
+
+      - name: CheckoutTrustedSonarReportScript
+        if: ${{ github.event_name == 'pull_request_target' && success() }}
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: .trusted-metaopen
+          sparse-checkout: .github/scripts/PublishSonarCloudPrReport.sh
+          sparse-checkout-cone-mode: false
+
+      - name: PublishSonarCloudPrReport
+        if: ${{ github.event_name == 'pull_request_target' && success() }}
+        env:
+          GITHUB_API_URL: ${{ github.api_url }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          SONAR_HOST_URL: https://sonarcloud.io
+          SONAR_PROJECT_KEY: ACANX_MetaOpen
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: bash .trusted-metaopen/.github/scripts/PublishSonarCloudPrReport.sh
