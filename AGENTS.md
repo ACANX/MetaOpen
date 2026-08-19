@@ -1,4 +1,6 @@
-# 仓库指南
+# 仓库指南（AGENTS.md）
+
+本文件为 MetaOpen 仓库的开发规范与协作约定，供开发者（含 AI Agent）在仓库内工作时遵循。
 
 ## 交流语言
 
@@ -6,7 +8,7 @@
 
 ## 项目结构与模块组织
 
-MetaOpen 是一个 Java 21 Maven 多模块项目。根目录 `pom.xml` 聚合 `base`、`meta-model`、`meta-component`、`meta-bom`、`meta-sdk` 和 `os-dependencies`。各模块使用标准 Maven 目录结构：`src/main/java`、`src/main/resources`、`src/test/java` 和 `src/test/resources`。通用基础能力位于 `base/*`；领域模型模块位于 `meta-model/model-*`；Maven 构件相关组件位于 `meta-component/sdk-maven-artifact`。项目文档在 `Docs/`，GitHub 自动化配置在 `.github/workflows/`。
+MetaOpen 是一个 Java 21 Maven 多模块项目。根目录 `pom.xml` 聚合 `base`、`meta-model`、`meta-component`、`meta-bom`、`meta-sdk` 和 `os-dependencies`。各模块使用标准 Maven 目录结构：`src/main/java`、`src/main/resources`、`src/test/java` 和 `src/test/resources`。通用基础能力位于 `base/*`；领域模型模块位于 `meta-model/model-*`；Maven 构件相关组件位于 `meta-component/sdk-maven-artifact`。项目文档在 `Docs/`（开发入门 `Docs/Dev/Introduction/`、发布方案 `Docs/Release/`），GitHub 自动化配置在 `.github/workflows/`。
 
 ## 构建、测试与开发命令
 
@@ -20,6 +22,13 @@ MetaOpen 是一个 Java 21 Maven 多模块项目。根目录 `pom.xml` 聚合 `b
 ## 编码风格与命名约定
 
 使用 UTF-8 和父 POM 中定义的 Java 21 配置。保持现有 Java 风格：4 空格缩进，包名位于 `com.acanx.meta` 下，类名使用 PascalCase，方法和字段使用 camelCase，常量使用全大写。模块命名遵循现有模式，例如 `model-rss`、`model-gemini` 和 `base-exception`。优先使用模块内的小型模型类和工具类，只有在复用价值明确时才抽象到共享层。
+
+### 模块命名约定
+
+- 领域模型模块：`model-*`，groupId `com.acanx.meta.model`（如 `model-quote`、`model-deepseek`）
+- 组件/SDK 模块：`sdk-*` / `api-*`，groupId `com.acanx.meta.component`
+- 基础能力模块：`base-*`，groupId `com.acanx.meta.base`
+- 新模块建议用 `tool-archetype` 生成（见 `Docs/Dev/Introduction/NewArtifactGuide.md`），并加入对应父 POM 的 `<modules>`
 
 ### 文档文件命名规范
 
@@ -36,6 +45,36 @@ MetaOpen 是一个 Java 21 Maven 多模块项目。根目录 `pom.xml` 聚合 `b
 
 近期提交历史采用 Conventional Commit 风格，尤其是 `chore(deps): ...`。提交信息建议使用简短前缀，例如 `feat:`、`fix:`、`docs:`、`test:` 或 `chore(deps):`。依赖升级提交应明确写出构件名和版本变化。Pull Request 应说明变更内容、列出受影响模块、关联相关 issue，并提供测试依据，例如 `mvn test` 或目标模块测试命令输出。只有文档或工作流界面变更需要截图。
 
+### Git 工作流红线（必须遵守）
+
+- **禁止**直接推送代码到 `dev`、`main` 等受保护分支
+- **必须**通过 PR 流程：特性分支（`feat/`、`fix/`、`docs/`、`refactor/`）→ 推送个人 fork → 向上游发起 PR → 审核合并
+- PR 合并前检查目标 PR 状态（`gh pr view <num> --json state,mergedAt`），**已合并的 PR 不得追加代码**，需新建分支和 PR
+- 推送后确认 PR 状态与 CI 结果
+- 例外：仅当仓库所有者（ACANX）明确授权"直接推送"时方可跳过 PR 流程
+- 违反后果：首次严厉批评并检讨，再次终身禁用 Git 操作权限
+
+## 版本管理与发布约定
+
+- **版本单一事实源**：根 `pom.xml` 的 `<revision>` 属性，子模块通过 `${revision}` 继承
+- **发版改号**：走 `UpdateProjectVersion` workflow（手动触发），它会同步更新 `revision`、`meta-open.version`、`meta.version`、`bom-graalvm.version`（= `25.<revision>`）
+- **不要手动改版本号**：`bom-graalvm.version` 由发版流程程序化派生替换，手动修改会导致版本断层
+- **Tag 命名**：`V<version>`（如 `V0.8.9`），由 `ReleaseWorkflow` 在 dev→main 合并后自动创建
+- 发布前/后检查请参照 `Docs/Release/PreRelease-Checklist.md` 与 `PostRelease-Checklist.md`
+
+## GitHub Actions 工作流约定
+
+- `UpdateBOMAIODeps`：从 `bom-aio-origin` 的 effective-pom 同步 `bom-aio/pom.xml`；无变更时不创建 PR（属正常行为）
+- `UpdateBomGraalvmVersion`：bom-graalvm 版本检查；**派生模式下仅对比提示，不自动覆盖**（避免破坏版本对齐）
+- `ReleaseWorkflow`：dev→main 合并后自动打 tag + 创建 GitHub Release；支持 `dry_run=true` 预验证
+- 修改 workflow 前先阅读现有文件与 `Docs/Release/README.md`，保持命名与语义一致
+
 ## 安全与配置提示
 
 不要提交密钥、签名文件、Maven Central 凭据或本地 IDE 配置。发布配置涉及 GPG、source、Javadoc、flatten 和 Central publishing 插件；修改发布相关配置时应谨慎，并同步检查相关 GitHub Actions 工作流。
+
+## 文档维护
+
+- 新功能/新流程落地时，同步更新 `Docs/` 下对应文档
+- 开发相关内容放 `Docs/Dev/Introduction/`，发布相关内容放 `Docs/Release/`
+- 根 `README.md` 保持项目总览定位（结构、特性、编译、文档入口），不展开细节
