@@ -26,7 +26,7 @@
 ## 3. CI 与构建验证
 
 - [ ] `MultiMavenJDKBranchCI` 在 dev 最新提交上 **success**（JDK17/21/25 × 平台矩阵）
-- [ ] `SonarQube`（自建）分析 **success**
+- [ ] `SonarCloudCodeAnalysis` 在 dev 最新提交上 **success**（SonarCloud 扫描，含覆盖率）
 - [ ] `CodeQLAdvanced` 安全扫描 **success**
 - [ ] `UpdateBOMAIODeps` 执行后无异常（bom-aio 依赖同步正常，无版本降级）
 - [ ] `Automatic Dependency Submission` **success**
