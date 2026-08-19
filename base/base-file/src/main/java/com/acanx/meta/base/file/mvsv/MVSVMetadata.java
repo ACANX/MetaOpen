@@ -60,9 +60,10 @@ public class MVSVMetadata {
     private Map<String, String> extra = new HashMap<>();
 
     /**
-     * 默认构造函数
+     * 默认无参构造器
      */
     public MVSVMetadata() {
+        // Jackson 等框架反序列化需要默认无参构造器，不可删除（SonarCloud java:S1186 豁免）
     }
 
     /**

@@ -23,8 +23,11 @@ public class BaseException extends RuntimeException {
     /**
      * 国际化参数（高度通用，用于消息模板替换）
      * 例：消息模板"用户名【{0}】已存在" → args=["张三"]
+     *
+     * <p>transient：仅在本地用于消息模板替换，跨进程序列化（RMI/分布式）时无需携带，
+     * 避免 java:S1948 告警（Object[] 元素可能不可序列化）。</p>
      */
-    private final Object[] args;
+    private final transient Object[] args;
 
     public BaseException() {
         super();
