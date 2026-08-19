@@ -73,30 +73,28 @@ jobs:
               return result
           
           # 2. 读取当前 bom-aio-origin/pom.xml 中的 bom-graalvm 版本
-          #    （支持两种形态：旧式硬编码属性 <bom-graalvm.version>，或新式派生 <version>25.${revision}</version>）
+          #    （支持两种形态：硬编码属性 <bom-graalvm.version>25.0.8.8</bom-graalvm.version>，
+          #     或派生属性 <bom-graalvm.version>25.${revision}</bom-graalvm.version>）
           pom_path = "meta-bom/bom-aio-origin/pom.xml"
           with open(pom_path, "r", encoding="utf-8") as f:
               pom_content = f.read()
           
-          # 2a. 旧式：查找 <bom-graalvm.version>xxx</bom-graalvm.version>
+          # 查找 <bom-graalvm.version>xxx</bom-graalvm.version> 属性
           match = re.search(r'<bom-graalvm\.version>([^<]+)</bom-graalvm\.version>', pom_content)
-          if match:
-              current_version = match.group(1)
-              version_mode = "hardcoded"
-          else:
-              # 2b. 新式：解析 <artifactId>bom-graalvm</artifactId> 后的 <version>25.${revision}</version>
-              dep_match = re.search(
-                  r'<artifactId>bom-graalvm</artifactId>\s*<version>([^<]+)</version>',
-                  pom_content
-              )
-              if not dep_match:
-                  print("❌ 未在 pom.xml 中找到 bom-graalvm 依赖定义")
-                  exit(1)
-              raw_version = dep_match.group(1)
-              # 展开 ${revision}
+          if not match:
+              print("❌ 未在 pom.xml 中找到 <bom-graalvm.version> 属性")
+              exit(1)
+          
+          raw_version = match.group(1)
+          if "${revision}" in raw_version:
+              # 派生模式：展开 ${revision}
               rev_match = re.search(r'<revision>([^<]+)</revision>', pom_content)
               current_version = raw_version.replace("${revision}", rev_match.group(1) if rev_match else "")
               version_mode = "derived (25.${revision})"
+          else:
+              # 硬编码模式
+              current_version = raw_version
+              version_mode = "hardcoded"
           
           print(f"当前配置版本: {current_version} (模式: {version_mode})")
           
