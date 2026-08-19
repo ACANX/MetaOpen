@@ -66,7 +66,7 @@
         <reactor.verion>3.8.6</reactor.verion>
         <protobuf-java.version>4.35.1</protobuf-java.version>
 
-        <tomcat-embed.version>11.0.24</tomcat-embed.version>
+        <tomcat-embed.version>11.0.25</tomcat-embed.version>
 
         <mysql-connector-j.version>26.7.0</mysql-connector-j.version>
         <postgresql.version>42.7.13</postgresql.version>
@@ -76,7 +76,7 @@
 
         <commons-lang3.version>3.20.0</commons-lang3.version>
         <common-io.version>2.22.0</common-io.version>
-        <commons-collections4.version>4.5.0</commons-collections4.version>
+        <commons-collections4.version>4.6.0</commons-collections4.version>
         <commons-configuration2.version>2.15.1</commons-configuration2.version>
         
         <guava.version>33.6.0-jre</guava.version>
@@ -87,7 +87,7 @@
         <fastjson2.version>2.0.64</fastjson2.version>
         <jackson.version>2.22.1</jackson.version>
         <jackson-annotations.version>2.22</jackson-annotations.version>
-        <jackson3.version>3.2.1</jackson3.version>
+        <jackson3.version>3.2.2</jackson3.version>
         <snakeyaml.version>2.6</snakeyaml.version>
 
         <caffeine.version>3.2.4</caffeine.version>
@@ -107,14 +107,14 @@
         <nacos.version>3.2.3</nacos.version>
 
         <lucense.version>10.5.0</lucense.version>
-        <elasticsearch.version>9.4.4</elasticsearch.version>
+        <elasticsearch.version>9.5.1</elasticsearch.version>
 
         <flink.version>1.20.5</flink.version>
         <hadoop.version>3.5.0</hadoop.version>
 
         <micrometer.version>1.17.0</micrometer.version>
 
-        <selenium.version>4.46.0</selenium.version>
+        <selenium.version>4.47.0</selenium.version>
         <thymeleaf.version>3.1.5.RELEASE</thymeleaf.version>
 
         <!-- 修复 plexus-utils 目录遍历漏洞 -->
@@ -969,7 +969,7 @@
             <dependency>
                 <groupId>org.apache.groovy</groupId>
                 <artifactId>groovy</artifactId>
-                <version>5.0.8</version>
+                <version>5.1.0</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>
