@@ -417,7 +417,7 @@
         <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-collections4</artifactId>
-        <version>4.5.0</version>
+        <version>4.6.0</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
@@ -843,7 +843,7 @@
         <dependency>
         <groupId>org.apache.groovy</groupId>
         <artifactId>groovy</artifactId>
-        <version>5.0.8</version>
+        <version>5.1.0</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -876,7 +876,7 @@
         <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-api</artifactId>
-        <version>4.46.0</version>
+        <version>4.47.0</version>
       </dependency>
         <dependency>
         <groupId>org.thymeleaf</groupId>
@@ -2550,7 +2550,7 @@
         <dependency>
         <groupId>com.tencentcloudapi</groupId>
         <artifactId>tencentcloud-sdk-java-scf</artifactId>
-        <version>3.1.1469</version>
+        <version>3.2.6</version>
       </dependency>
         <dependency>
         <groupId>com.tencentcloudapi</groupId>
@@ -2606,7 +2606,7 @@
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-functiongraph</artifactId>
-        <version>3.1.209</version>
+        <version>3.1.211</version>
       </dependency>
         <dependency>
         <groupId>com.google.cloud.functions</groupId>
@@ -2622,7 +2622,7 @@
         <dependency>
         <groupId>io.github.longportapp</groupId>
         <artifactId>openapi-sdk</artifactId>
-        <version>4.3.5</version>
+        <version>4.3.7</version>
       </dependency>
         <dependency>
         <groupId>com.larksuite.oapi</groupId>
@@ -2662,12 +2662,12 @@
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-core</artifactId>
-        <version>3.1.209</version>
+        <version>3.1.211</version>
       </dependency>
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-apig</artifactId>
-        <version>3.1.209</version>
+        <version>3.1.211</version>
       </dependency>
         <dependency>
         <groupId>com.aliyun</groupId>
@@ -2768,18 +2768,18 @@
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>native-maven-plugin</artifactId>
-        <version>1.1.2</version>
+        <version>1.1.9</version>
       </dependency>
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>utils</artifactId>
-        <version>1.1.2</version>
+        <version>1.1.9</version>
         <scope>runtime</scope>
       </dependency>
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>graalvm-reachability-metadata</artifactId>
-        <version>1.1.8</version>
+        <version>1.1.9</version>
         <scope>runtime</scope>
       </dependency>
     </dependencies>
