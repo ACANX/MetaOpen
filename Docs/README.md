@@ -13,7 +13,14 @@ Docs/
 │       ├── IncrementalDeploy.md     # 增量发布（mvn deploy -pl）
 │       └── NewArtifactGuide.md      # 如何生成新的 Artifact（archetype）
 ├── DevSpec/                         # 开发规范
-│   └── GitHubActionWorkflowSpec.md  # GitHub Action 工作流编写规范
+│   ├── README.md                    # 开发规范总览（索引）
+│   ├── GitHubActionWorkflowSpec.md  # GitHub Action 工作流编写规范
+│   ├── DocumentNamingSpec.md        # 文档文件命名规范
+│   ├── CodeStyleSpec.md             # Java 编码风格与命名约定
+│   ├── ModuleNamingSpec.md          # Maven 模块命名约定
+│   ├── GitCommitPRSpec.md           # Git 提交与 Pull Request 规范
+│   ├── TestSpec.md                  # 测试规范
+│   └── VersionReleaseSpec.md        # 版本管理与发布约定
 └── Release/                         # 发布相关文档
     ├── README.md                    # 发布方案总览
     ├── PreReleaseChecklist.md       # 发版前检查清单
@@ -33,7 +40,14 @@ Docs/
 
 | 文档 | 内容 | 适用场景 |
 |------|------|---------|
+| [README.md](./DevSpec/README.md) | 开发规范总览（索引、通用约定、新增规范流程） | 快速定位各项开发规范 |
 | [GitHubActionWorkflowSpec.md](./DevSpec/GitHubActionWorkflowSpec.md) | GitHub Action 工作流编写规范（文件/name/step 命名、参考示例） | 新建或修改 `.github/workflows/` 下的工作流 |
+| [DocumentNamingSpec.md](./DevSpec/DocumentNamingSpec.md) | Markdown 文档文件命名规范（大驼峰、无连字符） | 创建/重命名 `Docs/` 及仓库内文档 |
+| [CodeStyleSpec.md](./DevSpec/CodeStyleSpec.md) | Java 编码风格与命名约定（缩进、包名、标识符风格） | 编写/审查 Java 代码 |
+| [ModuleNamingSpec.md](./DevSpec/ModuleNamingSpec.md) | Maven 模块命名约定（model-*/sdk-*/api-*/base-*） | 新建模块、调整模块结构 |
+| [GitCommitPRSpec.md](./DevSpec/GitCommitPRSpec.md) | Git 提交信息与 Pull Request 规范（Conventional Commit、PR 红线） | 提交代码、发起 PR |
+| [TestSpec.md](./DevSpec/TestSpec.md) | 测试规范（JUnit Jupiter、*Test 命名、运行方式） | 编写/运行单元测试 |
+| [VersionReleaseSpec.md](./DevSpec/VersionReleaseSpec.md) | 版本管理与发布约定（revision 单一事实源、Tag、ReleaseWorkflow） | 版本号修改、正式发版 |
 
 ## 发布流程（Docs/Release/）
 
