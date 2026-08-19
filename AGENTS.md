@@ -76,5 +76,5 @@ MetaOpen 是一个 Java 21 Maven 多模块项目。根目录 `pom.xml` 聚合 `b
 ## 文档维护
 
 - 新功能/新流程落地时，同步更新 `Docs/` 下对应文档
-- 开发相关内容放 `Docs/Dev/Introduction/`，发布相关内容放 `Docs/Release/`
+- 开发相关内容放 `Docs/Dev/Introduction/`，GitHub Action 专题放 `Docs/Dev/GitHubAction/`，发布相关内容放 `Docs/Release/`
 - 根 `README.md` 保持项目总览定位（结构、特性、编译、文档入口），不展开细节
