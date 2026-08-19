@@ -45,7 +45,7 @@ public class RssConst {
      * Atom命名空间URI副本
      * 与XMLNS_ATOM相同，可能是为了代码中的不同使用场景而定义
      */
-    public static final String URL_XMLNS_ATOM_ = "https://www.rss.com/api/v1/rss/feed/";
+    public static final String URL_XMLNS_ATOM = "https://www.rss.com/api/v1/rss/feed/";
 
 
 

@@ -9,17 +9,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ArtifactServiceTest {
 
-    public static final String groupId = "com.acanx.util";
+    public static final String GROUP_ID = "com.acanx.util";
 
-    public static final String artifactId = "autil-core";
+    public static final String ARTIFACT_ID = "autil-core";
 
-    public static final String version = "0.2.0.2";
+    public static final String VERSION = "0.2.0.2";
 
     public static final ArtifactService service =  new ArtifactService();
 
     @Test
     void getMavenArtifactFromMetaDataFile() {
-       MavenArtifact mavenArtifact = service.getMavenArtifactFromMetaDataFile(groupId, artifactId);
+       MavenArtifact mavenArtifact = service.getMavenArtifactFromMetaDataFile(GROUP_ID, ARTIFACT_ID);
        System.out.println(mavenArtifact.toString());
        System.out.println(JSONUtil.toJSONStringPrettyFormat(mavenArtifact));
 
@@ -28,7 +28,7 @@ class ArtifactServiceTest {
 
     @Test
     void getArtifactFromLatestVersionPomFile() {
-        MavenArtifact mavenArtifact = service.getArtifactFromLatestVersionPomFile(groupId, artifactId, version);
+        MavenArtifact mavenArtifact = service.getArtifactFromLatestVersionPomFile(GROUP_ID, ARTIFACT_ID, VERSION);
         System.out.println(JSONUtil.toJSONStringPrettyFormat(mavenArtifact));
         assertNotNull(mavenArtifact);
     }
