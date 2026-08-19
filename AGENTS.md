@@ -23,6 +23,17 @@ MetaOpen 是一个 Java 21 Maven 多模块项目。根目录 `pom.xml` 聚合 `b
 
 使用 UTF-8 和父 POM 中定义的 Java 21 配置。保持现有 Java 风格：4 空格缩进，包名位于 `com.acanx.meta` 下，类名使用 PascalCase，方法和字段使用 camelCase，常量使用全大写。模块命名遵循现有模式，例如 `model-rss`、`model-gemini` 和 `base-exception`。优先使用模块内的小型模型类和工具类，只有在复用价值明确时才抽象到共享层。
 
+### 代码质量红线（SonarCloud，强制）
+
+SonarCloud 静态扫描是强制环节（push / PR 自动分析），新代码不得新增任何 issue，HIGH 影响问题必须当 PR 内解决。重点规则：
+
+- **S1186 空方法/空构造器**：框架需要无参构造器时保留并在方法体内加嵌套注释说明；无其他构造器且无需保留时直接删除（编译器自动生成等价构造器）；禁止用 `throw new UnsupportedOperationException()` 填满。
+- **S1948 序列化字段**：纯 DTO / POJO / REST 响应对象不实现 `Serializable`（走 Jackson JSON）；异常类不可序列化字段标 `transient` + 注释；禁止在 DTO 字段上标 `transient`（Jackson 会静默丢字段）。
+- **S1192 重复字面量**：同一字符串重复 3 次及以上必须提取常量。
+- **S3776 认知复杂度 ≤ 15**；**S115 常量全大写**；工作流用户可控输入一律经 `env` 传递（S7630/S7631）。
+
+详细决策树、示例与已知问题修复记录见 [CodeQualitySpec.md](./Docs/DevSpec/CodeQualitySpec.md)。
+
 ### 模块命名约定
 
 - 领域模型模块：`model-*`，groupId `com.acanx.meta.model`（如 `model-quote`、`model-deepseek`）
