@@ -150,6 +150,8 @@ jobs:
 | shell 脚本 | 多行命令用 `run: \|` 块，保持可读性 |
 | 条件执行 | 使用 `if:` 条件（如 `steps.xxx.outputs.xxx == 'true'`），避免整段脚本内判断 |
 | 中文注释 | 关键步骤可加中文注释，与仓库交流语言（简体中文）一致 |
+| 第三方 Action 引用 | **固定完整 commit SHA**（如 `crazy-max/ghaction-import-gpg@1c6a9e...`），不使用 tag（`@v3`）；tag 可被移动/删除，SHA 不可变（GitHub 官方安全加固建议，SonarCloud S7637）。版本维护由 Dependabot（github-actions 生态）自动更新 SHA |
+| 官方 Action 引用 | `actions/*`、`github/*` 命名空间可继续用 tag（如 `actions/checkout@v5`），由 GitHub 官方维护 |
 
 ## 7. 检查清单
 
