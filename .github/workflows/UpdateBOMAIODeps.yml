@@ -38,7 +38,8 @@ jobs:
           python-version: '3.14'
 
       - name: InstallPython314Deps
-        run: pip install lxml
+        # --only-binary :all: 禁止执行 setup.py（防供应链攻击，S8541）；锁定版本保证可复现（S8544）
+        run: pip install --only-binary :all: lxml==6.1.2
 
       - name: LocalBuildArtifactsByBatch
         env:

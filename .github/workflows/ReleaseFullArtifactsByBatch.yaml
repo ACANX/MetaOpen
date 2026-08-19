@@ -28,6 +28,10 @@ jobs:
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
 
       - name: ConfigureMavenSettingsForSonatype
+        env:
+          # secrets 经 env 传递，run 块内用 $VAR 引用（防泄露，SonarCloud githubactions:S7636）
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
         run: |
           mkdir -p ~/.m2
           cat > ~/.m2/settings.xml <<EOF
@@ -35,13 +39,13 @@ jobs:
             <servers>
               <server>
                 <id>sonatype-nexus-staging</id>
-                <username>${{ secrets.OSSRH_USERNAME }}</username>
-                <password>${{ secrets.OSSRH_TOKEN }}</password>
+                <username>${OSSRH_USERNAME}</username>
+                <password>${OSSRH_TOKEN}</password>
               </server>
               <server>
                 <id>sonatype-nexus-snapshots</id>
-                <username>${{ secrets.OSSRH_USERNAME }}</username>
-                <password>${{ secrets.OSSRH_TOKEN }}</password>
+                <username>${OSSRH_USERNAME}</username>
+                <password>${OSSRH_TOKEN}</password>
               </server>
             </servers>
           </settings>
