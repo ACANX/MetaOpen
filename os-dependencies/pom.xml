@@ -85,7 +85,7 @@
         <mapstruct.version>1.6.3</mapstruct.version>
 
         <fastjson2.version>2.0.64</fastjson2.version>
-        <jackson.version>2.22.1</jackson.version>
+        <jackson.version>2.22.2</jackson.version>
         <jackson-annotations.version>2.22</jackson-annotations.version>
         <jackson3.version>3.2.2</jackson3.version>
         <snakeyaml.version>2.6</snakeyaml.version>
@@ -604,7 +604,7 @@
             <dependency>
                 <groupId>com.squareup.okhttp3</groupId>
                 <artifactId>okhttp-jvm</artifactId>
-                <version>5.4.0</version>
+                <version>5.5.0</version>
             </dependency>
 
 
