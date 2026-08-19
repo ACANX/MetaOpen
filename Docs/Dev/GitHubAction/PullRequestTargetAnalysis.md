@@ -109,7 +109,9 @@ jobs:
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
 ```
 
-要点：扫描器从 GitHub Actions 环境（`GITHUB_EVENT_NAME` / `GITHUB_EVENT_PATH`）自动识别 PR 上下文，**无需手动传 `sonar.branch.name` / `sonar.pullRequest.key`**。
+要点：`pull_request` 事件下扫描器从 GitHub Actions 环境（`GITHUB_EVENT_NAME` / `GITHUB_REF`）自动识别 PR 上下文，**无需手动传参**。
+
+> ⚠️ **重要限制（2026-08-19 实测）**：扫描器（engine 13.7）**仅对 `pull_request` 事件自动识别 PR 上下文**（依赖 `GITHUB_REF=refs/pull/N/merge`）。对 `pull_request_target` 事件（`GITHUB_REF` = base 分支 ref）**无法自动识别**，分析会被挂到 main 分支。必须**显式传入** `-Dsonar.pullRequest.key / -Dsonar.pullRequest.branch / -Dsonar.pullRequest.base`。详见第 7 节陷阱 #3。
 
 ## 6. MetaOpen 落地记录（SonarCloudCodeAnalysis.yml）
 
@@ -119,9 +121,11 @@ jobs:
 |------|------|
 | `pull_request` → `pull_request_target` | fork PR 获得 secrets，PR 分析恢复 |
 | checkout 增加条件 ref | 仅 `pull_request_target` 事件检出 `refs/pull/<N>/merge`，push/workflow_dispatch 走事件默认 ref（空字符串 → checkout 自动用事件 SHA） |
-| 移除 `-Dsonar.branch.name` | 该参数强制"分支模式"并跳过扫描器自动识别，导致 PR 分析被误当作名为 `<N>/merge` 的分支分析；移除后扫描器自动区分 push 分支 / PR 上下文 |
+| checkout 增加 `allow-unsafe-pr-checkout: true` | checkout v5 安全护栏：`pull_request_target` 默认拒绝检出 fork PR 代码，需显式放行（本仓库 PR 仅来自可信协作者 abcnx） |
+| 移除 `-Dsonar.branch.name` | 该参数强制"分支模式"并跳过扫描器自动识别，导致 PR 分析被误当作名为 `<N>/merge` 的分支分析；移除后 push 事件由扫描器自动识别分支 |
+| PR 事件显式传 `sonar.pullRequest.*` | 实测扫描器不识别 `pull_request_target` 事件的 PR 上下文（分析落 main 分支），需显式传入 key/branch/base；push 事件保持自动分支识别 |
 
-参考 PR：#2514（qualitygate.wait 修复）、#2515（pull_request_target 切换）。
+参考 PR：#2514（qualitygate.wait 修复）、#2515（pull_request_target 切换）、#2517（JaCoCo 覆盖率 + allow-unsafe-pr-checkout）、#2519（显式 PR 上下文参数）。
 
 ## 7. 常见陷阱
 
@@ -129,7 +133,7 @@ jobs:
 |---|------|------|------|
 | 1 | `pull_request_target` 忘记 checkout merge ref | 扫描/构建的是 **base 分支**代码，PR 分析无效 | 显式 `ref: refs/pull/<N>/merge` |
 | 2 | 同时声明 `pull_request` + `pull_request_target` | 每个 PR 触发**双份 run**（浪费 CI 分钟；同名 check 一红一绿干扰 required checks） | 只保留一种；`pull_request_target` 通吃两种 PR |
-| 3 | 手动设置 `sonar.branch.name` / `sonar.pullRequest.key` | 覆盖扫描器自动识别（日志："Found manual configuration ... Skipping automatic configuration"），PR 被当分支分析 | 删除手动参数，交给扫描器自动识别 |
+| 3 | 假设 `pull_request_target` 下扫描器能自动识别 PR | **实测不识别**：`pull_request_target` 的 `GITHUB_REF` 是 base 分支，扫描器（engine 13.7）只对 `pull_request` 事件自动识别 PR，分析被挂到 main 分支（PR 无装饰/检查） | `pull_request_target` 事件显式传 `-Dsonar.pullRequest.key/branch/base` |
 | 4 | 触发方式切换的"鸡生蛋" | 切换 PR 自身不会用新触发方式运行（head 声明新事件、base 还是旧事件 → 都不匹配），须等合并后生效 | 合并后验证；无需特殊处理 |
 | 5 | 混淆 `refs/pull/<N>/head` 与 `/merge` | head 不含 base 最新改动，结果偏离合并后状态 | 分析场景用 `/merge` |
 | 6 | `pull_request_target` 里误用高权限 secrets | PR 代码可窃取发布凭据 | 发布凭据只进 push 流程 |

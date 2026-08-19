@@ -45,4 +45,10 @@ jobs:
         run: |
           # 收集各模块 JaCoCo 报告路径（target/site/jacoco/jacoco.xml），逗号拼接后传给 SonarCloud
           JACOCO_PATHS=$(find . -path '*/target/site/jacoco/jacoco.xml' | paste -sd, -)
-          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=ACANX_MetaOpen -Dsonar.organization=acanx -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=$SONAR_TOKEN -Dsonar.qualitygate.wait=false -Dsonar.coverage.jacoco.xmlReportPaths="$JACOCO_PATHS" -Dgpg.skip=true -e -X -U # 不传 sonar.branch.name，由扫描器自动识别 push 分支 / PR 上下文 
+          # 扫描器仅识别 pull_request 事件的 PR 上下文（GITHUB_REF=refs/pull/N/merge）；
+          # pull_request_target 事件（GITHUB_REF=base 分支）无法自动识别 PR，需显式传入 PR 参数。push 事件走自动分支识别。
+          SONAR_CONTEXT=""
+          if [ "${{ github.event_name }}" = "pull_request_target" ]; then
+            SONAR_CONTEXT="-Dsonar.pullRequest.key=${{ github.event.pull_request.number }} -Dsonar.pullRequest.branch=${{ github.event.pull_request.head.ref }} -Dsonar.pullRequest.base=${{ github.event.pull_request.base.ref }}"
+          fi
+          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=ACANX_MetaOpen -Dsonar.organization=acanx -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=$SONAR_TOKEN -Dsonar.qualitygate.wait=false -Dsonar.coverage.jacoco.xmlReportPaths="$JACOCO_PATHS" ${SONAR_CONTEXT} -Dgpg.skip=true -e -X -U 
