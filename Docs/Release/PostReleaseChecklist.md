@@ -2,7 +2,7 @@
 
 > 适用于正式版本发布（dev→main 合并 + ReleaseWorkflow 触发）完成后执行，确认发布结果并处理后续事项。
 >
-> 关联文档：[README.md](./README.md)（发布方案总览）、[PreRelease-Checklist.md](./PreRelease-Checklist.md)（发版前检查）
+> 关联文档：[README.md](./README.md)（发布方案总览）、[PreReleaseChecklist.md](./PreReleaseChecklist.md)（发版前检查）
 > 最后更新：2026-08-19
 
 ---

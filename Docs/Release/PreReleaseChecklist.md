@@ -2,7 +2,7 @@
 
 > 适用于每次正式版本（如 0.8.9）发布前执行。按顺序逐项确认，全部通过后方可发起 dev→main 合并。
 >
-> 关联文档：[README.md](./README.md)（发布方案总览）、[PostRelease-Checklist.md](./PostRelease-Checklist.md)（发版后收尾）
+> 关联文档：[README.md](./README.md)（发布方案总览）、[PostReleaseChecklist.md](./PostReleaseChecklist.md)（发版后收尾）
 > 最后更新：2026-08-19
 
 ---
@@ -40,7 +40,7 @@
 
 ## 5. 发布流程准备
 
-- [ ] 已确认 ReleaseWorkflow 触发方式（push 到 main 自动触发，首次合并即可触发，见 [WorkflowTrigger-Analysis.md](./WorkflowTrigger-Analysis.md)）
+- [ ] 已确认 ReleaseWorkflow 触发方式（push 到 main 自动触发，首次合并即可触发，见 [WorkflowTriggerAnalysis.md](./WorkflowTriggerAnalysis.md)）
 - [ ] 已确认 main 分支无同名 tag（如 `V0.8.9`）已存在
 - [ ] （可选）已准备 Release 备注要点 / 已知变更清单
 - [ ] （可选）已确认 Maven Central 发布凭据（OSSRH/GPG）有效，如需本次发布制品
@@ -62,7 +62,7 @@ gh pr create --repo ACANX/MetaOpen --base main --head dev \
   --title "Release 0.8.9: sync dev → main" \
   --body "正式发布 0.8.9，合并后 ReleaseWorkflow 自动打 tag 并创建 Release"
 
-# 合并后 → 转 PostRelease-Checklist.md 执行收尾
+# 合并后 → 转 PostReleaseChecklist.md 执行收尾
 ```
 
-> 提示：合并后到 Actions 页面确认 ReleaseWorkflow 已自动触发；若未触发，参见 [WorkflowTrigger-Analysis.md](./WorkflowTrigger-Analysis.md) 第 5.3 节手动兜底。
+> 提示：合并后到 Actions 页面确认 ReleaseWorkflow 已自动触发；若未触发，参见 [WorkflowTriggerAnalysis.md](./WorkflowTriggerAnalysis.md) 第 5.3 节手动兜底。
