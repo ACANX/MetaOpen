@@ -1,6 +1,5 @@
 package com.acanx.meta.base.exception;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**
