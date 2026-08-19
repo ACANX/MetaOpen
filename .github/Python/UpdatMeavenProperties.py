@@ -2,11 +2,20 @@
 """
 Update specified Maven properties in a pom.xml file using targeted regex replacement.
 Preserves all comments, formatting, and whitespace.
+
+Supports derived properties: a property can be mapped to a prefixed version of
+new_version, e.g. bom-graalvm.version = 25.<new_version>.
 """
 
 import argparse
 import re
 import sys
+
+# 派生属性映射：属性名 -> 版本前缀（替换时实际值 = 前缀 + new_version）
+# bom-graalvm 模块版本定义为 25.${revision}，因此引用方的版本号必须同步为 25.<revision>
+DERIVED_PREFIX = {
+    "bom-graalvm.version": "25.",
+}
 
 def update_properties(pom_path, new_version, properties):
     """Replace property values inside the <properties> block only."""
@@ -27,12 +36,14 @@ def update_properties(pom_path, new_version, properties):
 
     updated = False
     for prop in properties:
+        prefix = DERIVED_PREFIX.get(prop, "")
+        actual_value = f"{prefix}{new_version}"
         # 匹配 <prop>旧值</prop>，其中旧值不含 '<' 字符（避免嵌套标签干扰）
         pattern = re.compile(rf'(<{re.escape(prop)}>)[^<]*(</{re.escape(prop)}>)')
-        new_block, count = pattern.subn(rf'\g<1>{new_version}\g<2>', prop_block)
+        new_block, count = pattern.subn(rf'\g<1>{actual_value}\g<2>', prop_block)
         if count > 0:
             prop_block = new_block
-            print(f"  ✅ Updated {prop} = {new_version}")
+            print(f"  ✅ Updated {prop} = {actual_value}")
             updated = True
         else:
             print(f"  ⚠️  Property '{prop}' not found in properties section, skipping.")
