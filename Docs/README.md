@@ -1,6 +1,6 @@
 # Docs 文档中心
 
-> MetaOpen 项目文档索引。各文档按主题组织：开发入门 `Docs/Dev/`、开发规范 `Docs/DevSpec/`、发布方案 `Docs/Release/`。
+> MetaOpen 项目文档索引。各文档按主题组织：开发入门 `Docs/Dev/`（含 GitHub Action 专题 `Docs/Dev/GitHubAction/`）、开发规范 `Docs/DevSpec/`、发布方案 `Docs/Release/`。
 
 ## 文档目录结构
 
@@ -8,10 +8,12 @@
 Docs/
 ├── README.md                        # 本文档（文档中心索引）
 ├── Dev/
-│   └── Introduction/                # 开发入门指南
-│       ├── BomDependencyAnalysis.md # BOM 依赖版本分析
-│       ├── IncrementalDeploy.md     # 增量发布（mvn deploy -pl）
-│       └── NewArtifactGuide.md      # 如何生成新的 Artifact（archetype）
+│   ├── Introduction/                # 开发入门指南
+│   │   ├── BomDependencyAnalysis.md # BOM 依赖版本分析
+│   │   ├── IncrementalDeploy.md     # 增量发布（mvn deploy -pl）
+│   │   └── NewArtifactGuide.md      # 如何生成新的 Artifact（archetype）
+│   └── GitHubAction/                # GitHub Action 专题
+│       └── PullRequestTargetAnalysis.md # pull_request 与 pull_request_target 事件分析
 ├── DevSpec/                         # 开发规范
 │   ├── README.md                    # 开发规范总览（索引）
 │   ├── GitHubActionWorkflowSpec.md  # GitHub Action 工作流编写规范
@@ -35,6 +37,12 @@ Docs/
 | [NewArtifactGuide.md](./Dev/Introduction/NewArtifactGuide.md) | 使用 `tool-archetype` 生成新模块的命令示例与步骤 | 创建新的 model-*/sdk-*/api-* 模块 |
 | [IncrementalDeploy.md](./Dev/Introduction/IncrementalDeploy.md) | `mvn deploy -pl` 增量发布用法与注意事项 | 局部模块快速发布 |
 | [BomDependencyAnalysis.md](./Dev/Introduction/BomDependencyAnalysis.md) | `mvn help:effective-pom` 分析 BOM 依赖版本 | 排查依赖版本冲突、验证 BOM 导入结果 |
+
+## GitHub Action 专题（Docs/Dev/GitHubAction/）
+
+| 文档 | 内容 | 适用场景 |
+|------|------|---------|
+| [PullRequestTargetAnalysis.md](./Dev/GitHubAction/PullRequestTargetAnalysis.md) | pull_request 与 pull_request_target 事件机制差异、secrets 规则、安全风险与最佳实践 | 设计工作流 PR 触发事件、排查 fork PR 无法获取 secrets 的问题 |
 
 ## 开发规范（Docs/DevSpec/）
 
