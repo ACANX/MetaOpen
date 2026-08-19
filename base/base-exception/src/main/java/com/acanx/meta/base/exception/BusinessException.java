@@ -26,8 +26,11 @@ public class BusinessException extends BaseException {
     /**
      * 错误详情（可选，用于结构化错误信息）
      * 例：字段级校验错误、批量操作失败详情
+     *
+     * <p>transient：仅在本地用于错误详情展示，跨进程序列化时无需携带，
+     * 避免 java:S1948 告警（Map value 可能不可序列化）。</p>
      */
-    private final Map<String, Object> details;
+    private final transient Map<String, Object> details;
 
     public BusinessException() {
         super();
