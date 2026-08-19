@@ -18,7 +18,7 @@ jobs:
     steps:
       # 1. 获取元数据
       - name: Get dependency metadata
-        uses: dependabot/fetch-metadata@a3e5f86ae9f2f49b441498973ddec20035d326b8
+        uses: dependabot/fetch-metadata@25dd0e34f4fe68f24cc83900b1fe3fe149efef98
         id: metadata
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
