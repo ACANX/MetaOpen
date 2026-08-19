@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: CheckoutRepository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           # 拉取完整历史，以便创建分支和 PR
           fetch-depth: 0
