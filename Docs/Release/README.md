@@ -130,7 +130,7 @@ on:
 
 首次 dev→main 合并（ReleaseWorkflow 文件随该次 push 首次进入 main）时，`push` 事件**可以正常触发** workflow，无需等待下一个版本。
 
-详细探究（原理、实测验证、边界情况）见独立文档：**[WorkflowTrigger-Analysis.md](./WorkflowTrigger-Analysis.md)**。
+详细探究（原理、实测验证、边界情况）见独立文档：**[WorkflowTriggerAnalysis.md](./WorkflowTriggerAnalysis.md)**。
 
 ---
 
@@ -165,9 +165,9 @@ gh release create V0.8.9 --generate-notes --repo ACANX/MetaOpen
 
 | 文档 | 用途 |
 |------|------|
-| **[PreRelease-Checklist.md](./PreRelease-Checklist.md)** | 正式发版前检查工作清单（版本号/分支/CI/安全/流程） |
-| **[PostRelease-Checklist.md](./PostRelease-Checklist.md)** | 发版后收尾/后置工作事项清单（结果确认/Central 发布/警报/文档） |
-| **[WorkflowTrigger-Analysis.md](./WorkflowTrigger-Analysis.md)** | 首次合并触发 ReleaseWorkflow 问题深入探究 |
+| **[PreReleaseChecklist.md](./PreReleaseChecklist.md)** | 正式发版前检查工作清单（版本号/分支/CI/安全/流程） |
+| **[PostReleaseChecklist.md](./PostReleaseChecklist.md)** | 发版后收尾/后置工作事项清单（结果确认/Central 发布/警报/文档） |
+| **[WorkflowTriggerAnalysis.md](./WorkflowTriggerAnalysis.md)** | 首次合并触发 ReleaseWorkflow 问题深入探究 |
 
 ---
 

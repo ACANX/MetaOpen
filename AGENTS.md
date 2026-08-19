@@ -30,6 +30,13 @@ MetaOpen 是一个 Java 21 Maven 多模块项目。根目录 `pom.xml` 聚合 `b
 - 基础能力模块：`base-*`，groupId `com.acanx.meta.base`
 - 新模块建议用 `tool-archetype` 生成（见 `Docs/Dev/Introduction/NewArtifactGuide.md`），并加入对应父 POM 的 `<modules>`
 
+### 文档文件命名规范
+
+- **Markdown 文档文件名使用大驼峰（PascalCase）命名**，不使用连字符（`-`）、下划线（`_`）或空格。
+- 正确示例：`PreReleaseChecklist.md`、`PostReleaseChecklist.md`、`WorkflowTriggerAnalysis.md`、`BomDependencyAnalysis.md`。
+- 错误示例：`PreRelease-Checklist.md`、`workflow_trigger.md`。
+- 创建新文档时遵循此规范；重命名文件时需同步更新所有引用该文件的链接（含其他 Markdown 文档中的相对链接）。
+
 ## 测试指南
 
 测试框架为 JUnit Jupiter 6，测试运行器为 Maven Surefire。测试代码放在对应模块的 `src/test/java` 下；测试资源和 `meta/app.yaml` 或 `meta/app.yml` 放在 `src/test/resources` 下。测试类命名遵循现有 `*Test` 模式，例如 `ArtifactServiceTest` 或 `AppTest`。大范围修改前运行 `mvn test`；局部模块修改可运行 `mvn -pl <module> -am test`。
