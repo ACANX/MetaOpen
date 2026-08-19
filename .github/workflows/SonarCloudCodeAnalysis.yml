@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0 # SonarScanner可能需要完整的提交历史
           # pull_request_target 下默认检出 base 分支，需显式检出 PR 合并提交；push/workflow_dispatch 走事件默认 ref
