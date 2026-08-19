@@ -14,6 +14,9 @@ Docs/
 │   │   └── NewArtifactGuide.md      # 如何生成新的 Artifact（archetype）
 │   └── GitHubAction/                # GitHub Action 专题
 │       └── PullRequestTargetAnalysis.md # pull_request 与 pull_request_target 事件分析
+│   └── SonarCloudQualityScan/       # SonarCloud 质量扫描循环技能（采集→追踪→确认→修复→复测）
+│       ├── README.md                # 工作流技能说明（含规则知识库）
+│       └── scripts/sonarcloud_track.py # 追踪 issue body 生成器（可复用）
 ├── DevSpec/                         # 开发规范
 │   ├── README.md                    # 开发规范总览（索引）
 │   ├── GitHubActionWorkflowSpec.md  # GitHub Action 工作流编写规范
