@@ -21,6 +21,8 @@ jobs:
           fetch-depth: 0 # SonarScanner可能需要完整的提交历史
           # pull_request_target 下默认检出 base 分支，需显式检出 PR 合并提交；push/workflow_dispatch 走事件默认 ref
           ref: ${{ github.event.pull_request && format('refs/pull/{0}/merge', github.event.pull_request.number) || '' }}
+          # checkout v5 安全护栏：pull_request_target 检出 fork PR 代码需显式放行（本仓库 PR 仅来自可信协作者 abcnx）
+          allow-unsafe-pr-checkout: true
 
       - name: SetupJDK
         uses: actions/setup-java@v5
@@ -41,4 +43,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} # 在GitHub仓库Secrets中设置的SonarCloud Token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub自动提供的Token，用于上传PR检查结果
         run: |
-          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=ACANX_MetaOpen -Dsonar.organization=acanx -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=$SONAR_TOKEN -Dsonar.qualitygate.wait=false -Dgpg.skip=true -e -X -U # 不传 sonar.branch.name，由扫描器自动识别 push 分支 / PR 上下文 
+          # 收集各模块 JaCoCo 报告路径（target/site/jacoco/jacoco.xml），逗号拼接后传给 SonarCloud
+          JACOCO_PATHS=$(find . -path '*/target/site/jacoco/jacoco.xml' | paste -sd, -)
+          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=ACANX_MetaOpen -Dsonar.organization=acanx -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=$SONAR_TOKEN -Dsonar.qualitygate.wait=false -Dsonar.coverage.jacoco.xmlReportPaths="$JACOCO_PATHS" -Dgpg.skip=true -e -X -U # 不传 sonar.branch.name，由扫描器自动识别 push 分支 / PR 上下文 

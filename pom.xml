@@ -49,6 +49,7 @@
         <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
         <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
         <maven-surefire-plugin.version>3.5.6</maven-surefire-plugin.version>
+        <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
         <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
         <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
@@ -164,8 +165,35 @@
                          <artifactId>maven-surefire-plugin</artifactId>
                          <version>${maven-surefire-plugin.version}</version>
                      </plugin>
+                     <plugin>
+                         <groupId>org.jacoco</groupId>
+                         <artifactId>jacoco-maven-plugin</artifactId>
+                         <version>${jacoco-maven-plugin.version}</version>
+                     </plugin>
                  </plugins>
         </pluginManagement>
+        <plugins>
+            <!-- 测试覆盖率采集（JaCoCo）：prepare-agent 注入 agent，report 生成 target/site/jacoco/jacoco.xml，供 SonarCloud 分析 -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>jacoco-prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>jacoco-report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
 
     <profiles>
