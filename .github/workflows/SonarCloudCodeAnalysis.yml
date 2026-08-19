@@ -21,6 +21,8 @@ jobs:
           fetch-depth: 0 # SonarScanner可能需要完整的提交历史
           # pull_request_target 下默认检出 base 分支，需显式检出 PR 合并提交；push/workflow_dispatch 走事件默认 ref
           ref: ${{ github.event.pull_request && format('refs/pull/{0}/merge', github.event.pull_request.number) || '' }}
+          # checkout v5 安全护栏：pull_request_target 检出 fork PR 代码需显式放行（本仓库 PR 仅来自可信协作者 abcnx）
+          allow-unsafe-pr-checkout: true
 
       - name: SetupJDK
         uses: actions/setup-java@v5
