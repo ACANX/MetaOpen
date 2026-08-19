@@ -132,11 +132,64 @@ gh issue edit <num> --repo <owner>/<repo> --body-file <key>.md                  
 - **权限**：Won't Fix / False Positive 标记需要 SonarCloud 项目管理员权限
 - **规范关联**：修复方案与红线以 `Docs/DevSpec/CodeQualitySpec.md` 为准
 
-## 7. 检查清单
+## 7. 参考标准示例（上游已创建的追踪 issue）
+
+> 上游仓库 ACANX/MetaOpen 已按本技能落地一轮完整实践，创建的追踪 issue（#2535~#2541）即**格式参考标准**。
+> 后续生成任何追踪 issue 必须与此结构一致，不得自由发挥。完整清单 + body 模板 + 硬性格式要求见 `examples/tracking-issues.md`。
+
+**已建 issue 清单（直接作为标题/分类参照）：**
+
+| issue | 标题 | 前缀 | 覆盖 |
+|-------|------|------|------|
+| #2535 | [SonarCloud][工作流] 脚本注入与敏感信息加固（S7630/S7636/S8541/S8544） | SC | 14 |
+| #2536 | [SonarCloud][工作流] 第三方 Action 固定完整 SHA（S7637） | SCF | 8 |
+| #2537 | [SonarCloud][Java] 清理注释掉的代码（S125） | SJ1 | 44 |
+| #2538 | [SonarCloud][Java] MVSVSerializer 重构专项（S3776/S3457） | SJ2 | 16 |
+| #2539 | [SonarCloud][Java] 工具类/常量类添加私有构造器（S1118） | SJ3 | 12 |
+| #2540 | [SonarCloud][Java] 日志与废弃代码规范（S106/S6355/S1123/S1133） | SJ4 | 23 |
+| #2541 | [SonarCloud][Java] 命名/import/逻辑杂项（S115/S1128/S1066/S2209/S1172/S2440/S112/S5961） | SJ5 | 15 |
+
+**body 结构（每条必须包含，顺序固定）：**
+
+```
+## 背景            → 来源 URL（OPEN,CONFIRMED）+ 总数 + 本 issue 覆盖数
+## 交互方式        → ✅/❌/💡 回复模板 + 决策后动作说明
+## 决策清单        → 每条一行 checkbox：`编号 · 规则 · 严重度 · 路径:行号 — 简述`
+## 类别说明        → 各规则数量、是否已修复待验证、拆分 PR 建议
+## 逐条详情        → 每条：### 编号 规则 严重度 · 完整路径:行号
+                   问题 → 官方提示 → 建议方案 → 代码摘录（行号标注，目标行 >> 前缀）
+```
+
+**决策清单行示例（真实格式）：**
+
+```
+- [ ] `SC-1` `githubactions:S7630` BLOCKER · `workflows/ManualBranchCompileVerify.yml:36` — 值直接插入 run 块，外部可控输入可注入任意命令
+- [ ] `SJ1-13` `java:S125` MAJOR · `builder/DeepSeekRiBuilder.java:65` — 注释掉的代码（ri.setTemperature(1.0D);）
+```
+
+**逐条详情示例（真实格式）：**
+
+```
+### SC-1 `githubactions:S7630` BLOCKER · .github/workflows/ManualBranchCompileVerify.yml:36
+- **问题**：值直接插入 run 块，外部可控输入可注入任意命令
+- **官方提示**：inputs.branch is vulnerable to script injection...
+- **建议方案**：用户可控输入（inputs.*、github.head_ref 等）一律先写入 env 变量，run 块内用 $VAR 引用
+- **代码摘录**（行 36 附近）：
+```
+   34|         shell: bash
+   35|         env:
+>> 36|           INPUT_BRANCH: ${{ inputs.branch }}
+```
+```
+
+> 完整样例可实时拉取：`gh issue view 2535/2536/2537/2538 --repo ACANX/MetaOpen --json body -q .body`
+
+## 8. 检查清单
 
 - [ ] 采集数据保存（原始 JSON + 统计）
 - [ ] 分类覆盖全部 OPEN/CONFIRMED issues（总数对得上）
 - [ ] 每类追踪 issue 有决策清单 + 逐条详情（编号连续）
+- [ ] **格式对照参考标准**：标题前缀、决策清单行、逐条详情字段顺序与 #2535~#2541 一致
 - [ ] 已修复待验证的问题已标注（不重复建追踪）
 - [ ] 用户反馈已同步（✅ 建 PR / ❌ 标记 / 💡 调整）
 - [ ] PR 描述带 `Closes #<追踪issue>`
