@@ -1,0 +1,91 @@
+name: ReleaseWorkflow
+
+on:
+  # dev → main 合并后自动触发（正式发布流程）
+  push:
+    branches:
+      - main
+  # 支持手动触发；dry_run=true 时仅验证逻辑，不实际创建 tag/Release
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run 模式：仅验证逻辑，不实际创建 tag 和 GitHub Release'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: CheckoutCode
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0        # 拉取完整历史，确保 git rev-parse 能查到已有 tag
+
+      - name: ExtractVersionFromPom
+        id: version
+        run: |
+          # 从根 pom.xml 的 <revision> 提取版本号（单一事实源）
+          VERSION=$(grep -oP '(?<=<revision>)[^<]+' pom.xml | head -1 | tr -d ' \r\n')
+          if [ -z "$VERSION" ]; then
+            echo "❌ 无法从 pom.xml 提取 <revision> 版本号"
+            exit 1
+          fi
+          # Tag 命名与仓库现有规范保持一致：V + 版本号（如 V0.8.9）
+          TAG="V${VERSION}"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+          echo "✅ 提取版本: revision=${VERSION} → tag=${TAG}"
+
+      - name: CheckIfTagExists
+        id: tag-check
+        run: |
+          TAG="${{ steps.version.outputs.tag }}"
+          if git rev-parse "$TAG" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "⚠️  Tag ${TAG} 已存在，跳过创建（幂等保护）"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+            echo "✅ Tag ${TAG} 不存在，将创建"
+          fi
+
+      - name: DryRunVerify
+        if: github.event.inputs.dry_run == 'true'
+        run: |
+          echo "🔍 ====== DRY RUN 验证模式（不实际创建） ======"
+          echo "  目标 Tag:        ${{ steps.version.outputs.tag }}"
+          echo "  当前 Commit:     $(git rev-parse --short HEAD)"
+          echo "  Tag 已存在:      ${{ steps.tag-check.outputs.exists }}"
+          echo "  将执行动作:"
+          echo "    - git tag -a ${{ steps.version.outputs.tag }} -m \"Release ${{ steps.version.outputs.tag }}\""
+          echo "    - git push origin ${{ steps.version.outputs.tag }}"
+          echo "    - 创建 GitHub Release: ${{ steps.version.outputs.tag }} (generate_release_notes)"
+          if [ "${{ steps.tag-check.outputs.exists }}" == "true" ]; then
+            echo "  ℹ️  幂等保护生效：Tag 已存在，实际运行时会跳过创建"
+          fi
+          echo "🔍 ====== DRY RUN 结束 ======"
+
+      - name: CreateAndPushTag
+        if: steps.tag-check.outputs.exists == 'false' && github.event.inputs.dry_run != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          TAG="${{ steps.version.outputs.tag }}"
+          # 创建 annotated tag（带备注信息，推荐用于 Release）
+          git tag -a "$TAG" -m "Release $TAG"
+          git push origin "$TAG"
+          echo "✅ Tag ${TAG} 已创建并推送"
+
+      - name: CreateGitHubRelease
+        if: steps.tag-check.outputs.exists == 'false' && github.event.inputs.dry_run != 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: ${{ steps.version.outputs.tag }}
+          generate_release_notes: true   # 自动生成基于 PR 的 changelog
+          draft: false
+          prerelease: false
+          fail_on_unmatched_files: false

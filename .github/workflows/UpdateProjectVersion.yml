@@ -43,7 +43,8 @@ jobs:
           NEW_VERSION: ${{ steps.version.outputs.new_version }}
         run: |
           # 要更新的属性列表
-          PROPERTIES=("revision" "meta-open.version" "meta.version")
+          # 注意：bom-graalvm.version 为派生属性（值 = 25.<new_version>），由 UpdatMeavenProperties.py 自动加前缀
+          PROPERTIES=("revision" "meta-open.version" "meta.version" "bom-graalvm.version")
           # 需要处理的目录（包含 pom.xml）
           DIRS=("." "./os-dependencies" "./meta-bom" "./meta-bom/bom-aio-origin")
           for dir in "${DIRS[@]}"; do
@@ -72,5 +73,5 @@ jobs:
           title: "chore(version): Update project version to ${{ steps.version.outputs.new_version }}"
           body: |
             This PR updates the Maven properties to version `${{ steps.version.outputs.new_version }}`.
-            Properties updated: `revision`, `meta-open.version`, `meta.version`.
+            Properties updated: `revision`, `meta-open.version`, `meta.version`, `bom-graalvm.version` (derived: 25.<version>).
           base: dev   # 根据你的默认分支修改
