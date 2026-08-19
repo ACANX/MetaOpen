@@ -170,7 +170,7 @@ jobs:
         
       - name: UploadBuildArtifacts
         if: ${{ steps.gate.outputs.run == 'true' && success() }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: app-${{ matrix.branch }}-jdk${{ matrix.java }}-${{ matrix.os }}
           path: |
