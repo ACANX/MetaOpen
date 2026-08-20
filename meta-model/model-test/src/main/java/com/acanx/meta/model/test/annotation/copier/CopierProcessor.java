@@ -1,18 +1,18 @@
 package com.acanx.meta.model.test.annotation.copier;
 
-import com.acanx.meta.model.test.annotation.model.MessageFlex;
-import com.acanx.meta.model.test.annotation.model.MessageStable;
-import com.acanx.meta.model.test.json.model.UserDTO;
-import com.acanx.meta.model.test.json.model.User;
 import com.acanx.meta.model.test.annotation.copier.copier.MessageCopier;
 import com.acanx.meta.model.test.annotation.copier.copier.UserCopier;
+import com.acanx.meta.model.test.annotation.model.MessageFlex;
+import com.acanx.meta.model.test.annotation.model.MessageStable;
+import com.acanx.meta.model.test.json.model.User;
+import com.acanx.meta.model.test.json.model.UserDTO;
 import com.acanx.util.annotation.Copier;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 
 /**
- * MessageProcessor
+ * CopierProcessor
  *
  * @author ACANX
  * @since 202506
@@ -20,55 +20,43 @@ import java.time.ZoneId;
 public class CopierProcessor {
 
     /**
-     *  单纯的注解
-     *  {@link MessageCopier#convertMessageFlexToMessageStable(MessageFlex, MessageStable)}
-     *
-     * @param source   源
-     * @param target   目标
-     */
-    @Copier
-    public void convertMessageFlexToMessageStable(MessageFlex source, MessageStable target) {
-        // 编译期生成的代码将放在辅助类中
-        // MessageFlexCopierHelper.copy(source, target);
-    }
-
-
-    /**
-     *   用户对象转换
-     */
-    @Copier
-    public void convertUserToUserDTO(User source, UserDTO target) {
-        // 编译期生成的代码将放在辅助类中
-        // UserCopierHelper.copy(source, target);
-    }
-
-    /**
-     *  带自定义规则的对象拷贝
+     * 单纯的注解
+     * {@link MessageCopier#convertMessageFlexToMessageStable(MessageFlex, MessageStable)}
      *
      * @param source 源
      * @param target 目标
      */
-    @Copier(
-            ignoreNull = false
-//            ,
-//            ignoreFields = {"password"}
-//            ,
-//            fieldMappings = {
-//                    @ObjectCopy.FieldMapping(s = "userName", t = "loginId"),
-//                    @ObjectCopy.FieldMapping(s = "email", t = "contactEmail")
-//            }
-    )
-    void convertUserToUserDTOWithIgnorePassword(User source, UserDTO target) {
-        // 编译期生成的代码将放在辅助类中
-        // UserCopierHelper.copy(source, target);
+    @Copier
+    public void convertMessageFlexToMessageStable(MessageFlex source, MessageStable target) {
+        // 转换实现由 @Copier 注解处理器在编译期生成
     }
 
-
+    /**
+     * 用户对象转换
+     *
+     * @param source 源
+     * @param target 目标
+     */
+    @Copier
+    public void convertUserToUserDTO(User source, UserDTO target) {
+        // 转换实现由 @Copier 注解处理器在编译期生成
+    }
 
     /**
-     *    处理函数
+     * 带自定义规则的对象拷贝
      *
-     * @param message  源
+     * @param source 源
+     * @param target 目标
+     */
+    @Copier(ignoreNull = false)
+    void convertUserToUserDTOWithIgnorePassword(User source, UserDTO target) {
+        // 转换实现由 @Copier 注解处理器在编译期生成
+    }
+
+    /**
+     * 处理函数
+     *
+     * @param message 源
      */
     public void process(MessageFlex message) {
         MessageStable choice = new MessageStable();
@@ -76,28 +64,23 @@ public class CopierProcessor {
         System.out.println("Copied choice: " + choice);
     }
 
-
     /**
-     *   测试方法
+     * 测试方法
      *
-     * @param args  命令行参数
+     * @param args 命令行参数
      */
     public static void main(String[] args) {
-        UserCopier copier = new UserCopier();
-
-        User user = new User(1011,"ACE", LocalDateTime.now(ZoneId.systemDefault()));
+        User user = new User(1011, "ACE", LocalDateTime.now(ZoneId.systemDefault()));
         user.setEmail("abc@gmail.com");
         user.setPassword("123456");
-        System.out.println(user.toString());
+        System.out.println(user);
 
         UserDTO userDTO = new UserDTO();
-        copier.convertUserToUserDTO(user, userDTO);
-        System.out.println(userDTO.toString());
+        UserCopier.convertUserToUserDTO(user, userDTO);
+        System.out.println(userDTO);
 
         UserDTO userDTO2 = new UserDTO();
-        copier.convertUserToUserDTOWithIgnorePassword(user, userDTO2);
-        System.out.println(userDTO2.toString());
+        UserCopier.convertUserToUserDTOWithIgnorePassword(user, userDTO2);
+        System.out.println(userDTO2);
     }
-
-
 }
