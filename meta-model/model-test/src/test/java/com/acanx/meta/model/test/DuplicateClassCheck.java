@@ -24,11 +24,15 @@ public class DuplicateClassCheck {
     private static Map<String, List<String>> classMap = new HashMap<>();
 
     public static void main(String[] args) {
-//        if (args.length == 0) {
-//            System.out.println("请提供Maven项目的根目录路径作为参数");
-//            System.out.println("用法: java DuplicateClassDetector <项目根目录>");
-//            return;
-//        }
+        System.out.println("args参数个数 " + args.length);
+       if (args.length == 0) {
+           System.out.println("请提供Maven项目的根目录路径作为参数");
+           System.out.println("用法: java DuplicateClassDetector <项目根目录>");
+           System.out.println("args参数个数为0，直接结束执行 ");
+           return;
+       }
+        
+        
         String projectRoot = "D:/Code/JavaCode/MetaOpen";
         System.out.println("开始扫描项目: " + projectRoot);
         try {
