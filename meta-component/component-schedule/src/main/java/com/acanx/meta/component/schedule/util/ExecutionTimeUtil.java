@@ -95,7 +95,7 @@ public class ExecutionTimeUtil {
 
         if (nextExecution.isPresent()) {
             ZonedDateTime nextFire = nextExecution.get();
-            LOGGER.log(Level.INFO, () -> "下次触发时间: " + nextFire.format(DateTimeFormatter.ISO_ZONED_DATE_TIME));
+            LOGGER.log(Level.INFO, () -> "上次执行时间: " + lastFireDateTime + ", 下次触发时间: " + nextFire.format(DateTimeFormatter.ISO_ZONED_DATE_TIME));
         } else {
             LOGGER.info("无法确定后续触发时间。");
         }
