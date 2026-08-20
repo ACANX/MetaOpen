@@ -30,7 +30,7 @@ public class ExecutionTimeUtil {
      *
      * @deprecated 使用 {@link com.acanx.meta.component.schedule.c.ScheduleConst#FIXED_RATE} 替代
      */
-    @Deprecated
+    @Deprecated(since = "2026-05-06")
     public static final String FIXED_RATE = "FIXED_RATE";
 
     /**
@@ -38,7 +38,7 @@ public class ExecutionTimeUtil {
      *
      * @deprecated 使用 {@link com.acanx.meta.component.schedule.c.ScheduleConst#CRON} 替代
      */
-    @Deprecated
+    @Deprecated(since = "2026-05-06")
     public static final String CRON = "CRON";
 
     /**
@@ -135,7 +135,7 @@ public class ExecutionTimeUtil {
      * @return 是否应该执行
      * @deprecated 使用接受 {@link ZonedDateTime} 参数的 {@link #shouldExecuteAtLeastOnceInWindow(ZonedDateTime, ZonedDateTime, ZonedDateTime, Integer)} 替代
      */
-    @Deprecated
+    @Deprecated(since = "2026-05-06")
     public static boolean shouldExecuteAtLeastOnceInWindow(LocalDateTime windowStart, LocalDateTime windowEnd,
                                                             LocalDateTime lastFireDateTime, Integer fixedInterval) {
         return lastFireDateTime.isBefore(windowStart) && lastFireDateTime.plus(fixedInterval, ChronoUnit.SECONDS).isBefore(windowEnd);
@@ -154,7 +154,7 @@ public class ExecutionTimeUtil {
      * @return 是否应该执行
      * @deprecated 使用接受 {@link ZonedDateTime} 参数的 {@link #shouldExecuteAtLeastOnceInWindow(ZonedDateTime, ZonedDateTime, ZonedDateTime, String)} 替代
      */
-    @Deprecated
+    @Deprecated(since = "2026-05-06")
     public static boolean shouldExecuteAtLeastOnceInWindow(
             LocalDateTime windowStart,
             LocalDateTime windowEnd,
