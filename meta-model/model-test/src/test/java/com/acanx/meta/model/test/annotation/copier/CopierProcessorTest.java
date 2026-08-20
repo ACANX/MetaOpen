@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
@@ -28,7 +28,7 @@ class CopierProcessorTest {
         message.setMessageContent("hello");
 
         CopierProcessor processor = new CopierProcessor();
-        processor.process(message);
+        assertDoesNotThrow(() -> processor.process(message));
     }
 
     @Test
