@@ -4,6 +4,8 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
 /**
@@ -16,9 +18,10 @@ public class DingTalkSignUtil {
      * @param secret      私钥
      * @param timestamp   时间戳
      * @return            签名结果
-     * @throws Exception  异常
+     * @throws NoSuchAlgorithmException 不支持的签名算法
+     * @throws InvalidKeyException      无效的密钥
      */
-    public static String generateSign(String secret, Long timestamp) throws Exception {
+    public static String generateSign(String secret, Long timestamp) throws NoSuchAlgorithmException, InvalidKeyException {
         String stringToSign = timestamp + "\n" + secret;
         Mac mac = Mac.getInstance("HmacSHA256");
         mac.init(new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8), "HmacSHA256"));
