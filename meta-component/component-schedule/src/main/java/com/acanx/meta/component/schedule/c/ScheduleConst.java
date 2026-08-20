@@ -13,5 +13,7 @@ public class ScheduleConst {
     public static final String FIXED_RATE = "FIXED_RATE";
     public static final String CRON = "CRON";
 
-
+    private ScheduleConst() {
+        // 工具类，禁止实例化
+    }
 }
