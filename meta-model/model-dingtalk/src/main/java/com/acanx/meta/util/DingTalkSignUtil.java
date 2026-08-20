@@ -26,4 +26,8 @@ public class DingTalkSignUtil {
         return URLEncoder.encode(Base64.getEncoder().encodeToString(signData), StandardCharsets.UTF_8);
     }
 
+
+    private DingTalkSignUtil() {
+        // 工具类，禁止实例化
+    }
 }

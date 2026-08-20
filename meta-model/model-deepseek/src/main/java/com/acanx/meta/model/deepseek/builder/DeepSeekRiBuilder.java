@@ -68,4 +68,8 @@ public class DeepSeekRiBuilder {
     }
 
 
+
+    private DeepSeekRiBuilder() {
+        // 工具类，禁止实例化
+    }
 }

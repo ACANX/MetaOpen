@@ -162,4 +162,8 @@ public class ArtifactService {
 
 
 
+
+    private ArtifactService() {
+        // 工具类，禁止实例化
+    }
 }
