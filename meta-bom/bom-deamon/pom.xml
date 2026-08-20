@@ -442,11 +442,6 @@
                 <artifactId>dubbo</artifactId>
                 <version>${dubbo.version}</version>
             </dependency>
-            <!-- <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-metadata-rest</artifactId>
-                <version>${dubbo.version}</version>
-            </dependency> -->
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-metrics-registry</artifactId>
@@ -862,12 +857,6 @@
                 <artifactId>spring-security-config</artifactId>
                 <version>${spring-security.version}</version>
             </dependency>
-            <!-- <dependency>
-                <groupId>org.springframework.security</groupId>
-                <artifactId>spring-security-jwt</artifactId>
-                <version>${spring-security.version}</version>
-                <optional>true</optional>
-            </dependency> -->
             <dependency>
                 <groupId>org.springframework.security</groupId>
                 <artifactId>spring-security-web</artifactId>
@@ -1605,76 +1594,6 @@
                 <artifactId>dubbo-remoting-netty4</artifactId>
                 <version>${dubbo.version}</version>
             </dependency>
-
-
-            <!-- https://mvnrepository.com/artifact/io.netty/netty-bom -->
-            <!--            <dependency>-->
-            <!--                <groupId>io.netty</groupId>-->
-            <!--                <artifactId>netty-bom</artifactId>-->
-            <!--                <version>${netty.version}</version>-->
-            <!--                <type>pom</type>-->
-            <!--                <scope>import</scope>-->
-            <!--                <optional>true</optional>-->
-            <!--            </dependency>-->
-            <!-- Spring/SpringBoot/SpringCloud官方依赖-->
-            <!--            <dependency>-->
-            <!--                <groupId>org.springframework</groupId>-->
-            <!--                <artifactId>spring-framework-bom</artifactId>-->
-            <!--                <version>${spring.version}</version>-->
-            <!--                <optional>true</optional>-->
-            <!--                <type>pom</type>-->
-            <!--                <scope>import</scope>-->
-            <!--            </dependency>-->
-            <!--            <dependency>-->
-            <!--                <groupId>org.springframework.boot</groupId>-->
-            <!--                <artifactId>spring-boot-dependencies</artifactId>-->
-            <!--                <version>${spring-boot.version}</version>-->
-            <!--                <optional>true</optional>-->
-            <!--                <type>pom</type>-->
-            <!--                <scope>import</scope>-->
-            <!--            </dependency>-->
-            <!--            <dependency>-->
-            <!--                <groupId>de.codecentric</groupId>-->
-            <!--                <artifactId>spring-boot-admin-dependencies</artifactId>-->
-            <!--                <version>${spring-boot-admin.version}</version>-->
-            <!--                <optional>true</optional>-->
-            <!--                <type>pom</type>-->
-            <!--                <scope>import</scope>-->
-            <!--            </dependency>-->
-            <!--            <dependency>-->
-            <!--                <groupId>org.springframework.security</groupId>-->
-            <!--                <artifactId>spring-security-core</artifactId>-->
-            <!--                <version>${spring-security.version}</version>-->
-            <!--                <type>pom</type>-->
-            <!--                <scope>import</scope>-->
-            <!--                <optional>true</optional>-->
-            <!--            </dependency>-->
-            <!--            <dependency>-->
-            <!--                <groupId>org.springframework.security.oauth</groupId>-->
-            <!--                <artifactId>spring-security-oauth2</artifactId>-->
-            <!--                <version>${spring-security-oauth2.version}</version>-->
-            <!--                <type>pom</type>-->
-            <!--                <scope>import</scope>-->
-            <!--                <optional>true</optional>-->
-            <!--            </dependency>-->
-            <!-- Spring Cloud Alibaba-->
-            <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba-dependencies -->
-            <!--            <dependency>-->
-            <!--                <groupId>org.apache.dubbo</groupId>-->
-            <!--                <artifactId>dubbo-bom</artifactId>-->
-            <!--                <version>${dubbo.version}</version>-->
-            <!--                <type>pom</type>-->
-            <!--                <scope>import</scope>-->
-            <!--                <optional>true</optional>-->
-            <!--            </dependency>-->
-            <!--            <dependency>-->
-            <!--                <groupId>org.mybatis.spring.boot</groupId>-->
-            <!--                <artifactId>mybatis-spring-boot</artifactId>-->
-            <!--                <version>${mybatis-spring-boot.version}</version>-->
-            <!--                <optional>true</optional>-->
-            <!--                <scope>import</scope>-->
-            <!--                <type>pom</type>-->
-            <!--            </dependency>-->
 
 
                  <!-- Source: https://mvnrepository.com/artifact/org.springframework.ai/spring-ai-commons -->
