@@ -2,30 +2,33 @@ name: SonarCloudCodeAnalysis
 permissions:
   contents: read
   pull-requests: read
-  
+
 on:
   push:
     branches: [ 'dev', 'main', 'dependa', 'aa' ] # 在推送到主干分支时触发
   pull_request:
     branches: [ 'dev', 'main', 'dependa', 'aa' ] # 触发 PR 扫描；fork PR 会因 secrets 限制被 job 条件跳过
     types: [opened, synchronize, reopened]
-  workflow_dispatch:     
+  workflow_dispatch:
 
-  
 jobs:
   BuildScanAnalyze:
     runs-on: ubuntu-latest
+    # 安全防护（githubactions:S7631）：仅同仓库（非 fork）且目标 main 的 PR 运行分析。
+    # fork PR 无 secrets，跳过分析；push/workflow_dispatch 始终运行。
     if: >-
       ${{
         github.event_name != 'pull_request' ||
         (
-          github.event.pull_request.base.ref == 'main' &&
-          github.event.pull_request.head.repo.full_name == github.repository
+          github.event.pull_request.head.repo.fork == false &&
+          github.event.pull_request.base.ref == 'main'
         )
       }}
     steps:
       - name: CheckoutCode
         uses: actions/checkout@v7
+        # 双重防护：非 fork PR 才检出 PR 合并提交，杜绝执行 fork 不可信代码（githubactions:S7631）
+        if: ${{ github.event.pull_request.head.repo.fork == false || github.event_name != 'pull_request' }}
         with:
           fetch-depth: 0 # SonarScanner可能需要完整的提交历史
           # PR 场景显式检出合并提交；push/workflow_dispatch 走事件默认 ref
@@ -50,8 +53,9 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} # 在GitHub仓库Secrets中设置的SonarCloud Token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub自动提供的Token，用于上传PR检查结果
         run: |
-          # JaCoCo 报告由同一次 mvn verify 生成，使用通配符让 Sonar 阶段在生成后解析。
-          JACOCO_PATHS="**/target/site/jacoco/jacoco.xml"
+          # JaCoCo 报告由同一次 mvn verify 生成；路径相对各模块 baseDir 解析（Maven 多模块标准做法）。
+          # 无测试模块（无 jacoco 报告）Sonar 会提示找不到报告，属正常噪音，不影响覆盖率统计。
+          JACOCO_PATHS="target/site/jacoco/jacoco.xml"
           mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
             -Dsonar.projectKey=ACANX_MetaOpen \
             -Dsonar.organization=acanx \
@@ -59,6 +63,7 @@ jobs:
             -Dsonar.token=${SONAR_TOKEN} \
             -Dsonar.qualitygate.wait=false \
             -Dsonar.coverage.jacoco.xmlReportPaths="${JACOCO_PATHS}" \
+            -Dsonar.moduleExclusions=os-dependencies \
             -Dgpg.skip=true \
             -e \
             -X \
