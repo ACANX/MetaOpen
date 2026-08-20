@@ -123,10 +123,8 @@ public class DuplicateClassCheck {
         // 移除开头的target/classes/或target/test-classes/
         if (pathStr.indexOf("target\\classes\\") >=0 ) {
             pathStr = pathStr.substring(pathStr.indexOf("target\\classes\\")+15);
-            // System.out.println(pathStr);
         } else if (pathStr.indexOf("target\\test-classes\\") >=0 ) {
             pathStr = pathStr.substring(pathStr.indexOf("target\\test-classes\\")+15);
-            // System.out.println(pathStr);
         }
 
         // 将路径分隔符替换为.，并移除.class后缀
@@ -139,14 +137,11 @@ public class DuplicateClassCheck {
      */
     private static String extractClassNameFromJavaFile(Path relativePath) {
         String pathStr = relativePath.toString();
-        // System.out.println("pathStr: " + pathStr);
         // 移除开头的src/main/java/或src/test/java/
         if (pathStr.indexOf("src\\main\\java\\") >=0 ) {
             pathStr = pathStr.substring(pathStr.indexOf("src\\main\\java\\")+14);
-            // System.out.println(pathStr);
         } else if (pathStr.indexOf("src\\test\\java\\") >=0 ) {
             pathStr = pathStr.substring(pathStr.indexOf("src\\test\\java\\")+14);
-            // System.out.println(pathStr);
         } else {
             System.out.println("=============" + pathStr);
         }
