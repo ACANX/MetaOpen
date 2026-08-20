@@ -13,6 +13,8 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * ExecutionTimeUtil - 任务调度时间计算工具类
@@ -21,9 +23,22 @@ import java.util.Optional;
  * @since 20260506
  */
 public class ExecutionTimeUtil {
-    @Deprecated
+    private static final Logger LOGGER = Logger.getLogger(ExecutionTimeUtil.class.getName());
+
+    /**
+     * 固定间隔调度类型
+     *
+     * @deprecated 使用 {@link com.acanx.meta.component.schedule.c.ScheduleConst#FIXED_RATE} 替代
+     */
+    @Deprecated(since = "2026-05-06")
     public static final String FIXED_RATE = "FIXED_RATE";
-    @Deprecated
+
+    /**
+     * CRON 调度类型
+     *
+     * @deprecated 使用 {@link com.acanx.meta.component.schedule.c.ScheduleConst#CRON} 替代
+     */
+    @Deprecated(since = "2026-05-06")
     public static final String CRON = "CRON";
 
     /**
@@ -80,9 +95,9 @@ public class ExecutionTimeUtil {
 
         if (nextExecution.isPresent()) {
             ZonedDateTime nextFire = nextExecution.get();
-            System.out.println("下次触发时间: " + nextFire.format(DateTimeFormatter.ISO_ZONED_DATE_TIME));
+            LOGGER.log(Level.INFO, () -> "下次触发时间: " + nextFire.format(DateTimeFormatter.ISO_ZONED_DATE_TIME));
         } else {
-            System.out.println("无法确定后续触发时间。");
+            LOGGER.info("无法确定后续触发时间。");
         }
         return nextExecution.orElse(null);
     }
@@ -118,8 +133,9 @@ public class ExecutionTimeUtil {
      * @param lastFireDateTime 上次执行时间点
      * @param fixedInterval    固定时间间隔（秒）
      * @return 是否应该执行
+     * @deprecated 使用接受 {@link ZonedDateTime} 参数的 {@link #shouldExecuteAtLeastOnceInWindow(ZonedDateTime, ZonedDateTime, ZonedDateTime, Integer)} 替代
      */
-    @Deprecated
+    @Deprecated(since = "2026-05-06")
     public static boolean shouldExecuteAtLeastOnceInWindow(LocalDateTime windowStart, LocalDateTime windowEnd,
                                                             LocalDateTime lastFireDateTime, Integer fixedInterval) {
         return lastFireDateTime.isBefore(windowStart) && lastFireDateTime.plus(fixedInterval, ChronoUnit.SECONDS).isBefore(windowEnd);
@@ -136,8 +152,9 @@ public class ExecutionTimeUtil {
      * @param lastFireDateTime 上次执行时间点
      * @param cronExpression   cron表达式
      * @return 是否应该执行
+     * @deprecated 使用接受 {@link ZonedDateTime} 参数的 {@link #shouldExecuteAtLeastOnceInWindow(ZonedDateTime, ZonedDateTime, ZonedDateTime, String)} 替代
      */
-    @Deprecated
+    @Deprecated(since = "2026-05-06")
     public static boolean shouldExecuteAtLeastOnceInWindow(
             LocalDateTime windowStart,
             LocalDateTime windowEnd,

@@ -16,6 +16,7 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 
 
@@ -26,6 +27,8 @@ import java.io.IOException;
  * @since 20250622
  */
 public class ArtifactService {
+
+    private static final Logger LOGGER = Logger.getLogger(ArtifactService.class.getName());
 
     private static final String UNKNOWN = "UNKNOWN";
 
@@ -38,7 +41,7 @@ public class ArtifactService {
      */
     public static MavenArtifact getMavenArtifactFromMetaDataFile(String groupId, String artifactId) {
         String reqUrl = MavenArtifactUtil.getArtifactMetadataXmlFileUrl(groupId, artifactId);
-        System.out.println(reqUrl);
+        LOGGER.info(reqUrl);
         // getArtifactLatestVersionPomFileUrl
         MavenArtifact ma = new MavenArtifact(groupId, artifactId);
         HRequest request = HRequest.builder().method(HTTPC.GET).url(reqUrl).build();
@@ -74,7 +77,7 @@ public class ArtifactService {
      */
     public static MavenArtifact getArtifactFromLatestVersionPomFile(String groupId, String artifactId, String version) {
         String reqUrl = MavenArtifactUtil.getArtifactLatestVersionPomFileUrl(groupId, artifactId, version);
-        System.out.println(reqUrl);
+        LOGGER.info(reqUrl);
 
         MavenArtifact ma = new MavenArtifact(groupId, artifactId);
         ma.setLatestVersion(version);
@@ -138,10 +141,8 @@ public class ArtifactService {
     }
 
     private static void getScmUrl(Project project, MavenArtifact am) {
-        if (null != project.getScm()) {
-            if (null != project.getScm().getUrl()) {
-                am.setScmUrl(project.getScm().getUrl());
-            }
+        if (null != project.getScm() && null != project.getScm().getUrl()) {
+            am.setScmUrl(project.getScm().getUrl());
         }
     }
 
@@ -152,10 +153,8 @@ public class ArtifactService {
     }
 
     private static void getOrganizationUrl(Project project, MavenArtifact am) {
-        if (null != project.getOrganization()) {
-            if (null != project.getOrganization().getUrl()) {
-                am.setOrganizationUrl(project.getOrganization().getUrl());
-            }
+        if (null != project.getOrganization() && null != project.getOrganization().getUrl()) {
+            am.setOrganizationUrl(project.getOrganization().getUrl());
         }
     }
 

@@ -145,8 +145,6 @@
                   <goal>jar</goal>
                 </goals>
                 <configuration>
-                  <!-- <additionalparam>-Xdoclint:none</additionalparam> -->
-                  <!-- <aggregate>true</aggregate> -->
                   <charset>${project.build.sourceEncoding}</charset>
                   <!-- utf-8读取文件 -->
                   <encoding>${project.build.sourceEncoding}</encoding>

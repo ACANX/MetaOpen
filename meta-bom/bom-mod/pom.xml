@@ -184,32 +184,6 @@
                 <version>${meta-open.version}</version>
             </dependency>
 
-            <!-- <dependency>
-                <groupId>com.acanx.module.llm</groupId>
-                <artifactId>llm-deepseek</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acanx.module.im</groupId>
-                <artifactId>im-wechat-work</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acanx.module.im</groupId>
-                <artifactId>im-dingtalk</artifactId>
-                <version>${revision}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.acanx.module.mdb</groupId>
-                <artifactId>folo-model</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acanx.module.finv</groupId>
-                <artifactId>finv-quote-common</artifactId>
-                <version>${revision}</version>
-            </dependency> -->
             <dependency>
                 <groupId>com.acanx.util</groupId>
                 <artifactId>json-core</artifactId>
@@ -230,16 +204,6 @@
                 <artifactId>json-gson</artifactId>
                 <version>${autil.version}</version>
             </dependency>
-            <!-- <dependency>
-                <groupId>com.acanx.module.finv</groupId>
-                <artifactId>finv-quote-bdgst</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.acanx.module.finv</groupId>
-                <artifactId>finv-quote-futu</artifactId>
-                <version>${revision}</version>
-            </dependency> -->
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
@@ -768,7 +732,6 @@
                       <groupId>com.sun</groupId>
                       <artifactId>tools</artifactId>
                       <version>1.5.0</version>
-                      <!-- <scope>system</scope> -->
                   </dependency>
                   <!-- Source: https://mvnrepository.com/artifact/no.api.freemarker/freemarker-java8 -->
                   <dependency>
@@ -787,31 +750,6 @@
         </dependencies>
     </dependencyManagement>
 
-    <!-- <repositories>
-        <repository>
-            <id>central</id>
-            <name>Maven Central Repository</name>
-            <url>https://repo1.maven.org/maven2/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>sonatype-snapshots</id>
-            <name>Sonatype Snapshot Repository</name>
-            <url>https://central.sonatype.com/repository/maven-snapshots/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories> -->
 
     <build>
         <finalName>BOM-Mod</finalName>
