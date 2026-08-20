@@ -51,4 +51,8 @@ public class MavenArtifactUtil {
 
 
 
+
+    private MavenArtifactUtil() {
+        // 工具类，禁止实例化
+    }
 }

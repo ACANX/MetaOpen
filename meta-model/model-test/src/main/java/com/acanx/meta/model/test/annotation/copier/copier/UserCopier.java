@@ -59,4 +59,8 @@ public class UserCopier {
             }
         }
     }
+
+    private UserCopier() {
+        // 工具类，禁止实例化
+    }
 }

@@ -14,4 +14,8 @@ public class DINGTALKC {
     public static final String API_OTO_BATCH_SEND = "https://api.dingtalk.com/v1.0/robot/oToMessages/batchSend";
 
 
+
+    private DINGTALKC() {
+        // 工具类，禁止实例化
+    }
 }

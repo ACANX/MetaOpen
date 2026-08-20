@@ -15,11 +15,9 @@ class ArtifactServiceTest {
 
     public static final String VERSION = "0.2.0.2";
 
-    public static final ArtifactService service =  new ArtifactService();
-
     @Test
     void getMavenArtifactFromMetaDataFile() {
-       MavenArtifact mavenArtifact = service.getMavenArtifactFromMetaDataFile(GROUP_ID, ARTIFACT_ID);
+       MavenArtifact mavenArtifact = ArtifactService.getMavenArtifactFromMetaDataFile(GROUP_ID, ARTIFACT_ID);
        System.out.println(mavenArtifact.toString());
        System.out.println(JSONUtil.toJSONStringPrettyFormat(mavenArtifact));
 
@@ -28,7 +26,7 @@ class ArtifactServiceTest {
 
     @Test
     void getArtifactFromLatestVersionPomFile() {
-        MavenArtifact mavenArtifact = service.getArtifactFromLatestVersionPomFile(GROUP_ID, ARTIFACT_ID, VERSION);
+        MavenArtifact mavenArtifact = ArtifactService.getArtifactFromLatestVersionPomFile(GROUP_ID, ARTIFACT_ID, VERSION);
         System.out.println(JSONUtil.toJSONStringPrettyFormat(mavenArtifact));
         assertNotNull(mavenArtifact);
     }

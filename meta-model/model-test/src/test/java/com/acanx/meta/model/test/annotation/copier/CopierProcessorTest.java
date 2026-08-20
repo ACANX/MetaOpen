@@ -2,6 +2,7 @@ package com.acanx.meta.model.test.annotation.copier;
 
 import com.acanx.meta.model.test.annotation.copier.copier.UserCopier;
 import com.acanx.meta.model.test.annotation.model.MessageFlex;
+import com.acanx.meta.model.test.annotation.model.MessageStable;
 import com.acanx.meta.model.test.json.model.User;
 import com.acanx.meta.model.test.json.model.UserDTO;
 import org.junit.jupiter.api.Test;
@@ -42,5 +43,30 @@ class CopierProcessorTest {
         UserCopier.convertUserToUserDTOWithIgnorePassword(user, dto);
 
         assertNotNull(dto);
+    }
+
+    @Test
+    void shouldDemoUserCopy() {
+        CopierProcessor processor = new CopierProcessor();
+        assertDoesNotThrow(processor::demoUserCopy);
+    }
+
+
+    @Test
+    void shouldInvokeCopierAnnotatedMethods() {
+        CopierProcessor processor = new CopierProcessor();
+        MessageFlex message = new MessageFlex();
+        MessageStable stable = new MessageStable();
+        User user = new User(1011, "ACE", LocalDateTime.now());
+        UserDTO dto = new UserDTO();
+
+        assertDoesNotThrow(() -> processor.convertMessageFlexToMessageStable(message, stable));
+        assertDoesNotThrow(() -> processor.convertUserToUserDTO(user, dto));
+        assertDoesNotThrow(() -> processor.convertUserToUserDTOWithIgnorePassword(user, dto));
+    }
+
+    @Test
+    void shouldRunMain() {
+        assertDoesNotThrow(() -> CopierProcessor.main(new String[0]));
     }
 }
