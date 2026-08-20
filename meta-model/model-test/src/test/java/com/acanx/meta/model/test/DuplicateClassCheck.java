@@ -27,6 +27,7 @@ public class DuplicateClassCheck {
         if (args.length == 0) {
             System.out.println("请提供Maven项目的根目录路径作为参数");
             System.out.println("用法: java DuplicateClassDetector <项目根目录>");
+            System.out.println("用法示例: java DuplicateClassDetector D:/Code/JavaCode/MetaOpen");
             return;
         }
         String projectRoot = args[0];
