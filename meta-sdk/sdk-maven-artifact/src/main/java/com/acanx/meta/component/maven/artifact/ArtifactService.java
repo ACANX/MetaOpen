@@ -141,10 +141,8 @@ public class ArtifactService {
     }
 
     private static void getScmUrl(Project project, MavenArtifact am) {
-        if (null != project.getScm()) {
-            if (null != project.getScm().getUrl()) {
-                am.setScmUrl(project.getScm().getUrl());
-            }
+        if (null != project.getScm() && null != project.getScm().getUrl()) {
+            am.setScmUrl(project.getScm().getUrl());
         }
     }
 
@@ -155,10 +153,8 @@ public class ArtifactService {
     }
 
     private static void getOrganizationUrl(Project project, MavenArtifact am) {
-        if (null != project.getOrganization()) {
-            if (null != project.getOrganization().getUrl()) {
-                am.setOrganizationUrl(project.getOrganization().getUrl());
-            }
+        if (null != project.getOrganization() && null != project.getOrganization().getUrl()) {
+            am.setOrganizationUrl(project.getOrganization().getUrl());
         }
     }
 
