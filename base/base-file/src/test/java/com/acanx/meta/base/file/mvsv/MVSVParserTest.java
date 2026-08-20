@@ -1,5 +1,6 @@
 package com.acanx.meta.base.file.mvsv;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -17,6 +18,19 @@ import static org.junit.jupiter.api.Assertions.*;
  * @since 2026-05-21
  */
 class MVSVParserTest {
+
+    @TempDir
+    Path tempDir;
+
+    /** 共享解析结果（由 setUp 初始化） */
+    private MVSVData data;
+
+    @BeforeEach
+    void setUp() throws IOException {
+        Path testFile = tempDir.resolve("test.mvsv");
+        Files.writeString(testFile, TEST_MVSV_CONTENT);
+        data = new MVSVParser().parse(testFile.toString());
+    }
 
     // 测试数据
     private static final String TEST_MVSV_CONTENT = """
@@ -63,15 +77,7 @@ Timestamp|Open|High|Low|Close|Volume
 """;
 
     @Test
-    void testParse(@TempDir Path tempDir) throws IOException {
-        // 创建临时测试文件
-        Path testFile = tempDir.resolve("test.mvsv");
-        Files.writeString(testFile, TEST_MVSV_CONTENT);
-
-        // 解析文件
-        MVSVParser parser = new MVSVParser();
-        MVSVData data = parser.parse(testFile.toString());
-
+    void testParseMetadata() {
         // 验证元数据
         assertEquals("黄金分钟级行情 - 2026-05-21", data.getMetadata().getTitle());
         assertEquals("Gold Minute-level Quotes - 2026-05-21", data.getMetadata().getTitleEn());
@@ -80,7 +86,10 @@ Timestamp|Open|High|Low|Close|Volume
         assertEquals("时间戳|开盘|最高|最低|收盘|成交量", data.getMetadata().getFieldName());
         assertEquals("timestamp|number|number|number|number|integer", data.getMetadata().getFieldType());
         assertEquals(3, data.getMetadata().getCount());
+    }
 
+    @Test
+    void testParseFieldList() {
         // 验证字段列表
         List<String> fieldList = data.getMetadata().getFieldList();
         assertEquals(6, fieldList.size());
@@ -90,7 +99,10 @@ Timestamp|Open|High|Low|Close|Volume
         assertEquals("Low", fieldList.get(3));
         assertEquals("Close", fieldList.get(4));
         assertEquals("Volume", fieldList.get(5));
+    }
 
+    @Test
+    void testParseFieldNameList() {
         // 验证字段名称列表
         List<String> fieldNameList = data.getMetadata().getFieldNameList();
         assertEquals(6, fieldNameList.size());
@@ -100,7 +112,10 @@ Timestamp|Open|High|Low|Close|Volume
         assertEquals("最低", fieldNameList.get(3));
         assertEquals("收盘", fieldNameList.get(4));
         assertEquals("成交量", fieldNameList.get(5));
+    }
 
+    @Test
+    void testParseFieldTypeList() {
         // 验证字段类型列表
         List<String> fieldTypeList = data.getMetadata().getFieldTypeList();
         assertEquals(6, fieldTypeList.size());
@@ -110,7 +125,10 @@ Timestamp|Open|High|Low|Close|Volume
         assertEquals("number", fieldTypeList.get(3));
         assertEquals("number", fieldTypeList.get(4));
         assertEquals("integer", fieldTypeList.get(5));
+    }
 
+    @Test
+    void testParseRows() {
         // 验证数据行
         assertEquals(3, data.getRows().size());
 
