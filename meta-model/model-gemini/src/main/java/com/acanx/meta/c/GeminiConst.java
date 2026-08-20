@@ -29,7 +29,11 @@ public class GeminiConst {
 
     public static final String V1 = "v1";
     public static final String V1_BETA = "v1beta";
-    // Google AI API 的通用生成内容端点
+    /**
+     * Google AI API 的通用生成内容端点（v1）
+     *
+     * @deprecated 使用 {@link #TPL_API_GENERATE_CONTENT_BETA} 替代
+     */
     @Deprecated
     public static final String TPL_API_ENDPOINT = BASE_DOMAIN + "/v1/models/%s:generateContent?key=%s";
 
