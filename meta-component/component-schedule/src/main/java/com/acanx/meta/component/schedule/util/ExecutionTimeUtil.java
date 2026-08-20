@@ -13,6 +13,8 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * ExecutionTimeUtil - 任务调度时间计算工具类
@@ -21,6 +23,8 @@ import java.util.Optional;
  * @since 20260506
  */
 public class ExecutionTimeUtil {
+    private static final Logger LOGGER = Logger.getLogger(ExecutionTimeUtil.class.getName());
+
     @Deprecated
     public static final String FIXED_RATE = "FIXED_RATE";
     @Deprecated
@@ -80,9 +84,9 @@ public class ExecutionTimeUtil {
 
         if (nextExecution.isPresent()) {
             ZonedDateTime nextFire = nextExecution.get();
-            System.out.println("下次触发时间: " + nextFire.format(DateTimeFormatter.ISO_ZONED_DATE_TIME));
+            LOGGER.log(Level.INFO, "下次触发时间: {0}", nextFire.format(DateTimeFormatter.ISO_ZONED_DATE_TIME));
         } else {
-            System.out.println("无法确定后续触发时间。");
+            LOGGER.info("无法确定后续触发时间。");
         }
         return nextExecution.orElse(null);
     }
