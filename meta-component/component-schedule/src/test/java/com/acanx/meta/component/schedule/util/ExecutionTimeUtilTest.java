@@ -2,6 +2,7 @@ package com.acanx.meta.component.schedule.util;
 
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Constructor;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -31,5 +32,12 @@ class ExecutionTimeUtilTest {
         assertEquals(fixedNow.plusSeconds(20 * 3600L), nextFire, "固定间隔触发时间应为当前时间 + 20小时");
         assertTrue(nextFire.isAfter(lastFire), "触发时间应在上次执行时间之后");
         System.out.println("下次触发时间: " + nextFire.format(DateTimeFormatter.ISO_ZONED_DATE_TIME));
+    }
+
+    @Test
+    void privateConstructorShouldBeInvokable() throws Exception {
+        Constructor<ExecutionTimeUtil> constructor = ExecutionTimeUtil.class.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        assertNotNull(constructor.newInstance(), "私有构造器应可被反射调用");
     }
 }
