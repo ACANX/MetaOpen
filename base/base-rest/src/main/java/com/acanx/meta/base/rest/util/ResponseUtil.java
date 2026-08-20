@@ -19,4 +19,8 @@ public class ResponseUtil {
         return result != null && null != result.getCode() && (result.getCode() == SUCCESS_CODE || result.getCode() == 200 || result.getCode() == 202);
     }
 
+
+    private ResponseUtil() {
+        // 工具类，禁止实例化
+    }
 }
