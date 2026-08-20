@@ -10,6 +10,7 @@ import com.acanx.util.annotation.Copier;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.logging.Logger;
 
 /**
  * CopierProcessor
@@ -18,6 +19,8 @@ import java.time.ZoneId;
  * @since 202506
  */
 public class CopierProcessor {
+
+    private static final Logger LOGGER = Logger.getLogger(CopierProcessor.class.getName());
 
     /**
      * 单纯的注解
@@ -61,7 +64,25 @@ public class CopierProcessor {
     public void process(MessageFlex message) {
         MessageStable choice = new MessageStable();
         MessageCopier.convertMessageFlexToMessageStable(message, choice);
-        System.out.println("Copied choice: " + choice);
+        LOGGER.info("Copied choice: " + choice);
+    }
+
+    /**
+     * 用户对象拷贝演示
+     */
+    public void demoUserCopy() {
+        User user = new User(1011, "ACE", LocalDateTime.now(ZoneId.systemDefault()));
+        user.setEmail("abc@gmail.com");
+        user.setPassword("123456");
+        LOGGER.info(String.valueOf(user));
+
+        UserDTO userDTO = new UserDTO();
+        UserCopier.convertUserToUserDTO(user, userDTO);
+        LOGGER.info(String.valueOf(userDTO));
+
+        UserDTO userDTO2 = new UserDTO();
+        UserCopier.convertUserToUserDTOWithIgnorePassword(user, userDTO2);
+        LOGGER.info(String.valueOf(userDTO2));
     }
 
     /**
@@ -70,17 +91,6 @@ public class CopierProcessor {
      * @param args 命令行参数
      */
     public static void main(String[] args) {
-        User user = new User(1011, "ACE", LocalDateTime.now(ZoneId.systemDefault()));
-        user.setEmail("abc@gmail.com");
-        user.setPassword("123456");
-        System.out.println(user);
-
-        UserDTO userDTO = new UserDTO();
-        UserCopier.convertUserToUserDTO(user, userDTO);
-        System.out.println(userDTO);
-
-        UserDTO userDTO2 = new UserDTO();
-        UserCopier.convertUserToUserDTOWithIgnorePassword(user, userDTO2);
-        System.out.println(userDTO2);
+        new CopierProcessor().demoUserCopy();
     }
 }
