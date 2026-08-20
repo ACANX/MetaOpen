@@ -10,6 +10,7 @@ import com.acanx.util.annotation.Copier;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -64,7 +65,7 @@ public class CopierProcessor {
     public void process(MessageFlex message) {
         MessageStable choice = new MessageStable();
         MessageCopier.convertMessageFlexToMessageStable(message, choice);
-        LOGGER.info("Copied choice: " + choice);
+        LOGGER.log(Level.INFO, "Copied choice: {0}", choice);
     }
 
     /**
@@ -74,15 +75,15 @@ public class CopierProcessor {
         User user = new User(1011, "ACE", LocalDateTime.now(ZoneId.systemDefault()));
         user.setEmail("abc@gmail.com");
         user.setPassword("123456");
-        LOGGER.info(String.valueOf(user));
+        LOGGER.log(Level.INFO, "{0}", user);
 
         UserDTO userDTO = new UserDTO();
         UserCopier.convertUserToUserDTO(user, userDTO);
-        LOGGER.info(String.valueOf(userDTO));
+        LOGGER.log(Level.INFO, "{0}", userDTO);
 
         UserDTO userDTO2 = new UserDTO();
         UserCopier.convertUserToUserDTOWithIgnorePassword(user, userDTO2);
-        LOGGER.info(String.valueOf(userDTO2));
+        LOGGER.log(Level.INFO, "{0}", userDTO2);
     }
 
     /**

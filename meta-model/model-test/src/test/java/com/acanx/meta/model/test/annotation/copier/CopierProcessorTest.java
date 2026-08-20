@@ -49,4 +49,9 @@ class CopierProcessorTest {
         CopierProcessor processor = new CopierProcessor();
         assertDoesNotThrow(processor::demoUserCopy);
     }
+
+    @Test
+    void shouldRunMain() {
+        assertDoesNotThrow(() -> CopierProcessor.main(new String[0]));
+    }
 }
