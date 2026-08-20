@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: CheckoutCode
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
 
       - name: SetupJava
         uses: actions/setup-java@v5
@@ -22,12 +22,16 @@ jobs:
           # 通常会在 pom.xml 或 settings.xml 中配置 gpg 相关信息
 
       - name: ImportGPGKey
-        uses: crazy-max/ghaction-import-gpg@v3
+        uses: crazy-max/ghaction-import-gpg@2dc316deee8e90f13e1a351ab510b4d5bc0c82cd
         with:
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
 
       - name: ConfigureMavenSettingsForSonatype
+        env:
+          # secrets 经 env 传递，run 块内用 $VAR 引用（防泄露，SonarCloud githubactions:S7636）
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_TOKEN: ${{ secrets.OSSRH_TOKEN }}
         run: |
           mkdir -p ~/.m2
           cat > ~/.m2/settings.xml <<EOF
@@ -35,13 +39,13 @@ jobs:
             <servers>
               <server>
                 <id>sonatype-nexus-staging</id>
-                <username>${{ secrets.OSSRH_USERNAME }}</username>
-                <password>${{ secrets.OSSRH_TOKEN }}</password>
+                <username>${OSSRH_USERNAME}</username>
+                <password>${OSSRH_TOKEN}</password>
               </server>
               <server>
                 <id>sonatype-nexus-snapshots</id>
-                <username>${{ secrets.OSSRH_USERNAME }}</username>
-                <password>${{ secrets.OSSRH_TOKEN }}</password>
+                <username>${OSSRH_USERNAME}</username>
+                <password>${OSSRH_TOKEN}</password>
               </server>
             </servers>
           </settings>

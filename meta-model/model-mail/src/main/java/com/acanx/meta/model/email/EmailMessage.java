@@ -29,5 +29,6 @@ public class EmailMessage {
     private List<String> attachments;
 
     public EmailMessage() {
+        // Lombok @Data 不生成构造器，Jackson 反序列化需要默认无参构造器，不可删除（SonarCloud java:S1186 豁免）
     }
 }

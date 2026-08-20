@@ -18,14 +18,14 @@ jobs:
     steps:
       # 1. 获取元数据
       - name: Get dependency metadata
-        uses: dependabot/fetch-metadata@v1.1.1
+        uses: dependabot/fetch-metadata@25dd0e34f4fe68f24cc83900b1fe3fe149efef98
         id: metadata
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       # 2.修改标题    
       - name: Rename PR via GitHub Script
-        uses: actions/github-script@v6
+        uses: actions/github-script@v9
         with:
           script: |
             const prNum = context.payload.pull_request.number;

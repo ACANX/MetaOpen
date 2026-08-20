@@ -42,11 +42,16 @@ public class RssConst {
     public static final String URL_XMLNS_CONTENT = "http://purl.org/rss/1.0/modules/content/";
 
     /**
-     * Atom命名空间URI副本
-     * 与XMLNS_ATOM相同，可能是为了代码中的不同使用场景而定义
+     * RSS feed 基础 URL
+     *
+     * ⚠️ 命名历史（2026-08-19 SonarCloud java:S115 规范修复）：
+     * 原常量名 {@code URL_XMLNS_ATOM_}（尾部下划线不符合命名规范
+     * {@code ^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$}），经确认后调整为本名。
+     * 原注释称"与XMLNS_ATOM相同"，但实际值为 RSS feed 地址
+     * （与 {@link #RSS_URL_V1_1} 值相同），故按真实语义命名。
+     * 如需追溯旧引用，请在代码库中搜索 {@code URL_XMLNS_ATOM_}。
      */
-    public static final String URL_XMLNS_ATOM_ = "https://www.rss.com/api/v1/rss/feed/";
-
+    public static final String URL_RSS_FEED = "https://www.rss.com/api/v1/rss/feed/";
 
 
     /**

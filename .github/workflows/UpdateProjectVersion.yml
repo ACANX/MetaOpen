@@ -18,12 +18,12 @@ jobs:
       pull-requests: write
     steps:
       - name: CheckoutCode
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0        # 确保能获取所有分支历史
 
       - name: SetupJava
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
           java-version: '21'
@@ -65,7 +65,7 @@ jobs:
           echo "${{ steps.version.outputs.new_version }}" > version
 
       - name: CreatePullRequest
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore: update project version to ${{ steps.version.outputs.new_version }}"
