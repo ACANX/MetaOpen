@@ -14,4 +14,8 @@ public class MVNC {
 
 
 
+
+    private MVNC() {
+        // 工具类，禁止实例化
+    }
 }

@@ -155,4 +155,8 @@ public class ExecutionTimeUtil {
 
 
 
+
+    private ExecutionTimeUtil() {
+        // 工具类，禁止实例化
+    }
 }

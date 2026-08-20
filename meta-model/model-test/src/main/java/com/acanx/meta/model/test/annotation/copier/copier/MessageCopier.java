@@ -33,4 +33,8 @@ public class MessageCopier {
     }
 
 
+
+    private MessageCopier() {
+        // 工具类，禁止实例化
+    }
 }
