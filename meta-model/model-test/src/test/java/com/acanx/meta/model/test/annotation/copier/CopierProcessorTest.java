@@ -43,4 +43,10 @@ class CopierProcessorTest {
 
         assertNotNull(dto);
     }
+
+    @Test
+    void shouldDemoUserCopy() {
+        CopierProcessor processor = new CopierProcessor();
+        assertDoesNotThrow(processor::demoUserCopy);
+    }
 }
