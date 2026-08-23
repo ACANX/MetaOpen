@@ -2597,7 +2597,7 @@
         <dependency>
         <groupId>com.brevo</groupId>
         <artifactId>brevo</artifactId>
-        <version>1.1.9</version>
+        <version>1.1.10</version>
       </dependency>
         <dependency>
         <groupId>com.google.cloud.functions.invoker</groupId>
