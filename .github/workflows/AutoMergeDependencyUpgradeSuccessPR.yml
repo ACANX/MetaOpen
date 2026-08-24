@@ -8,6 +8,11 @@ on:
   workflow_dispatch:
     # 手动触发：处理当前所有 open 的依赖升级 PR（兜底）
 
+concurrency:
+  # 合并动作串行化：所有 AutoMerge run 共享同一队列，避免并发合并同一目标分支产生竞争
+  group: automerge-dependency-prs
+  cancel-in-progress: false
+
 permissions:
   contents: write
   pull-requests: write
@@ -87,12 +92,24 @@ jobs:
               echo "🎉 PR #${pr_number} 已自动合并完成！"
             else
               echo ""
-              echo "❌ PR #${pr_number} 自动合并失败，详细信息如下："
+              echo "❌ PR #${pr_number} 自动合并失败，尝试自动更新分支（基于 base 分支最新代码）..."
               echo "----------------------------------------------"
               echo "$merge_output"
               echo "----------------------------------------------"
-              echo "📤 自动合并不成功，任务退出。"
-              exit 1
+              # 自动更新分支：把 base 分支最新提交合并进 head 分支，
+              # 产生新 commit → 触发 pull_request(synchronize) → CI 重跑 →
+              # 检查全绿后 workflow_run 再次触发本工作流自动重试合并
+              if update_output=$(gh pr update-branch "$pr_number" --repo "$REPO" 2>&1); then
+                echo "✅ PR #${pr_number} 已基于 base 分支自动更新，等待 CI 重跑后自动再次合并。"
+                return 0
+              else
+                echo "❌ PR #${pr_number} 更新分支失败（可能存在文本冲突，需人工解决），详情如下："
+                echo "----------------------------------------------"
+                echo "$update_output"
+                echo "----------------------------------------------"
+                echo "📤 自动更新不成功，任务退出。"
+                exit 1
+              fi
             fi
           }
 
@@ -103,7 +120,7 @@ jobs:
               [ -z "$branch" ] && continue
               process_pr "$branch"
             done < <(gh pr list --repo "$REPO" --state open --json headRefName \
-              --jq '.[] | select(.headRefName | startswith("dependabot/") or . == "ci/dependency-upgrade") | .headRefName')
+              --jq '.[] | select(.headRefName | startswith("dependabot/") or startswith("dependabot-") or . == "ci/dependency-upgrade") | .headRefName')
             echo ""
             echo "🎉 手动处理完成！"
           else
@@ -111,7 +128,8 @@ jobs:
             HEAD_BRANCH="$RUN_HEAD_BRANCH"
             echo "🔄 CI 已完成（分支: ${HEAD_BRANCH}，结论: ${RUN_CONCLUSION}）"
             case "$HEAD_BRANCH" in
-              dependabot/*|ci/dependency-upgrade)
+              # 兼容多种 Dependabot 分支命名：斜杠模式（dependabot/maven/...）与短横线模式（dependabot-maven-os-dependencies-...）
+              dependabot/*|dependabot-*|ci/dependency-upgrade)
                 process_pr "$HEAD_BRANCH"
                 ;;
               *)
