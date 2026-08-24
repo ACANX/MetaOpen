@@ -8,14 +8,9 @@ on:
   workflow_dispatch:
     # 手动触发：处理当前所有 open 的依赖升级 PR（兜底）
   schedule:
-    # 定时兜底：每 3 小时执行一次，确保依赖升级 PR 不漏合并
+    # 定时兜底：每 6 小时执行一次，确保依赖升级 PR 不漏合并
     # （workflow_run 并发触发时旧排队 run 会被取消，由本定时任务兜底）
-    - cron: '0 */3 * * *'
-
-concurrency:
-  # 合并动作串行化：所有 AutoMerge run 共享同一队列，避免并发合并同一目标分支产生竞争
-  group: automerge-dependency-prs
-  cancel-in-progress: false
+    - cron: '0 */6 * * *'
 
 permissions:
   contents: write
