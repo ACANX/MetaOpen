@@ -93,6 +93,7 @@ public class ArtifactService {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+            LOGGER.fine("Packaging type: " + project.getPackaging());
             if (null != project.getPackaging() && !project.getPackaging().isEmpty()) {
                 packagingType = project.getPackaging();
             }
