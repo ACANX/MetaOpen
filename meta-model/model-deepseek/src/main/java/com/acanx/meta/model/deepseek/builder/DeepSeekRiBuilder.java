@@ -61,8 +61,11 @@ public class DeepSeekRiBuilder {
         msgList.add(new Message(DeepSeekC.SYSTEM, prompt));
         msgList.add(new Message(DeepSeekC.USER, queryString));
         DeepSeekRi ri = new DeepSeekRi(DeepSeekModel.R1.getModel(), false, msgList);
-        // https://api-docs.deepseek.com/zh-cn/guides/reasoning_model#%E8%AE%BF%E9%97%AE%E6%A0%B7%E4%BE%8B
-        // ri.setTemperature(1.0D);
+        /*
+         * 参考文档（访问示例）：https://api-docs.deepseek.com/zh-cn/guides/reasoning_model#%E8%AE%BF%E9%97%AE%E6%A0%B7%E4%BE%8B
+         * Reasoner（R1）模型不支持 temperature 参数，保持默认值即可，无需显式调用
+         * ri.setTemperature(1.0D)；如需调整温度，请按上述文档中的调用方式进行设置。
+         */
         ri.setMaxTokens(32 * 1024);
         return ri;
     }
