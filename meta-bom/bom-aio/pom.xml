@@ -2488,7 +2488,7 @@
         <dependency>
         <groupId>com.baidu.aip</groupId>
         <artifactId>java-sdk</artifactId>
-        <version>4.16.25</version>
+        <version>4.16.26</version>
         <exclusions>
           <exclusion>
             <groupId>org.json</groupId>
