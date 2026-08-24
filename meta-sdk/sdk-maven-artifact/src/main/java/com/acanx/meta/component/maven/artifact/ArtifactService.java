@@ -58,10 +58,8 @@ public class ArtifactService {
             ma.setLastUpdateDateTime(metadata.getVersioning().getLastUpdated());
             ma.setVersions(metadata.getVersioning().getVersions());
             ma.setPackaging(metadata.getVersion());
-            // ma.setIgnoreFlag(Boolean.FALSE);
             ma.setOriginDataProvider("metadata.xml");
         } else {
-            // ma.setIgnoreFlag(Boolean.TRUE);
             ma.setType(UNKNOWN);
             ma.setPackaging(UNKNOWN);
         }
@@ -93,7 +91,7 @@ public class ArtifactService {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            // System.out.println("Packaging type: " + project.getPackaging());
+            LOGGER.fine("Packaging type: " + project.getPackaging());
             if (null != project.getPackaging() && !project.getPackaging().isEmpty()) {
                 packagingType = project.getPackaging();
             }
