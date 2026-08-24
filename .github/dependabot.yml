@@ -79,8 +79,6 @@ updates:
       - "Dependabot"        
       - "RR"      
       - "From:OS-Dependencies"  
-    pull-request-branch-name:
-      separator: "-"              # 分支名使用短横线分隔
     allow:
       - dependency-type: "all"      # 允许所有依赖类型       
   - package-ecosystem: "maven"
