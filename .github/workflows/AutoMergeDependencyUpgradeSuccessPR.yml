@@ -120,7 +120,7 @@ jobs:
               [ -z "$branch" ] && continue
               process_pr "$branch"
             done < <(gh pr list --repo "$REPO" --state open --json headRefName \
-              --jq '.[] | select(.headRefName | startswith("dependabot/") or . == "ci/dependency-upgrade") | .headRefName')
+              --jq '.[] | select(.headRefName | startswith("dependabot/") or startswith("dependabot-") or . == "ci/dependency-upgrade") | .headRefName')
             echo ""
             echo "🎉 手动处理完成！"
           else
@@ -128,7 +128,8 @@ jobs:
             HEAD_BRANCH="$RUN_HEAD_BRANCH"
             echo "🔄 CI 已完成（分支: ${HEAD_BRANCH}，结论: ${RUN_CONCLUSION}）"
             case "$HEAD_BRANCH" in
-              dependabot/*|ci/dependency-upgrade)
+              # 兼容多种 Dependabot 分支命名：斜杠模式（dependabot/maven/...）与短横线模式（dependabot-maven-os-dependencies-...）
+              dependabot/*|dependabot-*|ci/dependency-upgrade)
                 process_pr "$HEAD_BRANCH"
                 ;;
               *)
