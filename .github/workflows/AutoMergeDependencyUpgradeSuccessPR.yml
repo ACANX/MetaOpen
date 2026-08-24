@@ -23,9 +23,13 @@ jobs:
       - name: 自动合并依赖升级 PR
         env:
           GH_TOKEN: ${{ github.token }}
+          REPO_NAME: ${{ github.repository }}
+          EVENT_NAME: ${{ github.event_name }}
+          RUN_HEAD_BRANCH: ${{ github.event.workflow_run.head_branch }}
+          RUN_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
         run: |
           set -e
-          REPO="${{ github.repository }}"
+          REPO="$REPO_NAME"
 
           # 处理单个依赖升级 PR：等待所有检查通过后自动合并（默认 squash 方式）
           process_pr() {
@@ -92,7 +96,7 @@ jobs:
             fi
           }
 
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
             # 手动触发：遍历所有 open 的依赖升级 PR（dependabot/** 与 ci/dependency-upgrade）
             echo "🖐 手动触发模式：开始处理所有 open 的依赖升级 PR ..."
             while IFS=$'\t' read -r branch; do
@@ -104,8 +108,8 @@ jobs:
             echo "🎉 手动处理完成！"
           else
             # workflow_run 触发：处理本次 CICD run 对应的分支
-            HEAD_BRANCH="${{ github.event.workflow_run.head_branch }}"
-            echo "🔄 CICD 已完成（分支: ${HEAD_BRANCH}，结论: ${{ github.event.workflow_run.conclusion }}）"
+            HEAD_BRANCH="$RUN_HEAD_BRANCH"
+            echo "🔄 CI 已完成（分支: ${HEAD_BRANCH}，结论: ${RUN_CONCLUSION}）"
             case "$HEAD_BRANCH" in
               dependabot/*|ci/dependency-upgrade)
                 process_pr "$HEAD_BRANCH"
