@@ -8,6 +8,11 @@ on:
   workflow_dispatch:
     # 手动触发：处理当前所有 open 的依赖升级 PR（兜底）
 
+concurrency:
+  # 合并动作串行化：所有 AutoMerge run 共享同一队列，避免并发合并同一目标分支产生竞争
+  group: automerge-dependency-prs
+  cancel-in-progress: false
+
 permissions:
   contents: write
   pull-requests: write
