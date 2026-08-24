@@ -7,6 +7,10 @@ on:
     types: [completed]
   workflow_dispatch:
     # 手动触发：处理当前所有 open 的依赖升级 PR（兜底）
+  schedule:
+    # 定时兜底：每 3 小时执行一次，确保依赖升级 PR 不漏合并
+    # （workflow_run 并发触发时旧排队 run 会被取消，由本定时任务兜底）
+    - cron: '0 */3 * * *'
 
 concurrency:
   # 合并动作串行化：所有 AutoMerge run 共享同一队列，避免并发合并同一目标分支产生竞争
@@ -113,13 +117,19 @@ jobs:
             fi
           }
 
-          # 无论 workflow_run 还是 workflow_dispatch，均按 PR 编号升序遍历所有 open 的依赖升级 PR
+          # 无论 workflow_run / schedule / workflow_dispatch，均按 PR 编号升序遍历所有 open 的依赖升级 PR
           # （编号小的先合并，编号大的后合并；串行队列内一次推进一个）
-          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
-            echo "🖐 手动触发模式：按 PR 编号升序处理所有 open 的依赖升级 PR ..."
-          else
-            echo "🔄 CI 已完成触发（分支: ${RUN_HEAD_BRANCH}，结论: ${RUN_CONCLUSION}），按 PR 编号升序处理 ..."
-          fi
+          case "$EVENT_NAME" in
+            workflow_dispatch)
+              echo "🖐 手动触发模式：按 PR 编号升序处理所有 open 的依赖升级 PR ..."
+              ;;
+            schedule)
+              echo "⏰ 定时兜底触发（每 3 小时）：按 PR 编号升序处理所有 open 的依赖升级 PR ..."
+              ;;
+            *)
+              echo "🔄 CI 已完成触发（分支: ${RUN_HEAD_BRANCH}，结论: ${RUN_CONCLUSION}），按 PR 编号升序处理 ..."
+              ;;
+          esac
           while IFS=$'\t' read -r number branch; do
             [ -z "$branch" ] && continue
             echo ""
