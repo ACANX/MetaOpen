@@ -1,0 +1,139 @@
+name: AutoMergeDependencyUpgradeSuccessPR
+
+on:
+  workflow_run:
+    # 当 MultiMavenJDKBranchCI 工作流完成时触发（依赖升级 PR 的 CI 检查即来自该工作流）
+    workflows: ["MultiMavenJDKBranchCI"]
+    types: [completed]
+  workflow_dispatch:
+    # 手动触发：处理当前所有 open 的依赖升级 PR（兜底）
+
+concurrency:
+  # 合并动作串行化：所有 AutoMerge run 共享同一队列，避免并发合并同一目标分支产生竞争
+  group: automerge-dependency-prs
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  checks: read
+
+jobs:
+  auto-merge:
+    name: AutoMergeDependencyUpgradeSuccessPR
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - name: 自动合并依赖升级 PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO_NAME: ${{ github.repository }}
+          EVENT_NAME: ${{ github.event_name }}
+          RUN_HEAD_BRANCH: ${{ github.event.workflow_run.head_branch }}
+          RUN_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+        run: |
+          set -e
+          REPO="$REPO_NAME"
+
+          # 处理单个依赖升级 PR：等待所有检查通过后自动合并（默认 squash 方式）
+          process_pr() {
+            local branch="$1"
+            echo ""
+            echo "=============================================="
+            echo "🔍 处理依赖升级分支: ${branch}"
+            echo "=============================================="
+
+            # 查找该分支对应的 open PR
+            local pr_number
+            pr_number=$(gh pr list --repo "$REPO" --head "$branch" --state open --json number --jq '.[0].number' 2>/dev/null || true)
+            if [ -z "$pr_number" ] || [ "$pr_number" = "null" ]; then
+              echo "ℹ️  分支 ${branch} 没有 open 的 PR，跳过。"
+              return 0
+            fi
+            echo "📋 找到依赖升级 PR: #${pr_number}"
+
+            # 获取 PR 的 head 提交 SHA（检查结果挂在该提交上）
+            local pr_head_sha
+            pr_head_sha=$(gh pr view "$pr_number" --repo "$REPO" --json headRefOid --jq '.headRefOid')
+            echo "🔎 PR head 提交: ${pr_head_sha}"
+
+            # 轮询等待所有检查通过（最多 12 分钟，每 60 秒查询一次）
+            local i pending failed
+            pending=1
+            failed=0
+            for i in $(seq 1 12); do
+              local status_json
+              status_json=$(gh api "repos/$REPO/commits/$pr_head_sha/check-runs" --jq '.check_runs' 2>/dev/null || echo "[]")
+              pending=$(echo "$status_json" | jq '[.[] | select(.status != "completed")] | length')
+              failed=$(echo "$status_json" | jq '[.[] | select(.conclusion == "failure" or .conclusion == "cancelled" or .conclusion == "timed_out" or .conclusion == "action_required")] | length')
+              echo "⏳ 第 ${i}/12 次检查：pending=${pending}，failed=${failed}"
+
+              if [ "$pending" -eq 0 ] && [ "$failed" -eq 0 ]; then
+                echo "✅ PR #${pr_number} 的所有检查均已通过！"
+                break
+              fi
+              if [ "$failed" -gt 0 ]; then
+                echo "❌ PR #${pr_number} 存在失败的检查，自动合并不成功，任务退出。"
+                return 1
+              fi
+              sleep 60
+            done
+
+            # 超时仍未全部通过
+            if [ "$pending" -gt 0 ] || [ "$failed" -gt 0 ]; then
+              echo "⏰ 等待超时（12 分钟），PR #${pr_number} 尚有检查未通过，自动合并不成功，任务退出。"
+              return 1
+            fi
+
+            # 执行自动合并（默认 squash 方式）
+            echo "🔀 正在以 squash 方式自动合并 PR #${pr_number} ..."
+            if merge_output=$(gh pr merge "$pr_number" --repo "$REPO" --squash 2>&1); then
+              echo "🎉 PR #${pr_number} 已自动合并完成！"
+            else
+              echo ""
+              echo "❌ PR #${pr_number} 自动合并失败，尝试自动更新分支（基于 base 分支最新代码）..."
+              echo "----------------------------------------------"
+              echo "$merge_output"
+              echo "----------------------------------------------"
+              # 自动更新分支：把 base 分支最新提交合并进 head 分支，
+              # 产生新 commit → 触发 pull_request(synchronize) → CI 重跑 →
+              # 检查全绿后 workflow_run 再次触发本工作流自动重试合并
+              if update_output=$(gh pr update-branch "$pr_number" --repo "$REPO" 2>&1); then
+                echo "✅ PR #${pr_number} 已基于 base 分支自动更新，等待 CI 重跑后自动再次合并。"
+                return 0
+              else
+                echo "❌ PR #${pr_number} 更新分支失败（可能存在文本冲突，需人工解决），详情如下："
+                echo "----------------------------------------------"
+                echo "$update_output"
+                echo "----------------------------------------------"
+                echo "📤 自动更新不成功，任务退出。"
+                exit 1
+              fi
+            fi
+          }
+
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            # 手动触发：遍历所有 open 的依赖升级 PR（dependabot/** 与 ci/dependency-upgrade）
+            echo "🖐 手动触发模式：开始处理所有 open 的依赖升级 PR ..."
+            while IFS=$'\t' read -r branch; do
+              [ -z "$branch" ] && continue
+              process_pr "$branch"
+            done < <(gh pr list --repo "$REPO" --state open --json headRefName \
+              --jq '.[] | select(.headRefName | startswith("dependabot/") or startswith("dependabot-") or . == "ci/dependency-upgrade") | .headRefName')
+            echo ""
+            echo "🎉 手动处理完成！"
+          else
+            # workflow_run 触发：处理本次 CICD run 对应的分支
+            HEAD_BRANCH="$RUN_HEAD_BRANCH"
+            echo "🔄 CI 已完成（分支: ${HEAD_BRANCH}，结论: ${RUN_CONCLUSION}）"
+            case "$HEAD_BRANCH" in
+              # 兼容多种 Dependabot 分支命名：斜杠模式（dependabot/maven/...）与短横线模式（dependabot-maven-os-dependencies-...）
+              dependabot/*|dependabot-*|ci/dependency-upgrade)
+                process_pr "$HEAD_BRANCH"
+                ;;
+              *)
+                echo "ℹ️  分支 ${HEAD_BRANCH} 不是依赖升级分支，无需处理。"
+                ;;
+            esac
+          fi
