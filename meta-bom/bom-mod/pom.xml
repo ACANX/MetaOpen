@@ -102,7 +102,7 @@
         <bytebuddy.version>1.18.12</bytebuddy.version>
 
         <!-- 其他版本 -->
-        <graal-sdk.version>25.2.4</graal-sdk.version>
+        <graal-sdk.version>25.3.4.1</graal-sdk.version>
         <functions-framework.version>2.0.2</functions-framework.version>
         <jspecify.version>1.0.1</jspecify.version>
         <jakarta-servlet.version>6.1.0</jakarta-servlet.version>
