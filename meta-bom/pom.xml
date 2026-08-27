@@ -38,7 +38,7 @@
      <properties>
         <revision>0.8.9</revision>
         <meta-open.version>0.8.9</meta-open.version>
-        <autil.version>1.3.0</autil.version>
+        <autil.version>1.3.1</autil.version>
         <module.version>0.4.2</module.version>
         <bom-graalvm.version>25.0.8.9</bom-graalvm.version>
 
