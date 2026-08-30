@@ -2525,7 +2525,7 @@
         <dependency>
         <groupId>org.graalvm.sdk</groupId>
         <artifactId>graal-sdk</artifactId>
-        <version>25.2.4</version>
+        <version>25.3.4.1</version>
         <scope>provided</scope>
       </dependency>
         <dependency>
