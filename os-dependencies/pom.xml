@@ -80,7 +80,7 @@
         
         <guava.version>33.7.1-jre</guava.version>
 
-        <lombok.version>1.18.46</lombok.version>
+        <lombok.version>1.18.48</lombok.version>
         <mapstruct.version>1.6.3</mapstruct.version>
 
         <fastjson2.version>2.0.64</fastjson2.version>
