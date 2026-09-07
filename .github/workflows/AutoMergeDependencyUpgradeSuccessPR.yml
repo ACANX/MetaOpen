@@ -89,6 +89,17 @@ jobs:
             echo "🔀 正在以 squash 方式自动合并 PR #${pr_number} ..."
             if merge_output=$(gh pr merge "$pr_number" --repo "$REPO" --squash 2>&1); then
               echo "🎉 PR #${pr_number} 已自动合并完成！"
+              
+              # 添加标签：自动合并依赖升级
+              echo "🏷️  正在添加标签 'PR:自动合并依赖升级' ..."
+              if add_label_output=$(gh pr edit "$pr_number" --repo "$REPO" --add-label "PR:自动合并依赖升级" 2>&1); then
+                echo "✅ 标签 'PR:自动合并依赖升级' 添加成功！"
+              else
+                echo "⚠️  标签添加失败（PR 可能已关闭），详情如下："
+                echo "----------------------------------------------"
+                echo "$add_label_output"
+                echo "----------------------------------------------"
+              fi
             else
               echo ""
               echo "❌ PR #${pr_number} 自动合并失败，尝试自动更新分支（基于 base 分支最新代码）..."
