@@ -49,8 +49,8 @@
         <!-- Excel/Office 版本 -->
         <poi.version>5.5.1</poi.version>
         <easy-excel.version>4.0.3</easy-excel.version>
-        <fastjson.version>2.0.64</fastjson.version>
-        <fastjson2.version>2.0.64</fastjson2.version>
+        <fastjson.version>2.0.65</fastjson.version>
+        <fastjson2.version>2.0.65</fastjson2.version>
 
         <!-- 通用工具库版本 -->
         <commons-lang.version>2.6</commons-lang.version>
@@ -95,14 +95,14 @@
         <scf-java-events.version>0.0.4</scf-java-events.version>
         <aws-lambda-java-core.version>1.4.0</aws-lambda-java-core.version>
         <aws-lambda-java-events.version>3.16.1</aws-lambda-java-events.version>
-        <aws-lambda-java-log4j2.version>1.6.4</aws-lambda-java-log4j2.version>
+        <aws-lambda-java-log4j2.version>1.6.5</aws-lambda-java-log4j2.version>
         <qiniu-java-sdk.version>7.19.0</qiniu-java-sdk.version>
 
         <!-- ByteCode 版本 -->
-        <bytebuddy.version>1.18.12</bytebuddy.version>
+        <bytebuddy.version>1.18.13</bytebuddy.version>
 
         <!-- 其他版本 -->
-        <graal-sdk.version>25.2.4</graal-sdk.version>
+        <graal-sdk.version>25.3.4.1</graal-sdk.version>
         <functions-framework.version>2.0.2</functions-framework.version>
         <jspecify.version>1.0.1</jspecify.version>
         <jakarta-servlet.version>6.1.0</jakarta-servlet.version>
@@ -444,7 +444,7 @@
                   <dependency>
                       <groupId>org.mongodb</groupId>
                       <artifactId>mongodb-driver-sync</artifactId>
-                      <version>5.10.0</version>
+                      <version>5.11.0</version>
                       <scope>compile</scope>
                   </dependency>
             <dependency>
@@ -717,7 +717,7 @@
                   <dependency>
                       <groupId>com.aliyun</groupId>
                       <artifactId>alibabacloud-oss-v2</artifactId>
-                      <version>0.5.1</version>
+                      <version>0.6.0</version>
                       <scope>compile</scope>
                   </dependency>
                   <!-- Source: https://mvnrepository.com/artifact/com.huaweicloud/esdk-obs-java -->
