@@ -35,6 +35,62 @@ jobs:
           set -e
           REPO="$REPO_NAME"
 
+          # 定义标签常量
+          LABEL_SUCCESS="PR:自动合并依赖升级"
+          LABEL_FAILED="PR:自动合并依赖升级失败"
+
+          # 获取 PR 的所有现有标签（不包含自动合并相关标签）
+          get_other_labels() {
+            local pr_number="$1"
+            gh pr view "$pr_number" --repo "$REPO" --json labels --jq '.labels[].name | select(. != "'"$LABEL_SUCCESS"'" and . != "'"$LABEL_FAILED"'")' 2>/dev/null | jq -R -s -c 'split("\n") | map(select(length > 0))' || echo '[]'
+          }
+
+          # 设置 PR 标签为单个标签（替换所有标签）
+          set_label_atomic() {
+            local pr_number="$1"
+            local label="$2"
+            echo "🏷️  正在设置标签为: '$label'"
+            
+            # 获取其他标签
+            local other_labels
+            other_labels=$(get_other_labels "$pr_number")
+            
+            # 构建标签列表：新标签 + 其他标签
+            local labels_json
+            labels_json=$(echo "$other_labels" | jq -c ". += [\"$label\"]")
+            
+            # 转换为逗号分隔的字符串
+            local labels_str
+            labels_str=$(echo "$labels_json" | jq -r 'join(",")')
+            
+            if set_output=$(gh pr edit "$pr_number" --repo "$REPO" --set-labels "$labels_str" 2>&1); then
+              echo "✅ 标签设置成功: '$label'"
+              return 0
+            else
+              echo "❌ 标签设置失败:"
+              echo "----------------------------------------------"
+              echo "$set_output"
+              echo "----------------------------------------------"
+              return 1
+            fi
+          }
+
+          # 执行合并操作
+          merge_pr_atomic() {
+            local pr_number="$1"
+            echo "🔀 正在以 squash 方式自动合并 PR #${pr_number} ..."
+            if merge_output=$(gh pr merge "$pr_number" --repo "$REPO" --squash 2>&1); then
+              echo "🎉 PR #${pr_number} 已自动合并完成！"
+              return 0
+            else
+              echo "❌ PR #${pr_number} 自动合并失败"
+              echo "----------------------------------------------"
+              echo "$merge_output"
+              echo "----------------------------------------------"
+              return 1
+            fi
+          }
+
           # 处理单个依赖升级 PR：等待所有检查通过后自动合并（默认 squash 方式）
           process_pr() {
             local branch="$1"
@@ -85,29 +141,38 @@ jobs:
               return 0
             fi
 
-            # 执行自动合并（默认 squash 方式）
-            echo "🔀 正在以 squash 方式自动合并 PR #${pr_number} ..."
-            if merge_output=$(gh pr merge "$pr_number" --repo "$REPO" --squash 2>&1); then
-              echo "🎉 PR #${pr_number} 已自动合并完成！"
-            else
+            # ============================================
+            # 执行合并操作
+            # ============================================
+            if merge_pr_atomic "$pr_number"; then
+              # 合并成功 - PR 已关闭，设置成功标签
               echo ""
-              echo "❌ PR #${pr_number} 自动合并失败，尝试自动更新分支（基于 base 分支最新代码）..."
-              echo "----------------------------------------------"
-              echo "$merge_output"
-              echo "----------------------------------------------"
-              # 自动更新分支：把 base 分支最新提交合并进 head 分支，
-              # 产生新 commit → 触发 pull_request(synchronize) → CI 重跑 →
-              # 检查全绿后 workflow_run 再次触发本工作流自动重试合并
+              echo "📝 合并成功：设置标签为成功状态"
+              set_label_atomic "$pr_number" "$LABEL_SUCCESS"
+              echo "✅ PR #${pr_number} 处理完成！当前标签: '$LABEL_SUCCESS'"
+              return 0
+            else
+              # 合并失败 - PR 仍是 open，设置失败标签
+              echo ""
+              echo "📝 合并失败：设置标签为失败状态"
+              set_label_atomic "$pr_number" "$LABEL_FAILED"
+              
+              # 尝试自动更新分支（二次重试的入口）
+              echo ""
+              echo "⚙️  尝试自动更新分支（基于 base 分支最新代码）..."
               if update_output=$(gh pr update-branch "$pr_number" --repo "$REPO" 2>&1); then
-                echo "✅ PR #${pr_number} 已基于 base 分支自动更新，等待 CI 重跑后自动再次合并。"
+                echo "✅ PR #${pr_number} 已基于 base 分支自动更新"
+                echo "📌 当前标签状态: '$LABEL_FAILED'（等待 CI 重跑后自动重试合并）"
+                echo "🔄 CI 重跑完成后，如果检查全绿，本工作流会自动重新处理该 PR"
+                echo "   此时将自动更新标签为 '$LABEL_SUCCESS' 并再次尝试合并"
                 return 0
               else
                 echo "❌ PR #${pr_number} 更新分支失败（可能存在文本冲突，需人工解决），详情如下："
                 echo "----------------------------------------------"
                 echo "$update_output"
                 echo "----------------------------------------------"
-                echo "📤 自动更新不成功，任务退出。"
-                exit 1
+                echo "📤 标签已设置为 '$LABEL_FAILED'，任务退出。"
+                return 0
               fi
             fi
           }
@@ -119,7 +184,7 @@ jobs:
               echo "🖐 手动触发模式：按 PR 编号升序处理所有 open 的依赖升级 PR ..."
               ;;
             schedule)
-              echo "⏰ 定时兜底触发（每 3 小时）：按 PR 编号升序处理所有 open 的依赖升级 PR ..."
+              echo "⏰ 定时兜底触发（每 6 小时）：按 PR 编号升序处理所有 open 的依赖升级 PR ..."
               ;;
             *)
               echo "🔄 CI 已完成触发（分支: ${RUN_HEAD_BRANCH}，结论: ${RUN_CONCLUSION}），按 PR 编号升序处理 ..."
