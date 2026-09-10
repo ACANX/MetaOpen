@@ -2,6 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <!-- 本模块无生效的 <parent>，groupId 必须在此显式声明，删除会导致 POM 无法解析 -->
+    <groupId>com.acanx.meta.bom</groupId>
     <artifactId>bom-aio-origin</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
