@@ -83,13 +83,6 @@ jobs:
             java: '21'
             os: windows-latest
             
-          - branch: main
-            java: '17'
-            os: windows-latest           
-          - branch: main
-            java: '17'
-            os: ubuntu-latest 
-            
           # - branch: main
           #   java: '11'
           #   os: ubuntu-latest
