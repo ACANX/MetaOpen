@@ -31,6 +31,12 @@ jobs:
     name: BuildJDK${{ matrix.java }}_${{ matrix.branch }}_${{ matrix.os }}
     runs-on: ${{ matrix.os }}
 
+    env:
+      # 本次运行应对照的目标分支（决定放行哪组矩阵项）：
+      #   pull_request → base_ref（PR 的合并目标分支；该事件下 GITHUB_REF_NAME 是 "<PR号>/merge"，不能用来比较）
+      #   push / workflow_dispatch → ref_name（当前分支）
+      TARGET_BRANCH: ${{ github.base_ref || github.ref_name }}
+
     strategy:
       fail-fast: false
       matrix:
@@ -77,13 +83,6 @@ jobs:
             java: '21'
             os: windows-latest
             
-          - branch: main
-            java: '17'
-            os: windows-latest           
-          - branch: main
-            java: '17'
-            os: ubuntu-latest 
-            
           # - branch: main
           #   java: '11'
           #   os: ubuntu-latest
@@ -99,16 +98,23 @@ jobs:
           #   os: windows-latest
 
     steps:
-      # 门控：只放行当前分支对应的矩阵项
+      # 门控：只放行目标分支对应的矩阵项。
+      # 日志逐项打印「事件 / 引用 / 目标分支 / 本矩阵项要求的分支 / 判定结果」，
+      # 一旦出现「全部跳过」，可直接从日志对比两侧取值定位原因，无需再翻流程代码。
       - name: GateByBranch
         id: gate
         shell: bash
         run: |
-          echo "GITHUB_REF_NAME=${GITHUB_REF_NAME}"
-          echo "matrix.branch=${{ matrix.branch }}"
-          if [ "${GITHUB_REF_NAME}" = "${{ matrix.branch }}" ]; then
+          echo "[GateByBranch] event=${GITHUB_EVENT_NAME}"
+          echo "[GateByBranch] ref=${GITHUB_REF}  ref_name=${GITHUB_REF_NAME}"
+          echo "[GateByBranch] base_ref=${GITHUB_BASE_REF}  head_ref=${GITHUB_HEAD_REF}"
+          echo "[GateByBranch] target_branch=${TARGET_BRANCH}"
+          echo "[GateByBranch] this entry requires branch=${{ matrix.branch }} (java=${{ matrix.java }}, os=${{ matrix.os }})"
+          if [ "${TARGET_BRANCH}" = "${{ matrix.branch }}" ]; then
+            echo "[GateByBranch] matched -> RUN"
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
+            echo "[GateByBranch] NOT matched -> SKIP"
             echo "run=false" >> "$GITHUB_OUTPUT"
           fi
 

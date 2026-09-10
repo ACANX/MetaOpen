@@ -23,7 +23,8 @@ jobs:
       - name: ImportGPGKey
         uses: crazy-max/ghaction-import-gpg@2dc316deee8e90f13e1a351ab510b4d5bc0c82cd
         with:
-          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          # v6/v7 起输入名由 gpg-private-key 改为 gpg_private_key，写错会被静默忽略导致工作流失败（passphrase 仍为全小写无分隔符）
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
       
       - name: SetupJDK25
@@ -39,7 +40,8 @@ jobs:
 
       - name: InstallPython314Deps
         # --only-binary :all: 禁止执行 setup.py（防供应链攻击，S8541）；锁定版本保证可复现（S8544）
-        run: pip install --only-binary :all: lxml==6.1.2
+        # 注意：值必须加引号，否则 ":all: " 会被 YAML 解析为映射分隔符导致整个 workflow 无效
+        run: "pip install --only-binary :all: lxml==6.1.2"
 
       - name: LocalBuildArtifactsByBatch
         env:
