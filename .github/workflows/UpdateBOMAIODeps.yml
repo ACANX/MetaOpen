@@ -39,7 +39,8 @@ jobs:
 
       - name: InstallPython314Deps
         # --only-binary :all: 禁止执行 setup.py（防供应链攻击，S8541）；锁定版本保证可复现（S8544）
-        run: pip install --only-binary :all: lxml==6.1.2
+        # 注意：值必须加引号，否则 ":all: " 会被 YAML 解析为映射分隔符导致整个 workflow 无效
+        run: "pip install --only-binary :all: lxml==6.1.2"
 
       - name: LocalBuildArtifactsByBatch
         env:
