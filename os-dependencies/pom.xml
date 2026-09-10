@@ -367,10 +367,19 @@
                 <scope>compile</scope>
             </dependency>
             
+            <!-- MetaOpen 项目模块：sdk 系列 -->
             <dependency>
-                <groupId>com.acanx.meta.component</groupId>
+                <groupId>com.acanx.meta.sdk</groupId>
+                <artifactId>sdk-llm</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <!-- 坐标修正：模块已从 meta-component 移至 meta-sdk（#1535），旧坐标在 0.8.3 后不再发布 -->
+            <dependency>
+                <groupId>com.acanx.meta.sdk</groupId>
                 <artifactId>sdk-maven-artifact</artifactId>
                 <version>${meta-open.version}</version>
+                <scope>compile</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven</groupId>
