@@ -268,9 +268,9 @@
                 <version>${meta-open.version}</version>
                 <scope>compile</scope>
             </dependency>
-            <!-- base-file 的 groupId 为 com.acanx.meta（与 base 系列其他模块不同），按实际发布坐标登记 -->
+            <!-- 坐标修正：此前发布为 com.acanx.meta:base-file，现统一为 com.acanx.meta.base -->
             <dependency>
-                <groupId>com.acanx.meta</groupId>
+                <groupId>com.acanx.meta.base</groupId>
                 <artifactId>base-file</artifactId>
                 <version>${meta-open.version}</version>
                 <scope>compile</scope>
