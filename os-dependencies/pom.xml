@@ -59,11 +59,11 @@
         <openjfx.version>26.0.2</openjfx.version>
         <javassist.version>3.32.0-GA</javassist.version>
         <aspectjweaver.version>1.9.25.1</aspectjweaver.version>
-        <bytebuddy.version>1.18.11</bytebuddy.version>
+        <bytebuddy.version>1.18.12</bytebuddy.version>
 
         <netty.version>4.2.17.Final</netty.version>
-        <reactor.verion>3.8.6</reactor.verion>
-        <protobuf-java.version>4.35.1</protobuf-java.version>
+        <reactor.verion>3.8.7</reactor.verion>
+        <protobuf-java.version>4.36.0</protobuf-java.version>
 
         <tomcat-embed.version>11.0.25</tomcat-embed.version>
 
@@ -98,27 +98,27 @@
         <slf4j.version>2.0.18</slf4j.version>
         <jspecify.version>1.0.1</jspecify.version>
 
-        <spring.version>7.0.8</spring.version>
-        <spring-security.version>7.1.0</spring-security.version>
-        <spring-boot.version>4.1.0</spring-boot.version>
+        <spring.version>7.0.9</spring.version>
+        <spring-security.version>7.1.1</spring-security.version>
+        <spring-boot.version>4.1.1</spring-boot.version>
 
         <dubbo.version>3.3.6</dubbo.version>
         <nacos.version>3.2.3</nacos.version>
 
         <lucense.version>10.5.1</lucense.version>
-        <elasticsearch.version>9.5.1</elasticsearch.version>
+        <elasticsearch.version>9.5.2</elasticsearch.version>
 
         <flink.version>1.20.5</flink.version>
         <hadoop.version>3.5.0</hadoop.version>
 
-        <micrometer.version>1.17.0</micrometer.version>
+        <micrometer.version>1.17.1</micrometer.version>
 
         <selenium.version>4.47.0</selenium.version>
         <thymeleaf.version>3.1.5.RELEASE</thymeleaf.version>
 
         <!-- 修复 plexus-utils 目录遍历漏洞 -->
-        <plexus-utils.version>4.0.3</plexus-utils.version>
-        <plexus-xml.version>4.1.1</plexus-xml.version>
+        <plexus-utils.version>4.1.0</plexus-utils.version>
+        <plexus-xml.version>4.2.0</plexus-xml.version>
         <junit-jupiter.version>6.1.3</junit-jupiter.version>
         <junit-platform.version>6.1.3</junit-platform.version>
     </properties>
@@ -1017,7 +1017,7 @@
             <dependency>
                 <groupId>io.lettuce</groupId>
                 <artifactId>lettuce-core</artifactId>
-                <version>7.6.0.RELEASE</version>
+                <version>7.7.0.RELEASE</version>
                 <scope>provided</scope>
                 <optional>true</optional>
             </dependency>

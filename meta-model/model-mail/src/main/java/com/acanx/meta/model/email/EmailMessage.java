@@ -18,8 +18,6 @@ public class EmailMessage {
 
     private List<EmailAddress> receivers;
 
-//    private String name;
-
     private String subject;
 
     private List<String> tags;

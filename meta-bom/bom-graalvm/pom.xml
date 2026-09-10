@@ -57,7 +57,7 @@
         <dependency>
             <groupId>org.graalvm.nativeimage</groupId>
             <artifactId>svm</artifactId>
-            <version>25.0.4</version>
+            <version>25.0.4.1</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -77,20 +77,20 @@
             <dependency>
                 <groupId>org.graalvm.buildtools</groupId>
                 <artifactId>native-maven-plugin</artifactId>
-                <version>1.1.9</version>
+                <version>1.1.10</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.graalvm.buildtools/utils -->
             <dependency>
                 <groupId>org.graalvm.buildtools</groupId>
                 <artifactId>utils</artifactId>
-                <version>1.1.9</version>
+                <version>1.1.10</version>
                 <scope>runtime</scope>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.graalvm.buildtools/graalvm-reachability-metadata -->
             <dependency>
                 <groupId>org.graalvm.buildtools</groupId>
                 <artifactId>graalvm-reachability-metadata</artifactId>
-                <version>1.1.9</version>
+                <version>1.1.10</version>
                 <scope>runtime</scope>
             </dependency>
         </dependencies>

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 /**
  * DuplicateClassCheck
@@ -20,6 +21,8 @@ import java.util.Map;
  * @since 20250901
  */
 public class DuplicateClassCheck {
+    private static final Logger LOG = Logger.getLogger(DuplicateClassCheck.class.getName());
+
     // 存储类名与对应文件路径的映射
     private static Map<String, List<String>> classMap = new HashMap<>();
 
@@ -123,8 +126,10 @@ public class DuplicateClassCheck {
         // 移除开头的target/classes/或target/test-classes/
         if (pathStr.indexOf("target\\classes\\") >=0 ) {
             pathStr = pathStr.substring(pathStr.indexOf("target\\classes\\")+15);
+            LOG.fine("pathStr: " + pathStr);
         } else if (pathStr.indexOf("target\\test-classes\\") >=0 ) {
             pathStr = pathStr.substring(pathStr.indexOf("target\\test-classes\\")+15);
+            LOG.fine("pathStr: " + pathStr);
         }
 
         // 将路径分隔符替换为.，并移除.class后缀
@@ -137,11 +142,14 @@ public class DuplicateClassCheck {
      */
     private static String extractClassNameFromJavaFile(Path relativePath) {
         String pathStr = relativePath.toString();
+        LOG.fine("pathStr: " + pathStr);
         // 移除开头的src/main/java/或src/test/java/
         if (pathStr.indexOf("src\\main\\java\\") >=0 ) {
             pathStr = pathStr.substring(pathStr.indexOf("src\\main\\java\\")+14);
+            LOG.fine("pathStr: " + pathStr);
         } else if (pathStr.indexOf("src\\test\\java\\") >=0 ) {
             pathStr = pathStr.substring(pathStr.indexOf("src\\test\\java\\")+14);
+            LOG.fine("pathStr: " + pathStr);
         } else {
             System.out.println("=============" + pathStr);
         }
