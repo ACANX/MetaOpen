@@ -237,6 +237,51 @@
                 <scope>compile</scope>
             </dependency>
 
+            <!-- MetaOpen 项目模块：base 系列 -->
+            <dependency>
+                <groupId>com.acanx.meta.base</groupId>
+                <artifactId>base-error</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.base</groupId>
+                <artifactId>base-exception</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.base</groupId>
+                <artifactId>base-http</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.base</groupId>
+                <artifactId>base-page</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.base</groupId>
+                <artifactId>base-rest</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <!-- base-file 的 groupId 为 com.acanx.meta（与 base 系列其他模块不同），按实际发布坐标登记 -->
+            <dependency>
+                <groupId>com.acanx.meta</groupId>
+                <artifactId>base-file</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.component</groupId>
+                <artifactId>component-schedule</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
             <dependency>
                 <groupId>com.acanx.meta.model</groupId>
                 <artifactId>model-quote</artifactId>
@@ -288,6 +333,36 @@
             <dependency>
                 <groupId>com.acanx.meta.model</groupId>
                 <artifactId>model-gemini</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.model</groupId>
+                <artifactId>model-folo</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.model</groupId>
+                <artifactId>model-llm</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.model</groupId>
+                <artifactId>model-mail</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.model</groupId>
+                <artifactId>model-maven</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.model</groupId>
+                <artifactId>model-ylmf</artifactId>
                 <version>${meta-open.version}</version>
                 <scope>compile</scope>
             </dependency>
