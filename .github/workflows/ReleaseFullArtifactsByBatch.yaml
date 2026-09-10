@@ -4,6 +4,12 @@ permissions:
 
 on:
   workflow_dispatch:
+    inputs:
+      # 断点续跑：发布中断后，从指定批次继续（已成功发布的批次重复执行会因坐标已存在而被 Central 拒绝）
+      resume_from:
+        description: '从第几批开始执行（1=全量；2=从 os-dependencies 起；7=仅 meta-sdk 及之后）'
+        required: false
+        default: '1'
 
 jobs:
   publish:
@@ -62,45 +68,64 @@ jobs:
           GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}      # 如果 Maven 配置需要明确 Key ID：
           JAVA_TOOL_OPTIONS: "-Dfile.encoding=UTF-8 "
           MAVEN_OPTS: "-Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 --add-opens=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED"
+          RESUME_FROM: ${{ inputs.resume_from || '1' }}
         run: |
          echo "======================================= 版本发布开始 ==================================================================="
+         echo "[本次从第 ${RESUME_FROM} 批开始执行（1=全量）]"
+         case "${RESUME_FROM}" in
+           ''|*[!0-9]*) echo "[错误] resume_from 必须为正整数，当前值：'${RESUME_FROM}'"; exit 1 ;;
+         esac
          echo "======================================= 1.本地预先编译一次整个项目 ======================================================"
-         pwd                 
+         pwd
          mvn clean install -U
+         if [ "${RESUME_FROM}" -le 2 ]; then
          echo "======================================= 2.编译 os-dependencies ========================================================"
          cd os-dependencies       # 设置工作目录为 os-dependencies
          pwd
          mvn -B clean deploy -U
          cd ../                   # 设置工作目录为 ./
+         fi
+         if [ "${RESUME_FROM}" -le 3 ]; then
          echo "======================================= 3.编译 meta-open =============================================================="
          pwd
          mvn -B clean deploy -pl :meta-open -am
+         fi
+         if [ "${RESUME_FROM}" -le 4 ]; then
          echo "======================================= 4.编译 base     ============================================================="
          cd base           # 设置工作目录为 base
          pwd
          mvn -B clean deploy -U
          cd ../
+         fi
+         if [ "${RESUME_FROM}" -le 5 ]; then
          echo "======================================= 5.编译 meta-model ============================================================="
          cd meta-model           # 设置工作目录为 meta-model
          pwd
          # echo "############################################### mvn help:effective-pom #####################################################"
-         # mvn help:effective-pom -pl :model-test 
+         # mvn help:effective-pom -pl :model-test
          # echo "############################################### mvn help:effective-pom #####################################################"
          mvn -B clean deploy -U
          cd ../
+         fi
+         if [ "${RESUME_FROM}" -le 6 ]; then
          echo "======================================= 6.编译 meta-component ========================================================="
          cd meta-component      # 设置工作目录为 meta-component
          pwd
          mvn -B clean deploy
          cd ../
+         fi
+         if [ "${RESUME_FROM}" -le 7 ]; then
          echo "======================================= 7.编译 meta-sdk ==============================================================="
          cd meta-sdk           # 设置工作目录为 meta-sdk
          pwd
          mvn -B clean deploy -U
          cd ../
+         fi
+         if [ "${RESUME_FROM}" -le 8 ]; then
          echo "======================================= 8.编译 meta-bom ==============================================================="
          cd meta-bom           # 设置工作目录为 meta-bom
          pwd
          mvn -B clean deploy -U -e -X
+         fi
          echo "======================================= 版本发布完成 ==================================================================="
           

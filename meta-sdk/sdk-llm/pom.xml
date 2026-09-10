@@ -58,21 +58,27 @@
             <artifactId>base-http</artifactId>
             <version>${revision}</version>
         </dependency>
+        <!-- 发布校验要求依赖显式声明 version（上级 BOM 的管理值不会进入 flatten 后的 pom）；
+             取值与 os-dependencies 中对应条目保持一致，升级时需同步 -->
         <dependency>
             <groupId>tools.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
+            <version>3.2.2</version>
         </dependency>
         <dependency>
             <groupId>tools.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
+            <version>3.2.2</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
+            <version>2.22</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
