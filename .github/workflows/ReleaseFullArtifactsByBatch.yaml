@@ -24,7 +24,8 @@ jobs:
       - name: ImportGPGKey
         uses: crazy-max/ghaction-import-gpg@2dc316deee8e90f13e1a351ab510b4d5bc0c82cd
         with:
-          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          # v6/v7 起输入名由 gpg-private-key 改为 gpg_private_key，写错会被静默忽略导致工作流失败（passphrase 仍为全小写无分隔符）
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.GPG_PASSPHRASE }}
 
       - name: ConfigureMavenSettingsForSonatype
