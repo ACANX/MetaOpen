@@ -91,6 +91,18 @@ jobs:
            *) echo "[错误] 无法识别的起始批次：'${START_FROM}'（请通过工作流下拉选项触发）"; exit 1 ;;
          esac
          echo "[本次从「${START_FROM}」开始，即将执行第 ${START_BATCH} 批及其后批次]"
+         # 打印本次发布参数（触发分支 / 发布版本 / 用户选择），便于事后据日志排查，无需回看前端操作记录
+         RELEASE_VERSION=$(sed -n 's:.*<revision>\(.*\)</revision>.*:\1:p' pom.xml | head -n 1)
+         if [ -z "${RELEASE_VERSION}" ]; then RELEASE_VERSION="(未能从根 pom.xml 解析到 <revision>)"; fi
+         echo "======================================= 发布参数 ======================================================================="
+         echo "[触发分支] ${GITHUB_REF_NAME}"
+         echo "[触发用户] ${GITHUB_ACTOR}（运行编号 ${GITHUB_RUN_ID}）"
+         echo "[发布版本] ${RELEASE_VERSION}"
+         echo "[用户选择] ${START_FROM} → 起始批次 ${START_BATCH}"
+         RANGE="批次 ${START_BATCH}~8"
+         if [ "${START_BATCH}" -eq 8 ]; then RANGE="批次 8"; fi
+         echo "[执行范围] 批次 1（本地预编译，固定执行）+ ${RANGE}"
+         echo "======================================================================================================================="
          echo "======================================= 1.本地预先编译一次整个项目 ======================================================"
          pwd
          mvn clean install -U
