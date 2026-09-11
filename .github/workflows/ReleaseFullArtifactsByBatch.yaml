@@ -104,28 +104,39 @@ jobs:
          echo "[执行范围] 批次 1（本地预编译，固定执行）+ ${RANGE}"
          echo "======================================================================================================================="
          echo "======================================= 1.本地预先编译一次整个项目 ======================================================"
+         echo "[批次 1] 本地预编译 发布任务开始"
          pwd
          mvn clean install -U
          if [ "${START_BATCH}" -le 2 ]; then
+         echo "[批次 2] os-dependencies 发布任务开始"
          echo "======================================= 2.编译 os-dependencies ========================================================"
          cd os-dependencies       # 设置工作目录为 os-dependencies
          pwd
          mvn -B clean deploy -U
          cd ../                   # 设置工作目录为 ./
+         else
+         echo "[批次 2] os-dependencies 发布任务跳过（本次起始批次为 ${START_BATCH}）"
          fi
          if [ "${START_BATCH}" -le 3 ]; then
+         echo "[批次 3] meta-open 发布任务开始"
          echo "======================================= 3.编译 meta-open =============================================================="
          pwd
          mvn -B clean deploy -pl :meta-open -am
+         else
+         echo "[批次 3] meta-open 发布任务跳过（本次起始批次为 ${START_BATCH}）"
          fi
          if [ "${START_BATCH}" -le 4 ]; then
+         echo "[批次 4] base 发布任务开始"
          echo "======================================= 4.编译 base     ============================================================="
          cd base           # 设置工作目录为 base
          pwd
          mvn -B clean deploy -U
          cd ../
+         else
+         echo "[批次 4] base 发布任务跳过（本次起始批次为 ${START_BATCH}）"
          fi
          if [ "${START_BATCH}" -le 5 ]; then
+         echo "[批次 5] meta-model 发布任务开始"
          echo "======================================= 5.编译 meta-model ============================================================="
          cd meta-model           # 设置工作目录为 meta-model
          pwd
@@ -134,26 +145,37 @@ jobs:
          # echo "############################################### mvn help:effective-pom #####################################################"
          mvn -B clean deploy -U
          cd ../
+         else
+         echo "[批次 5] meta-model 发布任务跳过（本次起始批次为 ${START_BATCH}）"
          fi
          if [ "${START_BATCH}" -le 6 ]; then
+         echo "[批次 6] meta-component 发布任务开始"
          echo "======================================= 6.编译 meta-component ========================================================="
          cd meta-component      # 设置工作目录为 meta-component
          pwd
          mvn -B clean deploy
          cd ../
+         else
+         echo "[批次 6] meta-component 发布任务跳过（本次起始批次为 ${START_BATCH}）"
          fi
          if [ "${START_BATCH}" -le 7 ]; then
+         echo "[批次 7] meta-sdk 发布任务开始"
          echo "======================================= 7.编译 meta-sdk ==============================================================="
          cd meta-sdk           # 设置工作目录为 meta-sdk
          pwd
          mvn -B clean deploy -U
          cd ../
+         else
+         echo "[批次 7] meta-sdk 发布任务跳过（本次起始批次为 ${START_BATCH}）"
          fi
          if [ "${START_BATCH}" -le 8 ]; then
+         echo "[批次 8] meta-bom 发布任务开始"
          echo "======================================= 8.编译 meta-bom ==============================================================="
          cd meta-bom           # 设置工作目录为 meta-bom
          pwd
          mvn -B clean deploy -U -e -X
+         else
+         echo "[批次 8] meta-bom 发布任务跳过（本次起始批次为 ${START_BATCH}）"
          fi
          echo "======================================= 版本发布完成 ==================================================================="
           
