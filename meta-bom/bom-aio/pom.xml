@@ -144,63 +144,142 @@
         <scope>compile</scope>
       </dependency>
         <dependency>
+        <groupId>com.acanx.meta.base</groupId>
+        <artifactId>base-error</artifactId>
+        <version>0.9.0</version>
+        <scope>compile</scope>
+      </dependency>
+        <dependency>
+        <groupId>com.acanx.meta.base</groupId>
+        <artifactId>base-exception</artifactId>
+        <version>0.9.0</version>
+        <scope>compile</scope>
+      </dependency>
+        <dependency>
+        <groupId>com.acanx.meta.base</groupId>
+        <artifactId>base-http</artifactId>
+        <version>0.9.0</version>
+        <scope>compile</scope>
+      </dependency>
+        <dependency>
+        <groupId>com.acanx.meta.base</groupId>
+        <artifactId>base-page</artifactId>
+        <version>0.9.0</version>
+        <scope>compile</scope>
+      </dependency>
+        <dependency>
+        <groupId>com.acanx.meta.base</groupId>
+        <artifactId>base-rest</artifactId>
+        <version>0.9.0</version>
+        <scope>compile</scope>
+      </dependency>
+        <dependency>
+        <groupId>com.acanx.meta.base</groupId>
+        <artifactId>base-file</artifactId>
+        <version>0.9.0</version>
+        <scope>compile</scope>
+      </dependency>
+        <dependency>
+        <groupId>com.acanx.meta.component</groupId>
+        <artifactId>component-schedule</artifactId>
+        <version>0.9.0</version>
+        <scope>compile</scope>
+      </dependency>
+        <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-quote</artifactId>
-        <version>0.8.9.1</version>
+        <version>0.9.0</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-security</artifactId>
-        <version>0.8.9.1</version>
+        <version>0.9.0</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-sonatype</artifactId>
-        <version>0.8.9.1</version>
+        <version>0.9.0</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-deepseek</artifactId>
-        <version>0.8.9.1</version>
+        <version>0.9.0</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-test</artifactId>
-        <version>0.8.9.1</version>
+        <version>0.9.0</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-dingtalk</artifactId>
-        <version>0.8.9.1</version>
+        <version>0.9.0</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-wechat-work</artifactId>
-        <version>0.8.9.1</version>
+        <version>0.9.0</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-rss</artifactId>
-        <version>0.8.9.1</version>
+        <version>0.9.0</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-gemini</artifactId>
-        <version>0.8.9.1</version>
+        <version>0.9.0</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
-        <groupId>com.acanx.meta.component</groupId>
+        <groupId>com.acanx.meta.model</groupId>
+        <artifactId>model-folo</artifactId>
+        <version>0.9.0</version>
+        <scope>compile</scope>
+      </dependency>
+        <dependency>
+        <groupId>com.acanx.meta.model</groupId>
+        <artifactId>model-llm</artifactId>
+        <version>0.9.0</version>
+        <scope>compile</scope>
+      </dependency>
+        <dependency>
+        <groupId>com.acanx.meta.model</groupId>
+        <artifactId>model-mail</artifactId>
+        <version>0.9.0</version>
+        <scope>compile</scope>
+      </dependency>
+        <dependency>
+        <groupId>com.acanx.meta.model</groupId>
+        <artifactId>model-maven</artifactId>
+        <version>0.9.0</version>
+        <scope>compile</scope>
+      </dependency>
+        <dependency>
+        <groupId>com.acanx.meta.model</groupId>
+        <artifactId>model-ylmf</artifactId>
+        <version>0.9.0</version>
+        <scope>compile</scope>
+      </dependency>
+        <dependency>
+        <groupId>com.acanx.meta.sdk</groupId>
+        <artifactId>sdk-llm</artifactId>
+        <version>0.9.0</version>
+        <scope>compile</scope>
+      </dependency>
+        <dependency>
+        <groupId>com.acanx.meta.sdk</groupId>
         <artifactId>sdk-maven-artifact</artifactId>
-        <version>0.8.9.1</version>
+        <version>0.9.0</version>
+        <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>org.apache.maven</groupId>
@@ -2220,7 +2299,7 @@
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-tcnative-boringssl-static</artifactId>
-        <version>2.0.83.Final</version>
+        <version>2.0.84.Final</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -2260,7 +2339,7 @@
         <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-core</artifactId>
-        <version>2.22.1</version>
+        <version>2.22.2</version>
       </dependency>
         <dependency>
         <groupId>org.thymeleaf.extras</groupId>
