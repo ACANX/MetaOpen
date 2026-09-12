@@ -34,8 +34,8 @@
     </licenses>
 
     <properties>
-        <revision>0.8.9.1</revision>
-        <meta-open.version>0.8.9.1</meta-open.version>
+        <revision>0.9.1-SNAPSHOT</revision>
+        <meta-open.version>0.9.1-SNAPSHOT</meta-open.version>
         <autil.version>1.3.1</autil.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -237,6 +237,51 @@
                 <scope>compile</scope>
             </dependency>
 
+            <!-- MetaOpen 项目模块：base 系列 -->
+            <dependency>
+                <groupId>com.acanx.meta.base</groupId>
+                <artifactId>base-error</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.base</groupId>
+                <artifactId>base-exception</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.base</groupId>
+                <artifactId>base-http</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.base</groupId>
+                <artifactId>base-page</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.base</groupId>
+                <artifactId>base-rest</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <!-- 坐标修正：此前发布为 com.acanx.meta:base-file，现统一为 com.acanx.meta.base -->
+            <dependency>
+                <groupId>com.acanx.meta.base</groupId>
+                <artifactId>base-file</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.component</groupId>
+                <artifactId>component-schedule</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
             <dependency>
                 <groupId>com.acanx.meta.model</groupId>
                 <artifactId>model-quote</artifactId>
@@ -291,11 +336,50 @@
                 <version>${meta-open.version}</version>
                 <scope>compile</scope>
             </dependency>
-            
             <dependency>
-                <groupId>com.acanx.meta.component</groupId>
+                <groupId>com.acanx.meta.model</groupId>
+                <artifactId>model-folo</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.model</groupId>
+                <artifactId>model-llm</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.model</groupId>
+                <artifactId>model-mail</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.model</groupId>
+                <artifactId>model-maven</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.acanx.meta.model</groupId>
+                <artifactId>model-ylmf</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            
+            <!-- MetaOpen 项目模块：sdk 系列 -->
+            <dependency>
+                <groupId>com.acanx.meta.sdk</groupId>
+                <artifactId>sdk-llm</artifactId>
+                <version>${meta-open.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <!-- 坐标修正：模块已从 meta-component 移至 meta-sdk（#1535），旧坐标在 0.8.3 后不再发布 -->
+            <dependency>
+                <groupId>com.acanx.meta.sdk</groupId>
                 <artifactId>sdk-maven-artifact</artifactId>
                 <version>${meta-open.version}</version>
+                <scope>compile</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven</groupId>
@@ -1095,13 +1179,13 @@
                 <groupId>org.opentest4j</groupId>
                 <artifactId>opentest4j</artifactId>
                 <version>1.3.0</version>
-                <scope>compile</scope>
+                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.apiguardian</groupId>
                 <artifactId>apiguardian-api</artifactId>
                 <version>1.1.2</version>
-                <scope>compile</scope>
+                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.junit.platform</groupId>
