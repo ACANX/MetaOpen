@@ -138,7 +138,7 @@
         <mybatis-plus.version>3.5.6</mybatis-plus.version>
         <pagehelper.version>6.1.0</pagehelper.version>
         <pagehelper-spring-boot.version>4.1.1</pagehelper-spring-boot.version>
-        <jsqlparser>5.3</jsqlparser>
+        <jsqlparser>5.4</jsqlparser>
 
         <!-- Spring Cloud Alibaba -->
         <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba -->
