@@ -2819,7 +2819,7 @@
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>utils</artifactId>
-        <version>1.1.12</version>
+        <version>1.1.13</version>
         <scope>runtime</scope>
       </dependency>
         <dependency>
