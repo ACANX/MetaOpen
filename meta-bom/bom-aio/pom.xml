@@ -1253,7 +1253,7 @@
         <dependency>
         <groupId>com.qcloud</groupId>
         <artifactId>cos_api</artifactId>
-        <version>5.6.277</version>
+        <version>5.6.279</version>
         <optional>true</optional>
       </dependency>
         <dependency>
