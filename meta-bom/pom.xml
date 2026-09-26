@@ -53,7 +53,7 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven-compiler-plugin.version>3.16.0</maven-compiler-plugin.version>
-        <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
+        <maven-deploy-plugin.version>3.2.0</maven-deploy-plugin.version>
         <maven-surefire-plugin.version>3.6.0</maven-surefire-plugin.version>
         <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
@@ -66,7 +66,7 @@
         <maven-clean-plugin.version>3.4.0</maven-clean-plugin.version>
         <maven-compiler-plugin.version>3.16.0</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>3.8.1</maven-dependency-plugin.version>
-        <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
+        <maven-deploy-plugin.version>3.2.0</maven-deploy-plugin.version>
         <maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
         <maven-failsafe-plugin.version>3.5.2</maven-failsafe-plugin.version>
         <maven-help-plugin.version>3.5.1</maven-help-plugin.version>
@@ -138,7 +138,7 @@
         <mybatis-plus.version>3.5.6</mybatis-plus.version>
         <pagehelper.version>6.1.0</pagehelper.version>
         <pagehelper-spring-boot.version>4.1.1</pagehelper-spring-boot.version>
-        <jsqlparser>5.3</jsqlparser>
+        <jsqlparser>5.4</jsqlparser>
 
         <!-- Spring Cloud Alibaba -->
         <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba -->
@@ -189,15 +189,15 @@
 
         <!-- Markdown 相关 -->
         <commonmark.version>0.30.0</commonmark.version>
-        <cos_api.version>5.6.277</cos_api.version>
+        <cos_api.version>5.6.279</cos_api.version>
         <grpc.version>1.84.0</grpc.version>
-        <protobuf-java.version>4.36.1</protobuf-java.version>
+        <protobuf-java.version>4.36.2</protobuf-java.version>
         <protoc.version>4.33.0</protoc.version>
         <guava.version>33.7.1-jre</guava.version>
         <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
 
         <lombok.version>1.18.48</lombok.version>
-        <netty.version>4.2.17.Final</netty.version>
+        <netty.version>4.2.18.Final</netty.version>
         
         
          <!--  JSON -->
@@ -205,7 +205,7 @@
         <fastjson2.version>2.0.65</fastjson2.version>
         <gson.version>2.14.0</gson.version>
         <jackson3.version>3.2.2</jackson3.version>
-        <jackson.version>2.22.2</jackson.version>
+        <jackson.version>2.22.3</jackson.version>
         <!--  JSON -->
               
         <httpcore.version>4.4.16</httpcore.version>
@@ -213,7 +213,7 @@
         <apache.httpclient.version>4.5.14</apache.httpclient.version>
         <httpasyncclient.version>4.1.5</httpasyncclient.version>
         <httpclient5.version>5.6.4</httpclient5.version>
-        <httpcore5.version>5.4.3</httpcore5.version>
+        <httpcore5.version>5.4.4</httpcore5.version>
         <jsoup.version>1.23.2</jsoup.version>
 
         <snakeyaml.version>2.7</snakeyaml.version>
@@ -255,13 +255,13 @@
          <micrometer.version>1.17.1</micrometer.version>
 
          <!-- Selenium 版本 -->
-        <selenium.version>4.48.0</selenium.version>
+        <selenium.version>4.49.0</selenium.version>
         <selenium-futu.version>4.39.0</selenium-futu.version>
         <selenium-devtools.version>4.41.0</selenium-devtools.version>
         <selenium-htmlunit.version>4.29.0</selenium-htmlunit.version>
 
-        <awssdk.version>2.54.13</awssdk.version>
-        <huaweicloud-sdk.version>3.1.215</huaweicloud-sdk.version>
+        <awssdk.version>2.55.2</awssdk.version>
+        <huaweicloud-sdk.version>3.1.217</huaweicloud-sdk.version>
 
         <!-- 日志依赖  -->
         <slf4j.version>2.0.18</slf4j.version>

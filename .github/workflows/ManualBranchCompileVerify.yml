@@ -63,7 +63,7 @@ jobs:
           test -f "${PROJECT_DIR}/pom.xml" || { echo "pom.xml not found at ${PROJECT_DIR}/pom.xml"; exit 1; }
 
       - name: SetupTemurinJDK${{ steps.resolve.outputs.java }}
-        uses: actions/setup-java@v5
+        uses: actions/setup-java@v6
         with:
           distribution: temurin
           java-version: ${{ steps.resolve.outputs.java }}
