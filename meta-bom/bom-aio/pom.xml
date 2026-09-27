@@ -602,7 +602,7 @@
         <dependency>
         <groupId>com.google.protobuf</groupId>
         <artifactId>protobuf-java</artifactId>
-        <version>4.36.1</version>
+        <version>4.36.2</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -2497,7 +2497,7 @@
         <dependency>
         <groupId>com.google.protobuf</groupId>
         <artifactId>protobuf-java-util</artifactId>
-        <version>4.36.1</version>
+        <version>4.36.2</version>
       </dependency>
         <dependency>
         <groupId>jakarta.servlet</groupId>
