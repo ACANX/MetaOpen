@@ -73,7 +73,7 @@
         <hibernate-orm.version>7.4.10.Final</hibernate-orm.version>
         <seata.version>2.6.0</seata.version>
 
-        <commons-lang3.version>3.20.0</commons-lang3.version>
+        <commons-lang3.version>3.21.0</commons-lang3.version>
         <common-io.version>2.22.0</common-io.version>
         <commons-collections4.version>4.6.0</commons-collections4.version>
         <commons-configuration2.version>2.15.1</commons-configuration2.version>
