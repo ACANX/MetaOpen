@@ -266,6 +266,19 @@ fi
 
 > 真实事故：`gh pr edit --set-labels`（该参数根本不存在，`gh` 只有 `--add-label` / `--remove-label`）导致标签永远打不上（#2761）；`ghaction-import-gpg` 的输入名写成 `gpg-private-key`（正确为 `gpg_private_key`）被静默忽略。后者可由 §9.8 的 `actionlint` 自动拦下。
 
+### 9.6.1 两条实测陷阱（务必知悉）
+
+1. **`run:` 块的 shell 注释里不要写 `${{` 占位符**
+   actionlint 会扫描整个 `run` 脚本并对每个 `${{ … }}` 做表达式解析，**包括 shell 注释里的**。
+   例如在注释里写空的占位符（`${{` 紧跟 `}}`）会被当作「空表达式」，报
+   `unexpected end of input while parsing variable access … [expression]`。
+   需要举例时请写成 `${{ … }}` 以外的形式（如“模板占位符”）。
+2. **`actionlint-action` 的 `flags` 无法承载含空格的正则**
+   `raven-actions/actionlint` 把 `INPUT_FLAGS` 按空白分词后**逐 token**作为独立参数传给 actionlint（不经 shell）：
+   引号会进入正则本体（匹配不到）；用字符类 `[ ]` 代替空格也会被拆成多个 token（报 `invalid regular expression`）。
+   因此**不要把 `-ignore` 作为常规手段**——能修就修；确需登记例外时，应用不含空格的正则（如 `\s`），
+   并在工作流内注明原因与「待决策/待清理」标记（见 §9.8 例外登记）。
+
 ### 9.7 快速失败（强制）
 
 便宜、确定的校验必须放在**成本最低的位置**（本地 / 前置步骤），不要等远端长流程末端才报错。
