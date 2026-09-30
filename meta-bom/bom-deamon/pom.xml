@@ -332,12 +332,13 @@
                 <version>${cos_api.version}</version>
                 <optional>true</optional>
             </dependency>
+            <!-- lombok 统一为 provided（与 os-dependencies / bom-mod 对齐；判定依据见 #2812） -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
                 <optional>true</optional>
-                <scope>compile</scope>
+                <scope>provided</scope>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
             <dependency>
