@@ -221,7 +221,10 @@ await github.rest.pulls.update({ ... });
 
 ### 9.3 触发源与门控一致性（强制）
 
-job 级 `if:` 必须覆盖 `on:` 声明的**全部**触发源。自查方法：把 `on:` 列出的事件逐个代入 `if:`，回答「该事件下这个条件为真吗」。
+job 级 `if:` 必须覆盖 `on:` 声明的**全部**触发源。
+
+- 若确为**有意过滤**（例如某 job 只应在 `schedule` 下执行），**必须在注释中显式写明该意图**——因为「有意过滤」与「遗漏导致静默跳过」在运行记录上完全无法区分；
+- 自查方法：把 `on:` 列出的事件逐个代入 `if:`，回答「该事件下这个条件为真吗」。
 
 ```yaml
 # ❌ 错误：schedule 事件下 github.event.workflow_run 不存在，两个条件皆假 → 兜底任务永远被跳过
@@ -269,6 +272,10 @@ fi
 
 > 真实事故：`bom-aio` 的 SNAPSHOT 固化问题被留到 Maven Central 发布校验时才暴露，白等 6 分钟才拿到失败结论；若在发布工作流入口做一次本地扫描，30 秒内即可失败。
 
+**已落地**：`ReleaseFullArtifactsByBatch.yaml` 的 `PreflightReleaseArtifacts` 步骤在 **批次 2 之前** 执行
+`.github/Python/AuditBomScopes.py --mode release`（校验 `<revision>` 非 SNAPSHOT、BOM 中无 SNAPSHOT 字面版本），
+失败即在该步骤终止，不再进入发布流程。
+
 ### 9.8 自动化守门（`RepoConsistencyAudit`）
 
 仓库设 `RepoConsistencyAudit` 工作流（`pull_request` + `push` + `schedule`），对上述高危模式做机器检查：
@@ -278,8 +285,12 @@ fi
 | 生成物版本一致性（`bom-aio` 中本仓库构件的字面版本 vs 根 `<revision>`） | release 态硬失败 / SNAPSHOT 态告警 | §9.7、[BomDependencySpec](./BomDependencySpec.md) §3.4 |
 | 测试库不得被管理为 `compile` | 硬失败 | [BomDependencySpec](./BomDependencySpec.md) §3.1 |
 | 跨 BOM scope/optional 差异与台账比对 | 硬失败 | [BomDependencySpec](./BomDependencySpec.md) §3.5 |
-| `actionlint`（含 shellcheck：action 输入名、`if:` 表达式、`run` 脚本） | 硬失败 | §9.6 |
+| `actionlint`（校验 action `with:` 输入名、`if:` 表达式、`run` 语法） | 硬失败 | §9.6 |
+| `actionlint` 的 `shellcheck` / `pyflakes` 扩展 | 本期未启用（例外登记，见下） | §9.8 |
 | 门控覆盖性启发式检查（`if:` 是否覆盖全部触发源） | **告警**（条件语义解析含启发式成分，稳定后再升级为硬检查） | §9.3 |
 
 - **例外登记**：无法立即整改的既有问题，必须在该工作流内**显式登记为告警项**并在关联 issue 内跟踪，**不得静默放行**；
-- 审计结果写入 job summary，便于在 PR 页面直接查看，无需翻日志。
+  - 本期（2026-09-30）已登记：`actionlint` 仅启用本体，`shellcheck` / `pyflakes` 暂关闭——存量工作流的 shell 脚本告警需先清理，启用后本项改为硬失败；
+  - C5 门控覆盖性为告警级，因其无法区分「有意过滤」与「遗漏」，需人工按 §9.3 确认；
+- 审计结果写入 job summary，便于在 PR 页面直接查看，无需翻日志；
+- 审计工作流**不使用任何 secrets**，因此对 fork PR 同样生效。
