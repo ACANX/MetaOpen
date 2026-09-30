@@ -55,13 +55,6 @@ jobs:
           # `if:` 表达式与 run 语法；shellcheck / pyflakes 需先清理存量脚本告警后再开启
           shellcheck: false
           pyflakes: false
-          # 例外登记（§9.8）：存量工作流的已知问题先登记为忽略项并在关联 issue 内跟踪，不静默放行
-          #   .github/workflows/DependabotAutoMergeForMaven.yml:52 —— 把数组 `labels.*.name` 直接插值进
-          #   shell 的 `[[ ]]`（actionlint expression 规则）。该工作流的 `if:` 要求 `base.ref == 'dependabot'`，
-          #   而仓库已无此分支（实际从不运行）；「修正这一行」还是「废弃该工作流」待维护者决策，
-          #   故暂以忽略项登记，避免审计在存量问题上长期标红——决策后应删除本行。
-          flags: >-
-            -ignore "object, array, and null values should not be evaluated in template"
 
       - name: AuditBomScopes
         # C1 测试期构件 scope / C2 生成物版本一致性 / C3 跨 BOM 差异台账 / C5 门控覆盖性

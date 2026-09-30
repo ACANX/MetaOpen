@@ -56,7 +56,11 @@ jobs:
           fi
           
           # 检查是否包含特定标签阻止合并
-          if [[ "${{ github.event.pull_request.labels.*.name }}" == *"do-not-merge"* ]]; then
+          # labels.*.name 是数组，直接插值进字符串上下文不可靠
+          # （actionlint expression 规则：object / array / null 不应被求值进模板字符串）；
+          # 改为 toJSON 后按完整标签名精确匹配（已实测：`["do-not-merge"]` 命中、
+          # `["do-not-merge-disabled"]` 与空数组不误命中）
+          if echo '${{ toJSON(github.event.pull_request.labels.*.name) }}' | grep -q '"do-not-merge"'; then
             echo "::warning::PR has do-not-merge label"
             exit 78
           fi
