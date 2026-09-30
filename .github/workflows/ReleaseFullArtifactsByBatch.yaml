@@ -28,6 +28,21 @@ jobs:
       - name: CheckoutCode
         uses: actions/checkout@v7
 
+      - name: SetupPython314
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.14'
+
+      - name: PreflightReleaseArtifacts
+        # 发布前置预检（GitHubActionWorkflowSpec §9.7 快速失败）：
+        # 在批次 2 之前拦下 SNAPSHOT 固化、版本号未 bump、生成物与 <revision> 不一致等问题，
+        # 避免白等 Maven Central 校验（0.9.1 发布曾因此浪费 6 分钟且整批 deployment 被拒）
+        run: |
+          python .github/Python/AuditBomScopes.py \
+            --repo-root . \
+            --mode release \
+            --summary "$GITHUB_STEP_SUMMARY"
+
       - name: SetupJava
         uses: actions/setup-java@v6
         with:

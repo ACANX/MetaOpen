@@ -1,0 +1,66 @@
+name: RepoConsistencyAudit
+
+# 仓库一致性审计：BOM / 依赖声明 / 生成物 / 工作流可靠性
+#
+# 规范依据：
+#   - Docs/DevSpec/BomDependencySpec.md（§3.1 测试期构件、§3.4 生成物、§3.5 差异台账）
+#   - Docs/DevSpec/GitHubActionWorkflowSpec.md §9（可靠性规范；§9.7 快速失败、§9.8 自动化守门）
+#
+# 设计取向：把「跑绿了但没做事」与「生成物/声明静默漂移」这类问题在 PR 阶段拦下。
+# 只读检查，不使用任何 secrets，因此对 fork PR 同样生效。
+
+on:
+  pull_request:
+    branches: [dev, dependa, main]
+  push:
+    branches: [dev, dependa, main]
+  schedule:
+    # 每周一次：周一 UTC 00:00（北京时间 08:00）
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  # 同一 ref 只保留一次审计在执行；审计为只读检查，取消旧 run 无副作用
+  group: repo-consistency-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    name: RepoConsistencyAudit
+    runs-on: ubuntu-latest
+    steps:
+      - name: CheckoutCode
+        uses: actions/checkout@v7
+
+      - name: SetupPython314
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.14'
+
+      - name: InstallPythonDeps
+        # §9.6 可复现性：锁定版本；--only-binary :all: 禁止执行 setup.py（防供应链攻击，S8541）
+        # 仅 C5 门控启发式需要 PyYAML，缺失时该检查会显式跳过并打印原因，不会失败
+        run: "pip install --only-binary :all: pyyaml==6.0.3"
+
+      - name: LintWorkflowsWithActionlint
+        # §9.6：第三方 action 固定完整 commit SHA；工具版本固定，避免 latest 漂移
+        uses: raven-actions/actionlint@3d39aea434753780c3b3d4a1a31c854b4dbf49d7
+        with:
+          version: 1.7.12
+          fail-on-error: true
+          # 例外登记（§9.8）：本期只启用 actionlint 本体，用于校验 action `with:` 输入名、
+          # `if:` 表达式与 run 语法；shellcheck / pyflakes 需先清理存量脚本告警后再开启
+          shellcheck: false
+          pyflakes: false
+
+      - name: AuditBomScopes
+        # C1 测试期构件 scope / C2 生成物版本一致性 / C3 跨 BOM 差异台账 / C5 门控覆盖性
+        # 硬失败会让本步骤失败；告警仅输出提示并写入 job summary
+        run: |
+          python .github/Python/AuditBomScopes.py \
+            --repo-root . \
+            --mode audit \
+            --summary "$GITHUB_STEP_SUMMARY"
