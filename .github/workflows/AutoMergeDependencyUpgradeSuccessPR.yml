@@ -32,7 +32,10 @@ jobs:
   auto-merge:
     name: AutoMergeDependencyUpgradeSuccessPR
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    # GitHubActionWorkflowSpec §9.3：job 级 if: 必须覆盖 on: 声明的**全部**触发源。
+    # 此处曾漏掉 schedule（该事件下 github.event.workflow_run 不存在，两个条件皆假），
+    # 导致 on: 里声明、注释里写明的「每 6 小时定时兜底」**从未执行过**。
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'schedule' || github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       - name: 自动合并依赖升级 PR
