@@ -1,7 +1,7 @@
 # 开发规范（DevSpec）
 
 > 适用范围：MetaOpen 仓库所有开发相关规范。每项规范独立成文，存放于 `Docs/DevSpec/` 目录下。
-> 最后更新：2026-08-19
+> 最后更新：2026-09-30
 
 ---
 
@@ -24,6 +24,7 @@
 | [CodeStyleSpec.md](./CodeStyleSpec.md) | Java 编码风格与命名约定（缩进、包名、标识符风格） | 编写/审查 Java 代码 |
 | [CodeQualitySpec.md](./CodeQualitySpec.md) | Java 代码质量红线（SonarCloud 强制规范：S1186 空构造器、S1948 序列化、S1192 重复字面量等） | 编写/审查 Java 代码、GitHub Actions 工作流 |
 | [ModuleNamingSpec.md](./ModuleNamingSpec.md) | Maven 模块命名约定（model-*/sdk-*/api-*/base-*） | 新建模块、调整模块结构 |
+| [BomDependencySpec.md](./BomDependencySpec.md) | BOM 与依赖声明规范（scope 语义、`${revision}` 单一事实源、生成物规则、跨 BOM 差异台账） | 修改 BOM / 依赖声明、调整 scope、同步生成物 |
 | [GitCommitPRSpec.md](./GitCommitPRSpec.md) | Git 提交信息与 Pull Request 规范（Conventional Commit、PR 红线） | 提交代码、发起 PR |
 | [TestSpec.md](./TestSpec.md) | 测试规范（JUnit Jupiter、*Test 命名、运行方式） | 编写/运行单元测试 |
 | [VersionReleaseSpec.md](./VersionReleaseSpec.md) | 版本管理与发布约定（revision 单一事实源、Tag、ReleaseWorkflow） | 版本号修改、正式发版 |
