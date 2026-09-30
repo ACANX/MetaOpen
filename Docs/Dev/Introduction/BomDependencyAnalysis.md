@@ -39,7 +39,7 @@ grep -A3 "<artifactId>目标依赖</artifactId>" effective-pom.xml
 
 ### 3. 验证 BOM 导入链
 
-`bom-aio-origin` 通过 `<scope>import</scope>` 导入 `os-dependencies`、`bom-deamon`、`bom-mod`、`bom-sdk`、`bom-cf`、`bom-graalvm` 等多个 BOM，可用 effective-pom 验证导入后的版本覆盖关系（谁后导入谁生效，取决于 dependencyManagement 声明顺序）。
+`bom-aio-origin` 通过 `<scope>import</scope>` 导入 `os-dependencies`、`bom-deamon`、`bom-mod`、`bom-sdk`、`bom-cf`、`bom-graalvm` 等多个 BOM，可用 effective-pom 验证导入后的版本覆盖关系（同名 GA 由**先导入者生效**，取决于 dependencyManagement 声明顺序）。
 
 ## 注意事项
 

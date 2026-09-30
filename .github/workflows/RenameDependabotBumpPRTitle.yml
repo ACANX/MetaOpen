@@ -29,12 +29,33 @@ jobs:
         with:
           script: |
             const prNum = context.payload.pull_request.number;
+            const title = context.payload.pull_request.title;
+
+            // 已是本工作流生成的目标格式（例如 dependabot 又推了新提交而再次触发 synchronize）：
+            // 直接跳过，避免被下面的「不匹配」分支误报为异常
+            if (/^chore\(deps\): 依赖构件版本升级\[.+\]\[.+ => .+\]$/.test(title)) {
+              core.info(`PR #${prNum} 标题已是目标格式，跳过: ${title}`);
+              return;
+            }
+
             // 抽取包名和新版本
-            const matched = context.payload.pull_request.title.match(
-              /bump\s+(.+)\s+from\s+(.+)\s+to\s+(.+)\s+in(.+)/
+            // Dependabot 标题有两种形态（取决于 dependabot.yml 中该更新的 directory 是否为仓库根目录）：
+            //   非根目录：Bump <pkg> from <old> to <new> in /some/dir
+            //   根目录  ：Bump <pkg> from <old> to <new>          ← 不带 " in <目录>"
+            // 因此 " in <目录>" 必须为可选：否则根目录（标签 From:Root）的 PR 全部漏改（issue #2958）
+            // 前面不锚定行首，以兼容 chore(deps-dev): 等其它前缀；版本号用 \S+，避免贪婪匹配歧义
+            const matched = title.match(
+              /bump\s+(.+?)\s+from\s+(\S+)\s+to\s+(\S+?)(?:\s+in\s+(.+?))?\s*$/i
             );
-            if (!matched) return;
-            const [, pkg, oldVer, newVer, pomFile] = matched;
+            if (!matched) {
+              // 不静默返回：打印标题，避免出现「run 是绿的但标题没改」这种查不出原因的情况
+              core.info(`PR #${prNum} 标题不匹配重命名规则，保持原样: ${title}`);
+              return;
+            }
+            const [, pkg, oldVer, newVer, dir] = matched;
+            core.info(
+              `PR #${prNum} 解析成功: pkg=${pkg} old=${oldVer} new=${newVer} dir=${dir ?? '(仓库根目录)'}`
+            );
             // 自定义你的标题格式
             const newTitle = `chore(deps): 依赖构件版本升级[${pkg}][${oldVer} => ${newVer}]`;
             await github.rest.pulls.update({
@@ -43,3 +64,4 @@ jobs:
               pull_number: prNum,
               title: newTitle
             });
+            core.info(`PR #${prNum} 标题已重命名: ${title} → ${newTitle}`);
