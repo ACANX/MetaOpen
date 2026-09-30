@@ -12,9 +12,20 @@ on:
     # （workflow_run 并发触发时旧排队 run 会被取消，由本定时任务兜底）
     - cron: '0 */6 * * *'
 
+concurrency:
+  # 合并动作串行化：所有 AutoMerge run 共享同一队列。
+  # 不加这一项时，同一 PR 会被多个并发 run 同时处理，先后两个 run 几乎同时
+  # 调用 gh pr merge，后到的那个收到 GraphQL "Merge already in progress"，
+  # 从而把并发 run 刚打好的「成功」标签改写成「失败」。
+  # cancel-in-progress 保持 false（排队而非取消）：每个 run 都会重新遍历全部
+  # open 的依赖升级 PR，即使某个排队 run 被后来的请求替换掉也不影响最终一致性。
+  group: automerge-dependency-prs
+  cancel-in-progress: false
+
 permissions:
   contents: write
   pull-requests: write
+  issues: write   # 创建/维护「PR:自动合并依赖升级*」标签需要 issues: write
   checks: read
 
 jobs:
@@ -35,35 +46,65 @@ jobs:
           set -e
           REPO="$REPO_NAME"
 
-          # 定义标签常量
+          # 定义标签常量（名称须与仓库现有标签一致）
           LABEL_SUCCESS="PR:自动合并依赖升级"
           LABEL_FAILED="PR:自动合并依赖升级失败"
+          # 这两个标签互斥：同一 PR 上只保留当前状态的那一个
+          LABEL_MANAGED=("$LABEL_SUCCESS" "$LABEL_FAILED")
 
-          # 获取 PR 的所有现有标签（不包含自动合并相关标签）
-          get_other_labels() {
-            local pr_number="$1"
-            gh pr view "$pr_number" --repo "$REPO" --json labels --jq '.labels[].name | select(. != "'"$LABEL_SUCCESS"'" and . != "'"$LABEL_FAILED"'")' 2>/dev/null | jq -R -s -c 'split("\n") | map(select(length > 0))' || echo '[]'
+          # 确保标签在仓库中存在；已存在则原样保留，不覆盖原有颜色与描述
+          ensure_label() {
+            local name="$1"
+            local color="$2"
+            local description="$3"
+
+            if gh label list --repo "$REPO" --limit 200 --search "$name" --json name --jq '.[].name' 2>/dev/null | grep -qxF "$name"; then
+              return 0
+            fi
+
+            echo "🏷️  仓库中缺少标签，正在创建: '$name'"
+            if create_output=$(gh label create "$name" --repo "$REPO" --color "$color" --description "$description" 2>&1); then
+              echo "✅ 标签创建成功: '$name'"
+            else
+              echo "⚠️  标签创建失败: '$name'"
+              echo "----------------------------------------------"
+              echo "$create_output"
+              echo "----------------------------------------------"
+            fi
           }
 
-          # 设置 PR 标签为单个标签（替换所有标签）
+          # 读取 PR 上当前已存在的「自动合并」状态标签
+          get_managed_labels_on_pr() {
+            local pr_number="$1"
+            local filter="" name
+            for name in "${LABEL_MANAGED[@]}"; do
+              filter+="${filter:+ or }. == \"$name\""
+            done
+            gh pr view "$pr_number" --repo "$REPO" --json labels \
+              --jq ".labels[].name | select($filter)" 2>/dev/null || true
+          }
+
+          # 把 PR 的「自动合并」标签切换为指定状态标签（保留其它无关标签，幂等）
+          # 注意：gh pr edit 不存在 --set-labels 参数，只能“移除互斥标签 + 添加目标标签”
           set_label_atomic() {
             local pr_number="$1"
             local label="$2"
-            echo "🏷️  正在设置标签为: '$label'"
-            
-            # 获取其他标签
-            local other_labels
-            other_labels=$(get_other_labels "$pr_number")
-            
-            # 构建标签列表：新标签 + 其他标签
-            local labels_json
-            labels_json=$(echo "$other_labels" | jq -c ". += [\"$label\"]")
-            
-            # 转换为逗号分隔的字符串
-            local labels_str
-            labels_str=$(echo "$labels_json" | jq -r 'join(",")')
-            
-            if set_output=$(gh pr edit "$pr_number" --repo "$REPO" --set-labels "$labels_str" 2>&1); then
+            echo "🏷️  正在把 PR #${pr_number} 的自动合并标签切换为: '$label'"
+
+            # 保证目标标签已存在，否则 gh pr edit --add-label 会直接报错
+            ensure_label "$LABEL_SUCCESS" "f61e30" "PR:自动合并依赖升级"
+            ensure_label "$LABEL_FAILED" "b60205" "PR:自动合并依赖升级失败"
+
+            local args=() current
+            while IFS= read -r current; do
+              [ -z "$current" ] && continue
+              [ "$current" = "$label" ] && continue
+              # --remove-label 只对 PR 上确实存在的标签调用，避免 404 报错
+              args+=(--remove-label "$current")
+            done < <(get_managed_labels_on_pr "$pr_number")
+            args+=(--add-label "$label")
+
+            if set_output=$(gh pr edit "$pr_number" --repo "$REPO" "${args[@]}" 2>&1); then
               echo "✅ 标签设置成功: '$label'"
               return 0
             else
@@ -75,20 +116,48 @@ jobs:
             fi
           }
 
+          # 读取 PR 当前状态（OPEN / CLOSED / MERGED）
+          get_pr_state() {
+            local pr_number="$1"
+            gh pr view "$pr_number" --repo "$REPO" --json state --jq '.state' 2>/dev/null || echo "UNKNOWN"
+          }
+
           # 执行合并操作
+          # 返回 0 = 合并成功，或该 PR 已被并发 run 抢先合并（不得判为失败）
+          # 返回 1 = 确认失败（复核后 PR 仍为 open，且报错非并发合并冲突）
           merge_pr_atomic() {
             local pr_number="$1"
             echo "🔀 正在以 squash 方式自动合并 PR #${pr_number} ..."
             if merge_output=$(gh pr merge "$pr_number" --repo "$REPO" --squash 2>&1); then
               echo "🎉 PR #${pr_number} 已自动合并完成！"
               return 0
-            else
-              echo "❌ PR #${pr_number} 自动合并失败"
-              echo "----------------------------------------------"
-              echo "$merge_output"
-              echo "----------------------------------------------"
-              return 1
             fi
+
+            echo "❌ PR #${pr_number} 自动合并调用失败"
+            echo "----------------------------------------------"
+            echo "$merge_output"
+            echo "----------------------------------------------"
+
+            # 并发 run 同时合并同一 PR 时，后到的会收到
+            # GraphQL "Merge already in progress"；而 PR 往往就在这一两秒内
+            # 才由 open 变为 merged，故稍等一下再复核状态，避免误判为失败
+            sleep 3
+            local state
+            state=$(get_pr_state "$pr_number")
+            if [ "$state" != "OPEN" ]; then
+              echo "⚠️  复核发现 PR #${pr_number} 状态已变为 ${state} —— 判定为并发 run 已完成合并，按成功处理。"
+              return 0
+            fi
+
+            # 状态仍为 open，但报错本身表明另一个 run 正在合并该 PR：
+            # 结果尚未确定，交给下一轮触发重试，本次不计为失败
+            if echo "$merge_output" | grep -qiE "already in progress|already merged"; then
+              echo "⚠️  报错为并发合并冲突，且状态仍为 open —— 本次不判定失败，交由下次触发重试。"
+              return 0
+            fi
+
+            echo "ℹ️  确认合并失败（复核后 PR 仍为 open）。"
+            return 1
           }
 
           # 处理单个依赖升级 PR：等待所有检查通过后自动合并（默认 squash 方式）
@@ -141,21 +210,46 @@ jobs:
               return 0
             fi
 
+            # 并发 run 可能在本 run 轮询检查期间就把该 PR 合并掉。
+            # 对已非 open 的 PR 不再打标签、不再合并 —— 这是「并发 run 幂等」的前提，
+            # 否则会把并发 run 打好的「成功」标签改写成「失败」（issue #2761 反馈）
+            local current_state
+            current_state=$(get_pr_state "$pr_number")
+            if [ "$current_state" != "OPEN" ]; then
+              echo "ℹ️  PR #${pr_number} 当前状态为 ${current_state}（已被其它并发 run 处理），跳过。"
+              return 0
+            fi
+
+            # ============================================
+            # 合并前先打标签（issue #2761：标签须在 PR 关闭之前添加）
+            # 若标签打不上则本次不合并，避免出现「已合并但缺少标签」的 PR
+            # ============================================
+            if ! set_label_atomic "$pr_number" "$LABEL_SUCCESS"; then
+              echo "⚠️  PR #${pr_number} 标签设置失败，本次跳过合并，等待下次触发重试。"
+              return 0
+            fi
+
             # ============================================
             # 执行合并操作
             # ============================================
             if merge_pr_atomic "$pr_number"; then
-              # 合并成功 - PR 已关闭，设置成功标签
               echo ""
-              echo "📝 合并成功：设置标签为成功状态"
-              set_label_atomic "$pr_number" "$LABEL_SUCCESS"
-              echo "✅ PR #${pr_number} 处理完成！当前标签: '$LABEL_SUCCESS'"
+              echo "✅ PR #${pr_number} 处理完成！已合并，标签: '$LABEL_SUCCESS'"
               return 0
             else
-              # 合并失败 - PR 仍是 open，设置失败标签
+              # 合并失败。merge_pr_atomic 已复核过状态，这里再复核一次，
+              # 确保「失败」标签只可能落在仍为 open 的 PR 上
+              local final_state
+              final_state=$(get_pr_state "$pr_number")
+              if [ "$final_state" != "OPEN" ]; then
+                echo "ℹ️  PR #${pr_number} 状态已变为 ${final_state}（被并发 run 抢先处理），保持标签不变，跳过后续处理。"
+                return 0
+              fi
+
+              # 确认仍是 open 的失败 PR，切换为「失败」标签
               echo ""
-              echo "📝 合并失败：设置标签为失败状态"
-              set_label_atomic "$pr_number" "$LABEL_FAILED"
+              echo "📝 合并失败：把标签切换为失败状态"
+              set_label_atomic "$pr_number" "$LABEL_FAILED" || true
               
               # 尝试自动更新分支（二次重试的入口）
               echo ""
