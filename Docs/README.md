@@ -16,10 +16,12 @@ Docs/
 │       └── PullRequestTargetAnalysis.md # pull_request 与 pull_request_target 事件分析
 ├── DevSpec/                         # 开发规范
 │   ├── README.md                    # 开发规范总览（索引）
-│   ├── GitHubActionWorkflowSpec.md  # GitHub Action 工作流编写规范
+│   ├── GitHubActionWorkflowSpec.md  # GitHub Action 工作流编写规范（含 §9 可靠性规范）
 │   ├── DocumentNamingSpec.md        # 文档文件命名规范
 │   ├── CodeStyleSpec.md             # Java 编码风格与命名约定
+│   ├── CodeQualitySpec.md           # Java 代码质量红线（SonarCloud）
 │   ├── ModuleNamingSpec.md          # Maven 模块命名约定
+│   ├── BomDependencySpec.md         # BOM 与依赖声明规范（scope / 生成物 / 差异台账）
 │   ├── GitCommitPRSpec.md           # Git 提交与 Pull Request 规范
 │   ├── TestSpec.md                  # 测试规范
 │   └── VersionReleaseSpec.md        # 版本管理与发布约定
@@ -54,6 +56,7 @@ Docs/
 | [CodeStyleSpec.md](./DevSpec/CodeStyleSpec.md) | Java 编码风格与命名约定（缩进、包名、标识符风格） | 编写/审查 Java 代码 |
 | [CodeQualitySpec.md](./DevSpec/CodeQualitySpec.md) | Java 代码质量红线（SonarCloud 强制规范：S1186 空构造器、S1948 序列化、S1192 重复字面量等） | 编写/审查 Java 代码、GitHub Actions 工作流 |
 | [ModuleNamingSpec.md](./DevSpec/ModuleNamingSpec.md) | Maven 模块命名约定（model-*/sdk-*/api-*/base-*） | 新建模块、调整模块结构 |
+| [BomDependencySpec.md](./DevSpec/BomDependencySpec.md) | BOM 与依赖声明规范（scope 语义、`${revision}` 单一事实源、生成物规则、跨 BOM 差异台账） | 修改 BOM / 依赖声明、调整 scope、同步生成物 |
 | [GitCommitPRSpec.md](./DevSpec/GitCommitPRSpec.md) | Git 提交信息与 Pull Request 规范（Conventional Commit、PR 红线） | 提交代码、发起 PR |
 | [TestSpec.md](./DevSpec/TestSpec.md) | 测试规范（JUnit Jupiter、*Test 命名、运行方式） | 编写/运行单元测试 |
 | [VersionReleaseSpec.md](./DevSpec/VersionReleaseSpec.md) | 版本管理与发布约定（revision 单一事实源、Tag、ReleaseWorkflow） | 版本号修改、正式发版 |
@@ -63,7 +66,7 @@ Docs/
 | 文档 | 内容 | 适用场景 |
 |------|------|---------|
 | [README.md](./Release/README.md) | 发布方案总览（版本管理、ReleaseWorkflow、发布流程） | 了解发布整体机制 |
-| [PreReleaseChecklist.md](./Release/PreReleaseChecklist.md) | 发版前检查工作清单（6 大类） | 每次正式发版前逐项确认 |
+| [PreReleaseChecklist.md](./Release/PreReleaseChecklist.md) | 发版前检查工作清单（7 大类，含依赖与生成物预检） | 每次正式发版前逐项确认 |
 | [PostReleaseChecklist.md](./Release/PostReleaseChecklist.md) | 发版后收尾/后置工作清单（含异常速查） | 发布完成后执行 |
 | [WorkflowTriggerAnalysis.md](./Release/WorkflowTriggerAnalysis.md) | 首次合并触发 ReleaseWorkflow 问题探究 | 理解 push 触发机制与边界情况 |
 

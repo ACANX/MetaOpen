@@ -2,8 +2,8 @@
 
 > 适用于每次正式版本（如 0.8.9）发布前执行。按顺序逐项确认，全部通过后方可发起 dev→main 合并。
 >
-> 关联文档：[README.md](./README.md)（发布方案总览）、[PostReleaseChecklist.md](./PostReleaseChecklist.md)（发版后收尾）
-> 最后更新：2026-08-19
+> 关联文档：[README.md](./README.md)（发布方案总览）、[PostReleaseChecklist.md](./PostReleaseChecklist.md)（发版后收尾）、[BomDependencySpec.md](../DevSpec/BomDependencySpec.md)（BOM / 依赖声明规范）、[VersionReleaseSpec.md](../DevSpec/VersionReleaseSpec.md)
+> 最后更新：2026-09-30
 
 ---
 
@@ -38,14 +38,27 @@
       （当前涉及：httpclient5 ≥5.6.3、netty ≥4.2.16.Final、jsoup ≥1.23.1）
 - [ ] 无未处理的 CRITICAL/HIGH 级别安全警报
 
-## 5. 发布流程准备
+## 5. 依赖与生成物预检
+
+> 依据 [BomDependencySpec.md](../DevSpec/BomDependencySpec.md)（§3.1 / §3.4 / §3.5）。
+> §5 各项已由 `ReleaseFullArtifactsByBatch` 的**入口预检步骤**自动执行（见 [GitHubActionWorkflowSpec.md](../DevSpec/GitHubActionWorkflowSpec.md) §9.7）：失败会在批次 2 之前快速终止，不必再等 Maven Central 校验结果。
+
+- [ ] 根 `pom.xml` 的 `<revision>` 已是**发布版本**（不含 `-SNAPSHOT`）
+- [ ] `meta-bom/bom-aio/pom.xml`（**生成物**）中的版本与根 `<revision>` 一致——版本号变更后未重新执行 `UpdateBOMAIODeps` 时，此处会不一致
+- [ ] 全仓库待发布 POM 的 `dependencyManagement` 中**不存在 `-SNAPSHOT` 字面版本**
+- [ ] 测试期构件（junit 系 / opentest4j / apiguardian-api / mockito 等）的 scope 为 `test`，未被管理为 `compile`
+- [ ] 跨 BOM scope/optional 差异与 [BomDependencySpec.md](../DevSpec/BomDependencySpec.md) 附录 A 台账一致（无未登记差异）
+
+> ⚠️ **真实事故**：`0.9.1` 发布时 `bom-aio` 因 23 条 `0.9.1-SNAPSHOT` 被 Maven Central 以 “Dependency management dependencies to SNAPSHOT versions not allowed” 拒绝，且该拒绝是**整批 deployment 全有或全无**（该批次一个构件都没上线）。根因是 09-19 在 `0.9.1-SNAPSHOT` 期间同步生成物、09-30 版本改为 `0.9.1` 后未重新同步——**版本号变更必须重跑 `UpdateBOMAIODeps`**。
+
+## 6. 发布流程准备
 
 - [ ] 已确认 ReleaseWorkflow 触发方式（push 到 main 自动触发，首次合并即可触发，见 [WorkflowTriggerAnalysis.md](./WorkflowTriggerAnalysis.md)）
 - [ ] 已确认 main 分支无同名 tag（如 `V0.8.9`）已存在
 - [ ] （可选）已准备 Release 备注要点 / 已知变更清单
 - [ ] （可选）已确认 Maven Central 发布凭据（OSSRH/GPG）有效，如需本次发布制品
 
-## 6. 最终确认
+## 7. 最终确认
 
 - [ ] 以上全部通过
 - [ ] 已获得发布决策人（ACANX）放行确认

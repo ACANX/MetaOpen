@@ -75,13 +75,41 @@ SonarCloud 质量扫描循环技能位于 `.agents/skills/sonarcloud-quality-sca
 - **发版改号**：走 `UpdateProjectVersion` workflow（手动触发），它会同步更新 `revision`、`meta-open.version`、`meta.version`、`bom-graalvm.version`（= `25.<revision>`）
 - **不要手动改版本号**：`bom-graalvm.version` 由发版流程程序化派生替换，手动修改会导致版本断层
 - **Tag 命名**：`V<version>`（如 `V0.8.9`），由 `ReleaseWorkflow` 在 dev→main 合并后自动创建
-- 发布前/后检查请参照 `Docs/Release/PreRelease-Checklist.md` 与 `PostRelease-Checklist.md`
+- 发布前/后检查请参照 [PreReleaseChecklist.md](./Docs/Release/PreReleaseChecklist.md) 与 [PostReleaseChecklist.md](./Docs/Release/PostReleaseChecklist.md)
+
+## 依赖与 BOM 声明约定
+
+详细正文见 [BomDependencySpec.md](./Docs/DevSpec/BomDependencySpec.md)。核心红线：
+
+- **未声明 `<scope>` ≡ `compile`**：BOM 的 `dependencyManagement` 命中传递依赖时**同时覆盖其版本与 scope**，写错一处等于给所有下游改了默认值
+- **测试期构件**（junit 系、`opentest4j`、`apiguardian-api`、`mockito`、`assertj` 等）必须显式 `test`；**可选 / 宿主提供构件**（`lombok` 等）必须显式 `provided`
+- **引用本仓库构件一律 `${revision}`**，禁止写死字面版本号
+- **`meta-bom/bom-aio/pom.xml` 是生成物**：禁止手工修改；其中本仓库构件的版本必须与根 `<revision>` 一致；**发布态不得出现 `-SNAPSHOT`**（Central 会拒绝整批 deployment）
+- **版本号变更（`UpdateProjectVersion`）后必须重跑 `UpdateBOMAIODeps`**，否则生成物停留在旧版本（`0.9.1` 发布即因 23 条 `0.9.1-SNAPSHOT` 被拒）
+- **跨 BOM 的 scope/optional 差异允许存在，但必须登记**在 [BomDependencySpec.md](./Docs/DevSpec/BomDependencySpec.md) 附录 A 台账内；未登记的新差异会被 `RepoConsistencyAudit` 拦下
 
 ## GitHub Actions 工作流约定
 
-- `UpdateBOMAIODeps`：从 `bom-aio-origin` 的 effective-pom 同步 `bom-aio/pom.xml`；无变更时不创建 PR（属正常行为）
+命名与形式约定见 [GitHubActionWorkflowSpec.md](./Docs/DevSpec/GitHubActionWorkflowSpec.md)（§1~§8），**可靠性强制条款见同文 §9**。
+
+> **核心风险不是「跑挂了」，而是「跑绿了但没做事」**——静默失效。工作流一旦静默跳过，`success` 徽章会持续掩盖问题。以下为强制红线：
+
+- **三态日志**：每一步必须能区分「做了 / 跳过了 / 失败了」，任何「跳过」都要打印原因，禁止静默 `return` / `exit`（§9.1）
+- **可观测的成功证据**：成功路径要输出「处置了什么」（处理了 N 个对象、改了哪些字段）（§9.2）
+- **触发源与门控一致**：job 级 `if:` 必须覆盖 `on:` 声明的全部触发源（§9.3）
+- **先复核后判定**：「别人已完成 / 正在做」不得判为失败；报错文本不能作为唯一判据（§9.4）
+- **并发显式声明**：多触发源并发时必须写 `concurrency:` 并说明取舍（§9.5）
+- **外部动作先实测**：`gh` 参数、action `with:` 输入名必须实测验证后再提交（§9.6）
+- **快速失败**：校验前置，不在长流程末端才报错（§9.7）
+- `RepoConsistencyAudit`：在 PR / push / 每周定时执行上述高危模式的机器检查（§9.8）
+
+本仓库工作流职责：
+
+- `UpdateBOMAIODeps`：从 `bom-aio-origin` 的 effective-pom 同步 `bom-aio/pom.xml`；无变更时不创建 PR（属正常行为）；**版本号变更后必须重跑**
 - `UpdateBomGraalvmVersion`：bom-graalvm 版本检查；**派生模式下仅对比提示，不自动覆盖**（避免破坏版本对齐）
 - `ReleaseWorkflow`：dev→main 合并后自动打 tag + 创建 GitHub Release；支持 `dry_run=true` 预验证
+- `ReleaseFullArtifactsByBatch`：分批发布到 Maven Central；支持 `start_from` 断点续跑；入口含依赖与生成物预检（失败于批次 2 之前快速终止）
+- `RepoConsistencyAudit`：BOM scope / 生成物版本 / actionlint 等一致性审计
 - 修改 workflow 前先阅读现有文件与 `Docs/Release/README.md`，保持命名与语义一致
 
 ## 安全与配置提示
