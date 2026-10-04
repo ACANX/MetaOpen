@@ -193,7 +193,7 @@
         <grpc.version>1.84.0</grpc.version>
         <protobuf-java.version>4.36.2</protobuf-java.version>
         <protoc.version>4.33.0</protoc.version>
-        <guava.version>33.7.1-jre</guava.version>
+        <guava.version>33.7.2-jre</guava.version>
         <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
 
         <lombok.version>1.18.48</lombok.version>
