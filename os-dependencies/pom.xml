@@ -105,7 +105,7 @@
         <dubbo.version>3.3.6</dubbo.version>
         <nacos.version>3.2.4</nacos.version>
 
-        <lucense.version>10.5.1</lucense.version>
+        <lucense.version>10.5.2</lucense.version>
         <elasticsearch.version>9.5.4</elasticsearch.version>
 
         <flink.version>1.20.5</flink.version>
