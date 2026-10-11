@@ -1006,7 +1006,7 @@
         <dependency>
         <groupId>org.apache.httpcomponents.client5</groupId>
         <artifactId>httpclient5</artifactId>
-        <version>5.6.4</version>
+        <version>5.6.5</version>
       </dependency>
         <dependency>
         <groupId>org.openjdk.jmh</groupId>
@@ -1092,12 +1092,12 @@
         <dependency>
         <groupId>org.apache.httpcomponents.client5</groupId>
         <artifactId>httpclient5-cache</artifactId>
-        <version>5.6.4</version>
+        <version>5.6.5</version>
       </dependency>
         <dependency>
         <groupId>org.apache.httpcomponents.client5</groupId>
         <artifactId>httpclient5-fluent</artifactId>
-        <version>5.6.4</version>
+        <version>5.6.5</version>
       </dependency>
         <dependency>
         <groupId>org.apache.httpcomponents.core5</groupId>
