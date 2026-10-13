@@ -1623,7 +1623,7 @@
                   <dependency>
                       <groupId>org.apache.tomcat</groupId>
                       <artifactId>tomcat-annotations-api</artifactId>
-                      <version>11.0.26</version>
+                      <version>11.0.27</version>
                       <scope>compile</scope>
                   </dependency>
 
