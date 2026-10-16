@@ -77,7 +77,7 @@
 
         <!-- SDK 版本 -->
         <baidu-aip-sdk.version>4.16.27</baidu-aip-sdk.version>
-        <acrcloud-sdk.version>1.0.6</acrcloud-sdk.version>
+        <acrcloud-sdk.version>1.0.7</acrcloud-sdk.version>
         <json.version>20260814</json.version>
 
         <!-- 邮件 SDK 版本 -->
