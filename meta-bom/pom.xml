@@ -298,7 +298,7 @@
         <functions-framework.version>2.0.1</functions-framework.version>
 
         <!-- AWS Lambda 版本 -->
-        <aws-lambda-java-core.version>1.4.0</aws-lambda-java-core.version>
+        <aws-lambda-java-core.version>1.4.1</aws-lambda-java-core.version>
         <aws-lambda-java-events.version>3.16.1</aws-lambda-java-events.version>
         <aws-lambda-java-log4j2.version>1.6.5</aws-lambda-java-log4j2.version>
         <aws-lambda-java-serialization.version>1.4.0</aws-lambda-java-serialization.version>
