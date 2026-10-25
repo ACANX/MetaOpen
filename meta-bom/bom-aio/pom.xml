@@ -1241,13 +1241,13 @@
         <dependency>
         <groupId>org.commonmark</groupId>
         <artifactId>commonmark</artifactId>
-        <version>0.30.0</version>
+        <version>0.31.0</version>
         <optional>true</optional>
       </dependency>
         <dependency>
         <groupId>org.commonmark</groupId>
         <artifactId>commonmark-ext-gfm-tables</artifactId>
-        <version>0.30.0</version>
+        <version>0.31.0</version>
         <optional>true</optional>
       </dependency>
         <dependency>
