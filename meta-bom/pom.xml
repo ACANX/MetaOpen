@@ -252,7 +252,7 @@
         <mongodb.version>3.12.14</mongodb.version>
         <!-- NoSQL-->
 
-         <micrometer.version>1.17.1</micrometer.version>
+         <micrometer.version>1.17.2</micrometer.version>
 
          <!-- Selenium 版本 -->
         <selenium.version>4.51.0</selenium.version>
