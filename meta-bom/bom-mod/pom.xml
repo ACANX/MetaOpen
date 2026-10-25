@@ -47,7 +47,7 @@
         <maven-jar-plugin.version>3.4.1</maven-jar-plugin.version>
 
         <!-- Excel/Office 版本 -->
-        <poi.version>5.5.1</poi.version>
+        <poi.version>6.0.0</poi.version>
         <easy-excel.version>4.0.3</easy-excel.version>
         <fastjson.version>2.0.66</fastjson.version>
         <fastjson2.version>2.0.66</fastjson2.version>
