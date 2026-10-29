@@ -146,145 +146,145 @@
         <dependency>
         <groupId>com.acanx.meta.base</groupId>
         <artifactId>base-error</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.base</groupId>
         <artifactId>base-exception</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.base</groupId>
         <artifactId>base-http</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.base</groupId>
         <artifactId>base-page</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.base</groupId>
         <artifactId>base-rest</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.base</groupId>
         <artifactId>base-file</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.component</groupId>
         <artifactId>component-schedule</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-quote</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-security</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-sonatype</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-deepseek</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-test</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-dingtalk</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-wechat-work</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-rss</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-gemini</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-folo</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-llm</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-mail</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-maven</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.model</groupId>
         <artifactId>model-ylmf</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.sdk</groupId>
         <artifactId>sdk-llm</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>com.acanx.meta.sdk</groupId>
         <artifactId>sdk-maven-artifact</artifactId>
-        <version>0.9.1</version>
+        <version>0.9.2-SNAPSHOT</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>org.apache.maven</groupId>
         <artifactId>maven-model</artifactId>
-        <version>3.9.16</version>
+        <version>3.10.0</version>
       </dependency>
         <dependency>
         <groupId>org.codehaus.plexus</groupId>
@@ -299,19 +299,19 @@
         <dependency>
         <groupId>org.apache.maven</groupId>
         <artifactId>maven-core</artifactId>
-        <version>3.9.16</version>
+        <version>3.10.0</version>
         <scope>provided</scope>
       </dependency>
         <dependency>
         <groupId>org.apache.maven</groupId>
         <artifactId>maven-plugin-api</artifactId>
-        <version>3.9.16</version>
+        <version>3.10.0</version>
         <scope>provided</scope>
       </dependency>
         <dependency>
         <groupId>org.apache.maven</groupId>
         <artifactId>maven-compat</artifactId>
-        <version>3.9.16</version>
+        <version>3.10.0</version>
         <scope>provided</scope>
       </dependency>
         <dependency>
@@ -428,7 +428,7 @@
         <dependency>
         <groupId>org.sonatype.central</groupId>
         <artifactId>central-publishing-maven-plugin</artifactId>
-        <version>0.11.0</version>
+        <version>0.12.0</version>
       </dependency>
         <dependency>
         <groupId>org.apache.maven.plugin-tools</groupId>
@@ -467,7 +467,7 @@
         <dependency>
         <groupId>net.bytebuddy</groupId>
         <artifactId>byte-buddy</artifactId>
-        <version>1.18.14</version>
+        <version>1.18.15</version>
         <scope>provided</scope>
       </dependency>
         <dependency>
@@ -507,7 +507,7 @@
         <dependency>
         <groupId>commons-codec</groupId>
         <artifactId>commons-codec</artifactId>
-        <version>1.22.1</version>
+        <version>1.23.0</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -532,7 +532,7 @@
         <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
-        <version>33.7.1-jre</version>
+        <version>33.7.2-jre</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
@@ -544,7 +544,7 @@
         <dependency>
         <groupId>com.github.ben-manes.caffeine</groupId>
         <artifactId>caffeine</artifactId>
-        <version>3.3.0</version>
+        <version>3.3.1</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
@@ -580,24 +580,24 @@
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-all</artifactId>
-        <version>4.2.18.Final</version>
+        <version>4.2.19.Final</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-http</artifactId>
-        <version>4.2.18.Final</version>
+        <version>4.2.19.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-http2</artifactId>
-        <version>4.2.18.Final</version>
+        <version>4.2.19.Final</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-http3</artifactId>
-        <version>4.2.18.Final</version>
+        <version>4.2.19.Final</version>
       </dependency>
         <dependency>
         <groupId>com.google.protobuf</groupId>
@@ -669,7 +669,7 @@
         <dependency>
         <groupId>org.postgresql</groupId>
         <artifactId>postgresql</artifactId>
-        <version>42.7.13</version>
+        <version>42.7.14</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -721,14 +721,14 @@
         <dependency>
         <groupId>org.apache.kafka</groupId>
         <artifactId>kafka_2.13</artifactId>
-        <version>4.3.1</version>
+        <version>4.4.0</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
         <dependency>
         <groupId>org.apache.kafka</groupId>
         <artifactId>kafka-clients</artifactId>
-        <version>4.3.1</version>
+        <version>4.4.0</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -742,7 +742,7 @@
         <dependency>
         <groupId>org.apache.tomcat.embed</groupId>
         <artifactId>tomcat-embed-core</artifactId>
-        <version>11.0.26</version>
+        <version>11.0.27</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -826,7 +826,7 @@
         <dependency>
         <groupId>org.hibernate.validator</groupId>
         <artifactId>hibernate-validator</artifactId>
-        <version>9.1.4.Final</version>
+        <version>9.1.5.Final</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -843,7 +843,7 @@
         <dependency>
         <groupId>org.apache.lucene</groupId>
         <artifactId>lucene-core</artifactId>
-        <version>10.5.1</version>
+        <version>10.5.2</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -915,7 +915,7 @@
         <dependency>
         <groupId>io.undertow</groupId>
         <artifactId>undertow-core</artifactId>
-        <version>2.4.3.Final</version>
+        <version>2.4.4.Final</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -929,14 +929,14 @@
         <dependency>
         <groupId>org.elasticsearch</groupId>
         <artifactId>elasticsearch</artifactId>
-        <version>9.5.4</version>
+        <version>9.5.5</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
         <dependency>
         <groupId>org.hibernate.orm</groupId>
         <artifactId>hibernate-core</artifactId>
-        <version>7.4.11.Final</version>
+        <version>7.4.13.Final</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -955,7 +955,7 @@
         <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-api</artifactId>
-        <version>4.49.0</version>
+        <version>4.51.0</version>
       </dependency>
         <dependency>
         <groupId>org.thymeleaf</groupId>
@@ -967,14 +967,14 @@
         <dependency>
         <groupId>io.lettuce</groupId>
         <artifactId>lettuce-core</artifactId>
-        <version>7.8.0.RELEASE</version>
+        <version>7.9.0.RELEASE</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
         <dependency>
         <groupId>org.redisson</groupId>
         <artifactId>redisson</artifactId>
-        <version>4.7.0</version>
+        <version>4.8.0</version>
         <scope>provided</scope>
         <optional>true</optional>
       </dependency>
@@ -1006,7 +1006,7 @@
         <dependency>
         <groupId>org.apache.httpcomponents.client5</groupId>
         <artifactId>httpclient5</artifactId>
-        <version>5.6.4</version>
+        <version>5.6.5</version>
       </dependency>
         <dependency>
         <groupId>org.openjdk.jmh</groupId>
@@ -1092,12 +1092,12 @@
         <dependency>
         <groupId>org.apache.httpcomponents.client5</groupId>
         <artifactId>httpclient5-cache</artifactId>
-        <version>5.6.4</version>
+        <version>5.6.5</version>
       </dependency>
         <dependency>
         <groupId>org.apache.httpcomponents.client5</groupId>
         <artifactId>httpclient5-fluent</artifactId>
-        <version>5.6.4</version>
+        <version>5.6.5</version>
       </dependency>
         <dependency>
         <groupId>org.apache.httpcomponents.core5</groupId>
@@ -1204,7 +1204,7 @@
         <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-access</artifactId>
-        <version>1.6.4</version>
+        <version>1.6.5</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
@@ -1253,7 +1253,7 @@
         <dependency>
         <groupId>com.qcloud</groupId>
         <artifactId>cos_api</artifactId>
-        <version>5.6.279</version>
+        <version>5.6.283</version>
         <optional>true</optional>
       </dependency>
         <dependency>
@@ -1277,29 +1277,29 @@
         <dependency>
         <groupId>io.grpc</groupId>
         <artifactId>grpc-all</artifactId>
-        <version>1.84.0</version>
+        <version>1.85.0</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>io.grpc</groupId>
         <artifactId>grpc-api</artifactId>
-        <version>1.84.0</version>
+        <version>1.85.0</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>io.grpc</groupId>
         <artifactId>grpc-core</artifactId>
-        <version>1.84.0</version>
+        <version>1.85.0</version>
       </dependency>
         <dependency>
         <groupId>io.grpc</groupId>
         <artifactId>grpc-protobuf</artifactId>
-        <version>1.84.0</version>
+        <version>1.85.0</version>
       </dependency>
         <dependency>
         <groupId>io.grpc</groupId>
         <artifactId>grpc-stub</artifactId>
-        <version>1.84.0</version>
+        <version>1.85.0</version>
       </dependency>
         <dependency>
         <groupId>org.apache.dubbo</groupId>
@@ -1657,32 +1657,32 @@
         <dependency>
         <groupId>de.codecentric</groupId>
         <artifactId>spring-boot-admin-server</artifactId>
-        <version>4.1.3</version>
+        <version>4.1.4</version>
       </dependency>
         <dependency>
         <groupId>de.codecentric</groupId>
         <artifactId>spring-boot-admin-server-ui</artifactId>
-        <version>4.1.3</version>
+        <version>4.1.4</version>
       </dependency>
         <dependency>
         <groupId>de.codecentric</groupId>
         <artifactId>spring-boot-admin-client</artifactId>
-        <version>4.1.3</version>
+        <version>4.1.4</version>
       </dependency>
         <dependency>
         <groupId>de.codecentric</groupId>
         <artifactId>spring-boot-admin-starter-client</artifactId>
-        <version>4.1.3</version>
+        <version>4.1.4</version>
       </dependency>
         <dependency>
         <groupId>de.codecentric</groupId>
         <artifactId>spring-boot-admin-starter-server</artifactId>
-        <version>4.1.3</version>
+        <version>4.1.4</version>
       </dependency>
         <dependency>
         <groupId>de.codecentric</groupId>
         <artifactId>spring-boot-admin-server-cloud</artifactId>
-        <version>4.1.3</version>
+        <version>4.1.4</version>
       </dependency>
         <dependency>
         <groupId>org.springframework.security</groupId>
@@ -2417,7 +2417,7 @@
         <dependency>
         <groupId>org.apache.tomcat</groupId>
         <artifactId>tomcat-annotations-api</artifactId>
-        <version>11.0.26</version>
+        <version>11.0.27</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
@@ -2470,23 +2470,23 @@
         <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-core</artifactId>
-        <version>1.6.4</version>
+        <version>1.6.5</version>
       </dependency>
         <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-classic</artifactId>
-        <version>1.6.4</version>
+        <version>1.6.5</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>ses</artifactId>
-        <version>2.55.6</version>
+        <version>2.56.0</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>auth</artifactId>
-        <version>2.55.6</version>
+        <version>2.56.0</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
@@ -2580,7 +2580,7 @@
         <dependency>
         <groupId>com.acrcloud.sdks</groupId>
         <artifactId>com.acrcloud.sdks.recognizer</artifactId>
-        <version>1.0.6</version>
+        <version>1.0.7</version>
       </dependency>
         <dependency>
         <groupId>junit</groupId>
@@ -2652,7 +2652,7 @@
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-functiongraph</artifactId>
-        <version>3.1.218</version>
+        <version>3.1.219</version>
       </dependency>
         <dependency>
         <groupId>com.google.cloud.functions</groupId>
@@ -2673,7 +2673,7 @@
         <dependency>
         <groupId>com.larksuite.oapi</groupId>
         <artifactId>oapi-sdk</artifactId>
-        <version>2.8.5</version>
+        <version>2.8.7</version>
       </dependency>
         <dependency>
         <groupId>com.brevo</groupId>
@@ -2688,12 +2688,12 @@
         <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
-        <version>4.49.0</version>
+        <version>4.50.0</version>
       </dependency>
         <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-remote-driver</artifactId>
-        <version>4.49.0</version>
+        <version>4.50.0</version>
       </dependency>
         <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
@@ -2708,12 +2708,12 @@
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-core</artifactId>
-        <version>3.1.218</version>
+        <version>3.1.219</version>
       </dependency>
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-apig</artifactId>
-        <version>3.1.218</version>
+        <version>3.1.219</version>
       </dependency>
         <dependency>
         <groupId>com.aliyun</groupId>
@@ -2747,64 +2747,64 @@
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>s3</artifactId>
-        <version>2.55.6</version>
+        <version>2.56.0</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>lambda</artifactId>
-        <version>2.55.6</version>
+        <version>2.56.0</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>cloudwatch</artifactId>
-        <version>2.55.6</version>
+        <version>2.56.0</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>costexplorer</artifactId>
-        <version>2.55.6</version>
+        <version>2.56.0</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>regions</artifactId>
-        <version>2.55.6</version>
+        <version>2.56.0</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>aws-core</artifactId>
-        <version>2.55.6</version>
+        <version>2.56.0</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sqs</artifactId>
-        <version>2.55.6</version>
+        <version>2.56.0</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sns</artifactId>
-        <version>2.55.6</version>
+        <version>2.56.0</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>dynamodb</artifactId>
-        <version>2.55.6</version>
+        <version>2.56.0</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>scheduler</artifactId>
-        <version>2.55.6</version>
+        <version>2.56.0</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sdk-core</artifactId>
-        <version>2.55.6</version>
+        <version>2.56.0</version>
       </dependency>
         <dependency>
         <groupId>com.aliyun</groupId>
         <artifactId>fc20230330</artifactId>
-        <version>4.8.2</version>
+        <version>4.8.3</version>
       </dependency>
         <dependency>
         <groupId>org.graalvm.nativeimage</groupId>
