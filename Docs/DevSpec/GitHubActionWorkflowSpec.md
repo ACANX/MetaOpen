@@ -291,7 +291,7 @@ fi
 
 ### 9.8 自动化守门（`RepoConsistencyAudit`）
 
-仓库设 `RepoConsistencyAudit` 工作流（`pull_request` + `push` + `schedule`），对上述高危模式做机器检查：
+仓库设 `RepoConsistencyAudit` 工作流（针对 `main` 的 `pull_request` + `push`，外加手动 `workflow_dispatch`），对上述高危模式做机器检查：
 
 | 检查项 | 强度 | 依据 |
 | --- | --- | --- |
@@ -306,4 +306,5 @@ fi
   - 本期（2026-09-30）已登记：`actionlint` 仅启用本体，`shellcheck` / `pyflakes` 暂关闭——存量工作流的 shell 脚本告警需先清理，启用后本项改为硬失败；
   - C5 门控覆盖性为告警级，因其无法区分「有意过滤」与「遗漏」，需人工按 §9.3 确认；
 - 审计结果写入 job summary，便于在 PR 页面直接查看，无需翻日志；
+- **触发范围限定 `main`**（issue #3152）：`dev` / `dependa` 的根 `<revision>` 处于 SNAPSHOT，生成物中的 SNAPSHOT 字面版本属预期状态，在这两个分支审计只会产出与发布无关的告警/失败；原每周 `schedule` 已移除——它只能落在仓库默认分支（`dev`），与该限定冲突，需要定期审计时手动选 `main` 触发；
 - 审计工作流**不使用任何 secrets**，因此对 fork PR 同样生效。

@@ -8,15 +8,20 @@ name: RepoConsistencyAudit
 #
 # 设计取向：把「跑绿了但没做事」与「生成物/声明静默漂移」这类问题在 PR 阶段拦下。
 # 只读检查，不使用任何 secrets，因此对 fork PR 同样生效。
+#
+# 触发范围：只针对 main（发布态）。dev / dependa 上根 <revision> 本就是 SNAPSHOT，
+# bom-aio 生成物中的 SNAPSHOT 属预期状态（BomDependencySpec §3.4），在这两个分支上
+# 审计只会产出与发布无关的告警与失败，故不再监听（issue #3152）。
+#
+# 定时审计（原每周一 00:00 UTC）已移除：schedule 只能落在仓库默认分支（当前为 dev），
+# 与「只在 main 审计」冲突。需要定期审计时，从 Actions 页面手动选择 main 触发
+# workflow_dispatch；如需恢复定时，应先把默认分支切到 main。
 
 on:
   pull_request:
-    branches: [dev, dependa, main]
+    branches: [main]
   push:
-    branches: [dev, dependa, main]
-  schedule:
-    # 每周一次：周一 UTC 00:00（北京时间 08:00）
-    - cron: '0 0 * * 1'
+    branches: [main]
   workflow_dispatch:
 
 permissions:

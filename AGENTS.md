@@ -101,7 +101,7 @@ SonarCloud 质量扫描循环技能位于 `.agents/skills/sonarcloud-quality-sca
 - **并发显式声明**：多触发源并发时必须写 `concurrency:` 并说明取舍（§9.5）
 - **外部动作先实测**：`gh` 参数、action `with:` 输入名必须实测验证后再提交（§9.6）
 - **快速失败**：校验前置，不在长流程末端才报错（§9.7）
-- `RepoConsistencyAudit`：在 PR / push / 每周定时执行上述高危模式的机器检查（§9.8）
+- `RepoConsistencyAudit`：在针对 `main` 的 PR / push 上执行上述高危模式的机器检查（§9.8）
 
 本仓库工作流职责：
 
