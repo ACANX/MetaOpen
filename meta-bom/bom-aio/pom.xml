@@ -575,7 +575,7 @@
         <dependency>
         <groupId>com.squareup.okhttp3</groupId>
         <artifactId>okhttp-jvm</artifactId>
-        <version>5.5.0</version>
+        <version>5.5.1</version>
       </dependency>
         <dependency>
         <groupId>io.netty</groupId>
@@ -1066,7 +1066,7 @@
         <dependency>
         <groupId>com.squareup.okhttp3</groupId>
         <artifactId>okhttp</artifactId>
-        <version>5.5.0</version>
+        <version>5.5.1</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
