@@ -47,7 +47,7 @@
         <maven-jar-plugin.version>3.4.1</maven-jar-plugin.version>
 
         <!-- Excel/Office 版本 -->
-        <poi.version>5.5.1</poi.version>
+        <poi.version>6.0.0</poi.version>
         <easy-excel.version>4.0.3</easy-excel.version>
         <fastjson.version>2.0.66</fastjson.version>
         <fastjson2.version>2.0.66</fastjson2.version>
@@ -100,7 +100,7 @@
         <qiniu-java-sdk.version>7.19.0</qiniu-java-sdk.version>
 
         <!-- ByteCode 版本 -->
-        <bytebuddy.version>1.18.15</bytebuddy.version>
+        <bytebuddy.version>1.18.16</bytebuddy.version>
 
         <!-- 其他版本 -->
         <graal-sdk.version>25.4.4.1.1</graal-sdk.version>
@@ -718,14 +718,14 @@
                   <dependency>
                       <groupId>com.aliyun</groupId>
                       <artifactId>alibabacloud-oss-v2</artifactId>
-                      <version>0.6.0</version>
+                      <version>0.6.1</version>
                       <scope>compile</scope>
                   </dependency>
                   <!-- Source: https://mvnrepository.com/artifact/com.huaweicloud/esdk-obs-java -->
                   <dependency>
                       <groupId>com.huaweicloud</groupId>
                       <artifactId>esdk-obs-java</artifactId>
-                      <version>3.26.6</version>
+                      <version>3.26.9</version>
                       <scope>compile</scope>
                   </dependency>
                   <!-- Source: https://mvnrepository.com/artifact/com.sun/tools -->
