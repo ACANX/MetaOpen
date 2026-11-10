@@ -102,7 +102,7 @@
         <spring-security.version>7.1.2</spring-security.version>
         <spring-boot.version>4.1.2</spring-boot.version>
 
-        <dubbo.version>3.3.6</dubbo.version>
+        <dubbo.version>3.3.7</dubbo.version>
         <nacos.version>3.3.0</nacos.version>
 
         <lucense.version>10.6.0</lucense.version>
