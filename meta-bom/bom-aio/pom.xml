@@ -467,7 +467,7 @@
         <dependency>
         <groupId>net.bytebuddy</groupId>
         <artifactId>byte-buddy</artifactId>
-        <version>1.18.17</version>
+        <version>1.18.16</version>
         <scope>provided</scope>
       </dependency>
         <dependency>
@@ -2480,13 +2480,13 @@
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>ses</artifactId>
-        <version>2.57.9</version>
+        <version>2.57.4</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>auth</artifactId>
-        <version>2.57.9</version>
+        <version>2.57.4</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
@@ -2652,7 +2652,7 @@
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-functiongraph</artifactId>
-        <version>3.1.223</version>
+        <version>3.1.221</version>
       </dependency>
         <dependency>
         <groupId>com.google.cloud.functions</groupId>
@@ -2708,12 +2708,12 @@
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-core</artifactId>
-        <version>3.1.223</version>
+        <version>3.1.221</version>
       </dependency>
         <dependency>
         <groupId>com.huaweicloud.sdk</groupId>
         <artifactId>huaweicloud-sdk-apig</artifactId>
-        <version>3.1.223</version>
+        <version>3.1.221</version>
       </dependency>
         <dependency>
         <groupId>com.aliyun</groupId>
@@ -2747,59 +2747,59 @@
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>s3</artifactId>
-        <version>2.57.9</version>
+        <version>2.57.4</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>lambda</artifactId>
-        <version>2.57.9</version>
+        <version>2.57.4</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>cloudwatch</artifactId>
-        <version>2.57.9</version>
+        <version>2.57.4</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>costexplorer</artifactId>
-        <version>2.57.9</version>
+        <version>2.57.4</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>regions</artifactId>
-        <version>2.57.9</version>
+        <version>2.57.4</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>aws-core</artifactId>
-        <version>2.57.9</version>
+        <version>2.57.4</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sqs</artifactId>
-        <version>2.57.9</version>
+        <version>2.57.4</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sns</artifactId>
-        <version>2.57.9</version>
+        <version>2.57.4</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>dynamodb</artifactId>
-        <version>2.57.9</version>
+        <version>2.57.4</version>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>scheduler</artifactId>
-        <version>2.57.9</version>
+        <version>2.57.4</version>
         <scope>compile</scope>
       </dependency>
         <dependency>
         <groupId>software.amazon.awssdk</groupId>
         <artifactId>sdk-core</artifactId>
-        <version>2.57.9</version>
+        <version>2.57.4</version>
       </dependency>
         <dependency>
         <groupId>com.aliyun</groupId>
@@ -2814,7 +2814,7 @@
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>native-maven-plugin</artifactId>
-        <version>1.1.18</version>
+        <version>1.1.17</version>
       </dependency>
         <dependency>
         <groupId>org.graalvm.buildtools</groupId>
