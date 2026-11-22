@@ -883,7 +883,7 @@
         <dependency>
         <groupId>io.micrometer</groupId>
         <artifactId>micrometer-core</artifactId>
-        <version>1.17.2</version>
+        <version>1.18.0</version>
         <scope>provided</scope>
       </dependency>
         <dependency>
@@ -896,7 +896,7 @@
         <dependency>
         <groupId>io.micrometer</groupId>
         <artifactId>micrometer-observation</artifactId>
-        <version>1.17.2</version>
+        <version>1.18.0</version>
       </dependency>
         <dependency>
         <groupId>io.r2dbc</groupId>
